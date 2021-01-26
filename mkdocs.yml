@@ -7,7 +7,6 @@ nav:
     - Kubernetes Terms: gloss_kuber.md
     - Cloud Native Terms: gloss_cloud-native.md
     - Miscellaneous cheatsheets: cheatsheets.md
-    - Resume: resume.md
 theme: readthedocs
 extra:
     generator: false
