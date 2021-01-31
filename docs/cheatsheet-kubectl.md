@@ -344,9 +344,9 @@ To output details to your terminal window in a specific format, add the ```-o```
 | ```-o=name```                           | Print only the resource name and nothing else                                                              |
 | ```-o=wide```                           | Output in the plain-text format with any additional information, and for pods, the node name is included	   |
 | ```-o=yaml```                           | Output a YAML formatted API object                                                                         |
-
-Examples using ```-o=custom-columns```:
-
+  
+  
+### Examples using ```-o=custom-columns```  
 ```
 # All images running in a cluster
 kubectl get pods -A -o=custom-columns='DATA:spec.containers[*].image'
@@ -357,7 +357,6 @@ kubectl get pods -A -o=custom-columns='DATA:spec.containers[?(@.image!="k8s.gcr.
 # All fields under metadata regardless of name
 kubectl get pods -A -o=custom-columns='DATA:metadata.*'
 ```
-
 More examples in the [kubectl reference docs](https://kubernetes.io/docs/reference/kubectl/overview/#custom-columns).
 
 ## Kubectl output verbosity and debugging
@@ -366,15 +365,15 @@ Kubectl verbosity is controlled with the ```-v``` or ```--v``` flags followed by
 
 | Verbosity | Description                                                                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| --v=0     | Generally useful for this to always be visible to a cluster operator.                                                                                                                             |
-| --v=1     | A reasonable default log level if you don't want verbosity.                                                                                                                                       |
-| --v=2     | Useful steady state information about the service and important log messages that may correlate to significant changes in the system. This is the recommended default log level for most systems. |
-| --v=3     | Extended information about changes.                                                                                                                                                               |
-| --v=4     | Debug level verbosity.                                                                                                                                                                            |
-| --v=5     | Trace level verbosity.                                                                                                                                                                            |
-| --v=6     | Display requested resources.                                                                                                                                                                      |
-| --v=7     | Display HTTP request headers.                                                                                                                                                                     |
-| --v=8     | Display HTTP request contents.                                                                                                                                                                    |
-| --v=9     | Display HTTP request contents without truncation of contents.                                                                                                                                     |
+| ```--v=0```     | Generally useful for this to always be visible to a cluster operator.                                                                                                                             |
+| ```--v=1```     | A reasonable default log level if you don't want verbosity.                                                                                                                                       |
+| ```--v=2```     | Useful steady state information about the service and important log messages that may correlate to significant changes in the system. This is the recommended default log level for most systems. |
+| ```--v=3```     | Extended information about changes.                                                                                                                                                               |
+| ```--v=4```     | Debug level verbosity.                                                                                                                                                                            |
+| ```--v=5```     | Trace level verbosity.                                                                                                                                                                            |
+| ```--v=6```     | Display requested resources.                                                                                                                                                                      |
+| ```--v=7```     | Display HTTP request headers.                                                                                                                                                                     |
+| ```--v=8```     | Display HTTP request contents.                                                                                                                                                                    |
+| ```--v=9```     | Display HTTP request contents without truncation of contents.                                                                                                                                     |
 
 
