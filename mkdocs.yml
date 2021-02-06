@@ -1,4 +1,4 @@
-site_name: My MKdocs project
+site_name: My MKdocs project for Hansencx
 nav:
     - Home: index.md
     - About: about.md
@@ -7,6 +7,12 @@ nav:
     - Cloud Native Terms: gloss_cloud-native.md
     - kubectl cheatsheet: cheatsheet-kubectl.md
     - Miscellaneous cheatsheets: cheatsheets.md
-theme: readthedocs
+theme: material
+highlightjs: true
+hljs_languages:
+    - yaml
+    - rust
+extra_css:
+    - extra.css
 extra:
-    generator: false
+    generator: false 
