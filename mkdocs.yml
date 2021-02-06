@@ -8,11 +8,5 @@ nav:
     - kubectl cheatsheet: cheatsheet-kubectl.md
     - Miscellaneous cheatsheets: cheatsheets.md
 theme: material
-highlightjs: true
-hljs_languages:
-    - yaml
-    - rust
-extra_css:
-    - extra.css
 extra:
-    generator: false 
+    generator: true
