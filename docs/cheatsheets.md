@@ -1,4 +1,5 @@
 # Miscellaneous cheatsheets
+This section contains cheatsheets for MKDocs, Docker, and general Linux commands (or references to resources).
 
 ## MkDocs command cheatsheet
 
