@@ -1,4 +1,4 @@
-site_name: My MKdocs project for Hansencx
+site_name: My Azure-deployed Demo Project for OPS
 nav:
     - Home: index.md
     - About: about.md
