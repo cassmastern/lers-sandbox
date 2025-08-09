@@ -2,9 +2,23 @@
 
 The purpose is multifold:
  
-- brush up my knowledge of GitHub and Azure
+- brush up my knowledge of Amazon, GCP and Azure cloud platforms
 - concoct a quick technical documentation site
 - learn something new in the process
 - get OPS folks to view this candidacy favourably lol
 
-For information about MKdocs, visit [mkdocs.org](https://www.mkdocs.org).
+![Interview illustration - image as seen by my inner eye, during an 'internal dialog'](img/OPS_interview.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
