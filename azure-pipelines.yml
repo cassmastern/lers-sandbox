@@ -7,8 +7,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Docker@2
+- task: UsePythonVersion@0
   inputs:
-    command: 'build'
-    Dockerfile: 'Dockerfile'
-    tags: 'latest'
+    versionSpec: '3.x'
+    addToPath: true
+
+- script: |
+    pip install mkdocs mkdocs-material
+    mkdocs build
+  displayName: 'Build MkDocs Site'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: 'site'
+    artifactName: 'mkdocs-site'
