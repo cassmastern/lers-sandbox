@@ -1,17 +1,25 @@
 site_name: My Azure-deployed Demo Project for OPS
-
+theme: material
+plugins:
+  - search
+  - mermaid2
 nav:
     - Home: index.md
-    - About: about.md
-    - Demo Glossary for the 2025 gig:
+    - About this Site: about.md
+    - Demo Content for OPS 2025:
         - Cloud & DevOps Glossary: cloud_devops_glossary.md
-    - Other Glossaries and Terms:
+    - Other Glossaries and Terms [legacy]:
         - OSS Terms: gloss_oss.md
         - Kubernetes Terms: gloss_kuber.md
         - Cloud Native Terms: gloss_cloud-native.md
-    - Misc Cheat Sheets:
+    - Misc Cheat Sheets [legacy]:
         - kubectl cheatsheet: cheatsheet-kubectl.md
         - Miscellaneous cheatsheets: cheatsheets.md
-theme: material
 extra:
     generator: true
+
+extra_javascript:
+  - js/alphabet-auto.js
+
+extra_css:
+  - css/alphabet.css

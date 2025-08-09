@@ -8,7 +8,7 @@
 
 - This file lists common categories (Compute, Storage, Networking, IAM, DevOps/CI·CD, Containers, Serverless, Databases, Monitoring & Logging, Infrastructure as Code, Security & Secrets, Messaging & Eventing, CDN & Edge, Machine Learning, Cost & Governance).
 - Under each category you'll find the main service(s) in **AWS / GCP / Azure** with a 1–2 line description comparing purpose and notable differences.
-- Use this as a quick reference or translation table when moving architectures or writing runbooks.
+- [could end up being useful as a reference or translation table when moving architectures or writing runbooks]
 
 ---
 

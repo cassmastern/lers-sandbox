@@ -1,12 +1,12 @@
 # ⚙️ Azure DevOps Automation Cheatsheet for MkDocs
 
-Automate your MkDocs site build and deployment using Azure Pipelines.
+Automating the MkDocs site build and deployment using Azure Pipelines.
 
 ---
 
-## 📁 Prerequisites
+## Prerequisites
 
-- Your MkDocs project is in a GitHub repo
+- The MkDocs project is in a GitHub repo
 - Contains:
   - `mkdocs.yml`
   - `docs/` folder
@@ -14,9 +14,9 @@ Automate your MkDocs site build and deployment using Azure Pipelines.
 
 ---
 
-## 🧩 Create Azure Pipeline
+## Create Azure Pipeline
 
-Add this file to your repo root:
+Add this file to repo root:
 
 ### `azure-pipelines.yml`
 
@@ -48,7 +48,7 @@ steps:
 
 ---
 
-## 🚀 Optional Deployment: GitHub Pages
+## Optional Deployment: GitHub Pages
 
 Add this step to push the built site to GitHub Pages:
 
@@ -59,11 +59,11 @@ Add this step to push the built site to GitHub Pages:
   displayName: 'Deploy to GitHub Pages'
 ```
 
-Make sure your repo has GitHub Pages enabled (e.g. from `gh-pages` branch).
+Make sure the repo has GitHub Pages enabled (e.g. from `gh-pages` branch).
 
 ---
 
-## 🧪 Test Locally Before Committing
+## Test Locally Before Committing
 
 ```bash
 mkdocs build
@@ -72,16 +72,16 @@ ghp-import -n -p -f site
 
 ---
 
-## 🔐 Secure Your Pipeline
+## Secure the Pipeline
 
 - Use Azure DevOps **Service Connections** to authenticate with GitHub
 - Store secrets (like tokens) in **Azure Pipeline Variables**
 
 ---
 
-## 📌 Notes
+## Notes
 
-- You can extend this pipeline to use Docker builds or deploy to Azure Static Web Apps
+- This pipeline can be extended to use Docker builds or deploy to Azure Static Web Apps
 - For Docker-based builds, replace the `pip install` step with a `docker build` and `docker run` sequence
 
 ---

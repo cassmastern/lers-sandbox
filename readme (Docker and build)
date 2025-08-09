@@ -1,12 +1,12 @@
 # 🐳 Docker Cheatsheet for MkDocs Projects
 
-This guide covers essential Docker commands for building, troubleshooting, and serving your MkDocs site.
+This guide covers essential Docker commands for building, troubleshooting, and serving the MkDocs site.
 
 ---
 
-## 📦 Build Docker Image
+## Build Docker Image
 
-Build the image from your Dockerfile (assumes it's in the root directory):
+Build the image from the Dockerfile (must be in the root directory):
 
 ```bash
 docker build -t mkdocs-site .
@@ -19,10 +19,15 @@ docker build -t mkdocs-site .
 
 ## 🚀 Serve MkDocs Site with Live Reload
 
-Run the container and serve your site with live reload enabled:
+Run the container and serve the site with live reload enabled:
 
 ```bash
 docker run --rm -p 8000:8000 -v "$PWD":/app mkdocs-site mkdocs serve --dev-addr=0.0.0.0:8000 --livereload
+```
+or, with a descriptive name ("mkdocs-dev") 
+
+```bash
+docker run --rm --name mkdocs-dev -p 8000:8000 -v "$PWD":/app mkdocs-site mkdocs serve --dev-addr=0.0.0.0:8000 --livereload
 ```
 
 - `--rm`: Removes container after exit  
@@ -30,47 +35,61 @@ docker run --rm -p 8000:8000 -v "$PWD":/app mkdocs-site mkdocs serve --dev-addr=
 - `-v "$PWD":/app`: Mounts current directory into container  
 - `--livereload`: Enables automatic browser refresh on file changes  
 
-Access your site at: [http://localhost:8000](http://localhost:8000)
+Access the site at: [http://localhost:8000](http://localhost:8000) (on some machines it's [http://0.0.0.0:8000](http://0.0.0.0:8000)).
 
 ---
 
-## 🔍 Troubleshooting Tips
+## Troubleshooting Tips
 
-### 🛠️ Rebuild Image (if dependencies change)
+### Rebuild Image (if dependencies change)
 
 ```bash
 docker build --no-cache -t mkdocs-site .
 ```
 
-### 🧼 Remove Dangling Images
+### Remove Dangling Images
 
 ```bash
 docker image prune
 ```
 
-### 📋 List Running Containers
+### List Running Containers
 
 ```bash
 docker ps
 ```
 
-### 🧯 Stop a Running Container
+### Stop a Running Container
 
 ```bash
 docker stop <container_id>
 ```
 
-### 🧳 Enter a Running Container (for debugging)
+### Enter a Running Container (for debugging)
 
 ```bash
 docker exec -it <container_id> /bin/sh
 ```
+---------------------------------
 
----
+### List all images
 
-## 📁 Volume Mounting Notes
+```bash
+$ docker image ls
+```
+### Remove dangling images (untagged and unused images)
 
-Ensure your project folder contains:
+```bash
+$ docker image prune -f
+```
+### Remove all unused images forcefully and without prompt
+
+```bash
+$ docker image prune -a -f
+```
+## Volume Mounting Notes
+
+Ensure the project folder contains:
 - `mkdocs.yml`
 - `docs/` directory with markdown files
 
@@ -78,7 +97,7 @@ Changes to these files will trigger live reload if mounted correctly.
 
 ---
 
-## 🧪 Test Static Build
+## Test Static Build
 
 Generate the static site without serving:
 
@@ -90,17 +109,17 @@ Output will be in the `site/` folder.
 
 ---
 
-## 🧼 Clean Up Docker System (Optional)
+## Clean Up Docker System (Optional)
 
 ```bash
 docker system prune -a
 ```
 
-⚠️ This removes all unused containers, images, and networks.
+This removes all unused containers, images, and networks.
 
 ---
 
-## 📌 Notes
+## Notes
 
-- Always rebuild the image if you change dependencies in `requirements.txt` or the Dockerfile.
-- For multi-machine setups, commit your `Dockerfile` and rebuild locally, or push the image to a registry.
+- Always rebuild the image if/when dependencies change in `requirements.txt` or the Dockerfile.
+- For multi-machine setups, commit the `Dockerfile` and rebuild locally, or push the image to a registry.

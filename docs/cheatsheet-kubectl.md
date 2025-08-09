@@ -6,7 +6,7 @@ A list of commonly used ```kubectl``` commands and flags.
 
 ```
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
-echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to the bash shell.
 ```
 Shorthand alias for ```kubectl``` that also works with completion:
 
@@ -19,7 +19,7 @@ complete -F __start_kubectl k
 
 ```
 source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
-echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanently to your zsh shell
+echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanently to the zsh shell
 ```
 
 ## kubectl context and configuration
