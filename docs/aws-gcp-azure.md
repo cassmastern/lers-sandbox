@@ -106,7 +106,7 @@ graph TD
     classDef devops fill:#f5e6ff,stroke:#6b2f99;
     classDef sec fill:#ffe6e6,stroke:#cc0000;
     classDef obs fill:#f2f2f2,stroke:#555;
-    ```
+```
 
 ## GCP Architecture
 
@@ -192,7 +192,7 @@ graph TD
     classDef devops fill:#f5e6ff,stroke:#6b2f99
     classDef sec fill:#ffe6e6,stroke:#cc0000
     classDef obs fill:#f2f2f2,stroke:#555
-    ```
+```
 
 ## Azure Architecture
 
@@ -287,6 +287,6 @@ graph TD
     classDef devops fill:#f5e6ff,stroke:#6b2f99;
     classDef sec fill:#ffe6e6,stroke:#cc0000;
     classDef obs fill:#f2f2f2,stroke:#555;
-    ```
+```
 
 

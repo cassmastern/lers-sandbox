@@ -1,0 +1,50 @@
+.mz-zoomable {
+    cursor: zoom-in;
+}
+
+.mz-lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+}
+
+.mz-lightbox[aria-hidden="false"] {
+    display: flex;
+    animation: mz-fade 0.18s ease-out;
+}
+
+.mz-lightbox__content {
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.mz-lightbox__svg {
+    width: 100%;
+    height: auto;
+    background: var(--md-default-bg-color, #fff);
+    border-radius: 0.25rem;
+    box-shadow: var(--md-shadow-z3, 0 10px 30px rgba(0, 0, 0, 0.35));
+    cursor: zoom-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mz-lightbox[aria-hidden="false"] {
+        animation: none;
+    }
+}
+
+@keyframes mz-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

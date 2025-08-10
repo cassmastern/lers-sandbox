@@ -1,4 +1,4 @@
-site_name: My Azure-deployed Demo Project for OPS
+site_name: "Ler's Azure-deployed Demo Site"
 theme: material
 plugins:
   - search
@@ -19,6 +19,9 @@ extra:
 
 extra_javascript:
   - js/alphabet-auto.js
+  - js/diagram-zoom.js
 
 extra_css:
   - css/alphabet.css
+  - css/diagram-zoom.css
+
