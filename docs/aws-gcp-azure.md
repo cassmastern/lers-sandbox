@@ -4,12 +4,12 @@ Below are simplified, high-level architectures of AWS, GCP, and Azure.
 
 **Legend for the diagrams** 
 
-� Global Infrastructure  
-� Networking  
-� Compute  
-� Databases / Storage  
-� DevOps  
-� Security  
+🟦 Global Infrastructure  
+🟩 Networking  
+🟧 Compute  
+🟨 Databases / Storage  
+🟪 DevOps  
+🟥 Security  
 ⬜ Observability
 
 *Note:* Diagrams are conceptual simplifications meant for
