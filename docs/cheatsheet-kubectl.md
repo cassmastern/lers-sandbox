@@ -1,7 +1,9 @@
-# kubectl cheat sheet
+# kubectl cheat sheet  
+
 A list of commonly used ```kubectl``` commands and flags.
 
 ## kubectl autocomplete
+
 ### BASH
 
 ```
