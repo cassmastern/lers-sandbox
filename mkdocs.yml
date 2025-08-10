@@ -4,17 +4,16 @@ plugins:
   - search
   - mermaid2
 nav:
-    - Home: index.md
-    - About this Site: about.md
-    - Demo Content for OPS 2025:
-        - Cloud & DevOps Glossary: cloud_devops_glossary.md
-    - Other Glossaries and Terms [legacy]:
-        - OSS Terms: gloss_oss.md
-        - Kubernetes Terms: gloss_kuber.md
-        - Cloud Native Terms: gloss_cloud-native.md
-    - Misc Cheat Sheets [legacy]:
-        - kubectl cheatsheet: cheatsheet-kubectl.md
-        - Miscellaneous cheatsheets: cheatsheets.md
+  - Home: index.md
+  - AWS vs GCP vs Azure: aws-gcp-azure.md
+  - Cloud & DevOps Glossary (AWS, GCP, Azure): gloss_cloud_devops_AWS-GCP-Azure.md
+  - Other Glossaries:
+      - OSS Terms: gloss_oss.md
+      - Kubernetes Terms: gloss_kuber.md
+      - Cloud Native Terms: gloss_cloud-native.md
+  - Miscellaneous Cheat Sheets:
+      - kubectl cheatsheet: cheatsheet-kubectl.md
+      - Miscellaneous cheatsheets: cheatsheets.md
 extra:
     generator: true
 
