@@ -1,14 +1,15 @@
 # Cloud & DevOps Glossary — AWS, GCP, Azure
 
-> A compact, side-by-side glossary of key cloud components and technologies across **AWS**, **Google Cloud Platform (GCP)**, and **Microsoft Azure**. Emphasis on DevOps-related services and equivalents. Where a component is absent, that is noted.
+> A compact, side-by-side glossary of key cloud components and technologies across **AWS**, **Google Cloud Platform (GCP)**, and **Microsoft Azure**. Emphasis on DevOps-related services and equivalents. Where a component is absent, that is noted. 
 
 ---
 
-## How to use
+## How Content is Organized
 
-- This file lists common categories (Compute, Storage, Networking, IAM, DevOps/CI·CD, Containers, Serverless, Databases, Monitoring & Logging, Infrastructure as Code, Security & Secrets, Messaging & Eventing, CDN & Edge, Machine Learning, Cost & Governance).
-- Under each category you'll find the main service(s) in **AWS / GCP / Azure** with a 1–2 line description comparing purpose and notable differences.
-- [could end up being useful as a reference or translation table when moving architectures or writing runbooks]
+- This page lists common categories (Compute, Storage, Networking, IAM, DevOps/CI·CD, Containers, Serverless, Databases, Monitoring & Logging, Infrastructure as Code, Security & Secrets, Messaging & Eventing, CDN & Edge, Machine Learning, Cost & Governance).
+- Each category lists the main service(s) of **AWS | GCP | Azure**, with descriptions and notable differences.
+
+[could end up being useful as a reference or translation table when moving architectures or writing runbooks]
 
 ---
 
