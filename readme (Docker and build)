@@ -1,4 +1,4 @@
-# 🐳 Docker Cheatsheet for MkDocs Projects
+# Docker Cheatsheet for MkDocs Projects
 
 This guide covers essential Docker commands for building, troubleshooting, and serving the MkDocs site.
 
@@ -17,7 +17,7 @@ docker build -t mkdocs-site .
 
 ---
 
-## 🚀 Serve MkDocs Site with Live Reload
+## Serve MkDocs Site with Live Reload
 
 Run the container and serve the site with live reload enabled:
 
