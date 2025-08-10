@@ -107,7 +107,6 @@ graph TD
     classDef sec fill:#ffe6e6,stroke:#cc0000;
     classDef obs fill:#f2f2f2,stroke:#555;
     ```
-------------------------------------------------------------------------
 
 ## GCP Architecture
 
@@ -194,8 +193,6 @@ graph TD
     classDef sec fill:#ffe6e6,stroke:#cc0000
     classDef obs fill:#f2f2f2,stroke:#555
     ```
-
-------------------------------------------------------------------------
 
 ## Azure Architecture
 
@@ -292,5 +289,4 @@ graph TD
     classDef obs fill:#f2f2f2,stroke:#555;
     ```
 
-------------------------------------------------------------------------
 
