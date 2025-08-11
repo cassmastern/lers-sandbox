@@ -9,17 +9,23 @@ nav:
       - "What's in Here?": whatsinhere.md
       - How this Site was Developed and Deployed: about.md
       - "Found an Issue or Problem?": azure-issue-ticket.md
-  - What Awaits Me if Accepted:
+  - Probably What Awaits Me at Work:
     - AWS vs GCP vs Azure: aws-gcp-azure.md
     - Cross-Platform Cloud & DevOps Glossary: gloss_cloud_devops_AWS-GCP-Azure.md
     - A Jakarta EE App on Azure: jakarta-ee-azure.md
+  - Networking and Security in 2025: 
+    - A Hypothetical Data Centre Network: network_data_center.md
+    - Threat Modelling - STRIDE: network_data_center_stride.md
+    - "Threat Modeling - MITRE ATT&CK": network_data_center_mitre.md
   - Some Glossaries:
       - OSS Terms: gloss_oss.md
+      - Networking Terms: gloss_networking.md
       - Kubernetes Terms: gloss_kuber.md
       - Cloud Native Terms: gloss_cloud-native.md
   - Cheat Sheets:
       - docker cheatsheet: cheatsheet-docker.md
       - kubectl cheatsheet: cheatsheet-kubectl.md
+      - Compound modifiers cheatsheet: cheatsheet_compound-modifiers.md
 
 extra:
     generator: true

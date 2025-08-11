@@ -1,11 +1,19 @@
 # How This Site Was Developed and Deployed  
 
-Well, basically, I had a project back in 2021 conceived as a flirt with the concepts of cloud, CI/CD, Docker, and GitHub Actions, and I chose the subject matter to be Docker and kubectl. For this, August 2025 demo, I 'containerized' the dynamic (development) layer and created topics dedicated to Azure Cloud and Azure DevOps. In addition, tweaked the layout, enhanced content navigation, and had ample opportunity to play with various build/version control/deploy/publish/monitor/etc — features, constructs, mechanisms and bugs. Thanks.
+Back in 2021, while working for a cloud-native device provisioniing company, I had a 'flirt' with MKdocs and GitHub, which I used to start an OSS (Operational Support Systems) glossary. 
+
+For the current, August 2025 demo Website, I decided to 'containerize' the dynamic (development) layer and deploy the project to Azure. In addition and in the meantime: 
+
+- created topics dedicated to the concepts of cloud, DevOps, networking and security  
+- enhanced content navigation  
+- had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs. 
+
+Much of the fun came from pretending to be a team — pulling from the remote repo to my Mac machine in the morning and pushing back in the evening, and then pulling from my Linux machine the next morning, etc. Hope I won't end up with a permanently split personality. Thank you!  
 
 
 ## Architecture Overview  
 
-The site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform and enhanced with Mermaid.js for diagram rendering.
+The site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform, and enhanced with Mermaid.js for diagram rendering.
 
 ### Static Site Layer  
 
