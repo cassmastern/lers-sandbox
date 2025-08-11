@@ -1,38 +1,39 @@
-# How This Site Was Developed and Deployed  
+# How This Site Was Developed and Deployed
 
-Back in 2021, while working for a cloud-native device provisioniing company, I had a 'flirt' with MKdocs and GitHub, which I used to start an OSS (Operational Support Systems) glossary. 
+Back in 2021, while working for a cloud-native device provisioniing company, I had a 'flirt' with MKdocs and GitHub, which I used to start an OSS (Operational Support Systems) glossary.
 
-For the current, August 2025 demo Website, I decided to 'containerize' the dynamic (development) layer and deploy the project to Azure. In addition and in the meantime: 
+For the current, August 2025 demo Website, I decided to 'containerize' the dynamic (development) layer and deploy the project to Azure. In addition and in the meantime:
 
-- created topics dedicated to the concepts of cloud, DevOps, networking and security  
-- enhanced content navigation  
-- had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs. 
+- created topics dedicated to the concepts of cloud, DevOps, networking and security
+- enhanced content navigation
+- had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs.
 
-Much of the fun came from pretending to be a team — pulling from the remote repo to my Mac machine in the morning and pushing back in the evening, and then pulling from my Linux machine the next morning, etc. Hope I won't end up with a permanently split personality. Thank you!  
+Much of the fun came from pretending to be a team — pulling from the remote repo to my Mac machine in the morning and pushing back in the evening, and then pulling from my Linux machine the next morning, etc. Hope I won't end up with a permanently split personality. Thank you!
 
+![](img/screenshot-azure-devops.png)
 
-## Architecture Overview  
+## Architecture Overview
 
 The site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform, and enhanced with Mermaid.js for diagram rendering.
 
-### Static Site Layer  
+### Static Site Layer
 
 - **Framework**: MkDocs with Material theme
 - **Content**: Markdown-based documentation rendered into static HTML/CSS/JS
 - **Build Process**: Dockerized using a reproducible pipeline with `requirements.txt`
 - **Serving Method**: Static assets deployed to Azure CDN or Blob Storage
 
-### Dynamic Layer  
+### Dynamic Layer
 
 - **Development Server**: MkDocs live reload enabled via polling-based file watcher
 - **Environment Variable**: `MKDOCS_WATCHDOG_USE_POLLING=true` set in Dockerfile
 - **Live Preview**: Served via `mkdocs serve` inside Docker container
 - **Plugin Support**: `mkdocs-mermaid2-plugin` installed and configured for diagram rendering
 - **Enhancements and Customizations**: Custom JS/CSS for
-    - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
-     - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
+  - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
+  - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
 
-### Docker Environment 
+### Docker Environment
 
 ```Dockerfile
 ENV PIP_ROOT_USER_ACTION=ignore
@@ -44,14 +45,14 @@ ENV MKDOCS_WATCHDOG_USE_POLLING=true
 - Clean build logs with suppressed pip notices
 - Container exposes port 8000 for local development
 
-### CI/CD Pipeline (Azure DevOps)  
+### CI/CD Pipeline (Azure DevOps)
 
 - **Build stage**: Docker image builds for static site and backend container
 - **Test stage**: Markdown linting, link checks, container health checks
 - **Deployment stage**: Parallel jobs deploy static assets and backend services
 - **Monitoring stage**: Azure Application Insights and container logs for observability
 
-### Deployoment Flow  
+### Deployoment Flow
 
 ```mermaid
 graph TD
@@ -85,13 +86,14 @@ graph TD
     StaticSite -->|serve docs| Browser
     BackendAPI -->|serve dynamic endpoints| Browser
 ```
+
 ## Pros
 
 - Cross-platform reproducibility via Docker
 - Modular architecture: decoupled frontend/backend
 - CI/CD automation and security-first mindset
 
-## Future Enhancements (next phase)  
+## Future Enhancements (next phase)
 
 - **Auth Gate**: Azure AD B2C or custom JWT-based login
 - **Audit Logging**: Azure Monitor or Application Insights
