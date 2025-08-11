@@ -1,17 +1,10 @@
-# Miscellaneous cheatsheets
-This section contains cheatsheets for MKDocs, Docker, and general Linux commands (or references to resources).
+# Docker command cheatsheet  
 
-## MkDocs command cheatsheet
+This page lists common Docker commands.
 
-`command`: [explanation]
-`command`: [explanation]
-`command`: [explanation]
+### Command Syntax and Options 
+All commands below are called as options to the base `docker` command. For more information about a particular command, run  `docker <command> --help`. 
 
-or vice versa ( [explanation]: `command`)
-
-## Docker command cheatsheet
-### Docker management
-All commands below are called as options to the base `docker` command. For more information about a particular command, run  `docker <command> --help`.
 `app*`: 		Docker Application  
 `assemble*`:	Framework-aware builds (Docker Enterprise)  
 `builder`: 		Manage builds  
@@ -51,14 +44,6 @@ All commands below are called as options to the base `docker` command. For more 
  - List the running containers (add `--all` to include stopped containers): `docker container ls`
  - Delete all running and stopped containers: `docker container rm -f $ (docker ps -aq)`
  - Print the last 100 lines of a container's logs: `docker container logs --tail 100 web` 
-
-## Linux command cheatsheet
-
-Lots in Cheat: [https://www.tecmint.com/cheat-command-line-cheat-sheet-for-linux-users/](https://www.tecmint.com/cheat-command-line-cheat-sheet-for-linux-users/)
-
-or vice versa ( [explanation]: `command`)
-<p>
-
 
 
 

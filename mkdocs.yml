@@ -5,18 +5,26 @@ plugins:
   - mermaid2
 nav:
   - Home: index.md
-  - AWS vs GCP vs Azure: aws-gcp-azure.md
-  - Cloud & DevOps Glossary (AWS, GCP, Azure): gloss_cloud_devops_AWS-GCP-Azure.md
-  - A Jakarta EE App on Azure: jakarta-ee-azure.md
+  - About this Site:
+      - How this Site was Developed and Deployed: about.md
+      - "Found an Issue or Problem?": azure-issue-ticket.md
+  - What Awaits Me if Accepted:
+    - AWS vs GCP vs Azure: aws-gcp-azure.md
+    - Cross-Platform Cloud & DevOps Glossary: gloss_cloud_devops_AWS-GCP-Azure.md
+    - A Jakarta EE App on Azure: jakarta-ee-azure.md
   - Some Glossaries:
       - OSS Terms: gloss_oss.md
       - Kubernetes Terms: gloss_kuber.md
       - Cloud Native Terms: gloss_cloud-native.md
-  - Miscellaneous Cheat Sheets:
+  - Cheat Sheets:
+      - docker cheatsheet: cheatsheet-docker.md
       - kubectl cheatsheet: cheatsheet-kubectl.md
-      - Miscellaneous cheatsheets: cheatsheets.md
+
 extra:
     generator: true
+
+markdown_extensions:
+  - tables
 
 extra_javascript:
   - js/alphabet-auto.js

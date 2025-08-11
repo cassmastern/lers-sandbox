@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const foundLetters = {};
 
-  // Insert anchors for each first letter in first column
+  // Mark cells for each first letter in first column
   rows.forEach(row => {
     const firstCell = row.querySelector("td");
     if (!firstCell) return;
@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!/^[A-Z]$/.test(letter)) return;
     if (!foundLetters[letter]) {
       foundLetters[letter] = true;
-      const anchor = document.createElement("a");
-      anchor.id = `letter-${letter}`;
-      row.insertBefore(anchor, row.firstChild);
+      firstCell.id = `letter-${letter}`; // FIX: attach id to cell
     }
   });
 

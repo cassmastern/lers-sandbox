@@ -1,6 +1,6 @@
-# Cloud Architecture Comparisons
+# Architecture Comparisons: AWS, GCP, Azure
 
-Below are simplified, high-level architectures of AWS, GCP, and Azure.
+Below are descriptions of AWS, GCP, and Azure architectures at a reasonably high level (to avoid vertigo).
 
 **Legend for the diagrams** 
 
@@ -12,8 +12,8 @@ Below are simplified, high-level architectures of AWS, GCP, and Azure.
 🟥 Security  
 ⬜ Observability
 
-*Note:* Diagrams are conceptual simplifications meant for
-high-level understanding.
+***Note:*** Diagrams are conceptual simplifications.
+
 ------------------------------------------------------------------------
 
 ## AWS Architecture

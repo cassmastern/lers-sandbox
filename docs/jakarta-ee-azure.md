@@ -13,7 +13,7 @@ In a nutshell, this topic will cover:
 ## Overview
 
 **Goal:**
-You are building a modern enterprise web application in Java EE (Jakarta EE) and deploying it to Microsoft Azure, with an automated CI/CD pipeline in Azure DevOps.
+We're building a modern enterprise web application in Java EE (Jakarta EE) and deploying it to Microsoft Azure, with an automated CI/CD pipeline in Azure DevOps.
 
 **Why this matters:**
 This approach is used in real production systems — from banks to e-commerce — to deliver reliable, secure, and scalable services.
@@ -22,10 +22,10 @@ This approach is used in real production systems — from banks to e-commerce �
 
 ## Key Terms  
 
-- **Java EE / Jakarta EE**: Java technologies for building big business applications including security and APIs  
-- **PaaS (Platform-as-a-Service)**: Cloud service that runs your app without managing servers  
+- **Java EE / Jakarta EE**: Java technologies for building large business applications including security and APIs  
+- **PaaS (Platform-as-a-Service)**: Cloud service that runs our app without managing servers  
 - **AKS (Azure Kubernetes Service)**: Managed service to run apps inside Docker containers  
-- **Lift-and-Shift**: Moving your existing app to the cloud without rewriting it  
+- **Lift-and-Shift**: Moving our existing app to the cloud without rewriting it  
 - **CI/CD (Continuous Integration / Continuous Deployment)**: Automated build, test, and deployment processes triggered by code changes  
 - **Infrastructure as Code (IaC)**: Managing cloud resources using code files instead of manual portal actions  
 - **Managed Identity**: Azure identity for apps to securely access resources without passwords  
@@ -65,14 +65,7 @@ flowchart TD
 
 ## Hosting Options on Azure
 
-| Option | What It Is | Best For | Trade-offs |
-|--------|------------|----------|------------|
-| Azure App Service | Managed web app hosting (Tomcat, JBoss, etc.) | Simple deployment, minimal ops | Less control over OS/runtime |
-| Azure Kubernetes Service (AKS) | Full container orchestration | Microservices, complex apps | More setup/maintenance |
-| Azure Spring Apps | Managed Spring Boot hosting | Spring-heavy projects | Limited if not using Spring |
-| VMs | Full control server hosting | Lift-and-shift of legacy Java EE | Highest maintenance |
-
-**Diagram:**
+Azure provides several hosting options, depending on the type and nature of the service or application.
 
 ```mermaid
 graph LR
@@ -82,6 +75,13 @@ graph LR
   Choice --> Spring["Azure Spring Apps"]
   Choice --> VMs["Virtual Machines (VMs)"]
 ```
+
+| Option | What It Is | Best For | Trade-offs |
+|--------|------------|----------|------------|
+| Azure App Service | Managed web app hosting (Tomcat, JBoss, etc.) | Simple deployment, minimal ops | Less control over OS/runtime |
+| Azure Kubernetes Service (AKS) | Full container orchestration | Microservices, complex apps | More setup/maintenance |
+| Azure Spring Apps | Managed Spring Boot hosting | Spring-heavy projects | Limited if not using Spring |
+| VMs | Full control server hosting | Lift-and-shift of legacy Java EE | Highest maintenance |
 
 ---
 
@@ -192,5 +192,5 @@ graph LR
 
 - Skipping staging — Always test in a staging environment first.
 - Storing secrets in code — Always use Key Vault + Managed Identity.
-- Overengineering too soon — Start with PaaS (App Service) unless you truly need AKS.
+- Overengineering too soon — Start with PaaS (App Service) unless we truly need AKS.
 - Ignoring monitoring — Without Application Insights, issues are harder to detect.

@@ -1,4 +1,4 @@
-# Cloud & DevOps Glossary — AWS, GCP, Azure
+# Cross-Platform Cloud & DevOps Glossary (AWS, GCP, Azure)
 
 > A compact, side-by-side glossary of key cloud components and technologies across **AWS**, **Google Cloud Platform (GCP)**, and **Microsoft Azure**. Emphasis on DevOps-related services and equivalents. Where a component is absent, that is noted. 
 
