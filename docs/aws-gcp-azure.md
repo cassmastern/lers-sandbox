@@ -1,4 +1,4 @@
-# Architecture Comparisons: AWS, GCP, Azure
+# Architectures of AWS, GCP, Azure
 
 Below are descriptions of AWS, GCP, and Azure architectures at a reasonably high level (to avoid vertigo).
 

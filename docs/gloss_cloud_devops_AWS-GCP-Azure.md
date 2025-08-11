@@ -6,10 +6,10 @@
 
 ## How Content is Organized
 
-- This page lists common categories (Compute, Storage, Networking, IAM, DevOps/CI·CD, Containers, Serverless, Databases, Monitoring & Logging, Infrastructure as Code, Security & Secrets, Messaging & Eventing, CDN & Edge, Machine Learning, Cost & Governance).
-- Each category lists the main service(s) of **AWS | GCP | Azure**, with descriptions and notable differences.
+- Information on this page is grouped by common cloud platform categories: **Compute**, **Storage**, **Networking**, **IAM**, **DevOps/CI·CD**, **Containers**, **Serverless**, **Databases**, **Monitoring & Logging**, **Infrastructure as Code**, **Security & Secrets**, **Messaging & Eventing**, **CDN & Edge**, **Machine Learning**, **Cost & Governance**.
+- Each category lists the main components/service(s) of **AWS**, **GCP**, and **Azure**, with descriptions and notable differences.
 
-[could end up being useful as a reference or translation table when moving architectures or writing runbooks]
+(Could end up being useful as a reference or translation table when moving architectures or writing runbooks.)
 
 ---
 

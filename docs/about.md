@@ -1,8 +1,11 @@
 # How This Site Was Developed and Deployed  
 
+Well, basically, I had a project back in 2021 conceived as a flirt with the concepts of cloud, CI/CD, Docker, and GitHub Actions, and I chose the subject matter to be Docker and kubectl. For this, August 2025 demo, I 'containerized' the dynamic (development) layer and created topics dedicated to Azure Cloud and Azure DevOps. In addition, tweaked the layout, enhanced content navigation, and had ample opportunity to play with various build/version control/deploy/publish/monitor/etc — features, constructs, mechanisms and bugs. Thanks.
+
+
 ## Architecture Overview  
 
-This documentation site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. The site is built with MkDocs and enhanced with Mermaid.js for diagram rendering.
+The site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform and enhanced with Mermaid.js for diagram rendering.
 
 ### Static Site Layer  
 
@@ -19,7 +22,7 @@ This documentation site is deployed using a hybrid static-dynamic architecture, 
 - **Plugin Support**: `mkdocs-mermaid2-plugin` installed and configured for diagram rendering
 - **Enhancements and Customizations**: Custom JS/CSS for
     - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
-     - Spotlight JS to enhance diagram overlays/zooming (not working \[Yet])
+     - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
 
 ### Docker Environment 
 

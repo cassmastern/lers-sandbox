@@ -6,6 +6,7 @@ plugins:
 nav:
   - Home: index.md
   - About this Site:
+      - "What's in Here?": whatsinhere.md
       - How this Site was Developed and Deployed: about.md
       - "Found an Issue or Problem?": azure-issue-ticket.md
   - What Awaits Me if Accepted:
