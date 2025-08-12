@@ -26,6 +26,8 @@ nav:
       - docker cheatsheet: cheatsheet-docker.md
       - kubectl cheatsheet: cheatsheet-kubectl.md
       - Compound modifiers cheatsheet: cheatsheet_compound-modifiers.md
+  - Bonus: 
+      - 'IBM-Sanfrancisco — a "Technical Memoir"': ibm-sanfrancisco.md
 
 extra:
     generator: true

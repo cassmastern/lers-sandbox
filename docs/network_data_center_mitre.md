@@ -1,8 +1,16 @@
 # Network Security and Threat Modeling — MITRE ATT&CK
 
-MITRE ATT&CK is a comprehensive framework that catalogs tactics, techniques, and procedures used by cyber adversaries, aiding organizations in understanding and defending against various attack methods.
+## Why It Matters
 
-## Our Hypothetical Data Centre Network, with MITRE ATT&CK Annotations
+MITRE ATT&CK is a globally recognized framework that catalogs real-world adversary behaviors. Mapping ATT&CK techniques to our architecture helps anticipate attacker tactics and improve detection, response, and resilience.
+
+## ATT&CK-Based Threat Modeling
+
+This section applies MITRE ATT&CK techniques to our hypothetical data centre network, highlighting how adversaries might target specific components and how defenders can respond.
+
+### ATT&CK-Annotated Network Diagram
+
+The diagram below maps ATT&CK techniques to each component, helping visualize potential adversary behaviors and attack paths.
 
 ```mermaid
 graph TD
@@ -36,8 +44,9 @@ graph TD
   Dev --> VPN
 ```
 
-## Highlights of ATT&CK Mapping
+### Technique Highlights
 
+This table summarizes key ATT&CK techniques associated with major components in the network, along with brief descriptions of how each technique might be used.
 
 | Component             | ATT&CK Technique                           | Description                                        |
 | ----------------------- | -------------------------------------------- | ---------------------------------------------------- |
@@ -52,10 +61,12 @@ graph TD
 | Log Aggregator        | T1005 – Data from Local System            | Target for log tampering or data theft             |
 | Developer Workstation | T1078 – Valid Accounts                    | Abuse of developer credentials                     |
 
-## Architecture Threat Mapping
 
+### Zone-Based Threat Mapping
 
-### Public & Edge Zones
+The following tables break down ATT&CK tactics and techniques by architectural zone, offering targeted defenses for each component.
+
+#### Public & Edge Zones
 
 
 | Component     | ATT&CK Tactics            | Techniques                                      | Defenses                                 |
@@ -65,7 +76,7 @@ graph TD
 | App Gateway   | Initial Access, Execution | Exploit Public-Facing App (T1190)               | WAF rules, TLS termination               |
 | VPN Gateway   | Lateral Movement          | Valid Accounts (T1078), Remote Services (T1021) | MFA, IP allowlists, session logging      |
 
-### Private App Zone
+#### Private App Zone
 
 
 | Component         | ATT&CK Tactics                  | Techniques                                                                    | Defenses                                           |
@@ -78,7 +89,6 @@ graph TD
 
 ### Observability & CI/CD
 
-
 | Component          | ATT&CK Tactics         | Techniques                                         | Defenses                          |
 | -------------------- | ------------------------ | ---------------------------------------------------- | ----------------------------------- |
 | Metrics Exporter   | Information Disclosure | Automated Collection (T1119)                       | ACLs, metric filtering            |
@@ -86,9 +96,11 @@ graph TD
 | Container Registry | Defense Evasion        | Signed Binary Proxy Execution (T1218)              | Image signing, access controls    |
 | Deployment Job     | Privilege Escalation   | Abuse Elevation Control Mechanism (T1548)          | Role separation, audit trails     |
 
-## Defensive Enhancements to Consider
+## Defensive Enhancements
 
-* **SIEM Enrichment** : Map logs to ATT&CK techniques for faster triage.
-* **Threat Detection Rules** : Use Sigma or MITRE D3FEND to write detection logic.
-* **Red Team Scenarios** : Simulate TTPs like T1078 (Valid Accounts) or T1190 (Exploit Public-Facing App).
-* **Purple Teaming** : Validate defenses by emulating known adversary behavior (e.g. APT29, FIN7).
+To strengthen defenses, consider the following enhancements aligned with ATT&CK-informed detection and response strategies.
+
+* **SIEM Enrichment**: Map logs to ATT&CK techniques for faster triage.
+* **Threat Detection Rules**: Use Sigma or MITRE D3FEND to write detection logic.
+* **Red Team Scenarios**: Simulate TTPs like T1078 (Valid Accounts) or T1190 (Exploit Public-Facing App).
+* **Purple Teaming**: Validate defenses by emulating known adversary behavior (e.g. APT29, FIN7).

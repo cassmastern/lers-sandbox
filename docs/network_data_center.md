@@ -1,6 +1,14 @@
 # A Sample Data Centre Network
 
-Below is a sample data center netwok topology. Hopefully enough representative of the 2025 technology landscape to analyze and learn, especially from a security perspective.
+Below is a sample data centre network topology. Hopefully enough representative of the 2025 technology landscape to analyze and learn, especially from a security perspective.
+
+## Why It Matters
+
+Understanding the layout of a data centre network is essential to identifying potential vulnerabilities and planning effective defenses. This architecture serves as the baseline for threat modeling exercises using STRIDE and MITRE ATT&CK frameworks.
+
+## Network Topology Overview
+
+This diagram outlines a simplified data centre network architecture, segmented into public-facing cloud services, internal developer resources, and observability components. It serves as the foundation for subsequent threat modeling exercises.
 
 ```mermaid
 flowchart TD
@@ -62,6 +70,12 @@ flowchart TD
   %% CI/CD Integration
   Git --> Runner --> Registry --> Deploy --> WA
 ```
+### Key Traffic Paths
+
+- User requests flow through CDN and Web App to backend services
+- CI/CD runner interacts with internal repositories, secrets, and databases
+- Monitoring and logging components collect telemetry across zones
+
 
 ## Public Zone
 

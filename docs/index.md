@@ -1,6 +1,6 @@
 # Well, 'Home' AND 'Welcome'  
 
-Welcome to Ler's Azure-deployed Documentation Site! Its purpose was — as of August 2025 — multifold:
+Welcome to Ler's Azure-deployed Documentation Site! Its purpose is multifold:
  
 - to brush up my knowledge of Amazon, GCP and Azure cloud platforms
 - to concoct a quick technical documentation site for demo purposes

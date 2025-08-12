@@ -10,7 +10,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **AAA** | Authentication, Authorization, and Accounting. A framework for controlling access to network resources, enforcing policies, and auditing usage. |
 | **AAL** | ATM Adaptation Layer. Protocol layer that segments data into fixed-size ATM cells for transmission. |
 | **ABR** | Available Bit Rate. A QoS class in ATM networks for non-time-sensitive traffic that dynamically adjusts bandwidth. |
-| **ACD** | Automatic Call Distribution. System that routes incoming calls to available agents or queues (e.g., in call centers). |
+| **ACD** | Automatic Call Distribution. System that routes incoming calls to available agents or queues (e.g., in call centrs). |
 | **ACE** | ATM Circuit Emulation. Technique to mimic traditional circuit-switched networks over ATM. |
 | **ACELP** | Algebraic Code Excited Linear Prediction. A voice compression algorithm used in mobile networks. |
 | **ACM** | Address Complete Message. SS7 signal indicating the called party's address is fully received. |
@@ -32,7 +32,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **ATIS** | Alliance for Telecommunications Industry Solutions. U.S. standards body for telecom technologies. |
 | **ATM** | Asynchronous Transfer Mode. High-speed networking standard using fixed-size cells (53 bytes). |
 | **AU** | Administrative Unit. SDH/SONET structure for transporting lower-rate signals. |
-| **AUC** | Authentication Center. Database in GSM networks that verifies subscriber identities. |
+| **AUC** | Authentication Centre. Database in GSM networks that verifies subscriber identities. |
 | **AUG** | Administrative Unit Group. SDH/SONET container for multiplexing AUs. |
 | **B links** | Bridge links in SS7 networks, connecting STPs (Signal Transfer Points) within the same region. |
 | **Bandwidth** | The capacity of a communication channel, measured in bits per second (bps). |
@@ -220,7 +220,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **IAM** | Initial Address Message. SS7 signal initiating a call setup (contains dialed number). |
 | **IBS** | Integrated Business System. Enterprise software for telecom operators (e.g., billing, CRM). |
 | **IC** | Integrated Circuit. Microchip containing electronic components (e.g., CPUs, modems). |
-| **IDC** | Internet Data Center. Facility housing servers and network infrastructure. |
+| **IDC** | Internet Data Centre. Facility housing servers and network infrastructure. |
 | **IDU** | Indoor Unit. Customer-side hardware in LMDS/wireless systems. |
 | **IEEE** | Institute of Electrical and Electronics Engineers. Global standards body (e.g., Ethernet, Wi-Fi). |
 | **IETF** | Internet Engineering Task Force. Develops TCP/IP and related standards (e.g., RFCs). |
@@ -311,7 +311,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **MPLS** | Multiprotocol Label Switching. WAN technology for traffic engineering and VPNs. |
 | **MS** | Mobile Station. Mobile phone or cellular device. |
 | **MS** | Multiplex Section. SDH/SONET segment between multiplexers. |
-| **MSC** | Mobile Switching Center. Core switch in GSM/UMTS networks. |
+| **MSC** | Mobile Switching Centre. Core switch in GSM/UMTS networks. |
 | **MSFC** | Multilayer Switch Feature Card. Cisco hardware for routing/switching in Catalyst switches. |
 | **MSO** | Multiple System Operator. Cable TV provider serving multiple regions. |
 | **MSOH** | Multiplex Section Overhead. SDH/SONET bytes for section-level management. |
@@ -344,7 +344,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **NLSR** | Natural Language Speech Recognition. Voice interface for automated systems (e.g., IVR). |
 | **NMS** | Network Management System. Centralized software for monitoring/controlling networks. |
 | **NNI** | Network-to-Network Interface. Standardized interconnect between carrier networks. |
-| **NOC** | Network Operations Center. 24/7 facility for monitoring telecom infrastructure. |
+| **NOC** | Network Operations Centre. 24/7 facility for monitoring telecom infrastructure. |
 | **nrt-VBR** | Non-Real-Time Variable Bit Rate. ATM QoS class for bursty, delay-tolerant traffic (e.g., email). |
 | **NRZ** | Non-Return to Zero. Simple binary encoding scheme (1=high voltage, 0=low). |
 | **NSF** | National Science Foundation. U.S. agency funding internet R&D (e.g., NSFNET). |
@@ -369,7 +369,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **OLA** | Optical Line Amplifier. Boosts signals between DWDM terminals (no add/drop). |
 | **OLTE** | Optical Line Terminating Equipment. DWDM endpoint (transponder/muxponder). |
 | **OMAP** | Operations, Maintenance, and Administration Part. SS7 protocol for network management. |
-| **OMC** | Operations and Maintenance Center. Centralized hub for network surveillance. |
+| **OMC** | Operations and Maintenance Centre. Centralized hub for network surveillance. |
 | **OMS** | Optical Multiplex Section. DWDM segment between optical amplifiers. |
 | **OMSP** | Optical Multiplex Section Protection. DWDM redundancy mechanism (e.g., fiber switching). |
 | **ONU** | Optical Network Unit. FTTH device at customer premises (terminates fiber). |
@@ -456,7 +456,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **SCE** | Service Creation Environment. Tools for designing telecom services (e.g., IVR menus). |
 | **SCP** | Service Control Point. SS7 database node (e.g., for 800-number translation). |
 | **SDCA** | Short Distance Charging Area. Local call zone (no toll charges). |
-| **SDDC** | Software-Defined Data Center. Virtualized infrastructure managed via software (compute/storage/network). |
+| **SDDC** | Software-Defined Data Centre. Virtualized infrastructure managed via software (compute/storage/network). |
 | **SDH** | Synchronous Digital Hierarchy. International standard for optical transport (STM-1, STM-16, etc.). |
 | **SDM** | Space Division Multiplexing. Fiber technology using multiple cores/parallel paths. |
 | **SDN** | Software-Defined Networking. Centralized control of network behavior via programmable interfaces. |
@@ -474,7 +474,7 @@ This glossary defines key concepts used in OSS, including service provisioning, 
 | **SMOF** | Single-Mode Optical Fiber. Fiber optimized for long-haul, single-wavelength transmission. |
 | **SMP** | Service Management Point. IN node for service provisioning. |
 | **SMS** | Short Message Service. Text messaging in mobile networks (160 chars/message). |
-| **SMSC** | Short Message Service Center. Routes/store-and-forwards SMS messages. |
+| **SMSC** | Short Message Service Centre. Routes/store-and-forwards SMS messages. |
 | **SNCP** | Subnetwork Connection Protection. SDH/SONET redundancy for individual paths. |
 | **SNMP** | Simple Network Management Protocol. Standard for monitoring network devices. |
 | **SNR** | Signal-to-Noise Ratio. Measure of signal quality (higher = better). |

@@ -1,8 +1,18 @@
 # Network Security and Threat Modeling — STRIDE  
 
-STRIDE is a threat modeling framework developed by Microsoft that helps identify potential security threats in software systems, focusing on categories like Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privilege.  
+## Why It Matters
 
-## Our Hypothetical Data Center Network, STRIDE-Annotated
+STRIDE is a threat modeling framework that categorizes security risks into six areas: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. Applying STRIDE to a network architecture helps identify and mitigate threats early in the design process.
+
+## STRIDE Threat Modeling
+
+Using the STRIDE framework, we analyze potential threats across the data centre network. Each category highlights risks associated with specific components and suggests mitigations.
+
+## Our Hypothetical Data Centre Network, STRIDE-Annotated
+
+### STRIDE-Annotated Network Diagram
+
+The following diagram revisits our network architecture, annotated with STRIDE threat categories to visualize potential attack surfaces.
 
 ```mermaid
 flowchart TD
@@ -65,7 +75,10 @@ flowchart TD
   Git --> Runner --> Registry --> Deploy --> WA
 ```
 
-## Stride Breakdown
+### Threat Categories and Mitigations
+
+The tables below map STRIDE categories to specific components in the network, describing potential threats and recommended defenses.
+
 
 | Threat                     | Examples in Diagram              | Mitigations                                                   |
 | ---------------------------- | ---------------------------------- | --------------------------------------------------------------- |

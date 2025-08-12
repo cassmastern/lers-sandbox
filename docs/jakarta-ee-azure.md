@@ -1,14 +1,13 @@
 # A Jakarta Enterprise Application on Azure  
 
-This is a compact, hands-on crash course for building and deploying a realistic Java (Jakarta EE / Java EE) enterprise web application on Azure + Azure DevOps.
-
-In a nutshell, this topic will cover:
+This is a compact, helicopter-view look at what's involved in building and deploying an *almost realistic* Java (Jakarta EE / Java EE) enterprise web application on Azure + Azure DevOps:
 
 - architecture and components (what pieces to build and why)
-- recommended Azure services to host them (options and tradeoffs)
+- Azure services to host them (options and tradeoffs)
 - a typical CI/CD pipeline (YAML) for Maven/Gradle → container → deploy
 - security, storage, DB, messaging, monitoring, infra-as-code notes
 
+In other words, technical mockumentation.
 
 ## Overview
 
@@ -47,7 +46,7 @@ This approach is used in real production systems — from banks to e-commerce �
 | Monitoring | Observes app health and performance | Application Insights | Azure Monitor SDK |
 | Infrastructure | Provisioning & configuration | ARM/Bicep/Terraform | IaC tools |
 
-**Diagram:**
+Diagrammatically:
 
 ```mermaid
 flowchart TD

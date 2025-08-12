@@ -26,11 +26,11 @@ This glossary covers foundational computer networking terminology, from IP addre
 | Direct Connect / ExpressRoute | Private, dedicated network connections to cloud platforms such as AWS Direct Connect or Azure ExpressRoute. |
 | DNS (Domain Name System) | System that translates human-readable domain names into IP addresses. Example: `example.com` → `93.184.216.34`. |
 | DoS/DDoS (Denial of Service / Distributed Denial of Service) | Attacks aimed at making a network resource unavailable. |
-| East-West Traffic | Network traffic between servers within the same data center or cloud region. |
+| East-West Traffic | Network traffic between servers within the same data centre or cloud region. |
 | Elastic IP | A static, public IPv4 address provided by cloud providers that can be remapped to different instances. |
 | Encapsulation | The process of wrapping data with protocol information before transmission. |
 | Ethernet | A widely used LAN technology defined by IEEE 802.3 standards. |
-| Fabric Network | A network topology designed for high-speed, scalable data center communication. |
+| Fabric Network | A network topology designed for high-speed, scalable data centre communication. |
 | Firewall | A network security device that monitors and filters incoming and outgoing traffic. |
 | Floating IP | An IP address that can be dynamically moved between devices or VMs for failover or load balancing. |
 | FTP (File Transfer Protocol) | An application protocol for transferring files between computers over a network. |
@@ -61,7 +61,7 @@ This glossary covers foundational computer networking terminology, from IP addre
 | Network Peering | Directly connecting two networks to exchange traffic without going through the public internet. |
 | Network Security Group (NSG) | A set of security rules controlling inbound and outbound traffic to Azure resources. |
 | NIC (Network Interface Card) | Hardware that connects a device to a network. |
-| North-South Traffic | Network traffic between a data center and external networks. |
+| North-South Traffic | Network traffic between a data centre and external networks. |
 | OSI Model (Open Systems Interconnection) | A conceptual model describing how data moves through a network in 7 layers. |
 | Overlay Network (Containers) | A network that connects containers running on different hosts, typically implemented with VXLAN or GRE. |
 | Overhead | Extra data and processing time required by networking protocols. |
@@ -75,14 +75,14 @@ This glossary covers foundational computer networking terminology, from IP addre
 | Routing | The process of selecting network paths for traffic. |
 | RTP (Real-Time Transport Protocol) | A protocol for delivering audio and video over IP networks. |
 | SDN (Software-Defined Networking) | An approach to networking that uses software-based controllers to direct traffic on the network. |
-| SD-WAN (Software-Defined Wide Area Network) | A virtual WAN architecture that uses software to control the connectivity, management, and services between data centers, branches, and cloud. |
+| SD-WAN (Software-Defined Wide Area Network) | A virtual WAN architecture that uses software to control the connectivity, management, and services between data centres, branches, and cloud. |
 | Security Group | A virtual firewall that controls inbound and outbound traffic for resources in cloud environments. |
 | Segment Routing (SR) | A method of source routing where the sender defines the path a packet should take. |
 | Service Mesh | A dedicated infrastructure layer for controlling service-to-service communication in microservices architectures. |
 | Site-to-Site VPN | A VPN that connects two or more networks in different physical locations. |
 | SMTP (Simple Mail Transfer Protocol) | Protocol for sending emails. |
 | SNMP (Simple Network Management Protocol) | Used to manage and monitor network devices. |
-| Spine-Leaf Architecture | A two-tier data center network topology for predictable latency and high bandwidth. |
+| Spine-Leaf Architecture | A two-tier data centre network topology for predictable latency and high bandwidth. |
 | SSH (Secure Shell) | Protocol for secure remote login and command execution. |
 | Subnet | A segmented portion of a network with a specific IP range. |
 | TCP (Transmission Control Protocol) | Reliable, connection-oriented transport layer protocol. |
@@ -97,7 +97,7 @@ This glossary covers foundational computer networking terminology, from IP addre
 | VNet (Virtual Network) | A logically isolated network in cloud environments like Azure, used to securely connect resources. |
 | VPN (Virtual Private Network) | A secure tunnel over the internet that encrypts traffic between endpoints, often used for remote access. |
 | VRRP (Virtual Router Redundancy Protocol) | A protocol that increases availability by assigning a virtual IP to a group of routers. |
-| VXLAN (Virtual Extensible LAN) | A network virtualization technology that enables scalable segmentation across data centers using overlay networks. |
+| VXLAN (Virtual Extensible LAN) | A network virtualization technology that enables scalable segmentation across data centres using overlay networks. |
 | WAN (Wide Area Network) | A network that spans a large geographic area, connecting multiple LANs. |
 | WebSocket | A protocol providing full-duplex communication channels over a single TCP connection, often used for real-time apps. |
 | Wi-Fi | A wireless networking technology that allows devices to connect to a LAN using radio waves. |

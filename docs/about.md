@@ -4,17 +4,17 @@ Back in 2021, while working for a cloud-native device provisioniing company, I h
 
 For the current, August 2025 demo Website, I decided to 'containerize' the dynamic (development) layer and deploy the project to Azure. In addition and in the meantime:
 
-- created topics dedicated to the concepts of cloud, DevOps, networking and security
+- created topics dedicated to the concepts of cloud, DevOps, networking and security, not forgetting to add a Java-centric "technical memoir" as another writing sample
 - enhanced content navigation
 - had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs.
 
-Much of the fun came from pretending to be a team — pulling from the remote repo to my Mac machine in the morning and pushing back in the evening, and then pulling from my Linux machine the next morning, etc. Hope I won't end up with a permanently split personality. Thank you!
+Much of the fun came from pretending to be a team — pulling from the remote repo to my Mac in the morning, then pushing back in the evening... followed by pulling from my Linux machine the next morning and pushing again to the remote. I just hope I don’t end up with a permanently split personality.
 
 ![](img/screenshot-azure-devops.png)
 
 ## Architecture Overview
 
-The site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform, and enhanced with Mermaid.js for diagram rendering.
+This site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform, and enhanced with Mermaid.js for diagram rendering.
 
 ### Static Site Layer
 
@@ -41,7 +41,7 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 ENV MKDOCS_WATCHDOG_USE_POLLING=true
 ```
 
-- All dependencies installed via requirements.txt
+- All dependencies installed via `requirements.txt`
 - Clean build logs with suppressed pip notices
 - Container exposes port 8000 for local development
 

@@ -171,7 +171,7 @@ graph TD
     subgraph SecurityLayer["Security"]
         IAM[GCP IAM]:::sec
         KMS[Cloud KMS]:::sec
-        SCC[Security Command Center]:::sec
+        SCC[Security Command Centre]:::sec
     end
     
     subgraph ObservabilityLayer["Observability"]
@@ -270,14 +270,14 @@ graph TD
     subgraph Observability
         Monitor[Azure Monitor]:::obs
         LogAnalytics[Log Analytics Workspace]:::obs
-        SecurityCenter[Security Center]:::obs
+        SecurityCentre[Security Centre]:::obs
     end
 
     AzureSQL --> Monitor
     CosmosDB --> Monitor
     Blob --> Monitor
     AAD --> Defender
-    Defender --> SecurityCenter
+    Defender --> SecurityCentre
 
     %% STYLES
     classDef global fill:#eaf5ff,stroke:#3a87ad;
