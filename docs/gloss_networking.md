@@ -1,6 +1,6 @@
 # Glossary of Networking Terms
 
-This glossary covers foundational computer networking terminology, from IP addressing and routing to transport protocols and topologies. Several terms here underpin OSS functionality, especially in service delivery and infrastructure monitoring.
+This glossary covers computer networking terminology, from IP addressing and routing to transport protocols and topologies. Several terms here underpin OSS functionality, especially in service delivery and infrastructure monitoring.
 
 | **Term** | **Explanation** |
 |---------|------------------|

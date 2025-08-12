@@ -1,12 +1,14 @@
-# IBM SanFrancisco — Large-Grain Java Business Objects
+# IBM SanFrancisco — A Technical Memoir
 
-Back in 2001, while working in the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate.
+First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product.
 
-By the time, I had been part of an e-commerce development team for a brief period of time, developed some docs and tutorials, taken my part in porting software from C++ to Java, read some Ivor Horton, and had managed to start thinking I knew all there was to know about what and how to write, haha. Well, I was wrong. Why - is another story, but now, here, this is an attempt to reach deep into what's behind that insignificant blurb on my résumé and make sense of what SanFrancisco *really* was, where it had come from, and where it ended up going. A two-in-one writing sample and a technical memoir.
+Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate.
+
+By the time, I had been part of an e-commerce development team for a brief period of time, developed some docs and tutorials, taken my part in porting software from C++ to Java, read some Ivor Horton, and had managed to start thinking I knew all there was to know about what and how to write, haha. Well, I was wrong. Why — is another story, but now, here, this is an attempt to reach deep into what's behind that insignificant blurb on my résumé and make sense of what SanFrancisco *really* was, where it had come from, and where it ended up going. A two-in-one writing sample and a technical memoir.
 
 ## Introduction
 
-SanFrancisco was an IBM-led product and project, a cross-platform Java application framework that provided reusable, "large-grain business objects” (business components). IBM developed and shipped SanFrancisco in the late-1990s, and the technology was later folded into IBM’s WebSphere/Business Components efforts around 2001.
+SanFrancisco was an IBM-led product and project, a cross-platform Java application framework that provided reusable, "large-grain business objects” (business components). IBM developed and shipped SanFrancisco in the late-1990s, and the technology was later incorporated into IBM’s WebSphere/Business Components efforts.
 
 SanFrancisco focused on *“large-grain”* components (coarse business objects/frameworks) rather than tiny beans — it tied into CORBA/IIOP, albeit loosely, and IBM tooling (VisualAge) and was positioned as an alternative or complement to EJB-style approaches of the time.
 
@@ -89,7 +91,7 @@ The framework uses access keys / specification keys / criteria objects* and `Ite
 
 ### Persistence and schema mapping
 
-SanFrancisco provides an object-to-relational mapping layer described in a Redbook. A developer can either manually create mapping metadata or rely on tools to generate mapping from existing schemas. The persistence layer supports delegating complex queries to the DB and mapping result sets back into business objects; it also supports different persistence strategies (local vs. distributed, caching) (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence)).
+SanFrancisco provides an object-to-relational mapping layer. A developer can either manually create mapping metadata or rely on tools to generate mapping from existing schemas. The persistence layer supports delegating complex queries to the DB and mapping result sets back into business objects; it also supports different persistence strategies (local vs. distributed, caching) (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence)).
 
 ### Runtime services
 
@@ -287,10 +289,13 @@ stateDiagram-v2
     Completed --> [*]
     Rejected --> [*]
 ```
-----
+
+---
 
 ## A Rather Long Coda
-### Tradeoffs & why SanFrancisco didn’t become the one-size-fits-all winner  
+
+### Tradeoffs & why SanFrancisco didn’t become the one-size-fits-all winner
+
 - Complexity and heavy weight: the framework and runtime services were large and required buy-in and operational expertise; mapping to messy legacy schemas could still be work-intensive.
 - Standards and market competition: EJB and later J2EE, plus CORBA/EJB alliances, plus vendor frameworks, split attention. SanFrancisco was IBM-centric and not a full CORBA ORB; many shops preferred standardized stacks.
 - Performance and distribution tradeoffs: coarse grain reduces chattiness but increases the cost of a single call; caching and careful design were required to meet SLAs. IBM documentation contains performance guidance and warnings.
@@ -365,6 +370,9 @@ EJBs and coarse-grained Java objects were designed for monolithic, on-premise Ja
 
 ## Sources
 
-- IBM press releases and dusty Redbooks
-- The usual suspects — ChatGPT, Claude, CoPilot, et al — with their bottomless pools of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany
-- My résumé 😸
+- IBM press releases and archived Redbooks (~35%)
+- The usual suspect — GenAI — with its bottomless pool of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany  (~40%)
+- My long-term memory (~20%)
+
+---
+![IBM Toronto Lab](img/ibm-toronto-olab.png)

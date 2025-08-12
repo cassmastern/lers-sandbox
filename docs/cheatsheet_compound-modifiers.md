@@ -1,6 +1,10 @@
-## Compound Modifiers: Hyphenation Guide
+# Compound Modifiers Cheat Sheet
 
-Use hyphenation for compound modifiers **before nouns** to ensure clarity and consistency. Avoid hyphenation when the phrase follows the noun.
+"Compound modifier" will be the only term from linguistics and natural language syntax in this topic. I'm including this as a pre-emptive exhibit of a weakness and yes, a cheat sheet. In plain English. 
+
+---
+## Rule  
+>Use hyphenation for compound modifiers **before nouns** to ensure clarity and consistency. Avoid hyphenation when the phrase follows the noun.
 
 ### Hyphenate Before the Noun
 | Compound Modifier        | Example Usage                         |

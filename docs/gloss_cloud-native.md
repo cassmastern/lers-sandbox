@@ -1,4 +1,4 @@
-# Cloud native terms
+# Glossary of Cloud-Native Terms
 
 Below is a list of terms foundational to cloud-native ecosystems.
 

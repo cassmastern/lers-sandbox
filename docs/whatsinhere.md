@@ -1,19 +1,17 @@
 # What's in Here?
 
-This site contains writing samples that I aimed to design so that they remain relevant and useful in my future endeavours. These include:
+This site contains writing samples designed to remain relevant and useful for my future endeavors. These include:
 
-- a report on how this site was developed and deployed
-- cross-platform architecture descriptions of the three cloud giants, Amazon, Google, and Microsoft
-- a comparative glossary of cloud/DevOps terms across the corresponding three cloud platforms, AWS, GCP, and MS Azure
-- a system description of a hypthetical Jakarta enterprise app on Azure
-- a series of topics on contemporary networking and security
-- other glossaries and cheatsheets, such as those on OSS (Operational Support Systems) and computer networking
-- perhaps a non-traditional résumé with some references (under consideration)
-- a final piece of writing sample, a "technical memoir" on a 'coarse-grain Java business objects' project from the pre-cloud era
+* a report on how this site was developed and deployed
+* cross-platform architecture descriptions of the three cloud giants: Amazon, Google, and Microsoft
+* a comparative glossary of cloud/DevOps terms across AWS, GCP, and Azure
+* a system description of a hypothetical Jakarta enterprise app on Azure
+* a series of topics on contemporary networking and security
+* additional glossaries and cheat sheets, such as those on OSS (Operational Support Systems) and computer networking
+* a final writing sample: a “technical memoir” about a coarse-grain Java business objects project from the pre-cloud era
 
-No (or very little) late-night easy reading.
+No (or very little) late-night light reading here.
 
-PS: And yes, I was using em-dashes long before AI hackneyed them to death.
-
+PS: And yes, by the way, I was using em-dashes long before AI hackneyed them to death.
 
 ![Illustration - Ler typing away developing this site](img/ler-typing-away.png)

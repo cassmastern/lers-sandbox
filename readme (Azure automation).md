@@ -1,4 +1,4 @@
-# ⚙️ Azure DevOps Automation Cheatsheet for MkDocs
+# ⚙️ Azure DevOps Automation Cheat Sheet for MkDocs
 
 Automating the MkDocs site build and deployment using Azure Pipelines.
 

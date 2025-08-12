@@ -1,4 +1,4 @@
-# Kubectl Cheat Sheet
+# Kubectl Command Cheat Sheet
 This page lists common `kubectl` commands.
 
 ## Basic Commands

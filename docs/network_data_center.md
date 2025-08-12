@@ -12,49 +12,49 @@ This diagram outlines a simplified data centre network architecture, segmented i
 
 ```mermaid
 flowchart TD
-  %% Public Zone — S, R
-  subgraph Public_Zone["Public Zone (Spoofing, Repudiation)"]
+  %% Public Zone
+  subgraph Public_Zone["Public Zone"]
     A[User]
     B[Browser]
     C[DNS Resolver]
   end
 
-  %% Edge Zone — S, T, I, D
-  subgraph Edge_Zone["Network Edge Zone (Spoofing, Tampering, Info Disclosure, Denial of Service)"]
+  %% Edge Zone
+  subgraph Edge_Zone["Network Edge Zone"]
     D[HTTPS Request]
-    E[Firewall\nIngress ACLs]
-    F[Reverse Proxy - Nginx\nHeader Sanitization]
-    G[App Gateway\nTLS Termination]
-    LB[Load Balancer L7\nRate Limiting]
-    VPN[VPN Gateway\nPrivileged Access]
+    E[Firewall<br/>Ingress ACLs]
+    F[Reverse Proxy - Nginx<br/>Header Sanitization]
+    G[App Gateway<br/>TLS Termination]
+    LB[Load Balancer L7<br/>Rate Limiting]
+    VPN[VPN Gateway<br/>Privileged Access]
   end
 
-  %% Private Zone — R, I, E
-  subgraph Private_Zone["Private App Zone (Repudiation, Info Disclosure, Elevation of Privilege)"]
-    WA[Web App\nRBAC + Input Validation]
-    DB[Primary Database\nEncrypted at Rest]
-    Cache[Redis Cache\nTTL + ACLs]
-    Auth[Auth Service\nOAuth2 + JWT]
-    Audit[Audit Logger\nImmutable Store]
-    Replicas[Read Replicas\nRead-Only]
-    IdP[Identity Provider\nFederated Trust]
-    SIEM[SIEM Integration\nSecurity Alerts]
+  %% Private Zone
+  subgraph Private_Zone["Private App Zone"]
+    WA[Web App<br/>RBAC + Input Validation]
+    DB[Primary Database<br/>Encrypted at Rest]
+    Cache[Redis Cache<br/>TTL + ACLs]
+    Auth[Auth Service<br/>OAuth2 + JWT]
+    Audit[Audit Logger<br/>Immutable Store]
+    Replicas[Read Replicas<br/>Read-Only]
+    IdP[Identity Provider<br/>Federated Trust]
+    SIEM[SIEM Integration<br/>Security Alerts]
   end
 
-  %% Observability — I, R
-  subgraph Observability["Monitoring and Tracing (Info Disclosure, Repudiation)"]
+  %% Observability
+  subgraph Observability["Monitoring and Tracing"]
     Metrics[Metrics Exporter]
     Traces[Tracing Agent]
-    Prometheus[Prometheus\nAccess Controls]
-    Jaeger[Jaeger\nTrace Retention]
+    Prometheus[Prometheus<br/>Access Controls]
+    Jaeger[Jaeger<br/>Trace Retention]
   end
 
-  %% CI/CD — T, E
-  subgraph CI_CD["CI/CD Pipeline (Tampering, Elevation of Privilege)"]
-    Git[Git Repository\nBranch Protections]
-    Runner[Build Agent\nSandboxed]
-    Registry[Container Registry\nSigned Images]
-    Deploy[Deployment Job\nRole Separation]
+  %% CI/CD
+  subgraph CI_CD["CI/CD Pipeline"]
+    Git[Git Repository<br/>Branch Protections]
+    Runner[Build Agent<br/>Sandboxed]
+    Registry[Container Registry<br/>Signed Images]
+    Deploy[Deployment Job<br/>Role Separation]
   end
 
   %% Traffic Flow

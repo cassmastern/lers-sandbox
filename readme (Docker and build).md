@@ -1,4 +1,4 @@
-# Docker Cheatsheet for MkDocs Projects
+# Docker Cheat Sheet for MkDocs Projects
 
 This guide covers essential Docker commands for building, troubleshooting, and serving the MkDocs site.
 
