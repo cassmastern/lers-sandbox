@@ -1,5 +1,6 @@
-site_name: "Ler's Azure-deployed Demo Site"
+site_name: "Ler's Demo Website"
 site_url: https://cassmastern.github.io/HansenMk/
+docs_dir: docs
 theme: material
 plugins:
   - search

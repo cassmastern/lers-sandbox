@@ -12,14 +12,14 @@ Much of the fun came from pretending to be a team — pulling from the remote re
 
 ## Architecture Overview
 
-This site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via Azure. It is built with MkDocs, a Python-based static site generator/platform, and enhanced with Mermaid.js for diagram rendering.
+This site is deployed using a hybrid static-dynamic architecture, containerized with Docker and served via GitHub. It is built with MkDocs, a Python-based static site generator/platform, and enhanced with Mermaid.js for diagram rendering.
 
 ### Static Site Layer
 
 - **Framework**: MkDocs with Material theme
 - **Content**: Markdown-based documentation rendered into static HTML/CSS/JS
 - **Build Process**: Dockerized using a reproducible pipeline with `requirements.txt`
-- **Serving Method**: Static assets deployed to Azure CDN or Blob Storage
+- **Serving Method**: Static assets deployed to GitHub Pages
 
 ### Dynamic Layer
 
@@ -28,10 +28,11 @@ This site is deployed using a hybrid static-dynamic architecture, containerized 
 - **Live Preview**: Served via `mkdocs serve` inside Docker container
 - **Plugin Support**: `mkdocs-mermaid2-plugin` installed and configured for diagram rendering
 - **Enhancements and Customizations**: Custom JS/CSS for
-    - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
-    - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
+  - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
+  - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
 
 #### Tools Used
+
 - **macOS**: iterm2, Docker, VS Code, BBedit, Safari, Firefox
 - **Linux**: xfce4-terminal, Docker, VSCodium, xed, Chrome, Firefox
 
@@ -47,46 +48,56 @@ ENV MKDOCS_WATCHDOG_USE_POLLING=true
 - Clean build logs with suppressed pip notices
 - Container exposes port 8000 for local development
 
-### CI/CD Pipeline (Azure DevOps)
+### CI/CD Pipeline
+
+### CI/CD Pipeline (Platform-Neutral)
+
+* **Build Stage**
+  * Docker image builds for MkDocs static site
+  * Backend container image built with tagged versioning
+* **Test Stage**
+  * Markdown linting (`markdownlint`, `mdl`)
+  * Link integrity checks (`lychee`, `markdown-link-check`)
+  * Container health probes (e.g., `/healthz`, readiness checks)
+* **Deployment Stage**
+  * Parallel jobs deploy:
+    * Static assets to public hosting (e.g., GitHub Pages, Netlify)
+    * Backend container to hosting service or server
+* **Monitoring Stage**
+  * Container logs and health endpoints for observability
+  * Optional integration with external monitoring tools (e.g., Prometheus, Grafana
 
 - **Build stage**: Docker image builds for static site and backend container
 - **Test stage**: Markdown linting, link checks, container health checks
 - **Deployment stage**: Parallel jobs deploy static assets and backend services
 - **Monitoring stage**: Azure Application Insights and container logs for observability
 
-### Deployoment Flow
+### Deployment Flow
 
 ```mermaid
 graph TD
-    subgraph DevMachine [Developer Machine]
-        MkDocs[MkDocs + Docker]
+    subgraph DevMachine ["Developer Machine"]
+        MkDocs["MkDocs + Docker"]
     end
-
-    GitHub[GitHub Repository]
-
-    subgraph AzureDevOps [Azure DevOps]
-        CI[CI Pipeline]
-        Jobs[Parallel Jobs]
+    
+    GitHub["GitHub Repository"]
+    
+    subgraph GitHubActions ["GitHub Actions"]
+        CI["CI Pipeline"]
+        Jobs["Parallel Jobs"]
     end
-
-    subgraph Azure [Azure Cloud]
-        subgraph StaticHosting [Static Hosting]
-            StaticSite[Static Site]
-        end
-        subgraph AppService [App Service]
-            BackendAPI[Backend API]
-        end
+    
+    subgraph GitHubPages ["GitHub Static Hosting"]
+        StaticSite["Static Site"]
     end
-
-    Browser[User Browser]
-
-    MkDocs -->|commit & push| GitHub
-    GitHub -->|triggers build| CI
-    CI -->|runs pipeline| Jobs
-    Jobs -->|deploy static assets| StaticSite
-    Jobs -->|deploy backend container| BackendAPI
-    StaticSite -->|serve docs| Browser
-    BackendAPI -->|serve dynamic endpoints| Browser
+    
+    Browser["User Browser"]
+    
+    MkDocs -->|"commit & push"| GitHub
+    GitHub -->|"triggers build"| CI
+    CI -->|"runs pipeline"| Jobs
+    Jobs -->|"deploy static assets"| StaticSite
+    StaticSite -->|"serve docs"| Browser
 ```
 
 ## Pros
