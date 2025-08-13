@@ -40,7 +40,7 @@ jobs:
           docker run --rm -v ${{ github.workspace }}:/docs my-mkdocs-project:latest mkdocs build
           
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./site
 
