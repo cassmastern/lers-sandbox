@@ -1,8 +1,8 @@
-# IBM SanFrancisco — A Technical Memoir
+# IBM SanFrancisco — a Technical Memoir
 
-First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product.
+First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product. Behind this straightforward name lies a story of early innovation in coarse-grained Java business components — a glimpse into the architectural challenges and creative solutions of a pioneering era.
 
-Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate.
+Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate; had to turn scribbles into Redbook material.
 
 By the time, I had been part of an e-commerce development team for a brief period of time, developed some docs and tutorials, taken my part in porting software from C++ to Java, read some Ivor Horton, and had managed to start thinking I knew all there was to know about what and how to write, haha. Well, I was wrong. Why — is another story, but now, here, this is an attempt to reach deep into what's behind that insignificant blurb on my résumé and make sense of what SanFrancisco *really* was, where it had come from, and where it ended up going. A two-in-one writing sample and a technical memoir.
 

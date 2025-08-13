@@ -1,12 +1,10 @@
 # How This Site Was Developed and Deployed
 
-Back in 2021, while working for a cloud-native device provisioniing company, I had a 'flirt' with MKdocs and GitHub, which I used to start an OSS (Operational Support Systems) glossary.
+Back in 2021, while working for a cloud-native device provisioning company, I had a 'flirt' with MKdocs and GitHub, which I used to start an OSS (Operational Support Systems) glossary. And shelved it.
 
-For the current, August 2025 demo Website, I decided to 'containerize' the dynamic (development) layer and deploy the project to Azure. In addition and in the meantime:
+In August 2025, when I decided to submit this profile for consideration by — you-know-who, I unearthed what I had, created a number of new topics (see [Whats in Here?](whatsinhere.md)), 'containerized' the dynamic (development) layer and deployed the project to Azure.
 
-- created topics dedicated to the concepts of cloud, DevOps, networking and security, not forgetting to add a Java-centric "technical memoir" as another writing sample
-- enhanced content navigation
-- had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs.
+I had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs. So, thank you, irrespective of the outcome of the 'demo'.
 
 Much of the fun came from pretending to be a team — pulling from the remote repo to my Mac in the morning, then pushing back in the evening... followed by pulling from my Linux machine the next morning and pushing again to the remote. I just hope I don’t end up with a permanently split personality.
 
@@ -30,8 +28,12 @@ This site is deployed using a hybrid static-dynamic architecture, containerized 
 - **Live Preview**: Served via `mkdocs serve` inside Docker container
 - **Plugin Support**: `mkdocs-mermaid2-plugin` installed and configured for diagram rendering
 - **Enhancements and Customizations**: Custom JS/CSS for
-  - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
-  - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
+    - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
+    - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
+
+#### Tools Used
+- **macOS**: iterm2, Docker, VS Code, BBedit, Safari, Firefox
+- **Linux**: xfce4-terminal, Docker, VSCodium, xed, Chrome, Firefox
 
 ### Docker Environment
 

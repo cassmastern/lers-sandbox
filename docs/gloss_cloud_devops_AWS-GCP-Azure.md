@@ -72,7 +72,6 @@ Below is a compact, side-by-side glossary of key cloud components and technologi
 - **Azure:** *Azure Container Apps* / *App Service*.
 
 ---
-
 ## Storage & Files
 
 ### Object Storage
@@ -343,7 +342,6 @@ All three clouds support blue/green and canary deployments via their LB + deploy
   - **Azure:** *Azure Arc* — manage on-prem & multi-cloud resources via Azure control plane; *Azure Stack* (on-prem hardware).
 
 ---
-
 ## Comparative Notes & Observations (DevOps-focused)
 
 - **CI/CD & DevOps tool parity:** All three clouds offer pipeline/orchestration, build, and deployment services. Azure DevOps and GitHub Actions are particularly feature-rich for pipelines; GCP's Cloud Build and Cloud Deploy are improving quickly; AWS Code* tools are feature-complete but often seen as more tightly coupled to AWS.
@@ -384,4 +382,4 @@ All three clouds support blue/green and canary deployments via their LB + deploy
 
 ---
 
-[expandable]
+\[expandable]
