@@ -225,17 +225,51 @@ graph TD
 
 ## Typical Development-to-Deployment Steps
 
+Here is the typical CI/CD flow used in most enterprise software shops today. While nothing in this pipeline is specific to Jakarta EE, it represents the standard approach for delivering reliably and at scale.
+
 ```mermaid
-graph LR
-  A["Code"] --> B["Commit & Push"]
-  B --> C["CI Pipeline: Build, Test, Scan"]
-  C --> D["Create Artifact: WAR/JAR"]
-  D --> E["Push Image to ACR"]
-  E --> F["Deploy to Staging"]
-  F --> G["User Acceptance Testing"]
-  G --> H["Approval"]
-  H --> I["Deploy to Production"]
-  I --> J["Monitoring & Feedback"]
+graph TD
+    subgraph Development ["Development Phase"]
+        A["Code"]
+        B["Commit & Push"]
+    end
+    
+    subgraph CI ["Continuous Integration"]
+        C["CI Pipeline:<br/>Build, Test, Scan"]
+        D["Create Artifact:<br/>WAR/JAR"]
+        E["Push Image to ACR"]
+    end
+    
+    subgraph Staging ["Staging & Testing"]
+        F["Deploy to Staging"]
+        G["User Acceptance<br/>Testing"]
+        H["Approval"]
+    end
+    
+    subgraph CD ["Continuous Deployment"]
+        I["Deploy to<br/>Production"]
+        J["Monitoring &<br/>Feedback"]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    
+    classDef devStyle fill:#fff3cd,stroke:#f0ad4e,stroke-width:2px,color:#856404
+    classDef ciStyle fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724
+    classDef stagingStyle fill:#f8d7da,stroke:#dc3545,stroke-width:2px,color:#721c24
+    classDef cdStyle fill:#cce5ff,stroke:#007bff,stroke-width:2px,color:#004085
+    
+    class Development devStyle
+    class CI ciStyle
+    class Staging stagingStyle
+    class CD cdStyle
 ```
 
 ---
