@@ -3,7 +3,7 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your default branch if different
+      - main
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -12,7 +12,8 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# However, do NOT cancel in-progress runs (production deployments need to complete).
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -33,7 +34,7 @@ jobs:
           context: .
           push: false
           tags: my-mkdocs-project:latest
-          load: true  # This ensures the image is available for the next step
+          load: true  # ensure image is available for next step
           
       - name: Build MkDocs
         run: |
