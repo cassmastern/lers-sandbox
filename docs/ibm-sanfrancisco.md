@@ -308,61 +308,62 @@ Contemporary cloud computing mechanisms and architectural patterns have made old
 
 #### Microservices & Containerization (Performance & Reusability)
 
-* **Replaces**: EJBs and coarse-grained components with fine-grained, independently deployable services.
-* **Technologies**:
-  * Kubernetes & Docker: Enable lightweight, scalable deployments (vs. heavyweight EJB containers).
-  * Spring Boot / Quarkus / Micronaut: Modern frameworks that eliminate EJB’s boilerplate while offering better startup times and memory efficiency.
-* **Advantages**:
-  * Faster scaling (horizontal, vs. EJB’s vertical scaling).
-  * Better fault isolation (a failing microservice doesn’t crash the whole app).
+- **Replaces** EJBs and coarse-grained components with fine-grained, independently deployable services.
+- **Technologies**:
+  - **Kubernetes** and **Docker** enable lightweight, scalable deployments (vs. heavyweight EJB containers).
+  - Modern frameworks, such as **Spring Boot**, **Quarkus**, and **Micronaut** eliminate EJB’s boilerplate while offering better startup times and memory efficiency.
+
+**Advantages**:
+  - Faster scaling (horizontal, vs. EJB’s vertical scaling).
+  - Better fault isolation (a failing microservice doesn’t crash the whole app).
 
 #### Serverless Computing (Performance & Cost Efficiency)
 
-* **Replaces**: EJB’s long-lived, stateful session beans with ephemeral, stateless functions.
-* **Technologies**:
-  * **AWS Lambda, Azure Functions, Google Cloud Functions**: Execute code on-demand without managing servers.
-* **Advantages**:
-  * No need for application server overhead (EJBs require a full Java EE container).
-  * Pay-per-use cost model (vs. always-on EJB servers).
+- **Replaces** EJB’s long-lived, stateful session beans with ephemeral, stateless functions.
+- **Technologies**:
+  * **AWS Lambda, Azure Functions, Google Cloud Functions** execute code on-demand without managing servers.
+- **Advantages**:
+  - No need for application server overhead (EJBs require a full Java EE container).
+  - Pay-per-use cost model (vs. always-on EJB servers).
 
 #### Cloud-Native Databases & Caching (Performance)
 
-* **Replaces**: EJB’s entity beans (CMP/BMP) with modern persistence layers.
-* **Technologies**:
-  * **NoSQL (MongoDB, Cassandra, DynamoDB)**: Scale better than EJB’s JPA/Hibernate for distributed systems.
-  * **Redis / Elasticache**: Low-latency caching (better than EJB’s second-level cache).
-* **Advantages**:
-  * Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS).
-  * Faster read/write performance in distributed environments.
+- **Replaces** EJB’s entity beans (CMP/BMP) with modern persistence layers.
+- **Technologies**:
+  - **NoSQL (MongoDB, Cassandra, DynamoDB)** scale better than EJB’s JPA/Hibernate for distributed systems.
+  - **Redis and Elasticache** offer low-latency caching (better than EJB’s second-level cache).
+- **Advantages**:
+  - Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS).
+  - Faster read/write performance in distributed environments.
 
 #### API-First & RESTful Services (Reusability & Interoperability)
 
-* **Replaces**: EJB’s RMI-based remote interfaces with lightweight APIs.
-* **Technologies**:
-  * **REST (JAX-RS, Spring WebFlux)**, **GraphQL**, **gRPC**: More flexible than EJB’s CORBA-style remoting.
-* **Advantages**:
-  * Language-agnostic APIs (vs. EJB’s Java-only remoting).
-  * Better suited for cloud-native, multi-cloud, and hybrid deployments.
+- **Replaces** EJB’s RMI-based remote interfaces with lightweight APIs.
+- **Technologies**:
+  - **REST (JAX-RS, Spring WebFlux)**, **GraphQL**, and **gRPC** are more flexible than EJB’s CORBA-style remoting.
+- **Advantages**:
+  - Language-agnostic APIs (vs. EJB’s Java-only remoting).
+  - Better suited for cloud-native, multi-cloud, and hybrid deployments.
 
-#### Zero-Trust & Cloud-Native Security (Security)
+#### Zero-Trust and Cloud-Native Security (Security)
 
-* **Replaces**: EJB’s JAAS and declarative security with modern cloud security models.
-* **Technologies**:
-  * **OAuth2/OpenID Connect (Keycloak, Auth0)**: Better than EJB’s role-based security.
-  * **Service Meshes (Istio, Linkerd)**: Provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
-* **Advantages**:
-  * Dynamic, policy-based security (vs. static EJB deployment descriptors).
-  * Better support for distributed identity management.
+- **Replaces** EJB’s JAAS and declarative security with modern cloud security models.
+- **Technologies**:
+  - **OAuth2/OpenID Connect (Keycloak, Auth0)** are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces.
+  - **Service Meshes (Istio, Linkerd)** Provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
+- **Advantages**:
+  - Dynamic, policy-based security (vs. static EJB deployment descriptors).
+  - Better support for distributed identity management.
 
-#### Event-Driven & Reactive Architectures (Performance & Scalability)
+#### Event-Driven and Reactive Architectures (Performance and Scalability)
 
-* **Replaces**: EJB’s synchronous, blocking model with async processing.
-* **Technologies**:
-  * **Kafka, RabbitMQ, AWS EventBridge**: Decouple components better than EJB’s JMS.
-  * **Reactive Frameworks (Spring WebFlux, Vert.x)**: Non-blocking I/O outperforms EJB’s thread-per-request model.
-* **Advantages**:
-  * Handles high concurrency better (EJBs struggle under heavy load).
-  * More resilient to failures (reactive systems embrace chaos engineering).
+- **Replace** EJB’s synchronous, blocking model with async processing.
+- **Technologies**:
+  - **Kafka, RabbitMQ, AWS EventBridge** decouple components better than EJB’s JMS.
+  - Non-blocking I/O of **Reactive Frameworks (Spring WebFlux, Vert.x)** outperforms EJB’s thread-per-request model.
+- **Advantages**:
+  - Handles high concurrency better (EJBs struggle under heavy load).
+  - More resilient to failures (reactive systems embrace chaos engineering).
 
 #### Conclusion
 
@@ -375,4 +376,5 @@ EJBs and coarse-grained Java objects were designed for monolithic, on-premise Ja
 - My long-term memory (~20%)
 
 ---
+
 ![IBM Toronto Lab](img/ibm-toronto-olab.png)

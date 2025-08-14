@@ -2,7 +2,7 @@
 
 Back in 2021, while working for a cloud-native device provisioning company, I had a 'flirt' with MKdocs and GitHub, which I used to start an OSS (Operational Support Systems) glossary. And shelved it.
 
-In August 2025, when I decided to submit this profile for consideration by — you-know-who, I unearthed what I had, created a number of new topics (see [Whats in Here?](whatsinhere.md)), 'containerized' the dynamic (development) layer and deployed the project to Azure.
+In August 2025, when I decided to submit this profile for consideration by — you-know-who, I unearthed what I had, created a number of new topics (see [Whats in Here?](whatsinhere.md)), 'containerized' the dynamic (development) layer and deployed the project (site) via GitHub Pages.
 
 I had ample opportunity to play and familiarize with various features, constructs, mechanisms, processes and bugs. So, thank you, irrespective of the outcome of the 'demo'.
 
@@ -103,7 +103,7 @@ graph TD
 
 ## Future Enhancements (next phase)
 
-- **Move to Azure DevOps**: As a learning exercise
+- **Move to Azure DevOps** as a learning exercise
 - **Auth Gate**: Azure AD B2C or custom JWT-based login
 - **Audit Logging**: Azure Monitor or Application Insights
 - **Secrets Management**: Azure Key Vault

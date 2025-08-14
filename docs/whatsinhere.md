@@ -11,7 +11,7 @@ This site contains writing samples designed to remain relevant and useful for my
 - a possibly non-traditional résumé with some references (currently under consideration)
 - a final writing sample: a “technical memoir” about a coarse-grain Java business objects project from the pre-cloud era
 
-No (or very little) late-night light reading here.
+No (or very little) late-night easy reading here.
 
 PS: And yes, by the way, I was using em-dashes long before AI hackneyed them to death.
 
