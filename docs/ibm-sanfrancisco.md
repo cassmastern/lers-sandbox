@@ -289,7 +289,6 @@ stateDiagram-v2
     Completed --> [*]
     Rejected --> [*]
 ```
-
 ---
 
 ## A Rather Long Coda
@@ -304,66 +303,57 @@ IBM eventually folded the SanFrancisco ideas and some code paths into its WebSph
 
 ### What came after
 
-Contemporary cloud computing mechanisms and architectural patterns have made older technologies like EJBs and coarse-grained Java objects less relevant in many scenarios. Here are some key modern alternatives that outperform them in terms of performance, security, and reusability:
+Contemporary cloud computing mechanisms and architectural patterns have made older technologies like EJBs and coarse-grained Java objects less relevant in many scenarios. Here are some key modern alternatives that outperform them in terms of **performance**, **security**, and **reusability**:
 
 #### Microservices & Containerization (Performance & Reusability)
 
-- **Replaces** EJBs and coarse-grained components with fine-grained, independently deployable services.
-- **Technologies**:
-  - **Kubernetes** and **Docker** enable lightweight, scalable deployments (vs. heavyweight EJB containers).
-  - Modern frameworks, such as **Spring Boot**, **Quarkus**, and **Micronaut** eliminate EJB’s boilerplate while offering better startup times and memory efficiency.
+- **Replace** EJBs and coarse-grained components with fine-grained, independently deployable services.  
 
-**Advantages**:
-  - Faster scaling (horizontal, vs. EJB’s vertical scaling).
-  - Better fault isolation (a failing microservice doesn’t crash the whole app).
+- **Technologies**, such as Kubernetes and Docker enable lightweight, scalable deployments (vs. heavyweight EJB containers). Modern frameworks, such as Spring Boot, Quarkus, and Micronaut eliminate EJB’s boilerplate while offering better startup times and memory efficiency.  
 
-#### Serverless Computing (Performance & Cost Efficiency)
+- **Advantages**: Faster scaling (horizontal, vs. EJB’s vertical scaling); better fault isolation (a failing microservice doesn’t crash the whole app).  
 
-- **Replaces** EJB’s long-lived, stateful session beans with ephemeral, stateless functions.
-- **Technologies**:
-  * **AWS Lambda, Azure Functions, Google Cloud Functions** execute code on-demand without managing servers.
-- **Advantages**:
-  - No need for application server overhead (EJBs require a full Java EE container).
-  - Pay-per-use cost model (vs. always-on EJB servers).
+#### Serverless Computing  
 
-#### Cloud-Native Databases & Caching (Performance)
+- **Replaces** EJB’s long-lived, stateful session beans with ephemeral, stateless functions. 
 
-- **Replaces** EJB’s entity beans (CMP/BMP) with modern persistence layers.
-- **Technologies**:
-  - **NoSQL (MongoDB, Cassandra, DynamoDB)** scale better than EJB’s JPA/Hibernate for distributed systems.
-  - **Redis and Elasticache** offer low-latency caching (better than EJB’s second-level cache).
-- **Advantages**:
-  - Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS).
-  - Faster read/write performance in distributed environments.
+- **Technologies**, such as AWS Lambda, Azure Functions, Google Cloud Functions execute code on-demand without managing servers.  
 
-#### API-First & RESTful Services (Reusability & Interoperability)
+- **Advantages**: No need for application server overhead (EJBs require a full Java EE container); pay-per-use cost model (vs. always-on EJB servers).  
 
-- **Replaces** EJB’s RMI-based remote interfaces with lightweight APIs.
-- **Technologies**:
-  - **REST (JAX-RS, Spring WebFlux)**, **GraphQL**, and **gRPC** are more flexible than EJB’s CORBA-style remoting.
-- **Advantages**:
-  - Language-agnostic APIs (vs. EJB’s Java-only remoting).
-  - Better suited for cloud-native, multi-cloud, and hybrid deployments.
 
-#### Zero-Trust and Cloud-Native Security (Security)
+#### Cloud-Native Databases & Caching
 
-- **Replaces** EJB’s JAAS and declarative security with modern cloud security models.
-- **Technologies**:
-  - **OAuth2/OpenID Connect (Keycloak, Auth0)** are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces.
-  - **Service Meshes (Istio, Linkerd)** Provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
-- **Advantages**:
-  - Dynamic, policy-based security (vs. static EJB deployment descriptors).
-  - Better support for distributed identity management.
+- **Replace** EJB’s entity beans (CMP/BMP) with modern persistence layers.  
 
-#### Event-Driven and Reactive Architectures (Performance and Scalability)
+- **Technologies**, such as NoSQL (MongoDB, Cassandra, DynamoDB) scale better than EJB’s JPA/Hibernate for distributed systems; Redis and Elasticache offer low-latency caching (better than EJB’s second-level cache).  
 
-- **Replace** EJB’s synchronous, blocking model with async processing.
-- **Technologies**:
-  - **Kafka, RabbitMQ, AWS EventBridge** decouple components better than EJB’s JMS.
-  - Non-blocking I/O of **Reactive Frameworks (Spring WebFlux, Vert.x)** outperforms EJB’s thread-per-request model.
-- **Advantages**:
-  - Handles high concurrency better (EJBs struggle under heavy load).
-  - More resilient to failures (reactive systems embrace chaos engineering).
+- **Advantages**: Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS); faster read/write performance in distributed environments.  
+
+#### API-First & RESTful Services  
+
+- **Replace** EJB’s RMI-based remote interfaces with lightweight APIs.  
+
+- **Technologies**, such as REST (JAX-RS, Spring WebFlux), GraphQL, and gRPC are more flexible than EJB’s CORBA-style remoting.  
+
+- **Advantages**: Language-agnostic APIs (vs. EJB’s Java-only remoting); better suited for cloud-native, multi-cloud, and hybrid deployments.  
+
+#### Zero-Trust and Cloud-Native Security  
+
+- **Replace** EJB’s JAAS and declarative security with modern cloud security models.  
+
+- **Technologies**, including OAuth2/OpenID Connect (Keycloak, Auth0)** are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces. Others, such as Service Meshes (Istio, Linkerd), provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
+
+- **Advantages**:  Dynamic, policy-based security (vs. static EJB deployment descriptors); better support for distributed identity management.  
+
+#### Event-Driven and Reactive Architectures
+
+- **Replace** EJB’s synchronous, blocking model with async processing.  
+
+- **Technologies**, such as Kafka, RabbitMQ, AWS EventBridge decouple components better than EJB’s JMS, and non-blocking I/O of Reactive Frameworks (Spring WebFlux, Vert.x) outperforms EJB’s thread-per-request model.  
+
+- **Advantages**:  High concurrency is handled much better (EJBs struggled under heavy load); more resilient to failures (reactive systems embrace chaos engineering).  
+
 
 #### Conclusion
 
