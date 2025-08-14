@@ -5,14 +5,10 @@ on:
     branches:
       - main
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs (production deployments need to complete).
 
 concurrency:
   group: "pages"
@@ -34,14 +30,14 @@ jobs:
           context: .
           push: false
           tags: my-mkdocs-project:latest
-          load: true  # ensure image is available for next step
+          load: true
           
       - name: Build MkDocs
         run: |
           docker run --rm -v ${{ github.workspace }}:/docs my-mkdocs-project:latest mkdocs build
           
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
@@ -56,4 +52,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
