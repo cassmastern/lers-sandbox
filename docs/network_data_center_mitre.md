@@ -13,35 +13,49 @@ This section applies MITRE ATT&CK techniques to our hypothetical data centre net
 The diagram below maps ATT&CK techniques to each component, helping visualize potential adversary behaviors and attack paths.
 
 ```mermaid
-graph TD
-  subgraph Internet
+graph TB
     User[User Device]
-  end
+    
+    subgraph "Azure Cloud"
+        CDN[CDN<br/>T1584.006 Compromise CDN Infrastructure]
+        WA[Web App<br/>T1190 Exploit Public-Facing App]
+        
+        subgraph "Network Layer"
+            FW[Firewall<br/>T1040 Network Sniffing]
+            VPN[VPN Gateway<br/>T1133 External Remote Services]
+        end
+        
+        subgraph "CI/CD & Monitoring"
+            CI[CI/CD Runner<br/>T1059 Command and Scripting Interpreter]
+            Logs[Log Aggregator<br/>T1005 Data from Local System]
+            Monitor[Monitoring<br/>T1082 System Information Discovery]
+        end
+    end
+    
+    subgraph "Internal Systems"
+        Dev[Dev Workstation<br/>T1078 Valid Accounts]
+        Repo[Git Repo<br/>T1505.003 Implant Internal Repository]
+        Secrets[Secrets Vault<br/>T1555 Credentials from Password Stores]
+        DB[Database<br/>T1071.001 Application Layer Protocol - Web]
+    end
 
-  subgraph Azure
-    WA[Web App - T1190 Exploit Public-Facing App]
-    CDN[CDN - T1584.006 Compromise CDN Infrastructure]
-    FW[Firewall - T1040 Network Sniffing]
-    VPN[VPN Gateway - T1133 External Remote Services]
-    CI[CI/CD Runner - T1059 Command and Scripting Interpreter]
-    Logs[Log Aggregator - T1005 Data from Local System]
-    Monitor[Monitoring - T1082 System Information Discovery]
-  end
-
-  subgraph Internal
-    Dev[Dev Workstation - T1078 Valid Accounts]
-    Repo[Git Repo - T1505.003 Implant Internal Repository]
-    Secrets[Secrets Vault - T1555 Credentials from Password Stores]
-    DB[Database - T1071.001 Application Layer Protocol - Web]
-  end
-
-  User --> CDN --> WA --> FW --> VPN --> CI
-  CI --> Repo
-  CI --> Secrets
-  CI --> DB
-  CI --> Logs --> Monitor
-  Dev --> Repo
-  Dev --> VPN
+    %% Main flow connections
+    User --> CDN
+    CDN --> WA
+    WA --> FW
+    FW --> VPN
+    
+    %% CI/CD connections
+    VPN --> CI
+    CI --> Logs
+    CI --> Monitor
+    CI --> Repo
+    CI --> Secrets
+    CI --> DB
+    
+    %% Dev connections
+    Dev --> VPN
+    Dev --> Repo
 ```
 
 ### Technique Highlights
