@@ -67,11 +67,6 @@ ENV MKDOCS_WATCHDOG_USE_POLLING=true
   * Container logs and health endpoints for observability
   * Optional integration with external monitoring tools (e.g., Prometheus, Grafana
 
-- **Build stage**: Docker image builds for static site and backend container
-- **Test stage**: Markdown linting, link checks, container health checks
-- **Deployment stage**: Parallel jobs deploy static assets and backend services
-- **Monitoring stage**: Azure Application Insights and container logs for observability
-
 ### Deployment Flow
 
 ```mermaid
@@ -108,6 +103,7 @@ graph TD
 
 ## Future Enhancements (next phase)
 
+- **Move to Azure DevOps**: As a learning exercise
 - **Auth Gate**: Azure AD B2C or custom JWT-based login
 - **Audit Logging**: Azure Monitor or Application Insights
 - **Secrets Management**: Azure Key Vault

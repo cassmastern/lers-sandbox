@@ -10,7 +10,7 @@ nav:
   - About this Site:
       - "What's in Here?": whatsinhere.md
       - How this Site was Developed and Deployed: about.md
-      - "Found an Issue or Problem?": azure-issue-ticket.md
+      - "Found an Issue or Problem?": github-issue-ticket.md
   - Probably What Awaits Me at Work:
     - AWS vs GCP vs Azure: aws-gcp-azure.md
     - Cross-Platform Cloud and DevOps Glossary: gloss_cloud_devops_AWS-GCP-Azure.md
