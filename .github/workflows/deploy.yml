@@ -32,9 +32,22 @@ jobs:
           tags: my-mkdocs-project:latest
           load: true
           
-      - name: Build MkDocs
+      - name: Build MkDocs site
         run: |
-          docker run --rm -v ${{ github.workspace }}:/docs my-mkdocs-project:latest mkdocs build
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            my-mkdocs-project:latest \
+            mkdocs build
+
+      - name: Verify MkDocs output
+        run: |
+          if [ ! -d "./site" ]; then
+            echo "ERROR: MkDocs output folder './site' not found."
+            echo "Hint: Check your mkdocs.yml 'site_dir' setting or Docker mount paths."
+            exit 1
+          fi
+          echo "SUCCESS: Found './site', ready to upload."
           
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
