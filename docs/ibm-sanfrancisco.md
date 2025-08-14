@@ -342,7 +342,7 @@ Contemporary cloud computing mechanisms and architectural patterns have made old
 
 - **Replace** EJB’s JAAS and declarative security with modern cloud security models.  
 
-- **Technologies**, including OAuth2/OpenID Connect (Keycloak, Auth0)** are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces. Others, such as Service Meshes (Istio, Linkerd), provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
+- **Technologies**, including OAuth2/OpenID Connect (Keycloak, Auth0) are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces. Others, such as Service Meshes (Istio, Linkerd), provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
 
 - **Advantages**:  Dynamic, policy-based security (vs. static EJB deployment descriptors); better support for distributed identity management.  
 
@@ -357,7 +357,7 @@ Contemporary cloud computing mechanisms and architectural patterns have made old
 
 #### Conclusion
 
-EJBs and coarse-grained Java objects were designed for monolithic, on-premise Java EE apps, whereas modern cloud computing favors lightweight, distributed, and scalable architectures. The shift to *microservices*, serverless, cloud-native databases, and event-driven systems has rendered EJBs largely obsolete for high-performance, secure, and reusable applications.
+EJBs and coarse-grained Java objects were designed for monolithic, on-premise Java EE apps, whereas modern cloud computing favors lightweight, distributed, and scalable architectures. The shift to microservices, serverless, cloud-native databases, and event-driven systems has rendered EJBs largely obsolete for high-performance, secure, and reusable applications.
 
 ## Sources
 

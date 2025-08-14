@@ -25,11 +25,9 @@ This site is deployed using a hybrid static-dynamic architecture, containerized 
 
 - **Development Server**: MkDocs live reload enabled via polling-based file watcher
 - **Environment Variable**: `MKDOCS_WATCHDOG_USE_POLLING=true` set in Dockerfile
-- **Live Preview**: Served via `mkdocs serve` inside Docker container
+- **Live Preview**: served via `mkdocs serve` inside Docker container
 - **Plugin Support**: `mkdocs-mermaid2-plugin` installed and configured for diagram rendering
-- **Enhancements and Customizations**: Custom JS/CSS for
-  - 'Hijacking' the native TOC at the right-hand sidebar in alphabetically ordered glossaries and replacing it with a vertical hypertext alphabet to navigate comfortably
-  - Spotlight JS to enhance diagrams with overlays/zoom capability (not working \[yet])
+- **Enhancements and Customizations**: 1. custom JS/CSS, for 'hijacking' the native TOC at the right-hand sidebar in glossaries and replacing it with a vertical hypertext alphabet — for improved navigation; 2. Spotlight JS, to enhance diagrams with overlays/zoom capability (not working \[yet])
 
 #### Tools Used
 

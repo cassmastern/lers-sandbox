@@ -13,6 +13,6 @@ This site contains writing samples designed to remain relevant and useful for my
 
 No (or very little) late-night easy reading here.
 
-PS: And yes, by the way, I was using em-dashes long before AI hackneyed them to death.
+*PS: And yes, by the way, I was using em-dashes long before AI hackneyed them to death.*
 
 ![Illustration - Ler typing away developing this site](img/ler-typing-away.png)
