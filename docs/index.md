@@ -2,13 +2,7 @@
 
 Welcome to Ler's Demo Site!
 
-The site's purpose
-
-```
-
-```
-
-is multifold:
+The site's purpose is multifold:
 
 - to brush up my knowledge of Amazon, GCP and Azure cloud platforms
 - to concoct a quick technical documentation site for demo purposes (*see* details in [What's in Here?](whatsinhere.md))
