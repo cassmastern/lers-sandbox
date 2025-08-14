@@ -32,7 +32,10 @@ nav:
       - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfrancisco.md
 
 extra:
-    generator: true
+  generator: "false"
+  analytics:
+    provider: google
+    property: G-GD2XWDMP2E
 
 markdown_extensions:
   - tables
@@ -40,7 +43,6 @@ markdown_extensions:
 extra_javascript:
   - js/alphabet-auto.js
   - js/diagram-zoom.js
-  - js/google-analytics.js
 
 extra_css:
   - css/alphabet.css
