@@ -1,6 +1,7 @@
 /* Clickable SVGs before lightbox opens */
 .mz-zoomable {
     cursor: zoom-in;
+    pointer-events: all;
 }
 
 /* Lightbox overlay */

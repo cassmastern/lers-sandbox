@@ -75,7 +75,7 @@ ENV MKDOCS_WATCHDOG_USE_POLLING=true
 
 The following is the deployment flow, visually:  
 
-
+<!-- ALT: Deployment flowchart showing development machine with MkDocs local preview connecting to GitHub Repository, which triggers GitHub Actions CI Pipeline containing markdown/YAML linting and link integrity checks. The pipeline deploys to GitHub Pages static hosting on gh-pages branch, which serves the static site to user browsers via public access. -->
 ```mermaid
     graph TD
       subgraph DevMachine ["Developer Machine"]

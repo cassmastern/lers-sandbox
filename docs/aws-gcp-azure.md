@@ -31,26 +31,36 @@ like Route 53 for intelligent DNS routing and CloudFront for
 low-latency content delivery. Compared to GCP and Azure, AWS offers the
 widest service diversity and a strong track record in enterprise
 reliability, though it can also be more complex to navigate due to
-sheer scale.
+sheer scale.  
+
+The following is a simplified representation of the AWS architecture:  
+
+<!-- ALT: AWS architecture diagram showing global infrastructure with regions and availability zones at top. User connects via Route 53 DNS and CloudFront CDN to Elastic Load Balancer, which distributes traffic to compute services: EC2 instances, ECS/EKS containers, and Lambda functions. These connect to data layer containing RDS relational database, DynamoDB NoSQL database, and S3 object storage. DevOps pipeline flows from CodeCommit source repository through CodeBuild and CodeDeploy back to load balancer. Security layer includes AWS IAM, Secrets Manager, and GuardDuty threat detection. Observability provided by CloudWatch monitoring and CloudTrail audit logs. -->
 
 ```mermaid
 graph TD
     %% GLOBAL INFRASTRUCTURE
-    subgraph Global Infrastructure
-        J1[AWS Regions]:::global --> J2[Availability Zones]:::global
+    subgraph GlobalInfra["Global Infrastructure"]
+        J1[AWS Regions]:::global
+        J2[Availability Zones]:::global
+        J1 --> J2
     end
 
-    %% NETWORKING
-    subgraph Networking
-        VPC[VPC - Virtual Private Cloud]:::net --> Subnet1[Public Subnet]:::net
-        VPC --> Subnet2[Private Subnet]:::net
-        Subnet1 --> NACL[Security Groups / NACL]:::net
-    end
-
-    %% ENTRY FLOW
+    %% USER ENTRY
     User[Developer/User] -->|HTTPS| Route53[Route 53 - DNS]:::net
     Route53 --> CloudFront[CloudFront - CDN]:::net
     CloudFront --> ELB[Elastic Load Balancer]:::net
+
+    %% NETWORKING
+    subgraph Networking
+        VPC[VPC - Virtual Private Cloud]:::net
+        Subnet1[Public Subnet]:::net
+        Subnet2[Private Subnet]:::net
+        NACL[Security Groups / NACL]:::net
+        VPC --> Subnet1
+        VPC --> Subnet2
+        Subnet1 --> NACL
+    end
 
     %% COMPUTE
     subgraph Compute
@@ -58,6 +68,7 @@ graph TD
         ECS[ECS/EKS - Containers]:::compute
         Lambda[Lambda Functions]:::compute
     end
+
     ELB --> EC2
     ELB --> ECS
     ELB --> Lambda
@@ -68,14 +79,18 @@ graph TD
         DynamoDB[DynamoDB - NoSQL DB]:::data
         S3[S3 - Object Storage]:::data
     end
+
     EC2 --> RDS
     ECS --> DynamoDB
     Lambda --> S3
 
     %% DEVOPS
-    subgraph DevOps / CI-CD
-        CodeCommit[CodeCommit - Source Repo]:::devops --> CodeBuild[CodeBuild - Build]:::devops
-        CodeBuild --> CodeDeploy[CodeDeploy - Deployment]:::devops
+    subgraph DevOps
+        CodeCommit[CodeCommit - Source Repo]:::devops
+        CodeBuild[CodeBuild - Build]:::devops
+        CodeDeploy[CodeDeploy - Deployment]:::devops
+        CodeCommit --> CodeBuild
+        CodeBuild --> CodeDeploy
         CodeDeploy --> ELB
     end
 
@@ -92,6 +107,7 @@ graph TD
         CloudTrail[CloudTrail - Audit Logs]:::obs
     end
 
+    %% CONNECTIONS TO MONITORING
     RDS --> CloudWatch
     S3 --> CloudWatch
     DynamoDB --> CloudWatch
@@ -99,13 +115,13 @@ graph TD
     GuardDuty --> CloudTrail
 
     %% STYLES
-    classDef global fill:#eaf5ff,stroke:#3a87ad;
-    classDef net fill:#eaffea,stroke:#4a934a;
-    classDef compute fill:#fff0e6,stroke:#d96c00;
-    classDef data fill:#fffde6,stroke:#b3b300;
-    classDef devops fill:#f5e6ff,stroke:#6b2f99;
-    classDef sec fill:#ffe6e6,stroke:#cc0000;
-    classDef obs fill:#f2f2f2,stroke:#555;
+    classDef global fill:#eaf5ff,stroke:#3a87ad
+    classDef net fill:#eaffea,stroke:#4a934a
+    classDef compute fill:#fff0e6,stroke:#d96c00
+    classDef data fill:#fffde6,stroke:#b3b300
+    classDef devops fill:#f5e6ff,stroke:#6b2f99
+    classDef sec fill:#ffe6e6,stroke:#cc0000
+    classDef obs fill:#f2f2f2,stroke:#555
 ```
 
 ## GCP Architecture
@@ -125,6 +141,7 @@ While GCP's service catalog is smaller than AWS and Azure, it is often
 seen as simpler and cleaner for greenfield projects, but it may lack
 the enterprise depth and hybrid-cloud features of Azure.
 
+<!-- ALT: GCP architecture diagram showing global infrastructure with regions and zones. User connects through Cloud DNS and Cloud CDN to Cloud Load Balancing, which routes to compute layer: Compute Engine VMs, GKE Kubernetes clusters, and Cloud Run serverless containers. Data layer contains Cloud SQL, Firestore NoSQL, Bigtable, and BigQuery analytics. DevOps flows from Cloud Source Repositories through Cloud Build to continuous deployment back to load balancer. Security managed by GCP IAM, Cloud KMS, and Security Command Centre. Observability through Cloud Monitoring and Cloud Logging. -->
 ```mermaid
 graph TD
     subgraph GlobalInfra["Global Infrastructure"]
@@ -212,6 +229,8 @@ sometimes lags AWS in early adoption of new service categories. For
 enterprises looking for tight integration with Microsoft tools and
 hybrid capabilities, Azure is often the top pick.
 
+
+<!-- ALT: Azure architecture diagram with global regions and availability zones. User connects via Azure DNS and Front Door CDN to Azure Load Balancer and Application Gateway, routing to compute services: Virtual Machines, App Service PaaS, and Azure Kubernetes Service. Data layer includes Azure SQL Database, Cosmos DB NoSQL, and Blob Storage. DevOps pipeline flows from Azure Repos through Azure Pipelines build system to Release Management. Security provided by Azure Active Directory, Key Vault, and Microsoft Defender for Cloud. Observability through Azure Monitor, Log Analytics Workspace, and Security Centre. -->
 ```mermaid
 graph TD
     %% GLOBAL INFRASTRUCTURE

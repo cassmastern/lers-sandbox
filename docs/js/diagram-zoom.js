@@ -116,23 +116,78 @@
     }
   }
 
-  function bindZoom(root = document) {
-    const svgs = root.querySelectorAll(".mermaid svg:not([data-mz-bound])");
-    svgs.forEach((svg) => {
-      svg.setAttribute("data-mz-bound", "true");
-      svg.classList.add("mz-zoomable");
-      addAccessibilityAttributes(svg);
-      svg.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        openLightbox(svg);
-      });
-    });
+  // NEW: Function to find ALT comment before mermaid diagram
+  function findAltComment(mermaidContainer) {
+    // Look for HTML comment with ALT: prefix in preceding text nodes
+    let currentNode = mermaidContainer.previousSibling;
+    let searchDepth = 0;
+    const maxSearchDepth = 10; // Limit search to avoid performance issues
+    
+    while (currentNode && searchDepth < maxSearchDepth) {
+      if (currentNode.nodeType === Node.COMMENT_NODE) {
+        const commentText = currentNode.textContent.trim();
+        if (commentText.startsWith('ALT:')) {
+          return commentText.substring(4).trim(); // Remove 'ALT:' prefix
+        }
+      }
+      // Also check text content of previous element for comments
+      else if (currentNode.nodeType === Node.ELEMENT_NODE) {
+        const htmlContent = currentNode.innerHTML;
+        const commentMatch = htmlContent.match(/<!--\s*ALT:\s*(.*?)\s*-->/s);
+        if (commentMatch) {
+          return commentMatch[1].trim();
+        }
+      }
+      
+      currentNode = currentNode.previousSibling;
+      searchDepth++;
+    }
+    
+    // If no ALT comment found, also check parent's previous siblings
+    const parent = mermaidContainer.parentNode;
+    if (parent) {
+      let parentPrev = parent.previousSibling;
+      let parentSearchDepth = 0;
+      
+      while (parentPrev && parentSearchDepth < 5) {
+        if (parentPrev.nodeType === Node.COMMENT_NODE) {
+          const commentText = parentPrev.textContent.trim();
+          if (commentText.startsWith('ALT:')) {
+            return commentText.substring(4).trim();
+          }
+        } else if (parentPrev.nodeType === Node.ELEMENT_NODE) {
+          const htmlContent = parentPrev.innerHTML;
+          const commentMatch = htmlContent.match(/<!--\s*ALT:\s*(.*?)\s*-->/s);
+          if (commentMatch) {
+            return commentMatch[1].trim();
+          }
+        }
+        
+        parentPrev = parentPrev.previousSibling;
+        parentSearchDepth++;
+      }
+    }
+    
+    return null;
   }
 
   function addAccessibilityAttributes(svg) {
     const mermaidContainer = svg.closest('.mermaid');
     let altText = "Interactive diagram";
+    
+    // NEW: First try to find ALT comment
+    if (mermaidContainer) {
+      const commentAlt = findAltComment(mermaidContainer);
+      if (commentAlt) {
+        altText = commentAlt + " - Click to zoom and pan";
+        svg.setAttribute('role', 'img');
+        svg.setAttribute('aria-label', altText);
+        svg.setAttribute('tabindex', '0');
+        return; // Exit early if we found a comment
+      }
+    }
+    
+    // FALLBACK: Use existing logic if no ALT comment found
     if (svg.querySelector('g[class*="flowchart"]')) altText = "Interactive flowchart diagram - click to zoom";
     else if (svg.querySelector('g[class*="sequence"]')) altText = "Interactive sequence diagram - click to zoom";
     else if (svg.querySelector('g[class*="class"]')) altText = "Interactive class diagram - click to zoom";
@@ -140,9 +195,10 @@
     else if (svg.querySelector('g[class*="pie"]')) altText = "Interactive pie chart - click to zoom";
     else if (svg.querySelector('g[class*="gantt"]')) altText = "Interactive Gantt chart - click to zoom";
 
-    if (mermaidContainer) {
+    // Existing fallback to preceding text (kept as secondary option)
+    if (mermaidContainer && altText === "Interactive diagram") {
       const prevSibling = mermaidContainer.previousElementSibling;
-      if (prevSibling && (prevSibling.tagName === 'P' || /^H[1-3]$/.test(prevSibling.tagName))) {
+      if (prevSibling && (prevSibling.tagName === 'P' || /^H[1-6]$/.test(prevSibling.tagName))) {
         const description = prevSibling.textContent.trim();
         if (description.length > 0 && description.length < 200) {
           altText = `${description} - Interactive diagram, click to zoom`;
@@ -153,6 +209,35 @@
     svg.setAttribute('role', 'img');
     svg.setAttribute('aria-label', altText);
     svg.setAttribute('tabindex', '0');
+  }
+
+  function bindZoom(root = document) {
+    // Target all SVGs in mermaid containers, regardless of specific classes
+    const svgs = root.querySelectorAll(".mermaid svg:not([data-mz-bound])");
+    svgs.forEach((svg) => {
+      svg.setAttribute("data-mz-bound", "true");
+      svg.classList.add("mz-zoomable");
+      addAccessibilityAttributes(svg);
+      
+      // Make sure SVG is clickable
+      svg.style.cursor = "zoom-in";
+      svg.setAttribute("role", "button");
+      
+      svg.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(svg);
+      });
+      
+      // Also add keyboard support
+      svg.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          e.stopPropagation();
+          openLightbox(svg);
+        }
+      });
+    });
   }
 
   function waitForMermaid() {

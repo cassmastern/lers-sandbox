@@ -51,8 +51,9 @@ A Java EE app on Azure will likely comprise multiple, layered components:
 
 
 
-The following is a visual representation of the layered architecture:
-  
+The following is a visual representation of the component layers:
+
+<!-- ALT: Layered architecture diagram showing 4 main layers: Presentation Layer at top, Business Logic Layer below it, then Data & Persistence layer containing Persistence Layer connected to Azure SQL/MySQL/PostgreSQL database and Azure Blob Storage for files. Alongside are Messaging & Caching layer with Service Bus/Event Grid and Azure Cache for Redis, plus Security & Monitoring layer with Azure AD/Key Vault and Application Insights. Arrows show data flow from Presentation to Business Logic to Persistence, with Business Logic also connecting to messaging, caching, security and monitoring components. -->
 
 ```mermaid
 flowchart TD
@@ -97,7 +98,9 @@ flowchart TD
 
 ## Hosting Options on Azure
 
-Azure provides several hosting options, depending on the type and nature of the service or application.
+Azure provides several hosting options, depending on the type and nature of the service or application. The following is a visual representation:
+
+<!-- ALT: Simple decision flowchart showing Developer/BA choosing between 4 Azure hosting options: Azure App Service for simple deployment, Azure Kubernetes Service AKS for complex apps, Azure Spring Apps for Spring projects, and Virtual Machines for legacy lift-and-shift. -->
 
 ```mermaid
 graph LR
@@ -118,8 +121,12 @@ graph LR
 
 ---
 
+
 ## High-Level Architecture
 
+The following is a visual, high-level representation of architecture: 
+
+<!-- ALT: High-level system architecture showing user browser connecting via HTTPS to Azure Front Door WAF for security and routing, which connects to App Service or AKS Ingress, then to Java EE App containing business and API layers. The Java EE App connects to 6 Azure services: SQL/MySQL/PostgreSQL database, Blob Storage for files, Cache for Redis, Service Bus/Event Grid for messaging, Key Vault for secrets, and Application Insights for monitoring. Data flows from browser through security layer to app, then branches to all backend services. -->
 ```mermaid
 flowchart LR
   subgraph Client
@@ -153,6 +160,8 @@ flowchart LR
 
 ## CI/CD Pipeline Flow
 
+
+<!-- ALT: CI/CD pipeline flowchart showing 5 phases: Development (Code, Commit & Push), Continuous Integration (Build/Test/Scan, Create Artifact, Push to ACR), Staging & Testing (Deploy to Staging, User Acceptance Testing, Approval), Continuous Deployment (Deploy to Production, Monitoring & Feedback). Process flows linearly from development through testing to production deployment with feedback loop. -->
 ```mermaid
 graph TD
     A["Developer Pushes Code"]
@@ -232,6 +241,7 @@ graph TD
 
 Here is the typical CI/CD flow used in most enterprise software shops today. While nothing in this pipeline is specific to Jakarta EE, it represents the standard approach for delivering reliably and at scale.
 
+<!-- ALT: Detailed CI/CD pipeline showing step-by-step process from Developer Pushes Code through Azure DevOps Pipeline to 4 main stages: Build & Test (Build, Test), Quality & Security (Static Code Analysis, Security Scan), Package & Registry (Package Artifacts, Build Docker Image, Push to ACR), Staging Environment (Deploy to Staging, Run Acceptance Tests), ending with Production Deployment (Manual Approval Gate, Deploy to Production, Monitor via Application Insights). Each stage flows sequentially with colored groupings for different phases. -->
 ```mermaid
 graph TD
     subgraph Development ["Development Phase"]
