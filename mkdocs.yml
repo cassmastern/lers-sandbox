@@ -25,20 +25,23 @@ nav:
       - Glossary of Kubernetes Terms: gloss_kuber.md
       - Glossary of Cloud-Native Terms: gloss_cloud-native.md
   - Cheat Sheets:
-      - Docker Cheat Sheet: cheatsheet-docker.md
-      - Kubectl Cheat Sheet: cheatsheet-kubectl.md
+      - Docker Command Cheat Sheet: cheatsheet-docker.md
+      - Kubectl Command Cheat Sheet: cheatsheet-kubectl.md
       - Compound Modifiers Cheat Sheet: cheatsheet_compound-modifiers.md
   - Bonus: 
       - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfrancisco.md
 
 extra:
-  generator: "false"
+  generator: false
   analytics:
     provider: google
     property: G-GD2XWDMP2E
 
 markdown_extensions:
   - tables
+  - attr_list
+  - pymdownx.details
+  - pymdownx.tabbed
 
 extra_javascript:
   - js/alphabet-auto.js

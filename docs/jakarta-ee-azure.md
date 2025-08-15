@@ -34,6 +34,8 @@ This approach is used in real production systems â€” from banks to e-commerce â€
 
 ## Typical Components of a Java EE App on Azure
 
+A Java EE app on Azure will likely comprise multiple, layered components: 
+
 
 | Layer / Module           | Purpose                                 | Azure Service Example                   | Example Technologies         |
 | -------------------------- | ----------------------------------------- | ----------------------------------------- | ------------------------------ |
@@ -47,7 +49,10 @@ This approach is used in real production systems â€” from banks to e-commerce â€
 | Monitoring               | Observes app health and performance     | Application Insights                    | Azure Monitor SDK            |
 | Infrastructure           | Provisioning & configuration            | ARM/Bicep/Terraform                     | IaC tools                    |
 
-Diagrammatically:
+
+
+The following is a visual representation of the layered architecture:
+  
 
 ```mermaid
 flowchart TD

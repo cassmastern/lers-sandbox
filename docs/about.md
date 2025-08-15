@@ -49,55 +49,56 @@ ENV MKDOCS_WATCHDOG_USE_POLLING=true
 ### CI/CD Pipeline
 
 #### Build Stage
+
 - Docker image builds for MkDocs static site
 - Site artifacts generated via `mkdocs build` inside containerized environment
 
 #### Test Stage
+
 - Markdown linting (`markdownlint`, `mdl`)
 - Link integrity checks (`lychee`, `markdown-link-check`)
 - YAML and config validation for reproducibility
 
 #### Deployment Stage
+
 - GitHub Actions workflow deploys:
   - Static site to GitHub Pages via `gh-pages` branch  
   - No backend container or server-side components involved
 
 #### Monitoring Stage
+
 - GitHub Actions logs and build artifacts retained for audit
 - Manual verification of site integrity and link health
 - No active container monitoring or external observability stack
 
 ### Deployment Flow
-The following is the deployment flow, visually:
+
+The following is the deployment flow, visually:  
+
 
 ```mermaid
-graph TD
-    subgraph DevMachine ["Developer Machine"]
-        MkDocs["MkDocs (local preview)"]
-    end
-
-    GitHub["GitHub Repository"]
-
-    subgraph GitHubActions ["GitHub Actions"]
-        CI["CI Pipeline"]
-        Lint["Markdown & YAML Linting"]
-        Links["Link Integrity Checks"]
-        Deploy["Deploy to GitHub Pages"]
-    end
-
-    subgraph GitHubPages ["GitHub Static Hosting"]
-        StaticSite["Static Site (gh-pages branch)"]
-    end
-
-    Browser["User Browser"]
-
-    MkDocs -->|"commit & push"| GitHub
-    GitHub -->|"triggers build"| CI
-    CI --> Lint
-    CI --> Links
-    CI --> Deploy
-    Deploy -->|"push to gh-pages branch"| StaticSite
-    StaticSite -->|"public access"| Browser
+    graph TD
+      subgraph DevMachine ["Developer Machine"]
+          MkDocs["MkDocs (local preview)"]
+      end
+      GitHub["GitHub Repository"]
+      subgraph GitHubActions ["GitHub Actions"]
+          CI["CI Pipeline"]
+          Lint["Markdown & YAML Linting"]
+          Links["Link Integrity Checks"]
+          Deploy["Deploy to GitHub Pages"]
+      end
+      subgraph GitHubPages ["GitHub Static Hosting"]
+          StaticSite["Static Site (gh-pages branch)"]
+      end
+      Browser["User Browser"]
+      MkDocs -->|"commit & push"| GitHub
+      GitHub -->|"triggers build"| CI
+      CI --> Lint
+      CI --> Links
+      CI --> Deploy
+      Deploy -->|"push to gh-pages branch"| StaticSite
+      StaticSite -->|"public access"| Browser
 ```
 
 ## Pros

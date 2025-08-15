@@ -42,7 +42,7 @@ All commands below are called as options to the base `docker` command. For more 
  - Stop a running container through SIGKILL: `docker container kill web`
  - List the networks: `docker network ls`
  - List the running containers (add `--all` to include stopped containers): `docker container ls`
- - Delete all running and stopped containers: `docker container rm -f $ (docker ps -aq)`
+ - Delete all running and stopped containers: `docker container rm -f $(docker ps -aq)`
  - Print the last 100 lines of a container's logs: `docker container logs --tail 100 web` 
 
 

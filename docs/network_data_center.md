@@ -1,4 +1,4 @@
-# A Sample Data Centre Network
+# A Hypothetical Data Centre Network
 
 Below is a sample data centre network topology. Hopefully enough representative of the 2025 technology landscape to analyze and learn, especially from a security perspective.
 

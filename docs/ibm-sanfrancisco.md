@@ -160,7 +160,8 @@ flowchart TB
 
 *(See [Layered architecture](#layered-architecture))*
 
-A static breakdown of large-grain components, layered from generic to domain-specific.
+The following is a static breakdown of large-grain components, layered from generic to domain-specific:
+
 
 ```mermaid
 classDiagram
@@ -187,6 +188,7 @@ classDiagram
     FoundationServices <|-- CommonBusinessObjects
     CommonBusinessObjects <|-- DomainComponents
 ```
+
 
 ### Large-Grain Business Object Example
 

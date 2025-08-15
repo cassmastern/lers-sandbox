@@ -1,4 +1,4 @@
-# OSS Terms  
+# Glossary of OSS Terms  
 
 OSS (Operational Support Systems) is one of the two essential frameworks in telecommunications. OSS focuses on managing network operations. The other framework, BSS (Business Support Systems), handles customer-related functions, such as billing and order management. These two systems work together to enhance service delivery and efficiency.
 
