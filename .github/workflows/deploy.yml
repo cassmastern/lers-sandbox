@@ -39,15 +39,26 @@ jobs:
             -w /app \
             my-mkdocs-project:latest \
             mkdocs build
-
+      
       - name: Verify MkDocs output
         run: |
           if [ ! -d "./site" ]; then
             echo "ERROR: MkDocs output folder './site' not found."
-            echo "Hint: Check your mkdocs.yml 'site_dir' setting or Docker mount paths."
+            echo "Available directories:"
+            ls -la ./
+            echo "Checking if build failed..."
             exit 1
           fi
-          echo "SUCCESS: Found './site', ready to upload."
+          
+          # Check if site has essential files
+          if [ ! -f "./site/index.html" ]; then
+            echo "ERROR: No index.html found in site directory"
+            echo "Site contents:"
+            ls -la ./site/
+            exit 1
+          fi
+          
+          echo "SUCCESS: Site built with $(find ./site -name "*.html" | wc -l) HTML files"
           
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -66,3 +77,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        

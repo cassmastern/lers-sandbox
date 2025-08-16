@@ -2,7 +2,7 @@
 
 First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product. Behind this straightforward name lies a story of early innovation in coarse-grained Java business components — a glimpse into the architectural challenges and creative solutions of a pioneering era.
 
-Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate; had to turn emails, memos, notes (perhaps even on ***serviettes***) into Redbook material.
+Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate; had to turn emails, memos, notes (perhaps even on *serviettes*) into Redbook material.
 
 By the time, I had been part of an e-commerce development team for a brief period of time, developed some docs and tutorials, taken my part in porting software from C++ to Java, read some Ivor Horton, and had managed to start thinking I knew all there was to know about what and how to write, haha... Well, I was wrong. Why — is another story, but now, here, this is an attempt to reach deep into what's behind that insignificant blurb on my résumé and make sense of what SanFrancisco *really* was, where it had come from, and where it ended up going. A two-in-one writing sample and a technical memoir.
 
@@ -143,7 +143,7 @@ The point: instead of many remote calls to tweak small fields and call helper se
 
 SanFrancisco sat between application-specific UI/business logic and the JVM, providing reusable services.
 
-<!-- ALT: Flowchart showing IBM SanFrancisco's layered architecture. Arrows connect layers from top to bottom: User Interface → Business Logic → Foundation Services → JVM → Operating System. SanFrancisco encompasses the Business Logic and Foundation layers, positioned between application code and the JVM. -->
+<!-- ALT: Flowchart showing IBM SanFrancisco's layered architecture. Arrows connect layers from top to bottom: User Interface → Business Logic → Foundation Services → JVM → Operating System. SanFrancisco encompasses the Business Logic and Foundation layers, positioned between application code and the JVM. -->  
 ```mermaid
 flowchart TB
     UI[User Interface Layer] --> BL[Business Logic Layer]
@@ -163,7 +163,7 @@ flowchart TB
 
 The following is a static breakdown of large-grain components, layered from generic to domain-specific:
 
-<!-- ALT: Class diagram illustrating SanFrancisco’s layered component hierarchy. FoundationServices includes core services like TransactionManager and PersistenceManager. CommonBusinessObjects builds on FoundationServices and includes domain-neutral entities like Party and Product. DomainComponents extends CommonBusinessObjects with vertical-specific modules like ERP and Retail. -->
+<!-- ALT: Class diagram illustrating SanFrancisco’s layered component hierarchy. FoundationServices includes core services like TransactionManager and PersistenceManager. CommonBusinessObjects builds on FoundationServices and includes domain-neutral entities like Party and Product. DomainComponents extends CommonBusinessObjects with vertical-specific modules like ERP and Retail. -->  
 ```mermaid
 classDiagram
     class FoundationServices {
@@ -197,7 +197,7 @@ classDiagram
 
 An Illustration of the "large-grain" idea — `Order` encapsulates not just data, but behavior and transactional integrity.
 
-<!-- ALT: Class diagram showing a coarse-grained Order object and its relationships. Order contains attributes and methods for managing line items and totals. It has a one-to-many relationship with OrderLine, which in turn references Product. Emphasizes encapsulation of behavior and data in a single business object. -->
+<!-- ALT: Class diagram showing a coarse-grained Order object and its relationships. Order contains attributes and methods for managing line items and totals. It has a one-to-many relationship with OrderLine, which in turn references Product. Emphasizes encapsulation of behavior and data in a single business object. -->  
 ```mermaid
 classDiagram
     class Order {
@@ -228,7 +228,7 @@ classDiagram
 
 Here is a dynamic view of an object interacting with SF foundation services:  
 
-<!-- ALT: Sequence diagram showing object interaction with SF foundation services across 4 swimlanes: Client Object, Business Object, Data Access Object, and Database. Flow shows client creating business object, business object accessing data object, data object querying database, and responses flowing back through the chain. Includes error handling and transaction management patterns typical of enterprise Java applications. -->
+<!-- ALT: Sequence diagram showing object interaction with SF foundation services across 4 swimlanes: Client Object, Business Object, Data Access Object, and Database. Flow shows client creating business object, business object accessing data object, data object querying database, and responses flowing back through the chain. Includes error handling and transaction management patterns typical of enterprise Java applications. -->  
 ```mermaid
 sequenceDiagram
     participant UI as User Interface

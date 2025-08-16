@@ -10,7 +10,7 @@ Understanding the layout of a data centre network is essential to identifying po
 
 This diagram outlines a simplified data centre network architecture, segmented into public-facing cloud services, internal developer resources, and observability components. It serves as the foundation for subsequent threat modeling exercises.
 
-<!-- ALT: Data center network topology showing 5 zones: Public Zone with user, browser, and DNS resolver; Network Edge Zone with HTTPS requests flowing through firewall, reverse proxy, app gateway, load balancer, and VPN gateway; Private App Zone containing web app connected to primary database with read replicas, Redis cache, auth service with identity provider, audit logger with SIEM integration; Monitoring zone with metrics exporter and tracing agent feeding Prometheus and Jaeger; CI/CD Pipeline with Git repository flowing through build agent and container registry to deployment job. Traffic flows north-south from public users and east-west between internal services. -->
+<!-- ALT: Data center network topology showing 5 zones: Public Zone with user, browser, and DNS resolver; Network Edge Zone with HTTPS requests flowing through firewall, reverse proxy, app gateway, load balancer, and VPN gateway; Private App Zone containing web app connected to primary database with read replicas, Redis cache, auth service with identity provider, audit logger with SIEM integration; Monitoring zone with metrics exporter and tracing agent feeding Prometheus and Jaeger; CI/CD Pipeline with Git repository flowing through build agent and container registry to deployment job. Traffic flows north-south from public users and east-west between internal services. -->  
 ```mermaid
 flowchart TD
   %% Public Zone

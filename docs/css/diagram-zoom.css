@@ -1,64 +1,45 @@
-/* Clickable SVGs before lightbox opens */
-.mz-zoomable {
-    cursor: zoom-in;
-    pointer-events: all;
+/* Simple diagram zoom lightbox styles */
+.diagram-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Lightbox overlay */
-.mz-lightbox {
-    position: fixed;
-    inset: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 1000;
+/* Ensure zoomable diagrams have proper cursor and focus indicators */
+.mermaid svg[data-zoomable="true"] {
+  cursor: zoom-in;
+  outline-offset: 2px;
 }
 
-/* Show overlay */
-.mz-lightbox[aria-hidden="false"] {
-    display: flex;
-    animation: mz-fade 0.18s ease-out;
+.mermaid svg[data-zoomable="true"]:focus {
+  outline: 2px solid var(--md-accent-fg-color, #1976d2);
+  outline-offset: 2px;
 }
 
-/* Lightbox content container */
-.mz-lightbox__content {
-    max-width: 98vw;
-    max-height: 98vh;
-    overflow: visible;   /* allow zoom to expand beyond container */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.mermaid svg[data-zoomable="true"]:hover {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 
-/* Zoomable SVG inside lightbox */
-.mz-lightbox__svg {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    transition: transform 0.2s ease;
-    transform-origin: center center;
-    cursor: grab;        /* drag cursor inside overlay */
-    touch-action: none;  /* pinch support */
-    background: var(--md-default-bg-color, #fff);
-    border-radius: 0.25rem;
-    box-shadow: var(--md-shadow-z3, 0 10px 30px rgba(0, 0, 0, 0.35));
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .diagram-lightbox {
+    background: rgba(0, 0, 0, 0.95);
+  }
 }
 
-.mz-lightbox__svg:active {
-    cursor: grabbing;
-}
-
-/* Fade animation */
-@keyframes mz-fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-    .mz-lightbox[aria-hidden="false"] {
-        animation: none;
-    }
+  .mermaid svg[data-zoomable="true"]:hover {
+    transition: none;
+  }
 }

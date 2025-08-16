@@ -12,7 +12,7 @@ This section applies MITRE ATT&CK techniques to our hypothetical data centre net
 
 The diagram below maps ATT&CK techniques to each component, helping visualize potential adversary behaviors and attack paths.
 
-<!-- ALT: MITRE ATT&CK annotated network diagram showing user device connecting to Azure Cloud containing CDN with T1584.006 technique, Web App with T1190 exploit technique, network layer with firewall T1040 network sniffing and VPN gateway T1133 external remote services, CI/CD and monitoring components with T1059 command scripting, T1005 data collection, and T1082 system discovery techniques. Internal systems show dev workstation T1078 valid accounts, Git repo T1505.003 repository implant, secrets vault T1555 credential access, and database T1071.001 application layer protocol techniques. -->
+<!-- ALT: MITRE ATT&CK annotated network diagram showing user device connecting to Azure Cloud containing CDN with T1584.006 technique, Web App with T1190 exploit technique, network layer with firewall T1040 network sniffing and VPN gateway T1133 external remote services, CI/CD and monitoring components with T1059 command scripting, T1005 data collection, and T1082 system discovery techniques. Internal systems show dev workstation T1078 valid accounts, Git repo T1505.003 repository implant, secrets vault T1555 credential access, and database T1071.001 application layer protocol techniques. -->  
 ```mermaid
 graph TB
     User[User Device]

@@ -35,7 +35,7 @@ sheer scale.
 
 The following is a simplified representation of the AWS architecture:  
 
-<!-- ALT: AWS architecture diagram showing global infrastructure with regions and availability zones at top. User connects via Route 53 DNS and CloudFront CDN to Elastic Load Balancer, which distributes traffic to compute services: EC2 instances, ECS/EKS containers, and Lambda functions. These connect to data layer containing RDS relational database, DynamoDB NoSQL database, and S3 object storage. DevOps pipeline flows from CodeCommit source repository through CodeBuild and CodeDeploy back to load balancer. Security layer includes AWS IAM, Secrets Manager, and GuardDuty threat detection. Observability provided by CloudWatch monitoring and CloudTrail audit logs. -->
+<!-- ALT: AWS architecture diagram showing global infrastructure with regions and availability zones at top. User connects via Route 53 DNS and CloudFront CDN to Elastic Load Balancer, which distributes traffic to compute services: EC2 instances, ECS/EKS containers, and Lambda functions. These connect to data layer containing RDS relational database, DynamoDB NoSQL database, and S3 object storage. DevOps pipeline flows from CodeCommit source repository through CodeBuild and CodeDeploy back to load balancer. Security layer includes AWS IAM, Secrets Manager, and GuardDuty threat detection. Observability provided by CloudWatch monitoring and CloudTrail audit logs. -->  
 
 ```mermaid
 graph TD
@@ -141,7 +141,7 @@ While GCP's service catalog is smaller than AWS and Azure, it is often
 seen as simpler and cleaner for greenfield projects, but it may lack
 the enterprise depth and hybrid-cloud features of Azure.
 
-<!-- ALT: GCP architecture diagram showing global infrastructure with regions and zones. User connects through Cloud DNS and Cloud CDN to Cloud Load Balancing, which routes to compute layer: Compute Engine VMs, GKE Kubernetes clusters, and Cloud Run serverless containers. Data layer contains Cloud SQL, Firestore NoSQL, Bigtable, and BigQuery analytics. DevOps flows from Cloud Source Repositories through Cloud Build to continuous deployment back to load balancer. Security managed by GCP IAM, Cloud KMS, and Security Command Centre. Observability through Cloud Monitoring and Cloud Logging. -->
+<!-- ALT: GCP architecture diagram showing global infrastructure with regions and zones. User connects through Cloud DNS and Cloud CDN to Cloud Load Balancing, which routes to compute layer: Compute Engine VMs, GKE Kubernetes clusters, and Cloud Run serverless containers. Data layer contains Cloud SQL, Firestore NoSQL, Bigtable, and BigQuery analytics. DevOps flows from Cloud Source Repositories through Cloud Build to continuous deployment back to load balancer. Security managed by GCP IAM, Cloud KMS, and Security Command Centre. Observability through Cloud Monitoring and Cloud Logging. -->  
 ```mermaid
 graph TD
     subgraph GlobalInfra["Global Infrastructure"]
@@ -230,7 +230,7 @@ enterprises looking for tight integration with Microsoft tools and
 hybrid capabilities, Azure is often the top pick.
 
 
-<!-- ALT: Azure architecture diagram with global regions and availability zones. User connects via Azure DNS and Front Door CDN to Azure Load Balancer and Application Gateway, routing to compute services: Virtual Machines, App Service PaaS, and Azure Kubernetes Service. Data layer includes Azure SQL Database, Cosmos DB NoSQL, and Blob Storage. DevOps pipeline flows from Azure Repos through Azure Pipelines build system to Release Management. Security provided by Azure Active Directory, Key Vault, and Microsoft Defender for Cloud. Observability through Azure Monitor, Log Analytics Workspace, and Security Centre. -->
+<!-- ALT: Azure architecture diagram with global regions and availability zones. User connects via Azure DNS and Front Door CDN to Azure Load Balancer and Application Gateway, routing to compute services: Virtual Machines, App Service PaaS, and Azure Kubernetes Service. Data layer includes Azure SQL Database, Cosmos DB NoSQL, and Blob Storage. DevOps pipeline flows from Azure Repos through Azure Pipelines build system to Release Management. Security provided by Azure Active Directory, Key Vault, and Microsoft Defender for Cloud. Observability through Azure Monitor, Log Analytics Workspace, and Security Centre. -->  
 ```mermaid
 graph TD
     %% GLOBAL INFRASTRUCTURE

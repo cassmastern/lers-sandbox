@@ -2,21 +2,18 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Set environment variables early (these rarely change)
+# Set environment variables
 ENV PIP_ROOT_USER_ACTION=ignore
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 ENV MKDOCS_WATCHDOG_USE_POLLING=true
 
-# Copy only requirements first for better caching
-COPY requirements.txt /app/
-
-# Install dependencies in a separate layer
-# This layer will only rebuild if requirements.txt changes
+# Copy and install requirements first (best caching)
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application files
-# This layer will rebuild when docs/config changes, but deps stay cached
-COPY . /app
+# Copy all project files
+# simpler and avoids missing directory errors
+COPY . .
 
 EXPOSE 8000
 

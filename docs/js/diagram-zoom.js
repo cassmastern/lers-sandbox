@@ -1,300 +1,143 @@
-(function () {
-  let lb, content, escHandler;
+// Simple diagram zoom functionality
+// scripts/js/diagram-zoom.js
 
-  function ensureLightbox() {
-    if (lb) return;
-    lb = document.createElement("div");
-    lb.className = "mz-lightbox";
-    lb.setAttribute("role", "dialog");
-    lb.setAttribute("aria-modal", "true");
-    lb.setAttribute("aria-hidden", "true");
-    lb.tabIndex = -1;
-
-    content = document.createElement("div");
-    content.className = "mz-lightbox__content";
-    lb.appendChild(content);
-
-    lb.addEventListener("click", (e) => {
-      if (e.target === lb || e.target === content) closeLightbox();
+(function() {
+  'use strict';
+  
+  let lightbox = null;
+  
+  function createLightbox() {
+    if (lightbox) return lightbox;
+    
+    lightbox = document.createElement('div');
+    lightbox.className = 'diagram-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Zoomed diagram view');
+    lightbox.style.display = 'none';
+    
+    // Close on click outside or escape key
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
     });
-
-    lb.addEventListener("wheel", (e) => {
-      e.stopPropagation();
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display !== 'none') {
+        closeLightbox();
+      }
     });
-
-    document.body.appendChild(lb);
+    
+    document.body.appendChild(lightbox);
+    return lightbox;
   }
-
+  
   function openLightbox(svg) {
-    ensureLightbox();
-    content.innerHTML = "";
-
+    const lb = createLightbox();
     const clone = svg.cloneNode(true);
-    clone.classList.add("mz-lightbox__svg");
-
-    // Set initial size to the natural SVG size
-    clone.style.width = svg.getBBox().width + "px";
-    clone.style.height = svg.getBBox().height + "px";
-
-    content.appendChild(clone);
-    lb.setAttribute("aria-hidden", "false");
-    lb.focus();
-
-    // --- INTERNAL ZOOM ---
-    let scale = 1;
-    let currentX = 0, currentY = 0;
-
-    // Desktop: scroll zoom
-    clone.addEventListener("wheel", (e) => {
-      e.preventDefault();
-      const delta = e.deltaY > 0 ? -0.1 : 0.1;
-      scale = Math.min(Math.max(0.5, scale + delta), 3);
-      clone.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-    });
-
-    // Drag-to-pan
-    let isDragging = false, startX, startY;
-    clone.addEventListener("mousedown", (e) => {
-      e.preventDefault();
-      isDragging = true;
-      startX = e.clientX - currentX;
-      startY = e.clientY - currentY;
-      clone.style.cursor = "grabbing";
-    });
-    document.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      currentX = e.clientX - startX;
-      currentY = e.clientY - startY;
-      clone.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-    });
-    document.addEventListener("mouseup", () => {
-      if (!isDragging) return;
-      isDragging = false;
-      clone.style.cursor = "grab";
-    });
-
-    // Mobile: pinch-to-zoom
-    let initialDistance = 0;
-    clone.addEventListener("touchstart", (e) => {
-      if (e.touches.length === 2) {
-        e.preventDefault();
-        const dx = e.touches[0].clientX - e.touches[1].clientX;
-        const dy = e.touches[0].clientY - e.touches[1].clientY;
-        initialDistance = Math.sqrt(dx*dx + dy*dy);
-      }
-    }, { passive: false });
-
-    clone.addEventListener("touchmove", (e) => {
-      if (e.touches.length === 2) {
-        e.preventDefault();
-        const dx = e.touches[0].clientX - e.touches[1].clientX;
-        const dy = e.touches[0].clientY - e.touches[1].clientY;
-        const distance = Math.sqrt(dx*dx + dy*dy);
-        const deltaScale = (distance - initialDistance) / 200;
-        scale = Math.min(Math.max(0.5, scale + deltaScale), 3);
-        initialDistance = distance;
-        clone.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-      }
-    }, { passive: false });
-
-    // --- CLOSE ON ESC ---
-    escHandler = (e) => {
-      if (e.key === "Escape") closeLightbox();
-    };
-    document.addEventListener("keydown", escHandler, { once: true });
+    
+    // Preserve accessibility attributes
+    clone.setAttribute('role', 'img');
+    clone.setAttribute('tabindex', '0');
+    
+    // Style the cloned SVG
+    clone.style.maxWidth = '95vw';
+    clone.style.maxHeight = '95vh';
+    clone.style.width = 'auto';
+    clone.style.height = 'auto';
+    clone.style.background = 'white';
+    clone.style.borderRadius = '8px';
+    clone.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+    
+    lb.innerHTML = '';
+    lb.appendChild(clone);
+    lb.style.display = 'flex';
+    
+    // Focus management
+    clone.focus();
+    
+    // Announce to screen readers
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.style.position = 'absolute';
+    announcement.style.left = '-10000px';
+    announcement.textContent = 'Diagram opened in zoom view. Press Escape to close.';
+    lb.appendChild(announcement);
   }
-
+  
   function closeLightbox() {
-    if (!lb) return;
-    lb.setAttribute("aria-hidden", "true");
-    if (content) {
-      content.innerHTML = "";
-    }
-    if (escHandler) {
-      document.removeEventListener("keydown", escHandler);
-      escHandler = null;
+    if (lightbox) {
+      lightbox.style.display = 'none';
+      // Return focus to the original diagram
+      const originalSvg = document.querySelector('.mermaid svg[data-zoomable="true"]:focus');
+      if (originalSvg) originalSvg.focus();
     }
   }
-
-  // NEW: Function to find ALT comment before mermaid diagram
-  function findAltComment(mermaidContainer) {
-    // Look for HTML comment with ALT: prefix in preceding text nodes
-    let currentNode = mermaidContainer.previousSibling;
-    let searchDepth = 0;
-    const maxSearchDepth = 10; // Limit search to avoid performance issues
+  
+  function makeZoomable(svg) {
+    if (svg.hasAttribute('data-zoomable')) return;
     
-    while (currentNode && searchDepth < maxSearchDepth) {
-      if (currentNode.nodeType === Node.COMMENT_NODE) {
-        const commentText = currentNode.textContent.trim();
-        if (commentText.startsWith('ALT:')) {
-          return commentText.substring(4).trim(); // Remove 'ALT:' prefix
-        }
-      }
-      // Also check text content of previous element for comments
-      else if (currentNode.nodeType === Node.ELEMENT_NODE) {
-        const htmlContent = currentNode.innerHTML;
-        const commentMatch = htmlContent.match(/<!--\s*ALT:\s*(.*?)\s*-->/s);
-        if (commentMatch) {
-          return commentMatch[1].trim();
-        }
-      }
-      
-      currentNode = currentNode.previousSibling;
-      searchDepth++;
-    }
+    svg.setAttribute('data-zoomable', 'true');
+    svg.style.cursor = 'zoom-in';
     
-    // If no ALT comment found, also check parent's previous siblings
-    const parent = mermaidContainer.parentNode;
-    if (parent) {
-      let parentPrev = parent.previousSibling;
-      let parentSearchDepth = 0;
-      
-      while (parentPrev && parentSearchDepth < 5) {
-        if (parentPrev.nodeType === Node.COMMENT_NODE) {
-          const commentText = parentPrev.textContent.trim();
-          if (commentText.startsWith('ALT:')) {
-            return commentText.substring(4).trim();
-          }
-        } else if (parentPrev.nodeType === Node.ELEMENT_NODE) {
-          const htmlContent = parentPrev.innerHTML;
-          const commentMatch = htmlContent.match(/<!--\s*ALT:\s*(.*?)\s*-->/s);
-          if (commentMatch) {
-            return commentMatch[1].trim();
-          }
-        }
-        
-        parentPrev = parentPrev.previousSibling;
-        parentSearchDepth++;
-      }
-    }
+    // Add click handler
+    svg.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(svg);
+    });
     
-    return null;
-  }
-
-  function addAccessibilityAttributes(svg) {
-    const mermaidContainer = svg.closest('.mermaid');
-    let altText = "Interactive diagram";
-    
-    // NEW: First try to find ALT comment
-    if (mermaidContainer) {
-      const commentAlt = findAltComment(mermaidContainer);
-      if (commentAlt) {
-        altText = commentAlt + " - Click to zoom and pan";
-        svg.setAttribute('role', 'img');
-        svg.setAttribute('aria-label', altText);
-        svg.setAttribute('tabindex', '0');
-        return; // Exit early if we found a comment
-      }
-    }
-    
-    // FALLBACK: Use existing logic if no ALT comment found
-    if (svg.querySelector('g[class*="flowchart"]')) altText = "Interactive flowchart diagram - click to zoom";
-    else if (svg.querySelector('g[class*="sequence"]')) altText = "Interactive sequence diagram - click to zoom";
-    else if (svg.querySelector('g[class*="class"]')) altText = "Interactive class diagram - click to zoom";
-    else if (svg.querySelector('g[class*="state"]')) altText = "Interactive state diagram - click to zoom";
-    else if (svg.querySelector('g[class*="pie"]')) altText = "Interactive pie chart - click to zoom";
-    else if (svg.querySelector('g[class*="gantt"]')) altText = "Interactive Gantt chart - click to zoom";
-
-    // Existing fallback to preceding text (kept as secondary option)
-    if (mermaidContainer && altText === "Interactive diagram") {
-      const prevSibling = mermaidContainer.previousElementSibling;
-      if (prevSibling && (prevSibling.tagName === 'P' || /^H[1-6]$/.test(prevSibling.tagName))) {
-        const description = prevSibling.textContent.trim();
-        if (description.length > 0 && description.length < 200) {
-          altText = `${description} - Interactive diagram, click to zoom`;
-        }
-      }
-    }
-
-    svg.setAttribute('role', 'img');
-    svg.setAttribute('aria-label', altText);
-    svg.setAttribute('tabindex', '0');
-  }
-
-  function bindZoom(root = document) {
-    // Target all SVGs in mermaid containers, regardless of specific classes
-    const svgs = root.querySelectorAll(".mermaid svg:not([data-mz-bound])");
-    svgs.forEach((svg) => {
-      svg.setAttribute("data-mz-bound", "true");
-      svg.classList.add("mz-zoomable");
-      addAccessibilityAttributes(svg);
-      
-      // Make sure SVG is clickable
-      svg.style.cursor = "zoom-in";
-      svg.setAttribute("role", "button");
-      
-      svg.addEventListener("click", (e) => {
+    // Add keyboard handler
+    svg.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        e.stopPropagation();
         openLightbox(svg);
-      });
-      
-      // Also add keyboard support
-      svg.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          e.stopPropagation();
-          openLightbox(svg);
+      }
+    });
+    
+    // Update aria-label to mention zoom capability
+    const currentLabel = svg.getAttribute('aria-label') || 'Diagram';
+    svg.setAttribute('aria-label', currentLabel + ' - Click or press Enter to zoom');
+  }
+  
+  function findAndProcessDiagrams() {
+    const svgs = document.querySelectorAll('.mermaid svg:not([data-zoomable])');
+    svgs.forEach(makeZoomable);
+  }
+  
+  // Initialize
+  function init() {
+    findAndProcessDiagrams();
+    
+    // Watch for new diagrams (for dynamic content)
+    const observer = new MutationObserver((mutations) => {
+      let hasNewDiagrams = false;
+      mutations.forEach(mutation => {
+        if (mutation.addedNodes) {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === 1) {
+              if (node.classList?.contains('mermaid') || 
+                  node.querySelector?.('.mermaid')) {
+                hasNewDiagrams = true;
+              }
+            }
+          });
         }
       });
-    });
-  }
-
-  function waitForMermaid() {
-    const checkForSvgs = () => {
-      const svgs = document.querySelectorAll(".mermaid svg:not([data-mz-bound])");
-      if (svgs.length > 0) {
-        bindZoom();
-        setTimeout(checkForSvgs, 500);
-      } else {
-        setTimeout(checkForSvgs, 100);
-      }
-    };
-    checkForSvgs();
-  }
-
-  function init() {
-    ensureLightbox();
-    setTimeout(waitForMermaid, 100);
-  }
-
-  if (window.document$ && window.document$.subscribe) {
-    document$.subscribe(() => {
-      setTimeout(init, 200);
-    });
-  } else {
-    if (document.readyState === 'loading') {
-      document.addEventListener("DOMContentLoaded", init);
-    } else {
-      init();
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const observer = new MutationObserver((mutations) => {
-      let foundNewMermaidContainers = false;
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === 1) {
-            if (node.classList && node.classList.contains('mermaid')) foundNewMermaidContainers = true;
-            if (node.querySelectorAll) {
-              const mermaidContainers = node.querySelectorAll('.mermaid');
-              if (mermaidContainers.length > 0) foundNewMermaidContainers = true;
-            }
-          }
-        });
-      });
-      if (foundNewMermaidContainers) {
-        setTimeout(() => {
-          const svgs = document.querySelectorAll(".mermaid svg:not([data-mz-bound])");
-          if (svgs.length > 0) bindZoom();
-        }, 200);
+      
+      if (hasNewDiagrams) {
+        setTimeout(findAndProcessDiagrams, 100);
       }
     });
-
+    
     observer.observe(document.body, {
       childList: true,
       subtree: true
     });
-  });
+  }
+  
+  // Start when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
