@@ -38,7 +38,7 @@ jobs:
             -v ${{ github.workspace }}:/app \
             -w /app \
             my-mkdocs-project:latest \
-            mkdocs build
+            mkdocs build --verbose
       
       - name: Verify MkDocs output
         run: |
@@ -59,6 +59,25 @@ jobs:
           fi
           
           echo "SUCCESS: Site built with $(find ./site -name "*.html" | wc -l) HTML files"
+          
+          # Verify JavaScript and CSS files are included
+          echo "Checking JavaScript files:"
+          find ./site -name "*.js" | head -10
+          echo "Checking CSS files:"
+          find ./site -name "*.css" | head -10
+          
+          # Check if our custom files are present
+          if [ ! -f "./site/js/alt-processor.js" ]; then
+            echo "WARNING: alt-processor.js not found in build output"
+          else
+            echo "✅ alt-processor.js found in build output"
+          fi
+          
+          if [ ! -f "./site/js/diagram-zoom.js" ]; then
+            echo "WARNING: diagram-zoom.js not found in build output"
+          else
+            echo "✅ diagram-zoom.js found in build output"
+          fi
           
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

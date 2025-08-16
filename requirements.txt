@@ -4,6 +4,7 @@ mkdocs-material==9.4.8
 
 # Extensions (correct version)
 pymdown-extensions==10.16.1
+mkdocs-mermaid2-plugin==1.2.1
 
-# Remove beautifulsoup4 - not needed with simplified approach
-# beautifulsoup4>=4.12.2
+# Additional dependencies for AODA compliance
+beautifulsoup4>=4.12.2

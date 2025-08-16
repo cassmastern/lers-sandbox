@@ -58,6 +58,7 @@ Stored in `docs/assets/css/` and loaded via `extra_css`:
 
 ### Deployment Flow
 
+<!-- ALT: Diagram showing a 5-phase workflow; Phase 1 is MKdocs (local preview); a commit and push arrow moves to phase 2 (GitHub Repo); a trigger arrow moves to phase 3 (GitHub Actions CI), then a build & test arrow moves to phase 4 (GitHub Pages), from which a public access arrow moves to the final phase (User Browser) -->
 ```mermaid
 graph TD
   Dev["MkDocs (local preview)"]
