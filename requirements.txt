@@ -1,10 +1,4 @@
 # Core MkDocs
 mkdocs==1.5.3
 mkdocs-material==9.4.8
-
-# Extensions (correct version)
-pymdown-extensions==10.16.1
 mkdocs-mermaid2-plugin==1.2.1
-
-# Additional dependencies for AODA compliance
-beautifulsoup4>=4.12.2

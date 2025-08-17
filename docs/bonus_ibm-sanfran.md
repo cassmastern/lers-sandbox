@@ -144,6 +144,7 @@ The point: instead of many remote calls to tweak small fields and call helper se
 SanFrancisco sat between application-specific UI/business logic and the JVM, providing reusable services.
 
 <!-- ALT: Flowchart showing IBM SanFrancisco's layered architecture. Arrows connect layers from top to bottom: User Interface → Business Logic → Foundation Services → JVM → Operating System. SanFrancisco encompasses the Business Logic and Foundation layers, positioned between application code and the JVM. -->  
+
 ```mermaid
 flowchart TB
     UI[User Interface Layer] --> BL[Business Logic Layer]
@@ -164,6 +165,7 @@ flowchart TB
 The following is a static breakdown of large-grain components, layered from generic to domain-specific:
 
 <!-- ALT: Class diagram illustrating SanFrancisco’s layered component hierarchy. FoundationServices includes core services like TransactionManager and PersistenceManager. CommonBusinessObjects builds on FoundationServices and includes domain-neutral entities like Party and Product. DomainComponents extends CommonBusinessObjects with vertical-specific modules like ERP and Retail. -->  
+
 ```mermaid
 classDiagram
     class FoundationServices {
@@ -198,7 +200,8 @@ classDiagram
 An Illustration of the "large-grain" idea — `Order` encapsulates not just data, but behavior and transactional integrity.
 
 <!-- ALT: Class diagram showing a coarse-grained Order object and its relationships. Order contains attributes and methods for managing line items and totals. It has a one-to-many relationship with OrderLine, which in turn references Product. Emphasizes encapsulation of behavior and data in a single business object. -->  
-```mermaid
+
+```mermaid 
 classDiagram
     class Order {
         +orderId: String
@@ -229,7 +232,8 @@ classDiagram
 Here is a dynamic view of an object interacting with SF foundation services:  
 
 <!-- ALT: Sequence diagram showing object interaction with SF foundation services across 4 swimlanes: Client Object, Business Object, Data Access Object, and Database. Flow shows client creating business object, business object accessing data object, data object querying database, and responses flowing back through the chain. Includes error handling and transaction management patterns typical of enterprise Java applications. -->  
-```mermaid
+
+```mermaid 
 sequenceDiagram
     participant UI as User Interface
     participant Order as Order Business Object
@@ -256,8 +260,9 @@ sequenceDiagram
 
 SanFrancisco's runtime separation — often deployed in a 3-tier setup.
 
-<!-- ALT: Flowchart depicting SanFrancisco’s 3-tier runtime deployment. ClientNode contains UIClient (Swing/HTML). AppServer includes BusinessLogic, Foundation Services, and JVM. DataServer hosts a relational database. Arrows show bidirectional communication between layers, representing distributed component interaction. -->
-```mermaid
+<!-- ALT: Flowchart depicting SanFrancisco’s 3-tier runtime deployment. ClientNode contains UIClient (Swing/HTML). AppServer includes BusinessLogic, Foundation Services, and JVM. DataServer hosts a relational database. Arrows show bidirectional communication between layers, representing distributed component interaction. -->  
+
+```mermaid 
 flowchart TB
     subgraph ClientNode[Client Workstation]
         UIClient[UI Layer - Swing/HTML]
@@ -285,7 +290,8 @@ flowchart TB
 Below is a representation of an `Order`’s lifecycle as managed by SanFrancisco's object framework:  
 
 <!-- ALT: State diagram showing lifecycle transitions for an Order object. Starts at New, proceeds to PendingApproval, then either Approved or Rejected. Approved leads to Shipped, then Completed. Rejected and Completed transition to end state. Models business process flow using explicit states and transitions. -->  
-```mermaid
+
+```mermaid     
 stateDiagram-v2
     [*] --> New
     New --> PendingApproval: submit()

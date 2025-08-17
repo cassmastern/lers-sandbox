@@ -1,25 +1,10 @@
 site_name: "Ler's Demo Website"
 site_url: https://cassmastern.github.io/demo4ops/
 docs_dir: docs
-
-theme:
-  name: material
-  features:
-    - content.code.copy
-    - navigation.top
-    - navigation.footer
-    - content.tabs.link
-  palette:
-    scheme: default
-
+theme: material
 plugins:
   - search
-  - mermaid2:
-      arguments:
-          startOnLoad: true
-          theme: default
-          securityLevel: 'loose'
-
+  - mermaid2
 nav:
   - Home: index.md
   - About this Site:
@@ -44,7 +29,8 @@ nav:
       - Kubectl Command Cheat Sheet: cheatsheet-kubectl.md
       - Compound Modifiers Cheat Sheet: cheatsheet_compound-modifiers.md
   - Bonus:
-      - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfrancisco.md
+      - 'IBM-SanFrancisco — a Technical Memoir': bonus_ibm-sanfran.md
+      - AI-Augmented Accessibility: bonus_ai-accessibility.md
 
 extra:
   generator: false
@@ -62,24 +48,15 @@ extra:
 markdown_extensions:
   - tables
   - attr_list
-
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-
-  - pymdownx.highlight
   - pymdownx.details
   - pymdownx.tabbed
-  - pymdownx.tasklist
-  - pymdownx.tilde
 
 extra_javascript:
   - js/alphabet-auto.js
-  - js/mermaid-enhancements.js
+  - js/diagram-zoom.js
+  - js/alt-inject.js
 
 extra_css:
   - css/alphabet.css
-  - css/mermaid-enhancements.css
-  
+  - css/diagram-zoom.css
+
