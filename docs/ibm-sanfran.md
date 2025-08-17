@@ -380,5 +380,6 @@ EJBs and coarse-grained Java objects were designed for monolithic, on-premise Ja
 - My long-term memory (~20%)
 
 ---
+2025.08.12
 
 ![IBM Toronto Lab](img/ibm-toronto-olab.png)

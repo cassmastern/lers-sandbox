@@ -1,22 +1,22 @@
-# Toward AI-Augmented Accessibility
+# Toward AI-Augmented Accessibility — A Technical Daydream
 
 > While developing this site, it occurred to me that while we’ve made great strides in techcomm automation — reproducibility, modularity, re-use, etc. — we’re still leaving some readers behind. Sightless users, in particular, often encounter diagrams that are visually rich but semantically opaque. 
 
-"Our great strides in techcomm automation" thus, while working on this site, started to attract quotation marks: figuring out how to make MkDocs content WCAG-compliant turned out to be more convoluted than expected. The basics are fine, but anything beyond static text (especially diagrams) quickly became a mess. 
+"Our great strides in techcomm automation" thus, while working on this site, started to attract quotation marks: figuring out how to make MkDocs content WCAG-compliant turned out to be more convoluted than expected. The basics are fine, but anything beyond static text (especially diagrams) quickly becomes a mess. 
 
-Mermaid won't expose ALT text reliably (or it does or I can't figure it out), SVGs lack accessible markup, and plugins seem allergic to ARIA roles. I spent more time than I’d like chasing down rendering quirks and testing screen reader behavior, just to confirm what wasn’t working. It felt like every fix introduced a new edge problem. It still feels that way.
+Mermaid won't expose ALT text reliably (or it will and it's just me forgetting so say please), SVGs lack accessible markup, and plugins seem allergic to ARIA roles. I spend more time than I’d like chasing down rendering quirks and testing screen reader behavior, just to confirm what isn't working. Every fix introduces a new problem.
 
-So I thought, or daydreamed, what if accessibility wasn’t a bolt-on? What if it were baked into the authoring flow, nudged along by AI that actually understands context — not just checking boxes, but helping us describe what a diagram means, not just what it looks like?
+So I'm thinking (or daydreaming), what if accessibility wasn’t a bolt-on? What if it were baked into the authoring flow, nudged along by AI that actually understands context — not just checking boxes, but helping us describe what a diagram means, not just what it looks like?
 
 What if our CI/CD pipelines didn’t just validate syntax and links, but flagged missing ALT text with the same urgency as a broken build? What if our authoring tools could suggest meaningful descriptions, catch compliance gaps early, and even learn from our writing style over time?
 
-This page sketches out that daydream. It’s format-agnostic, author-friendly, and built to slot into existing workflows without drama. Whether you’re diagramming infrastructure or documenting edge-case YAML quirks, the goal is the same: make accessibility proactive, reproducible, and just as modular as the rest of your stack.
+This page sketches out that daydream. Of a system that's format-agnostic, author-friendly, and built to slot into existing workflows without drama. Whether you’re diagramming infrastructure or documenting edge-case YAML quirks, the goal is the same: make accessibility proactive, reproducible, and just as modular as the rest of your stack.
 
 ---
 
 ## The Problem
 
-To recap, somewhat formally: *visual content — diagrams, charts, SVGs, flow states — is often inaccessible to screen readers. Even when authors include `alt` text, it’s usually terse and lacks narrative depth.*
+The problem — to recap briefly — is this: *visual content — diagrams, charts, SVGs, flow states — is often inaccessible to screen readers. Even when authors include `alt` text, it’s usually terse and lacks narrative depth.*
 
 What’s missing is a system that:
 
@@ -25,13 +25,16 @@ What’s missing is a system that:
 - Integrates into authoring tools and CI
 - Learns from context and glossary terms
 
+Next, some sketches of this daydreamed system before I forget even the raw ideas. 
 ---
 
 ## Structure: Who’s Doing What, and Why
 
-Before diving into flows and fallbacks, it helps to map out the cast of characters. This diagram lays out the core components of the accessibility infrastructure — authoring tools, metadata processors, AI helpers, and validation pipelines. Each one plays a role in making sure diagrams aren’t just pretty, but also meaningful to every reader.
+Before diving into flows and fallbacks, it helps to map out the cast of characters. 
 
-It’s not about reinventing the stack, it’s about making sure accessibility has a seat at the table from the start.
+Here is a diagram that lays out the principal or core components of the accessibility infrastructure — authoring tools, metadata processors, AI helpers, and validation pipelines. Each one plays a role in making sure diagrams aren’t just pretty, but also meaningful to every reader. 
+
+> It’s not about reinventing the stack, it’s about making sure accessibility has a seat at the table from the start.
 
 ```mermaid
 graph TD
@@ -41,7 +44,6 @@ graph TD
     C --> E[Markdown + Diagrams<br><sub>Content Surface</sub>]
     D --> E
 ```
-
 ## Component Breakdown
 
 ### MCP Server (Metadata & Compliance Processor)
@@ -50,7 +52,7 @@ graph TD
 * Handles multiple formats: Markdown, Mermaid, PlantUML, SVG, PNG
 * Exposes APIs for plugins and CI tools
 
-### B. RAG Workflow (Retrieval-Augmented Generation)
+### RAG Workflow (Retrieval-Augmented Generation)
 
 * AI model that retrieves glossary terms, headings, and context
 * Generates rich ALT and DESC content
@@ -58,7 +60,7 @@ graph TD
 
 ### Authoring Plugin
 
-* IDE extension (e.g., VS Code, Obsidian)
+* IDE extension (e.g., VS Code, Obsidian, enterprise-class XML authoring tools)
 * Provides inline suggestions for ALT/DESC
 * Injects metadata and previews screen reader output
 * Connects to MCP Server for live feedback
@@ -68,7 +70,7 @@ graph TD
 * GitHub Action or CLI tool
 * Validates accessibility metadata during builds
 * Flags missing or malformed ALT/DESC
-* Enforces style guide rules
+* Acts as a gatekeeper of authoring toolchain-level style guide rules
 
 ### Markdown + Diagrams
 
@@ -137,5 +139,5 @@ Sightless users deserve more than “flowchart of payment states.” They deserv
 
 > Hopefully this system won't be just checking checkboxes — it might empower authors to write accessibly, and help others engage meaningfully (I'm not a developer, neither code, nor real estate; remind me to tell you the joke, "Oh, I'm just the janitor here", lol).
 
-
+2025.08.17
 

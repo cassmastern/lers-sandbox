@@ -45,7 +45,7 @@ All scripts are stored in `docs/assets/js/` and loaded via `extra_javascript` in
 
 - `alphabet-auto.js`: vertical hypertexted alphabet in sidebar for navigating glossaries
 - `diagram-zoom.js`: Spotlight/zoom for diagrams 
-- `alt-injector.js`: injects alt-text and ARIA roles for accessibility (see also <<>>)
+- `alt-inject.js`: injects alt-text and ARIA roles for accessibility (work in progress)
 
 > **Note:** One script, `/docs/assets/py/inject_svg_metadata.py`, runs post-build by a GitHub Actions runner, to inject SVG metadata for making alternative text discoverable by screen readers.
 

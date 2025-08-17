@@ -1,6 +1,8 @@
 # What's in Here?
 
-This site contains writing samples designed to remain relevant and useful for my future endeavors. These include:
+This site contains writing samples designed to remain relevant and useful for my own use and future endeavors, as well as some concepts/ideas. 
+
+These include:
 
 - a report on how this site was developed and deployed
 - cross-platform architecture descriptions of the three cloud giants: Amazon, Google, and Microsoft
@@ -9,7 +11,8 @@ This site contains writing samples designed to remain relevant and useful for my
 - a series of topics on contemporary networking and security
 - additional glossaries and cheat sheets, such as those on OSS (Operational Support Systems) and computer networking
 - a possibly non-traditional résumé with some references (currently under consideration)
-- a final writing sample: a “technical memoir” about a coarse-grain Java business objects project from the pre-cloud era
+- a writing sample: a “technical memoir” about a coarse-grain Java business objects project from the pre-cloud era
+- a "technical daydream" — a rough but hopefully forward-looking idea on AI-augmented accessibility (a project idea born within this project)
 
 No (or very little) late-night easy reading here.
 
