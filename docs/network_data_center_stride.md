@@ -89,3 +89,6 @@ The tables below map STRIDE categories to specific components in the network, de
 | **Information Disclosure** | Leaky metrics, exposed headers   | RBAC, encrypted storage, observability ACLs                   |
 | **Denial of Service**      | Traffic floods, cache exhaustion | Rate limiting, load balancing, firewall rules                 |
 | **Elevation of Privilege** | CI/CD abuse, misconfigured roles | Role separation, scoped tokens, RBAC enforcement              |
+
+---
+2025.08.14

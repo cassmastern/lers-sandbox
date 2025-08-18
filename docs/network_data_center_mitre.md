@@ -119,3 +119,7 @@ To strengthen defenses, consider the following enhancements aligned with ATT&CK-
 * **Threat Detection Rules**: Use Sigma or MITRE D3FEND to write detection logic.
 * **Red Team Scenarios**: Simulate TTPs like T1078 (Valid Accounts) or T1190 (Exploit Public-Facing App).
 * **Purple Teaming**: Validate defenses by emulating known adversary behavior (e.g. APT29, FIN7).
+
+---
+
+2025.08.14

@@ -5,9 +5,10 @@ Welcome to Ler's Demo Website!
 The site's purpose is multifold:
 
 - to brush up my knowledge of Amazon, GCP and Azure cloud platforms
+- to play with some of the features supporting accessibility and eventually implement WSAG compliance
 - to concoct a quick technical documentation site for demo purposes (*see* details in [What's in Here?](whatsinhere.md))
 - to learn something new in the process
-- get the interviewer(s) to view this candidacy favourably 😊
+- \[*inner voice whispering: "...and get the interviewer(s) to view this candidacy favourably*] 😊
 
 > **Note:** This site is a living demo — an experiment space for writing samples, workflow ideas, notes on accessibility, and product concepts. Expect rough edges; they’re part of the showcase.
 

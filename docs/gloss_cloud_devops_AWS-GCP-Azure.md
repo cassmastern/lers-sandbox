@@ -380,6 +380,7 @@ All three clouds support blue/green and canary deployments via their LB + deploy
   glossary.md   <-- this file
 ```
 
----
-
 \[expandable]
+---
+2025.08.09
+

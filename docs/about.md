@@ -1,6 +1,6 @@
 # How This Site Was Developed and Deployed
 
-In August 2025, I revived an old MkDocs-based glossary project and transformed it into a modular, containerized showcase site. The goal: demonstrate CI/CD automation, accessibility compliance, and reproducibility. And of course, learn something new.
+In August 2025, I revived an old MkDocs-based glossary project and transformed it into a modular, containerized showcase site.
 
 ## Architecture Overview
 

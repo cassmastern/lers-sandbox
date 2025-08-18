@@ -1,7 +1,18 @@
 site_name: "Ler's Demo Website"
 site_url: https://cassmastern.github.io/demo4ops/
 docs_dir: docs
-theme: material
+theme:
+  name: material
+  features:
+    # - navigation.instant       # Retains keyboard focus across page loads
+    # - toc.integrate            # Sidebar TOC improves screen reader flow
+    # - header.autohide          # Reduces visual clutter on scroll
+    - search.highlight         # Highlights terms for low-vision users
+    - search.suggest           # Improves discoverability via autocomplete
+    - search.share             # Enables link sharing for assistive workflows
+    - offline                  # Supports access in low-bandwidth environments
+    - privacy                  # Disables tracking scripts (GDPR/AODA compliant)
+custom_dir: theme
 plugins:
   - search
   - mermaid2

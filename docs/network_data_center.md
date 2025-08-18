@@ -129,3 +129,6 @@ flowchart TD
 
 CI/CD pipeline supports branch-based staging, with promotion to production gated by deployment jobs.
 This could be extended with environment-specific secrets, feature flags, or blue/green deployments if needed.
+
+---
+2025.08.14

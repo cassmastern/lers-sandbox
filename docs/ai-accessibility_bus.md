@@ -155,4 +155,5 @@ flowchart LR
 
 By embedding AI-driven accessibility checks into the authoring and publishing workflow, we can shift accessibility from a reactive fix to a proactive standard. This approach not only helps organizations comply but ensures that *all* readers — sighted or sightless — engage with technical content meaningfully.
 
+---
 2025.08.19

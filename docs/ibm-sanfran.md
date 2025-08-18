@@ -63,10 +63,10 @@ IBM shipped tooling to create prototypes and glue components into running scenar
 
 ## SanFrancisco Component Structure
 
-Below are [attempts of]:
+Below are attempts to:
 
-- a sketch of a typical SanFrancisco component at runtime (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence))
-- descriptions of the principal classes/services you would actually interact with
+- sketch a typical SanFrancisco component at runtime (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence))
+- describe the principal classes/services you would actually interact with
 
 ### Base class hierarchy (logical)
 

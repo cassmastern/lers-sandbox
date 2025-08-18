@@ -106,12 +106,12 @@ It’s not failure, it’s feedback. And it’s wired to help, not scold.
 
 ```mermaid
 flowchart LR
-    A[Authoring Plugin<br><sub>IDE Extension</sub>] --> B[Markdown + Diagrams<br><sub>Content Surface</sub>]
-    B --> C[MCP Server<br><sub>Metadata & Compliance Processor</sub>]
-    C --> D[RAG Workflow<br><sub>Retrieval-Augmented Generation</sub>]
+    A["Authoring Plugin\nIDE Extension"] --> B["Markdown + Diagrams\nContent Surface"]
+    B --> C["MCP Server\nMetadata & Compliance Processor"]
+    C --> D["RAG Workflow\nRetrieval-Augmented Generation"]
     D --> C
-    C --> E[CI/CD Integration<br><sub>Validation Pipeline</sub>]
-    E --> F[Accessibility Report<br><sub>Warnings, Suggestions</sub>]
+    C --> E["CI/CD Integration\nValidation Pipeline"]
+    E --> F["Accessibility Report\nWarnings, Suggestions"]
     F --> A
 ```
 
@@ -139,5 +139,7 @@ Sightless users deserve more than “flowchart of payment states.” They deserv
 
 > Hopefully this system won't be just checking checkboxes — it might empower authors to write accessibly, and help others engage meaningfully (I'm not a developer, neither code, nor real estate; remind me to tell you the joke, "Oh, I'm just the janitor here", lol).
 
+---
 2025.08.17
+
 

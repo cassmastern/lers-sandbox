@@ -307,3 +307,6 @@ graph TD
 - Storing secrets in code — Always use Key Vault + Managed Identity.
 - Overengineering too soon — Start with PaaS (App Service) unless we truly need AKS.
 - Ignoring monitoring — Without Application Insights, issues are harder to detect.
+
+---
+2025.08.11

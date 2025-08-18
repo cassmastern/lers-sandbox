@@ -17,6 +17,7 @@ gantt
 
 # Changelog
 
+- 2025.08.19 Added some visuals to the concept note; enabled some accessibility-related theme features
 - 2025.08.18 Added a rough roadmap and a "concept note" based on the AI-augmented accessibility idea
 - 2025.08.17 Added another first-ever; a 'technical daydream' on AI-augmented accessibility
 - 2025.08.14 Site live via GitHub Pages
