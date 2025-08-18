@@ -10,8 +10,8 @@ nav:
   - About this Site:
       - "What's in Here?": whatsinhere.md
       - How this Site was Developed and Deployed: about.md
-      - Feedback: github-issue-ticket.md
-      - Changelog: changelog.md
+      - Feedback: feedback.md
+      - Rough Roadmap and Changelog: roadmap.md
   - Probably What Awaits Me at Work:
       - AWS vs GCP vs Azure: aws-gcp-azure.md
       - Cross-Platform Cloud and DevOps Glossary: gloss_cloud_devops_AWS-GCP-Azure.md
@@ -32,6 +32,8 @@ nav:
   - Bonus:
       - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfran.md
       - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
+      - "temp - accessibility": ai-accessibility_bus_with_diagrams.md
+      - From Daydream to Concept Note: ai-accessibility_bus.md
 
 extra:
   generator: false

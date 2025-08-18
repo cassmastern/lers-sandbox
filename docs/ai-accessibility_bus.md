@@ -1,4 +1,4 @@
-# From Daydream to Concept Note: AI-Augmented Accessibility
+# A Concept Note: AI-Augmented Accessibility
 
 ## 1. Problem Statement
 
@@ -11,6 +11,20 @@ Modern technical documentation has embraced **automation and modularity** (e.g.,
 * As documentation scales, so does the **risk of inaccessible content** . This exposes organizations to compliance gaps (WCAG, AODA) and erodes inclusivity.
 
 Accessibility today is often a **bolt-on** fix, rather than a **built-in** practice.
+
+```mermaid
+graph TD;
+    docs[Technical Documentation];
+    visuals[Diagrams and Charts];
+    inaccessible[Inaccessible to Screen Readers];
+    tools[Authoring Tools];
+    compliance[Compliance Risk and Exclusion];
+
+    docs --> visuals;
+    visuals --> inaccessible;
+    tools --> inaccessible;
+    inaccessible --> compliance;
+```
 
 ---
 
@@ -25,81 +39,115 @@ Introduce an **AI-augmented accessibility layer** that:
 
 This ensures accessibility is **proactive, reproducible, and modular** — just like other parts of the documentation stack.
 
+```mermaid
+flowchart TD
+    A[Detect Visual Content] --> B[AI Suggests ALT/DESC Metadata]
+    B --> C[Integrate into Authoring Tools]
+    C --> D[Learn from Style Guides & Past Decisions]
+    D --> E[Proactive & Modular Accessibility]
+```
+
 ---
 
 ## 3. Value Proposition
 
-**For Authors:**
+**For Authors:**  
+- Saves time by drafting metadata automatically.  
+- Provides inline feedback and compliance checks during authoring.  
+- Reduces the cognitive load of remembering accessibility rules.  
 
-* Saves time by drafting metadata automatically.
-* Provides inline feedback and compliance checks during authoring.
-* Reduces the cognitive load of remembering accessibility rules.
+**For Readers (esp. sightless users):**  
+- Delivers meaningful, contextual descriptions of diagrams.  
+- Improves engagement and comprehension beyond bare compliance.  
 
-**For Readers (esp. sightless users):**
+**For Organizations:**  
+- Reduces legal/compliance risk (ADA/AODA, WCAG 2.2).  
+- Scales accessibility consistently across large doc sets.  
+- Enhances inclusivity and brand reputation.  
 
-* Delivers meaningful, contextual descriptions of diagrams.
-* Improves engagement and comprehension beyond bare compliance.
-
-**For Organizations:**
-
-* Reduces legal/compliance risk (ADA/AODA, WCAG 2.2).
-* Scales accessibility consistently across large doc sets.
-* Enhances inclusivity and brand reputation.
+```mermaid
+flowchart TD
+    A["Authors / Tech Writers"] --> F["AI Accessibility Layer"]
+    B["Accessibility Specialists"] --> F
+    C["Developers & DevOps Teams"] --> F
+    D["End Users (Sightless Readers)"] --> F
+    E["Organizations"] --> F
+```
 
 ---
 
 ## 4. Implementation Roadmap (Incremental Approach)
 
 **Phase 1 – MVP**
-
-* CLI tool that scans Markdown and diagrams for missing/invalid ALT text.
-* Integrates optional AI API calls to suggest ALT text.
+* CLI tool scans Markdown/diagrams for missing ALT text.
+* AI API optional suggestions.
 
 **Phase 2 – Authoring Plugin**
-
-* Integrates into the tools where authors actually work — whether that’s a structured XML editor (*oXygen, FrameMaker, MadCap Flare, Paligo*), or a docs-as-code IDE (*VS Code, IntelliJ, Sublime*).
-* Provides inline suggestions for ALT/DESC content.
-* Injects metadata and previews how a screen reader would interpret the diagram.
-* Connects to the MCP Server for live feedback and glossary-aware generation.
-* **Open Question:** Which platforms matter most? Techcomm tools vary widely by industry, from CCMS-driven XML editors to lightweight Markdown pipelines. More research is needed to identify the primary integration targets.
+* IDE/CCMS integration.
+* Inline suggestions + preview.
+* MCP server glossary-aware generation.
 
 **Phase 3 – CI/CD Integration**
+* GitHub Action or CLI validator.
+* Accessibility failures flagged in builds.
 
-* GitHub Action or CLI validator for builds.
-* Accessibility failures flagged like broken links or syntax errors.
-* Automated reports with suggested fixes.
+**Phase 4 – Metadata and Compliance Server**
+* Centralized enforcement.
+* RAG-powered glossary/context.
+* API for org-wide adoption.
 
-**Phase 4 – Metadata & Compliance Server**
-
-* Centralized engine that enforces accessibility rules.
-* RAG-powered glossary/context learning.
-* API exposure for org-wide adoption.
-
----
-
-## 5. Key Stakeholders
-
-* **Authors / Technical Writers** – primary users; need low-friction tooling.
-* **Accessibility Specialists** – validate compliance; reduce manual load.
-* **Developers & DevOps Teams** – integrate into CI/CD pipelines.
-* **End Users (esp. sightless readers)** – ultimate beneficiaries of richer, more inclusive documentation.
-* **Organizations** – gain compliance assurance and reputational benefit.
+```mermaid
+timeline
+    title Implementation Roadmap
+    Phase1 : MVP - CLI Scanner + AI Suggestions
+    Phase2 : Authoring Plugin - IDE/CCMS Integration
+    Phase3 : CI/CD Integration - Build Validation
+    Phase4 : Compliance Server - Centralized Rules + API
+```
 
 ---
 
-## 6. Risks & Considerations
+## 5. Key Stakeholders  
 
-* **AI quality variance:** AI-generated descriptions must be validated by authors; risk of incorrect or verbose ALT text.
-* **Integration complexity:** Existing doc toolchains differ; adoption requires format-agnostic solutions.
-* **Change management:** Authors must trust and adopt the AI assistance, not see it as a burden.
+The key stakeholders of the concept/proposal are:
+
+* **Authors / Technical Writers**
+* **Accessibility Specialists**
+* **Developers and DevOps Teams**
+* **End Users (esp. sightless readers)**
+* **Organizations**
+
+
+---
+
+## 6. Risks and Considerations
+
+* **AI quality variance** – risk of incorrect/verbose ALT text.
+* **Integration complexity** – different doc toolchains.
+* **Change management** – author adoption and trust.
+
+```mermaid
+flowchart TB
+    Risks -->|AI Variance| Quality[Incorrect/Verbose ALT]
+    Risks -->|Toolchain Gaps| Integration[Integration Complexity]
+    Risks -->|Adoption| Change[Change Management Resistance]
+```
 
 ---
 
 ## 7. Why Now
 
-* Accessibility requirements are tightening (WCAG 2.2, AODA deadlines).
-* Developer ecosystems are embracing **“shift-left” quality checks** (linting, CI validation). Accessibility belongs in the same category.
-* AI capabilities are maturing to provide **context-aware, style-consistent text generation** .
+* Accessibility requirements are tightening (WCAG 2.2, AODA).
+* Developer ecosystems are embracing **shift-left** quality checks.
+* AI capabilities are maturing for **context-aware generation**.
+
+```mermaid
+flowchart LR
+    Regulations[Stricter Accessibility Standards] --> Urgency
+    ShiftLeft[Shift-Left Dev Practices] --> Urgency
+    AI[AI Capability Maturity] --> Urgency
+    Urgency[Why Now?]
+```
 
 ---
 
@@ -107,4 +155,4 @@ This ensures accessibility is **proactive, reproducible, and modular** — just 
 
 By embedding AI-driven accessibility checks into the authoring and publishing workflow, we can shift accessibility from a reactive fix to a proactive standard. This approach not only helps organizations comply but ensures that *all* readers — sighted or sightless — engage with technical content meaningfully.
 
-2025.08.18
+2025.08.19
