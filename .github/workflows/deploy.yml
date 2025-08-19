@@ -112,15 +112,14 @@ jobs:
         with:
           path: ./site
 
+jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
@@ -131,17 +130,37 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     continue-on-error: true
-    
+
     steps:
-      - name: Wait for deployment
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Wait for deployment to settle
         run: sleep 30
-        
-      - name: Test live site accessibility
+
+      - name: Install Pa11y and Chromium sandbox deps
         run: |
           npm install -g pa11y
-          
-          # Test main pages
-          echo "🔍 Testing live site accessibility..."
-          pa11y ${{ steps.deployment.outputs.page_url }} --reporter cli
-          pa11y ${{ steps.deployment.outputs.page_url }}z_taxi/ --reporter cli
+          sudo apt-get update && sudo apt-get install -y chromium-browser
+          echo "CHROME_BIN=/usr/bin/chromium-browser" >> $GITHUB_ENV
+
+      - name: Test live site accessibility
+        run: |
+          echo "🔍 Running Pa11y against live site"
+          pa11y ${{ steps.deployment.outputs.page_url }} \
+            --config .pa11yci.json \
+            --reporter cli
+
+          echo "🔍 Running Pa11y against /z_taxi/"
+          pa11y ${{
+            steps.deployment.outputs.page_url
+          }}z_taxi/ \
+            --config .pa11yci.json \
+            --reporter cli
+
           
