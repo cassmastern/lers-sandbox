@@ -49,16 +49,18 @@ All scripts are stored in `docs/assets/js/` and loaded via `extra_javascript` in
 
 > **Note:** One script, `/docs/assets/py/inject_svg_metadata.py`, runs post-build by a GitHub Actions runner, to inject SVG metadata for making alternative text discoverable by screen readers.
 
-### CSS Enhancements
+### CSS Enhancements  
 
 Stored in `docs/assets/css/` and loaded via `extra_css`:
 
 - `alphabet.css`: works in tandem with `alphabet-auto.js`
 - `diagram-zoom.css`: works in tandem with `diagram-zoom.js`
 
-### Deployment Flow
+### Deployment Flow  
 
-<!-- ALT: Diagram showing a 5-phase workflow; Phase 1 is MKdocs (local preview); a commit and push arrow moves to phase 2 (GitHub Repo); a trigger arrow moves to phase 3 (GitHub Actions CI), then a build & test arrow moves to phase 4 (GitHub Pages), from which a public access arrow moves to the final phase (User Browser) -->  
+<!-- ALT:> Deployment diagram showing a 5-phase workflow -->
+
+<!-- DESC: Diagram showing a 5-phase workflow; Phase 1 is MKdocs (local preview); a commit and push arrow moves to phase 2 (GitHub Repo); a trigger arrow moves to phase 3 (GitHub Actions CI), then a build & test arrow moves to phase 4 (GitHub Pages), from which a public access arrow moves to the final phase (User Browser) -->  
 
 ```mermaid
 graph TD

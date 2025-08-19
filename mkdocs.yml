@@ -1,21 +1,40 @@
 site_name: "Ler's Demo Website"
 site_url: https://cassmastern.github.io/demo4ops/
 docs_dir: docs
+
 theme:
   name: material
   features:
-    # - navigation.instant       # Retains keyboard focus across page loads
-    # - toc.integrate            # Sidebar TOC improves screen reader flow
-    # - header.autohide          # Reduces visual clutter on scroll
-    - search.highlight         # Highlights terms for low-vision users
-    - search.suggest           # Improves discoverability via autocomplete
-    - search.share             # Enables link sharing for assistive workflows
-    - offline                  # Supports access in low-bandwidth environments
-    - privacy                  # Disables tracking scripts (GDPR/AODA compliant)
-custom_dir: theme
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.select
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 plugins:
   - search
   - mermaid2
+
 nav:
   - Home: index.md
   - About this Site:
@@ -52,7 +71,7 @@ extra:
     property: G-GD2XWDMP2E
   consent:
     title: Cookie consent
-    description:
+    description: >
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
@@ -61,14 +80,16 @@ extra:
 markdown_extensions:
   - tables
   - attr_list
+  - md_in_html
   - pymdownx.details
-  - pymdownx.tabbed
+  - admonition
+  - toc:
+      permalink: true
 
 extra_javascript:
-  - js/alphabet-auto.js
   - js/diagram-zoom.js
-  - js/alt-inject.js
-
+  - js/alphabet-auto.js
+  
 extra_css:
   - css/alphabet.css
   - css/diagram-zoom.css

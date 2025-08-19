@@ -23,9 +23,10 @@ What’s missing is a system that:
 - Detects visual content across formats
 - Suggests meaningful ALT and DESC metadata
 - Integrates into authoring tools and CI
-- Learns from context and glossary terms
+- Learns from context and glossary terms  
 
-Next, some sketches of this daydreamed system before I forget even the raw ideas. 
+Next, some sketches of this daydreamed system before I forget even the raw ideas.  
+
 ---
 
 ## Structure: Who’s Doing What, and Why

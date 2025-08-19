@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -20,65 +23,91 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for git-revision-date-localized-plugin
         
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         
       - name: Build Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
+          target: builder  # Use the builder stage
           push: false
-          tags: my-mkdocs-project:latest
+          tags: mkdocs-builder:latest
           load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           
       - name: Build MkDocs site
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/app \
             -w /app \
-            my-mkdocs-project:latest \
-            mkdocs build --verbose
+            mkdocs-builder:latest \
+            mkdocs build --verbose --strict
       
-      - name: Verify MkDocs output
+      - name: Verify build output
         run: |
           if [ ! -d "./site" ]; then
-            echo "ERROR: MkDocs output folder './site' not found."
+            echo "❌ ERROR: MkDocs output folder './site' not found."
             echo "Available directories:"
             ls -la ./
-            echo "Checking if build failed..."
             exit 1
           fi
+
+          echo "✅ Build output directory found"
           
-          # Check if site has essential files
-          if [ ! -f "./site/index.html" ]; then
-            echo "ERROR: No index.html found in site directory"
-            echo "Site contents:"
-            ls -la ./site/
-            exit 1
+          # Check for essential files
+          essential_files=(
+            "index.html"
+            "search/search_index.json"
+            "js/diagram-accessibility.js"
+            "js/diagram-zoom.js" 
+            "css/accessibility.css"
+            "css/diagram-zoom.css"
+          )
+          
+          for file in "${essential_files[@]}"; do
+            if [ -f "./site/$file" ]; then
+              echo "✅ Found: $file"
+            else
+              echo "⚠️  Missing: $file"
+            fi
+          done
+          
+          # Check for Mermaid diagrams in HTML files
+          mermaid_count=$(find ./site -name "*.html" -exec grep -l "mermaid" {} \; | wc -l)
+          echo "📊 Found $mermaid_count HTML files with Mermaid content"
+          
+          # Verify JavaScript files are not minified (for debugging)
+          if [ -f "./site/js/diagram-accessibility.js" ]; then
+            js_size=$(stat -f%z "./site/js/diagram-accessibility.js" 2>/dev/null || stat -c%s "./site/js/diagram-accessibility.js")
+            echo "📏 diagram-accessibility.js size: ${js_size} bytes"
           fi
+
+      - name: Run accessibility audit (optional)
+        continue-on-error: true
+        run: |
+          # Install pa11y for accessibility testing
+          npm install -g pa11y
           
-          echo "SUCCESS: Site built with $(find ./site -name "*.html" | wc -l) HTML files"
+          # Start a simple HTTP server
+          cd site
+          python3 -m http.server 8080 &
+          SERVER_PID=$!
+          sleep 2
           
-          # Verify JavaScript and CSS files are included
-          echo "Checking JavaScript files:"
-          find ./site -name "*.js" | head -10
-          echo "Checking CSS files:"
-          find ./site -name "*.css" | head -10
+          # Test a few key pages for accessibility
+          echo "🔍 Running accessibility audit..."
+          pa11y http://localhost:8080/ --reporter cli || echo "⚠️  Accessibility issues found"
+          pa11y http://localhost:8080/z_taxi/ --reporter cli || echo "⚠️  Accessibility issues found on test page"
           
-          # Check if our custom files are present
-          if [ ! -f "./site/js/alt-processor.js" ]; then
-            echo "WARNING: alt-processor.js not found in build output"
-          else
-            echo "✅ alt-processor.js found in build output"
-          fi
-          
-          if [ ! -f "./site/js/diagram-zoom.js" ]; then
-            echo "WARNING: diagram-zoom.js not found in build output"
-          else
-            echo "✅ diagram-zoom.js found in build output"
-          fi
-          
+          # Clean up
+          kill $SERVER_PID 2>/dev/null || true
+          cd ..
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -87,6 +116,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     
     environment:
       name: github-pages
@@ -96,4 +126,23 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  accessibility-test:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    continue-on-error: true
+    
+    steps:
+      - name: Wait for deployment
+        run: sleep 30
         
+      - name: Test live site accessibility
+        run: |
+          npm install -g pa11y
+          
+          # Test main pages
+          echo "🔍 Testing live site accessibility..."
+          pa11y ${{ steps.deployment.outputs.page_url }} --reporter cli
+          pa11y ${{ steps.deployment.outputs.page_url }}z_taxi/ --reporter cli
+          

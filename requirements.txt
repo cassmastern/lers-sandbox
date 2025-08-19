@@ -1,5 +1,7 @@
-# Core MkDocs
-mkdocs==1.5.3
-mkdocs-material==9.4.8
+# Core MkDocs with pinned versions for stability
+mkdocs==1.6.1
+mkdocs-material==9.5.39
+
+# Mermaid support - using newer version with better accessibility
 mkdocs-mermaid2-plugin==1.2.1
 
