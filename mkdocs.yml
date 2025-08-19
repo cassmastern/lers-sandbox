@@ -62,7 +62,7 @@ nav:
       - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfran.md
       - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
       - From Daydream to Concept Note: ai-accessibility_bus.md
-      - Sandbox: z_taxi.md
+      
 
 extra:
   generator: false
