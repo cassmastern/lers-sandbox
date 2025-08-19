@@ -33,7 +33,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          target: builder  # Use the builder stage
           push: false
           tags: mkdocs-builder:latest
           load: true
