@@ -5,8 +5,8 @@ docs_dir: docs
 theme:
   name: material
   features:
-    - navigation.expand      # restore proper hierarchy
-    - navigation.top         # keep "back to top" link
+    - navigation.expand
+    - navigation.top
     - search.highlight
     - search.suggest
     - search.share

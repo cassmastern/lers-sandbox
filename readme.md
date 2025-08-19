@@ -1,6 +1,6 @@
 # MkDocs Material 
 
-A modular, Dockerized documentation site built with MkDocs Material. Designed to demonstrate CI/CD automation, accessibility compliance (AODA), and reproducibility.
+A modular, Dockerized documentation site built with MkDocs Material. Designed as a playground for CICD and accessibility (AODA/WCAG) features, and, hopefully, as a showcase.
 
 ## Features
 
