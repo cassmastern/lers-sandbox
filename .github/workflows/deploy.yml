@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -24,11 +25,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for git-revision-date-localized-plugin
-        
+          fetch-depth: 0
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
@@ -38,7 +39,7 @@ jobs:
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          
+
       - name: Build MkDocs site
         run: |
           docker run --rm \
@@ -46,24 +47,21 @@ jobs:
             -w /app \
             mkdocs-builder:latest \
             mkdocs build --verbose --strict
-      
+
       - name: Verify build output
         run: |
           if [ ! -d "./site" ]; then
             echo "❌ ERROR: MkDocs output folder './site' not found."
-            echo "Available directories:"
             ls -la ./
             exit 1
           fi
-
           echo "✅ Build output directory found"
           
-          # Check for essential files
           essential_files=(
             "index.html"
             "search/search_index.json"
             "js/diagram-accessibility.js"
-            "js/diagram-zoom.js" 
+            "js/diagram-zoom.js"
             "css/accessibility.css"
             "css/diagram-zoom.css"
           )
@@ -76,43 +74,19 @@ jobs:
             fi
           done
           
-          # Check for Mermaid diagrams in HTML files
           mermaid_count=$(find ./site -name "*.html" -exec grep -l "mermaid" {} \; | wc -l)
           echo "📊 Found $mermaid_count HTML files with Mermaid content"
-          
-          # Verify JavaScript files are not minified (for debugging)
+
           if [ -f "./site/js/diagram-accessibility.js" ]; then
-            js_size=$(stat -f%z "./site/js/diagram-accessibility.js" 2>/dev/null || stat -c%s "./site/js/diagram-accessibility.js")
+            js_size=$(stat -c%s "./site/js/diagram-accessibility.js")
             echo "📏 diagram-accessibility.js size: ${js_size} bytes"
           fi
-
-      - name: Run accessibility audit (optional)
-        continue-on-error: true
-        run: |
-          # Install pa11y for accessibility testing
-          npm install -g pa11y
-          
-          # Start a simple HTTP server
-          cd site
-          python3 -m http.server 8080 &
-          SERVER_PID=$!
-          sleep 2
-          
-          # Test a few key pages for accessibility
-          echo "🔍 Running accessibility audit..."
-          pa11y http://localhost:8080/ --reporter cli || echo "⚠️  Accessibility issues found"
-          pa11y http://localhost:8080/z_taxi/ --reporter cli || echo "⚠️  Accessibility issues found on test page"
-          
-          # Clean up
-          kill $SERVER_PID 2>/dev/null || true
-          cd ..
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
-jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -130,7 +104,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     continue-on-error: true
-
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -157,10 +130,6 @@ jobs:
             --reporter cli
 
           echo "🔍 Running Pa11y against /z_taxi/"
-          pa11y ${{
-            steps.deployment.outputs.page_url
-          }}z_taxi/ \
+          pa11y "${{ steps.deployment.outputs.page_url }}z_taxi/" \
             --config .pa11yci.json \
             --reporter cli
-
-          
