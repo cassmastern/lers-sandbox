@@ -5,9 +5,8 @@ docs_dir: docs
 theme:
   name: material
   features:
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
+    - navigation.expand      # restore proper hierarchy
+    - navigation.top         # keep "back to top" link
     - search.highlight
     - search.suggest
     - search.share
@@ -63,6 +62,7 @@ nav:
       - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfran.md
       - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
       - From Daydream to Concept Note: ai-accessibility_bus.md
+      - Sandbox: z_taxi.md
 
 extra:
   generator: false
@@ -78,11 +78,13 @@ extra:
       make our documentation better.
 
 markdown_extensions:
-  - tables
-  - attr_list
-  - md_in_html
-  - pymdownx.details
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
   - toc:
       permalink: true
 
@@ -93,4 +95,3 @@ extra_javascript:
 extra_css:
   - css/alphabet.css
   - css/diagram-zoom.css
-
