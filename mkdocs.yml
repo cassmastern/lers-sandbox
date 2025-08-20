@@ -5,7 +5,6 @@ docs_dir: docs
 theme:
   name: material
   features:
-    - navigation.expand
     - navigation.top
     - search.highlight
     - search.suggest
@@ -43,7 +42,7 @@ nav:
       - Rough Roadmap and Changelog: roadmap.md
   - Probably What Awaits Me at Work:
       - AWS vs GCP vs Azure: aws-gcp-azure.md
-      - Cross-Platform Cloud and DevOps Glossary: gloss_cloud_devops_AWS-GCP-Azure.md
+      - Cross-Platform Cloud and DevOps Glossary: AWS-GCP-Azure_glossary.md
       - A Jakarta EE App on Azure: jakarta-ee-azure.md
   - Networking and Security in 2025:
       - A Hypothetical Data Centre Network: network_data_center.md
@@ -63,7 +62,6 @@ nav:
       - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
       - From Daydream to Concept Note: ai-accessibility_bus.md
       
-
 extra:
   generator: false
   analytics:
@@ -91,7 +89,7 @@ markdown_extensions:
 extra_javascript:
   - js/diagram-zoom.js
   - js/alphabet-auto.js
-  
+    
 extra_css:
   - css/alphabet.css
   - css/diagram-zoom.css

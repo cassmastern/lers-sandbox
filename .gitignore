@@ -1,3 +1,6 @@
 site/*
 .DS_Store
 **/.DS_Store
+extract-mermaid.py
+mermaid_collection.md
+z_taxi.md
