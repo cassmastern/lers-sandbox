@@ -65,8 +65,7 @@ nav:
       - Visuals for the Sightless: visuals-for-the-sightless.md
       - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
       - From Daydream to Concept Note: ai-accessibility_bus.md
-      - sandbox: z_sandbox.md
-    
+      
 extra:
   generator: false
   analytics:
