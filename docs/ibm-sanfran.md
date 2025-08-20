@@ -26,7 +26,7 @@ Here are the concrete mechanisms IBM used to make the coarse components reusable
 
 ### Layered architecture
 
-SanFrancisco provided separation of reuse scopes, its architecture consisted of layers (see [Layer Structure and Component Hierarchy](#layer-structure-and-component-hierarchy:
+SanFrancisco provided separation of reuse scopes, its architecture consisted of layers (see [Layer Structure and Component Hierarchy](#layer-structure-and-component-hierarchy)):
 
 1. **Foundation** layer: runtime services (naming, factory, transaction, security, notification), distribution plumbing (the *Logical SanFrancisco Network*).
 2. **Common Business Object** layer: canonical domain objects (company, account, customer, currency, etc.) — reusable across many apps.
@@ -40,7 +40,7 @@ SanFrancisco introduced a small set of base classes, for example, `BusinessObjec
 
 ### Inherent domain design patterns
 
-SanFrancisco had `PropertyContainer`, `Policy`, `Command`, `Aggregates`, `Specification/Criterion `patterns baked in.
+SanFrancisco had `PropertyContainer`, `Policy`, `Command`, `Aggregates`, `Specification/Criterion` patterns baked in.
 
 1. **PropertyContainer**: supported dynamic/extensible properties; you could add attributes via configuration rather than recompiling.
 
@@ -65,17 +65,17 @@ IBM shipped tooling to create prototypes and glue components into running scenar
 
 Below are attempts to:
 
-- sketch a typical SanFrancisco component at runtime (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence))
-- describe the principal classes/services you would actually interact with
+* sketch a typical SanFrancisco component at runtime (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence))
+* describe the principal classes/services you would actually interact with
 
 ### Base class hierarchy (logical)
 
-* `BusinessObject` (abstract root): shares behaviour and metadata.  
-  *-* `Entity` — persistent, transactional objects representing primary business entities.  
-  *-* `Dependent` — non-independent objects (child rows/details) that belong to an Entity.  
-  *-* `Command` — encapsulated actions/process steps (used to model business operations).  
+* `BusinessObject` (abstract root): shares behaviour and metadata.
+  *-* `Entity` — persistent, transactional objects representing primary business entities.
+  *-* `Dependent` — non-independent objects (child rows/details) that belong to an Entity.
+  *-* `Command` — encapsulated actions/process steps (used to model business operations).
 
-    Containers such as `EntityOwningSet` hold collections of `Entities`. This class hierarchy standardised lifecycle, locking and persistence semantics across all SanFrancisco objects (see [Large-Grain Business Object Example](#large-grain-business-object-example)).
+  Containers such as `EntityOwningSet` hold collections of `Entities`. This class hierarchy standardised lifecycle, locking and persistence semantics across all SanFrancisco objects (see [Large-Grain Business Object Example](#large-grain-business-object-example)).
 
 ### PropertyContainer and dynamic attributes
 
@@ -87,7 +87,7 @@ Business rules are not hardwired. SanFrancisco exposes *policy* extension points
 
 ### Queries, keys and collections (how you find objects)
 
-The framework uses access keys / specification keys / criteria objects* and `Iterator`/`CachedSet` abstractions rather than ad-hoc SQL everywhere. Query criteria are expressed as higher-level specification objects that delegate to the persistence layer; results are returned as SanFrancisco collections that can be iterated, cached, and traversed in object form. This makes querying portable and the interface consistent across different back-ends.
+The framework uses access keys / specification keys / criteria objects and `Iterator`/`CachedSet` abstractions rather than ad-hoc SQL everywhere. Query criteria are expressed as higher-level specification objects that delegate to the persistence layer; results are returned as SanFrancisco collections that can be iterated, cached, and traversed in object form. This makes querying portable and the interface consistent across different back-ends.
 
 ### Persistence and schema mapping
 
@@ -141,13 +141,13 @@ The point: instead of many remote calls to tweak small fields and call helper se
 
 *(See [Layered architecture](#layered-architecture))*
 
-SanFrancisco sat between application-specific UI/business logic and the JVM, providing reusable services. 
+SanFrancisco sat between application-specific UI/business logic and the JVM, providing reusable services.
 
-<!-- ALT:> Diagram showing IBM SanFrancisco's layered architecture -->
+<!-- ALT: Diagram showing IBM SanFrancisco's layered architecture -->
 
 <!-- DESC: Diagram showing IBM SanFrancisco's layered architecture. Arrows connect layers from top to bottom: User Interface → Business Logic → Foundation Services → JVM → Operating System. SanFrancisco encompasses the Business Logic and Foundation layers, positioned between application code and the JVM. -->  
 
-```mermaid  
+```mermaid
 flowchart TB
     UI[User Interface Layer] --> BL[Business Logic Layer]
     BL --> FS[Foundation Services Layer]
@@ -166,11 +166,11 @@ flowchart TB
 
 The following is a static breakdown of large-grain components, layered from generic to domain-specific:
 
-<!-- ALT:> Class diagram showing SanFrancisco’s layered component hierarchy -->
+<!-- ALT: Class diagram showing SanFrancisco’s layered component hierarchy -->
 
 <!-- DESC: Class diagram showing SanFrancisco’s layered component hierarchy. FoundationServices includes core services like TransactionManager and PersistenceManager. CommonBusinessObjects builds on FoundationServices and includes domain-neutral entities like Party and Product. DomainComponents extends CommonBusinessObjects with vertical-specific modules like ERP and Retail. -->  
 
-```mermaid  
+```mermaid
 
 classDiagram
     class FoundationServices {
@@ -197,18 +197,17 @@ classDiagram
     CommonBusinessObjects <|-- DomainComponents
 ```
 
-
 ### Large-Grain Business Object Example
 
 *(See [What Large-Grain Meant](#what-large-grain-meant) and [Base class hierarchy (logical)](#base-class-hierarchy-logical))*
 
 An Illustration of the "large-grain" idea — `Order` encapsulates not just data, but behavior and transactional integrity.
 
-<!-- ALT:> Class diagram showing a coarse-grained Order object and its relationships -->
+<!-- ALT: Class diagram showing a coarse-grained Order object and its relationships -->
 
 <!-- DESC: Class diagram showing a coarse-grained Order object and its relationships. Order contains attributes and methods for managing line items and totals. It has a one-to-many relationship with OrderLine, which in turn references Product. Emphasizes encapsulation of behavior and data in a single business object. -->  
 
-```mermaid  
+```mermaid
 
 classDiagram
     class Order {
@@ -237,13 +236,13 @@ classDiagram
 
 *(See [Persistence and schema mapping](#persistence-and-schema-mapping) and [SanFrancisco Component Structure](#sanfrancisco-component-structure))*
 
-Here is a dynamic view of an object interacting with SF foundation services:  
+Here is a dynamic view of an object interacting with SF foundation services:
 
-<!-- ALT:> Sequence diagram showing object interaction with SF foundation -->
+<!-- ALT: Sequence diagram showing object interaction with SF foundation services -->
 
 <!-- DESC: Sequence diagram showing object interaction with SF foundation services across 4 swimlanes: Client Object, Business Object, Data Access Object, and Database. Flow shows client creating business object, business object accessing data object, data object querying database, and responses flowing back through the chain. Includes error handling and transaction management patterns typical of enterprise Java applications. -->
 
-```mermaid  
+```mermaid
 
 sequenceDiagram
     participant UI as User Interface
@@ -271,11 +270,11 @@ sequenceDiagram
 
 SanFrancisco's runtime separation — often deployed in a 3-tier setup.
 
-<!-- ALT:> Diagram showing SanFrancisco’s 3-tier runtime deployment -->
+<!-- ALT: Diagram showing SanFrancisco’s 3-tier runtime deployment -->
 
 <!-- DESC: Diagram showing SanFrancisco’s 3-tier runtime deployment. ClientNode contains UIClient (Swing/HTML). AppServer includes BusinessLogic, Foundation Services, and JVM. DataServer hosts a relational database. Arrows show bidirectional communication between layers, representing distributed component interaction. -->  
 
-```mermaid  
+```mermaid
 
 flowchart TB
     subgraph ClientNode[Client Workstation]
@@ -301,13 +300,13 @@ flowchart TB
 
 *(See [Commands, workflows and statecharts](#commands-workflows-and-statecharts))*
 
-Below is a representation of an `Order`’s lifecycle as managed by SanFrancisco's object framework:  
+Below is a representation of an `Order`’s lifecycle as managed by SanFrancisco's object framework:
 
-<!-- ALT:> State diagram showing lifecycle transitions for an Order object -->
+<!-- ALT: State diagram showing lifecycle transitions for an Order object -->
 
 <!-- DESC: State diagram showing lifecycle transitions for an Order object. Starts at New, proceeds to PendingApproval, then either Approved or Rejected. Approved leads to Shipped, then Completed. Rejected and Completed transition to end state. Models business process flow using explicit states and transitions. -->  
 
-```mermaid  
+```mermaid
 
 stateDiagram-v2
     [*] --> New
@@ -326,9 +325,11 @@ stateDiagram-v2
 
 ### Tradeoffs & why SanFrancisco didn’t become the one-size-fits-all winner
 
-- Complexity and heavy weight: the framework and runtime services were large and required buy-in and operational expertise; mapping to messy legacy schemas could still be work-intensive.
-- Standards and market competition: EJB and later J2EE, plus CORBA/EJB alliances, plus vendor frameworks, split attention. SanFrancisco was IBM-centric and not a full CORBA ORB; many shops preferred standardized stacks.
-- Performance and distribution tradeoffs: coarse grain reduces chattiness but increases the cost of a single call; caching and careful design were required to meet SLAs. IBM documentation contains performance guidance and warnings.
+* Complexity and heavy weight: the framework and runtime services were large and required buy-in and operational expertise; mapping to messy legacy schemas could still be work-intensive.
+
+* Standards and market competition: EJB and later J2EE, plus CORBA/EJB alliances, plus vendor frameworks, split attention. SanFrancisco was IBM-centric and not a full CORBA ORB; many shops preferred standardized stacks.
+
+* Performance and distribution tradeoffs: coarse grain reduces chattiness but increases the cost of a single call; caching and careful design were required to meet SLAs. IBM documentation contains performance guidance and warnings.
 
 IBM eventually folded the SanFrancisco ideas and some code paths into its WebSphere/business-component story (WebSphere Business Components), and the SanFrancisco name/packaging faded even as many design patterns remained influential.
 
@@ -338,53 +339,51 @@ Contemporary cloud computing mechanisms and architectural patterns have made old
 
 #### Microservices & Containerization (Performance & Reusability)
 
-- **Replace** EJBs and coarse-grained components with fine-grained, independently deployable services.  
+* **Replace** EJBs and coarse-grained components with fine-grained, independently deployable services.  
 
-- **Technologies**, such as Kubernetes and Docker enable lightweight, scalable deployments (vs. heavyweight EJB containers). Modern frameworks, such as Spring Boot, Quarkus, and Micronaut eliminate EJB’s boilerplate while offering better startup times and memory efficiency.  
+* **Technologies**, such as Kubernetes and Docker enable lightweight, scalable deployments (vs. heavyweight EJB containers). Modern frameworks, such as Spring Boot, Quarkus, and Micronaut eliminate EJB’s boilerplate while offering better startup times and memory efficiency.  
 
-- **Advantages**: Faster scaling (horizontal, vs. EJB’s vertical scaling); better fault isolation (a failing microservice doesn’t crash the whole app).  
+* **Advantages**: Faster scaling (horizontal, vs. EJB’s vertical scaling); better fault isolation (a failing microservice doesn’t crash the whole app).  
 
 #### Serverless Computing  
 
-- **Replaces** EJB’s long-lived, stateful session beans with ephemeral, stateless functions. 
+* **Replaces** EJB’s long-lived, stateful session beans with ephemeral, stateless functions.
 
-- **Technologies**, such as AWS Lambda, Azure Functions, Google Cloud Functions execute code on-demand without managing servers.  
+* **Technologies**, such as AWS Lambda, Azure Functions, Google Cloud Functions execute code on-demand without managing servers.  
 
-- **Advantages**: No need for application server overhead (EJBs require a full Java EE container); pay-per-use cost model (vs. always-on EJB servers).  
-
+* **Advantages**: No need for application server overhead (EJBs require a full Java EE container); pay-per-use cost model (vs. always-on EJB servers).  
 
 #### Cloud-Native Databases & Caching
 
-- **Replace** EJB’s entity beans (CMP/BMP) with modern persistence layers.  
+* **Replace** EJB’s entity beans (CMP/BMP) with modern persistence layers.  
 
-- **Technologies**, such as NoSQL (MongoDB, Cassandra, DynamoDB) scale better than EJB’s JPA/Hibernate for distributed systems; Redis and Elasticache offer low-latency caching (better than EJB’s second-level cache).  
+* **Technologies**, such as NoSQL (MongoDB, Cassandra, DynamoDB) scale better than EJB’s JPA/Hibernate for distributed systems; Redis and Elasticache offer low-latency caching (better than EJB’s second-level cache).  
 
-- **Advantages**: Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS); faster read/write performance in distributed environments.  
+* **Advantages**: Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS); faster read/write performance in distributed environments.  
 
 #### API-First & RESTful Services  
 
-- **Replace** EJB’s RMI-based remote interfaces with lightweight APIs.  
+* **Replace** EJB’s RMI-based remote interfaces with lightweight APIs.  
 
-- **Technologies**, such as REST (JAX-RS, Spring WebFlux), GraphQL, and gRPC are more flexible than EJB’s CORBA-style remoting.  
+* **Technologies**, such as REST (JAX-RS, Spring WebFlux), GraphQL, and gRPC are more flexible than EJB’s CORBA-style remoting.  
 
-- **Advantages**: Language-agnostic APIs (vs. EJB’s Java-only remoting); better suited for cloud-native, multi-cloud, and hybrid deployments.  
+* **Advantages**: Language-agnostic APIs (vs. EJB’s Java-only remoting); better suited for cloud-native, multi-cloud, and hybrid deployments.  
 
 #### Zero-Trust and Cloud-Native Security  
 
-- **Replace** EJB’s JAAS and declarative security with modern cloud security models.  
+* **Replace** EJB’s JAAS and declarative security with modern cloud security models.  
 
-- **Technologies**, including OAuth2/OpenID Connect (Keycloak, Auth0) are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces. Others, such as Service Meshes (Istio, Linkerd), provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
+* **Technologies**, including OAuth2/OpenID Connect (Keycloak, Auth0) are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces. Others, such as Service Meshes (Istio, Linkerd), provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).
 
-- **Advantages**:  Dynamic, policy-based security (vs. static EJB deployment descriptors); better support for distributed identity management.  
+* **Advantages**:  Dynamic, policy-based security (vs. static EJB deployment descriptors); better support for distributed identity management.  
 
 #### Event-Driven and Reactive Architectures
 
-- **Replace** EJB’s synchronous, blocking model with async processing.  
+* **Replace** EJB’s synchronous, blocking model with async processing.  
 
-- **Technologies**, such as Kafka, RabbitMQ, AWS EventBridge decouple components better than EJB’s JMS, and non-blocking I/O of Reactive Frameworks (Spring WebFlux, Vert.x) outperforms EJB’s thread-per-request model.  
+* **Technologies**, such as Kafka, RabbitMQ, AWS EventBridge decouple components better than EJB’s JMS, and non-blocking I/O of Reactive Frameworks (Spring WebFlux, Vert.x) outperforms EJB’s thread-per-request model.  
 
-- **Advantages**:  High concurrency is handled much better (EJBs struggled under heavy load); more resilient to failures (reactive systems embrace chaos engineering).  
-
+* **Advantages**:  High concurrency is handled much better (EJBs struggled under heavy load); more resilient to failures (reactive systems embrace chaos engineering).  
 
 #### Conclusion
 
@@ -392,9 +391,11 @@ EJBs and coarse-grained Java objects were designed for monolithic, on-premise Ja
 
 ## Sources
 
-- IBM press releases and archived Redbooks (~35%)
-- The usual suspect — GenAI — with its bottomless pool of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany  (~40%)
-- My long-term memory (~20%)
+* IBM press releases and archived Redbooks (~35%)
+
+* The usual suspect — GenAI — with its bottomless pool of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany  (~40%)
+
+* My long-term memory (~20%)
 
 ---
 2025.08.12
