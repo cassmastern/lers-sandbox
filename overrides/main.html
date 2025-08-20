@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block htmltag %}
+  {% set scheme = "default" %}
+  {% if config.theme.palette %}
+    {% if config.theme.palette is mapping %}
+      {% set scheme = config.theme.palette.scheme or "default" %}
+    {% else %}
+      {% set scheme = config.theme.palette[0].scheme or "default" %}
+    {% endif %}
+  {% endif %}
+  <html class="no-js" lang="{{ config.theme.language or 'en' }}" data-md-color-scheme="{{ scheme }}" data-md-color-primary="{{ config.theme.palette[0].primary or 'indigo' }}" data-md-color-accent="{{ config.theme.palette[0].accent or 'indigo' }}">
+{% endblock %}
+
+{% block extrahead %}
+  <script>
+    console.log("Custom template loaded!");
+    // Official MkDocs Material theme override - runs before CSS loads
+    (function() {
+      var hasVisited = false;
+      
+      try {
+        // Check if localStorage is available and if this is first visit
+        hasVisited = localStorage.getItem("mkdocs-first-visit-v2");
+        console.log("localStorage accessible, hasVisited:", hasVisited);
+      } catch (e) {
+        console.log("localStorage not available:", e.message);
+        hasVisited = false;
+      }
+      
+      if (!hasVisited) {
+        console.log("First visit detected - forcing light mode");
+        // First visit - ensure light mode stays set
+        document.documentElement.setAttribute("data-md-color-scheme", "default");
+        
+        try {
+          localStorage.setItem("mkdocs-first-visit-v2", "true");
+        } catch (e) {
+          console.log("Could not save first visit flag:", e.message);
+        }
+      } else {
+        console.log("Returning visitor");
+      }
+    })();
+  </script>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    // Hook into MkDocs Material's documented palette change events
+    document.addEventListener("DOMContentLoaded", function() {
+      var palette = document.querySelector("[data-md-component=palette]");
+      if (palette) {
+        // Listen for the documented palette change event
+        palette.addEventListener("change", function() {
+          // MkDocs Material will handle the localStorage automatically
+          // This is just for any custom logic you might need
+        });
+      }
+    });
+  </script>
+{% endblock %}

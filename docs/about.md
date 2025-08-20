@@ -1,6 +1,8 @@
 # How This Site Was Developed and Deployed
 
-In August 2025, I revived an old MkDocs-based glossary project and transformed it into a modular, containerized showcase site.
+In August 2025, I revived an old MkDocs-based glossary project and transformed it into a modular, containerized showcase/demo/sandbox site.
+
+> *CM* are the initials of my GitHub ego (or should I say *persona* — "**as an** introvert, **I want to** hide behind an alias, **so that** I can reconcile the technically accurate with the politically correct").
 
 ## Architecture Overview
 
@@ -8,14 +10,14 @@ This site uses a hybrid static-dynamic architecture:
 
 ### Static Layer
 
-- **Framework**: MkDocs with Material theme
-- **Content**: Markdown rendered into static HTML/CSS/JS
-- **Deployment**: GitHub Pages via `gh-pages` branch
-- **Enhancements**:
-  - Custom JS/CSS for glossary navigation
-  - Diagram spotlight/zoom via `diagram-zoom.js`
-  - Alt-text injection via `alt-injector.js`
-  - Focus ring, skip link, ARIA toggles, keyboard nav
+* **Framework**: MkDocs with Material theme  
+* **Content**: Markdown rendered into static HTML/CSS/JS  
+* **Deployment**: GitHub Pages via `gh-pages` branch  
+* **Enhancements**:  
+  *-* Custom JS/CSS for glossary navigation  
+  *-* Diagram spotlight/zoom via `diagram-zoom.js`  
+  *-* Alt-text injection via `alt-injector.js`  
+  *-* Focus ring, skip link, ARIA toggles, keyboard nav  
 
 ### Dynamic Layer
 
@@ -60,7 +62,7 @@ Stored in `docs/assets/css/` and loaded via `extra_css`:
 
 <!-- ALT:> Deployment diagram showing a 5-phase workflow -->
 
-<!-- DESC: Diagram showing a 5-phase workflow; Phase 1 is MKdocs (local preview); a commit and push arrow moves to phase 2 (GitHub Repo); a trigger arrow moves to phase 3 (GitHub Actions CI), then a build & test arrow moves to phase 4 (GitHub Pages), from which a public access arrow moves to the final phase (User Browser) -->  
+<!-- DESC: Diagram showing a 5-phase workflow; Phase 1 is MkDocs (local preview); a commit and push arrow moves to phase 2 (GitHub Repo); a trigger arrow moves to phase 3 (GitHub Actions CI), then a build & test arrow moves to phase 4 (GitHub Pages), from which a public access arrow moves to the final phase (User Browser) -->  
 
 ```mermaid
 graph TD

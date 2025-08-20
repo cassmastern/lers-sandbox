@@ -4,6 +4,9 @@ docs_dir: docs
 
 theme:
   name: material
+  logo: img/logo.svg
+  favicon: img/favicon.ico
+  custom_dir: overrides
   features:
     - navigation.top
     - search.highlight
@@ -57,11 +60,13 @@ nav:
       - Docker Command Cheat Sheet: cheatsheet-docker.md
       - Kubectl Command Cheat Sheet: cheatsheet-kubectl.md
       - Compound Modifiers Cheat Sheet: cheatsheet_compound-modifiers.md
-  - Bonus:
+  - Bonus (Bloggish):
       - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfran.md
+      - Visuals for the Sightless: visuals-for-the-sightless.md
       - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
       - From Daydream to Concept Note: ai-accessibility_bus.md
-      
+      - sandbox: z_sandbox.md
+    
 extra:
   generator: false
   analytics:
