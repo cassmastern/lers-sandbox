@@ -1,6 +1,6 @@
 # Visuals for the Sightless (Accessibility, Round Two)
 
-So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me it sounded a bit off. Like, you're either Section 508 or WCAG-copliant, or you're not, no?) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
+So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me it sounded a bit off. Like, *you're either Section 508 or WCAG-copliant, or you're not, no?*) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
 
 Now I’m solo, building a Dockerized MkDocs Material site with supposedly format-neutral diagram support, hopefully to become, um, *almost fully* accessible some day 😊
 
@@ -13,12 +13,12 @@ The `mkdocs-mermaid2-plugin==1.2.1` lets you author diagrams inline in Markdown 
 ### Why It’s Problematic
 
 
-| Concern                       | Description                                                                      |
-| ------------------------------- | ---------------------------------------------------------------------------------- |
-| **No built-in accessibility** | Mermaid-generated SVGs lack`<title>`, `<desc>`, ARIA roles, or labels.           |
-| **Client-side rendering**     | Diagrams are injected after page load, making static accessibility impossible.   |
-| **Theme-dependent rendering** | Diagrams repaint based on light/dark mode, often wiping injected metadata.       |
-| **No lifecycle hooks**        | There’s no reliable callback to hook into post-render for mutation.             |
+| Concern                       | Description                                                                        |
+| ------------------------------- | ------------------------------------------------------------------------------------ |
+| **No built-in accessibility** | Mermaid-generated SVGs lack`<title>`, `<desc>`, ARIA roles, or labels.             |
+| **Client-side rendering**     | Diagrams are injected after page load, making static accessibility impossible.     |
+| **Theme-dependent rendering** | Diagrams repaint based on light/dark mode, often wiping injected metadata.         |
+| **No lifecycle hooks**        | There’s no reliable callback to hook into post-render for mutation.               |
 | **Silent failures**           | If your script runs too early or too late, nothing happens — and you won’t know. |
 
 ## Runtime Injection: A Fragile Strategy
@@ -74,6 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
+### Weaknesses in Current Script
+
+Here is what ChatGPT says about the script:
+
+* **Infinite polling risk**: setTimeout loop can run forever if SVG never appears.
+* **Metadata duplication**: `<title>`/`<desc>` inserted repeatedly if re-rendered.
+* **Theme switch wipes metadata**: No MutationObserver to reapply metadata.
+* **Accessibility semantics**: Hardcoded `title = "Diagram"` adds little value.
+* **Silent failures**: No logging or error reporting when mutation fails.
+
 ### What Breaks
 
 
@@ -88,10 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 This deserves its own section. Perhaps a book. Mermaid diagrams often repaint when the user toggles their browser’s theme. This is usually done via CSS variables or JS-based theming. But here’s what happens:
 
-1. **Initial render** : Your script injects metadata into the SVG.
-2. **User switches theme** : Mermaid re-renders the diagram.
-3. **New SVG replaces old one** : Your injected metadata is gone.
-4. **No hook to re-run script** : Accessibility is broken again.
+1. **Initial render**: Your script injects metadata into the SVG.
+2. **User switches theme**: Mermaid re-renders the diagram.
+3. **New SVG replaces old one**: Your injected metadata is gone.
+4. **No hook to re-run script**: Accessibility is broken again.
 
 ### Theme-Sensitive Rendering Table
 
@@ -102,6 +112,14 @@ This deserves its own section. Perhaps a book. Mermaid diagrams often repaint wh
 | Theme switch to dark       | Mermaid re-renders       | Metadata lost unless script re-runs        |
 | Theme switch back to light | Mermaid re-renders again | Metadata lost again                        |
 | No mutation observer       | No re-injection          | Accessibility fails                        |
+
+```mermaid
+flowchart LR
+  Author --> Build
+  Build --> RuntimeInjection
+  RuntimeInjection -->|Theme toggle| MetadataLost
+  RuntimeInjection -->|No theme toggle| MetadataOK
+```
 
 This is a fundamental flaw in relying on runtime injection for compliance. It’s not just fragile, it’s unsustainable.
 

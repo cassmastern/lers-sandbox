@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Run only on URLs containing "gloss_"
+  // Run only on glossary pages
   if (!location.pathname.includes("gloss_")) return;
 
   const toc = document.querySelector(".md-sidebar--secondary nav");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const foundLetters = {};
 
-  // Mark cells for each first letter in first column
+  // Assign IDs to first cells based on first letter
   rows.forEach(row => {
     const firstCell = row.querySelector("td");
     if (!firstCell) return;
@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!/^[A-Z]$/.test(letter)) return;
     if (!foundLetters[letter]) {
       foundLetters[letter] = true;
-      firstCell.id = `letter-${letter}`; // FIX: attach id to cell
+      firstCell.id = `letter-${letter}`;
     }
   });
 
-  // Build alphabet navigation list
+  // Build alphabet navigation
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const ul = document.createElement("ul");
   ul.classList.add("alphabet-list");
@@ -55,14 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ul.appendChild(li);
   });
 
-  // Replace TOC with alphabet navigation
+  // Replace native TOC with alphabet nav
   toc.innerHTML = "";
   const wrapper = document.createElement("div");
   wrapper.classList.add("alphabet-sticky");
   wrapper.appendChild(ul);
   toc.appendChild(wrapper);
 
-  // Scroll spy to highlight current letter
+  // Scroll spy: highlight current letter
   window.addEventListener("scroll", () => {
     let current = null;
     alphabet.forEach(letter => {

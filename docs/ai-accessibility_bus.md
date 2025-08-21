@@ -7,7 +7,7 @@ Modern technical documentation has embraced **automation and modularity** (e.g.,
 * **Visual content** — diagrams, flowcharts, SVGs, charts — remains largely inaccessible to screen readers.
 * Even when ALT text exists, it is often **minimal (“flowchart of states”)** and lacks the **semantic depth** needed for real comprehension.
 * Current documentation tools (MkDocs, Mermaid, PlantUML, etc.) offer limited or unreliable support for accessibility metadata.
-* Authors face **high friction** : workarounds, inconsistent ARIA support, and testing overhead.
+* Authors face **high friction**: workarounds, inconsistent ARIA support, and testing overhead.
 * As documentation scales, so does the **risk of inaccessible content** . This exposes organizations to compliance gaps (WCAG, AODA) and erodes inclusivity.
 
 Accessibility today is often a **bolt-on** fix, rather than a **built‑in** practice.
@@ -143,9 +143,9 @@ sequenceDiagram
 
 ### 1) Detection
 
-* **Parsers** : Markdown, HTML, and SVG parsers (e.g., remark/rehype or custom AST) identify: `<img>`, `<svg>`, Mermaid/PlantUML blocks, `<canvas>` snapshots.
-* **Heuristics** : Missing or low‑quality `alt` (e.g., matches `/^(image|diagram|chart)/i`).
-* **Context capture** : Surrounding headings/paragraphs + file path feed RAG.
+* **Parsers**: Markdown, HTML, and SVG parsers (e.g., remark/rehype or custom AST) identify: `<img>`, `<svg>`, Mermaid/PlantUML blocks, `<canvas>` snapshots.
+* **Heuristics**: Missing or low‑quality `alt` (e.g., matches `/^(image|diagram|chart)/i`).
+* **Context capture**: Surrounding headings/paragraphs + file path feed RAG.
 
 **Example: minimal Python CLI detector**
 
@@ -188,9 +188,9 @@ if __name__ == "__main__":
 
 ### 2) Suggestion (AI + RAG) & Author Review
 
-* **Inputs** : artifact (SVG source or PNG), local context (heading, preceding paragraph), glossary entries.
-* **Outputs** : short `alt` (<= 125 chars), longer `desc`/`longdesc` (1–5 sentences), optional `data-roles`.
-* **Human‑in‑the‑loop** : IDE panel shows candidates with quick‑accept and edit.
+* **Inputs**: artifact (SVG source or PNG), local context (heading, preceding paragraph), glossary entries.
+* **Outputs**: short `alt` (<= 125 chars), longer `desc`/`longdesc` (1–5 sentences), optional `data-roles`.
+* **Human‑in‑the‑loop**: IDE panel shows candidates with quick‑accept and edit.
 
 **Pseudo‑API call**
 
@@ -216,9 +216,9 @@ def suggest_alt_desc(artifact_bytes: bytes, mime: str, context: Dict) -> Dict:
 
 ### 3) Injection (Write‑back)
 
-* **SVG** : ensure `<title>` and `<desc>` children exist; replace or append.
-* **Markdown** : rewrite image line to include alt and optional title.
-* **HTML** : add/replace `alt`, `aria-label`, link to `longdesc` if produced.
+* **SVG**: ensure `<title>` and `<desc>` children exist; replace or append.
+* **Markdown**: rewrite image line to include alt and optional title.
+* **HTML**: add/replace `alt`, `aria-label`, link to `longdesc` if produced.
 
 **Example: inject into SVG**
 
@@ -257,12 +257,12 @@ print(IMG_MD.sub(lambda m: f"![{alt}]({m.group(1)})", text))
 
 ### 4) Failback Options (when AI or context is unavailable)
 
-1. **Template** : Insert structured placeholder (explicitly actionable):
+1. **Template**: Insert structured placeholder (explicitly actionable):
    * `alt: "Diagram – description pending; CI ticket #123"`
    * `desc: "TODO: Provide narrative covering nodes, edges, and flow conditions."`
-2. **Block Build** : CI fails if public build and any placeholders remain. (Non‑public builds can warn.)
-3. **Glossary Auto‑fill** : Minimal description synthesized from glossary keywords; tagged `confidence: low`.
-4. **Silent Degrade (Draft)** : Allow missing fields in draft builds; every instance is logged with file/line.
+2. **Block Build**: CI fails if public build and any placeholders remain. (Non‑public builds can warn.)
+3. **Glossary Auto‑fill**: Minimal description synthesized from glossary keywords; tagged `confidence: low`.
+4. **Silent Degrade (Draft)**: Allow missing fields in draft builds; every instance is logged with file/line.
 
 **Decision logic (Mermaid)**
 
@@ -283,8 +283,8 @@ flowchart TD
 
 ### 5) Storage & Reuse (Metadata Registry)
 
-* **Key** : SHA‑256 of artifact bytes; **Value** : `{alt, desc, lang, approvals, updated_at}`
-* **Store** : repo file `a11y/registry.yml` (simple), or service API (Phase 4).
+* **Key**: SHA‑256 of artifact bytes; **Value**: `{alt, desc, lang, approvals, updated_at}`
+* **Store**: repo file `a11y/registry.yml` (simple), or service API (Phase 4).
 
 **Registry schema (YAML)**
 

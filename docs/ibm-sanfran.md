@@ -1,6 +1,6 @@
 # IBM SanFrancisco — a Technical Memoir
 
-First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product. Behind this straightforward name lies a story of early innovation in coarse-grained Java business components — a glimpse into the architectural challenges and creative solutions of a pioneering era.
+First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product. Behind this straightforward name lies a story of early innovation in *coarse-grained Java business components* — a glimpse into the architectural challenges and creative solutions of a pioneering era.
 
 Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate; had to turn emails, memos, notes (perhaps even on *serviettes*) into Redbook material.
 
@@ -10,11 +10,11 @@ By the time, I had been part of an e-commerce development team for a brief perio
 
 SanFrancisco was an IBM-led product and project, a cross-platform Java application framework that provided reusable, "large-grain business objects” (business components). IBM developed and shipped SanFrancisco in the late-1990s, and the technology was later incorporated into IBM’s WebSphere/Business Components efforts.
 
-SanFrancisco focused on *“large-grain”* components (coarse business objects/frameworks) rather than tiny beans — it tied into CORBA/IIOP, albeit loosely, and IBM tooling (VisualAge) and was positioned as an alternative or complement to EJB-style approaches of the time.
+SanFrancisco focused on “large-grains” rather than "tiny beans" — it tied into CORBA/IIOP, albeit loosely, and IBM tooling (VisualAge) and was positioned as an alternative or complement to EJB-style approaches of the time.
 
 ## What Large-Grain Meant
 
-"Large-grain (or coarse-grained) business objects" meant to characterize SanFrancisco as stateful business components that encapsulated whole business *entities* or *processes* rather than tiny technical objects. Say, an **Order** — with lines, taxes, lifecycle, validation, posting to GL — as a *single* component you call with a small number of high-level operations, rather than dozens of low-level `JavaBeans` or single-column `CRUD` calls.
+"Large-grain business objects" meant to characterize SanFrancisco as stateful business components that encapsulated whole *business entities* or *processes* rather than tiny technical objects. Say, an **Order** — with lines, taxes, lifecycle, validation, posting to GL — as a *single* component you call with a small number of high-level operations, rather than dozens of low-level `JavaBeans` or single-column `CRUD` calls.
 
 These were long-lived components with application-level state, they were also transaction-aware, and they exposed business semantics (`createOrder`, `postInvoice`, `applyPayment`, etc.) Consequently, the *business API* was bulkier compared with method-level “fine grain” objects.
 
@@ -61,7 +61,7 @@ The *Logical SanFrancisco Network (LSFN)* included services such as a Global Ser
 
 IBM shipped tooling to create prototypes and glue components into running scenarios (and to auto-generate bindings/scaffolding). For example, SanFrancisco came with a Business Component Prototyper utility and provided integration with VisualAge, IBM's brand family of IDEs at the time.
 
-## SanFrancisco Component Structure
+## SanFrancisco Component Structure — a Sketch
 
 Below are attempts to:
 
@@ -71,15 +71,18 @@ Below are attempts to:
 ### Base class hierarchy (logical)
 
 * `BusinessObject` (abstract root): shares behaviour and metadata.
-  *-* `Entity` — persistent, transactional objects representing primary business entities.
-  *-* `Dependent` — non-independent objects (child rows/details) that belong to an Entity.
-  *-* `Command` — encapsulated actions/process steps (used to model business operations).
 
-  Containers such as `EntityOwningSet` hold collections of `Entities`. This class hierarchy standardised lifecycle, locking and persistence semantics across all SanFrancisco objects (see [Large-Grain Business Object Example](#large-grain-business-object-example)).
+    *-* `Entity` — persistent, transactional objects representing primary business entities
+
+    *-* `Dependent` — non-independent objects (child rows/details) that belong to an Entity
+
+    *-* `Command` — encapsulated actions/process steps (used to model business operations)
+
+  Containers such as `EntityOwningSet` hold collections of `Entities`. This class hierarchy standardises lifecycle, locking and persistence semantics across all SanFrancisco objects (see [Large-Grain Business Object Example](#large-grain-business-object-example)).
 
 ### PropertyContainer and dynamic attributes
 
-Instead of every domain object having a fixed Java field for every attribute, SanFrancisco used a *property container* mechanism (hash-table backed) to attach properties dynamically. That way, vendors/customers could add attributes (e.g., `customer.segment`) via configuration or metadata without changing class files — huge for reuse and productisation. The framework provides accessor patterns and iteration utilities to work with these dynamic properties.
+Instead of every domain object having a fixed Java field for every attribute, SanFrancisco used a *property container* mechanism (hash-table backed) to attach properties dynamically. That way, vendors/customers could add attributes (e.g., `customer.segment`) via configuration or metadata without changing class files — huge for reuse and productisation. The framework provided accessor patterns and iteration utilities to work with these dynamic properties.
 
 ### Policies and extension points
 
@@ -91,7 +94,7 @@ The framework uses access keys / specification keys / criteria objects and `Iter
 
 ### Persistence and schema mapping
 
-SanFrancisco provides an object-to-relational mapping layer. A developer can either manually create mapping metadata or rely on tools to generate mapping from existing schemas. The persistence layer supports delegating complex queries to the DB and mapping result sets back into business objects; it also supports different persistence strategies (local vs. distributed, caching) (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence)).
+SanFrancisco provides an object-to-relational mapping layer. A developer could either manually create mapping metadata or rely on tools to generate mapping from existing schemas. The persistence layer supports delegating complex queries to the DB and mapping result sets back into business objects; it also supports different persistence strategies (local vs. distributed, caching) (see [Persistence and Services Interaction (Sequence)](#persistence-and-services-interaction-sequence)).
 
 ### Runtime services
 
@@ -103,11 +106,11 @@ Key services in the Logical SanFrancisco Network (LSFN) support discovery, creat
 * **Transaction Service** — manages transactional execution and recovery across object servers.
 * **Server Security Service / Master Security Service** — handles authentication/authorization.
 
-  Because these services are standard and part of the framework, a component packaged for SanFrancisco behaves consistently in any LSFN deployment (see [Deployment Diagram (Runtime Nodes)](#deployment-diagram-runtime-nodes)).
+  Because these services were standard and part of the framework, a component packaged for SanFrancisco behaved consistently in any LSFN deployment (see [Deployment Diagram (Runtime Nodes)](#deployment-diagram-runtime-nodes)).
 
 ### Commands, workflows and statecharts
 
-Higher-level business processes are modelled as *Commands* or statecharts: transitions (states) and CA (condition/action) rules control lifecycle. This makes a component’s process behaviour explicit and manipulable (and therefore reusable) — developers don't have to rewrite “how an invoice moves from draft → posted → paid” for each app (see [State Diagram for a Business Object’s Lifecycle](#state-diagram-for-a-business-objects-lifecycle)).
+Higher-level business processes are modelled as *Commands* or statecharts: transitions (states) and CA (condition/action) rules control lifecycle. This makes a component’s process behaviour explicit and manipulable (and therefore reusable) — developers didn't have to rewrite “how an invoice moves from draft → posted → paid” for each app (see [State Diagram for a Business Object’s Lifecycle](#state-diagram-for-a-business-objects-lifecycle)).
 
 ## Example sketch (pseudo API) — simplified
 
