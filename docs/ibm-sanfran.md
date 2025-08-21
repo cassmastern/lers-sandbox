@@ -61,7 +61,7 @@ The *Logical SanFrancisco Network (LSFN)* included services such as a Global Ser
 
 IBM shipped tooling to create prototypes and glue components into running scenarios (and to auto-generate bindings/scaffolding). For example, SanFrancisco came with a Business Component Prototyper utility and provided integration with VisualAge, IBM's brand family of IDEs at the time.
 
-## SanFrancisco Component Structure — a Sketch
+## SanFrancisco Component Structure
 
 Below are attempts to:
 

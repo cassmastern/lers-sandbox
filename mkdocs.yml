@@ -44,7 +44,7 @@ nav:
       - Rough Roadmap and Changelog: roadmap.md
   - Probably What Awaits Me at Work:
       - AWS vs GCP vs Azure: aws-gcp-azure.md
-      - Cross-Platform Cloud and DevOps Glossary: AWS-GCP-Azure_glossary.md
+      - Cross-Platform Cloud and DevOps Glossary: aws-gcp-azure_glossary.md
       - A Jakarta EE App on Azure: jakarta-ee-azure.md
   - Networking and Security in 2025:
       - A Hypothetical Data Centre Network: network_data_center.md
