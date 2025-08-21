@@ -3,6 +3,4 @@ site/*
 **/.DS_Store
 extract-mermaid.py
 mermaid_collection.md
-z_taxi.md
-z_sandbox.md
 

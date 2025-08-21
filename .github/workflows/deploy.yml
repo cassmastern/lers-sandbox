@@ -2,11 +2,9 @@ name: Deploy MkDocs to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -56,7 +54,7 @@ jobs:
             exit 1
           fi
           echo "✅ Build output directory found"
-          
+
           essential_files=(
             "index.html"
             "search/search_index.json"
@@ -65,7 +63,7 @@ jobs:
             "css/accessibility.css"
             "css/diagram-zoom.css"
           )
-          
+
           for file in "${essential_files[@]}"; do
             if [ -f "./site/$file" ]; then
               echo "✅ Found: $file"
@@ -73,7 +71,7 @@ jobs:
               echo "⚠️  Missing: $file"
             fi
           done
-          
+
           mermaid_count=$(find ./site -name "*.html" -exec grep -l "mermaid" {} \; | wc -l)
           echo "📊 Found $mermaid_count HTML files with Mermaid content"
 
