@@ -203,7 +203,7 @@ All three clouds support blue/green and canary deployments via their LB + deploy
 
 ### Relational / RDBMS
 
-  - **AWS:** *RDS* (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Aurora). *Aurora* is Amazon's cloud-native, compatible DB with better performance.
+  - **AWS:** *RDS* (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Aurora). *Aurora* is Amazon's cloud-native, compatible DB with better performance. 
   - **GCP:** *Cloud SQL* (MySQL, PostgreSQL, SQL Server). *Spanner* for globally-distributed relational DB (unique differentiator).
   - **Azure:** *Azure SQL Database* (managed SQL Server-compatible), *Azure Database for PostgreSQL/MySQL/MariaDB*.
 

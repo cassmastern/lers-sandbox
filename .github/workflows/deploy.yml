@@ -58,7 +58,7 @@ jobs:
           essential_files=(
             "index.html"
             "search/search_index.json"
-            "js/diagram-accessibility.js"
+            "js/alttext-inject.js"
             "js/diagram-zoom.js"
             "css/accessibility.css"
             "css/diagram-zoom.css"
@@ -75,9 +75,9 @@ jobs:
           mermaid_count=$(find ./site -name "*.html" -exec grep -l "mermaid" {} \; | wc -l)
           echo "📊 Found $mermaid_count HTML files with Mermaid content"
 
-          if [ -f "./site/js/diagram-accessibility.js" ]; then
-            js_size=$(stat -c%s "./site/js/diagram-accessibility.js")
-            echo "📏 diagram-accessibility.js size: ${js_size} bytes"
+          if [ -f "./site/js/alttext-inject.js" ]; then
+            js_size=$(stat -c%s "./site/js/alttext-inject.js")
+            echo "📏 alttext-inject.js size: ${js_size} bytes"
           fi
 
       - name: Upload Pages artifact
@@ -126,4 +126,3 @@ jobs:
           pa11y ${{ steps.deployment.outputs.page_url }} \
             --config .pa11yci.json \
             --reporter cli
-            
