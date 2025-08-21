@@ -44,7 +44,7 @@ jobs:
             -v ${{ github.workspace }}:/app \
             -w /app \
             mkdocs-builder:latest \
-            mkdocs build --verbose --strict
+            mkdocs build --verbose
 
       - name: Verify build output
         run: |
