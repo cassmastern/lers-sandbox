@@ -1,0 +1,9 @@
+bierner.markdown-mermaid
+davidanson.vscode-markdownlint
+dheovani.svg-viewer
+github.copilot
+github.copilot-chat
+mushan.vscode-paste-image
+redhat.vscode-yaml
+yzhang.markdown-all-in-one
+zaaack.markdown-editor
