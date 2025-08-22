@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1270 838"
+     role="img"
+     aria-labelledby="logoTitle logoDesc"
+     class="inline-logo">
+  <title id="logoTitle">SiteLogo</title>
+  <desc id="logoDesc">Stylized initials C and M representing the site identity</desc>
+
+  <!-- Letter C -->
+  <path fill="currentColor" d="M 232,793 C 185,793 147,782 118,760 ... Z"/>
+
+  <!-- Letter M -->
+  <path fill="currentColor" d="M 522,793 C 525,784 534,763 549,730 ... Z"/>
+</svg>

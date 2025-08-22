@@ -1,8 +1,6 @@
 # How This Site Was Developed and Deployed
 
-In August 2025, I revived an old MkDocs-based glossary project and transformed it into a modular, containerized showcase/demo/sandbox site.
-
-> *CM* are the initials of my GitHub ego (or should I say *persona* — "**as an** introvert, **I want to** hide behind an alias, **so that** I can reconcile the technically accurate with the politically correct").
+In August 2025, I revived an old MkDocs-based glossary project and transformed it into a modular, containerized showcase/demo/sandbox site. It's evolving.
 
 ## Architecture Overview
 
@@ -48,8 +46,6 @@ All scripts are stored in `docs/assets/js/` and loaded via `extra_javascript` in
 - `alphabet-auto.js`: vertical hypertexted alphabet in sidebar for navigating glossaries
 - `diagram-zoom.js`: Spotlight/zoom for diagrams 
 - `alt-inject.js`: injects alt-text and ARIA roles for accessibility (work in progress)
-
-> **Note:** One script, `/docs/assets/py/inject_svg_metadata.py`, runs post-build by a GitHub Actions runner, to inject SVG metadata for making alternative text discoverable by screen readers.
 
 ### CSS Enhancements  
 

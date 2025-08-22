@@ -97,3 +97,4 @@ extra_javascript:
 extra_css:
   - css/alphabet.css
   - css/diagram-zoom.css
+  - css/cm-logo.css

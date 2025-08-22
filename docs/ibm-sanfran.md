@@ -70,13 +70,10 @@ Below are attempts to:
 
 ### Base class hierarchy (logical)
 
-* `BusinessObject` (abstract root): shares behaviour and metadata.
-
-    *-* `Entity` — persistent, transactional objects representing primary business entities
-
-    *-* `Dependent` — non-independent objects (child rows/details) that belong to an Entity
-
-    *-* `Command` — encapsulated actions/process steps (used to model business operations)
+- `BusinessObject` (abstract root): shares behaviour and metadata.  
+    - `Entity` — persistent, transactional objects representing primary business entities  
+    - `Dependent` — non-independent objects (child rows/details) that belong to an Entity  
+    - `Command` — encapsulated actions/process steps (used to model business operations)  
 
   Containers such as `EntityOwningSet` hold collections of `Entities`. This class hierarchy standardises lifecycle, locking and persistence semantics across all SanFrancisco objects (see [Large-Grain Business Object Example](#large-grain-business-object-example)).
 

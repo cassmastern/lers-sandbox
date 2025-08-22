@@ -1,17 +1,17 @@
 {
-  "MD004": { "style": "dash" },
-  "MD009": { "br_spaces": 2 },
-  "MD010": false,
-  "MD013": false,
-  "MD026": false,
-  "MD033": false,
   "MD001": true,
   "MD002": true,
   "MD003": true,
+  "MD004": { "style": "dash" },
   "MD005": true,
-  "MD007": true,
+  "MD007": { "indent": 4 },
+  "MD009": { "br_spaces": 2 },
+  "MD010": false,
   "MD012": true,
+  "MD013": false,
   "MD022": true,
   "MD025": true,
-  "MD032": true
+  "MD026": false,
+  "MD032": true,
+  "MD033": false
 }
