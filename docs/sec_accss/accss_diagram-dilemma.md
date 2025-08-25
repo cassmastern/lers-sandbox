@@ -1,4 +1,4 @@
-## The Diagramming Dilemma
+# The Diagramming Dilemma
 
 This is about diagrams. I'm building a documentation platform that’s supposed to be modular, accessible, and changelog-driven. Mermaid fits the bill — text-based, Markdown-native, CI/CD-friendly — but it’s failing me where it matters most:
 

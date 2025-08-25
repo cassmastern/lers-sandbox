@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-### Weaknesses in Current Script
+### Weaknesses in Current Script  
 
-Here is what ChatGPT says about the script:
+Here is what our GenAI friends say about the script:  
 
 * **Infinite polling risk**: setTimeout loop can run forever if SVG never appears.
 * **Metadata duplication**: `<title>`/`<desc>` inserted repeatedly if re-rendered.
@@ -84,8 +84,7 @@ Here is what ChatGPT says about the script:
 * **Accessibility semantics**: Hardcoded `title = "Diagram"` adds little value.
 * **Silent failures**: No logging or error reporting when mutation fails.
 
-### What Breaks
-
+### What Breaks  
 
 | Failure Mode            | Cause                          | Result                             |
 | ------------------------- | -------------------------------- | ------------------------------------ |
