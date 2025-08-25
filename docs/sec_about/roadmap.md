@@ -17,6 +17,7 @@ gantt
 
 # Changelog
 
+- 2025.08.25 Reorganized content in subfolders for the new plugin, `awesome-pages` to semi-automate the navigation 
 - 2025.08.20 Enabled theme toggler; one last try to make accessibility metadata injector work; 'current state of affairs' as a bloggish piece of text, [Visuals for the Sightless](../sec_accss/visuals-for-the-sightless.md)  
 - 2025.08.19 Added some visuals to the AI-augmented Accessibility concept note; enabled some accessibility-related theme features
 - 2025.08.18 Added a rough roadmap and a "concept note" based on the AI-augmented accessibility idea

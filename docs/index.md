@@ -5,7 +5,7 @@ Welcome to Ler's Demo Website!
 The site's purpose is multifold:
 
 - to brush up and deepen my knowledge of major cloud platforms, Markdown, content architecture, networking, etc. 
-- to play with some of the features supporting accessibility and eventually implement WSAG compliance
+- to play with some of the features supporting accessibility and eventually implement WCAG compliance
 - to build up a technical documentation site for demo purposes
 - to find things about 'what else I might be interested in'
 - \[*inner voice whispering: "...and get the interviewer(s) to view this candidacy favourably*] 😊
