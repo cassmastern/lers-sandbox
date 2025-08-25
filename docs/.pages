@@ -1,0 +1,10 @@
+# docs/.pages
+arrange:
+  - index.md
+  - sec_about
+  - sec_cloud
+  - sec_accss
+  - sec_net-sec
+  - sec_freeform 
+  - sec_cheatsheets
+  - sec_gloss

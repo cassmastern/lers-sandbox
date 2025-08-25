@@ -1,0 +1,7 @@
+title: "Miscellaneous Glossaries"
+arrange:
+  - index.md
+  - gloss_oss.md
+  - gloss_networking.md
+  - gloss_kuber.md
+  - gloss_cloud-native.md

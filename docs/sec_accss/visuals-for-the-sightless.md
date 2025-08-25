@@ -147,4 +147,4 @@ After enough frustration, the alternative starts to look like a more sane option
 
 So, now I'm probably going to give the injector logic one last try to get it to work for the moment, at least for the benefit of a cheap, temporary sense of accomplishement. Fingers crossed for my developer friends and all the GenAI engines and agents and assistants I can think of.
 
-Down the road/longer term — perhaps [mobilize some of them 'for real'?](ai-accessibility.md)
+Down the road/longer term — perhaps [mobilize some of them 'for real'?](../sec_freeform/ai-accessibility.md)

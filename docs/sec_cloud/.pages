@@ -1,0 +1,6 @@
+title: "In the Clouds"
+arrange:
+  - index.md
+  - aws-gcp-azure.md
+  - aws-gcp-azure_glossary.md
+  - jakarta-ee-azure.md

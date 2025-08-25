@@ -1,6 +1,7 @@
 site_name: "Ler's Demo Website"
 site_url: https://cassmastern.github.io/demo4ops/
 docs_dir: docs
+copyright: "<a href='https://cassmastern.github.io/demo4ops/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
 
 theme:
   name: material
@@ -8,6 +9,8 @@ theme:
   favicon: img/favicon.ico
   features:
     - navigation.top
+    - navigation.footer
+    - navigation.indexes
     - search.highlight
     - search.suggest
     - search.share
@@ -34,37 +37,8 @@ theme:
 plugins:
   - search
   - mermaid2
+  - awesome-pages 
 
-nav:
-  - Home: index.md
-  - About this Site:
-      - "What's in Here?": whatsinhere.md
-      - How this Site was Developed and Deployed: about.md
-      - Feedback: feedback.md
-      - Rough Roadmap and Changelog: roadmap.md
-  - Probably What Awaits Me at Work:
-      - AWS vs GCP vs Azure: aws-gcp-azure.md
-      - Cross-Platform Cloud and DevOps Glossary: aws-gcp-azure_glossary.md
-      - A Jakarta EE App on Azure: jakarta-ee-azure.md
-  - Networking and Security in 2025:
-      - A Hypothetical Data Centre Network: network_data_center.md
-      - Threat Modelling - STRIDE: network_data_center_stride.md
-      - "Threat Modeling - MITRE ATT&CK": network_data_center_mitre.md
-  - Some Other Glossaries:
-      - Glossary of OSS Terms: gloss_oss.md
-      - Glossary of Networking Terms: gloss_networking.md
-      - Glossary of Kubernetes Terms: gloss_kuber.md
-      - Glossary of Cloud-Native Terms: gloss_cloud-native.md
-  - Cheat Sheets:
-      - Docker Command Cheat Sheet: cheatsheet-docker.md
-      - Kubectl Command Cheat Sheet: cheatsheet-kubectl.md
-      - Compound Modifiers Cheat Sheet: cheatsheet_compound-modifiers.md
-  - Bonus (Bloggish):
-      - 'IBM-SanFrancisco — a Technical Memoir': ibm-sanfran.md
-      - Visuals for the Sightless: visuals-for-the-sightless.md
-      - AI-Augmented Accessibility — a Technical Daydream: ai-accessibility.md
-      - From Daydream to Concept Note: ai-accessibility_bus.md
-      
 extra:
   generator: false
   analytics:
@@ -93,8 +67,11 @@ extra_javascript:
   - js/diagram-zoom.js
   - js/alphabet-auto.js
   - js/alttext-inject.js
+
     
 extra_css:
   - css/alphabet.css
   - css/diagram-zoom.css
   - css/cm-logo.css
+  - css/color-vars.css
+  

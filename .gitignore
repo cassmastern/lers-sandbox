@@ -1,6 +1,28 @@
-site/*
+# MkDocs output
+/site/
+# Python virtual environments
+.venv/
+env/
+venv/
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+# macOS system files
 .DS_Store
-**/.DS_Store
-extract-mermaid.py
-mermaid_collection.md
+.AppleDouble
+.LSOverride
+# Linux swap files
+*~
+# VSCode workspace settings
+.vscode/
+# Node / npm (if used)
+node_modules/
+# Logs
+*.log
+# Backup files
+*.bak
+# Optional: ignore compiled CSS/JS if you regenerate
+docs/css/*.css
+docs/js/*.js
 
