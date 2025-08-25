@@ -67,7 +67,7 @@ CSS enhancements live in `docs/assets/css/`:
 * `diagram-zoom.css`: complements zoom script
 * `cm-logo.css`: inline logo styling
 
-### 🚀 Deployment Flow
+### Deployment Flow
 
 ```mermaid
 graph TD

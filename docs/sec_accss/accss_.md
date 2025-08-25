@@ -62,3 +62,16 @@ This is my WCAG 2.1 AA–based accessibility reference/cheat sheet.
 * Provide pause/stop controls for animations
 * Ensure headings follow a logical hierarchy
 * Use ARIA roles only when native HTML is insufficient
+
+## Core Accessibility Elements  
+My cheat sheet for this project.  
+
+| Element             | Purpose                                       | MkDocs Support | Notes                        |
+| ------------------- | --------------------------------------------- | -------------- | ---------------------------- |
+| `role="main"`       | Defines primary content region                | <span style="color:green;">Built-in</span>     | In `main.html`               |
+| `role="navigation"` | Identifies nav landmarks                      | <span style="color:green;">Built-in</span>     | Sidebar and header           |
+| `aria-label`        | Adds descriptive labels for screen readers    | <span style="color:red;">Manual</span>      | Use in Markdown or overrides |
+| `alt` text          | Describes images for non-visual users         | <span style="color:red;">Manual</span>      | Required in Markdown         |
+| `aria-hidden`       | Hides decorative elements from screen readers | <span style="color:red;">Manual</span>      | Use in custom HTML/CSS       |
+| `aria-expanded`     | Indicates collapsible state (e.g. nav)        | <span style="color:green;">Built-in</span>     | Used in mobile nav           |
+| `aria-current`      | Marks current page in nav                     | <span style="color:green;">Built-in</span>     | Used in sidebar links        |
