@@ -1,53 +1,119 @@
-# Workflow Breakdown
+# Detailed Breakdown of My Workflow
 
-The following is a detailed breakdown of my GitHub Actions workflow (`.github/workflow/deploy.yml`).
+Here is a detailed breakdown of my workflow:
 
-```mermaid
-graph TD
-    trigger["GitHub Actions Trigger"]
-    checkout["Checkout Repository"]
-    buildx["Setup Docker Buildx"]
-    dockerBuild["Build Docker Image"]
-    verifyMermaid["Verify mermaid.min.js Presence"]
-    mkdocsBuild["Build MkDocs Site in Docker"]
-    verifyOutput["Verify Build Output"]
-    essentialCheck{"Essential Files Present?"}
-    success["Workflow Succeeds"]
-    fail["Workflow Fails with Diagnostics"]
-    
-    trigger --> checkout
-    checkout --> buildx
-    buildx --> dockerBuild
-    dockerBuild --> verifyMermaid
-    verifyMermaid --> mkdocsBuild
-    mkdocsBuild --> verifyOutput
-    verifyOutput --> essentialCheck
-    essentialCheck -->|Yes| success
-    essentialCheck -->|No| fail
-```
+## 1. Workflow Metadata
 
-## 1. **Checkout Code**
+General:** a CI/CD workflow starts by declaring a **name** and **triggers**
+
+**The start of my workflow**:
 
 ```yaml
-- uses: actions/checkout@v4
+name: Deploy MkDocs to GitHub Pages
+```
+
+- this workflow is named **“Deploy MkDocs to GitHub Pages”**
+
+## 2. Triggers (`on`)
+
+**General:** defines what events start the workflow (push, PR, manual, scheduled)
+**My trigger:**
+
+```yaml
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+```
+
+- Runs when:
+    - when changes are **pushed** to the `main` branch from either of my two machines
+    - a **pull request** targets `main` (haven't had any yet)
+    - a deployment is triggered **manually** (`workflow_dispatch`)
+
+This ensures my MkDocs site is always up-to-date after changes.
+
+## 3. Permissions
+
+**General:** workflows declare what they can access (read/write)
+**My permissions settings:**
+
+```yaml
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+```
+
+- can **read repo contents**
+- can **write to GitHub Pages** (needed for deployment)
+- can use **OIDC tokens** (secure authentication with GitHub)
+
+## 4. Concurrency
+
+**General:** prevents multiple deployments from clashing
+**My concurrency settings:**
+
+```yaml
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+```
+
+- only one Pages deployment runs at a time (grouped under `"pages"`)
+- ngoing runs are **not canceled** if a new one starts
+
+## 5. Jobs
+
+**General:** a workflow contains jobs; each job has steps
+**My workflow job:**
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+```
+
+- a single job called **`build`**
+- runs on a GitHub-hosted **Ubuntu Linux VM**
+
+## 6. Steps – Checkout
+
+**General:** first step is usually fetching source code
+**The first step in my workflow job:**
+
+```yaml
+- name: Checkout code
+  uses: actions/checkout@v4
   with:
-  fetch-depth: 0
+    fetch-depth: 0
 ```
 
-- ensures full commit history for changelog integrity and editorial traceability
+- uses the official `checkout` action
+- `fetch-depth: 0` = full git history (important for MkDocs plugins like `git-revision-date`)
 
-## 2. Set Up Docker Buildx
+## 7. Steps – Docker Buildx Setup
+
+**General:** sometimes workflows build Docker containers for repeatable builds
+**My Docker setup step:**
 
 ```yaml
-- uses: docker/setup-buildx-action@v3
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v3
 ```
 
-- enables advanced Docker build features like caching and multi-platform support
+- prepares **Docker Buildx**, which supports advanced builds with caching
 
-## 3. Build Docker Image
+## 8. Steps – Build Docker Image
+
+**General:** you can encapsulate build environments into images
+**My Docker image build step**:
 
 ```yaml
-- uses: docker/build-push-action@v5
+- name: 🏗️ Build Docker image
+  uses: docker/build-push-action@v5
   with:
     context: .
     push: false
@@ -57,96 +123,74 @@ graph TD
     cache-to: type=gha,mode=max
 ```
 
-- uilds a local image for MkDocs
-- uses GitHub Actions cache to accelerate builds
-- `load: true` makes the image available for subsequent steps
+- builds a **local Docker image** (`mkdocs-builder:latest`) containing all tools to build MkDocs
+- **Not pushed** to Docker Hub (just used locally)
+- uses GitHub cache to speed up rebuilds
 
-## 4. Verify Mermaid Asset
+## 9. Steps – Build MkDocs Site
 
-```bash
-if [ ! -f "docs/js/mermaid.min.js" ]; then
-  echo "ERROR: Mermaid JS asset missing"
-  exit 1
-fi
-sha256sum docs/js/mermaid.min.js
+**General:** CI compiles source code into an artifact
+**My artifact assembly step:**
+
+```yaml
+- name: Build MkDocs site
+  run: |
+    docker run --rm       -v ${{ github.workspace }}:/app       -w /app       mkdocs-builder:latest       mkdocs build --verbose
 ```
 
-- ensures mermaid.min.js is present and uncorrupted
-- supports reproducible rendering and theme switching
+- uns the containerized `mkdocs build` command
+- mounts repo into `/app`
+- produces output into `./site/`
 
-## 5. Build MkDocs Site
+## 10. Steps – Verify Output
 
-```bash
-docker run --rm \
-  -v ${{ github.workspace }}:/app \
-  -w /app \
-  mkdocs-builder:latest \
-  mkdocs build --verbose
+**General:** good practice is to test build artifacts.
+**My workflow's verification step:**
+
+```yaml
+- name: 🔍 Verify build output
+  run: |
+    if [ ! -d "./site" ]; then
+      echo "ERROR: MkDocs output folder './site' not found."
+      ls -la ./
+      exit 1
+    fi
+    echo "Build output verified."
 ```
 
-- runs MkDocs inside the Docker container
-- ensures consistent environment and dependency isolation
+- confirms the **`site/` folder** exists
+- prevents publishing empty deployments
 
-## 6. Verify Build Output
+## 11. Deployment to GitHub Pages
 
-```bash
-if [ ! -d "./site" ]; then
-  echo "ERROR: MkDocs output folder './site' not found."
-  exit 1
-fi
+**General:** after building, workflows upload and deploy artifacts
+**My workflow's GitHub Pages deployment steps**:
+
+- Use `actions/upload-pages-artifact` to store the `./site` folder.
+- Use `actions/deploy-pages` to publish to GitHub Pages.
+
+This finalizes the site, so it's' **live on my GitHub Pages domain**.
+
+# Workflow Visualization
+
+```mermaid
+flowchart TD
+
+    A[Push to main / PR / Manual Trigger] --> B[Checkout Code]
+    B --> C[Setup Docker Buildx]
+    C --> D[Build MkDocs Docker Image]
+    D --> E[Run mkdocs build inside Container]
+    E --> F[Verify ./site Exists]
+    F --> G[Upload Artifact to GitHub Pages]
+    G --> H[Deploy to Pages]
+    H --> I[Site Live!]
+
+    E -->|if ./site missing| Z[Fail Build & Stop]
 ```
 
-- confirms successful build
-- validates presence of essential editorial and accessibility assets
+This workflow guarantees a **repeatable, containerized MkDocs build process** and a reliable deployment to GitHub Pages.  
 
-## 7. Asset Integrity Checks
-
-```bash
-essential_files=(...)
-for file in "${essential_files[@]}"; do
-  if [ -f "./site/$file" ]; then
-    echo "Found: $file"
-  else
-    echo "Missing: $file"
-  fi
-done
-```
-
-- checks for critical JS, CSS, and HTML files
-- ensures accessibility scripts and diagram enhancements are present
-
-## 8. Mermaid Usage Audit
-
-```bash
-mermaid_count=$(find ./site -name "*.html" -exec grep -l "mermaid" {} \; | wc -l)
-echo "Found $mermaid_count HTML files with Mermaid content"
-```
-
-- counts Mermaid-enabled pages
-- useful for tracking diagram coverage and editorial scope
-
-## 9. JS Size Diagnostic
-
-```bash
-js_size=$(stat -c%s "./site/js/alttext-inject.js")
-echo "alttext-inject.js size: ${js_size} bytes"
-```
-
-- verifies asset integrity and helps catch accidental truncation or corruption
-
-> **Notes**:
->
-> - **Theme Adaptability**: `seamaiden-theme-switchr.js` attempts to ensure semantic clarity across light/dark modes without relying on Mermaid’s default heuristics
->
-> - **Reproducibility**: Docker layering and explicit asset copying guarantee consistent builds
->
-> - **Accessibility**: scripts like `alttext-inject.js` and `diagram-zoom.js` attempt to reinforce my accessibility-curious architecture
->
-> **Changelog Cadence**: full Git history and verbose build logs should better support narrative-driven docs/specs
-
----
-
-## For future consideration  
+## For future consideration
 
 - add Mermaid rendering tests across themes
 - validate diagram accessibility (e.g. alt text injection coverage)

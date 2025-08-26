@@ -60,7 +60,7 @@ All scripts are stored in `docs/assets/js/` and loaded via `extra_javascript` in
 * `alphabet-auto.js`: in glossary pages, replaces the page-level TOC with a navigable alphabet 
 * `diagram-zoom.js`: implements lightbox/zoom for diagrams
 * `alttext-inject.js`: alt-text and ARIA role injection (work in progress)
-
+`
 CSS enhancements live in `docs/assets/css/`:
 
 * `alphabet.css`: supports sidebar alphabet navigation
