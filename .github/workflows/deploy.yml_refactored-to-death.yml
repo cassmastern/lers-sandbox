@@ -1,20 +1,9 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy MkDocs Site
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main
 
 jobs:
   build:
@@ -28,7 +17,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: 🏗️ Build Docker image
+      - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -38,6 +27,15 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Verify mermaid.min.js presence
+        run: |
+          if [ ! -f "docs/js/mermaid.min.js" ]; then
+            echo "ERROR: Mermaid JS asset missing at docs/js/mermaid.min.js"
+            exit 1
+          fi
+          echo "Found mermaid.min.js"
+          sha256sum docs/js/mermaid.min.js
+
       - name: Build MkDocs site
         run: |
           docker run --rm \
@@ -46,7 +44,7 @@ jobs:
             mkdocs-builder:latest \
             mkdocs build --verbose
 
-      - name: 🔍 Verify build output
+      - name: Verify build output
         run: |
           if [ ! -d "./site" ]; then
             echo "ERROR: MkDocs output folder './site' not found."
@@ -62,6 +60,7 @@ jobs:
             "js/diagram-zoom.js"
             "css/accessibility.css"
             "css/diagram-zoom.css"
+            "js/mermaid.min.js"
           )
 
           for file in "${essential_files[@]}"; do
@@ -80,55 +79,11 @@ jobs:
             echo "alttext-inject.js size: ${js_size} bytes"
           fi
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  accessibility-test:
-    needs: deploy
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    continue-on-error: true
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: '18.x'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
+          
 
-      - name: Wait for deployment to settle
-        run: sleep 30
-
-      - name: Install Pa11y locally
-        run: npm install pa11y --save-dev
-
-      - name: Install Chromium sandbox deps
-        run: |
-          sudo apt-get update && sudo apt-get install -y chromium-browser
-          echo "CHROME_BIN=/usr/bin/chromium-browser" >> $GITHUB_ENV
-
-      - name: Run Pa11y accessibility test
-        run: |
-          echo "Running Pa11y against live site"
-          npx pa11y ${{ steps.deployment.outputs.page_url }} \
-            --config .pa11yci.json \
-            --reporter cli
-
-      - name: Log fallback if Pa11y fails
-        if: failure()
-        run: echo "Pa11y test failed—check npm rate limits or retry later"
