@@ -17,7 +17,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: 🏗️ Build Docker image
+      - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -27,7 +27,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: ✅ Verify mermaid.min.js presence
+      - name: Verify mermaid.min.js presence
         run: |
           if [ ! -f "docs/js/mermaid.min.js" ]; then
             echo "ERROR: Mermaid JS asset missing at docs/js/mermaid.min.js"
@@ -44,7 +44,7 @@ jobs:
             mkdocs-builder:latest \
             mkdocs build --verbose
 
-      - name: 🔍 Verify build output
+      - name: Verify build output
         run: |
           if [ ! -d "./site" ]; then
             echo "ERROR: MkDocs output folder './site' not found."
@@ -78,3 +78,11 @@ jobs:
             js_size=$(stat -c%s "./site/js/alttext-inject.js")
             echo "alttext-inject.js size: ${js_size} bytes"
           fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
+
