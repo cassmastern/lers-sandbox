@@ -1,4 +1,6 @@
-# A Concept Note: AI‑Augmented Accessibility
+# A Concept Note: AI‑Augmented Accessibility  
+
+This is an attempt to turn an idea ([Toward AI-Augmented Accessibility — A Technical Daydream](ai-accessibility.md)) into a concept now ("who knows" kind of thing).
 
 ## 1. Problem Statement
 
@@ -40,7 +42,7 @@ Introduce an **AI‑augmented accessibility layer** that:
 This ensures accessibility is **proactive, reproducible, and modular** — just like other parts of the documentation stack.
 
 ```mermaid
-flowchart TD
+graph TD
     A[Detect Visual Content] --> B[AI Suggests ALT/DESC Metadata]
     B --> C[Integrate into Authoring Tools]
     C --> D[Learn from Style Guides & Past Decisions]
@@ -69,7 +71,7 @@ flowchart TD
 * Enhances inclusivity and brand reputation.
 
 ```mermaid
-flowchart TD
+graph TD
     A["Authors / Tech Writers"] --> F["AI Accessibility Layer"]
     B["Accessibility Specialists"] --> F
     C["Developers & DevOps Teams"] --> F
@@ -267,7 +269,7 @@ print(IMG_MD.sub(lambda m: f"![{alt}]({m.group(1)})", text))
 **Decision logic**
 
 ```mermaid
-flowchart TD
+graph TD
     S[Start] --> C{Registry Hit?}
     C -- Yes --> Inject[Inject Cached Metadata]
     C -- No --> A{AI Available?}
@@ -378,7 +380,7 @@ class A11yPlugin(BasePlugin):
 * **Change management** – author adoption and trust.
 
 ```mermaid
-flowchart TB
+graph TB
     Risks -->|AI Variance| Quality[Incorrect/Verbose ALT]
     Risks -->|Toolchain Gaps| Integration[Integration Complexity]
     Risks -->|Adoption| Change[Change Management Resistance]
@@ -393,7 +395,7 @@ flowchart TB
 * AI capabilities are maturing for **context‑aware generation** .
 
 ```mermaid
-flowchart LR
+graph LR
     Regulations[Stricter Accessibility Standards] --> Urgency
     ShiftLeft[Shift-Left Dev Practices] --> Urgency
     AI[AI Capability Maturity] --> Urgency

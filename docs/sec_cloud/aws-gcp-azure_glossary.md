@@ -2,16 +2,12 @@
 
 Below is a compact, side-by-side glossary of key cloud components and technologies across **AWS**, **Google Cloud Platform (GCP)**, and **Microsoft Azure**. Emphasis on DevOps-related services and equivalents. Where a component is absent, that is noted. 
 
----
-
 ## How Content is Organized
 
 - Information on this page is grouped by common cloud platform categories: **Compute**, **Storage**, **Networking**, **IAM**, **DevOps/CI·CD**, **Containers**, **Serverless**, **Databases**, **Monitoring & Logging**, **Infrastructure as Code**, **Security & Secrets**, **Messaging & Eventing**, **CDN & Edge**, **Machine Learning**, **Cost & Governance**.
 - Each category lists the main components/service(s) of **AWS**, **GCP**, and **Azure**, with descriptions and notable differences.
 
 (Could end up being useful as a reference or translation table when moving architectures or writing runbooks.)
-
----
 
 ## Compute
 
@@ -33,8 +29,6 @@ Below is a compact, side-by-side glossary of key cloud components and technologi
 - **GCP:** *Bare Metal Solution* (for some workloads).
 - **Azure:** *Azure Dedicated Host*.
 
----
-
 ## Containers & Orchestration
 
 ### Managed Kubernetes
@@ -55,8 +49,6 @@ Below is a compact, side-by-side glossary of key cloud components and technologi
 - **GCP:** *Artifact Registry* (formerly Container Registry + Artifact Registry consolidation).
 - **Azure:** *Azure Container Registry (ACR)*.
 
----
-
 ## Serverless
 
 ### Functions (FaaS)
@@ -71,7 +63,6 @@ Below is a compact, side-by-side glossary of key cloud components and technologi
 - **GCP:** *Cloud Run* — first-class serverless containers.
 - **Azure:** *Azure Container Apps* / *App Service*.
 
----
 ## Storage & Files
 
 ### Object Storage
@@ -91,8 +82,6 @@ Below is a compact, side-by-side glossary of key cloud components and technologi
 - **AWS:** *EFS (Elastic File System)* — NFS for Linux; *FSx* for Windows (Lustre, FSx for Windows File Server).
 - **GCP:** *Filestore* — managed NFS for GCE/GKE.
 - **Azure:** *Azure Files* — SMB/NFS share with managed storage; *Azure NetApp Files* for high-performance needs.
-
----
 
 ## Networking
 
@@ -120,16 +109,12 @@ Below is a compact, side-by-side glossary of key cloud components and technologi
 - **GCP:** no first-class managed service mesh product; Anthos Service Mesh is available (based on Istio) for Anthos users.
 - **Azure:** *Azure Service Fabric* (different paradigm) and can run Istio/Linkerd on AKS; no ubiquitous managed Istio across all customers.
 
----
-
 ## Identity & Access Management (IAM)
 
 - **Identity & Access**
-  - **AWS:** *IAM (Identity and Access Management)* for users/roles/policies; *AWS Organizations* for multi-account management; *Cognito* for app identity.
-  - **GCP:** *Cloud IAM* (resource-centric roles) and *Cloud Identity / Identity Platform* for user auth; *Organizations / Folders* for resource hierarchy.
-  - **Azure:** *Azure Active Directory (Azure AD)* — identity platform for users, apps, and service principals; *Azure RBAC* for resource permissions.
-
----
+    - **AWS:** *IAM (Identity and Access Management)* for users/roles/policies; *AWS Organizations* for multi-account management; *Cognito* for app identity.
+    - **GCP:** *Cloud IAM* (resource-centric roles) and *Cloud Identity / Identity Platform* for user auth; *Organizations / Folders* for resource hierarchy.
+    - **Azure:** *Azure Active Directory (Azure AD)* — identity platform for users, apps, and service principals; *Azure RBAC* for resource permissions.
 
 ## DevOps / CI · CD
 
@@ -175,173 +160,154 @@ All three clouds support blue/green and canary deployments via their LB + deploy
 
 ### Infrastructure Automation (DevOps-focused)
 
-  - See Infrastructure as Code section below (CloudFormation / Deployment Manager / ARM / Bicep / Terraform).
-
----
+- See Infrastructure as Code section below (CloudFormation / Deployment Manager / ARM / Bicep / Terraform).
 
 ## Infrastructure as Code (IaC)
 
 ### Native / Cloud Template Tools
 
-  - **AWS:** *CloudFormation* — declarative templates (YAML/JSON), supports change sets, drift detection.
-  - **GCP:** *Deployment Manager* (less popular); *Cloud Deployment Manager* has limited adoption compared to Terraform.
-  - **Azure:** *ARM Templates* (JSON) and *Bicep* (domain-specific language, recommended over raw ARM).
+- **AWS:** *CloudFormation* — declarative templates (YAML/JSON), supports change sets, drift detection.
+- **GCP:** *Deployment Manager* (less popular); *Cloud Deployment Manager* has limited adoption compared to Terraform.
+- **Azure:** *ARM Templates* (JSON) and *Bicep* (domain-specific language, recommended over raw ARM).
 
 ## Cross-cloud / De-facto standard
 
-  - **Terraform (HashiCorp)** — widely used across all three clouds; stateful, declarative; large provider ecosystem.
+- **Terraform (HashiCorp)** — widely used across all three clouds; stateful, declarative; large provider ecosystem.
 
 ### Config Management
 
-  - **AWS:** supports Puppet, Chef, Ansible; *AWS Systems Manager (SSM)* includes State Manager and Run Command for remote execution.
-  - **GCP:** supports the same tools; *OS Config* provides patching and config management.
-  - **Azure:** supports Ansible, Chef, Puppet; *Azure Automation* for runbooks and update management.
-
----
+- **AWS:** supports Puppet, Chef, Ansible; *AWS Systems Manager (SSM)* includes State Manager and Run Command for remote execution.
+- **GCP:** supports the same tools; *OS Config* provides patching and config management.
+- **Azure:** supports Ansible, Chef, Puppet; *Azure Automation* for runbooks and update management.
 
 ## Databases (Managed)
 
 ### Relational / RDBMS
 
-  - **AWS:** *RDS* (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Aurora). *Aurora* is Amazon's cloud-native, compatible DB with better performance. 
-  - **GCP:** *Cloud SQL* (MySQL, PostgreSQL, SQL Server). *Spanner* for globally-distributed relational DB (unique differentiator).
-  - **Azure:** *Azure SQL Database* (managed SQL Server-compatible), *Azure Database for PostgreSQL/MySQL/MariaDB*.
+- **AWS:** *RDS* (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Aurora). *Aurora* is Amazon's cloud-native, compatible DB with better performance. 
+- **GCP:** *Cloud SQL* (MySQL, PostgreSQL, SQL Server). *Spanner* for globally-distributed relational DB (unique differentiator).
+- **Azure:** *Azure SQL Database* (managed SQL Server-compatible), *Azure Database for PostgreSQL/MySQL/MariaDB*.
 
 ### NoSQL / Key-Value
 
-  - **AWS:** *DynamoDB* — key-value / document DB with single-digit millisecond latency and global tables.
-  - **GCP:** *Firestore / Datastore* — document DB; *Bigtable* for wide-column workloads.
-  - **Azure:** *Cosmos DB* — multi-model (key-value, document, graph) with global distribution.
+- **AWS:** *DynamoDB* — key-value / document DB with single-digit millisecond latency and global tables.
+- **GCP:** *Firestore / Datastore* — document DB; *Bigtable* for wide-column workloads.
+- **Azure:** *Cosmos DB* — multi-model (key-value, document, graph) with global distribution.
 
 ### Data Warehousing
 
-  - **AWS:** *Redshift* — columnar data warehouse.
-  - **GCP:** *BigQuery* — serverless, highly scalable analytics engine (query-first model).
-  - **Azure:** *Azure Synapse Analytics* (formerly SQL Data Warehouse).
-
----
+- **AWS:** *Redshift* — columnar data warehouse.
+- **GCP:** *BigQuery* — serverless, highly scalable analytics engine (query-first model).
+- **Azure:** *Azure Synapse Analytics* (formerly SQL Data Warehouse).
 
 ## Monitoring, Logging & Observability
 
 ### Logging / Log Management
 
-  - **AWS:** *CloudWatch Logs*; *CloudWatch* for metrics and alarms; *X-Ray* for distributed tracing.
-  - **GCP:** *Cloud Logging* (formerly Stackdriver Logging); *Cloud Monitoring* for metrics; *Cloud Trace* for distributed tracing.
-  - **Azure:** *Azure Monitor* (Logs via Log Analytics), *Application Insights* for app monitoring and traces.
+- **AWS:** *CloudWatch Logs*; *CloudWatch* for metrics and alarms; *X-Ray* for distributed tracing.
+- **GCP:** *Cloud Logging* (formerly Stackdriver Logging); *Cloud Monitoring* for metrics; *Cloud Trace* for distributed tracing.
+- **Azure:** *Azure Monitor* (Logs via Log Analytics), *Application Insights* for app monitoring and traces.
 
 ### APM / Tracing / Metrics
 
-  - All providers offer first-party APM/tracing. Third-party options (Datadog, New Relic) are common in multi-cloud setups.
+- All providers offer first-party APM/tracing. Third-party options (Datadog, New Relic) are common in multi-cloud setups.
 
 ### Managed Prometheus / Metrics
 
-  - **AWS:** *Managed Service for Prometheus* + *Managed Grafana*.
-  - **GCP:** *Managed Service for Prometheus* (via Ops) and *Cloud Monitoring* supports Prometheus scraping.
-  - **Azure:** *Azure Monitor for Containers* and *Azure Managed Grafana*.
-
----
+- **AWS:** *Managed Service for Prometheus* + *Managed Grafana*.
+- **GCP:** *Managed Service for Prometheus* (via Ops) and *Cloud Monitoring* supports Prometheus scraping.
+- **Azure:** *Azure Monitor for Containers* and *Azure Managed Grafana*.
 
 ## Security & Compliance
 
 ### WAF / DDoS Protection
 
-  - **AWS:** *AWS WAF*, *Shield* (Standard included, Advanced paid) for DDoS protection; *Inspector* for vulnerability assessment.
-  - **GCP:** *Cloud Armor* (WAF + DDoS protection); *Security Command Center* for posture.
-  - **Azure:** *Azure WAF* (part of Application Gateway and Front Door); *Azure DDoS Protection*; *Azure Security Center* (now part of Microsoft Defender for Cloud).
+- **AWS:** *AWS WAF*, *Shield* (Standard included, Advanced paid) for DDoS protection; *Inspector* for vulnerability assessment.
+- **GCP:** *Cloud Armor* (WAF + DDoS protection); *Security Command Center* for posture.
+- **Azure:** *Azure WAF* (part of Application Gateway and Front Door); *Azure DDoS Protection*; *Azure Security Center* (now part of Microsoft Defender for Cloud).
 
 ### Key Management
 
-  - **AWS:** *KMS (Key Management Service)* — manage encryption keys; integrates with CloudHSM.
-  - **GCP:** *Cloud KMS*.
-  - **Azure:** *Key Vault* + *Managed HSM*.
+- **AWS:** *KMS (Key Management Service)* — manage encryption keys; integrates with CloudHSM.
+- **GCP:** *Cloud KMS*.
+- **Azure:** *Key Vault* + *Managed HSM*.
 
 ### Policy & Posture Management
 
-  - **AWS:** *AWS Config*, *Security Hub*, *IAM Access Analyzer*.
-  - **GCP:** *Security Command Center*, *Organization Policy Service*.
-  - **Azure:** *Azure Policy*, *Microsoft Defender for Cloud*.
-
----
+- **AWS:** *AWS Config*, *Security Hub*, *IAM Access Analyzer*.
+- **GCP:** *Security Command Center*, *Organization Policy Service*.
+- **Azure:** *Azure Policy*, *Microsoft Defender for Cloud*.
 
 ## Messaging, Streaming & Eventing
 
 ### Pub/Sub / Messaging
 
-  - **AWS:** *SNS (Simple Notification Service)* for pub/sub and fan-out; *SQS* for queuing.
-  - **GCP:** *Pub/Sub* — global messaging/streaming service.
-  - **Azure:** *Service Bus* (advanced messaging) and *Event Grid* for event routing; *Queues* for simple queuing.
+- **AWS:** *SNS (Simple Notification Service)* for pub/sub and fan-out; *SQS* for queuing.
+- **GCP:** *Pub/Sub* — global messaging/streaming service.
+- **Azure:** *Service Bus* (advanced messaging) and *Event Grid* for event routing; *Queues* for simple queuing.
 
 ### Streaming / Event Hub
 
-  - **AWS:** *Kinesis* (Data Streams, Data Firehose) for streaming ingestion.
-  - **GCP:** *Dataflow* + *Pub/Sub* for streaming pipelines; *Datastream* for CDC.
-  - **Azure:** *Event Hubs* for big data streaming; *Azure Stream Analytics* for real-time processing.
-
----
+- **AWS:** *Kinesis* (Data Streams, Data Firehose) for streaming ingestion.
+- **GCP:** *Dataflow* + *Pub/Sub* for streaming pipelines; *Datastream* for CDC.
+- **Azure:** *Event Hubs* for big data streaming; *Azure Stream Analytics* for real-time processing.
 
 ## CDN & Edge
 
 ### Content Delivery
 
-  - **AWS:** *CloudFront* — global CDN, integrates with S3, Lambda@Edge.
-  - **GCP:** *Cloud CDN* — integrates with Cloud Storage and Load Balancing; *Edge CDN* partnerships exist.
-  - **Azure:** *Azure CDN* and *Azure Front Door* (global, L7, WAF-capable).
+- **AWS:** *CloudFront* — global CDN, integrates with S3, Lambda@Edge.
+- **GCP:** *Cloud CDN* — integrates with Cloud Storage and Load Balancing; *Edge CDN* partnerships exist.
+- **Azure:** *Azure CDN* and *Azure Front Door* (global, L7, WAF-capable).
 
 ### Edge Compute
 
-  - **AWS:** *Lambda@Edge*, *CloudFront Functions*, *Wavelength* (carrier edge), *IoT Greengrass* for devices.
-  - **GCP:** *Cloud Functions (limited)* and partner edge offerings; *Anthos on edge* available for specific cases.
-  - **Azure:** *Azure IoT Edge*, *Front Door* + CDN; *Azure Edge Zones*.
-
----
+- **AWS:** *Lambda@Edge*, *CloudFront Functions*, *Wavelength* (carrier edge), *IoT Greengrass* for devices.
+- **GCP:** *Cloud Functions (limited)* and partner edge offerings; *Anthos on edge* available for specific cases.
+- **Azure:** *Azure IoT Edge*, *Front Door* + CDN; *Azure Edge Zones*.
 
 ## Machine Learning & Analytics
 
 ### Managed ML Platforms
 
-  - **AWS:** *SageMaker* — end-to-end ML platform (training, deployment, feature store, model registry).
-  - **GCP:** *Vertex AI* — integrated platform for training, tuning, and deployment; strong AutoML lineage.
-  - **Azure:** *Azure Machine Learning* — model training and lifecycle management.
+- **AWS:** *SageMaker* — end-to-end ML platform (training, deployment, feature store, model registry).
+- **GCP:** *Vertex AI* — integrated platform for training, tuning, and deployment; strong AutoML lineage.
+- **Azure:** *Azure Machine Learning* — model training and lifecycle management.
 
 ### Big Data / ETL
 
-  - **AWS:** *Glue* (ETL), *EMR* (managed Hadoop/Spark).
-  - **GCP:** *Dataflow* (stream & batch), *Dataproc* (managed Spark/Hadoop).
-  - **Azure:** *Data Factory* (ETL), *Synapse* (analytics + orchestration).
-
----
+- **AWS:** *Glue* (ETL), *EMR* (managed Hadoop/Spark).
+- **GCP:** *Dataflow* (stream & batch), *Dataproc* (managed Spark/Hadoop).
+- **Azure:** *Data Factory* (ETL), *Synapse* (analytics + orchestration).
 
 ## Governance, Billing & Cost Management
 
 ### Billing & Cost Tools
 
-  - **AWS:** *AWS Cost Explorer*, *Budgets*, *Trusted Advisor* for recommendations.
-  - **GCP:** *Cloud Billing* reports and *Cost Management* tools.
-  - **Azure:** *Cost Management + Billing* (integrated with Azure Portal).
+- **AWS:** *AWS Cost Explorer*, *Budgets*, *Trusted Advisor* for recommendations.
+- **GCP:** *Cloud Billing* reports and *Cost Management* tools.
+- **Azure:** *Cost Management + Billing* (integrated with Azure Portal).
 
 ### Multi-account / Multi-project governance
 
-  - **AWS:** *Organizations*, SCPs (Service Control Policies).
-  - **GCP:** *Organizations, Folders, Projects* with IAM policies.
-  - **Azure:** *Management Groups* and *Subscriptions*.
-
----
+- **AWS:** *Organizations*, SCPs (Service Control Policies).
+- **GCP:** *Organizations, Folders, Projects* with IAM policies.
+- **Azure:** *Management Groups* and *Subscriptions*.
 
 ## Migration & Hybrid Tools
 
 - **Lift & Shift / Migration**
 
-  - **AWS:** *Application Migration Service (MGN)*, *Database Migration Service (DMS)*.
-  - **GCP:** *Migrate for Compute Engine*, *Database Migration Service*.
-  - **Azure:** *Azure Migrate*, *Database Migration Service*.
+    - **AWS:** *Application Migration Service (MGN)*, *Database Migration Service (DMS)*.
+    - **GCP:** *Migrate for Compute Engine*, *Database Migration Service*.
+    - **Azure:** *Azure Migrate*, *Database Migration Service*.
 
 ### Hybrid / Multi-cloud management
 
-  - **AWS:** *Outposts* (on-premises AWS hardware), *AWS Local Zones / Wavelength*.
-  - **GCP:** *Anthos* — consistent K8s & services across on-prem and other clouds.
-  - **Azure:** *Azure Arc* — manage on-prem & multi-cloud resources via Azure control plane; *Azure Stack* (on-prem hardware).
+- **AWS:** *Outposts* (on-premises AWS hardware), *AWS Local Zones / Wavelength*.
+- **GCP:** *Anthos* — consistent K8s & services across on-prem and other clouds.
+- **Azure:** *Azure Arc* — manage on-prem & multi-cloud resources via Azure control plane; *Azure Stack* (on-prem hardware).
 
----
 ## Comparative Notes & Observations (DevOps-focused)
 
 - **CI/CD & DevOps tool parity:** All three clouds offer pipeline/orchestration, build, and deployment services. Azure DevOps and GitHub Actions are particularly feature-rich for pipelines; GCP's Cloud Build and Cloud Deploy are improving quickly; AWS Code* tools are feature-complete but often seen as more tightly coupled to AWS.
@@ -350,10 +316,8 @@ All three clouds support blue/green and canary deployments via their LB + deploy
 - **Managed Kubernetes:** GKE is often praised for reliability and upstream alignment; EKS is the AWS choice with strong integrations; AKS simplifies Azure authentication and Developer Experience for Microsoft stacks.
 - **Where features are missing:**
 
-  - **Feature flags:** No first-party feature flagging solution is universally available — clouds provide config rollout tools (AppConfig, App Configuration) but teams often use third-party feature-flag services (LaunchDarkly, Flagsmith).
-  - **Managed full-service service mesh:** While all clouds support service mesh tooling, a universal, fully-managed Istio-like control plane is not equally available as a single turnkey service to all customers. Anthos (GCP) and App Mesh (AWS) offer pieces but require setup/management.
-
----
+    - **Feature flags:** No first-party feature flagging solution is universally available — clouds provide config rollout tools (AppConfig, App Configuration) but teams often use third-party feature-flag services (LaunchDarkly, Flagsmith).
+    - **Managed full-service service mesh:** While all clouds support service mesh tooling, a universal, fully-managed Istio-like control plane is not equally available as a single turnkey service to all customers. Anthos (GCP) and App Mesh (AWS) offer pieces but require setup/management.
 
 ## Quick Reference: Common DevOps Equivalents
 
@@ -363,8 +327,6 @@ All three clouds support blue/green and canary deployments via their LB + deploy
 - **Secrets:** Secrets Manager / SSM Parameter Store ⇄ Secret Manager ⇄ Key Vault
 - **IaC native:** CloudFormation ⇄ Deployment Manager ⇄ ARM/Bicep
 - **Object storage:** S3 ⇄ Cloud Storage ⇄ Blob Storage
-
----
 
 ## Appendix — Suggested repo layout for DevOps docs
 
@@ -383,4 +345,3 @@ All three clouds support blue/green and canary deployments via their LB + deploy
 \[expandable]
 ---
 2025.08.09
-

@@ -4,7 +4,7 @@ Here is a detailed breakdown of my workflow:
 
 ## 1. Workflow Metadata
 
-General:** a CI/CD workflow starts by declaring a **name** and **triggers**
+**General:** a CI/CD workflow starts by declaring a **name** and **triggers**
 
 **The start of my workflow**:
 

@@ -12,8 +12,6 @@ What if our CI/CD pipelines didn’t just validate syntax and links, but flagged
 
 This page sketches out that daydream. Of a system that's format-agnostic, author-friendly, and built to slot into existing workflows without drama. Whether you’re diagramming infrastructure or documenting edge-case YAML quirks, the goal is the same: make accessibility proactive, reproducible, and just as modular as the rest of your stack.
 
----
-
 ## The Problem
 
 The problem — to recap briefly — is this: *visual content — diagrams, charts, SVGs, flow states — is often inaccessible to screen readers. Even when authors include `alt` text, it’s usually terse and lacks narrative depth.*
@@ -27,8 +25,6 @@ What’s missing is a system that:
 
 Next, some sketches of this daydreamed system before I forget even the raw ideas.  
 
----
-
 ## Structure: Who’s Doing What, and Why
 
 Before diving into flows and fallbacks, it helps to map out the cast of characters. 
@@ -39,45 +35,51 @@ Here is a diagram that lays out the principal or core components of the accessib
 
 ```mermaid
 graph TD
-    A[MCP Server<br><sub>Metadata & Compliance Processor</sub>] --> B[RAG Workflow<br><sub>Retrieval-Augmented Generation</sub>]
-    B --> C[Authoring Plugin<br><sub>IDE Extension</sub>]
-    A --> D[CI/CD Integration<br><sub>Validation Pipeline</sub>]
-    C --> E[Markdown + Diagrams<br><sub>Content Surface</sub>]
+    A["MCP Server
+Metadata & Compliance Processor"] --> B["RAG Workflow
+Retrieval-Augmented Generation"]
+    B --> C["Authoring Plugin
+IDE Extension"]
+    A --> D["CI/CD Integration
+Validation Pipeline"]
+    C --> E["Markdown + Diagrams
+Content Surface"]
     D --> E
 ```
+
 ## Component Breakdown
 
 ### MCP Server (Metadata & Compliance Processor)
 
-* Central engine that parses content, validates accessibility metadata, and coordinates injection
-* Handles multiple formats: Markdown, Mermaid, PlantUML, SVG, PNG
-* Exposes APIs for plugins and CI tools
+- Central engine that parses content, validates accessibility metadata, and coordinates injection
+- Handles multiple formats: Markdown, Mermaid, PlantUML, SVG, PNG
+- Exposes APIs for plugins and CI tools
 
 ### RAG Workflow (Retrieval-Augmented Generation)
 
-* AI model that retrieves glossary terms, headings, and context
-* Generates rich ALT and DESC content
-* Learns from previous authoring patterns
+- AI model that retrieves glossary terms, headings, and context
+- Generates rich ALT and DESC content
+- Learns from previous authoring patterns
 
 ### Authoring Plugin
 
-* IDE extension (e.g., VS Code, Obsidian, enterprise-class XML authoring tools)
-* Provides inline suggestions for ALT/DESC
-* Injects metadata and previews screen reader output
-* Connects to MCP Server for live feedback
+- IDE extension (e.g., VS Code, Obsidian, enterprise-class XML authoring tools)
+- Provides inline suggestions for ALT/DESC
+- Injects metadata and previews screen reader output
+- Connects to MCP Server for live feedback
 
 ### CI/CD Integration
 
-* GitHub Action or CLI tool
-* Validates accessibility metadata during builds
-* Flags missing or malformed ALT/DESC
-* Acts as a gatekeeper of authoring toolchain-level style guide rules
+- GitHub Action or CLI tool
+- Validates accessibility metadata during builds
+- Flags missing or malformed ALT/DESC
+- Acts as a gatekeeper of authoring toolchain-level style guide rules
 
 ### Markdown + Diagrams
 
-* The authored content: Markdown files, embedded diagrams, images
-* Receives injected metadata from MCP and plugin
-* Becomes fully AODA-compliant before deployment
+- The authored content: Markdown files, embedded diagrams, images
+- Receives injected metadata from MCP and plugin
+- Becomes fully AODA-compliant before deployment
 
 ```yaml
 jobs:
@@ -89,7 +91,6 @@ jobs:
 ```
 
 ## Authoring Style Guide (Format-Agnostic)
-
 
 | Format       | Required Metadata                               |
 | -------------- | ------------------------------------------------- |
@@ -106,7 +107,7 @@ Sometimes metadata is missing, malformed, or just plain confusing. This diagram 
 It’s not failure, it’s feedback. And it’s wired to help, not scold.
 
 ```mermaid
-flowchart LR
+graph TD
     A["Authoring Plugin\nIDE Extension"] --> B["Markdown + Diagrams\nContent Surface"]
     B --> C["MCP Server\nMetadata & Compliance Processor"]
     C --> D["RAG Workflow\nRetrieval-Augmented Generation"]
@@ -126,7 +127,6 @@ flowchart LR
 
 Here is how the system might respond to various metadata issues:
 
-
 | Scenario           | Trigger                                  | Response                              | Outcome                       |
 | -------------------- | ------------------------------------------ | --------------------------------------- | ------------------------------- |
 | Missing ALT/DESC   | No metadata in diagram block             | RAG model generates suggestions       | Injected if valid             |
@@ -142,5 +142,3 @@ Sightless users deserve more than “flowchart of payment states.” They deserv
 
 ---
 2025.08.17
-
-
