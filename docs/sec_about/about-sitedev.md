@@ -69,6 +69,8 @@ CSS enhancements live in `docs/assets/css/`:
 
 ### Deployment Flow
 
+Here is a basic representation. For a detailed breakdown, *see* [Workflow Breakdown](about-sitedev-breakdown.md).
+
 ```mermaid
 graph TD
   Dev["MkDocs (local preview)"]
@@ -90,10 +92,10 @@ graph TD
 
 ## Future Enhancements
 
-* Azure DevOps migration
-* Auth gate (Azure AD B2C or JWT)
-* Audit logging (Azure Monitor)
-* Secrets management (Key Vault)
-* Role-based access
-* CI/CD parallel jobs
-* Accessibility regression testing (Pa11y + Axe-core)
+- Try Azure DevOps migration, at least as an academical challenge
+- Auth gate
+- Audit logging
+- Secrets management
+- Role-based access
+- 
+

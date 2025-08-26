@@ -14,6 +14,9 @@ COPY requirements.txt /app/
 # This layer will only rebuild if requirements.txt changes
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy Mermaid JS explicitly for reproducibility
+COPY docs/js/mermaid.min.js /app/docs/js/mermaid.min.js
+
 # Copy the rest of the application files
 # This layer will rebuild when docs/config changes, but deps stay cached
 COPY . /app

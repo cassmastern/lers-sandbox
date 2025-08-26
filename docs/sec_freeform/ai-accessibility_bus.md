@@ -264,7 +264,7 @@ print(IMG_MD.sub(lambda m: f"![{alt}]({m.group(1)})", text))
 3. **Glossary Auto‑fill**: Minimal description synthesized from glossary keywords; tagged `confidence: low`.
 4. **Silent Degrade (Draft)**: Allow missing fields in draft builds; every instance is logged with file/line.
 
-**Decision logic (Mermaid)**
+**Decision logic**
 
 ```mermaid
 flowchart TD

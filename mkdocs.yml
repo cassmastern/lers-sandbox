@@ -18,26 +18,20 @@ theme:
     - content.code.select
 
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
+    - scheme: default
       toggle:
         icon: material/brightness-4
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-7
         name: Switch to light mode
 
 plugins:
   - search
-  - mermaid2
-  - awesome-pages 
+  - mermaid2:
+      javascript: js/mermaid.min.js
+  - awesome-pages
 
 extra:
   generator: false
@@ -64,6 +58,7 @@ markdown_extensions:
       permalink: true
 
 extra_javascript:
+  - js/seamaiden-theme-switchr.js
   - js/diagram-zoom.js
   - js/alphabet-auto.js
   - js/alttext-inject.js
