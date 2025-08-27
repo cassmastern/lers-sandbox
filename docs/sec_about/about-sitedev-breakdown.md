@@ -17,6 +17,7 @@ name: Deploy MkDocs to GitHub Pages
 ## 2. Triggers (`on`)
 
 **General:** defines what events start the workflow (push, PR, manual, scheduled)
+
 **My trigger:**
 
 ```yaml
@@ -38,6 +39,7 @@ This ensures my MkDocs site is always up-to-date after changes.
 ## 3. Permissions
 
 **General:** workflows declare what they can access (read/write)
+
 **My permissions settings:**
 
 ```yaml
@@ -54,6 +56,7 @@ permissions:
 ## 4. Concurrency
 
 **General:** prevents multiple deployments from clashing
+
 **My concurrency settings:**
 
 ```yaml
@@ -68,6 +71,7 @@ concurrency:
 ## 5. Jobs
 
 **General:** a workflow contains jobs; each job has steps
+
 **My workflow job:**
 
 ```yaml
@@ -82,6 +86,7 @@ jobs:
 ## 6. Steps – Checkout
 
 **General:** first step is usually fetching source code
+
 **The first step in my workflow job:**
 
 ```yaml
@@ -97,6 +102,7 @@ jobs:
 ## 7. Steps – Docker Buildx Setup
 
 **General:** sometimes workflows build Docker containers for repeatable builds
+
 **My Docker setup step:**
 
 ```yaml
@@ -109,6 +115,7 @@ jobs:
 ## 8. Steps – Build Docker Image
 
 **General:** you can encapsulate build environments into images
+
 **My Docker image build step**:
 
 ```yaml
@@ -130,6 +137,7 @@ jobs:
 ## 9. Steps – Build MkDocs Site
 
 **General:** CI compiles source code into an artifact
+
 **My artifact assembly step:**
 
 ```yaml
@@ -145,6 +153,7 @@ jobs:
 ## 10. Steps – Verify Output
 
 **General:** good practice is to test build artifacts.
+
 **My workflow's verification step:**
 
 ```yaml
@@ -164,6 +173,7 @@ jobs:
 ## 11. Deployment to GitHub Pages
 
 **General:** after building, workflows upload and deploy artifacts
+
 **My workflow's GitHub Pages deployment steps**:
 
 - Use `actions/upload-pages-artifact` to store the `./site` folder.
