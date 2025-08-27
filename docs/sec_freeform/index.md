@@ -1,4 +1,4 @@
-# Concepts, Ideas, and Freeform Articles
+# Concepts, Ideas, and Free-Form Articles
 
 Technical essays, speculative concepts, 'technical memoirs', and other free-form[ish] pieces of text.
 

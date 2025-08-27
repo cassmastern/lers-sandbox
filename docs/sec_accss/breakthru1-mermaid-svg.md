@@ -26,11 +26,11 @@ flowchart TB
 ```
 
 This metadata is now rendered into the final SVG as `title>`and `desc>` elements, and correctly referenced via `aria-labelledby` and `aria-describedby`.
-(Firefox's `Inspect Accessibility Properties` tool confirms the diagram is exposed to assistive technologies with the correct role (`graphics-document`) and semantic description.
+(Firefox's `Inspect Accessibility Properties` tool confirms the diagram is exposed to assistive technologies with the correct role (`graphics-document`) and semantic description.)
 
 **To Make this Work:**
 
-1. `curl` a compatible Mermaid version, 10.9.1, from  (https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js)[https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js]
+1. `curl` a compatible Mermaid version, 10.9.1, from [https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js](https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js)
 2. Save it in the project: `/docs/js/mermaid.min.js`.
 3. Ensure the script is copied to the Docker image (so it's available at runtime).
 4. Update the project's `mkdocs.yml` file to explicitly reference the local script under the `mermaid2` plugin configuration:
@@ -43,7 +43,7 @@ This metadata is now rendered into the final SVG as `title>`and `desc>` elements
    - awesome-pages
    ```
 
-This setup allows to maintain:
+This setup allows maintaining:
 
 - editorial control
 - version pinning
@@ -56,3 +56,4 @@ It also aligns with my changelog-driven workflow and accessibility goals, giving
 > - test keyboard focus, zoom behavior, and theme-adaptive contrast
 > - perhaps wrap diagrams in `<figure>` blocks or add `tabindex="0"` if needed
 > - most importantly, collect all `<!--ALT` and `<!--DESC` blurbs, with which I had punctuated my source markdown (just before Mermaid diagrams, intending to script them into a custom JS injector to use), and populate them as embedded `accTitle` and `accDescr` values in Mermaid diagram blocks
+>

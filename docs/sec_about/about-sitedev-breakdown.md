@@ -66,7 +66,7 @@ concurrency:
 ```
 
 - only one Pages deployment runs at a time (grouped under `"pages"`)
-- ngoing runs are **not canceled** if a new one starts
+- ongoing runs are **not canceled** if a new one starts
 
 ## 5. Jobs
 
@@ -146,7 +146,7 @@ jobs:
     docker run --rm       -v ${{ github.workspace }}:/app       -w /app       mkdocs-builder:latest       mkdocs build --verbose
 ```
 
-- uns the containerized `mkdocs build` command
+- runs the containerized `mkdocs build` command
 - mounts repo into `/app`
 - produces output into `./site/`
 
@@ -181,7 +181,7 @@ jobs:
 
 This finalizes the site, so it's' **live on my GitHub Pages domain**.
 
-# Workflow Visualization
+## Workflow Visualization
 
 ```mermaid
 flowchart TD
