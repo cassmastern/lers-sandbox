@@ -1,5 +1,24 @@
 # Refactoring
 
+## With metadata
+
+```mermaid
+flowchart TB
+    accTitle: IBM SanFrancisco Layered Architecture
+    accDescr: Diagram showing IBM SanFrancisco's layered architecture. Arrows connect layers from top to bottom: User Interface → Business Logic → Foundation Services → JVM → Operating System. SanFrancisco encompasses the Business Logic and Foundation layers, positioned between application code and the JVM.
+    
+    UI[User Interface Layer] --> BL[Business Logic Layer]
+    BL --> FS[Foundation Services Layer]
+    FS --> JVM[Java Virtual Machine]
+    JVM --> OS[Operating System]
+    subgraph IBM_SanFrancisco["IBM SanFrancisco"]
+        BL
+        FS
+    end
+```
+
+
+
 ## Sequence
 
 ```mermaid

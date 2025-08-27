@@ -1,6 +1,0 @@
-{
-    "editor.renderWhitespace": "all",
-    "yaml.schemas": {
-        "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/mkdocs.schema.json": "mkdocs.yml"
-    }
-}

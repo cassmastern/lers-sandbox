@@ -1,7 +1,8 @@
 title: "Accessibility"
 arrange:
   - index.md
+  - accss_.md
   - visuals-for-the-sightless.md
   - accss_diagram-dilemma.md
-  - accss_.md
-
+  - breakthru1-mermaid-svg.md
+  

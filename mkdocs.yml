@@ -61,7 +61,7 @@ extra_javascript:
   - js/seamaiden-theme-switchr.js
   - js/diagram-zoom.js
   - js/alphabet-auto.js
-  - js/alttext-inject.js
+#  - js/alttext-inject.js
 
     
 extra_css:

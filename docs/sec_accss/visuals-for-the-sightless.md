@@ -1,10 +1,16 @@
-# Visuals for the Sightless (Accessibility, Round Two)
+# 
 
-So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me it sounded a bit off. Like, *you're either Section 508 or WCAG-copliant, or you're not, no?*) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
 
-Now I’m solo, building a Dockerized MkDocs Material site with supposedly format-neutral diagram support, hopefully to become, um, *almost fully* accessible some day 😊
+| col1 | col2 | col3 |
+| ------ | ------ | ------ |
+|      |      |      |
+|      |      |      |
 
-This time, accessibility isn’t a checkbox. And the deeper I go, the more I realize how brittle the ecosystem is when you try to retrofit compliance into dynamically rendered content.
+Visuals for the Sightless (Accessibility, Round Two)
+
+So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me, it sounded a bit off. Like, *you're either Section 508 or WCAG-compliant, or you're not, no?*) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
+
+Now, solo, building a Dockerized MkDocs Material site with supposedly format-neutral diagram support (hoping it'll become become, um, *almost fully* accessible some day 😊), things are... different. This time, accessibility isn’t a checkbox. And the deeper I go, the more I realize how brittle the ecosystem is when you try to retrofit compliance into dynamically rendered content.
 
 ## The Mermaid Plugin Trap
 
@@ -13,13 +19,15 @@ The `mkdocs-mermaid2-plugin==1.2.1` lets you author diagrams inline in Markdown 
 ### Why It’s Problematic
 
 
-| Concern                       | Description                                                                        |
-| ------------------------------- | ------------------------------------------------------------------------------------ |
-| **No built-in accessibility** | Mermaid-generated SVGs lack`<title>`, `<desc>`, ARIA roles, or labels.             |
-| **Client-side rendering**     | Diagrams are injected after page load, making static accessibility impossible.     |
-| **Theme-dependent rendering** | Diagrams repaint based on light/dark mode, often wiping injected metadata.         |
-| **No lifecycle hooks**        | There’s no reliable callback to hook into post-render for mutation.               |
-| **Silent failures**           | If your script runs too early or too late, nothing happens — and you won’t know. |
+| Concern                           | Description                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------- |
+| **~~No built-in accessibility~~** | ~~Mermaid-generated SVGs lack`<title>`, `<desc>`, ARIA roles, or labels.~~          |
+| **~~Client-side rendering~~**     | ~~Diagrams are injected after page load, making static accessibility impossible.~~  |
+| **Theme-dependent rendering**     | Diagrams repaint based on light/dark mode, often wiping injected metadata.          |
+| **No lifecycle hooks**            | There’s no reliable callback to hook into post-render for mutation.                |
+| **Silent failures**               | If your script runs too early or too late, nothing happens — and you won’t know.  |
+
+> Have to retract much of what's in the table above... **see* [Breakthru #1](breakthru1-mermaid-svg.md).
 
 ## Runtime Injection: A Fragile Strategy
 
@@ -74,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-### Weaknesses in Current Script  
+### Weaknesses in Current Script
 
-Here is what our GenAI friends say about the script:  
+Here is what our GenAI friends say about the script:
 
 * **Infinite polling risk**: setTimeout loop can run forever if SVG never appears.
 * **Metadata duplication**: `<title>`/`<desc>` inserted repeatedly if re-rendered.
@@ -84,7 +92,8 @@ Here is what our GenAI friends say about the script:
 * **Accessibility semantics**: Hardcoded `title = "Diagram"` adds little value.
 * **Silent failures**: No logging or error reporting when mutation fails.
 
-### What Breaks  
+### What Breaks
+
 
 | Failure Mode            | Cause                          | Result                             |
 | ------------------------- | -------------------------------- | ------------------------------------ |

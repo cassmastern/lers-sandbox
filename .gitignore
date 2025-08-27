@@ -16,6 +16,7 @@ __pycache__/
 *~
 # VSCode workspace settings
 .vscode/
+.vscode/settings.json
 # Node / npm (if used)
 node_modules/
 # Logs

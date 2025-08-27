@@ -14,11 +14,11 @@ Using the STRIDE framework, we analyze potential threats across the data centre 
 
 The following diagram revisits our network architecture, annotated with STRIDE threat categories to visualize potential attack surfaces.
 
-<!-- ALT:> STRIDE-annotated network diagram -->
-
-<!-- DESC: STRIDE-annotated network diagram showing same data center topology with threat categories mapped to zones: Public Zone marked for Spoofing and Repudiation threats; Network Edge Zone labeled for Spoofing, Tampering, Information Disclosure, and Denial of Service; Private App Zone identified for Repudiation, Information Disclosure, and Elevation of Privilege; Monitoring zone marked for Information Disclosure and Repudiation; CI/CD Pipeline labeled for Tampering and Elevation of Privilege threats. Same traffic flow patterns with security annotations on each component. -->  
 ```mermaid
 flowchart TD
+  accTitle: STRIDE-annotated network diagram
+  accDescr: STRIDE-annotated network diagram showing same data center topology with threat categories mapped to zones: Public Zone marked for Spoofing and Repudiation threats; Network Edge Zone labeled for Spoofing, Tampering, Information Disclosure, and Denial of Service; Private App Zone identified for Repudiation, Information Disclosure, and Elevation of Privilege; Monitoring zone marked for Information Disclosure and Repudiation; CI/CD Pipeline labeled for Tampering and Elevation of Privilege threats. Same traffic flow patterns with security annotations on each component.
+
   %% Public Zone — S, R
   subgraph Public_Zone["Public Zone (Spoofing, Repudiation)"]
     A[User]

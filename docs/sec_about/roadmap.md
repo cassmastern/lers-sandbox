@@ -6,17 +6,19 @@ gantt
     dateFormat  MM-DD
     section Phase 1
     Revive proj                 :a1, 08-08, 9d
-    mermaid             :08-10, 8d
-    PlantUML                :08-19, 7d
+    mermaid             :08-10, 18d
+    PlantUML                :08-19, 28d
     Site content         :08-10, 10d
     Alt-injector                :08-15, 15d
     section Phase 2
     WCAG*                        :08-20, 45d
 ```
+
 *within the 'WCAG' timeframe: semantic headings, skip links, color contrast check, screen-reader test, alt text, ARIA landmarks
 
 # Changelog
 
+- 2025.08.27 Dropped JS injector approach in favor of accessibility mechanism in mermaid2; added local version of `ermaid.min.js`, [Breakthrough #1](../sec_accss/breakthru1-mermaid-svg.md).
 - 2025.08.25 Reorganized content in subfolders for the new plugin, `awesome-pages` to semi-automate the navigation 
 - 2025.08.20 Enabled theme toggler; one last try to make accessibility metadata injector work; 'current state of affairs' as a bloggish piece of text, [Visuals for the Sightless](../sec_accss/visuals-for-the-sightless.md)  
 - 2025.08.19 Added some visuals to the AI-augmented Accessibility concept note; enabled some accessibility-related theme features
