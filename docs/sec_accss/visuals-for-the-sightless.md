@@ -1,12 +1,4 @@
-# 
-
-
-| col1 | col2 | col3 |
-| ------ | ------ | ------ |
-|      |      |      |
-|      |      |      |
-
-Visuals for the Sightless (Accessibility, Round Two)
+# Visuals for the Sightless (Accessibility, Round Two)
 
 So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me, it sounded a bit off. Like, *you're either Section 508 or WCAG-compliant, or you're not, no?*) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
 
