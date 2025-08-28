@@ -1,0 +1,10 @@
+:root {
+  --color-good: #228B22;       /* green */
+  --color-bad: #B22222;        /* red */
+  --color-warn: #8B4513;       /* brownish-red for light mode */
+}
+
+[data-md-color-scheme="dark"] {
+  --color-warn: #FFD700;       /* yellow for dark mode */
+}
+

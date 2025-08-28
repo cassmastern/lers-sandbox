@@ -23,10 +23,6 @@ node_modules/
 *.log
 # Backup files
 *.bak
-# Optional: ignore compiled CSS/JS if you regenerate
-docs/css/*.css
-docs/js/*.js
-!docs/js/mermaid.min.js
 # Temporary commit message file
 commit-message.txt
 
