@@ -5,4 +5,4 @@ This section contains topics related to accessibility, WCAG compliance, and some
 - [Accessibility Reference](accss_.md)
 - [Visuals for the Sightless (Accessibility, Round 2)](visuals-for-the-sightless.md)
 - [My Accessibility Diagram Dilemma](accss_diagram-dilemma.md)
-- [Breakthrough # 1, Meaning in Mermaid SVGs](breakthru1-mermaid-svg.md)
+- [An Accessible Mermaid Beyond Reach](breakthru1-mermaid-svg.md)
