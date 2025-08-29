@@ -30,17 +30,36 @@ I just had to find a compatible combination of component versions:
 - mkdocs-mermaid2-plugin 1.2.1
 - Mermaid library mermaid@10.9.1 ([https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js](https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js))
 
-So, accTitle and accDescr metadata are now rendered into the final SVG as `title>`and `desc>` elements, and correctly referenced via `aria-labelledby` and `aria-describedby`.
-(Firefox's `Inspect Accessibility Properties` tool confirms the diagram is exposed with the correct role (`graphics-document`) and semantic description.)
+So, accTitle and accDescr metadata are now rendered into the final SVG as `title>`and `<desc>` elements, and correctly referenced via `aria-labelledby` and `aria-describedby`.
+(Firefox's `Inspect Accessibility Properties` tool confirms the diagram is exposed with the role (`graphics-document`) and semantic description.)
 
 ## However...
 
-However, VoiceOver (macOS) and other common screen readers frequently announce only the visible text labels inside the diagram (the <text> elements for nodes), and do not read the `<title>` / `<desc>` reliably 🤦‍♂️
+However, VoiceOver (macOS) and other common screen readers announce only the visible text labels inside the diagram (the <text> elements for nodes), and do not read the `<title>` / `<desc>` reliably 🤦‍♂️.
 
-To get assistive technologies to treat and announce the SVG as a **single image** with name/description, I also need `role="img"` (NOT mermaid's `role="graphics-document document"`) and `tabindex="0"`. Otherwise, they, in my case VoiceOver, treats the SVG as collection if images, announcing every box one after the other. No sense.
+To get assistive technologies to treat and announce the SVG as a **single image** with name/description, I also need `role="img"` (NOT mermaid's `role="graphics-document document"`) and `tabindex="0"`. Otherwise, VoiceOver and other utilities treat the SVG as *collection if images*, announcing every box label one after the other. No sense.
 
 Attempting to patch the SVGs post-render (to add `role="img"` + `tabindex="0"` to `svg[id^="mermaid-"]`), fail miserably.
 
-![An almost-accessible mermaid beyond reach.](../img/mermaid-beyond-reach.png)
+So, yes. An *accessible mermaid, but beyond reach* indeed...
+
+![An accessible mermaid beyond reach.](../img/mermaid-beyond-reach.png)
 
 The journey continues...
+
+## To Do to Move Forward
+
+- Find a way and a mechanism to override Mermaid’s default rendering behavior and modify the SVG output **before** it’s inserted into the DOM,
+    -or-
+- Find a way and a mechanism to patch SVGs post-build.
+
+Something like
+
+```js
+  postRender: (svgCode, bindFunctions) => {
+    // Add role="img" and tabindex="0" to the root <svg> element
+    const svg = svgCode.replace(/<svg/, '<svg role="img" tabindex="0"');
+    return svg;
+  }
+});
+```
