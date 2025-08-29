@@ -113,15 +113,6 @@ graph TD
     DynamoDB --> CloudWatch
     IAM --> GuardDuty
     GuardDuty --> CloudTrail
-
-    %% STYLES
-    classDef global fill:#eaf5ff,stroke:#3a87ad
-    classDef net fill:#eaffea,stroke:#4a934a
-    classDef compute fill:#fff0e6,stroke:#d96c00
-    classDef data fill:#fffde6,stroke:#b3b300
-    classDef devops fill:#f5e6ff,stroke:#6b2f99
-    classDef sec fill:#ffe6e6,stroke:#cc0000
-    classDef obs fill:#f2f2f2,stroke:#555
 ```
 
 ## GCP Architecture
@@ -202,14 +193,6 @@ graph TD
     Bigtable --> Monitoring
     IAM --> SCC
     SCC --> Logging
-    
-    classDef global fill:#eaf5ff,stroke:#3a87ad
-    classDef net fill:#eaffea,stroke:#4a934a
-    classDef compute fill:#fff0e6,stroke:#d96c00
-    classDef data fill:#fffde6,stroke:#b3b300
-    classDef devops fill:#f5e6ff,stroke:#6b2f99
-    classDef sec fill:#ffe6e6,stroke:#cc0000
-    classDef obs fill:#f2f2f2,stroke:#555
 ```
 
 ## Azure Architecture
@@ -299,15 +282,6 @@ graph TD
     Blob --> Monitor
     AAD --> Defender
     Defender --> SecurityCentre
-
-    %% STYLES
-    classDef global fill:#eaf5ff,stroke:#3a87ad;
-    classDef net fill:#eaffea,stroke:#4a934a;
-    classDef compute fill:#fff0e6,stroke:#d96c00;
-    classDef data fill:#fffde6,stroke:#b3b300;
-    classDef devops fill:#f5e6ff,stroke:#6b2f99;
-    classDef sec fill:#ffe6e6,stroke:#cc0000;
-    classDef obs fill:#f2f2f2,stroke:#555;
 ```
 
 ---
