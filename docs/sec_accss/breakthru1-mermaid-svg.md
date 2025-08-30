@@ -2,7 +2,7 @@
 
 OK, some more about embedding accessible Mermaid diagrams in MkDocs Material. Or rather, *embedding Mermaid code, with some meaning embedded in it, in MkDocs Markdown source files*.
 
-Finally figured out I didn't need any custom scripts or post-processing hacks — at least not at this point — for metadata injection. Turns out, I can use Mermaid’s built-in support for `accTitle` and `accDescr` directly inside fenced code blocks:
+Finally figured out I didn't need any custom scripts or post-processing hacks — at least not at this point — for metadata injection. Turns out — RTFM, eh 🤦🏻‍♂️ — I can use Mermaid’s built-in support for `accTitle` and `accDescr` directly inside fenced code blocks:
 
 ```text
 flowchart TB
@@ -23,7 +23,7 @@ flowchart TB
     end
 ```
 
-I just had to find a compatible combination of component versions:
+I just had to find and pin a compatible combination of component versions:
 
 - MkDocs 1.6.1
 - MkDocs Material 9.5.39
