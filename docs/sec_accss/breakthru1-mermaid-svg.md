@@ -1,6 +1,6 @@
 # An Accessible Mermaid Beyond Reach — A Breakthrough That Wasn't
 
-OK, some more about embedding accessible Mermaid diagrams in MkDocs Material. Or rather, *embedding Mermaid code, with some meaning embedded in it, in MkDocs Markdown source files*.
+OK, this is to report and record some progress in embedding accessible Mermaid diagrams in MkDocs Material. Or rather, *embedding Mermaid code, with some meaning embedded in it, in MkDocs Markdown source files*.
 
 Finally figured out I didn't need any custom scripts or post-processing hacks — at least not at this point — for metadata injection. Turns out — RTFM, eh 🤦🏻‍♂️ — I can use Mermaid’s built-in support for `accTitle` and `accDescr` directly inside fenced code blocks:
 
@@ -30,12 +30,12 @@ I just had to find and pin a compatible combination of component versions:
 - mkdocs-mermaid2-plugin 1.2.1
 - Mermaid library mermaid@10.9.1 ([https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js](https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js))
 
-So, accTitle and accDescr metadata are now rendered into the final SVG as `title>`and `<desc>` elements, and correctly referenced via `aria-labelledby` and `aria-describedby`.
+So, `accTitle` and `accDescr` metadata are now rendered into the final SVG as `title>`and `<desc>` elements, and correctly referenced via `aria-labelledby` and `aria-describedby`.
 (Firefox's `Inspect Accessibility Properties` tool confirms the diagram is exposed with the role (`graphics-document`) and semantic description.)
 
 ## However...
 
-However, VoiceOver (macOS) and other common screen readers announce only the visible text labels inside the diagram (the <text> elements for nodes), and do not read the `<title>` / `<desc>` reliably 🤦‍♂️.
+However, VoiceOver (macOS) and other common screen readers announce only the visible text labels inside the diagram (the `<text>` elements for nodes), and do not read the `<title>` / `<desc>` reliably 🤦‍♂️.
 
 To get assistive technologies to treat and announce the SVG as a **single image** with name/description, I also need `role="img"` (NOT mermaid's `role="graphics-document document"`) and `tabindex="0"`. Otherwise, VoiceOver and other utilities treat the SVG as *collection if images*, announcing every box label one after the other. No sense.
 
