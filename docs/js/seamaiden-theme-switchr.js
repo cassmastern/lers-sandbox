@@ -3,7 +3,7 @@ document$.subscribe(() => {
 
   const commonVars = {
     'fontFamily': 'sans-serif',
-    'fontSize': 14,
+    'fontSize': 12,
     'fontWeight': 'normal',
     'securityLevel': 'strict'
   };

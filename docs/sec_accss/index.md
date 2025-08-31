@@ -1,6 +1,7 @@
 # Accessibility
 
-This section contains topics related to accessibility, WCAG compliance, and some of my pain points.
+This section contains topics related to accessibility/WCAG compliance, which I'm trying to implement in this website; things like pain points, breakthroughs, lessons learned, etc. 
+> (There's also a general accessibility-related 'technical daydream' (and a follow-on concept note) about *AI-augmented accessibility* in the free-form articles section: [Concepts, Ideas, and Free-Form Articles](../sec_freeform/index.md).)
 
 - [Accessibility Reference](accss_.md)
 - [Visuals for the Sightless (Accessibility, Round 2)](visuals-for-the-sightless.md)

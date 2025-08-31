@@ -1,6 +1,6 @@
 # Various Glossaries
 
-This section contains a few alphabetized glossaries across domains.
+This section contains a few alphabetized glossaries across domains:
 
 - [OSS Terms](gloss_oss.md)
 - [Networking Terms](gloss_networking.md)
