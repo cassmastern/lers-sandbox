@@ -1,4 +1,4 @@
-# Home
+# HOME
 
 Welcome to Ler's Demo Website!
 
@@ -8,7 +8,7 @@ The site's purpose is multifold:
 - to play with some of the features supporting accessibility and eventually implement WCAG compliance
 - to build up a technical documentation site for demo purposes
 - to find things about 'what else I might be interested in'
-- \[*inner voice whispering: "...and get the interviewer(s) to view this candidacy favourably*] 😊
+- \[*inner voice whispering: "...and get interviewer(s) to view this candidacy favourably*] 😊
 
 > **Note:** This site is in constant 'work-in-progress' mode — expect rough edges; they’re part of the showcase.
 

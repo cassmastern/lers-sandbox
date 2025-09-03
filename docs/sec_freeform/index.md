@@ -1,6 +1,6 @@
-# Concepts, Ideas, and Free-Form Articles
+# Concepts, Essays and more
 
-Technical essays, speculative concepts, 'technical memoirs', and other, somewhat free-form pieces of text.
+This section contains speculative concepts, technical essays, 'technical memoirs', and other, somewhat free-form pieces of text.
 
 - [IBM-SanFrancisco — a Technical Memoir](ibm-sanfran.md)
 - [AI-Augmented Accessibility](ai-accessibility.md)

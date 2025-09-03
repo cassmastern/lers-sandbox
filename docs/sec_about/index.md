@@ -1,4 +1,4 @@
-# About this Site
+# About this Website
 
 This section contains information about this site:
 

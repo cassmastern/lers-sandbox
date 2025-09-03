@@ -2,7 +2,7 @@
 
 So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me, it sounded a bit off. Like, *you're either Section 508 or WCAG-compliant, or you're not, no?*) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
 
-Now, solo, building a Dockerized MkDocs Material site with supposedly format-neutral diagram support (hoping it'll become become, um, *almost fully* accessible some day 😊), things are... different. This time, accessibility isn’t a checkbox. And the deeper I go, the more I realize how brittle the ecosystem is when you try to retrofit compliance into dynamically rendered content.
+Now, solo, building a Dockerized MkDocs Material site with supposedly format-neutral diagram support (hoping it'll become, um, *almost fully* accessible some day 😊), things are... different. This time, accessibility isn’t a checkbox. And the deeper I go, the more I realize how brittle the ecosystem is when you try to retrofit compliance into dynamically rendered content.
 
 ## The Mermaid Plugin Trap
 

@@ -1,4 +1,4 @@
-# Various Glossaries
+# Miscellaneous Glossaries
 
 This section contains a few alphabetized glossaries across domains:
 
