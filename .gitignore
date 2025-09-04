@@ -25,6 +25,7 @@ node_modules/
 *.log
 # Backup files
 *.bak
+*.bak2
 # Temporary commit message file
 commit-message.txt
 

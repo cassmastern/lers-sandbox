@@ -1,4 +1,4 @@
-# IBM SanFrancisco — a Technical Memoir
+# IBM SanFrancisco — A Technical Memoir
 
 First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product. Behind this straightforward name lies a story of early innovation in *coarse-grained Java business components* — a glimpse into the architectural challenges and creative solutions of a pioneering era.
 

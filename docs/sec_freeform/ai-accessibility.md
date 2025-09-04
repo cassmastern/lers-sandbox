@@ -1,4 +1,4 @@
-# Toward AI-Augmented Accessibility — A Technical Daydream
+# AI-Augmented Accessibility — A Technical Daydream
 
 > While developing this site, it occurred to me that while we’ve made great strides in techcomm automation — reproducibility, modularity, re-use, etc. — we’re still leaving some readers behind. Sightless users, in particular, often encounter diagrams that are visually rich but semantically opaque.
 

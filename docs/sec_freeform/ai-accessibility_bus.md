@@ -1,6 +1,6 @@
-# A Concept Note: AI‑Augmented Accessibility  
+# AI‑Augmented Accessibility — From Daydream to Concept Note
 
-This is an attempt to turn an idea ([Toward AI-Augmented Accessibility — A Technical Daydream](ai-accessibility.md)) into a concept now ("who knows" kind of thing).
+This is an attempt to turn an idea ([Toward AI-Augmented Accessibility — A Technical Daydream](ai-accessibility.md)) into a *concept note* ("who knows" kind of thing).
 
 ## 1. Problem Statement
 
