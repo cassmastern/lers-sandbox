@@ -1,6 +1,7 @@
 /**
  * Fixed and simplified diagram zoom functionality
  * Addresses multiple SVG binding issues and race conditions
+ * Updated to handle Mermaid theme reinitialization
  */
 (function () {
   'use strict';
@@ -289,6 +290,17 @@
   }
 
   /**
+   * Clear WeakSet when Mermaid reinitializes
+   * This is necessary because the old SVGs are removed from DOM
+   */
+  function clearBoundSvgs() {
+    // WeakSet doesn't have a clear method, but since the old SVGs
+    // are garbage collected when removed from DOM, we can create a new WeakSet
+    // However, since we can't reassign the const, we'll rely on garbage collection
+    log('Mermaid reinitialized - old SVG references will be garbage collected');
+  }
+
+  /**
    * Wait for Mermaid diagrams and bind zoom
    */
   function waitAndBindDiagrams() {
@@ -320,6 +332,19 @@
   }
 
   /**
+   * Handle Mermaid reinitialization (theme changes)
+   */
+  function handleMermaidReinit() {
+    log('Mermaid reinitialized, rebinding zoom functionality...');
+    clearBoundSvgs();
+    
+    // Wait a bit longer for Mermaid to fully render new SVGs
+    setTimeout(() => {
+      waitAndBindDiagrams();
+    }, 200);
+  }
+
+  /**
    * Initialize zoom functionality
    */
   function initZoom() {
@@ -330,6 +355,9 @@
     
     // Initial binding after a short delay for Mermaid rendering
     setTimeout(waitAndBindDiagrams, 300);
+    
+    // Listen for Mermaid reinitialization (theme changes)
+    document.addEventListener('mermaidReinitialized', handleMermaidReinit);
     
     // Set up mutation observer for dynamic content
     const observer = new MutationObserver((mutations) => {
@@ -382,6 +410,9 @@
       document.removeEventListener('keydown', escHandler);
       escHandler = null;
     }
+    
+    // Remove event listeners
+    document.removeEventListener('mermaidReinitialized', handleMermaidReinit);
   }
 
   /**
@@ -422,7 +453,8 @@
       bindZoomToSvgs,
       openLightbox,
       closeLightbox,
-      cleanup
+      cleanup,
+      handleMermaidReinit
     };
   }
 
@@ -430,3 +462,4 @@
   window.addEventListener('beforeunload', cleanup);
 
 })();
+
