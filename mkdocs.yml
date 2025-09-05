@@ -1,7 +1,7 @@
-site_name: "Ler's Demo Website"
-site_url: https://cassmastern.github.io/demo4ops/
+site_name: "Cass's Sandobx"
+site_url: https://cassmastern.github.io/cass-sandbox/
 docs_dir: docs
-copyright: "<a href='https://cassmastern.github.io/demo4ops/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
+copyright: "<a href='https://cassmastern.github.io/cass-sandbox/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
 
 theme:
   name: material
