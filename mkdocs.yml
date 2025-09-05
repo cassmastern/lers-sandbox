@@ -4,7 +4,6 @@ docs_dir: docs
 copyright: "<a href='https://cassmastern.github.io/cass-sandbox/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
 exclude:
   - archive/
-  
 
 theme:
   name: material
@@ -19,16 +18,15 @@ theme:
     - search.share
     - content.code.copy
     - content.code.select
-
   palette:
-    - scheme: default
-      toggle:
-        icon: material/brightness-4
-        name: Switch to dark mode
     - scheme: slate
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
 
 plugins:
   - search
@@ -61,12 +59,11 @@ markdown_extensions:
       permalink: true
 
 extra_javascript:
-  - js/seamaiden-theme-switchr.js
+  - js/seamaiden.js
   - js/diagram-zoom.js
   - js/alphabet-auto.js
   - js/svg-patcher.js
 
-    
 extra_css:
   - css/alphabet.css
   - css/diagram-zoom.css
