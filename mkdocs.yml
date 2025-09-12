@@ -2,8 +2,6 @@ site_name: "Cass's Sandobx"
 site_url: https://cassmastern.github.io/cass-sandbox/
 docs_dir: docs
 copyright: "<a href='https://cassmastern.github.io/cass-sandbox/sec_about/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
-exclude:
-  - archive/
 
 theme:
   name: material
@@ -27,12 +25,16 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
+  exclude:
+    - archive/
 
 plugins:
+  - awesome-pages
   - search
   - mermaid2:
       javascript: js/mermaid.min.js
-  - awesome-pages
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml
 
 extra:
   generator: false
@@ -55,6 +57,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
+
   - toc:
       permalink: true
 
