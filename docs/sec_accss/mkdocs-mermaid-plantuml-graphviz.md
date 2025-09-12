@@ -77,8 +77,7 @@ To integrate Graphviz cleanly:
 | Editorial Control           | ✅ High             | ✅ Moderate         | ⚠️ Low              |
 
 ---
-
-## 🛠️ Rough Plan to Extend Full Support
+## Rough Plan to Extend Full Support
 
 ### 1. **PlantUML Accessibility**
 - Write a Python patcher to inject `<title>`, `<desc>`, `role="img"`, and `tabindex="0"` into SVGs

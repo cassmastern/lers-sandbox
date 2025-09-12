@@ -3,12 +3,13 @@
 ```mermaid
 gantt
     title Roadmap for the remainder of 2025
-    dateFormat  MM-DD
+    dateFormat MM-DD
+    axisFormat %e/%-m
     section Phase 1
     Revive proj                 :a1, 08-08, 9d
     mermaid             :08-10, 18d
     PlantUML                :08-19, 28d
-    Site content         :08-10, 10d
+    Site content         :08-10, 80d
     Alt-injector                :08-15, 15d
     section Phase 2
     WCAG*                        :08-20, 45d
@@ -18,7 +19,7 @@ gantt
 
 ## Changelog
 
-- 2025.09.12 Added support for PlantUML, as well as a current state of affairs before I move forward, [Diagram Accessibility in MkDocs Material: Current State & Path Forward](mkdocs-mermaid-plantuml-graphviz.md).
+- 2025.09.12 Added support for PlantUML, as well as a current state of affairs before I move forward, [Diagram Accessibility in MkDocs Material: Current State & Path Forward](../sec_accss/mkdocs-mermaid-plantuml-graphviz.md).
 - 2025.08.27 Dropped JS injector approach in favor of accessibility mechanism in mermaid2; added local version of `mermaid.min.js`, [Breakthrough #1](../sec_accss/breakthru1-mermaid-svg.md).
 - 2025.08.25 Reorganized content in subfolders for the new plugin, `awesome-pages` to semi-automate the navigation
 - 2025.08.20 Enabled theme toggler; one last try to make accessibility metadata injector work; 'current state of affairs' as a bloggish piece of text, [Visuals for the Sightless](../sec_accss/visuals-for-the-sightless.md)  
