@@ -8,3 +8,5 @@ This section contains topics related to accessibility/WCAG compliance, which I'm
 - [My Accessibility Diagram Dilemma](accss_diagram-dilemma.md)
 - [An Accessible Mermaid Beyond Reach](breakthru1-mermaid-svg.md)
 - [Mermaid Captured — Finally!](breakthru2-mermaid-accessible.md)
+- [Diagram Accessibility in MkDocs Material: Current State & Path Forward](mkdocs-mermaid-plantuml-graphviz.md)
+
