@@ -3,4 +3,5 @@ arrange:
   - index.md
   - aws-gcp-azure.md
   - aws-gcp-azure_glossary.md
+  - aws-gcp-azure_glossary_enhanced.md
   - jakarta-ee-azure.md

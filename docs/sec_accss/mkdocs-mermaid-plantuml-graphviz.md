@@ -95,6 +95,9 @@ To integrate Graphviz cleanly:
 - Use `aria-describedby` to link diagrams to hidden editorial notes
 - Ensure all diagrams are keyboard-accessible and theme-aware
 
+### 4. Bonus — draw.io?
+...
+
 ---
 
 With this flow, I might end up having full editorial control, accessibility compliance, and modular rendering across all diagram formats — without brittle plugins or runtime flicker.

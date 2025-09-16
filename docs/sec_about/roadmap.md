@@ -4,15 +4,16 @@
 gantt
     title Roadmap for the remainder of 2025
     dateFormat MM-DD
-    axisFormat %e/%-m
+    axisFormat %d %b
     section Phase 1
-    Revive proj                 :a1, 08-08, 9d
-    mermaid             :08-10, 18d
-    PlantUML                :08-19, 28d
-    Site content         :08-10, 80d
-    Alt-injector                :08-15, 15d
+    Revive proj          :a1, 08-08, 9d
+    Alt-injector         :08-15, 15d
+    mermaid              :08-10, 33d
     section Phase 2
-    WCAG*                        :08-20, 45d
+    PlantUML             :09-08, 15d
+    Graphviz             :09-12, 25d
+    Site content         :08-10, 80d
+    WCAG*                :08-20, 62d
 ```
 
 *within the 'WCAG' timeframe: semantic headings, skip links, color contrast check, screen-reader test, alt text, ARIA landmarks
