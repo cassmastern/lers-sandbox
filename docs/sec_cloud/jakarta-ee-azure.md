@@ -1,6 +1,6 @@
 # A Jakarta Enterprise Application on Azure
 
-This is a compact, helicopter-view look at what's involved in building and deploying an *almost realistic* Java (Jakarta EE / Java EE) enterprise web application on Azure + Azure DevOps:
+This is a helicopter-view look at what's involved in building and deploying an *almost realistic* Java (Jakarta EE / Java EE) enterprise web application on Azure + Azure DevOps:
 
 - architecture and components (what pieces to build and why)
 - Azure services to host them (options and tradeoffs)
