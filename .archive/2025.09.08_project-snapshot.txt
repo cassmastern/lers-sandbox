@@ -440,7 +440,7 @@ Would you like to share a suggestion, comment, or critique?
 
 ---
 
-### ./docs/sec_about/about-sitedev-breakdown.md
+### ./docs/sec_about/about-wf-breakdown.md
 # Detailed Breakdown of My Workflow
 
 Here is a detailed breakdown of my workflow:
@@ -721,7 +721,7 @@ CSS enhancements live in `docs/assets/css/`:
 
 ### Deployment Flow
 
-Here is a basic representation. For a detailed breakdown, *see* [Workflow Breakdown](about-sitedev-breakdown.md).
+Here is a basic representation. For a detailed breakdown, *see* [Workflow Breakdown](about-wf-breakdown.md).
 
 ```mermaid
 graph TD
@@ -789,7 +789,7 @@ This section contains information about this site:
 
 - [What's in Here?](whatsinhere.md)
 - [How this Website was Developed & Deployed](about-sitedev.md)
-- [Workflow Breakdown](about-sitedev-breakdown.md)
+- [Workflow Breakdown](about-wf-breakdown.md)
 - [Roadmap & Changelog](roadmap.md)
 - [Feedback](feedback.md)
 ### ./docs/sec_net-sec/network_data_center_mitre.md

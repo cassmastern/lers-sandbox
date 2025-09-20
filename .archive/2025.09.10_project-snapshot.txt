@@ -20,7 +20,7 @@
 ./docs/js/mermaid.min.js
 ./docs/js/seamaiden.js
 ./docs/js/svg-patcher.js
-./docs/sec_about/about-sitedev-breakdown.md
+./docs/sec_about/about-wf-breakdown.md
 ./docs/sec_about/about-sitedev.md
 ./docs/sec_about/feedback.md
 ./docs/sec_about/index.md

@@ -69,7 +69,7 @@ CSS enhancements live in `docs/assets/css/`:
 
 ### Deployment Flow
 
-Here is a basic representation. For a detailed breakdown, *see* [Workflow Breakdown](about-sitedev-breakdown.md).
+Here is a basic representation. For a detailed breakdown, *see* [Workflow Breakdown](about-wf-breakdown.md).
 
 ```mermaid
 graph TD

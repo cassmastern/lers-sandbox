@@ -1,6 +1,8 @@
 # What's in Here?
 
-This site contains topics, writing samples, glossaries, cheat sheets, concepets and ideas designed to remain relevant and useful for my own use and future endeavors, and cover fields I'm interested in, including cloud platforms, CI/CD, accessibility (AODA/WCAG), AI, and computer networking. Topics are organized into these sections:
+This site contains topics, writing samples, glossaries, cheat sheets, concepets and ideas — designed to remain relevant and useful for my own use and future endeavors, and cover fields I'm interested in, including cloud platforms, CI/CD, accessibility (AODA/WCAG), AI, and computer networking. 
+
+Topics are grouped into these sections:
 
 - [About this Website](../sec_about/index.md)  
 - [In the Clouds](../sec_cloud/index.md)  

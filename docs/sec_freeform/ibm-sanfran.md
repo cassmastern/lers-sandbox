@@ -10,7 +10,7 @@ By the time, I had been part of an e-commerce development team for a brief perio
 
 SanFrancisco was an IBM-led product and project, a cross-platform Java application framework that provided reusable, "large-grain business objects” (business components). IBM developed and shipped SanFrancisco in the late-1990s, and the technology was later incorporated into IBM’s WebSphere/Business Components efforts.
 
-SanFrancisco focused on “large-grains” rather than "tiny beans" — it tied into CORBA/IIOP, albeit loosely, and IBM tooling (VisualAge) and was positioned as an alternative or complement to EJB-style approaches of the time.
+SanFrancisco focused on “large grains” rather than "tiny beans" — it tied into CORBA/IIOP, albeit loosely, and IBM tooling (VisualAge) and was positioned as an alternative or complement to EJB-style approaches of the time.
 
 ## What Large-Grain Meant
 
