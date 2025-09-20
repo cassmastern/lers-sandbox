@@ -1,0 +1,1445 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_freeform/ibm-sanfran/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../ai-accessibility/" rel="next"/>
+<link href="../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
+<title>IBM SanFrancisco — A Technical Memoir - Cass's Sandobx</title>
+<link href="../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/alphabet.css" rel="stylesheet"/>
+<link href="../../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../../css/cm-logo.css" rel="stylesheet"/>
+<link href="../../css/color-vars.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ibm-sanfrancisco-a-technical-memoir">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Cass's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Cass's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Cass's Sandobx
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              IBM SanFrancisco — A Technical Memoir
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Cass's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Cass's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+    Cass's Sandobx
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_about/">
+<span class="md-ellipsis">
+    ABOUT THIS WEBSITE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            ABOUT THIS WEBSITE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/whatsinhere/">
+<span class="md-ellipsis">
+    What's in Here?
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-sitedev/">
+<span class="md-ellipsis">
+    How This Site Was Developed and Deployed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-wf-breakdown/">
+<span class="md-ellipsis">
+    Detailed Breakdown of My Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/roadmap/">
+<span class="md-ellipsis">
+    A Roadmap and a Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/feedback/">
+<span class="md-ellipsis">
+    Feedback
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cloud/">
+<span class="md-ellipsis">
+    IN THE CLOUDS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            IN THE CLOUDS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure/">
+<span class="md-ellipsis">
+    Architectures of AWS, GCP, and Azure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/jakarta-ee-azure/">
+<span class="md-ellipsis">
+    A Jakarta Enterprise Application on Azure
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_accss/">
+<span class="md-ellipsis">
+    ACCESSIBILITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            ACCESSIBILITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_/">
+<span class="md-ellipsis">
+    Accessibility Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/visuals-for-the-sightless/">
+<span class="md-ellipsis">
+    Visuals for the Sightless (Accessibility, Round Two)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_diagram-dilemma/">
+<span class="md-ellipsis">
+    The Diagramming Dilemma
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/breakthru1-mermaid-svg/">
+<span class="md-ellipsis">
+    An Accessible Mermaid Beyond Reach — A Breakthrough That Wasn't
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/breakthru2-mermaid-accessible/">
+<span class="md-ellipsis">
+    Mermaid Captured — Finally!
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<span class="md-ellipsis">
+    Diagram Accessibilit in MkDocs Material: Current State &amp; Path Forward
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_net-sec/">
+<span class="md-ellipsis">
+    NETWORKS &amp; SECURITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            NETWORKS &amp; SECURITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center/">
+<span class="md-ellipsis">
+    A Hypothetical Data Centre Network
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_stride/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — STRIDE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_mitre/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — MITRE ATT&amp;CK
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    CONCEPTS, ESSAYS &amp; MORE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            CONCEPTS, ESSAYS &amp; MORE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    IBM SanFrancisco — A Technical Memoir
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    IBM SanFrancisco — A Technical Memoir
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+<span class="md-ellipsis">
+      Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-large-grain-meant">
+<span class="md-ellipsis">
+      What Large-Grain Meant
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-made-them-reusable">
+<span class="md-ellipsis">
+      What Made them Reusable
+    </span>
+</a>
+<nav aria-label="What Made them Reusable" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layered-architecture">
+<span class="md-ellipsis">
+      Layered architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#well-defined-base-classesinterfaces-and-a-consistent-object-model">
+<span class="md-ellipsis">
+      Well-defined base classes/interfaces and a consistent object model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inherent-domain-design-patterns">
+<span class="md-ellipsis">
+      Inherent domain design patterns
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-between-components-and-existing-schemas">
+<span class="md-ellipsis">
+      Mapping between components and existing schemas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#addressable-and-distributable-runtimenetwork-model">
+<span class="md-ellipsis">
+      Addressable and distributable runtime/network model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-and-scaffolding">
+<span class="md-ellipsis">
+      Tools and scaffolding
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sanfrancisco-component-structure">
+<span class="md-ellipsis">
+      SanFrancisco Component Structure
+    </span>
+</a>
+<nav aria-label="SanFrancisco Component Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#base-class-hierarchy-logical">
+<span class="md-ellipsis">
+      Base class hierarchy (logical)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#propertycontainer-and-dynamic-attributes">
+<span class="md-ellipsis">
+      PropertyContainer and dynamic attributes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policies-and-extension-points">
+<span class="md-ellipsis">
+      Policies and extension points
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#queries-keys-and-collections-how-you-find-objects">
+<span class="md-ellipsis">
+      Queries, keys and collections (how you find objects)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#persistence-and-schema-mapping">
+<span class="md-ellipsis">
+      Persistence and schema mapping
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-services">
+<span class="md-ellipsis">
+      Runtime services
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commands-workflows-and-statecharts">
+<span class="md-ellipsis">
+      Commands, workflows and statecharts
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-sketch-pseudo-api-simplified">
+<span class="md-ellipsis">
+      Example sketch (pseudo API) — simplified
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#some-visuals">
+<span class="md-ellipsis">
+      Some Visuals
+    </span>
+</a>
+<nav aria-label="Some Visuals" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#high-level-architecture-overview">
+<span class="md-ellipsis">
+      High-level Architecture Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-structure-and-component-hierarchy">
+<span class="md-ellipsis">
+      Layer Structure and Component Hierarchy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#large-grain-business-object-example">
+<span class="md-ellipsis">
+      Large-Grain Business Object Example
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#persistence-and-services-interaction-sequence">
+<span class="md-ellipsis">
+      Persistence and Services Interaction (Sequence)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-diagram-runtime-nodes">
+<span class="md-ellipsis">
+      Deployment Diagram (Runtime Nodes)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#state-diagram-for-a-business-objects-lifecycle">
+<span class="md-ellipsis">
+      State Diagram for a Business Object’s Lifecycle
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-rather-long-coda">
+<span class="md-ellipsis">
+      A Rather Long Coda
+    </span>
+</a>
+<nav aria-label="A Rather Long Coda" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tradeoffs-why-sanfrancisco-didnt-become-the-one-size-fits-all-winner">
+<span class="md-ellipsis">
+      Tradeoffs &amp; why SanFrancisco didn’t become the one-size-fits-all winner
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-came-after">
+<span class="md-ellipsis">
+      What came after
+    </span>
+</a>
+<nav aria-label="What came after" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microservices-containerization-performance-reusability">
+<span class="md-ellipsis">
+      Microservices &amp; Containerization (Performance &amp; Reusability)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#serverless-computing">
+<span class="md-ellipsis">
+      Serverless Computing
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloud-native-databases-caching">
+<span class="md-ellipsis">
+      Cloud-Native Databases &amp; Caching
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-first-restful-services">
+<span class="md-ellipsis">
+      API-First &amp; RESTful Services
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zero-trust-and-cloud-native-security">
+<span class="md-ellipsis">
+      Zero-Trust and Cloud-Native Security
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#event-driven-and-reactive-architectures">
+<span class="md-ellipsis">
+      Event-Driven and Reactive Architectures
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+<span class="md-ellipsis">
+      Conclusion
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sources">
+<span class="md-ellipsis">
+      Sources
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ai-accessibility/">
+<span class="md-ellipsis">
+    AI-Augmented Accessibility — A Technical Daydream
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ai-accessibility_bus/">
+<span class="md-ellipsis">
+    AI‑Augmented Accessibility — From Daydream to Concept Note
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gen-ai-landscape-primer/">
+<span class="md-ellipsis">
+    GenAI Landscape Primer 2025
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cheatsheets/">
+<span class="md-ellipsis">
+    VARIOUS CHEAT SHEETS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            VARIOUS CHEAT SHEETS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-docker/">
+<span class="md-ellipsis">
+    Docker Command Cheatsheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-kubectl/">
+<span class="md-ellipsis">
+    Kubectl Command Cheat Sheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet_compound-modifiers/">
+<span class="md-ellipsis">
+    Compound Modifiers Cheat Sheet
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_gloss/">
+<span class="md-ellipsis">
+    MISC GLOSSARIES
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            MISC GLOSSARIES
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_oss/">
+<span class="md-ellipsis">
+    Glossary of OSS Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_networking/">
+<span class="md-ellipsis">
+    Glossary of Networking Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_kuber/">
+<span class="md-ellipsis">
+    Glossary of Kubernetes Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_cloud-native/">
+<span class="md-ellipsis">
+    Glossary of Cloud-Native Terms
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+<span class="md-ellipsis">
+      Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-large-grain-meant">
+<span class="md-ellipsis">
+      What Large-Grain Meant
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-made-them-reusable">
+<span class="md-ellipsis">
+      What Made them Reusable
+    </span>
+</a>
+<nav aria-label="What Made them Reusable" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layered-architecture">
+<span class="md-ellipsis">
+      Layered architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#well-defined-base-classesinterfaces-and-a-consistent-object-model">
+<span class="md-ellipsis">
+      Well-defined base classes/interfaces and a consistent object model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inherent-domain-design-patterns">
+<span class="md-ellipsis">
+      Inherent domain design patterns
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-between-components-and-existing-schemas">
+<span class="md-ellipsis">
+      Mapping between components and existing schemas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#addressable-and-distributable-runtimenetwork-model">
+<span class="md-ellipsis">
+      Addressable and distributable runtime/network model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-and-scaffolding">
+<span class="md-ellipsis">
+      Tools and scaffolding
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sanfrancisco-component-structure">
+<span class="md-ellipsis">
+      SanFrancisco Component Structure
+    </span>
+</a>
+<nav aria-label="SanFrancisco Component Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#base-class-hierarchy-logical">
+<span class="md-ellipsis">
+      Base class hierarchy (logical)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#propertycontainer-and-dynamic-attributes">
+<span class="md-ellipsis">
+      PropertyContainer and dynamic attributes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policies-and-extension-points">
+<span class="md-ellipsis">
+      Policies and extension points
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#queries-keys-and-collections-how-you-find-objects">
+<span class="md-ellipsis">
+      Queries, keys and collections (how you find objects)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#persistence-and-schema-mapping">
+<span class="md-ellipsis">
+      Persistence and schema mapping
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-services">
+<span class="md-ellipsis">
+      Runtime services
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commands-workflows-and-statecharts">
+<span class="md-ellipsis">
+      Commands, workflows and statecharts
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-sketch-pseudo-api-simplified">
+<span class="md-ellipsis">
+      Example sketch (pseudo API) — simplified
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#some-visuals">
+<span class="md-ellipsis">
+      Some Visuals
+    </span>
+</a>
+<nav aria-label="Some Visuals" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#high-level-architecture-overview">
+<span class="md-ellipsis">
+      High-level Architecture Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-structure-and-component-hierarchy">
+<span class="md-ellipsis">
+      Layer Structure and Component Hierarchy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#large-grain-business-object-example">
+<span class="md-ellipsis">
+      Large-Grain Business Object Example
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#persistence-and-services-interaction-sequence">
+<span class="md-ellipsis">
+      Persistence and Services Interaction (Sequence)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-diagram-runtime-nodes">
+<span class="md-ellipsis">
+      Deployment Diagram (Runtime Nodes)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#state-diagram-for-a-business-objects-lifecycle">
+<span class="md-ellipsis">
+      State Diagram for a Business Object’s Lifecycle
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-rather-long-coda">
+<span class="md-ellipsis">
+      A Rather Long Coda
+    </span>
+</a>
+<nav aria-label="A Rather Long Coda" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tradeoffs-why-sanfrancisco-didnt-become-the-one-size-fits-all-winner">
+<span class="md-ellipsis">
+      Tradeoffs &amp; why SanFrancisco didn’t become the one-size-fits-all winner
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-came-after">
+<span class="md-ellipsis">
+      What came after
+    </span>
+</a>
+<nav aria-label="What came after" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microservices-containerization-performance-reusability">
+<span class="md-ellipsis">
+      Microservices &amp; Containerization (Performance &amp; Reusability)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#serverless-computing">
+<span class="md-ellipsis">
+      Serverless Computing
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloud-native-databases-caching">
+<span class="md-ellipsis">
+      Cloud-Native Databases &amp; Caching
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-first-restful-services">
+<span class="md-ellipsis">
+      API-First &amp; RESTful Services
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zero-trust-and-cloud-native-security">
+<span class="md-ellipsis">
+      Zero-Trust and Cloud-Native Security
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#event-driven-and-reactive-architectures">
+<span class="md-ellipsis">
+      Event-Driven and Reactive Architectures
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+<span class="md-ellipsis">
+      Conclusion
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sources">
+<span class="md-ellipsis">
+      Sources
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ibm-sanfrancisco-a-technical-memoir">IBM SanFrancisco — A Technical Memoir<a class="headerlink" href="#ibm-sanfrancisco-a-technical-memoir" title="Permanent link">¶</a></h1>
+<p>First, hold off — don't reach for your star and flower-spangled hat just yet: SanFrancisco, one word, was the name of a software product. Behind this straightforward name lies a story of early innovation in <em>coarse-grained Java business components</em> — a glimpse into the architectural challenges and creative solutions of a pioneering era.</p>
+<p>Back in 2001, while working at the IBM Toronto Lab as an Information Developer (an IBM term for Technical Writer), SanFrancisco was one of the projects that landed on my plate; had to turn emails, memos, notes (perhaps even on <em>serviettes</em>) into Redbook material.</p>
+<p>By the time, I had been part of an e-commerce development team for a brief period of time, developed some docs and tutorials, taken my part in porting software from C++ to Java, read some Ivor Horton, and had managed to start thinking I knew all there was to know about what and how to write, haha... Well, I was wrong. Why — is another story, but now, here, this is an attempt to reach deep into what's behind that insignificant blurb on my résumé and make sense of what SanFrancisco <em>really</em> was, where it had come from, and where it ended up going. A two-in-one writing sample and a technical memoir.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>SanFrancisco was an IBM-led product and project, a cross-platform Java application framework that provided reusable, "large-grain business objects” (business components). IBM developed and shipped SanFrancisco in the late-1990s, and the technology was later incorporated into IBM’s WebSphere/Business Components efforts.</p>
+<p>SanFrancisco focused on “large grains” rather than "tiny beans" — it tied into CORBA/IIOP, albeit loosely, and IBM tooling (VisualAge) and was positioned as an alternative or complement to EJB-style approaches of the time.</p>
+<h2 id="what-large-grain-meant">What Large-Grain Meant<a class="headerlink" href="#what-large-grain-meant" title="Permanent link">¶</a></h2>
+<p>"Large-grain business objects" meant to characterize SanFrancisco as stateful business components that encapsulated whole <em>business entities</em> or <em>processes</em> rather than tiny technical objects. Say, an <strong>Order</strong> — with lines, taxes, lifecycle, validation, posting to GL — as a <em>single</em> component you call with a small number of high-level operations, rather than dozens of low-level <code>JavaBeans</code> or single-column <code>CRUD</code> calls.</p>
+<p>These were long-lived components with application-level state, they were also transaction-aware, and they exposed business semantics (<code>createOrder</code>, <code>postInvoice</code>, <code>applyPayment</code>, etc.) Consequently, the <em>business API</em> was bulkier compared with method-level “fine grain” objects.</p>
+<p>Why coarse-grain mattered was because they offered fewer remote hops, clearer transaction boundaries, easier composition of business processes, and higher reuse value across applications that shared the same domain semantics (see <a href="#large-grain-business-object-example">Large-Grain Business Object Example</a>).</p>
+<h2 id="what-made-them-reusable">What Made them Reusable<a class="headerlink" href="#what-made-them-reusable" title="Permanent link">¶</a></h2>
+<p>Here are the concrete mechanisms IBM used to make the coarse components reusable and adaptable across enterprises.</p>
+<h3 id="layered-architecture">Layered architecture<a class="headerlink" href="#layered-architecture" title="Permanent link">¶</a></h3>
+<p>SanFrancisco provided separation of reuse scopes, its architecture consisted of layers (see <a href="#layer-structure-and-component-hierarchy">Layer Structure and Component Hierarchy</a>):</p>
+<ol>
+<li><strong>Foundation</strong> layer: runtime services (naming, factory, transaction, security, notification), distribution plumbing (the <em>Logical SanFrancisco Network</em>).</li>
+<li><strong>Common Business Object</strong> layer: canonical domain objects (company, account, customer, currency, etc.) — reusable across many apps.</li>
+<li><strong>Core Business Process</strong> layer: packaged, higher-level domain subsystems (general ledger, AR, AP, order processing).</li>
+</ol>
+<p>The higher the layer, the more domain reuse you got. This layering let vendors reuse just the foundation or pick domain building blocks and mix them.</p>
+<h3 id="well-defined-base-classesinterfaces-and-a-consistent-object-model">Well-defined base classes/interfaces and a consistent object model<a class="headerlink" href="#well-defined-base-classesinterfaces-and-a-consistent-object-model" title="Permanent link">¶</a></h3>
+<p>SanFrancisco introduced a small set of base classes, for example, <code>BusinessObject</code> with <code>subclasses</code>, such as <code>Entity</code> and <code>Dependent</code>, and<code>Command</code> for actions (see <a href="#large-grain-business-object-example">Large-Grain Business Object Example</a>). Framework code and application code spoke the same API and lifecycle semantics — far more effective for reuse than ad-hoc <em>POJOs</em>.</p>
+<h3 id="inherent-domain-design-patterns">Inherent domain design patterns<a class="headerlink" href="#inherent-domain-design-patterns" title="Permanent link">¶</a></h3>
+<p>SanFrancisco had <code>PropertyContainer</code>, <code>Policy</code>, <code>Command</code>, <code>Aggregates</code>, <code>Specification/Criterion</code> patterns baked in.</p>
+<ol>
+<li>
+<p><strong>PropertyContainer</strong>: supported dynamic/extensible properties; you could add attributes via configuration rather than recompiling.</p>
+</li>
+<li>
+<p><strong>Policy</strong>, <strong>Strategy</strong>, and <strong>Chain-of-Responsibility</strong>: business rules were replaceable and composable.</p>
+</li>
+<li><strong>Command objects and statecharts</strong>: business processes modelled as commands and workflows, providing a standard lifecycle (see <a href="#state-diagram-for-a-business-objects-lifecycle">State Diagram for a Business Object’s Lifecycle</a>).</li>
+</ol>
+<p>These patterns made components configurable and extensible in predictable ways, which was essential for reuse across different customers.</p>
+<h3 id="mapping-between-components-and-existing-schemas">Mapping between components and existing schemas<a class="headerlink" href="#mapping-between-components-and-existing-schemas" title="Permanent link">¶</a></h3>
+<p>SanFrancisco provided a schema-mapping facility so a reusable business object could be persisted to (or read from) a customer’s existing relational/legacy schema without changing the code of the business object (see <a href="#persistence-and-services-interaction-sequence">Persistence and Services Interaction (Sequence)</a>). That metadata-driven mapping was a big reuse enabler for enterprise customers with legacy systems.</p>
+<h3 id="addressable-and-distributable-runtimenetwork-model">Addressable and distributable runtime/network model<a class="headerlink" href="#addressable-and-distributable-runtimenetwork-model" title="Permanent link">¶</a></h3>
+<p>The <em>Logical SanFrancisco Network (LSFN)</em> included services such as a Global Server Manager, Name Service, Factory Service (object creation/placement), Transaction Service, Security Service, Notification Service, and local Server Managers (see <a href="#deployment-diagram-runtime-nodes">Deployment Diagram (Runtime Nodes)</a>). That made components locatable, securable, and manageable across a distributed installation while keeping the component’s API the same.</p>
+<h3 id="tools-and-scaffolding">Tools and scaffolding<a class="headerlink" href="#tools-and-scaffolding" title="Permanent link">¶</a></h3>
+<p>IBM shipped tooling to create prototypes and glue components into running scenarios (and to auto-generate bindings/scaffolding). For example, SanFrancisco came with a Business Component Prototyper utility and provided integration with VisualAge, IBM's brand family of IDEs at the time.</p>
+<h2 id="sanfrancisco-component-structure">SanFrancisco Component Structure<a class="headerlink" href="#sanfrancisco-component-structure" title="Permanent link">¶</a></h2>
+<p>Below are attempts to:</p>
+<ul>
+<li>sketch a typical SanFrancisco component at runtime (see <a href="#persistence-and-services-interaction-sequence">Persistence and Services Interaction (Sequence)</a>)</li>
+<li>describe the principal classes/services you would actually interact with</li>
+</ul>
+<h3 id="base-class-hierarchy-logical">Base class hierarchy (logical)<a class="headerlink" href="#base-class-hierarchy-logical" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><code>BusinessObject</code> (abstract root): shares behaviour and metadata.</p>
+</li>
+<li>
+<p><code>Entity</code> — persistent, transactional objects representing primary business entities</p>
+</li>
+<li><code>Dependent</code> — non-independent objects (child rows/details) that belong to an Entity</li>
+<li><code>Command</code> — encapsulated actions/process steps (used to model business operations)</li>
+</ul>
+<p>Containers such as <code>EntityOwningSet</code> hold collections of <code>Entities</code>. This class hierarchy standardises lifecycle, locking and persistence semantics across all SanFrancisco objects (see <a href="#large-grain-business-object-example">Large-Grain Business Object Example</a>).</p>
+<h3 id="propertycontainer-and-dynamic-attributes">PropertyContainer and dynamic attributes<a class="headerlink" href="#propertycontainer-and-dynamic-attributes" title="Permanent link">¶</a></h3>
+<p>Instead of every domain object having a fixed Java field for every attribute, SanFrancisco used a <em>property container</em> mechanism (hash-table backed) to attach properties dynamically. That way, vendors/customers could add attributes (e.g., <code>customer.segment</code>) via configuration or metadata without changing class files — huge for reuse and productisation. The framework provided accessor patterns and iteration utilities to work with these dynamic properties.</p>
+<h3 id="policies-and-extension-points">Policies and extension points<a class="headerlink" href="#policies-and-extension-points" title="Permanent link">¶</a></h3>
+<p>Business rules are not hardwired. SanFrancisco exposes <em>policy</em> extension points (Strategy/Template/Chain patterns): implement or deploy a new policy to change rule behavior (pricing, discount rules, tax calc) without changing the base component. Reuse is safer because vendors supply a standard component and customers replace or add policies for local behaviour (see <a href="#state-diagram-for-a-business-objects-lifecycle">State Diagram for a Business Object’s Lifecycle</a>).</p>
+<h3 id="queries-keys-and-collections-how-you-find-objects">Queries, keys and collections (how you find objects)<a class="headerlink" href="#queries-keys-and-collections-how-you-find-objects" title="Permanent link">¶</a></h3>
+<p>The framework uses access keys / specification keys / criteria objects and <code>Iterator</code>/<code>CachedSet</code> abstractions rather than ad-hoc SQL everywhere. Query criteria are expressed as higher-level specification objects that delegate to the persistence layer; results are returned as SanFrancisco collections that can be iterated, cached, and traversed in object form. This makes querying portable and the interface consistent across different back-ends.</p>
+<h3 id="persistence-and-schema-mapping">Persistence and schema mapping<a class="headerlink" href="#persistence-and-schema-mapping" title="Permanent link">¶</a></h3>
+<p>SanFrancisco provides an object-to-relational mapping layer. A developer could either manually create mapping metadata or rely on tools to generate mapping from existing schemas. The persistence layer supports delegating complex queries to the DB and mapping result sets back into business objects; it also supports different persistence strategies (local vs. distributed, caching) (see <a href="#persistence-and-services-interaction-sequence">Persistence and Services Interaction (Sequence)</a>).</p>
+<h3 id="runtime-services">Runtime services<a class="headerlink" href="#runtime-services" title="Permanent link">¶</a></h3>
+<p>Key services in the Logical SanFrancisco Network (LSFN) support discovery, creation, transactions, and security:</p>
+<ul>
+<li><strong>Global Server Manager</strong> — knows all object processes and routes client requests.</li>
+<li><strong>Global Name Service</strong> — holds configuration and namespace info (where to create objects).</li>
+<li><strong>Factory Service</strong> — provides standard object creation and ownership semantics.</li>
+<li><strong>Transaction Service</strong> — manages transactional execution and recovery across object servers.</li>
+<li><strong>Server Security Service / Master Security Service</strong> — handles authentication/authorization.</li>
+</ul>
+<p>Because these services were standard and part of the framework, a component packaged for SanFrancisco behaved consistently in any LSFN deployment (see <a href="#deployment-diagram-runtime-nodes">Deployment Diagram (Runtime Nodes)</a>).</p>
+<h3 id="commands-workflows-and-statecharts">Commands, workflows and statecharts<a class="headerlink" href="#commands-workflows-and-statecharts" title="Permanent link">¶</a></h3>
+<p>Higher-level business processes are modelled as <em>Commands</em> or statecharts: transitions (states) and CA (condition/action) rules control lifecycle. This makes a component’s process behaviour explicit and manipulable (and therefore reusable) — developers didn't have to rewrite “how an invoice moves from draft → posted → paid” for each app (see <a href="#state-diagram-for-a-business-objects-lifecycle">State Diagram for a Business Object’s Lifecycle</a>).</p>
+<h2 id="example-sketch-pseudo-api-simplified">Example sketch (pseudo API) — simplified<a class="headerlink" href="#example-sketch-pseudo-api-simplified" title="Permanent link">¶</a></h2>
+<p>Here is an <em>intent illustration</em>, exact API names vary slightly across versions and docs.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// conceptual — not copy/paste exact SDK code</span>
+<span class="kd">class</span> <span class="nc">OrderEntity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="cm">/* BusinessObject */</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// dynamic properties via PropertyContainer</span>
+<span class="n">Object</span><span class="w"> </span><span class="nf">getProperty</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setProperty</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// high-level business operation (coarse grain)</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">processShipment</span><span class="p">(</span><span class="n">CommandContext</span><span class="w"> </span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// validate, reserve inventory, post to GL via other SanFrancisco components</span>
+<span class="c1">// executed within the Transaction Service</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// client usage: single coarse call that encapsulates lots of work</span>
+<span class="n">OrderEntity</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">"Order"</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="n">order</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">"shippingMethod"</span><span class="p">,</span><span class="w"> </span><span class="s">"EXPRESS"</span><span class="p">);</span>
+<span class="n">order</span><span class="p">.</span><span class="na">processShipment</span><span class="p">(</span><span class="n">txContext</span><span class="p">);</span>
+</code></pre></div>
+<p>The point: instead of many remote calls to tweak small fields and call helper services, the client invokes a small set of semantically rich methods that the framework executed atomically, possibly across several servers (see <a href="#persistence-and-services-interaction-sequence">Persistence and Services Interaction (Sequence)</a>).</p>
+<h2 id="some-visuals">Some Visuals<a class="headerlink" href="#some-visuals" title="Permanent link">¶</a></h2>
+<h3 id="high-level-architecture-overview">High-level Architecture Overview<a class="headerlink" href="#high-level-architecture-overview" title="Permanent link">¶</a></h3>
+<p><em>(See <a href="#layered-architecture">Layered architecture</a>)</em></p>
+<p>SanFrancisco sat between application-specific UI/business logic and the JVM, providing reusable services.</p>
+<div class="mermaid">flowchart TB
+    accTitle: Diagram showing IBM SanFrancisco's layered architecture
+    accDescr: Diagram showing IBM SanFrancisco's layered architecture. Arrows connect layers from top to bottom: User Interface → Business Logic → Foundation Services → JVM → Operating System. SanFrancisco encompasses the Business Logic and Foundation layers, positioned between application code and the JVM.
+    UI[User Interface Layer] --&gt; BL[Business Logic Layer]
+    BL --&gt; FS[Foundation Services Layer]
+    FS --&gt; JVM[Java Virtual Machine]
+    JVM --&gt; OS[Operating System]
+
+    subgraph IBM SanFrancisco
+        BL
+        FS
+    end
+</div>
+<h3 id="layer-structure-and-component-hierarchy">Layer Structure and Component Hierarchy<a class="headerlink" href="#layer-structure-and-component-hierarchy" title="Permanent link">¶</a></h3>
+<p><em>(See <a href="#layered-architecture">Layered architecture</a>)</em></p>
+<p>The following is a static breakdown of large-grain components, layered from generic to domain-specific:</p>
+<div class="mermaid">classDiagram
+    accTitle: Class diagram showing SanFrancisco’s layered component hierarchy
+    accDescr: Class diagram showing SanFrancisco’s layered component hierarchy. FoundationServices includes core services like TransactionManager and PersistenceManager. CommonBusinessObjects builds on FoundationServices and includes domain-neutral entities like Party and Product. DomainComponents extends CommonBusinessObjects with vertical-specific modules like ERP and Retail.
+    class FoundationServices {
+        +TransactionManager
+        +PersistenceManager
+        +SecurityService
+        +EventService
+    }
+
+    class CommonBusinessObjects {
+        +Party
+        +Address
+        +Product
+        +Order
+    }
+
+    class DomainComponents {
+        +ERP
+        +Retail
+        +Financial
+    }
+
+    FoundationServices &lt;|-- CommonBusinessObjects
+    CommonBusinessObjects &lt;|-- DomainComponents
+</div>
+<h3 id="large-grain-business-object-example">Large-Grain Business Object Example<a class="headerlink" href="#large-grain-business-object-example" title="Permanent link">¶</a></h3>
+<p><em>(See <a href="#what-large-grain-meant">What Large-Grain Meant</a> and <a href="#base-class-hierarchy-logical">Base class hierarchy (logical)</a>)</em></p>
+<p>An Illustration of the "large-grain" idea — <code>Order</code> encapsulates not just data, but behavior and transactional integrity.</p>
+<div class="mermaid">classDiagram
+    accTitle: Class diagram showing a coarse-grained Order object and its relationships
+    accDescr: Class diagram showing a coarse-grained Order object and its relationships. Order contains attributes and methods for managing line items and totals. It has a one-to-many relationship with OrderLine, which in turn references Product. Emphasizes encapsulation of behavior and data in a single business object.
+    class Order {
+        +orderId: String
+        +date: Date
+        +status: OrderStatus
+        +addLineItem(Product, int)
+        +calculateTotal(): Money
+        +commit()
+    }
+    class OrderLine {
+        +product: Product
+        +quantity: int
+        +price: Money
+    }
+    class Product {
+        +productId: String
+        +description: String
+        +price: Money
+    }
+    Order "1" --&gt; "*" OrderLine
+    OrderLine "*" --&gt; "1" Product
+</div>
+<h3 id="persistence-and-services-interaction-sequence">Persistence and Services Interaction (Sequence)<a class="headerlink" href="#persistence-and-services-interaction-sequence" title="Permanent link">¶</a></h3>
+<p><em>(See <a href="#persistence-and-schema-mapping">Persistence and schema mapping</a> and <a href="#sanfrancisco-component-structure">SanFrancisco Component Structure</a>)</em></p>
+<p>Here is a dynamic view of an object interacting with SF foundation services:</p>
+<div class="mermaid">sequenceDiagram
+    accTitle: Sequence diagram showing object interaction with SF foundation services --&gt;
+    accDescr: Sequence diagram showing object interaction with SF foundation services across 4 swimlanes: Client Object, Business Object, Data Access Object, and Database. Flow shows client creating business object, business object accessing data object, data object querying database, and responses flowing back through the chain. Includes error handling and transaction management patterns typical of enterprise Java applications.
+    participant UI as User Interface
+    participant Order as Order Business Object
+    participant Tx as TransactionManager
+    participant PM as PersistenceManager
+    participant DB as Database
+
+    UI-&gt;&gt;Order: addLineItem(product, qty)
+    UI-&gt;&gt;Order: calculateTotal()
+    UI-&gt;&gt;Order: commit()
+    Order-&gt;&gt;Tx: begin()
+    Order-&gt;&gt;PM: save(Order)
+    PM-&gt;&gt;DB: INSERT Order + OrderLines
+    DB--&gt;&gt;PM: success
+    PM--&gt;&gt;Order: persisted
+    Order-&gt;&gt;Tx: commit()
+    Tx--&gt;&gt;Order: transaction complete
+    Order--&gt;&gt;UI: success
+</div>
+<h3 id="deployment-diagram-runtime-nodes">Deployment Diagram (Runtime Nodes)<a class="headerlink" href="#deployment-diagram-runtime-nodes" title="Permanent link">¶</a></h3>
+<p><em>(See <a href="#addressable-and-distributable-runtimenetwork-model">Addressable and distributable runtime/network model</a> and <a href="#runtime-services">Runtime services (LSFN)</a>)</em></p>
+<p>SanFrancisco's runtime separation — often deployed in a 3-tier setup.</p>
+<div class="mermaid">flowchart TB
+    accTitle: Diagram showing SanFrancisco’s 3-tier runtime deployment --&gt;
+    accDescr: Diagram showing SanFrancisco’s 3-tier runtime deployment. ClientNode contains UIClient (Swing/HTML). AppServer includes BusinessLogic, Foundation Services, and JVM. DataServer hosts a relational database. Arrows show bidirectional communication between layers, representing distributed component interaction.
+    subgraph ClientNode[Client Workstation]
+        UIClient[UI Layer - Swing/HTML]
+    end
+
+    subgraph AppServer[Application Server]
+        BusinessLogic[SanFrancisco Business Logic Layer]
+        Foundation[Foundation Services Layer]
+        JVM[Java Virtual Machine]
+    end
+
+    subgraph DataServer[Database Server]
+        DB[(Relational Database)]
+    end
+
+    UIClient &lt;--&gt; BusinessLogic
+    BusinessLogic &lt;--&gt; Foundation
+    Foundation &lt;--&gt; DB
+</div>
+<h3 id="state-diagram-for-a-business-objects-lifecycle">State Diagram for a Business Object’s Lifecycle<a class="headerlink" href="#state-diagram-for-a-business-objects-lifecycle" title="Permanent link">¶</a></h3>
+<p><em>(See <a href="#commands-workflows-and-statecharts">Commands, workflows and statecharts</a>)</em></p>
+<p>Below is a representation of an <code>Order</code>’s lifecycle as managed by SanFrancisco's object framework:</p>
+<div class="mermaid">stateDiagram-v2
+    accTitle: State diagram showing lifecycle transitions for an Order object
+    accDescr: State diagram showing lifecycle transitions for an Order object. Starts at New, proceeds to PendingApproval, then either Approved or Rejected. Approved leads to Shipped, then Completed. Rejected and Completed transition to end state. Models business process flow using explicit states and transitions.
+    [*] --&gt; New
+    New --&gt; PendingApproval: submit()
+    PendingApproval --&gt; Approved: approve()
+    PendingApproval --&gt; Rejected: reject()
+    Approved --&gt; Shipped: ship()
+    Shipped --&gt; Completed: deliveryConfirmed()
+    Completed --&gt; [*]
+    Rejected --&gt; [*]
+</div>
+<hr/>
+<h2 id="a-rather-long-coda">A Rather Long Coda<a class="headerlink" href="#a-rather-long-coda" title="Permanent link">¶</a></h2>
+<h3 id="tradeoffs-why-sanfrancisco-didnt-become-the-one-size-fits-all-winner">Tradeoffs &amp; why SanFrancisco didn’t become the one-size-fits-all winner<a class="headerlink" href="#tradeoffs-why-sanfrancisco-didnt-become-the-one-size-fits-all-winner" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Complexity and heavy weight</strong>: the framework and runtime services were large and required buy-in and operational expertise; mapping to messy legacy schemas could still be work-intensive.</li>
+<li><strong>Standards and market competition</strong>: EJB and later J2EE, plus CORBA/EJB alliances, plus vendor frameworks, split attention. SanFrancisco was IBM-centric and not a full CORBA ORB; many shops preferred standardized stacks.</li>
+<li><strong>Performance and distribution tradeoffs</strong>: coarse grain reduces chattiness but increases the cost of a single call; caching and careful design were required to meet SLAs. IBM documentation contains performance guidance and warnings.</li>
+</ul>
+<p>IBM eventually folded the SanFrancisco ideas and some code paths into its WebSphere/business-component story (WebSphere Business Components), and the SanFrancisco name/packaging faded even as many design patterns remained influential.</p>
+<h3 id="what-came-after">What came after<a class="headerlink" href="#what-came-after" title="Permanent link">¶</a></h3>
+<p>Contemporary cloud computing mechanisms and architectural patterns have made older technologies like EJBs and coarse-grained Java objects less relevant in many scenarios. Here are some key modern alternatives that outperform them in terms of <strong>performance</strong>, <strong>security</strong>, and <strong>reusability</strong>:</p>
+<h4 id="microservices-containerization-performance-reusability">Microservices &amp; Containerization (Performance &amp; Reusability)<a class="headerlink" href="#microservices-containerization-performance-reusability" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Replace</strong> EJBs and coarse-grained components with fine-grained, independently deployable services.</li>
+<li><strong>Technologies</strong>, such as Kubernetes and Docker enable lightweight, scalable deployments (vs. heavyweight EJB containers). Modern frameworks, such as Spring Boot, Quarkus, and Micronaut eliminate EJB’s boilerplate while offering better startup times and memory efficiency.</li>
+<li><strong>Advantages</strong>: Faster scaling (horizontal, vs. EJB’s vertical scaling); better fault isolation (a failing microservice doesn’t crash the whole app).</li>
+</ul>
+<h4 id="serverless-computing">Serverless Computing<a class="headerlink" href="#serverless-computing" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Replaces</strong> EJB’s long-lived, stateful session beans with ephemeral, stateless functions.</li>
+<li><strong>Technologies</strong>, such as AWS Lambda, Azure Functions, Google Cloud Functions execute code on-demand without managing servers.</li>
+<li><strong>Advantages</strong>: No need for application server overhead (EJBs require a full Java EE container); pay-per-use cost model (vs. always-on EJB servers).</li>
+</ul>
+<h4 id="cloud-native-databases-caching">Cloud-Native Databases &amp; Caching<a class="headerlink" href="#cloud-native-databases-caching" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Replace</strong> EJB’s entity beans (CMP/BMP) with modern persistence layers.</li>
+<li><strong>Technologies</strong>, such as NoSQL (MongoDB, Cassandra, DynamoDB) scale better than EJB’s JPA/Hibernate for distributed systems; Redis and Elasticache offer low-latency caching (better than EJB’s second-level cache).</li>
+<li><strong>Advantages</strong>: Horizontal scalability (vs. EJB’s reliance on monolithic RDBMS); faster read/write performance in distributed environments.</li>
+</ul>
+<h4 id="api-first-restful-services">API-First &amp; RESTful Services<a class="headerlink" href="#api-first-restful-services" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Replace</strong> EJB’s RMI-based remote interfaces with lightweight APIs.</li>
+<li><strong>Technologies</strong>, such as REST (JAX-RS, Spring WebFlux), GraphQL, and gRPC are more flexible than EJB’s CORBA-style remoting.</li>
+<li><strong>Advantages</strong>: Language-agnostic APIs (vs. EJB’s Java-only remoting); better suited for cloud-native, multi-cloud, and hybrid deployments.</li>
+</ul>
+<h4 id="zero-trust-and-cloud-native-security">Zero-Trust and Cloud-Native Security<a class="headerlink" href="#zero-trust-and-cloud-native-security" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Replace</strong> EJB’s JAAS and declarative security with modern cloud security models.</li>
+<li><strong>Technologies</strong>, including OAuth2/OpenID Connect (Keycloak, Auth0) are better than EJB role-based security; they externalize auth and allow dynamic, fine-grained acces. Others, such as Service Meshes (Istio, Linkerd), provide mTLS, fine-grained access control (vs. EJB’s coarse-grained security).</li>
+<li><strong>Advantages</strong>:  Dynamic, policy-based security (vs. static EJB deployment descriptors); better support for distributed identity management.</li>
+</ul>
+<h4 id="event-driven-and-reactive-architectures">Event-Driven and Reactive Architectures<a class="headerlink" href="#event-driven-and-reactive-architectures" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Replace</strong> EJB’s synchronous, blocking model with async processing.</li>
+<li><strong>Technologies</strong>, such as Kafka, RabbitMQ, AWS EventBridge decouple components better than EJB’s JMS, and non-blocking I/O of Reactive Frameworks (Spring WebFlux, Vert.x) outperforms EJB’s thread-per-request model.</li>
+<li><strong>Advantages</strong>:  High concurrency is handled much better (EJBs struggled under heavy load); more resilient to failures (reactive systems embrace chaos engineering).</li>
+</ul>
+<h4 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h4>
+<p>EJBs and coarse-grained Java objects were designed for monolithic, on-premise Java EE apps, whereas modern cloud computing favors lightweight, distributed, and scalable architectures. The shift to microservices, serverless, cloud-native databases, and event-driven systems has rendered EJBs largely obsolete for high-performance, secure, and reusable applications.</p>
+<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">¶</a></h2>
+<ul>
+<li>IBM press releases and archived Redbooks (~35%)</li>
+<li>The usual suspect — GenAI — with its bottomless pool of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany  (~40%)</li>
+<li>My long-term memory (~20%)</li>
+</ul>
+<hr/>
+<p>2025.08.12</p>
+<p><img alt="IBM Toronto Lab" src="../../img/ibm-toronto-olab.png"/></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Concepts, Essays and more" class="md-footer__link md-footer__link--prev" href="../">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Concepts, Essays and more
+              </div>
+</div>
+</a>
+<a aria-label="Next: AI-Augmented Accessibility — A Technical Daydream" class="md-footer__link md-footer__link--next" href="../ai-accessibility/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                AI-Augmented Accessibility — A Technical Daydream
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<a href="https://cassmastern.github.io/cass-sandbox/sec_about/feedback/"><span class="logo-text">CM</span> 2025.</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../js/seamaiden.js"></script>
+<script src="../../js/diagram-zoom.js"></script>
+<script src="../../js/alphabet-auto.js"></script>
+<script src="../../js/svg-patcher.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script src="../../js/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>
