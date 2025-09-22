@@ -1,6 +1,6 @@
 # Compound Modifiers Cheat Sheet
 
-"Compound modifier" will be the only term from linguistics and natural language syntax in this topic. I'm including this as a pre-emptive exhibit of a weakness and yes, a cheat sheet. In plain English.
+"Compound modifier" will probably be the only term in this site to come from linguistics and natural language syntax. I'm including this as a pre-emptive exhibit of a weakness and yes, a cheat sheet. In plain English.
 
 ---
 

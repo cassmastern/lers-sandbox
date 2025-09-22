@@ -4,8 +4,8 @@ arrange:
   - sec_about
   - sec_cloud
   - sec_accss
-  - sec_net-sec
   - sec_freeform 
+  - sec_net-sec
   - sec_cheatsheets
   - sec_gloss
   
