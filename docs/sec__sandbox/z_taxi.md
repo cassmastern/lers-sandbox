@@ -1,4 +1,29 @@
-# Refactoring
+# Taxi
+Take it back and forth from dev to preview/live reload.
+
+## Admonitions
+
+!!! tip "Pro Tip"
+    Remember to always save your work!
+
+!!! danger
+    This action cannot be undone. Proceed with caution.
+
+!!! example "Code Example"
+    ```python
+    print("Hello, Admonitions!")
+
+
+
+Some text before an inline admonition. !!! info inline This is an inline info block. end More text after the inline admonition.
+
+!!! note "Main Topic"
+    This is the main content.
+
+    !!! warning "Important Sub-point"
+        Don't forget this crucial detail within the main topic.
+
+
 
 ## PlantUML
 
@@ -165,7 +190,7 @@
     @enduml
 ```
 
-## With metadata
+## Mermaid with metadata
 
 ```mermaid
 flowchart TB
@@ -188,6 +213,8 @@ flowchart TB
 
 ```mermaid
 sequenceDiagram
+accTitle: Sequence diagram showing client-server commumnication.
+accDescr: Sequence diagram showing client-server commumnication: Client sends a login request to server, and server returns an authorization token.
   participant Client
   participant Server
   Client->>Server: Send login request

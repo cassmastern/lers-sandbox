@@ -2,15 +2,15 @@
 
 Architectural descriptions of AWS, GCP, and Azure are presented here at a level crafted for my own reference and growing understanding — detailed enough to be meaningful, yet concise enough to avoid cloud-induced vertigo.
 
-**Legend for the diagrams** 
+**Common major component types** 
 
-🟦 Global Infrastructure  
-🟩 Networking  
-🟧 Compute  
-🟨 Databases / Storage  
-🟪 DevOps  
-🟥 Security  
-⬜ Observability
+- Global Infrastructure  
+- Networking  
+- Compute  
+- Databases / Storage  
+- DevOps  
+- Security  
+- Observability
 
 ***Note:*** Diagrams are conceptual simplifications.
 

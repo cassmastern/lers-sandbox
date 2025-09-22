@@ -68,6 +68,7 @@ extra_javascript:
   - js/svg-patcher.js
 
 extra_css:
+  - # css/topbar.css
   - css/alphabet.css
   - css/diagram-zoom.css
   - css/cm-logo.css
