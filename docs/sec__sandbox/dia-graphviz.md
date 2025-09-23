@@ -4,7 +4,11 @@
 
 ```kroki-graphviz
 digraph UML_Class_diagram {
-
+	graph [
+		label="UML Class diagram demo"
+		labelloc="t"
+		fontname="Helvetica,Arial,sans-serif"
+	]
 	node [
 		fontname="Helvetica,Arial,sans-serif"
 		shape=record
