@@ -34,7 +34,11 @@ plugins:
   - mermaid2:
       javascript: js/mermaid.min.js
   - plantuml:
+<<<<<<< HEAD
       puml_url: http://l-maq.local:8080/
+=======
+      puml_url: http://192.168.1.7:8080
+>>>>>>> 844b29df38ea056801f78ae6d6bfb3fdb6131dc1
   - kroki
 
 markdown_extensions:
