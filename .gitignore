@@ -30,6 +30,8 @@ node_modules/
 commit-message.txt
 # Misc resources, history, etc.
 _archive
+# Environment-specific; for resolving PlnatUML server
+.env
 
 
 

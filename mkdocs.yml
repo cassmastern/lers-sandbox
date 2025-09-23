@@ -34,7 +34,7 @@ plugins:
   - mermaid2:
       javascript: js/mermaid.min.js
   - plantuml:
-      puml_url: https://www.plantuml.com/plantuml
+      puml_url: http://${PLANTUML_HOST}:8080/
   - kroki
 
 markdown_extensions:

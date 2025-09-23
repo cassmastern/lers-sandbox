@@ -43,6 +43,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/app \
             -w /app \
+            --env PLANTUML_HOST=www.plantuml.com/plantuml \
             mkdocs-builder:latest \
             mkdocs build --verbose
 
