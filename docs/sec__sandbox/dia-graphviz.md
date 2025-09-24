@@ -1,5 +1,246 @@
 # Graphviz Diagrams
 
+## Some Guy's Diagram from StackExchange
+
+```kroki-graphviz
+digraph ReferenceGraph {
+  nodesep = 2;
+  edge [color=gray50, fontname=Calibri, fontsize=11]
+  node [shape=record, fontname=Calibri, fontsize=11]
+
+  root [label="Reference Node", color=darkgreen, fontcolor=darkgreen, fontname=Calibri, fontsize=11]
+
+  sue [label="{{User}|{GivenName=Sue}|{FamilyName=Williams}|{Username=swilliams}|{EmailAddress=Sue.Williams@foo.com}|{BusinessPhone=02 1234 5678}|{MobilePhone=0414 123 456}|{PasswordSalt=fcd376dc}|{PasswordHash=a8635cfd2930ebc0cc78}|{PreviousPasswordSalt=gggf6dc}|{PreviousPasswordHash=wer435cfd2930ebc0cc78}|{RequirePasswordChangeOnNextLogin=true}|FailedLoginAttempts=0|LastLoginAttemptUtc=21 Jun 2011 16:43:01 UTC|{DateCreatedUtc=20 Jun 2011 15:43:07 UTC}}", color=blue, fontcolor=blue]
+  sue -> root [label="ADMINISTERS"]
+
+  clint [label="{{Client}|{UniqueId=100}|{GivenName=Clint}|{MiddleNames=ian bill}|{FamilyName=Wood}|{PreferredName=Woods}|{Gender=Male Female Unknown}|{PlaceOfBirthTown}|{PlaceOfBirthState}|{PlaceOfBirthCountry}|{Email=clint.wood@foo.com}|{LanguageComments}|{InterpreterRequired=true false}|{InterpreterComments}|{Religion=Buddhist}|{LegalOrders=order1}|{DateOfBirth=21 June 1979}|{DateOfBirthCertainty=Confirmed Unconfirmed Estimated}}", color=blue, fontcolor=blue]
+  clint -> acme [label="CLIENT_BELONGS_TO"]
+  clint -> english [label ="SPEAKS"]
+
+  cat [label="Cat (Client)"]
+  cat -> acme [label="CLIENT_BELONGS_TO"]
+  cat -> english [label ="SPEAKS"]
+  cat -> mandarin [label ="SPEAKS"]
+
+  acme [label="{{Agency}|{UniqueId=100}|{Key=acme}|{Name=Acme Australia}}", color=blue, fontcolor=blue]
+  root -> acme [label="HOSTS"]
+
+  john [label="John (User)"]
+  john -> acme [label="USER_BELONGS_TO"]
+
+  jack [label="Jack (User)"]
+  jack -> acme [label="USER_BELONGS_TO"]
+
+  centreA [label="{{Centre}|{Name=CentreA}|{BusinessPhone=02 1234 5678}|{Fax=0414 123 456}|{Email=xyz@bcb.com}|{Status=Active}}", color=blue, fontcolor=blue]
+  centreA -> acme [label="CENTRE_BELONGS_TO"]
+
+  centreAStreetAddress [label="{{PhysicalAddress}|{Line 1=Level 1}|{Line 2=11 Sydney Road}|{TownSuburb=Sydney}|{State=NSW}|{Postcode=2000}|{Country=Australia}}", color=blue, fontcolor=blue]
+  centreA -> centreAStreetAddress [label="HAS_STREET_ADDRESS"]
+
+  centreAPostalAddress [label="PO Box 123 (PhysicalAddress)"]
+  centreA -> centreAPostalAddress [label="HAS_POSTAL_ADDRESS"]
+
+  clintCurrentAddress [label="{{CurrentAddress}|{Line 1=Level 1}|{Line 2=11 Sydney Road}|{TownSuburb=Sydney}|{State=NSW}|{Postcode=2000}|{Country=Australia}}", color=blue, fontcolor=blue]
+  clint -> clintCurrentAddress [label="HAS_STREET_ADDRESS"]
+
+  referenceData [label="Reference Data"]
+  root -> referenceData [label="HAS_REFERENCE_DATA"]
+
+  languagesReferenceData [label="Languages"]
+  referenceData -> languagesReferenceData [label="HAS_LANGUAGES"]
+
+  english [label="{{Language}|{Name=English}}", color=blue, fontcolor=blue]
+  languagesReferenceData -> english [label="HAS_LANGUAGE"]
+
+  mandarin [label="Mandarin (Language)"]
+  languagesReferenceData -> mandarin [label="HAS_LANGUAGE"]
+
+  japanese [label="Japanese (Language)"]
+  languagesReferenceData -> japanese [label="HAS_LANGUAGE"]
+
+  countriesReferenceData [label="Countries"]
+  referenceData -> countriesReferenceData [label="HAS_COUNTRIES"]
+
+  australia [label="{{Country}|{Name=Australia}}", color=blue, fontcolor=blue]
+  countriesReferenceData -> australia [label="HAS_COUNTRY"]
+
+  china [label="China (Country)"]
+  countriesReferenceData -> china[label="HAS_COUNTRY"]
+}
+```
+
+### Same Diagram Improved by CockPilot
+
+```kroki-graphviz
+digraph ReferenceGraph {
+  nodesep = 2;
+  rankdir = LR;
+
+  // Global styles
+  edge [color=gray50, fontname=Calibri, fontsize=11];
+  node [shape=record, fontname=Calibri, fontsize=11];
+
+  // Root node
+  root [label="Reference Node", color=darkgreen, fontcolor=darkgreen];
+
+  // Users
+  sue [label="{{User}|GivenName=Sue|FamilyName=Williams|Username=swilliams|Email=Sue.Williams@foo.com|BusinessPhone=02 1234 5678|MobilePhone=0414 123 456|PasswordSalt=fcd376dc|PasswordHash=a8635cfd...|PreviousPasswordSalt=gggf6dc|PreviousPasswordHash=wer435cfd...|RequirePasswordChange=true|FailedLoginAttempts=0|LastLoginAttempt=21 Jun 2011|DateCreated=20 Jun 2011}", color=blue, fontcolor=blue];
+  john [label="John (User)", color=blue, fontcolor=blue];
+  jack [label="Jack (User)", color=blue, fontcolor=blue];
+
+  // Clients
+  clint [label="{{Client}|UniqueId=100|GivenName=Clint|MiddleNames=Ian Bill|FamilyName=Wood|PreferredName=Woods|Gender=Male|Email=clint.wood@foo.com|Religion=Buddhist|LegalOrders=order1|DOB=21 Jun 1979|DOB Certainty=Confirmed}", color=blue, fontcolor=blue];
+  cat [label="Cat (Client)", color=blue, fontcolor=blue];
+
+  // Agency
+  acme [label="{{Agency}|UniqueId=100|Key=acme|Name=Acme Australia}", color=blue, fontcolor=blue];
+
+  // Centre
+  centreA [label="{{Centre}|Name=CentreA|BusinessPhone=02 1234 5678|Fax=0414 123 456|Email=xyz@bcb.com|Status=Active}", color=blue, fontcolor=blue];
+
+  // Addresses
+  centreAStreetAddress [label="{{PhysicalAddress}|Level 1|11 Sydney Road|Sydney NSW 2000|Australia}", color=blue, fontcolor=blue];
+  centreAPostalAddress [label="PO Box 123 (PhysicalAddress)", color=blue, fontcolor=blue];
+  clintCurrentAddress [label="{{CurrentAddress}|Level 1|11 Sydney Road|Sydney NSW 2000|Australia}", color=blue, fontcolor=blue];
+
+  // Reference Data
+  referenceData [label="Reference Data", color=blue, fontcolor=blue];
+  languagesReferenceData [label="Languages", color=blue, fontcolor=blue];
+  countriesReferenceData [label="Countries", color=blue, fontcolor=blue];
+
+  // Languages
+  english [label="{{Language}|Name=English}", color=blue, fontcolor=blue];
+  mandarin [label="Mandarin (Language)", color=blue, fontcolor=blue];
+  japanese [label="Japanese (Language)", color=blue, fontcolor=blue];
+
+  // Countries
+  australia [label="{{Country}|Name=Australia}", color=blue, fontcolor=blue];
+  china [label="China (Country)", color=blue, fontcolor=blue];
+
+  // Relationships
+  sue -> root [label="ADMINISTERS"];
+  root -> acme [label="HOSTS"];
+  root -> referenceData [label="HAS_REFERENCE_DATA"];
+
+  clint -> acme [label="CLIENT_BELONGS_TO"];
+  clint -> english [label="SPEAKS"];
+  clint -> clintCurrentAddress [label="HAS_STREET_ADDRESS"];
+
+  cat -> acme [label="CLIENT_BELONGS_TO"];
+  cat -> english [label="SPEAKS"];
+  cat -> mandarin [label="SPEAKS"];
+
+  john -> acme [label="USER_BELONGS_TO"];
+  jack -> acme [label="USER_BELONGS_TO"];
+
+  centreA -> acme [label="CENTRE_BELONGS_TO"];
+  centreA -> centreAStreetAddress [label="HAS_STREET_ADDRESS"];
+  centreA -> centreAPostalAddress [label="HAS_POSTAL_ADDRESS"];
+
+  referenceData -> languagesReferenceData [label="HAS_LANGUAGES"];
+  referenceData -> countriesReferenceData [label="HAS_COUNTRIES"];
+
+  languagesReferenceData -> english [label="HAS_LANGUAGE"];
+  languagesReferenceData -> mandarin [label="HAS_LANGUAGE"];
+  languagesReferenceData -> japanese [label="HAS_LANGUAGE"];
+
+  countriesReferenceData -> australia [label="HAS_COUNTRY"];
+  countriesReferenceData -> china [label="HAS_COUNTRY"];
+}
+```
+
+### Second Try from CockPilot
+
+```kroki-graphviz
+digraph ReferenceGraph {
+  nodesep = 2;
+  edge [color=gray50, fontname=Calibri, fontsize=11];
+  node [shape=record, fontname=Calibri, fontsize=11];
+
+  // Root
+  root [label="Reference Node", color=darkgreen, fontcolor=darkgreen];
+
+  // Users
+  subgraph clusterUsers {
+    label = "Users";
+    style = dashed;
+    sue [label="{{User}|{GivenName=Sue}|{FamilyName=Williams}|{Username=swilliams}|{EmailAddress=Sue.Williams@foo.com}|{BusinessPhone=02 1234 5678}|{MobilePhone=0414 123 456}|{PasswordSalt=fcd376dc}|{PasswordHash=a8635cfd2930ebc0cc78}|{PreviousPasswordSalt=gggf6dc}|{PreviousPasswordHash=wer435cfd2930ebc0cc78}|{RequirePasswordChangeOnNextLogin=true}|FailedLoginAttempts=0|LastLoginAttemptUtc=21 Jun 2011 16:43:01 UTC|{DateCreatedUtc=20 Jun 2011 15:43:07 UTC}}", color=blue, fontcolor=blue];
+    john [label="John (User)", color=blue, fontcolor=blue];
+    jack [label="Jack (User)", color=blue, fontcolor=blue];
+  }
+
+  // Clients
+  subgraph clusterClients {
+    label = "Clients";
+    style = dashed;
+    clint [label="{{Client}|{UniqueId=100}|{GivenName=Clint}|{MiddleNames=ian bill}|{FamilyName=Wood}|{PreferredName=Woods}|{Gender=Male Female Unknown}|{PlaceOfBirthTown}|{PlaceOfBirthState}|{PlaceOfBirthCountry}|{Email=clint.wood@foo.com}|{LanguageComments}|{InterpreterRequired=true false}|{InterpreterComments}|{Religion=Buddhist}|{LegalOrders=order1}|{DateOfBirth=21 June 1979}|{DateOfBirthCertainty=Confirmed Unconfirmed Estimated}}", color=blue, fontcolor=blue];
+    cat [label="Cat (Client)", color=blue, fontcolor=blue];
+  }
+
+  // Agencies and Centres
+  subgraph clusterAgencies {
+    label = "Agencies and Centres";
+    style = dashed;
+    acme [label="{{Agency}|{UniqueId=100}|{Key=acme}|{Name=Acme Australia}}", color=blue, fontcolor=blue];
+    centreA [label="{{Centre}|{Name=CentreA}|{BusinessPhone=02 1234 5678}|{Fax=0414 123 456}|{Email=xyz@bcb.com}|{Status=Active}}", color=blue, fontcolor=blue];
+  }
+
+  // Addresses
+  subgraph clusterAddresses {
+    label = "Addresses";
+    style = dashed;
+    centreAStreetAddress [label="{{PhysicalAddress}|{Line 1=Level 1}|{Line 2=11 Sydney Road}|{TownSuburb=Sydney}|{State=NSW}|{Postcode=2000}|{Country=Australia}}", color=blue, fontcolor=blue];
+    centreAPostalAddress [label="PO Box 123 (PhysicalAddress)"];
+    clintCurrentAddress [label="{{CurrentAddress}|{Line 1=Level 1}|{Line 2=11 Sydney Road}|{TownSuburb=Sydney}|{State=NSW}|{Postcode=2000}|{Country=Australia}}", color=blue, fontcolor=blue];
+  }
+
+  // Reference Data
+  subgraph clusterReferenceData {
+    label = "Reference Data";
+    style = dashed;
+    referenceData [label="Reference Data"];
+    languagesReferenceData [label="Languages"];
+    countriesReferenceData [label="Countries"];
+    english [label="{{Language}|{Name=English}}", color=blue, fontcolor=blue];
+    mandarin [label="Mandarin (Language)"];
+    japanese [label="Japanese (Language)"];
+    australia [label="{{Country}|{Name=Australia}}", color=blue, fontcolor=blue];
+    china [label="China (Country)"];
+  }
+
+  // Relationships
+  sue -> root [label="ADMINISTERS"];
+  root -> acme [label="HOSTS"];
+  root -> referenceData [label="HAS_REFERENCE_DATA"];
+
+  clint -> acme [label="CLIENT_BELONGS_TO"];
+  clint -> english [label="SPEAKS"];
+  clint -> clintCurrentAddress [label="HAS_STREET_ADDRESS"];
+
+  cat -> acme [label="CLIENT_BELONGS_TO"];
+  cat -> english [label="SPEAKS"];
+  cat -> mandarin [label="SPEAKS"];
+
+  john -> acme [label="USER_BELONGS_TO"];
+  jack -> acme [label="USER_BELONGS_TO"];
+
+  centreA -> acme [label="CENTRE_BELONGS_TO"];
+  centreA -> centreAStreetAddress [label="HAS_STREET_ADDRESS"];
+  centreA -> centreAPostalAddress [label="HAS_POSTAL_ADDRESS"];
+
+  referenceData -> languagesReferenceData [label="HAS_LANGUAGES"];
+  referenceData -> countriesReferenceData [label="HAS_COUNTRIES"];
+
+  languagesReferenceData -> english [label="HAS_LANGUAGE"];
+  languagesReferenceData -> mandarin [label="HAS_LANGUAGE"];
+  languagesReferenceData -> japanese [label="HAS_LANGUAGE"];
+
+  countriesReferenceData -> australia [label="HAS_COUNTRY"];
+  countriesReferenceData -> china [label="HAS_COUNTRY"];
+}
+```
+
+
 ## UML Class Diagram
 
 ```kroki-graphviz
