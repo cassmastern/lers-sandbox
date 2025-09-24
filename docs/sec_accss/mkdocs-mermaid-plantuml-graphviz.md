@@ -28,7 +28,7 @@ PlantUML diagrams are rendered server-side or at build-time via `mkdocs_puml`. T
 
 ### PlantUML Rendering Workflow
 
-```puml
+```kroki-plantuml
 @startuml
 title PlantUML Rendering Workflow
 

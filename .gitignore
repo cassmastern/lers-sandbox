@@ -32,6 +32,8 @@ commit-message.txt
 _archive
 # Environment-specific; for resolving PlnatUML server
 .env
+# Geany project file(s)
+*.geany
 
 
 
