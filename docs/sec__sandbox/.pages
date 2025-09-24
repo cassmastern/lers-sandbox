@@ -1,4 +1,4 @@
-hide: false
+hide: true
 title: Sandbox — for Local Development
 arrange:
   - index.md

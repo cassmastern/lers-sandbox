@@ -34,7 +34,7 @@ plugins:
   - mermaid2:
       javascript: js/mermaid.min.js
   - plantuml:
-      puml_url: http://192.168.1.7:8080
+      puml_url: http://192.168.1.4:8080
   - kroki
 
 markdown_extensions:
