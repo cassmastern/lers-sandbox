@@ -1,6 +1,6 @@
 # MkDocs Material 
 
-A modular, Dockerized documentation site built with MkDocs Material. Designed as a playground for CICD and accessibility (AODA/WCAG) features, and, hopefully, as a showcase.
+A modular, Dockerized documentation site built with MkDocs Material. Designed as a playground for CICD, development and dark-light 'theme-ing' of various diagram formats (PlantUML, Mermaid, Graphviz), accessibility (AODA/WCAG) features, and, hopefully, as a showcase.
 
 ## Features
 

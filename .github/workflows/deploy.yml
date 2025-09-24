@@ -43,9 +43,8 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/app \
             -w /app \
-            --env PLANTUML_HOST=www.plantuml.com/plantuml \
             mkdocs-builder:latest \
-            mkdocs build --verbose
+            mkdocs build -f mkdocs.prod.yml --verbose
 
       - name: 🔍 Verify build output
         run: |

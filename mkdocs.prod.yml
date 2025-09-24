@@ -1,0 +1,73 @@
+site_name: "Cass's Sandobx"
+site_url: https://cassmastern.github.io/cass-sandbox/
+docs_dir: docs
+copyright: "<a href='https://cassmastern.github.io/cass-sandbox/sec_about/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
+
+theme:
+  name: material
+  logo: img/logo.svg
+  favicon: img/favicon.ico
+  features:
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.select
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+  exclude:
+    - archive/
+
+plugins:
+  - awesome-pages
+  - search
+  - mermaid2:
+      javascript: js/mermaid.min.js
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml
+  - kroki
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+
+extra_javascript:
+  - js/seamaiden.js
+  - js/diagram-zoom.js
+  - js/alphabet-auto.js
+  - js/svg-patcher.js
+
+extra_css:
+  - # css/topbar.css
+  - css/alphabet.css
+  - css/diagram-zoom.css
+  - css/cm-logo.css
+  - css/color-vars.css
+  
+extra:
+  generator: false
+  analytics:
+    provider: google
+    property: G-GD2XWDMP2E
+  consent:
+    title: Cookie consent
+    description: >
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
