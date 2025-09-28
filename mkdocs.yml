@@ -1,4 +1,4 @@
-site_name: "Cass's Sandobx"
+site_name: "Ler's Sandobx"
 site_url: https://cassmastern.github.io/cass-sandbox/
 docs_dir: docs
 copyright: "<a href='https://cassmastern.github.io/cass-sandbox/sec_about/feedback/'><span class='logo-text'>CM</span> 2025.</a>"
@@ -53,7 +53,7 @@ extra_javascript:
   - js/svg-patcher.js
 
 extra_css:
-  - # css/topbar.css
+  # - css/topbar.css
   - css/alphabet.css
   - css/diagram-zoom.css
   - css/cm-logo.css

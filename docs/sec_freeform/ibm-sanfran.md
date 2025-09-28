@@ -362,7 +362,7 @@ EJBs and coarse-grained Java objects were designed for monolithic, on-premise Ja
 ## Sources
 
 - IBM press releases and archived Redbooks (~35%)
-- The usual suspect — GenAI — with its bottomless pool of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany  (~40%)
+- The usual GenAI suspects — with their bottomless pools of resources, including those fed by Universities of Hamburg (love the city) and Dresden, Germany  (~40%)
 - My long-term memory (~20%)
 
 ---

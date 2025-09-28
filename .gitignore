@@ -34,6 +34,8 @@ _archive
 .env
 # Geany project file(s)
 *.geany
+# Archive folder
+.archive
 
 
 
