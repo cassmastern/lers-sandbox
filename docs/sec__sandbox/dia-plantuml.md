@@ -80,86 +80,84 @@
 ## Network (Klod)
 
 ```puml
-    @startuml
-    !include <C4/C4_Container>
+@startuml
+title Data Centre Network Topology - 5 Zones
 
-    title Data Centre Network Topology - 5 Zones
+package "Public Zone" {
+  rectangle "User" as A
+  rectangle "Browser" as B
+  rectangle "DNS Resolver" as C
+}
 
-    rectangle "Public Zone" {
-    rectangle "User" as A
-    rectangle "Browser" as B  
-    rectangle "DNS Resolver" as C
-    }
+package "Network Edge Zone" {
+  rectangle "HTTPS Request" as D
+  rectangle "Firewall\nIngress ACLs" as E
+  rectangle "Reverse Proxy - Nginx\nHeader Sanitization" as F
+  rectangle "App Gateway\nTLS Termination" as G
+  rectangle "Load Balancer L7\nRate Limiting" as LB
+  rectangle "VPN Gateway\nPrivileged Access" as VPN
+}
 
-    rectangle "Network Edge Zone" {
-    rectangle "HTTPS Request" as D
-    rectangle "Firewall\nIngress ACLs" as E
-    rectangle "Reverse Proxy - Nginx\nHeader Sanitization" as F
-    rectangle "App Gateway\nTLS Termination" as G
-    rectangle "Load Balancer L7\nRate Limiting" as LB
-    rectangle "VPN Gateway\nPrivileged Access" as VPN
-    }
+package "Private App Zone" {
+  rectangle "Web App\nRBAC + Input Validation" as WA
+  rectangle "Primary Database\nEncrypted at Rest" as DB
+  rectangle "Redis Cache\nTTL + ACLs" as Cache
+  rectangle "Auth Service\nOAuth2 + JWT" as Auth
+  rectangle "Audit Logger\nImmutable Store" as Audit
+  rectangle "Read Replicas\nRead-Only" as Replicas
+  rectangle "Identity Provider\nFederated Trust" as IdP
+  rectangle "SIEM Integration\nSecurity Alerts" as SIEM
+}
 
-    rectangle "Private App Zone" {
-    rectangle "Web App\nRBAC + Input Validation" as WA
-    rectangle "Primary Database\nEncrypted at Rest" as DB
-    rectangle "Redis Cache\nTTL + ACLs" as Cache
-    rectangle "Auth Service\nOAuth2 + JWT" as Auth
-    rectangle "Audit Logger\nImmutable Store" as Audit
-    rectangle "Read Replicas\nRead-Only" as Replicas
-    rectangle "Identity Provider\nFederated Trust" as IdP
-    rectangle "SIEM Integration\nSecurity Alerts" as SIEM
-    }
+package "Monitoring and Tracing" {
+  rectangle "Metrics Exporter" as Metrics
+  rectangle "Tracing Agent" as Traces
+  rectangle "Prometheus\nAccess Controls" as Prometheus
+  rectangle "Jaeger\nTrace Retention" as Jaeger
+}
 
-    rectangle "Monitoring and Tracing" {
-    rectangle "Metrics Exporter" as Metrics
-    rectangle "Tracing Agent" as Traces
-    rectangle "Prometheus\nAccess Controls" as Prometheus
-    rectangle "Jaeger\nTrace Retention" as Jaeger
-    }
+package "CI/CD Pipeline" {
+  rectangle "Git Repository\nBranch Protections" as Git
+  rectangle "Build Agent\nSandboxed" as Runner
+  rectangle "Container Registry\nSigned Images" as Registry
+  rectangle "Deployment Job\nRole Separation" as Deploy
+}
 
-    rectangle "CI/CD Pipeline" {
-    rectangle "Git Repository\nBranch Protections" as Git
-    rectangle "Build Agent\nSandboxed" as Runner
-    rectangle "Container Registry\nSigned Images" as Registry
-    rectangle "Deployment Job\nRole Separation" as Deploy
-    }
+' North-South Traffic Flow
+A --> B : North-South
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> LB
+LB --> WA
 
-    ' North-South Traffic Flow
-    A --> B : North-South
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> LB
-    LB --> WA
+' Privileged Access
+VPN --> WA : Privileged Tunnel
 
-    ' Privileged Access
-    VPN --> WA : Privileged Tunnel
+' East-West Traffic Flow
+WA --> DB : East-West
+DB --> Replicas
+WA --> Cache : East-West
+WA --> Auth : East-West
+Auth --> IdP
+WA --> Audit : East-West
+Audit --> SIEM
 
-    ' East-West Traffic Flow
-    WA --> DB : East-West
-    DB --> Replicas
-    WA --> Cache : East-West
-    WA --> Auth : East-West
-    Auth --> IdP
-    WA --> Audit : East-West
-    Audit --> SIEM
+' Telemetry
+WA --> Metrics : Telemetry
+Metrics --> Prometheus
+WA --> Traces : Telemetry
+Traces --> Jaeger
 
-    ' Telemetry
-    WA --> Metrics : Telemetry
-    Metrics --> Prometheus
-    WA --> Traces : Telemetry
-    Traces --> Jaeger
+' CI/CD Integration
+Git --> Runner
+Runner --> Registry
+Registry --> Deploy
+Deploy --> WA
 
-    ' CI/CD Integration
-    Git --> Runner
-    Runner --> Registry
-    Registry --> Deploy
-    Deploy --> WA
+note bottom : Traffic flows north-south from public users\nand east-west between internal services
 
-    note bottom : Traffic flows north-south from public users\nand east-west between internal services
-
-    @enduml
+@enduml
 ```
