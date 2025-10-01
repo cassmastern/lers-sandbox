@@ -33,7 +33,7 @@ plugins:
   - mermaid2:
       javascript: js/mermaid.min.js
   - plantuml:
-      puml_url: https://plantuml-fly.fly.dev
+      puml_url: https://plantuml-server-jetty-6q7b.onrender.com
   - kroki
 
 markdown_extensions:
