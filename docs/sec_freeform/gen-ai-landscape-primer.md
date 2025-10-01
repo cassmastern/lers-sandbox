@@ -6,50 +6,46 @@ The Generative Artificial Intelligence (GenAI) landscape has evolved into a comp
 
 ## Foundation Models Architecture
 
-```puml
-@startuml
-title Foundation Models Ecosystem
+```mermaid
+flowchart TB
+  subgraph Foundation_Models["Foundation Models"]
+    LLM["Large Language Models"]
+    MM["Multimodal Models"]
+    CGM["Code Generation Models"]
+    IGM["Image Generation Models"]
+    ASM["Audio/Speech Models"]
+    VGM["Video Generation Models"]
+  end
 
-package "Foundation Models" {
-  [Large Language Models] as LLM
-  [Multimodal Models] as MM
-  [Code Generation Models] as CGM
-  [Image Generation Models] as IGM
-  [Audio/Speech Models] as ASM
-  [Video Generation Models] as VGM
-}
+  subgraph Model_Architectures["Model Architectures"]
+    TRANS["Transformer"]
+    DIFF["Diffusion Models"]
+    VAE["VAE/GAN Hybrids"]
+    SSM["State Space Models"]
+    MOE["Mixture of Experts"]
+  end
 
-package "Model Architectures" {
-  [Transformer] as TRANS
-  [Diffusion Models] as DIFF
-  [VAE/GAN Hybrids] as VAE
-  [State Space Models] as SSM
-  [Mixture of Experts] as MOE
-}
+  subgraph Training_Approaches["Training Approaches"]
+    PRE["Pre-training"]
+    FT["Fine-tuning"]
+    RLHF["RLHF"]
+    CAI["Constitutional AI"]
+    ICL["In-Context Learning"]
+  end
 
-package "Training Approaches" {
-  [Pre-training] as PRE
-  [Fine-tuning] as FT
-  [RLHF] as RLHF
-  [Constitutional AI] as CAI
-  [In-Context Learning] as ICL
-}
+  LLM --> TRANS
+  MM --> TRANS
+  IGM --> DIFF
+  ASM --> TRANS
+  VGM --> DIFF
 
-LLM --> TRANS
-MM --> TRANS
-IGM --> DIFF
-ASM --> TRANS
-VGM --> DIFF
+  TRANS --> PRE
+  DIFF --> PRE
+  MOE --> PRE
 
-TRANS --> PRE
-DIFF --> PRE
-MOE --> PRE
-
-PRE --> FT
-FT --> RLHF
-RLHF --> CAI
-
-@enduml
+  PRE --> FT
+  FT --> RLHF
+  RLHF --> CAI
 ```
 
 ### Foundation Model Types
@@ -62,56 +58,52 @@ RLHF --> CAI
 
 ## Infrastructure and Compute Layer
 
-```puml
-@startuml
-title GenAI Infrastructure Stack
+```mermaid
+flowchart TB
+  subgraph Hardware_Layer["Hardware Layer"]
+    GPU["GPU Clusters"]
+    TPU["TPU Pods"]
+    ACCEL["AI Accelerators"]
+    HSI["High-Speed Interconnects"]
+  end
 
-package "Hardware Layer" {
-  [GPU Clusters] as GPU
-  [TPU Pods] as TPU
-  [AI Accelerators] as ACCEL
-  [High-Speed Interconnects] as HSI
-}
+  subgraph System_Software["System Software"]
+    CUDA["CUDA/ROCm"]
+    DIST["Distributed Training"]
+    MP["Model Parallelism"]
+    MEM["Memory Management"]
+  end
 
-package "System Software" {
-  [CUDA/ROCm] as CUDA
-  [Distributed Training] as DIST
-  [Model Parallelism] as MP
-  [Memory Management] as MEM
-}
+  subgraph ML_Frameworks["ML Frameworks"]
+    TORCH["PyTorch"]
+    JAX["JAX/Flax"]
+    TF["TensorFlow"]
+    HF["Hugging Face"]
+  end
 
-package "ML Frameworks" {
-  [PyTorch] as TORCH
-  [JAX/Flax] as JAX
-  [TensorFlow] as TF
-  [Hugging Face] as HF
-}
+  subgraph Orchestration["Orchestration"]
+    K8S["Kubernetes"]
+    RAY["Ray"]
+    MLF["MLflow"]
+    WB["Weights & Biases"]
+  end
 
-package "Orchestration" {
-  [Kubernetes] as K8S
-  [Ray] as RAY
-  [MLflow] as MLF
-  [Weights & Biases] as WB
-}
+  subgraph Inference_Serving["Inference Serving"]
+    VLLM["vLLM"]
+    TRT["TensorRT-LLM"]
+    TGI["Text Generation Inference"]
+    TRITON["Triton"]
+  end
 
-package "Inference Serving" {
-  [vLLM] as VLLM
-  [TensorRT-LLM] as TRT
-  [Text Generation Inference] as TGI
-  [Triton] as TRITON
-}
-
-GPU --> CUDA
-TPU --> JAX
-CUDA --> TORCH
-CUDA --> DIST
-TORCH --> HF
-JAX --> HF
-K8S --> RAY
-RAY --> VLLM
-VLLM --> TRT
-
-@enduml
+  GPU --> CUDA
+  TPU --> JAX
+  CUDA --> TORCH
+  CUDA --> DIST
+  TORCH --> HF
+  JAX --> HF
+  K8S --> RAY
+  RAY --> VLLM
+  VLLM --> TRT
 ```
 
 ### Hardware Infrastructure
@@ -133,47 +125,43 @@ VLLM --> TRT
 
 ## Model Optimization and Deployment
 
-```puml
-@startuml
-title Model Optimization Pipeline
+```mermaid
+flowchart TB
+  subgraph Model_Compression["Model Compression"]
+    QUANT["Quantization"]
+    PRUNE["Pruning"]
+    DISTILL["Distillation"]
+    LORA["LoRA/QLoRA"]
+  end
 
-package "Model Compression" {
-  [Quantization] as QUANT
-  [Pruning] as PRUNE
-  [Distillation] as DIST
-  [LoRA/QLoRA] as LORA
-}
+  subgraph Inference_Optimization["Inference Optimization"]
+    KV["KV Caching"]
+    SPEC["Speculative Decoding"]
+    CB["Continuous Batching"]
+    PA["PagedAttention"]
+  end
 
-package "Inference Optimization" {
-  [KV Caching] as KV
-  [Speculative Decoding] as SPEC
-  [Continuous Batching] as CB
-  [PagedAttention] as PA
-}
+  subgraph Deployment_Patterns["Deployment Patterns"]
+    API["Model Serving APIs"]
+    EDGE["Edge Deployment"]
+    FED["Federated Inference"]
+    HYBRID["Hybrid Cloud"]
+  end
 
-package "Deployment Patterns" {
-  [Model Serving APIs] as API
-  [Edge Deployment] as EDGE
-  [Federated Inference] as FED
-  [Hybrid Cloud] as HYBRID
-}
+  subgraph Performance_Monitoring["Performance Monitoring"]
+    LAT["Latency Tracking"]
+    THRU["Throughput Metrics"]
+    COST["Cost Optimization"]
+    QUAL["Quality Monitoring"]
+  end
 
-package "Performance Monitoring" {
-  [Latency Tracking] as LAT
-  [Throughput Metrics] as THRU
-  [Cost Optimization] as COST
-  [Quality Monitoring] as QUAL
-}
-
-QUANT --> KV
-LORA --> CB
-KV --> API
-SPEC --> API
-API --> LAT
-API --> COST
-EDGE --> QUAL
-
-@enduml
+  QUANT --> KV
+  LORA --> CB
+  KV --> API
+  SPEC --> API
+  API --> LAT
+  API --> COST
+  EDGE --> QUAL
 ```
 
 ### Model Compression Techniques
@@ -194,50 +182,46 @@ EDGE --> QUAL
 
 ## Application Architecture Patterns
 
-```puml
-@startuml
-title GenAI Application Patterns
+```mermaid
+flowchart TB
+  subgraph RAG["Retrieval Augmented Generation"]
+    VDB["Vector Databases"]
+    EMB["Embedding Models"]
+    RET["Retrieval Pipeline"]
+    FUSION["Context Fusion"]
+  end
 
-package "Retrieval Augmented Generation" {
-  [Vector Databases] as VDB
-  [Embedding Models] as EMB
-  [Retrieval Pipeline] as RET
-  [Context Fusion] as FUSION
-}
+  subgraph Agents["Agent Frameworks"]
+    PLAN["Planning"]
+    TOOLS["Tool Use"]
+    MEMSYS["Memory Systems"]
+    MAC["Multi-Agent Coordination"]
+  end
 
-package "Agent Frameworks" {
-  [Planning] as PLAN
-  [Tool Use] as TOOLS
-  [Memory Systems] as MEM
-  [Multi-Agent Coordination] as MAC
-}
+  subgraph Fine_Tuning["Fine-tuning Pipelines"]
+    DATA["Dataset Preparation"]
+    TRAIN["Training Infrastructure"]
+    EVAL["Evaluation Frameworks"]
+    REG["Model Registry"]
+  end
 
-package "Fine-tuning Pipelines" {
-  [Dataset Preparation] as DATA
-  [Training Infrastructure] as TRAIN
-  [Evaluation Frameworks] as EVAL
-  [Model Registry] as REG
-}
+  subgraph Production["Production Systems"]
+    GATE["API Gateways"]
+    LB["Load Balancing"]
+    CACHE["Caching Layers"]
+    MON["Monitoring/Logging"]
+  end
 
-package "Production Systems" {
-  [API Gateways] as GATE
-  [Load Balancing] as LB
-  [Caching Layers] as CACHE
-  [Monitoring/Logging] as MON
-}
-
-EMB --> VDB
-VDB --> RET
-RET --> FUSION
-PLAN --> TOOLS
-TOOLS --> MEM
-DATA --> TRAIN
-TRAIN --> EVAL
-EVAL --> REG
-GATE --> LB
-LB --> CACHE
-
-@enduml
+  EMB --> VDB
+  VDB --> RET
+  RET --> FUSION
+  PLAN --> TOOLS
+  TOOLS --> MEMSYS
+  DATA --> TRAIN
+  TRAIN --> EVAL
+  EVAL --> REG
+  GATE --> LB
+  LB --> CACHE
 ```
 
 ### Retrieval-Augmented Generation (RAG)
@@ -261,48 +245,44 @@ Frameworks like LangChain, CrewAI, and AutoGen enable multi-agent coordination f
 
 ## Evaluation and Safety
 
-```puml
-@startuml
-title Evaluation and Safety Framework
+```mermaid
+flowchart TB
+  subgraph Capability_Eval["Capability Evaluation"]
+    BENCH["Benchmarks"]
+    HUMAN["Human Evaluation"]
+    AUTO["Automated Scoring"]
+    DOMAIN["Domain-Specific Tests"]
+  end
 
-package "Capability Evaluation" {
-  [Benchmarks] as BENCH
-  [Human Evaluation] as HUMAN
-  [Automated Scoring] as AUTO
-  [Domain-Specific Tests] as DOMAIN
-}
+  subgraph Safety_Measures["Safety Measures"]
+    ALIGN["Alignment Training"]
+    CONST["Constitutional AI"]
+    RED["Red Teaming"]
+    INTERP["Interpretability"]
+  end
 
-package "Safety Measures" {
-  [Alignment Training] as ALIGN
-  [Constitutional AI] as CONST
-  [Red Teaming] as RED
-  [Interpretability] as INTERP
-}
+  subgraph Monitoring["Monitoring Systems"]
+    DRIFT["Drift Detection"]
+    BIAS["Bias Monitoring"]
+    PERF["Performance Tracking"]
+    GUARD["Safety Guardrails"]
+  end
 
-package "Monitoring Systems" {
-  [Drift Detection] as DRIFT
-  [Bias Monitoring] as BIAS
-  [Performance Tracking] as PERF
-  [Safety Guardrails] as GUARD
-}
+  subgraph Governance["Governance"]
+    CARDS["Model Cards"]
+    AUDIT["Audit Trails"]
+    COMP["Compliance Tracking"]
+    RISK["Risk Assessment"]
+  end
 
-package "Governance" {
-  [Model Cards] as CARDS
-  [Audit Trails] as AUDIT
-  [Compliance Tracking] as COMP
-  [Risk Assessment] as RISK
-}
-
-BENCH --> AUTO
-HUMAN --> DOMAIN
-ALIGN --> CONST
-CONST --> RED
-DRIFT --> BIAS
-BIAS --> GUARD
-CARDS --> AUDIT
-AUDIT --> RISK
-
-@enduml
+  BENCH --> AUTO
+  HUMAN --> DOMAIN
+  ALIGN --> CONST
+  CONST --> RED
+  DRIFT --> BIAS
+  BIAS --> GUARD
+  CARDS --> AUDIT
+  AUDIT --> RISK
 ```
 
 ### Evaluation Frameworks
