@@ -34,7 +34,7 @@ plugins:
       javascript: js/mermaid.min.js
   - plantuml:
       #puml_url: https://plantuml-server-jetty-6q7b.onrender.com/svg/
-      #puml_url: https://plantuml.com/plantuml
+      puml_url: https://plantuml.com/plantuml
   - kroki
 
 markdown_extensions:
