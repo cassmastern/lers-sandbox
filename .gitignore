@@ -28,8 +28,6 @@ node_modules/
 *.bak2
 # Temporary commit message file
 commit-message.txt
-# Misc resources, history, etc.
-_archive
 # Environment-specific; for resolving PlnatUML server
 .env
 # Geany project file(s)
@@ -39,3 +37,4 @@ _archive
 
 
 
+.directory
