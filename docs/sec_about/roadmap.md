@@ -20,6 +20,7 @@ gantt
 
 ## Changelog
 
+- 2025.10.05 A [topic](../sec_freeform/identity.md) on digital identity and its ~30-year evolution from password chaos to token sprawl.
 - 2025.09.19 New topic — a presentation cheat sheet/report/article on the current [GenAI landscape](../sec_freeform/gen-ai-landscape-primer.md).
 - 2025.09.12 Added support for PlantUML, as well as a current state of affairs before I move forward, [Diagram Accessibility in MkDocs Material: Current State & Path Forward](../sec_accss/mkdocs-mermaid-plantuml-graphviz.md).
 - 2025.08.27 Dropped JS injector approach in favor of accessibility mechanism in mermaid2; added local version of `mermaid.min.js`, [Breakthrough #1](../sec_accss/breakthru1-mermaid-svg.md).

@@ -33,7 +33,7 @@ commit-message.txt
 # Geany project file(s)
 *.geany
 # Archive folder
-.archive
+_archive
 
 
 

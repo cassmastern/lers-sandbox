@@ -6,3 +6,5 @@ This section contains speculative concepts, technical essays, 'technical memoirs
 - [AI-Augmented Accessibility — A Technical Daydream](ai-accessibility.md)
 - [AI-Augmented Accessibility — From Daydream to Concept Note](ai-accessibility_bus.md)
 - [GenAI Landscape Primer](gen-ai-landscape-primer.md)
+- [The Long Arc of Digital Identity (A Comparative Essay)](identity.md)
+
