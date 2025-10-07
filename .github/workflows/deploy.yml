@@ -1,9 +1,7 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy Prebuilt MkDocs Site to GitHub Pages
 
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -17,118 +15,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: 🏗️ Build Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: false
-          tags: mkdocs-builder:latest
-          load: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Build MkDocs site
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/app \
-            -w /app \
-            mkdocs-builder:latest \
-            mkdocs build -f mkdocs.prod.yml --verbose
-
-      - name: 🔍 Verify build output
-        run: |
-          if [ ! -d "./site" ]; then
-            echo "ERROR: MkDocs output folder './site' not found."
-            ls -la ./
-            exit 1
-          fi
-          echo "Build output directory found"
-
-          essential_files=(
-            "index.html"
-            "search/search_index.json"
-            "js/alttext-inject.js"
-            "js/diagram-zoom.js"
-            "css/accessibility.css"
-            "css/diagram-zoom.css"
-          )
-
-          for file in "${essential_files[@]}"; do
-            if [ -f "./site/$file" ]; then
-              echo "Found: $file"
-            else
-              echo "Missing: $file"
-            fi
-          done
-
-          mermaid_count=$(find ./site -name "*.html" -exec grep -l "mermaid" {} \; | wc -l)
-          echo "Found $mermaid_count HTML files with Mermaid content"
-
-          if [ -f "./site/js/alttext-inject.js" ]; then
-            js_size=$(stat -c%s "./site/js/alttext-inject.js")
-            echo "alttext-inject.js size: ${js_size} bytes"
-          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  accessibility-test:
-    needs: deploy
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    continue-on-error: true
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-
-      - name: Wait for deployment to settle
-        run: sleep 30
-
-      - name: Install Pa11y locally
-        run: npm install pa11y --save-dev
-
-      - name: Install Chromium sandbox deps
-        run: |
-          sudo apt-get update && sudo apt-get install -y chromium-browser
-          echo "CHROME_BIN=/usr/bin/chromium-browser" >> $GITHUB_ENV
-
-      - name: Run Pa11y accessibility test
-        run: |
-          echo "Running Pa11y against live site"
-          npx pa11y ${{ steps.deployment.outputs.page_url }} \
-            --config .pa11yci.json \
-            --reporter cli
-
-      - name: Log fallback if Pa11y fails
-        if: failure()
-        run: echo "Pa11y test failed—check npm rate limits or retry later"

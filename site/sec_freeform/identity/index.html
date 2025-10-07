@@ -1,0 +1,1364 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_freeform/identity/" rel="canonical"/>
+<link href="../gen-ai-landscape-primer/" rel="prev"/>
+<link href="../../sec_net-sec/" rel="next"/>
+<link href="../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
+<title>The Long Arc of Digital Identity: From Islands to Federation - Ler's Sandobx</title>
+<link href="../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/alphabet.css" rel="stylesheet"/>
+<link href="../../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../../css/cm-logo.css" rel="stylesheet"/>
+<link href="../../css/color-vars.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#the-long-arc-of-digital-identity-from-islands-to-federation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Ler's Sandobx
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              The Long Arc of Digital Identity: From Islands to Federation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+    Ler's Sandobx
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_about/">
+<span class="md-ellipsis">
+    ABOUT THIS WEBSITE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            ABOUT THIS WEBSITE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/whatsinhere/">
+<span class="md-ellipsis">
+    What's in Here?
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-sitedev/">
+<span class="md-ellipsis">
+    How This Site Was Developed and Deployed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-wf-breakdown/">
+<span class="md-ellipsis">
+    Detailed Breakdown of My Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/roadmap/">
+<span class="md-ellipsis">
+    A Roadmap and a Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/feedback/">
+<span class="md-ellipsis">
+    Feedback
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cloud/">
+<span class="md-ellipsis">
+    IN THE CLOUDS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            IN THE CLOUDS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure/">
+<span class="md-ellipsis">
+    Architectures of AWS, GCP, and Azure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/jakarta-ee-azure/">
+<span class="md-ellipsis">
+    A Jakarta Enterprise Application on Azure
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_accss/">
+<span class="md-ellipsis">
+    ACCESSIBILITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            ACCESSIBILITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_/">
+<span class="md-ellipsis">
+    Accessibility Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/visuals-for-the-sightless/">
+<span class="md-ellipsis">
+    Visuals for the Sightless (Accessibility, Round Two)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_diagram-dilemma/">
+<span class="md-ellipsis">
+    The Diagramming Dilemma
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/breakthru1-mermaid-svg/">
+<span class="md-ellipsis">
+    An Accessible Mermaid Beyond Reach — A Breakthrough That Wasn't
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/breakthru2-mermaid-accessible/">
+<span class="md-ellipsis">
+    Mermaid Captured — Finally!
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<span class="md-ellipsis">
+    Diagram Accessibilit in MkDocs Material: Current State &amp; Path Forward
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    CONCEPTS, ESSAYS &amp; MORE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            CONCEPTS, ESSAYS &amp; MORE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ibm-sanfran/">
+<span class="md-ellipsis">
+    IBM SanFrancisco — A Technical Memoir
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ai-accessibility/">
+<span class="md-ellipsis">
+    AI-Augmented Accessibility — A Technical Daydream
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ai-accessibility_bus/">
+<span class="md-ellipsis">
+    AI‑Augmented Accessibility — From Daydream to Concept Note
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gen-ai-landscape-primer/">
+<span class="md-ellipsis">
+    GenAI Landscape Primer 2025
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    The Long Arc of Digital Identity: From Islands to Federation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    The Long Arc of Digital Identity: From Islands to Federation
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+<span class="md-ellipsis">
+      Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-1-local-authentication-1990s">
+<span class="md-ellipsis">
+      Era 1: Local Authentication (1990s)
+    </span>
+</a>
+<nav aria-label="Era 1: Local Authentication (1990s)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-it-failed">
+<span class="md-ellipsis">
+      Why It Failed
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-2-centralized-identity-management-early-2000s">
+<span class="md-ellipsis">
+      Era 2: Centralized Identity Management (Early 2000s)
+    </span>
+</a>
+<nav aria-label="Era 2: Centralized Identity Management (Early 2000s)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked_1">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-value-proposition">
+<span class="md-ellipsis">
+      The Value Proposition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-limitations">
+<span class="md-ellipsis">
+      The Limitations
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-3-web-federation-via-saml-mid-2000s-to-2010s">
+<span class="md-ellipsis">
+      Era 3: Web Federation via SAML (Mid-2000s to 2010s)
+    </span>
+</a>
+<nav aria-label="Era 3: Web Federation via SAML (Mid-2000s to 2010s)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked_2">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-mattered">
+<span class="md-ellipsis">
+      Why This Mattered
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-limitations_1">
+<span class="md-ellipsis">
+      The Limitations
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-4-token-based-federation-2010spresent">
+<span class="md-ellipsis">
+      Era 4: Token-Based Federation (2010s–Present)
+    </span>
+</a>
+<nav aria-label="Era 4: Token-Based Federation (2010s–Present)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked_3">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-won">
+<span class="md-ellipsis">
+      Why This Won
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-trade-offs">
+<span class="md-ellipsis">
+      The Trade-Offs
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparative-analysis">
+<span class="md-ellipsis">
+      Comparative Analysis
+    </span>
+</a>
+<nav aria-label="Comparative Analysis" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-common-thread">
+<span class="md-ellipsis">
+      The Common Thread
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-they-coexist-today">
+<span class="md-ellipsis">
+      How They Coexist Today
+    </span>
+</a>
+<nav aria-label="How They Coexist Today" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#additional-modern-layers">
+<span class="md-ellipsis">
+      Additional Modern Layers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-migration-patterns">
+<span class="md-ellipsis">
+      Common Migration Patterns
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-history-matters">
+<span class="md-ellipsis">
+      Why This History Matters
+    </span>
+</a>
+<nav aria-label="Why This History Matters" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-decision-makers">
+<span class="md-ellipsis">
+      For Decision-Makers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-developers">
+<span class="md-ellipsis">
+      For Developers
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-next-frontier">
+<span class="md-ellipsis">
+      The Next Frontier
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wrap-up">
+<span class="md-ellipsis">
+      Wrap-up
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_net-sec/">
+<span class="md-ellipsis">
+    NETWORKS &amp; SECURITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            NETWORKS &amp; SECURITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center/">
+<span class="md-ellipsis">
+    A Hypothetical Data Centre Network
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_stride/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — STRIDE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_mitre/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — MITRE ATT&amp;CK
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/saml-admin/">
+<span class="md-ellipsis">
+    Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cheatsheets/">
+<span class="md-ellipsis">
+    VARIOUS CHEAT SHEETS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            VARIOUS CHEAT SHEETS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-docker/">
+<span class="md-ellipsis">
+    Docker Command Cheatsheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-kubectl/">
+<span class="md-ellipsis">
+    Kubectl Command Cheat Sheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet_compound-modifiers/">
+<span class="md-ellipsis">
+    Compound Modifiers Cheat Sheet
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_gloss/">
+<span class="md-ellipsis">
+    MISC GLOSSARIES
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            MISC GLOSSARIES
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_oss/">
+<span class="md-ellipsis">
+    Glossary of OSS Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_networking/">
+<span class="md-ellipsis">
+    Glossary of Networking Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_kuber/">
+<span class="md-ellipsis">
+    Glossary of Kubernetes Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_cloud-native/">
+<span class="md-ellipsis">
+    Glossary of Cloud-Native Terms
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+<span class="md-ellipsis">
+      Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-1-local-authentication-1990s">
+<span class="md-ellipsis">
+      Era 1: Local Authentication (1990s)
+    </span>
+</a>
+<nav aria-label="Era 1: Local Authentication (1990s)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-it-failed">
+<span class="md-ellipsis">
+      Why It Failed
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-2-centralized-identity-management-early-2000s">
+<span class="md-ellipsis">
+      Era 2: Centralized Identity Management (Early 2000s)
+    </span>
+</a>
+<nav aria-label="Era 2: Centralized Identity Management (Early 2000s)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked_1">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-value-proposition">
+<span class="md-ellipsis">
+      The Value Proposition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-limitations">
+<span class="md-ellipsis">
+      The Limitations
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-3-web-federation-via-saml-mid-2000s-to-2010s">
+<span class="md-ellipsis">
+      Era 3: Web Federation via SAML (Mid-2000s to 2010s)
+    </span>
+</a>
+<nav aria-label="Era 3: Web Federation via SAML (Mid-2000s to 2010s)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked_2">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-mattered">
+<span class="md-ellipsis">
+      Why This Mattered
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-limitations_1">
+<span class="md-ellipsis">
+      The Limitations
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#era-4-token-based-federation-2010spresent">
+<span class="md-ellipsis">
+      Era 4: Token-Based Federation (2010s–Present)
+    </span>
+</a>
+<nav aria-label="Era 4: Token-Based Federation (2010s–Present)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-worked_3">
+<span class="md-ellipsis">
+      How It Worked
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-won">
+<span class="md-ellipsis">
+      Why This Won
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-trade-offs">
+<span class="md-ellipsis">
+      The Trade-Offs
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparative-analysis">
+<span class="md-ellipsis">
+      Comparative Analysis
+    </span>
+</a>
+<nav aria-label="Comparative Analysis" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-common-thread">
+<span class="md-ellipsis">
+      The Common Thread
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-they-coexist-today">
+<span class="md-ellipsis">
+      How They Coexist Today
+    </span>
+</a>
+<nav aria-label="How They Coexist Today" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#additional-modern-layers">
+<span class="md-ellipsis">
+      Additional Modern Layers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-migration-patterns">
+<span class="md-ellipsis">
+      Common Migration Patterns
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-history-matters">
+<span class="md-ellipsis">
+      Why This History Matters
+    </span>
+</a>
+<nav aria-label="Why This History Matters" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-decision-makers">
+<span class="md-ellipsis">
+      For Decision-Makers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-developers">
+<span class="md-ellipsis">
+      For Developers
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-next-frontier">
+<span class="md-ellipsis">
+      The Next Frontier
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wrap-up">
+<span class="md-ellipsis">
+      Wrap-up
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="the-long-arc-of-digital-identity-from-islands-to-federation">The Long Arc of Digital Identity: From Islands to Federation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In the 1990s, every application was its own island. A user's "identity" was whatever record lived in that app's local database. As organizations grew, this model collapsed under its own weight — employees juggled dozens of credentials, IT departments drowned in password resets, and security became a game of whack-a-mole across disconnected systems.</p>
+<p>What followed was a 30-year evolution from <strong>isolated authentication</strong> toward <strong>federated trust</strong> — a journey that fundamentally changed how we think about identity in computing.</p>
+<p>This essay traces that evolution through four distinct eras, examining not just what changed, but <em>why</em> these shifts happened and what trade-offs each generation accepted. Understanding this progression helps explain the hybrid architectures most enterprises run today, where all four models often coexist in an uneasy alliance.</p>
+<h2 id="era-1-local-authentication-1990s">Era 1: Local Authentication (1990s)</h2>
+<p>Each application stored and verified credentials locally. Identity existed nowhere except inside that application's database.</p>
+<h3 id="how-it-worked">How It Worked</h3>
+<p>Applications performed simple string comparison or basic hashing against stored passwords:</p>
+<ul>
+<li>Passwords stored in plain text or weakly hashed (MD5, SHA-1)</li>
+<li>No salting, no key derivation functions</li>
+<li>Session management via simple cookies with minimal expiration</li>
+<li>Each app reimplemented authentication logic from scratch</li>
+</ul>
+<p>The flow of the rudimentory local authentication:</p>
+<div class="mermaid">graph TD
+    accTitle: Local authentication model from the 1990s
+    accDescr: Flow diagram showing isolated authentication where a User submits username and password directly to an Application, which then checks credentials against its own Local User Database. Each application maintains its own separate user store with no central identity management.
+
+    U[User] --&gt;|login: username + password| App1[Application]
+    App1 --&gt;|check credentials| DB1[Local User DB]
+</div>
+<h3 id="why-it-failed">Why It Failed</h3>
+<ul>
+<li><strong>The password problem:</strong> Users reused weak passwords across systems. A breach in one application meant credentials for all applications.</li>
+<li><strong>The operational nightmare:</strong> Onboarding a new employee meant manually creating accounts in 15+ systems. Off-boarding meant remembering to delete from all of them (spoiler: you forgot at least three).</li>
+<li><strong>No visibility:</strong> Security teams had no way to detect compromised accounts or enforce policies across systems. Audit trails existed in siloes, making forensics nearly impossible.</li>
+<li><strong>The breaking point:</strong> As web applications proliferated in the late 1990s, organizations realized they needed a fundamental rethink. You can't scale islands.</li>
+</ul>
+<h2 id="era-2-centralized-identity-management-early-2000s">Era 2: Centralized Identity Management (Early 2000s)</h2>
+<p>Identity became a <strong>shared organizational resource</strong>, managed centrally in directories (LDAP, eDirectory, Active Directory) and synchronized everywhere by meta-directory tools.</p>
+<h3 id="how-it-worked_1">How It Worked</h3>
+<ul>
+<li><strong>Directory Services:</strong> LDAP (Lightweight Directory Access Protocol, RFC 4511) became the standard. Applications no longer stored credentials — they performed <strong>bind operations</strong> against a directory server on port 389 (636 for LDAPS).</li>
+<li><strong>Meta-Directory Engines:</strong> Tools like Novell Identity Manager, Microsoft Identity Integration Server, and Sun Identity Manager used <strong>drivers</strong> to synchronize identity data:</li>
+<li><strong>Publisher/Subscriber channels:</strong> Changes flowed bidirectionally through a policy engine</li>
+<li><strong>Connectors:</strong> Java or ECMA-based adapters for each target system (AD, SAP, mainframes)</li>
+<li><strong>Policy-based provisioning:</strong> "If user.department = 'Engineering', create account in these systems with these attributes"</li>
+<li><strong>Conflict resolution:</strong> When multiple systems updated the same attribute, engines used timestamp-based or priority-based logic
+<strong>Password Synchronization:</strong> Some deployments used password filters (DLLs hooked into domain controllers) to intercept password changes and propagate them in real-time.</li>
+</ul>
+<p>Here is a diagram showing the centralized identity management and directory synchronization flow:</p>
+<div class="mermaid">graph TD
+    accTitle: Centralized identity management with directory synchronization
+    accDescr: Flow diagram showing how HR System feeds employee data to Novell Identity Manager, which provisions user objects to eDirectory and synchronizes accounts to Active Directory and Email System using specialized drivers. Users authenticate via LDAP bind on port 389 to eDirectory. This illustrates centralized identity with automated provisioning across multiple systems.
+    HR[HR System] --&gt;|new hire event| IDM[Novell Identity Manager]
+    IDM --&gt;|provision user object| eDir[eDirectory]
+    IDM --&gt;|sync account via AD driver| AD[Active Directory]
+    IDM --&gt;|sync account via email driver| Mail[Email System]
+    User[User] --&gt;|LDAP bind on port 389| eDir
+</div>
+<h3 id="the-value-proposition">The Value Proposition</h3>
+<ul>
+<li><strong>Single source of truth:</strong> HR system becomes authoritative; identity flows downstream automatically</li>
+<li><strong>Automated lifecycle:</strong> Hire-to-retire workflows replaced manual provisioning</li>
+<li><strong>Centralized policy enforcement:</strong> Password complexity, account expiration, role-based access</li>
+<li><strong>Audit trail:</strong> Who provisioned what, when, and why</li>
+</ul>
+<h3 id="the-limitations">The Limitations</h3>
+<ul>
+<li><strong>Still fundamentally internal:</strong> This model worked beautifully within an enterprise but offered no path to federate with partners, cloud services, or external applications.</li>
+<li><strong>Password synchronization is fragile:</strong> Keeping passwords in sync across systems created timing windows and failure modes. A better model would eliminate password synchronization entirely.</li>
+<li><strong>The cloud changes everything:</strong> By the late 2000s, SaaS applications appeared. Your internal directory couldn't provision accounts in Salesforce or Google Apps — at least not without complex connectors that broke constantly.</li>
+</ul>
+<h2 id="era-3-web-federation-via-saml-mid-2000s-to-2010s">Era 3: Web Federation via SAML (Mid-2000s to 2010s)</h2>
+<p>Instead of every application storing credentials, applications learned to <strong>trust</strong> an Identity Provider (IdP) to authenticate users and issue cryptographically signed <strong>assertions</strong>.</p>
+<h3 id="how-it-worked_2">How It Worked</h3>
+<p><strong>SAML 2.0 (Security Assertion Markup Language)</strong> introduced browser-based Single Sign-On:</p>
+<ol>
+<li>User accesses a Service Provider (SP) application</li>
+<li>SP generates an <code>AuthnRequest</code> and redirects the browser to the IdP</li>
+<li>IdP authenticates the user (typically against LDAP/AD)</li>
+<li>IdP generates a signed XML assertion containing user attributes</li>
+<li>Browser POSTs the assertion back to the SP's Assertion Consumer Service (ACS)</li>
+<li>SP validates the XML signature and grants access</li>
+</ol>
+<p><strong>The SAML Assertion:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;saml:Assertion&gt;</span>
+<span class="w">  </span><span class="nt">&lt;saml:Subject&gt;</span>
+<span class="w">    </span><span class="nt">&lt;saml:NameID&gt;</span>user@example.com<span class="nt">&lt;/saml:NameID&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/saml:Subject&gt;</span>
+<span class="w">  </span><span class="nt">&lt;saml:Conditions</span><span class="w"> </span><span class="na">NotBefore=</span><span class="s">"..."</span><span class="w"> </span><span class="na">NotOnOrAfter=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;saml:AudienceRestriction&gt;</span>
+<span class="w">      </span><span class="nt">&lt;saml:Audience&gt;</span>https://sp.example.com<span class="nt">&lt;/saml:Audience&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/saml:AudienceRestriction&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/saml:Conditions&gt;</span>
+<span class="w">  </span><span class="nt">&lt;saml:AttributeStatement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;saml:Attribute</span><span class="w"> </span><span class="na">Name=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;saml:AttributeValue&gt;</span>user@example.com<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/saml:Attribute&gt;</span>
+<span class="w">    </span><span class="nt">&lt;saml:Attribute</span><span class="w"> </span><span class="na">Name=</span><span class="s">"department"</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;saml:AttributeValue&gt;</span>Engineering<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/saml:Attribute&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/saml:AttributeStatement&gt;</span>
+<span class="w">  </span><span class="nt">&lt;ds:Signature&gt;</span>...<span class="nt">&lt;/ds:Signature&gt;</span>
+<span class="nt">&lt;/saml:Assertion&gt;</span>
+</code></pre></div></p>
+<ul>
+<li><strong>Trust Establishment:</strong> SP and IdP exchanged metadata XML files containing X.509 certificates (RSA-2048+) and endpoint URLs. The SP validated assertions using the IdP's public key — no shared secrets required.</li>
+<li><strong>Session Management:</strong> The <code>NotOnOrAfter</code> condition plus SP-side session cookies controlled SSO duration.</li>
+</ul>
+<p>Here is the single sign-on flow:</p>
+<div class="mermaid">graph TD
+    accTitle: SAML 2.0 browser-based single sign-on flow
+    accDescr: Sequence diagram showing SAML web SSO. Step 1: User Browser accesses protected resource at Service Provider. Step 2: SP generates SAML AuthnRequest. Step 3: SP redirects browser with AuthnRequest. Step 4: Browser POSTs AuthnRequest to Identity Provider. Step 5: IdP authenticates via LDAP against eDirectory or AD. Step 6: IdP generates signed SAML Assertion. Step 7: IdP sends HTTP POST with assertion to browser. Step 8: Browser POSTs assertion back to SP. Step 9: SP validates signature and grants access. This demonstrates cryptographic trust and browser-mediated federation.
+
+    U[User Browser] --&gt;|1 Access protected<br/>resource| SP[Service Provider]
+    SP --&gt;|2 Generate SAML<br/>AuthnRequest| SP
+    SP --&gt;|3 HTTP Redirect<br/>with AuthnRequest| U
+    U --&gt;|4 POST AuthnRequest| IdP[Identity Provider]
+    IdP --&gt;|5 Authenticate<br/>via LDAP| Dir[eDirectory or AD]
+    IdP --&gt;|6 Generate signed<br/>SAML Assertion| IdP
+    IdP --&gt;|7 HTTP POST<br/>assertion to ACS| U
+    U --&gt;|8 POST<br/>assertion| SP
+    SP --&gt;|9 Validate signature<br/>and grant access| U
+</div>
+<h3 id="why-this-mattered">Why This Mattered</h3>
+<ul>
+<li><strong>The cloud breakthrough:</strong> SAML enabled enterprises to federate with external SaaS providers. Employees could access Salesforce, Workday, and internal apps with one login.</li>
+<li><strong>Cryptographic trust:</strong> XML signatures meant SPs didn't need to call back to the IdP to validate assertions — they could verify them locally using public-key cryptography.</li>
+<li><strong>Attribute propagation:</strong> Assertions carried user attributes (email, role, department), enabling attribute-based access control without provisioning accounts in advance.</li>
+<li><strong>Cross-organizational federation:</strong> Universities formed federations (InCommon, eduGAIN) where students could access resources at any member institution.</li>
+</ul>
+<h3 id="the-limitations_1">The Limitations</h3>
+<ul>
+<li><strong>Web-only:</strong> SAML assumed browser redirects. Native mobile apps and API-to-API communication didn't fit the model.</li>
+<li><strong>XML complexity:</strong> SAML's XML signatures and canonicalization rules were notoriously difficult to implement correctly. Many implementations had security vulnerabilities.</li>
+<li><strong>Single Logout is a nightmare:</strong> SAML Single Logout (SLO) attempted to terminate sessions at IdP and all SPs simultaneously — but relied on browser redirects and cooperation from all parties. In practice, it rarely worked reliably.</li>
+<li><strong>The mobile revolution:</strong> By 2010, smartphones demanded a better model. SAML wasn't designed for native apps that couldn't intercept HTTP redirects.</li>
+</ul>
+<h2 id="era-4-token-based-federation-2010spresent">Era 4: Token-Based Federation (2010s–Present)</h2>
+<p><strong>OAuth 2.0</strong> and <strong>OpenID Connect (OIDC)</strong> introduced token-based delegation for web, mobile, and API ecosystems. Identity became an API service.</p>
+<h3 id="how-it-worked_3">How It Worked</h3>
+<p><strong>OAuth 2.0</strong> is an authorization framework that enables applications to obtain limited access to user resources without exposing credentials. It introduced <strong>scopes</strong> (permissions) and multiple <strong>flows</strong> for different scenarios:</p>
+<ul>
+<li><strong>Authorization Code Flow (with PKCE):</strong> Most secure, for web and mobile apps</li>
+<li><strong>Client Credentials Flow:</strong> Service-to-service authentication without user context</li>
+<li><strong>Implicit Flow:</strong> Deprecated due to security concerns</li>
+</ul>
+<p><strong>OpenID Connect</strong> added an authentication layer on top of OAuth 2.0, introducing the <strong>ID Token</strong> — a JSON Web Token (JWT) that contains user identity claims.</p>
+<p><strong>JWT Structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RS256"</span><span class="p">,</span><span class="w"> </span><span class="nt">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span><span class="p">,</span><span class="w"> </span><span class="nt">"kid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://idp.example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-id-12345"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"aud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"client-app-xyz"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1735689600</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"iat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1735686000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"random-nonce"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Tokens are signed using RSA or ECDSA. Resource servers validate them by:
+1. Fetching the IdP's public keys from <code>/.well-known/jwks.json</code>
+2. Verifying the signature
+3. Checking <code>iss</code> (issuer), <code>aud</code> (audience), <code>exp</code> (expiration), <code>nonce</code> (replay protection)</p>
+<p><strong>Access Tokens vs Refresh Tokens:</strong>
+- <strong>Access tokens:</strong> Short-lived (5-15 minutes), presented to APIs to access resources
+- <strong>Refresh tokens:</strong> Long-lived (days/months), used to obtain new access tokens without re-authentication
+- <strong>PKCE (Proof Key for Code Exchange, RFC 7636):</strong> Prevents authorization code interception attacks in mobile and single-page applications by introducing a cryptographic challenge.</p>
+<p>The OAuth 2.0 and OIDC token-based authentication flow, diagrammatically:</p>
+<div class="mermaid">graph TD
+    accTitle: OAuth 2.0 and OpenID Connect token-based authentication flow
+    accDescr: Flow diagram showing modern token-based authentication. Step 1: User or App initiates authentication with scope request to OIDC OAuth Server. Step 2: Server authenticates against eDirectory or AD. Step 3: Server issues ID Token and Access Token to Client App. Step 4: Client presents Access Token to Resource Server API. Step 5: API validates token signature and claims. Step 6: API returns protected resource. This illustrates API-ready, device-agnostic authentication using JSON Web Tokens.
+
+    User[User or App] --&gt;|1 Initiate auth<br/>with scope| OIDC[OIDC OAuth<br/>Server]
+    OIDC --&gt;|2 Authenticate| Dir[eDirectory<br/>or AD]
+    OIDC --&gt;|3 Issue ID Token<br/>and Access Token| Client[Client App]
+    Client --&gt;|4 Present<br/>Access Token| API[Resource<br/>Server API]
+    API --&gt;|5 Validate token<br/>signature and claims| API
+    API --&gt;|6 Return protected<br/>resource| Client
+</div>
+<h3 id="why-this-won">Why This Won</h3>
+<ul>
+<li><strong>Device-agnostic:</strong> Works seamlessly across web browsers, native mobile apps, single-page apps, and backend services.</li>
+<li><strong>API-first:</strong> Access tokens are designed for REST APIs and microservices architectures.</li>
+<li><strong>Fine-grained authorization:</strong> Scopes enable precise control over what an application can do (e.g., <code>calendar:read</code>, <code>email:send</code>).</li>
+<li><strong>Delegated access:</strong> Users can grant third-party apps limited access to their data without sharing passwords (the "Sign in with Google" use case).</li>
+<li><strong>JSON simplicity:</strong> Compared to SAML's XML, JWT's JSON structure is easier to parse and debug.</li>
+<li><strong>Token introspection:</strong> Resource servers can query the IdP to validate opaque tokens via RFC 7662.</li>
+</ul>
+<h3 id="the-trade-offs">The Trade-Offs</h3>
+<ul>
+<li><strong>Token sprawl:</strong> Managing access tokens, refresh tokens, ID tokens, and their lifecycles adds complexity.</li>
+<li><strong>Security maturity required:</strong> Short-lived tokens, token rotation, secure storage, and proper validation are essential — but easy to get wrong.</li>
+<li><strong>The "just use a library" problem:</strong> OAuth/OIDC are flexible frameworks, not prescriptive protocols. Developers must make many security-critical decisions, leading to inconsistent implementations.</li>
+</ul>
+<h2 id="comparative-analysis">Comparative Analysis</h2>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Identity Source</th>
+<th>Protocol</th>
+<th>Scope</th>
+<th>Trust Model</th>
+<th>Key Innovation</th>
+<th>Primary Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1990s Local Auth</strong></td>
+<td>Local DB per app</td>
+<td>Username/Password</td>
+<td>Single application</td>
+<td>Shared secrets</td>
+<td>N/A (baseline)</td>
+<td>Fragmented identities, password reuse</td>
+</tr>
+<tr>
+<td><strong>2000s Directory/IDM</strong></td>
+<td>Central directory (LDAP/AD)</td>
+<td>LDAP bind + Sync</td>
+<td>Enterprise-wide</td>
+<td>Centralized credentials</td>
+<td>Automated provisioning</td>
+<td>No cross-domain federation</td>
+</tr>
+<tr>
+<td><strong>2000s–2010s SAML</strong></td>
+<td>Directory-backed IdP</td>
+<td>XML assertions</td>
+<td>Web SSO (internal + external)</td>
+<td>Public-key cryptography (XML signatures)</td>
+<td>Cross-organizational federation</td>
+<td>Web-only, XML complexity</td>
+</tr>
+<tr>
+<td><strong>2010s–Present OAuth/OIDC</strong></td>
+<td>Cloud IdP or directory</td>
+<td>JSON tokens (JWT)</td>
+<td>Web + Mobile + API</td>
+<td>Token-based (short-lived, signed JWTs)</td>
+<td>Device-agnostic, API-ready</td>
+<td>Token lifecycle complexity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-common-thread">The Common Thread</h3>
+<p>Each transition addressed a specific breaking point:
+- <strong>Local → Directory:</strong> Password sprawl and operational burden
+- <strong>Directory → SAML:</strong> Need for external federation and cloud SSO
+- <strong>SAML → OAuth/OIDC:</strong> Mobile devices and API-driven architectures</p>
+<p>Each generation <em>abstracted identity one layer further</em> from individual applications, moving toward identity as a platform service.</p>
+<h2 id="how-they-coexist-today">How They Coexist Today</h2>
+<p>Modern enterprises rarely run a single model — they operate hybrid architectures where all four layers coexist:</p>
+<div class="mermaid">graph TD
+    accTitle: Modern enterprise hybrid identity architecture
+    accDescr: Comprehensive diagram showing how all identity eras coexist. HR ERP Source feeds employee data to Identity Manager, which provisions and syncs to eDirectory or Active Directory. The directory serves as authentication backend for both SAML Identity Provider and OIDC OAuth Provider. SAML IdP issues assertions to Legacy Web App for browser SSO. OIDC Provider issues JWT tokens to Modern Cloud Mobile App and API access tokens to Microservices. MFA Service provides step-up challenge to OIDC Provider. This shows layered architecture where directories, SAML, and OIDC all operate simultaneously, supporting diverse application types.
+    HR[HR ERP<br/>Source] --&gt;|employee<br/>data feed| IDM[Identity<br/>Manager]
+    IDM --&gt;|provision<br/>and sync| Dir[eDirectory or<br/>Active Directory]
+    Dir --&gt;|LDAP auth<br/>backend| SAMLIdP[SAML Identity<br/>Provider]
+    Dir --&gt;|LDAP auth<br/>backend| OIDCIdP[OIDC OAuth<br/>Provider]
+    SAMLIdP --&gt;|SAML<br/>assertion| LegacyApp[Legacy<br/>Web App]
+    OIDCIdP --&gt;|JWT<br/>tokens| CloudApp[Modern Cloud<br/>Mobile App]
+    OIDCIdP --&gt;|API access<br/>tokens| MicroServices[Microservices]
+    User[User] --&gt;|Browser SSO| SAMLIdP
+    User --&gt;|Mobile SPA<br/>auth| OIDCIdP
+    MFA[MFA Service] --&gt;|step-up<br/>challenge| OIDCIdP
+</div>
+<p>The diagram above shows a typical enterprise stack:</p>
+<ol>
+<li><strong>HR system</strong> feeds identity data into an <strong>Identity Manager</strong> (IDM)</li>
+<li><strong>IDM</strong> provisions and synchronizes accounts to <strong>Active Directory</strong> and <strong>eDirectory</strong></li>
+<li><strong>Directories</strong> serve as the authentication backend for both SAML and OIDC providers</li>
+<li><strong>SAML IdP</strong> handles SSO for legacy web applications (SharePoint, on-premise portals)</li>
+<li><strong>OIDC Provider</strong> issues JWTs for modern cloud apps, mobile clients, and microservices</li>
+<li><strong>MFA service</strong> provides step-up authentication for high-risk operations</li>
+</ol>
+<h3 id="additional-modern-layers">Additional Modern Layers</h3>
+<ul>
+<li><strong>Conditional Access / Context-Aware Authentication:</strong> IdPs evaluate device posture, location, IP reputation, and risk scores before issuing tokens. A login from a corporate laptop on the office network might succeed automatically, while the same user from a cafe triggers MFA.</li>
+<li><strong>Multi-Factor Authentication (MFA):</strong> Time-based OTP (TOTP, RFC 6238), push notifications, SMS codes, and <strong>WebAuthn/FIDO2</strong> for passwordless authentication using biometrics or hardware keys.</li>
+<li><strong>Zero Trust Architecture:</strong> Continuous verification replaces "trust but verify." Access tokens expire quickly (5-15 minutes), refresh tokens are rotated, and every request is evaluated against policy.</li>
+</ul>
+<p><strong>Evolving Standards:</strong>
+- <strong>OAuth 2.1:</strong> Consolidates best practices, mandates PKCE, removes insecure flows
+- <strong>FAPI (Financial-grade API):</strong> High-security profile for sensitive sectors (banking, healthcare)</p>
+<h3 id="common-migration-patterns">Common Migration Patterns</h3>
+<p><strong>SAML → OIDC Migration:</strong>
+1. Stand up OIDC provider alongside existing SAML IdP (both backed by same directory)
+2. Migrate new applications to OIDC
+3. Gradually move legacy apps as vendors add OIDC support
+4. Maintain SAML IdP for stragglers (some vendors will never update)</p>
+<p><strong>The hybrid reality:</strong> Most enterprises will run SAML and OIDC side-by-side for years, possibly indefinitely.</p>
+<h2 id="why-this-history-matters">Why This History Matters</h2>
+<p>Understanding these layers isn't just academic — it explains <em>why</em> your authentication infrastructure looks the way it does:</p>
+<ul>
+<li><strong>Why do we still have Active Directory?</strong> Because Era 2 (directories) became load-bearing infrastructure. Thousands of applications authenticate against LDAP, and ripping that out would break everything.</li>
+<li><strong>Why does SSO feel inconsistent?</strong> Because some apps use SAML, some use OIDC, some still require local passwords, and they don't always play nicely together.</li>
+<li><strong>Why are tokens so complicated?</strong> Because OAuth 2.0 chose flexibility over prescription, allowing for many valid (and many insecure) implementations.</li>
+<li><strong>Why can't we just start over?</strong> Because backward compatibility matters. The 20-year-old app running your supply chain won't magically support OIDC. You build <em>around</em> it.</li>
+</ul>
+<h3 id="for-decision-makers">For Decision-Makers</h3>
+<ul>
+<li><strong>New applications:</strong> Default to OIDC. It's the modern standard.</li>
+<li><strong>Existing SAML apps:</strong> Keep them on SAML unless there's a compelling reason to migrate.</li>
+<li><strong>Legacy apps without federation:</strong> Consider a reverse proxy with authentication injection (e.g., OAuth2 Proxy, Authelia) rather than modifying the app.</li>
+<li><strong>Partner federation:</strong> SAML still dominates B2B use cases (especially government and higher education).</li>
+</ul>
+<h3 id="for-developers">For Developers</h3>
+<ul>
+<li><strong>Use battle-tested libraries:</strong> Don't implement OAuth/OIDC flows from scratch. Use Auth0, Keycloak, Okta SDKs, or proven open-source libraries.</li>
+<li><strong>Short-lived tokens are your friend:</strong> Prefer 5-15 minute access tokens with refresh token rotation over long-lived tokens.</li>
+<li><strong>Validate everything:</strong> Check token signatures, expiration, audience, issuer. One missed validation = security vulnerability.</li>
+<li><strong>Test federation edge cases:</strong> What happens when the IdP is down? When tokens expire mid-session? When a user's account is disabled but they have a valid refresh token?</li>
+</ul>
+<h2 id="the-next-frontier">The Next Frontier</h2>
+<p>The identity journey continues. Emerging trends include:</p>
+<ul>
+<li><strong>Decentralized Identity (DIDs, Verifiable Credentials):</strong> Users control their own identity data via blockchain or distributed ledgers, presenting cryptographically signed credentials without central IdPs. Still experimental, but gaining traction in government ID and academic credentials.</li>
+<li><strong>Privacy-Preserving Authentication:</strong> Zero-knowledge proofs enable authentication without revealing identifying information — you prove you're over 21 without disclosing your birthdate.</li>
+<li><strong>Post-Quantum Cryptography:</strong> Current RSA/ECDSA signatures in SAML and JWT will be vulnerable to quantum computers. NIST's post-quantum algorithm standards (2024) are beginning to influence long-term identity architectures.</li>
+<li><strong>Passwordless by Default:</strong> WebAuthn/FIDO2 adoption is accelerating. Biometrics and hardware keys are replacing passwords entirely, not just augmenting them with MFA.</li>
+</ul>
+<h2 id="wrap-up">Wrap-up</h2>
+<p>From local databases to federated APIs, identity infrastructure evolved to solve real problems: password fatigue, operational overhead, cloud integration, mobile support. Each era built on its predecessors rather than replacing them — which is why modern enterprises run archaeological layers of authentication, all simultaneously.</p>
+<p>The login button you click today is the visible tip of a 30-year accumulation of protocols, compromises, and architectural decisions. Understanding that history helps you navigate the hybrid mess we've inherited—and design better systems for the future.</p>
+<p>Identity infrastructure is never "done." It's a living system that adapts to new threats, new devices, and new organizational needs. The next chapter is already being written.</p>
+<p>2025.10.05</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: GenAI Landscape Primer 2025" class="md-footer__link md-footer__link--prev" href="../gen-ai-landscape-primer/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                GenAI Landscape Primer 2025
+              </div>
+</div>
+</a>
+<a aria-label="Next: Networks &amp;amp; Security" class="md-footer__link md-footer__link--next" href="../../sec_net-sec/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Networks &amp; Security
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../js/seamaiden.js"></script>
+<script src="../../js/diagram-zoom.js"></script>
+<script src="../../js/alphabet-auto.js"></script>
+<script src="../../js/svg-patcher.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script src="../../js/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

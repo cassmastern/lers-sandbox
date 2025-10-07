@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_freeform/gen-ai-landscape-primer/" rel="canonical"/>
+<link href="../ai-accessibility_bus/" rel="prev"/>
+<link href="../identity/" rel="next"/>
+<link href="../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
+<title>GenAI Landscape Primer 2025 - Ler's Sandobx</title>
+<link href="../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/alphabet.css" rel="stylesheet"/>
+<link href="../../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../../css/cm-logo.css" rel="stylesheet"/>
+<link href="../../css/color-vars.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#genai-landscape-primer-2025">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Ler's Sandobx
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              GenAI Landscape Primer 2025
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+    Ler's Sandobx
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_about/">
+<span class="md-ellipsis">
+    ABOUT THIS WEBSITE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            ABOUT THIS WEBSITE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/whatsinhere/">
+<span class="md-ellipsis">
+    What's in Here?
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-sitedev/">
+<span class="md-ellipsis">
+    How This Site Was Developed and Deployed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-wf-breakdown/">
+<span class="md-ellipsis">
+    Detailed Breakdown of My Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/roadmap/">
+<span class="md-ellipsis">
+    A Roadmap and a Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/feedback/">
+<span class="md-ellipsis">
+    Feedback
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cloud/">
+<span class="md-ellipsis">
+    IN THE CLOUDS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            IN THE CLOUDS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure/">
+<span class="md-ellipsis">
+    Architectures of AWS, GCP, and Azure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/jakarta-ee-azure/">
+<span class="md-ellipsis">
+    A Jakarta Enterprise Application on Azure
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_accss/">
+<span class="md-ellipsis">
+    ACCESSIBILITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            ACCESSIBILITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_/">
+<span class="md-ellipsis">
+    Accessibility Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/visuals-for-the-sightless/">
+<span class="md-ellipsis">
+    Visuals for the Sightless (Accessibility, Round Two)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_diagram-dilemma/">
+<span class="md-ellipsis">
+    The Diagramming Dilemma
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/breakthru1-mermaid-svg/">
+<span class="md-ellipsis">
+    An Accessible Mermaid Beyond Reach — A Breakthrough That Wasn't
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/breakthru2-mermaid-accessible/">
+<span class="md-ellipsis">
+    Mermaid Captured — Finally!
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<span class="md-ellipsis">
+    Diagram Accessibilit in MkDocs Material: Current State &amp; Path Forward
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    CONCEPTS, ESSAYS &amp; MORE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            CONCEPTS, ESSAYS &amp; MORE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ibm-sanfran/">
+<span class="md-ellipsis">
+    IBM SanFrancisco — A Technical Memoir
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ai-accessibility/">
+<span class="md-ellipsis">
+    AI-Augmented Accessibility — A Technical Daydream
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ai-accessibility_bus/">
+<span class="md-ellipsis">
+    AI‑Augmented Accessibility — From Daydream to Concept Note
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    GenAI Landscape Primer 2025
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    GenAI Landscape Primer 2025
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foundation-models-architecture">
+<span class="md-ellipsis">
+      Foundation Models Architecture
+    </span>
+</a>
+<nav aria-label="Foundation Models Architecture" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foundation-model-types">
+<span class="md-ellipsis">
+      Foundation Model Types
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#infrastructure-and-compute-layer">
+<span class="md-ellipsis">
+      Infrastructure and Compute Layer
+    </span>
+</a>
+<nav aria-label="Infrastructure and Compute Layer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-infrastructure">
+<span class="md-ellipsis">
+      Hardware Infrastructure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#training-infrastructure-components">
+<span class="md-ellipsis">
+      Training Infrastructure Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-optimization-and-deployment">
+<span class="md-ellipsis">
+      Model Optimization and Deployment
+    </span>
+</a>
+<nav aria-label="Model Optimization and Deployment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-compression-techniques">
+<span class="md-ellipsis">
+      Model Compression Techniques
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inference-optimization">
+<span class="md-ellipsis">
+      Inference Optimization
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application-architecture-patterns">
+<span class="md-ellipsis">
+      Application Architecture Patterns
+    </span>
+</a>
+<nav aria-label="Application Architecture Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#retrieval-augmented-generation-rag">
+<span class="md-ellipsis">
+      Retrieval-Augmented Generation (RAG)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agentic-systems">
+<span class="md-ellipsis">
+      Agentic Systems
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluation-and-safety">
+<span class="md-ellipsis">
+      Evaluation and Safety
+    </span>
+</a>
+<nav aria-label="Evaluation and Safety" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluation-frameworks">
+<span class="md-ellipsis">
+      Evaluation Frameworks
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#safety-and-alignment">
+<span class="md-ellipsis">
+      Safety and Alignment
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#economic-and-scaling-dynamics">
+<span class="md-ellipsis">
+      Economic and Scaling Dynamics
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#emerging-trends-and-future-directions">
+<span class="md-ellipsis">
+      Emerging Trends and Future Directions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../identity/">
+<span class="md-ellipsis">
+    The Long Arc of Digital Identity: From Islands to Federation
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_net-sec/">
+<span class="md-ellipsis">
+    NETWORKS &amp; SECURITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            NETWORKS &amp; SECURITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center/">
+<span class="md-ellipsis">
+    A Hypothetical Data Centre Network
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_stride/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — STRIDE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_mitre/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — MITRE ATT&amp;CK
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/saml-admin/">
+<span class="md-ellipsis">
+    Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cheatsheets/">
+<span class="md-ellipsis">
+    VARIOUS CHEAT SHEETS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            VARIOUS CHEAT SHEETS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-docker/">
+<span class="md-ellipsis">
+    Docker Command Cheatsheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-kubectl/">
+<span class="md-ellipsis">
+    Kubectl Command Cheat Sheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet_compound-modifiers/">
+<span class="md-ellipsis">
+    Compound Modifiers Cheat Sheet
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_gloss/">
+<span class="md-ellipsis">
+    MISC GLOSSARIES
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            MISC GLOSSARIES
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_oss/">
+<span class="md-ellipsis">
+    Glossary of OSS Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_networking/">
+<span class="md-ellipsis">
+    Glossary of Networking Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_kuber/">
+<span class="md-ellipsis">
+    Glossary of Kubernetes Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_gloss/gloss_cloud-native/">
+<span class="md-ellipsis">
+    Glossary of Cloud-Native Terms
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foundation-models-architecture">
+<span class="md-ellipsis">
+      Foundation Models Architecture
+    </span>
+</a>
+<nav aria-label="Foundation Models Architecture" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foundation-model-types">
+<span class="md-ellipsis">
+      Foundation Model Types
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#infrastructure-and-compute-layer">
+<span class="md-ellipsis">
+      Infrastructure and Compute Layer
+    </span>
+</a>
+<nav aria-label="Infrastructure and Compute Layer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-infrastructure">
+<span class="md-ellipsis">
+      Hardware Infrastructure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#training-infrastructure-components">
+<span class="md-ellipsis">
+      Training Infrastructure Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-optimization-and-deployment">
+<span class="md-ellipsis">
+      Model Optimization and Deployment
+    </span>
+</a>
+<nav aria-label="Model Optimization and Deployment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-compression-techniques">
+<span class="md-ellipsis">
+      Model Compression Techniques
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inference-optimization">
+<span class="md-ellipsis">
+      Inference Optimization
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application-architecture-patterns">
+<span class="md-ellipsis">
+      Application Architecture Patterns
+    </span>
+</a>
+<nav aria-label="Application Architecture Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#retrieval-augmented-generation-rag">
+<span class="md-ellipsis">
+      Retrieval-Augmented Generation (RAG)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agentic-systems">
+<span class="md-ellipsis">
+      Agentic Systems
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluation-and-safety">
+<span class="md-ellipsis">
+      Evaluation and Safety
+    </span>
+</a>
+<nav aria-label="Evaluation and Safety" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluation-frameworks">
+<span class="md-ellipsis">
+      Evaluation Frameworks
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#safety-and-alignment">
+<span class="md-ellipsis">
+      Safety and Alignment
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#economic-and-scaling-dynamics">
+<span class="md-ellipsis">
+      Economic and Scaling Dynamics
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#emerging-trends-and-future-directions">
+<span class="md-ellipsis">
+      Emerging Trends and Future Directions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="genai-landscape-primer-2025">GenAI Landscape Primer 2025</h1>
+<blockquote>
+<p>Material for a  presentation.</p>
+</blockquote>
+<p>The Generative Artificial Intelligence (GenAI) landscape has evolved into a complex ecosystem of foundation models, specialized architectures, infrastructure components, and deployment patterns. This primer provides a comprehensive view of the current state, key technologies, and architectural patterns that define the modern GenAI stack.</p>
+<h2 id="foundation-models-architecture">Foundation Models Architecture</h2>
+<div class="mermaid">flowchart TB
+  subgraph Foundation_Models["Foundation Models"]
+    LLM["Large Language Models"]
+    MM["Multimodal Models"]
+    CGM["Code Generation Models"]
+    IGM["Image Generation Models"]
+    ASM["Audio/Speech Models"]
+    VGM["Video Generation Models"]
+  end
+
+  subgraph Model_Architectures["Model Architectures"]
+    TRANS["Transformer"]
+    DIFF["Diffusion Models"]
+    VAE["VAE/GAN Hybrids"]
+    SSM["State Space Models"]
+    MOE["Mixture of Experts"]
+  end
+
+  subgraph Training_Approaches["Training Approaches"]
+    PRE["Pre-training"]
+    FT["Fine-tuning"]
+    RLHF["RLHF"]
+    CAI["Constitutional AI"]
+    ICL["In-Context Learning"]
+  end
+
+  LLM --&gt; TRANS
+  MM --&gt; TRANS
+  IGM --&gt; DIFF
+  ASM --&gt; TRANS
+  VGM --&gt; DIFF
+
+  TRANS --&gt; PRE
+  DIFF --&gt; PRE
+  MOE --&gt; PRE
+
+  PRE --&gt; FT
+  FT --&gt; RLHF
+  RLHF --&gt; CAI
+</div>
+<h3 id="foundation-model-types">Foundation Model Types</h3>
+<p><strong>Large Language Models (LLMs)</strong> form the backbone of text-based GenAI. These transformer-based architectures, exemplified by GPT-4, Claude, and Llama, process and generate human language through autoregressive prediction. Key characteristics include parameter counts ranging from billions to trillions, context windows extending from 4K to 2M+ tokens, and emergent capabilities like reasoning and code generation.</p>
+<p><strong>Multimodal Models</strong> integrate multiple input modalities (text, images, audio, video) within unified architectures. GPT-4V, Gemini Ultra, and Claude 3 demonstrate vision-language capabilities, while models like DALL-E 3 and Midjourney specialize in text-to-image generation.</p>
+<p><strong>Diffusion Models</strong> have revolutionized image and video generation through iterative denoising processes. Stable Diffusion, DALL-E, and newer video models like Sora utilize latent diffusion techniques for high-quality content generation.</p>
+<h2 id="infrastructure-and-compute-layer">Infrastructure and Compute Layer</h2>
+<div class="mermaid">flowchart TB
+  subgraph Hardware_Layer["Hardware Layer"]
+    GPU["GPU Clusters"]
+    TPU["TPU Pods"]
+    ACCEL["AI Accelerators"]
+    HSI["High-Speed Interconnects"]
+  end
+
+  subgraph System_Software["System Software"]
+    CUDA["CUDA/ROCm"]
+    DIST["Distributed Training"]
+    MP["Model Parallelism"]
+    MEM["Memory Management"]
+  end
+
+  subgraph ML_Frameworks["ML Frameworks"]
+    TORCH["PyTorch"]
+    JAX["JAX/Flax"]
+    TF["TensorFlow"]
+    HF["Hugging Face"]
+  end
+
+  subgraph Orchestration["Orchestration"]
+    K8S["Kubernetes"]
+    RAY["Ray"]
+    MLF["MLflow"]
+    WB["Weights &amp; Biases"]
+  end
+
+  subgraph Inference_Serving["Inference Serving"]
+    VLLM["vLLM"]
+    TRT["TensorRT-LLM"]
+    TGI["Text Generation Inference"]
+    TRITON["Triton"]
+  end
+
+  GPU --&gt; CUDA
+  TPU --&gt; JAX
+  CUDA --&gt; TORCH
+  CUDA --&gt; DIST
+  TORCH --&gt; HF
+  JAX --&gt; HF
+  K8S --&gt; RAY
+  RAY --&gt; VLLM
+  VLLM --&gt; TRT
+</div>
+<h3 id="hardware-infrastructure">Hardware Infrastructure</h3>
+<p><strong>GPU Clusters</strong> remain the primary compute substrate, with NVIDIA H100s and A100s dominating training and inference. Memory bandwidth (3TB/s on H100) and tensor cores optimize transformer operations. Google's <strong>TPUs</strong> offer specialized architectures for large-scale training with pod configurations scaling to thousands of chips.</p>
+<p><strong>High-Speed Interconnects</strong> like NVLink, InfiniBand, and custom fabrics enable model parallelism across hundreds of devices. Network topology becomes critical for distributed training efficiency.</p>
+<h3 id="training-infrastructure-components">Training Infrastructure Components</h3>
+<p><strong>Distributed Training</strong> frameworks like DeepSpeed, FairScale, and PyTorch FSDP enable model training across clusters. Key techniques include:</p>
+<ul>
+<li><strong>Pipeline Parallelism</strong>: Splitting models across devices by layers</li>
+<li><strong>Tensor Parallelism</strong>: Distributing individual operations across devices  </li>
+<li><strong>Data Parallelism</strong>: Replicating models with different data batches</li>
+<li><strong>ZeRO (Zero Redundancy Optimizer)</strong>: Memory-efficient parameter sharding</li>
+</ul>
+<p><strong>Memory Management</strong> becomes critical with multi-billion parameter models. Techniques include gradient checkpointing, mixed precision training (FP16/BF16), and activation recomputation.</p>
+<h2 id="model-optimization-and-deployment">Model Optimization and Deployment</h2>
+<div class="mermaid">flowchart TB
+  subgraph Model_Compression["Model Compression"]
+    QUANT["Quantization"]
+    PRUNE["Pruning"]
+    DISTILL["Distillation"]
+    LORA["LoRA/QLoRA"]
+  end
+
+  subgraph Inference_Optimization["Inference Optimization"]
+    KV["KV Caching"]
+    SPEC["Speculative Decoding"]
+    CB["Continuous Batching"]
+    PA["PagedAttention"]
+  end
+
+  subgraph Deployment_Patterns["Deployment Patterns"]
+    API["Model Serving APIs"]
+    EDGE["Edge Deployment"]
+    FED["Federated Inference"]
+    HYBRID["Hybrid Cloud"]
+  end
+
+  subgraph Performance_Monitoring["Performance Monitoring"]
+    LAT["Latency Tracking"]
+    THRU["Throughput Metrics"]
+    COST["Cost Optimization"]
+    QUAL["Quality Monitoring"]
+  end
+
+  QUANT --&gt; KV
+  LORA --&gt; CB
+  KV --&gt; API
+  SPEC --&gt; API
+  API --&gt; LAT
+  API --&gt; COST
+  EDGE --&gt; QUAL
+</div>
+<h3 id="model-compression-techniques">Model Compression Techniques</h3>
+<p><strong>Quantization</strong> reduces model precision from FP32 to INT8/INT4, achieving 4x-8x memory reduction with minimal quality loss. Post-training quantization (PTQ) and quantization-aware training (QAT) represent primary approaches.</p>
+<p><strong>Low-Rank Adaptation (LoRA)</strong> and <strong>Quantized LoRA (QLoRA)</strong> enable parameter-efficient fine-tuning by learning low-rank updates to frozen base models. This reduces trainable parameters by 99%+ while maintaining performance.</p>
+<p><strong>Knowledge Distillation</strong> transfers capabilities from large "teacher" models to smaller "student" models, enabling deployment in resource-constrained environments.</p>
+<h3 id="inference-optimization">Inference Optimization</h3>
+<p><strong>KV Caching</strong> stores key-value pairs from previous tokens to avoid recomputation during autoregressive generation. <strong>PagedAttention</strong> (used in vLLM) manages KV cache memory efficiently through virtual memory techniques.</p>
+<p><strong>Speculative Decoding</strong> uses smaller draft models to propose multiple tokens, with the larger model verifying and accepting valid sequences, improving generation speed.</p>
+<p><strong>Continuous Batching</strong> allows dynamic batching of requests with different sequence lengths, maximizing GPU utilization compared to static batching.</p>
+<h2 id="application-architecture-patterns">Application Architecture Patterns</h2>
+<div class="mermaid">flowchart TB
+  subgraph RAG["Retrieval Augmented Generation"]
+    VDB["Vector Databases"]
+    EMB["Embedding Models"]
+    RET["Retrieval Pipeline"]
+    FUSION["Context Fusion"]
+  end
+
+  subgraph Agents["Agent Frameworks"]
+    PLAN["Planning"]
+    TOOLS["Tool Use"]
+    MEMSYS["Memory Systems"]
+    MAC["Multi-Agent Coordination"]
+  end
+
+  subgraph Fine_Tuning["Fine-tuning Pipelines"]
+    DATA["Dataset Preparation"]
+    TRAIN["Training Infrastructure"]
+    EVAL["Evaluation Frameworks"]
+    REG["Model Registry"]
+  end
+
+  subgraph Production["Production Systems"]
+    GATE["API Gateways"]
+    LB["Load Balancing"]
+    CACHE["Caching Layers"]
+    MON["Monitoring/Logging"]
+  end
+
+  EMB --&gt; VDB
+  VDB --&gt; RET
+  RET --&gt; FUSION
+  PLAN --&gt; TOOLS
+  TOOLS --&gt; MEMSYS
+  DATA --&gt; TRAIN
+  TRAIN --&gt; EVAL
+  EVAL --&gt; REG
+  GATE --&gt; LB
+  LB --&gt; CACHE
+</div>
+<h3 id="retrieval-augmented-generation-rag">Retrieval-Augmented Generation (RAG)</h3>
+<p>RAG architectures address knowledge limitations by incorporating external information retrieval. Key components include:</p>
+<p><strong>Vector Databases</strong> (Pinecone, Weaviate, Chroma) store document embeddings for semantic search. <strong>Embedding Models</strong> (text-embedding-ada-002, sentence-transformers) convert text to dense vectors for similarity matching.</p>
+<p><strong>Hybrid Search</strong> combines semantic similarity with keyword matching (BM25) for improved retrieval accuracy. <strong>Reranking</strong> models refine initial retrieval results.</p>
+<h3 id="agentic-systems">Agentic Systems</h3>
+<p><strong>AI Agents</strong> represent autonomous systems that plan, execute, and reflect on multi-step tasks. Core capabilities include:</p>
+<ul>
+<li><strong>Tool Use</strong>: Integration with external APIs, databases, and computational systems</li>
+<li><strong>Planning</strong>: Decomposing complex tasks into executable steps</li>
+<li><strong>Memory</strong>: Maintaining context across extended interactions</li>
+<li><strong>Reflection</strong>: Self-evaluation and error correction</li>
+</ul>
+<p>Frameworks like LangChain, CrewAI, and AutoGen enable multi-agent coordination for complex workflows.</p>
+<h2 id="evaluation-and-safety">Evaluation and Safety</h2>
+<div class="mermaid">flowchart TB
+  subgraph Capability_Eval["Capability Evaluation"]
+    BENCH["Benchmarks"]
+    HUMAN["Human Evaluation"]
+    AUTO["Automated Scoring"]
+    DOMAIN["Domain-Specific Tests"]
+  end
+
+  subgraph Safety_Measures["Safety Measures"]
+    ALIGN["Alignment Training"]
+    CONST["Constitutional AI"]
+    RED["Red Teaming"]
+    INTERP["Interpretability"]
+  end
+
+  subgraph Monitoring["Monitoring Systems"]
+    DRIFT["Drift Detection"]
+    BIAS["Bias Monitoring"]
+    PERF["Performance Tracking"]
+    GUARD["Safety Guardrails"]
+  end
+
+  subgraph Governance["Governance"]
+    CARDS["Model Cards"]
+    AUDIT["Audit Trails"]
+    COMP["Compliance Tracking"]
+    RISK["Risk Assessment"]
+  end
+
+  BENCH --&gt; AUTO
+  HUMAN --&gt; DOMAIN
+  ALIGN --&gt; CONST
+  CONST --&gt; RED
+  DRIFT --&gt; BIAS
+  BIAS --&gt; GUARD
+  CARDS --&gt; AUDIT
+  AUDIT --&gt; RISK
+</div>
+<h3 id="evaluation-frameworks">Evaluation Frameworks</h3>
+<p><strong>Capability Benchmarks</strong> include MMLU (massive multitask language understanding), HumanEval (code generation), and HellaSwag (commonsense reasoning). <strong>Domain-specific evaluations</strong> assess performance in specialized areas like medicine (MedQA), law (LegalBench), and mathematics (MATH).</p>
+<p><strong>Human Evaluation</strong> remains critical for assessing subjective qualities like helpfulness, harmlessness, and honesty. Platforms like Scale AI and Surge AI provide human feedback infrastructure.</p>
+<h3 id="safety-and-alignment">Safety and Alignment</h3>
+<p><strong>Constitutional AI</strong> trains models to follow a set of principles through self-critique and revision. <strong>RLHF (Reinforcement Learning from Human Feedback)</strong> optimizes model outputs based on human preferences.</p>
+<p><strong>Red Teaming</strong> involves adversarial testing to identify harmful outputs, bias, or capability limitations. <strong>Interpretability</strong> research aims to understand model decision-making through techniques like activation patching and mechanistic interpretability.</p>
+<h2 id="economic-and-scaling-dynamics">Economic and Scaling Dynamics</h2>
+<p>Training costs for frontier models now exceed $100M, with GPT-4 estimated at $200M+ and emerging models potentially reaching $1B+. <strong>Scaling Laws</strong> (Kaplan, Chinchilla) predict performance improvements with increased compute, data, and parameters.</p>
+<p><strong>Inference Economics</strong> drive deployment decisions. Cost per token ranges from $0.0001 (GPT-3.5) to $0.06 (GPT-4) for API services. Self-hosted deployments offer cost advantages at scale but require significant infrastructure investment.</p>
+<p><strong>Compute Trends</strong> suggest training requirements growing 10x annually, straining available GPU capacity and driving innovations in efficiency and alternative architectures.</p>
+<h2 id="emerging-trends-and-future-directions">Emerging Trends and Future Directions</h2>
+<p><strong>Multimodal Integration</strong> continues expanding beyond text-image to include audio, video, and sensor data. <strong>Reasoning Models</strong> like OpenAI's o1 demonstrate improved capability on complex logical and mathematical tasks through iterative refinement.</p>
+<p><strong>Mixture of Experts</strong> architectures enable larger model capacity with constant inference cost. <strong>State Space Models</strong> (Mamba) offer alternatives to transformer attention mechanisms with better scaling properties.</p>
+<p><strong>Edge AI</strong> deployment brings GenAI capabilities to mobile and IoT devices through model compression and specialized hardware. <strong>Federated Learning</strong> enables distributed training while preserving data privacy.</p>
+<p>The GenAI landscape continues rapid evolution, with new architectures, optimization techniques, and application patterns emerging regularly. Success requires understanding both current capabilities and underlying technological trends driving future development.</p>
+<p>2025.09.19</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: AI‑Augmented Accessibility — From Daydream to Concept Note" class="md-footer__link md-footer__link--prev" href="../ai-accessibility_bus/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                AI‑Augmented Accessibility — From Daydream to Concept Note
+              </div>
+</div>
+</a>
+<a aria-label="Next: The Long Arc of Digital Identity: From Islands to Federation" class="md-footer__link md-footer__link--next" href="../identity/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                The Long Arc of Digital Identity: From Islands to Federation
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../js/seamaiden.js"></script>
+<script src="../../js/diagram-zoom.js"></script>
+<script src="../../js/alphabet-auto.js"></script>
+<script src="../../js/svg-patcher.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script src="../../js/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>
