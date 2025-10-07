@@ -33,9 +33,7 @@ plugins:
   - mermaid2:
       javascript: js/mermaid.min.js
   - plantuml:
-      #puml_url: https://plantuml-server-jetty-6q7b.onrender.com/svg/
       puml_url: https://plantuml.com/plantuml
-  - kroki
 
 markdown_extensions:
   - admonition
@@ -53,7 +51,7 @@ extra_javascript:
   - js/svg-patcher.js
 
 extra_css:
-  - # css/topbar.css
+  # - css/topbar.css
   - css/alphabet.css
   - css/diagram-zoom.css
   - css/cm-logo.css

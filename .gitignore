@@ -34,7 +34,5 @@ commit-message.txt
 *.geany
 # Archive folder
 _archive
-
-
-
+.archive
 .directory
