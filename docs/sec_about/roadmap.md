@@ -20,6 +20,7 @@ gantt
 
 ## Changelog
 
+- 2025.10.08 New section on [eHealth-related topics](../../sec_ehealth) I'll definitely return to.
 - 2025.10.07 A mid-to-late 2010s [SAML/SSO admin guide](../sec_net-sec/saml-admin.md) for sentimental, aesthetic, and experimentation purposes. 
 - 2025.10.05 A [topic](../sec_freeform/identity.md) on digital identity and its ~30-year evolution from password chaos to token sprawl.
 - 2025.09.19 New topic — a presentation cheat sheet/report/article on the current [GenAI landscape](../sec_freeform/gen-ai-landscape-primer.md).

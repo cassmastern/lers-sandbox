@@ -5,24 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://cassmastern.github.io/cass-sandbox/sec_cheatsheets/cheatsheet_compound-modifiers/" rel="canonical"/>
-<link href="../cheatsheet-kubectl/" rel="prev"/>
-<link href="../../sec_gloss/" rel="next"/>
-<link href="../../img/favicon.ico" rel="icon"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_ehealth/" rel="canonical"/>
+<link href="../sec_net-sec/saml-admin/" rel="prev"/>
+<link href="quick_ref/" rel="next"/>
+<link href="../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
-<title>Compound Modifiers Cheat Sheet - Ler's Sandobx</title>
-<link href="../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>eHealth - Ler's Sandobx</title>
+<link href="../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../css/alphabet.css" rel="stylesheet"/>
-<link href="../../css/diagram-zoom.css" rel="stylesheet"/>
-<link href="../../css/cm-logo.css" rel="stylesheet"/>
-<link href="../../css/color-vars.css" rel="stylesheet"/>
-<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
-<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../css/alphabet.css" rel="stylesheet"/>
+<link href="../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../css/cm-logo.css" rel="stylesheet"/>
+<link href="../css/color-vars.css" rel="stylesheet"/>
+<link href="../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
 </head>
@@ -31,7 +31,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#compound-modifiers-cheat-sheet">
+<a class="md-skip" href="#ehealth">
           Skip to content
         </a>
 </div>
@@ -39,8 +39,8 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
-<img alt="logo" src="../../img/logo.svg"/>
+<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href=".." title="Ler's Sandobx">
+<img alt="logo" src="../img/logo.svg"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -55,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Compound Modifiers Cheat Sheet
+              eHealth
             
           </span>
 </div>
@@ -116,14 +116,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
-<img alt="logo" src="../../img/logo.svg"/>
+<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Ler's Sandobx">
+<img alt="logo" src="../img/logo.svg"/>
 </a>
     Ler's Sandobx
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     HOME
   </span>
@@ -132,7 +132,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_about/">
+<a class="md-nav__link" href="../sec_about/">
 <span class="md-ellipsis">
     ABOUT THIS WEBSITE
   </span>
@@ -148,35 +148,35 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_about/whatsinhere/">
+<a class="md-nav__link" href="../sec_about/whatsinhere/">
 <span class="md-ellipsis">
     What's in Here?
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_about/about-sitedev/">
+<a class="md-nav__link" href="../sec_about/about-sitedev/">
 <span class="md-ellipsis">
     How This Site Was Developed and Deployed
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_about/about-wf-breakdown/">
+<a class="md-nav__link" href="../sec_about/about-wf-breakdown/">
 <span class="md-ellipsis">
     Detailed Breakdown of My Workflow
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_about/roadmap/">
+<a class="md-nav__link" href="../sec_about/roadmap/">
 <span class="md-ellipsis">
     A Roadmap and a Changelog
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_about/feedback/">
+<a class="md-nav__link" href="../sec_about/feedback/">
 <span class="md-ellipsis">
     Feedback
   </span>
@@ -188,7 +188,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_cloud/">
+<a class="md-nav__link" href="../sec_cloud/">
 <span class="md-ellipsis">
     IN THE CLOUDS
   </span>
@@ -204,28 +204,28 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure/">
+<a class="md-nav__link" href="../sec_cloud/aws-gcp-azure/">
 <span class="md-ellipsis">
     Architectures of AWS, GCP, and Azure
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary/">
+<a class="md-nav__link" href="../sec_cloud/aws-gcp-azure_glossary/">
 <span class="md-ellipsis">
     Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<a class="md-nav__link" href="../sec_cloud/aws-gcp-azure_glossary_enhanced/">
 <span class="md-ellipsis">
     Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_cloud/jakarta-ee-azure/">
+<a class="md-nav__link" href="../sec_cloud/jakarta-ee-azure/">
 <span class="md-ellipsis">
     A Jakarta Enterprise Application on Azure
   </span>
@@ -237,7 +237,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_accss/">
+<a class="md-nav__link" href="../sec_accss/">
 <span class="md-ellipsis">
     ACCESSIBILITY
   </span>
@@ -253,42 +253,42 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_accss/accss_/">
+<a class="md-nav__link" href="../sec_accss/accss_/">
 <span class="md-ellipsis">
     Accessibility Reference
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_accss/visuals-for-the-sightless/">
+<a class="md-nav__link" href="../sec_accss/visuals-for-the-sightless/">
 <span class="md-ellipsis">
     Visuals for the Sightless (Accessibility, Round Two)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_accss/accss_diagram-dilemma/">
+<a class="md-nav__link" href="../sec_accss/accss_diagram-dilemma/">
 <span class="md-ellipsis">
     The Diagramming Dilemma
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_accss/breakthru1-mermaid-svg/">
+<a class="md-nav__link" href="../sec_accss/breakthru1-mermaid-svg/">
 <span class="md-ellipsis">
     An Accessible Mermaid Beyond Reach — A Breakthrough That Wasn't
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_accss/breakthru2-mermaid-accessible/">
+<a class="md-nav__link" href="../sec_accss/breakthru2-mermaid-accessible/">
 <span class="md-ellipsis">
     Mermaid Captured — Finally!
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<a class="md-nav__link" href="../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
 <span class="md-ellipsis">
     Diagram Accessibilit in MkDocs Material: Current State &amp; Path Forward
   </span>
@@ -300,7 +300,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_freeform/">
+<a class="md-nav__link" href="../sec_freeform/">
 <span class="md-ellipsis">
     CONCEPTS, ESSAYS &amp; MORE
   </span>
@@ -316,35 +316,35 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_freeform/ibm-sanfran/">
+<a class="md-nav__link" href="../sec_freeform/ibm-sanfran/">
 <span class="md-ellipsis">
     IBM SanFrancisco — A Technical Memoir
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_freeform/ai-accessibility/">
+<a class="md-nav__link" href="../sec_freeform/ai-accessibility/">
 <span class="md-ellipsis">
     AI-Augmented Accessibility — A Technical Daydream
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_freeform/ai-accessibility_bus/">
+<a class="md-nav__link" href="../sec_freeform/ai-accessibility_bus/">
 <span class="md-ellipsis">
     AI‑Augmented Accessibility — From Daydream to Concept Note
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_freeform/gen-ai-landscape-primer/">
+<a class="md-nav__link" href="../sec_freeform/gen-ai-landscape-primer/">
 <span class="md-ellipsis">
     GenAI Landscape Primer 2025
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_freeform/identity/">
+<a class="md-nav__link" href="../sec_freeform/identity/">
 <span class="md-ellipsis">
     The Long Arc of Digital Identity: From Islands to Federation
   </span>
@@ -356,7 +356,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_net-sec/">
+<a class="md-nav__link" href="../sec_net-sec/">
 <span class="md-ellipsis">
     NETWORKS &amp; SECURITY
   </span>
@@ -372,28 +372,28 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_net-sec/network_data_center/">
+<a class="md-nav__link" href="../sec_net-sec/network_data_center/">
 <span class="md-ellipsis">
     A Hypothetical Data Centre Network
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_net-sec/network_data_center_stride/">
+<a class="md-nav__link" href="../sec_net-sec/network_data_center_stride/">
 <span class="md-ellipsis">
     Network Security and Threat Modeling — STRIDE
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_net-sec/network_data_center_mitre/">
+<a class="md-nav__link" href="../sec_net-sec/network_data_center_mitre/">
 <span class="md-ellipsis">
     Network Security and Threat Modeling — MITRE ATT&amp;CK
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_net-sec/saml-admin/">
+<a class="md-nav__link" href="../sec_net-sec/saml-admin/">
 <span class="md-ellipsis">
     Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
   </span>
@@ -402,40 +402,40 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_ehealth/">
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     eHEALTH
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<label class="md-nav__link md-nav__link--active" for="__nav_7" id="__nav_7_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             eHEALTH
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_ehealth/quick_ref/">
+<a class="md-nav__link" href="quick_ref/">
 <span class="md-ellipsis">
     SMART-on-FHIR and Integration Quick Reference
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_ehealth/smart-fhir/">
+<a class="md-nav__link" href="smart-fhir/">
 <span class="md-ellipsis">
     SMART-on-FHIR and Integration — Visuals
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_ehealth/gloss_ontario_halo/">
+<a class="md-nav__link" href="gloss_ontario_halo/">
 <span class="md-ellipsis">
     Ontario eHealth &amp; HALO Integration Glossary
   </span>
@@ -444,10 +444,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../sec_cheatsheets/">
 <span class="md-ellipsis">
     VARIOUS CHEAT SHEETS
   </span>
@@ -456,79 +456,32 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
             VARIOUS CHEAT SHEETS
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cheatsheet-docker/">
+<a class="md-nav__link" href="../sec_cheatsheets/cheatsheet-docker/">
 <span class="md-ellipsis">
     Docker Command Cheatsheet
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cheatsheet-kubectl/">
+<a class="md-nav__link" href="../sec_cheatsheets/cheatsheet-kubectl/">
 <span class="md-ellipsis">
     Kubectl Command Cheat Sheet
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Compound Modifiers Cheat Sheet
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sec_cheatsheets/cheatsheet_compound-modifiers/">
 <span class="md-ellipsis">
     Compound Modifiers Cheat Sheet
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rule">
-<span class="md-ellipsis">
-      Rule
-    </span>
-</a>
-<nav aria-label="Rule" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hyphenate-before-the-noun">
-<span class="md-ellipsis">
-      Hyphenate Before the Noun
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#no-hyphen-after-the-noun">
-<span class="md-ellipsis">
-      No Hyphen After the Noun
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#notes">
-<span class="md-ellipsis">
-      Notes
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -536,7 +489,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../sec_gloss/">
+<a class="md-nav__link" href="../sec_gloss/">
 <span class="md-ellipsis">
     MISC GLOSSARIES
   </span>
@@ -552,28 +505,28 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_gloss/gloss_oss/">
+<a class="md-nav__link" href="../sec_gloss/gloss_oss/">
 <span class="md-ellipsis">
     Glossary of OSS Terms
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_gloss/gloss_networking/">
+<a class="md-nav__link" href="../sec_gloss/gloss_networking/">
 <span class="md-ellipsis">
     Glossary of Networking Terms
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_gloss/gloss_kuber/">
+<a class="md-nav__link" href="../sec_gloss/gloss_kuber/">
 <span class="md-ellipsis">
     Glossary of Kubernetes Terms
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_gloss/gloss_cloud-native/">
+<a class="md-nav__link" href="../sec_gloss/gloss_cloud-native/">
 <span class="md-ellipsis">
     Glossary of Cloud-Native Terms
   </span>
@@ -591,191 +544,18 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rule">
-<span class="md-ellipsis">
-      Rule
-    </span>
-</a>
-<nav aria-label="Rule" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hyphenate-before-the-noun">
-<span class="md-ellipsis">
-      Hyphenate Before the Noun
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#no-hyphen-after-the-noun">
-<span class="md-ellipsis">
-      No Hyphen After the Noun
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#notes">
-<span class="md-ellipsis">
-      Notes
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="compound-modifiers-cheat-sheet">Compound Modifiers Cheat Sheet</h1>
-<p>"Compound modifier" will probably be the only term in this site to come from linguistics and natural language syntax. I'm including this as a pre-emptive exhibit of a weakness and yes, a cheat sheet. In plain English.</p>
-<hr/>
-<h2 id="rule">Rule</h2>
-<blockquote>
-<p>Use hyphenation for compound modifiers <strong>before nouns</strong> to ensure clarity and consistency. Avoid hyphenation when the phrase follows the noun.</p>
-</blockquote>
-<h3 id="hyphenate-before-the-noun">Hyphenate Before the Noun</h3>
-<table>
-<thead>
-<tr>
-<th>Compound Modifier</th>
-<th>Description / Part of Speech</th>
-<th>Example Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>high-availability</td>
-<td>Adjective describing cluster</td>
-<td>The company deployed a high-availability cluster to ensure the system remains online even during server failures.</td>
-</tr>
-<tr>
-<td>fault-tolerant</td>
-<td>Adjective describing architecture</td>
-<td>The new fault-tolerant architecture allows the application to continue operating despite hardware malfunctions.</td>
-</tr>
-<tr>
-<td>low-latency</td>
-<td>Adjective describing connection</td>
-<td>The low-latency connection enabled smooth video conferencing without noticeable delays.</td>
-</tr>
-<tr>
-<td>real-time</td>
-<td>Adjective describing monitoring</td>
-<td>The software provides real-time monitoring of network traffic to detect issues immediately.</td>
-</tr>
-<tr>
-<td>read-only</td>
-<td>Adjective describing file system</td>
-<td>The technician mounted the drive as a read-only file system to prevent accidental modifications.</td>
-</tr>
-<tr>
-<td>permanently-damaged</td>
-<td>Adjective describing disk</td>
-<td>The technician confirmed that the disk was permanently damaged and needed replacement.</td>
-</tr>
-<tr>
-<td>cross-platform</td>
-<td>Adjective describing compatibility</td>
-<td>The development team released a cross-platform application that runs on Windows, macOS, and Linux.</td>
-</tr>
-<tr>
-<td>command-line</td>
-<td>Adjective describing utility</td>
-<td>The command-line utility simplifies batch processing tasks for advanced users.</td>
-</tr>
-<tr>
-<td>open-source</td>
-<td>Adjective describing framework</td>
-<td>The team chose an open-source framework to allow customization and community contributions.</td>
-</tr>
-<tr>
-<td>user-friendly</td>
-<td>Adjective describing interface</td>
-<td>The new interface is user-friendly, making it easy for beginners to navigate the software.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="no-hyphen-after-the-noun">No Hyphen After the Noun</h3>
-<table>
-<thead>
-<tr>
-<th>Phrase</th>
-<th>Description / Part of Speech</th>
-<th>Example Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>high availability</td>
-<td>Adjective describing cluster</td>
-<td>The cluster supports high availability to minimize downtime.</td>
-</tr>
-<tr>
-<td>fault tolerant</td>
-<td>Adjective describing architecture</td>
-<td>The architecture is fault tolerant, allowing it to operate despite component failures.</td>
-</tr>
-<tr>
-<td>low latency</td>
-<td>Adjective describing connection</td>
-<td>The connection is low latency, ensuring fast data transmission.</td>
-</tr>
-<tr>
-<td>real time</td>
-<td>Adjective describing monitoring</td>
-<td>Monitoring is done in real time to detect issues immediately.</td>
-</tr>
-<tr>
-<td>read only</td>
-<td>Adjective describing file system</td>
-<td>The file system is read only to prevent accidental changes.</td>
-</tr>
-<tr>
-<td>permanently damaged</td>
-<td>Adjective describing disk</td>
-<td>The disk is permanently damaged and cannot be used.</td>
-</tr>
-<tr>
-<td>cross platform</td>
-<td>Adjective describing compatibility</td>
-<td>The tool is compatible across platforms, including Windows, macOS, and Linux.</td>
-</tr>
-<tr>
-<td>command line</td>
-<td>Adjective describing utility</td>
-<td>The utility runs from the command line for advanced users.</td>
-</tr>
-<tr>
-<td>open source</td>
-<td>Adjective describing framework</td>
-<td>The framework is open source, allowing developers to modify and contribute to the code.</td>
-</tr>
-<tr>
-<td>user friendly</td>
-<td>Adjective describing interface</td>
-<td>The interface is user friendly, making it easy for beginners to</td>
-</tr>
-</tbody>
-</table>
-<h3 id="notes">Notes</h3>
+<h1 id="ehealth">eHealth</h1>
+<p>I'll just start dumping my eHealth-related resources and cheat sheets here.</p>
 <ul>
-<li>
-<p><strong>Adverbs ending in <code>-ly</code></strong> (e.g., <em>fully</em>, <em>partially</em>) typically <strong>do not require hyphenation</strong>:</p>
-</li>
-<li>
-<p>Correct: fully automated system</p>
-</li>
-<li>Incorrect: fully-automated system</li>
-<li>When in doubt, hyphenate for clarity <strong>before the noun</strong>, and omit after.</li>
+<li><a href="quick_ref/">SMART-on-FHIR and Integration — Quick Reference</a></li>
+<li><a href="smart-fhir/">SMART-on-FHIR and Integration — UML Diagrams</a></li>
+<li><a href="gloss_ontario_halo/">Ontario eHealth &amp; HALO Integration Glossary</a></li>
 </ul>
 </article>
 </div>
@@ -788,7 +568,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Kubectl Command Cheat Sheet" class="md-footer__link md-footer__link--prev" href="../cheatsheet-kubectl/">
+<a aria-label="Previous: Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration" class="md-footer__link md-footer__link--prev" href="../sec_net-sec/saml-admin/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -797,17 +577,17 @@
                 Previous
               </span>
 <div class="md-ellipsis">
-                Kubectl Command Cheat Sheet
+                Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
               </div>
 </div>
 </a>
-<a aria-label="Next: Miscellaneous Glossaries" class="md-footer__link md-footer__link--next" href="../../sec_gloss/">
+<a aria-label="Next: SMART-on-FHIR and Integration Quick Reference" class="md-footer__link md-footer__link--next" href="quick_ref/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                Miscellaneous Glossaries
+                SMART-on-FHIR and Integration Quick Reference
               </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -853,14 +633,14 @@
 </aside>
 </div>
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
-<script src="../../js/seamaiden.js"></script>
-<script src="../../js/diagram-zoom.js"></script>
-<script src="../../js/alphabet-auto.js"></script>
-<script src="../../js/svg-patcher.js"></script>
-<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../js/seamaiden.js"></script>
+<script src="../js/diagram-zoom.js"></script>
+<script src="../js/alphabet-auto.js"></script>
+<script src="../js/svg-patcher.js"></script>
+<script src="../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
-<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script src="../assets/mkdocs_puml/interaction.js"></script>
 </body>
 </html>

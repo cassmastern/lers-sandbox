@@ -1,5 +1,5 @@
 # MkDocs output
-/site/
+# /site/
 # Python virtual environments
 .venv/
 env/

@@ -5,7 +5,7 @@ Welcome to Ler's Sandbox!
 The site's purpose is multifold:
 
 - to brush up and deepen my knowledge of GitHub, MkDocs, major cloud platforms, Markdown, content architecture, networking, and more 
-- to play with some of the features supporting accessibility and eventually implement WCAG compliance
+- to play with some of the features supporting accessibility and eventually implement full WCAG compliance
 - to build up a technical documentation site for demo purposes
 - to discover new *'domain curiosities'*
 
