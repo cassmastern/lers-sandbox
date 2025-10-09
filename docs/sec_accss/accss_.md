@@ -1,6 +1,6 @@
 # Accessibility Reference
 
-This is my WCAG 2.1 AA–based accessibility reference/cheat sheet.
+>My WCAG 2.1 AA–based accessibility reference/cheat sheet.
 
 
 ## Core Principles: POUR

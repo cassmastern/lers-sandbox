@@ -1,4 +1,6 @@
-# Visuals for the Sightless (Accessibility, Round Two)
+# Visuals for the Sightless
+
+>Rant.
 
 So it looks like I’m diving into accessibility and WCAG for a second time. The first time, way back in 2010, doesn’t really count — I was part of a large org with a techcomm tools engineer, a QA team, and workflows that enforced "almost-full compliance" by default. (To me, it sounded a bit off. Like, *you're either Section 508 or WCAG-compliant, or you're not, no?*) But I didn't care to voice it, perhaps also because my mom wasn't sightless yet.
 
@@ -19,7 +21,7 @@ The `mkdocs-mermaid2-plugin==1.2.1` lets you author diagrams inline in Markdown 
 | **No lifecycle hooks**            | There’s no reliable callback to hook into post-render for mutation.                |
 | **Silent failures**               | If your script runs too early or too late, nothing happens — and you won’t know.  |
 
-> Have to retract much of what's in the table above... **see* [Breakthru #1](breakthru1-mermaid-svg.md).
+> Have to retract much of what's in the table above... **see* [Breakthru #1](mermaid-beyond-reach.md).
 
 ## Runtime Injection: A Fragile Strategy
 

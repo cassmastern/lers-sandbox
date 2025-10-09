@@ -1,4 +1,6 @@
-# The Long Arc of Digital Identity: From Islands to Federation
+# The Long Arc of Digital Identity
+
+>An attempt to make sense of where digital identity management came from, what thorny roads it travelled, and where it is headed. Alternative title: *The Long Arc of Digital Identity: From Islands to Federation*.
 
 ## Introduction
 
@@ -295,12 +297,12 @@ The diagram above shows a typical enterprise stack:
 
 ## Why This History Matters
 
-Understanding these layers isn't just academic — it explains *why* your authentication infrastructure looks the way it does:
+Understanding these layers isn't just academic — it explains *why* our authentication infrastructure looks the way it does:
 
 - **Why do we still have Active Directory?** Because Era 2 (directories) became load-bearing infrastructure. Thousands of applications authenticate against LDAP, and ripping that out would break everything.
 - **Why does SSO feel inconsistent?** Because some apps use SAML, some use OIDC, some still require local passwords, and they don't always play nicely together.
 - **Why are tokens so complicated?** Because OAuth 2.0 chose flexibility over prescription, allowing for many valid (and many insecure) implementations.
-- **Why can't we just start over?** Because backward compatibility matters. The 20-year-old app running your supply chain won't magically support OIDC. You build *around* it.
+- **Why can't we just start over?** Because backward compatibility matters. The 20-year-old app running our supply chains won't magically support OIDC. You build *around* it.
 
 ### For Decision-Makers
 
@@ -329,7 +331,7 @@ The identity journey continues. Emerging trends include:
 
 From local databases to federated APIs, identity infrastructure evolved to solve real problems: password fatigue, operational overhead, cloud integration, mobile support. Each era built on its predecessors rather than replacing them — which is why modern enterprises run archaeological layers of authentication, all simultaneously.
 
-The login button you click today is the visible tip of a 30-year accumulation of protocols, compromises, and architectural decisions. Understanding that history helps you navigate the hybrid mess we've inherited—and design better systems for the future.
+The login button we click today is the visible tip of a 30-year accumulation of protocols, compromises, and architectural decisions. Understanding that history helps you navigate the hybrid mess we've inherited—and design better systems for the future.
 
 Identity infrastructure is never "done." It's a living system that adapts to new threats, new devices, and new organizational needs. The next chapter is already being written.
 

@@ -1,8 +1,6 @@
-# Diagram Accessibilit   in MkDocs Material: Current State & Path Forward
+# Diagram Accessibility: Current State/Path Forward
 
-I have now built (*hopefully*, as usual) a more-or-less robust documentation platform with live diagram rendering, theme switching, and accessibility patching for **Mermaid**. But **PlantUML** and **Graphviz** still lag behind in accessibility and dynamic responsiveness.
-
----
+>Another sticky note; I have now built a more-or-less robust doc platform with live diagram rendering, theme switching, and accessibility patching for **Mermaid**. But **PlantUML** and **Graphviz** still lag behind in accessibility and dynamic responsiveness.
 
 ## Mermaid: Fully Live, Fully Accessible
 

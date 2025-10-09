@@ -1,6 +1,6 @@
-# An Accessible Mermaid Beyond Reach — A Breakthrough That Wasn't
+# An Accessible Mermaid Beyond Reach
 
-OK, this is to report and record some progress in embedding accessible Mermaid diagrams in MkDocs Material. Or rather, *embedding Mermaid code, with some meaning embedded in it, in MkDocs Markdown source files*.
+>On some progress in embedding accessibility text in Mermaid diagrams and a remaining blocker.
 
 Finally figured out I didn't need any custom scripts or post-processing hacks — at least not at this point — for metadata injection. Turns out — RTFM, eh 🤦🏻‍♂️ — I can use Mermaid’s built-in support for `accTitle` and `accDescr` directly inside fenced code blocks:
 

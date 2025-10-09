@@ -1,6 +1,6 @@
-# GenAI Landscape Primer 2025
+# GenAI Landscape in 2025
 
->Material for a  presentation.
+>Primer/presentation material.
 
 The Generative Artificial Intelligence (GenAI) landscape has evolved into a complex ecosystem of foundation models, specialized architectures, infrastructure components, and deployment patterns. This primer provides a comprehensive view of the current state, key technologies, and architectural patterns that define the modern GenAI stack.
 

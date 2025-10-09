@@ -1,6 +1,6 @@
 # eHealth
 
-I'll just start dumping my eHealth-related resources and cheat sheets here.
+I'll just start accumulating some eHealth-related resources, references and cheat sheets here.
 
 - [SMART-on-FHIR and Integration — Quick Reference](quick_ref.md)
 - [SMART-on-FHIR and Integration — UML Diagrams](smart-fhir.md)

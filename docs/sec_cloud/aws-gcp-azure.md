@@ -1,6 +1,6 @@
 # Architectures of AWS, GCP, and Azure
 
-Architectural descriptions of AWS, GCP, and Azure are presented here at a level crafted for my own reference and growing understanding — detailed enough to be meaningful, yet concise enough to avoid cloud-induced vertigo.
+>Architectural descriptions of AWS, GCP, and Azure are presented here at a level crafted for my own reference and growing understanding — detailed enough to be meaningful, yet concise enough to avoid cloud-induced vertigo.
 
 **Common major component types** 
 

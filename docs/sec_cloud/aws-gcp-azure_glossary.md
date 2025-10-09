@@ -1,6 +1,6 @@
 # Cross-Platform Cloud & DevOps Glossary (AWS, GCP, Azure)
 
-A compact, comparative reference for core cloud services across AWS, Google Cloud Platform (GCP), and Microsoft Azure. Designed for modular documentation platforms, provenance-tagged workflows, and editorial clarity.
+>A compact, comparative reference for core cloud services across AWS, Google Cloud Platform (GCP), and Microsoft Azure. Designed for modular documentation platforms, provenance-tagged workflows, and editorial clarity.
 
 ---
 

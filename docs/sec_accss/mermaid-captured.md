@@ -1,13 +1,15 @@
-# Mermaid Captured — Finally!
+# Mermaid Captured
 
-I'll just dump this here as a sticky to-do note, to:
+>Breakthrough.
+
+**ToDo:**
 
 - Find out whether the SVG patcher approach is indeed the optimal, valid, legal, and most graceful one (perhaps there IS an official, developer-sanctioned way to get a Mermaid diagram to have `role="img"` and `tabindex="0"` in addition to `accTitle`and `accDescr`).
 - Combine Mermaid diagram-related content into a single reference/cheat sheet.
 
 ## The Patcher
 
-So, following a small breakthrough ([An Accessible Mermaid Beyond Reach](breakthru1-mermaid-svg.md)), a post-build patcher got an assistive technology, VoiceOver on macOS, to treat a Mermaid-to-SVG-to-HTML diagram the way I wanted.
+So, following a small breakthrough ([An Accessible Mermaid Beyond Reach](mermaid-beyond-reach.md)), a post-build patcher got an assistive technology, VoiceOver on macOS, to treat a Mermaid-to-SVG-to-HTML diagram the way I wanted.
 
 ## The Patcher
 

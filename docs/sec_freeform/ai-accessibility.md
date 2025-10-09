@@ -1,6 +1,6 @@
-# AI-Augmented Accessibility — A Technical Daydream
+# Accessibility with AI
 
-> While developing this site, it occurred to me that while we’ve made great strides in techcomm automation — reproducibility, modularity, re-use, etc. — we’re still leaving some readers behind. Sightless users, in particular, often encounter diagrams that are visually rich but semantically opaque.
+>A Technical Daydream. While developing this site, it occurred to me that while we’ve made great strides in techcomm automation — reproducibility, modularity, re-use, etc. — we’re still leaving some readers behind. Sightless users, in particular, often encounter diagrams that are visually rich but semantically opaque.
 
 "Our great strides in techcomm automation" thus, while working on this site, started to attract quotation marks: figuring out how to make MkDocs content WCAG-compliant turned out to be more convoluted than expected. The basics are fine, but anything beyond static text (especially diagrams) quickly becomes a mess.
 
