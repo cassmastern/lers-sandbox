@@ -1,0 +1,2977 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_gloss/gloss_oss/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../gloss_networking/" rel="next"/>
+<link href="../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
+<title>Glossary of OSS Terms - Ler's Sandobx</title>
+<link href="../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/alphabet.css" rel="stylesheet"/>
+<link href="../../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../../css/cm-logo.css" rel="stylesheet"/>
+<link href="../../css/color-vars.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#glossary-of-oss-terms">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Ler's Sandobx
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Glossary of OSS Terms
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+    Ler's Sandobx
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_about/">
+<span class="md-ellipsis">
+    ABOUT THIS WEBSITE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            ABOUT THIS WEBSITE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/whatsinhere/">
+<span class="md-ellipsis">
+    What's in Here?
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-sitedev/">
+<span class="md-ellipsis">
+    How This Site Was Developed and Deployed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-wf-breakdown/">
+<span class="md-ellipsis">
+    Detailed Breakdown of My Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/roadmap/">
+<span class="md-ellipsis">
+    Roadmap &amp; Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/feedback/">
+<span class="md-ellipsis">
+    Feedback
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cloud/">
+<span class="md-ellipsis">
+    IN THE CLOUDS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            IN THE CLOUDS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure/">
+<span class="md-ellipsis">
+    Architectures of AWS, GCP, and Azure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/jakarta-ee-azure/">
+<span class="md-ellipsis">
+    A Jakarta Enterprise Application on Azure
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_accss/">
+<span class="md-ellipsis">
+    ACCESSIBILITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            ACCESSIBILITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_/">
+<span class="md-ellipsis">
+    Accessibility Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/visuals-for-the-sightless/">
+<span class="md-ellipsis">
+    Visuals for the Sightless
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_diagram-dilemma/">
+<span class="md-ellipsis">
+    The Diagramming Dilemma
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mermaid-beyond-reach/">
+<span class="md-ellipsis">
+    An Accessible Mermaid Beyond Reach
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mermaid-captured/">
+<span class="md-ellipsis">
+    Mermaid Captured
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<span class="md-ellipsis">
+    Diagram Accessibility: Current State/Path Forward
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_freeform/">
+<span class="md-ellipsis">
+    CONCEPTS, ESSAYS &amp; MORE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            CONCEPTS, ESSAYS &amp; MORE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/ibm-sanfran/">
+<span class="md-ellipsis">
+    IBM SanFrancisco
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/ai-accessibility/">
+<span class="md-ellipsis">
+    Accessibility with AI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/ai-accessibility_bus/">
+<span class="md-ellipsis">
+    Accessibility with AI (Concept Note)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/gen-ai-landscape-primer/">
+<span class="md-ellipsis">
+    GenAI Landscape in 2025
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/identity/">
+<span class="md-ellipsis">
+    The Long Arc of Digital Identity
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_net-sec/">
+<span class="md-ellipsis">
+    NETWORKS &amp; SECURITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            NETWORKS &amp; SECURITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center/">
+<span class="md-ellipsis">
+    A Hypothetical Data Centre Network
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_stride/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — STRIDE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_mitre/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — MITRE ATT&amp;CK
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/saml-admin/">
+<span class="md-ellipsis">
+    Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/">
+<span class="md-ellipsis">
+    eHEALTH
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            eHEALTH
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/quick_ref/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration Quick Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/smart-fhir/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration — Visuals
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/gloss_ontario_halo/">
+<span class="md-ellipsis">
+    Ontario eHealth &amp; HALO Integration Glossary
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cheatsheets/">
+<span class="md-ellipsis">
+    VARIOUS CHEAT SHEETS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            VARIOUS CHEAT SHEETS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-docker/">
+<span class="md-ellipsis">
+    Docker Command Cheatsheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-kubectl/">
+<span class="md-ellipsis">
+    Kubectl Command Cheat Sheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet_compound-modifiers/">
+<span class="md-ellipsis">
+    Compound Modifiers Cheat Sheet
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    MISC GLOSSARIES
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            MISC GLOSSARIES
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Glossary of OSS Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gloss_networking/">
+<span class="md-ellipsis">
+    Glossary of Networking Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gloss_kuber/">
+<span class="md-ellipsis">
+    Glossary of Kubernetes Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gloss_cloud-native/">
+<span class="md-ellipsis">
+    Glossary of Cloud-Native Terms
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="glossary-of-oss-terms">Glossary of OSS Terms</h1>
+<p>OSS (Operational Support Systems) is one of the two essential frameworks in telecommunications. OSS focuses on managing network operations. The other framework, BSS (Business Support Systems), handles customer-related functions, such as billing and order management. These two systems work together to enhance service delivery and efficiency.</p>
+<p>This glossary defines key concepts used in OSS, including service provisioning, fault management, and workflow orchestration. While OSS operates at a higher abstraction layer, many terms intersect with core networking principles.</p>
+<table>
+<thead>
+<tr>
+<th>Term/Acronym</th>
+<th>Full Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A links</strong></td>
+<td>Access links in SS7 networks, connecting signaling endpoints (e.g., switches) to STPs (Signal Transfer Points).</td>
+</tr>
+<tr>
+<td><strong>AAA</strong></td>
+<td>Authentication, Authorization, and Accounting. A framework for controlling access to network resources, enforcing policies, and auditing usage.</td>
+</tr>
+<tr>
+<td><strong>AAL</strong></td>
+<td>ATM Adaptation Layer. Protocol layer that segments data into fixed-size ATM cells for transmission.</td>
+</tr>
+<tr>
+<td><strong>ABR</strong></td>
+<td>Available Bit Rate. A QoS class in ATM networks for non-time-sensitive traffic that dynamically adjusts bandwidth.</td>
+</tr>
+<tr>
+<td><strong>ACD</strong></td>
+<td>Automatic Call Distribution. System that routes incoming calls to available agents or queues (e.g., in call centrs).</td>
+</tr>
+<tr>
+<td><strong>ACE</strong></td>
+<td>ATM Circuit Emulation. Technique to mimic traditional circuit-switched networks over ATM.</td>
+</tr>
+<tr>
+<td><strong>ACELP</strong></td>
+<td>Algebraic Code Excited Linear Prediction. A voice compression algorithm used in mobile networks.</td>
+</tr>
+<tr>
+<td><strong>ACM</strong></td>
+<td>Address Complete Message. SS7 signal indicating the called party's address is fully received.</td>
+</tr>
+<tr>
+<td><strong>ACR</strong></td>
+<td>Attenuation to Crosstalk Ratio. Measures signal quality in copper cables (higher = better).</td>
+</tr>
+<tr>
+<td><strong>ACS</strong></td>
+<td>Access Control and Security. Systems that restrict unauthorized access to network resources.</td>
+</tr>
+<tr>
+<td><strong>Active Equipment</strong></td>
+<td>Electronic devices that generate, transmit, or receive signals in a telecom network (e.g., routers, switches).</td>
+</tr>
+<tr>
+<td><strong>ADM</strong></td>
+<td>Add-Drop Multiplexer. SDH/SONET device that adds or removes channels from a high-speed signal.</td>
+</tr>
+<tr>
+<td><strong>ADPCM</strong></td>
+<td>Adaptive Differential Pulse Code Modulation. Voice compression technique (e.g., for VoIP).</td>
+</tr>
+<tr>
+<td><strong>ADSL</strong></td>
+<td>Asymmetric Digital Subscriber Line. Broadband technology with faster download than upload speeds.</td>
+</tr>
+<tr>
+<td><strong>AGS</strong></td>
+<td>Advanced Gaming Service. Platform for delivering cloud-based or networked gaming.</td>
+</tr>
+<tr>
+<td><strong>AIS</strong></td>
+<td>Alarm Indication Signal. A fault signal sent downstream when a network failure is detected.</td>
+</tr>
+<tr>
+<td><strong>ANM</strong></td>
+<td>Answer Message. SS7 signal indicating the called party has answered.</td>
+</tr>
+<tr>
+<td><strong>APS</strong></td>
+<td>Automatic Protection Switching. Redundant system that switches to backup paths during failures.</td>
+</tr>
+<tr>
+<td><strong>ARDIS</strong></td>
+<td>Advanced Radio Data Information Service. Early wireless data network for mobile devices.</td>
+</tr>
+<tr>
+<td><strong>ARPU</strong></td>
+<td>Average Revenue Per User. Key metric for telecom profitability (revenue divided by subscribers).</td>
+</tr>
+<tr>
+<td><strong>ASIC</strong></td>
+<td>Application-Specific Integrated Circuit. Custom hardware chip for specialized tasks (e.g., signal processing).</td>
+</tr>
+<tr>
+<td><strong>ASN.1</strong></td>
+<td>Abstract Syntax Notation One. Standard for defining data structures in telecommunications protocols.</td>
+</tr>
+<tr>
+<td><strong>ATC</strong></td>
+<td>Adaptive Transform Coding. Voice compression method used in audio codecs.</td>
+</tr>
+<tr>
+<td><strong>ATIS</strong></td>
+<td>Alliance for Telecommunications Industry Solutions. U.S. standards body for telecom technologies.</td>
+</tr>
+<tr>
+<td><strong>ATM</strong></td>
+<td>Asynchronous Transfer Mode. High-speed networking standard using fixed-size cells (53 bytes).</td>
+</tr>
+<tr>
+<td><strong>AU</strong></td>
+<td>Administrative Unit. SDH/SONET structure for transporting lower-rate signals.</td>
+</tr>
+<tr>
+<td><strong>AUC</strong></td>
+<td>Authentication Centre. Database in GSM networks that verifies subscriber identities.</td>
+</tr>
+<tr>
+<td><strong>AUG</strong></td>
+<td>Administrative Unit Group. SDH/SONET container for multiplexing AUs.</td>
+</tr>
+<tr>
+<td><strong>B links</strong></td>
+<td>Bridge links in SS7 networks, connecting STPs (Signal Transfer Points) within the same region.</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>The capacity of a communication channel, measured in bits per second (bps).</td>
+</tr>
+<tr>
+<td><strong>BAS</strong></td>
+<td>Building Automation System. Networked control systems for HVAC, lighting, etc.</td>
+</tr>
+<tr>
+<td><strong>BDLA</strong></td>
+<td>Bidirectional Line Amplifier. Boosts optical signals in both directions in fiber networks.</td>
+</tr>
+<tr>
+<td><strong>BDSL</strong></td>
+<td>Broadband Digital Subscriber Line. DSL variant supporting symmetric high-speed data.</td>
+</tr>
+<tr>
+<td><strong>BER</strong></td>
+<td>Bit Error Rate. Ratio of erroneous bits to total transmitted bits (measure of signal quality).</td>
+</tr>
+<tr>
+<td><strong>BIB</strong></td>
+<td>Backward Indicator Bit. SS7 flag indicating a retransmission request due to errors.</td>
+</tr>
+<tr>
+<td><strong>Bits</strong></td>
+<td>Binary digits (0s and 1s). The smallest unit of data in digital communications.</td>
+</tr>
+<tr>
+<td><strong>BLSR</strong></td>
+<td>Bidirectional Line Switched Ring. SDH/SONET ring architecture with redundant paths.</td>
+</tr>
+<tr>
+<td><strong>bps</strong></td>
+<td>Bits per second. Unit for measuring data transmission speed.</td>
+</tr>
+<tr>
+<td><strong>BR</strong></td>
+<td>Bidirectional Ring. Network topology with two counter-rotating paths for redundancy.</td>
+</tr>
+<tr>
+<td><strong>BRA</strong></td>
+<td>Basic Rate Access. ISDN service offering 2 B-channels (64 kbps each) + 1 D-channel (16 kbps).</td>
+</tr>
+<tr>
+<td><strong>Broadband Services</strong></td>
+<td>High-capacity services (e.g., video, data) delivered over shared infrastructure.</td>
+</tr>
+<tr>
+<td><strong>BSC</strong></td>
+<td>Base Station Controller. Manages multiple BTSs (Base Transceiver Stations) in GSM networks.</td>
+</tr>
+<tr>
+<td><strong>BSN</strong></td>
+<td>Backward Sequence Number. SS7 field used for error detection and retransmission.</td>
+</tr>
+<tr>
+<td><strong>BTS</strong></td>
+<td>Base Transceiver Station. GSM tower hardware that communicates with mobile devices.</td>
+</tr>
+<tr>
+<td><strong>CAC</strong></td>
+<td>Carrier Access Code. Prefix for selecting long-distance carriers (e.g., "10-10-321").</td>
+</tr>
+<tr>
+<td><strong>CAN</strong></td>
+<td>Customer Access Network. The "last mile" connecting subscribers to the telecom provider.</td>
+</tr>
+<tr>
+<td><strong>Carriers</strong></td>
+<td>Telecommunications service providers (e.g., AT&amp;T, Verizon).</td>
+</tr>
+<tr>
+<td><strong>CAT</strong></td>
+<td>Committee on Applications and Technology. U.S. advisory group for telecom standards.</td>
+</tr>
+<tr>
+<td><strong>CAT-5</strong></td>
+<td>Category 5 twisted-pair cable. Supports 100 Mbps Ethernet (up to 100 MHz bandwidth).</td>
+</tr>
+<tr>
+<td><strong>CATV</strong></td>
+<td>Cable Television. Coaxial/fiber network for delivering TV and broadband services.</td>
+</tr>
+<tr>
+<td><strong>CB</strong></td>
+<td>Citizen Band. Public radio frequency band for short-distance communication (e.g., 27 MHz).</td>
+</tr>
+<tr>
+<td><strong>CB</strong></td>
+<td>Call Barring. Feature to block specific types of calls (e.g., international).</td>
+</tr>
+<tr>
+<td><strong>CBR</strong></td>
+<td>Constant Bit Rate. QoS class in ATM for fixed-bandwidth traffic (e.g., uncompressed voice).</td>
+</tr>
+<tr>
+<td><strong>CBT</strong></td>
+<td>Computer-Based Training. Interactive software for employee education.</td>
+</tr>
+<tr>
+<td><strong>CC</strong></td>
+<td>Call Conferencing. Feature to connect multiple parties in a single call.</td>
+</tr>
+<tr>
+<td><strong>CC7</strong></td>
+<td>Common Channel Signaling #7. Protocol stack for out-of-band signaling in telecom networks.</td>
+</tr>
+<tr>
+<td><strong>CCITT</strong></td>
+<td>Consultative Committee for International Telegraphy and Telephony. Original name for ITU-T.</td>
+</tr>
+<tr>
+<td><strong>CCR</strong></td>
+<td>Call Charging Record. Log of call details for billing purposes.</td>
+</tr>
+<tr>
+<td><strong>CCS7</strong></td>
+<td>Common Channel Signaling #7. Alternate name for SS7.</td>
+</tr>
+<tr>
+<td><strong>CCTV</strong></td>
+<td>Closed-Circuit Television. Private video surveillance system.</td>
+</tr>
+<tr>
+<td><strong>CD</strong></td>
+<td>Chromatic Dispersion. Fiber-optic signal distortion caused by varying light wavelengths.</td>
+</tr>
+<tr>
+<td><strong>CD</strong></td>
+<td>Compact Disc. Optical storage medium for digital data (e.g., CD-ROM, CD-R).</td>
+</tr>
+<tr>
+<td><strong>CD</strong></td>
+<td>Call Diversion. Feature to redirect incoming calls to another number.</td>
+</tr>
+<tr>
+<td><strong>CDE</strong></td>
+<td>Common Desktop Environment. Unix/Linux graphical user interface (GUI) standard.</td>
+</tr>
+<tr>
+<td><strong>CDMA</strong></td>
+<td>Code Division Multiple Access. Wireless technology that encodes users with unique codes.</td>
+</tr>
+<tr>
+<td><strong>CDPD</strong></td>
+<td>Cellular Digital Packet Data. Early wireless data standard for analog cellular networks.</td>
+</tr>
+<tr>
+<td><strong>CELP</strong></td>
+<td>Code Excited Linear Prediction. Voice compression algorithm used in VoIP and mobile networks.</td>
+</tr>
+<tr>
+<td><strong>CF</strong></td>
+<td>Call Forwarding. Feature to redirect calls to another number (e.g., when busy).</td>
+</tr>
+<tr>
+<td><strong>CH/CW</strong></td>
+<td>Call Hold / Call Waiting. Features to manage multiple calls on a single line.</td>
+</tr>
+<tr>
+<td><strong>CHAP</strong></td>
+<td>Challenge Handshake Authentication Protocol. Secure alternative to PAP for PPP connections.</td>
+</tr>
+<tr>
+<td><strong>CI</strong></td>
+<td>Configuration Item. ITIL term for any component under configuration management (e.g., servers).</td>
+</tr>
+<tr>
+<td><strong>CIC</strong></td>
+<td>Committee on Information and Communications. Standards body for IT/telecom policies.</td>
+</tr>
+<tr>
+<td><strong>CIF</strong></td>
+<td>Cell in Frames. Protocol for transporting ATM cells over Ethernet/Token Ring LANs.</td>
+</tr>
+<tr>
+<td><strong>CLI</strong></td>
+<td>Calling Line Identification. Displays the caller's phone number (Caller ID).</td>
+</tr>
+<tr>
+<td><strong>CLIP</strong></td>
+<td>Calling Line Identification Presentation. Technical term for Caller ID display.</td>
+</tr>
+<tr>
+<td><strong>CLIR</strong></td>
+<td>Calling Line Identification Restriction. Feature to block Caller ID transmission.</td>
+</tr>
+<tr>
+<td><strong>CLNP</strong></td>
+<td>Connectionless Network Protocol. OSI Layer 3 protocol similar to IP.</td>
+</tr>
+<tr>
+<td><strong>CM</strong></td>
+<td>Configuration Management. ITIL process for tracking system configurations.</td>
+</tr>
+<tr>
+<td><strong>CMS</strong></td>
+<td>Call Management Services. Features like call waiting, voicemail, etc.</td>
+</tr>
+<tr>
+<td><strong>CMTS</strong></td>
+<td>Cellular Mobile Telephone Service. Legacy term for mobile networks (e.g., AMPS).</td>
+</tr>
+<tr>
+<td><strong>CNM</strong></td>
+<td>Customer Network Management. Tools for subscribers to monitor their leased networks.</td>
+</tr>
+<tr>
+<td><strong>COC</strong></td>
+<td>Council on Competitiveness. U.S. group advocating for telecom/tech innovation.</td>
+</tr>
+<tr>
+<td><strong>COMPLEC</strong></td>
+<td>Competitive Local Exchange Carrier. Alternative phone service provider to incumbents.</td>
+</tr>
+<tr>
+<td><strong>Conductor</strong></td>
+<td>Metallic wire (e.g., copper) for transmitting electrical signals.</td>
+</tr>
+<tr>
+<td><strong>CONS</strong></td>
+<td>Connection-Oriented Network Service. OSI protocol for reliable data delivery.</td>
+</tr>
+<tr>
+<td><strong>CORBA</strong></td>
+<td>Common Object Request Broker Architecture. Middleware standard for distributed systems.</td>
+</tr>
+<tr>
+<td><strong>CP</strong></td>
+<td>Connection Point. Logical endpoint in a network (e.g., for virtual circuits).</td>
+</tr>
+<tr>
+<td><strong>CPE</strong></td>
+<td>Customer Premises Equipment. Devices at the subscriber's location (e.g., modems, routers).</td>
+</tr>
+<tr>
+<td><strong>CPLD</strong></td>
+<td>Complex Programmable Logic Device. Reconfigurable hardware for custom digital circuits.</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>Central Processing Unit. The "brain" of a computer or network device.</td>
+</tr>
+<tr>
+<td><strong>CRM</strong></td>
+<td>Customer Relationship Management. Systems for managing subscriber interactions.</td>
+</tr>
+<tr>
+<td><strong>CRT</strong></td>
+<td>Classroom Training. Traditional instructor-led technical education.</td>
+</tr>
+<tr>
+<td><strong>CS</strong></td>
+<td>Caesium Clock. High-precision atomic clock used for network synchronization.</td>
+</tr>
+<tr>
+<td><strong>CS-ACELP</strong></td>
+<td>Conjugate Structure Algebraic CELP. Voice codec (e.g., ITU-T G.729).</td>
+</tr>
+<tr>
+<td><strong>CSMA/CD</strong></td>
+<td>Carrier Sense Multiple Access with Collision Detection. Ethernet's media access control method.</td>
+</tr>
+<tr>
+<td><strong>CSN</strong></td>
+<td>Control System Network. Network for managing industrial control systems (e.g., SCADA).</td>
+</tr>
+<tr>
+<td><strong>CSPP</strong></td>
+<td>Computer Systems Policy Project. Advocacy group for IT/telecom policy reform.</td>
+</tr>
+<tr>
+<td><strong>CSTA</strong></td>
+<td>Computer Supported Telecommunications Applications. ECMA standard for CTI (Computer Telephony Integration).</td>
+</tr>
+<tr>
+<td><strong>CSTB</strong></td>
+<td>Computer Science and Telecommunications Board. U.S. advisory body for tech policy.</td>
+</tr>
+<tr>
+<td><strong>CT</strong></td>
+<td>Call Tracing. Feature to log call routing paths for debugging.</td>
+</tr>
+<tr>
+<td><strong>CTIA</strong></td>
+<td>Cellular Telecommunications Industry Association. U.S. trade group for wireless providers.</td>
+</tr>
+<tr>
+<td><strong>CTP</strong></td>
+<td>Connection Termination Point. Logical endpoint for a network connection.</td>
+</tr>
+<tr>
+<td><strong>D links</strong></td>
+<td>Diagonal links in SS7 networks, connecting STPs across different hierarchical levels.</td>
+</tr>
+<tr>
+<td><strong>DAS</strong></td>
+<td>Dual Attachment Station. FDDI node with redundant fiber connections for fault tolerance.</td>
+</tr>
+<tr>
+<td><strong>DB</strong></td>
+<td>Database. Structured repository for storing and querying network data.</td>
+</tr>
+<tr>
+<td><strong>DBS</strong></td>
+<td>Direct Broadcast Satellite. TV/radio service delivered via geostationary satellites.</td>
+</tr>
+<tr>
+<td><strong>DCF</strong></td>
+<td>Dispersion Compensating Fiber. Optical fiber designed to counteract signal distortion.</td>
+</tr>
+<tr>
+<td><strong>DCG</strong></td>
+<td>Dispersion Compensating Grating. Device to fix chromatic dispersion in fiber links.</td>
+</tr>
+<tr>
+<td><strong>DCME</strong></td>
+<td>Digital Circuit Multiplication Equipment. Hardware for voice compression in TDM networks.</td>
+</tr>
+<tr>
+<td><strong>DCN</strong></td>
+<td>Data Control Network. Dedicated network for management traffic (e.g., SNMP).</td>
+</tr>
+<tr>
+<td><strong>DCS</strong></td>
+<td>Digital Cross-connect System. Device for routing TDM circuits (e.g., E1/T1 lines).</td>
+</tr>
+<tr>
+<td><strong>DCS</strong></td>
+<td>Data Communication Server. Component in XMATE (Exchange Management Terminal) systems.</td>
+</tr>
+<tr>
+<td><strong>DDF</strong></td>
+<td>Digital Distribution Frame. Patch panel for interconnecting telecom cables.</td>
+</tr>
+<tr>
+<td><strong>DDS</strong></td>
+<td>Digital Data Service. Leased line service for dedicated data connections.</td>
+</tr>
+<tr>
+<td><strong>DECT</strong></td>
+<td>Digital Enhanced Cordless Telecommunications. Standard for cordless phones (1.9 GHz band).</td>
+</tr>
+<tr>
+<td><strong>DES</strong></td>
+<td>Data Encryption Standard. Legacy symmetric-key encryption algorithm (56-bit key).</td>
+</tr>
+<tr>
+<td><strong>DET</strong></td>
+<td>Digital Entertainment Terminal. Set-top box for video-on-demand services.</td>
+</tr>
+<tr>
+<td><strong>DHCP</strong></td>
+<td>Dynamic Host Configuration Protocol. Assigns IP addresses to network devices automatically.</td>
+</tr>
+<tr>
+<td><strong>DIU</strong></td>
+<td>Digital Interface Unit. Hardware for terminating TDM circuits (e.g., E1/T1).</td>
+</tr>
+<tr>
+<td><strong>DLCI</strong></td>
+<td>Data Link Connection Identifier. Address for Frame Relay virtual circuits.</td>
+</tr>
+<tr>
+<td><strong>DMA</strong></td>
+<td>Direct Memory Access. Hardware feature for fast data transfers without CPU overhead.</td>
+</tr>
+<tr>
+<td><strong>DNS</strong></td>
+<td>Domain Name System. Translates human-readable domain names (e.g., google.com) to IP addresses.</td>
+</tr>
+<tr>
+<td><strong>DOCSIS</strong></td>
+<td>Data Over Cable Service Interface Specification. Standard for cable modem networks.</td>
+</tr>
+<tr>
+<td><strong>DOD</strong></td>
+<td>Department of Defense. U.S. military agency influencing telecom standards (e.g., TCP/IP).</td>
+</tr>
+<tr>
+<td><strong>DOE</strong></td>
+<td>Department of Energy. U.S. agency involved in telecom infrastructure research.</td>
+</tr>
+<tr>
+<td><strong>DOS</strong></td>
+<td>Disk Operating System. Early OS for PCs (e.g., MS-DOS). Also: Denial of Service (attack).</td>
+</tr>
+<tr>
+<td><strong>DoT</strong></td>
+<td>Department of Telecommunications. Government body regulating telecom services.</td>
+</tr>
+<tr>
+<td><strong>Downstream</strong></td>
+<td>Data flow from the network to the subscriber (e.g., download speeds).</td>
+</tr>
+<tr>
+<td><strong>DPC</strong></td>
+<td>Destination Point Code. SS7 address identifying the target node in a signaling network.</td>
+</tr>
+<tr>
+<td><strong>DPNSS</strong></td>
+<td>Digital Private Network Signaling System. Protocol for PBX interconnections.</td>
+</tr>
+<tr>
+<td><strong>DRP</strong></td>
+<td>Disaster Recovery Plan. Procedures to restore network services after outages.</td>
+</tr>
+<tr>
+<td><strong>DS</strong></td>
+<td>Digital Section. Segment of a digital transmission link (e.g., between repeaters).</td>
+</tr>
+<tr>
+<td><strong>DS1</strong></td>
+<td>Digital Signal 1. T-carrier standard (1.544 Mbps, 24 voice channels).</td>
+</tr>
+<tr>
+<td><strong>DS3</strong></td>
+<td>Digital Signal 3. T-carrier standard (44.736 Mbps, 672 voice channels).</td>
+</tr>
+<tr>
+<td><strong>DSF</strong></td>
+<td>Dispersion-Shifted Fiber. Optical fiber optimized for single-wavelength long-haul transmission.</td>
+</tr>
+<tr>
+<td><strong>DSL</strong></td>
+<td>Digital Subscriber Line. Broadband over copper phone lines (e.g., ADSL, VDSL).</td>
+</tr>
+<tr>
+<td><strong>DSLAM</strong></td>
+<td>DSL Access Multiplexer. Aggregates subscriber DSL lines into a high-speed backbone.</td>
+</tr>
+<tr>
+<td><strong>DSS</strong></td>
+<td>Decision Support System. Software for analyzing network performance data.</td>
+</tr>
+<tr>
+<td><strong>DVB</strong></td>
+<td>Digital Video Broadcasting. Standard for digital TV transmission (satellite/cable/terrestrial).</td>
+</tr>
+<tr>
+<td><strong>DWDM</strong></td>
+<td>Dense Wavelength Division Multiplexing. Fiber-optic tech packing multiple wavelengths per fiber.</td>
+</tr>
+<tr>
+<td><strong>DXC</strong></td>
+<td>Digital Cross-Connect. Device for routing TDM circuits (synonym for DCS).</td>
+</tr>
+<tr>
+<td><strong>E link</strong></td>
+<td>Extended link in SS7 networks, connecting an STP to a remote SSP (Service Switching Point).</td>
+</tr>
+<tr>
+<td><strong>E1</strong></td>
+<td>European digital hierarchy level 1 (2.048 Mbps, 30 voice channels).</td>
+</tr>
+<tr>
+<td><strong>E3</strong></td>
+<td>European digital hierarchy level 3 (34.368 Mbps, 480 voice channels).</td>
+</tr>
+<tr>
+<td><strong>EA</strong></td>
+<td>Equal Access. Regulatory requirement for customers to choose long-distance carriers.</td>
+</tr>
+<tr>
+<td><strong>Easement</strong></td>
+<td>Legal right to install telecom infrastructure (e.g., cables) on private land.</td>
+</tr>
+<tr>
+<td><strong>EC</strong></td>
+<td>Emergency Correction. Patch or fix deployed to resolve critical network failures.</td>
+</tr>
+<tr>
+<td><strong>EDFA</strong></td>
+<td>Erbium-Doped Fiber Amplifier. Optical amplifier for boosting signals in fiber networks.</td>
+</tr>
+<tr>
+<td><strong>EDI</strong></td>
+<td>Electronic Data Interchange. Standard for business document exchange (e.g., orders, invoices).</td>
+</tr>
+<tr>
+<td><strong>EIA</strong></td>
+<td>Electronic Industries Alliance. U.S. standards body for electrical/telecom interfaces.</td>
+</tr>
+<tr>
+<td><strong>EMDF</strong></td>
+<td>Enhanced Main Distribution Frame. Modern patch panel for LAN cabling.</td>
+</tr>
+<tr>
+<td><strong>EMS</strong></td>
+<td>Element Management System. Software for monitoring/configuring individual network devices.</td>
+</tr>
+<tr>
+<td><strong>EPP</strong></td>
+<td>Emergency Power Plant. Backup generators for telecom facilities during outages.</td>
+</tr>
+<tr>
+<td><strong>ET</strong></td>
+<td>End Terminal. DWDM device terminating a wavelength channel.</td>
+</tr>
+<tr>
+<td><strong>Ethernet</strong></td>
+<td>LAN standard for wired networks (IEEE 802.3). Dominant protocol for local data traffic.</td>
+</tr>
+<tr>
+<td><strong>F link</strong></td>
+<td>Fully Associated Link in SS7 networks, directly connecting two SSPs without STPs.</td>
+</tr>
+<tr>
+<td><strong>FAD</strong></td>
+<td>Full Add-Drop. DWDM node capable of adding/removing all wavelength channels.</td>
+</tr>
+<tr>
+<td><strong>FCAPS</strong></td>
+<td>Fault, Configuration, Accounting, Performance, Security. ITU-T's network management model.</td>
+</tr>
+<tr>
+<td><strong>FCC</strong></td>
+<td>Federal Communications Commission. U.S. regulator for telecom and broadcasting.</td>
+</tr>
+<tr>
+<td><strong>FDDI</strong></td>
+<td>Fiber Distributed Data Interface. Legacy LAN standard for high-speed fiber networks (100 Mbps).</td>
+</tr>
+<tr>
+<td><strong>FDP</strong></td>
+<td>Fiber Distribution Point. Junction box for splitting fiber cables to multiple subscribers.</td>
+</tr>
+<tr>
+<td><strong>FE</strong></td>
+<td>Fast Ethernet. 100 Mbps Ethernet (IEEE 802.3u).</td>
+</tr>
+<tr>
+<td><strong>FEC</strong></td>
+<td>Forward Error Correction. Technique to detect/correct transmission errors without retransmission.</td>
+</tr>
+<tr>
+<td><strong>FEP</strong></td>
+<td>Front-End Processor. Dedicated computer for handling communications (e.g., in mainframes).</td>
+</tr>
+<tr>
+<td><strong>FERF</strong></td>
+<td>Far End Receive Failure. Alarm indicating a remote node cannot detect incoming signals.</td>
+</tr>
+<tr>
+<td><strong>FIB</strong></td>
+<td>Forward Indicator Bit. SS7 flag acknowledging error-free message receipt.</td>
+</tr>
+<tr>
+<td><strong>FISU</strong></td>
+<td>Fill-In Signal Unit. SS7 "keepalive" message sent when no traffic exists.</td>
+</tr>
+<tr>
+<td><strong>FM</strong></td>
+<td>Facilities Management. Outsourced maintenance of telecom infrastructure.</td>
+</tr>
+<tr>
+<td><strong>FMCG</strong></td>
+<td>Fast-Moving Consumer Goods. Retail term sometimes used in telecom for prepaid services.</td>
+</tr>
+<tr>
+<td><strong>FMO</strong></td>
+<td>Future Mode of Operation. Telstra's internal term for strategic network evolution plans.</td>
+</tr>
+<tr>
+<td><strong>FMS</strong></td>
+<td>File Management Subsystem. AXE telephone exchange component for software updates.</td>
+</tr>
+<tr>
+<td><strong>FMS</strong></td>
+<td>Fiber Monitoring System. Tools for detecting fiber cuts or degradation.</td>
+</tr>
+<tr>
+<td><strong>FO</strong></td>
+<td>Fiber Optic. Glass/plastic cables transmitting data as light pulses.</td>
+</tr>
+<tr>
+<td><strong>FOA</strong></td>
+<td>Fixed Optical Attenuator. Device to reduce signal power in fiber links.</td>
+</tr>
+<tr>
+<td><strong>FPGA</strong></td>
+<td>Field-Programmable Gate Array. Reconfigurable hardware for prototyping or specialized tasks.</td>
+</tr>
+<tr>
+<td><strong>FPU</strong></td>
+<td>File Process Utility. AXE exchange software for managing system files.</td>
+</tr>
+<tr>
+<td><strong>FR</strong></td>
+<td>Frame Relay. Packet-switched WAN technology for connecting LANs (mostly legacy).</td>
+</tr>
+<tr>
+<td><strong>Frame Relay</strong></td>
+<td>Legacy WAN protocol using variable-sized frames (more efficient than ATM for data).</td>
+</tr>
+<tr>
+<td><strong>FSAN</strong></td>
+<td>Full Service Access Network. Consortium promoting fiber-to-the-home (FTTH) standards.</td>
+</tr>
+<tr>
+<td><strong>FSN</strong></td>
+<td>Forward Sequence Number. SS7 field ensuring messages are processed in order.</td>
+</tr>
+<tr>
+<td><strong>FSP</strong></td>
+<td>Fixed Service Provider. Company offering landline/wireline telecom services.</td>
+</tr>
+<tr>
+<td><strong>FTAM</strong></td>
+<td>File Transfer, Access, and Management. OSI protocol for remote file operations.</td>
+</tr>
+<tr>
+<td><strong>FTP</strong></td>
+<td>File Transfer Protocol. Standard for uploading/downloading files over TCP/IP.</td>
+</tr>
+<tr>
+<td><strong>FTTC</strong></td>
+<td>Fiber to the Curb. Hybrid fiber-copper network with fiber running to neighborhood nodes.</td>
+</tr>
+<tr>
+<td><strong>FTTH</strong></td>
+<td>Fiber to the Home. End-to-end fiber optic connections to subscriber premises.</td>
+</tr>
+<tr>
+<td><strong>FWM</strong></td>
+<td>Four-Wave Mixing. Fiber nonlinearity causing interference between wavelengths.</td>
+</tr>
+<tr>
+<td><strong>Gbps</strong></td>
+<td>Gigabits per second. Data rate unit (1,000 Mbps).</td>
+</tr>
+<tr>
+<td><strong>GDMO</strong></td>
+<td>Guidelines for Definition of Managed Objects. ITU-T framework for network management data.</td>
+</tr>
+<tr>
+<td><strong>GDP</strong></td>
+<td>Gross Domestic Product. Economic metric sometimes used in telecom market analysis.</td>
+</tr>
+<tr>
+<td><strong>Gigabit Ethernet</strong></td>
+<td>1 Gbps Ethernet (IEEE 802.3z/ab). Common for backbone and server connections.</td>
+</tr>
+<tr>
+<td><strong>GII</strong></td>
+<td>Global Information Infrastructure. ITU vision for worldwide broadband connectivity.</td>
+</tr>
+<tr>
+<td><strong>GILS</strong></td>
+<td>Government Information Locator Service. U.S. standard for cataloging public datasets.</td>
+</tr>
+<tr>
+<td><strong>GPRS</strong></td>
+<td>General Packet Radio Service. 2.5G mobile data technology (precursor to 3G).</td>
+</tr>
+<tr>
+<td><strong>GPS</strong></td>
+<td>Global Positioning System. Satellite-based timing source for network synchronization.</td>
+</tr>
+<tr>
+<td><strong>GSM</strong></td>
+<td>Global System for Mobile Communications. 2G digital cellular standard (900/1800 MHz).</td>
+</tr>
+<tr>
+<td><strong>GSSI</strong></td>
+<td>Government Services Information Infrastructure. Framework for digital government services.</td>
+</tr>
+<tr>
+<td><strong>GST</strong></td>
+<td>Goods and Services Tax. Indirect tax applied to telecom services in some countries.</td>
+</tr>
+<tr>
+<td><strong>GUI</strong></td>
+<td>Graphical User Interface. Visual system for interacting with network management tools.</td>
+</tr>
+<tr>
+<td><strong>HCT</strong></td>
+<td>Home Communications Terminal. Customer device for broadband/TV services.</td>
+</tr>
+<tr>
+<td><strong>HDSL</strong></td>
+<td>High-Bit-Rate Digital Subscriber Line. Symmetric DSL (1.5 Mbps over 2-3 copper pairs).</td>
+</tr>
+<tr>
+<td><strong>HDTV</strong></td>
+<td>High-Definition Television. Video standard with 720p/1080i resolution or higher.</td>
+</tr>
+<tr>
+<td><strong>HFC</strong></td>
+<td>Hybrid Fiber-Coaxial. Cable TV network combining fiber backbone with coaxial "last mile."</td>
+</tr>
+<tr>
+<td><strong>HLR</strong></td>
+<td>Home Location Register. Central GSM database storing subscriber profiles and locations.</td>
+</tr>
+<tr>
+<td><strong>HPA</strong></td>
+<td>Higher-Order Path Adaptation. SDH function for mapping signals into virtual containers.</td>
+</tr>
+<tr>
+<td><strong>HPC</strong></td>
+<td>Higher-Order Path Connection. SDH cross-connect for VC-3/VC-4 level circuits.</td>
+</tr>
+<tr>
+<td><strong>HPCCI</strong></td>
+<td>High-Performance Computing and Communications Initiative. 1990s U.S. program for advanced networking.</td>
+</tr>
+<tr>
+<td><strong>HPT</strong></td>
+<td>Higher-Order Path Termination. SDH function for processing VC-3/VC-4 payloads.</td>
+</tr>
+<tr>
+<td><strong>HT</strong></td>
+<td>Hub Terminal. Central node in LMDS (wireless broadband) networks.</td>
+</tr>
+<tr>
+<td><strong>HTML</strong></td>
+<td>Hypertext Markup Language. Standard for creating web pages.</td>
+</tr>
+<tr>
+<td><strong>HU</strong></td>
+<td>Hub Unit. LMDS base station equipment.</td>
+</tr>
+<tr>
+<td><strong>IA</strong></td>
+<td>Indirect Adaptor. AXE exchange component for interfacing with external systems.</td>
+</tr>
+<tr>
+<td><strong>IAM</strong></td>
+<td>Initial Address Message. SS7 signal initiating a call setup (contains dialed number).</td>
+</tr>
+<tr>
+<td><strong>IBS</strong></td>
+<td>Integrated Business System. Enterprise software for telecom operators (e.g., billing, CRM).</td>
+</tr>
+<tr>
+<td><strong>IC</strong></td>
+<td>Integrated Circuit. Microchip containing electronic components (e.g., CPUs, modems).</td>
+</tr>
+<tr>
+<td><strong>IDC</strong></td>
+<td>Internet Data Centre. Facility housing servers and network infrastructure.</td>
+</tr>
+<tr>
+<td><strong>IDU</strong></td>
+<td>Indoor Unit. Customer-side hardware in LMDS/wireless systems.</td>
+</tr>
+<tr>
+<td><strong>IEEE</strong></td>
+<td>Institute of Electrical and Electronics Engineers. Global standards body (e.g., Ethernet, Wi-Fi).</td>
+</tr>
+<tr>
+<td><strong>IETF</strong></td>
+<td>Internet Engineering Task Force. Develops TCP/IP and related standards (e.g., RFCs).</td>
+</tr>
+<tr>
+<td><strong>IFL</strong></td>
+<td>Interfacility Link. Connects LMDS base stations to core networks.</td>
+</tr>
+<tr>
+<td><strong>IHS</strong></td>
+<td>Information Handling Server. XMATE component for data processing.</td>
+</tr>
+<tr>
+<td><strong>IISP</strong></td>
+<td>Information Infrastructure Standards Panel. Former U.S. group for cross-sector tech standards.</td>
+</tr>
+<tr>
+<td><strong>IITF</strong></td>
+<td>Information Infrastructure Task Force. 1990s U.S. initiative for national broadband policies.</td>
+</tr>
+<tr>
+<td><strong>ILD</strong></td>
+<td>International Long Distance. Cross-border voice/data services.</td>
+</tr>
+<tr>
+<td><strong>IMA</strong></td>
+<td>Interactive Multimedia Association. Defunct group for CD-ROM/early web standards.</td>
+</tr>
+<tr>
+<td><strong>IMBE</strong></td>
+<td>Improved Multi-Band Excitation. Voice codec used in APCO P25 digital radios.</td>
+</tr>
+<tr>
+<td><strong>IN</strong></td>
+<td>Intelligent Network. Framework for value-added telecom services (e.g., toll-free numbers).</td>
+</tr>
+<tr>
+<td><strong>Integration of Voice, Video, and Data</strong></td>
+<td>Converged networks carrying all traffic types over IP (e.g., VoIP, streaming).</td>
+</tr>
+<tr>
+<td><strong>IO</strong></td>
+<td>Input/Output. Hardware interfaces for data transfer (e.g., serial ports).</td>
+</tr>
+<tr>
+<td><strong>IP</strong></td>
+<td>Internet Protocol. Core networking protocol for addressing/routing data packets (IPv4/IPv6).</td>
+</tr>
+<tr>
+<td><strong>IPC</strong></td>
+<td>Inter-Process Communication. Software methods for exchanging data between programs.</td>
+</tr>
+<tr>
+<td><strong>IS</strong></td>
+<td>Information Systems. Organizational department managing IT/telecom infrastructure.</td>
+</tr>
+<tr>
+<td><strong>ISD</strong></td>
+<td>International Subscriber Dialing. Direct-dialing format for cross-border calls (e.g., +44).</td>
+</tr>
+<tr>
+<td><strong>ISDN</strong></td>
+<td>Integrated Services Digital Network. Digital telephony standard (64 kbps channels).</td>
+</tr>
+<tr>
+<td><strong>ISL</strong></td>
+<td>Inter-Switch Link. Cisco protocol for trunking VLANs across switches.</td>
+</tr>
+<tr>
+<td><strong>ISP</strong></td>
+<td>Inside Plant. Telecom equipment housed in controlled environments (e.g., central offices).</td>
+</tr>
+<tr>
+<td><strong>ISP</strong></td>
+<td>Internet Service Provider. Company offering internet access (e.g., Comcast, AT&amp;T).</td>
+</tr>
+<tr>
+<td><strong>ISUP</strong></td>
+<td>ISDN User Part. SS7 protocol for setting up/managing voice calls.</td>
+</tr>
+<tr>
+<td><strong>IT</strong></td>
+<td>Information Technology. Broad term for computing/telecom systems and support.</td>
+</tr>
+<tr>
+<td><strong>ITIL</strong></td>
+<td>Information Technology Infrastructure Library. Framework for IT service management (ITSM).</td>
+</tr>
+<tr>
+<td><strong>ITS</strong></td>
+<td>Intelligent Transportation Systems. Telecom applications for traffic management (e.g., tolls).</td>
+</tr>
+<tr>
+<td><strong>ITSM</strong></td>
+<td>IT Service Management. Processes for aligning IT services with business needs (e.g., ITIL).</td>
+</tr>
+<tr>
+<td><strong>ITU</strong></td>
+<td>International Telecommunication Union. UN agency for global telecom standards.</td>
+</tr>
+<tr>
+<td><strong>ITU-TSS</strong></td>
+<td>ITU Telecommunication Standardization Sector. Technical standards body (formerly CCITT).</td>
+</tr>
+<tr>
+<td><strong>IVR</strong></td>
+<td>Interactive Voice Response. Automated phone menus (e.g., "Press 1 for support").</td>
+</tr>
+<tr>
+<td><strong>IXC</strong></td>
+<td>Interexchange Carrier. Long-distance telecom provider (e.g., Sprint LD).</td>
+</tr>
+<tr>
+<td><strong>JDBC</strong></td>
+<td>Java Database Connectivity. API for Java applications to query databases.</td>
+</tr>
+<tr>
+<td><strong>JTAPI</strong></td>
+<td>Java Telephony API. Library for CTI (Computer Telephony Integration) applications.</td>
+</tr>
+<tr>
+<td><strong>kbps</strong></td>
+<td>Kilobits per second. Data rate unit (1,000 bps).</td>
+</tr>
+<tr>
+<td><strong>Kiosk</strong></td>
+<td>Public terminal for self-service transactions (e.g., bill payments).</td>
+</tr>
+<tr>
+<td><strong>LAN</strong></td>
+<td>Local Area Network. Private network covering a small area (e.g., office, campus).</td>
+</tr>
+<tr>
+<td><strong>LAN Interconnect Services</strong></td>
+<td>WAN links connecting geographically separated LANs (e.g., MPLS VPNs).</td>
+</tr>
+<tr>
+<td><strong>LAPB</strong></td>
+<td>Link Access Procedure, Balanced. Data link protocol for X.25 networks.</td>
+</tr>
+<tr>
+<td><strong>LATA</strong></td>
+<td>Local Access and Transport Area. U.S. regulatory region for local phone services.</td>
+</tr>
+<tr>
+<td><strong>LC</strong></td>
+<td>Logical Channel. Virtual path in packet-switched networks (e.g., X.25).</td>
+</tr>
+<tr>
+<td><strong>LDAP</strong></td>
+<td>Lightweight Directory Access Protocol. Standard for querying user directories (e.g., Active Directory).</td>
+</tr>
+<tr>
+<td><strong>LDCA</strong></td>
+<td>Long Distance Charge Area. Billing zone for toll calls.</td>
+</tr>
+<tr>
+<td><strong>LD-CELP</strong></td>
+<td>Low-Delay Code Excited Linear Prediction. ITU-T G.728 voice codec (16 kbps).</td>
+</tr>
+<tr>
+<td><strong>LDS</strong></td>
+<td>Leased Data Service. Dedicated point-to-point data link (legacy).</td>
+</tr>
+<tr>
+<td><strong>LEC</strong></td>
+<td>Local Exchange Carrier. Provider of local phone services (e.g., Verizon).</td>
+</tr>
+<tr>
+<td><strong>LEO</strong></td>
+<td>Low Earth Orbit. Satellite constellation for mobile/global internet (e.g., Starlink).</td>
+</tr>
+<tr>
+<td><strong>LES/BUS</strong></td>
+<td>LAN Emulation Server / Broadcast and Unknown Server. ATM components for LAN emulation.</td>
+</tr>
+<tr>
+<td><strong>LL</strong></td>
+<td>Logical Link. Virtual connection in telecom protocols (e.g., SS7).</td>
+</tr>
+<tr>
+<td><strong>LLC</strong></td>
+<td>Logical Link Control. OSI Layer 2 protocol for error checking (IEEE 802.2).</td>
+</tr>
+<tr>
+<td><strong>LMB</strong></td>
+<td>Large Megabit Bearer. Telstra’s legacy high-speed data service.</td>
+</tr>
+<tr>
+<td><strong>LMDS</strong></td>
+<td>Local Multipoint Distribution Service. Fixed wireless broadband (28-31 GHz band).</td>
+</tr>
+<tr>
+<td><strong>LOF</strong></td>
+<td>Loss of Frame. Sync failure in TDM systems (e.g., E1, T1).</td>
+</tr>
+<tr>
+<td><strong>LOP</strong></td>
+<td>Loss of Pointer. SDH/SONET error when payload alignment fails.</td>
+</tr>
+<tr>
+<td><strong>LOS</strong></td>
+<td>Loss of Signal. Complete interruption in optical/electrical transmission.</td>
+</tr>
+<tr>
+<td><strong>LPA</strong></td>
+<td>Lower-Order Path Adaptation. SDH function for mapping E1/T1 into VC-12/VC-11.</td>
+</tr>
+<tr>
+<td><strong>LPC</strong></td>
+<td>Lower-Order Path Connection. SDH cross-connect for VC-12/VC-11 circuits.</td>
+</tr>
+<tr>
+<td><strong>LPT</strong></td>
+<td>Lower-Order Path Termination. SDH function for processing VC-12/VC-11 payloads.</td>
+</tr>
+<tr>
+<td><strong>LSSU</strong></td>
+<td>Link Status Signal Unit. SS7 message reporting link conditions (e.g., out of service).</td>
+</tr>
+<tr>
+<td><strong>LTE</strong></td>
+<td>Line Terminating Equipment. SDH/SONET device at a network endpoint.</td>
+</tr>
+<tr>
+<td><strong>LTG</strong></td>
+<td>Line Trunk Group. AXE exchange hardware for trunk interfaces.</td>
+</tr>
+<tr>
+<td><strong>LTU</strong></td>
+<td>Line Trunk Unit. Legacy telco hardware for analog/digital line interfaces.</td>
+</tr>
+<tr>
+<td><strong>LVP</strong></td>
+<td>Logical Virtual Path. ATM term for a bundle of virtual circuits.</td>
+</tr>
+<tr>
+<td><strong>M2M</strong></td>
+<td>Machine-to-Machine. Automated data exchange between devices (e.g., IoT).</td>
+</tr>
+<tr>
+<td><strong>MAC</strong></td>
+<td>Media Access Control. Unique hardware address for network devices (OSI Layer 2).</td>
+</tr>
+<tr>
+<td><strong>MAN</strong></td>
+<td>Metropolitan Area Network. Network covering a city or region (e.g., municipal Wi-Fi).</td>
+</tr>
+<tr>
+<td><strong>MANO</strong></td>
+<td>Management and Orchestration. NFV framework for automating virtual network functions.</td>
+</tr>
+<tr>
+<td><strong>MBE</strong></td>
+<td>Multi-Band Excitation. Voice compression algorithm (e.g., for secure comms).</td>
+</tr>
+<tr>
+<td><strong>Mbps</strong></td>
+<td>Megabits per second. Data rate unit (1,000 kbps).</td>
+</tr>
+<tr>
+<td><strong>MCN</strong></td>
+<td>Media Conversion Node. Device converting between fiber/copper/radio media.</td>
+</tr>
+<tr>
+<td><strong>MCU</strong></td>
+<td>Metered Call Unit. Billing increment for payphone/call shop services.</td>
+</tr>
+<tr>
+<td><strong>MD</strong></td>
+<td>Mediation Device. Converts between network management protocols (e.g., SNMP to TL1).</td>
+</tr>
+<tr>
+<td><strong>MDF</strong></td>
+<td>Main Distribution Frame. Central patch panel for copper/fiber terminations.</td>
+</tr>
+<tr>
+<td><strong>MDN</strong></td>
+<td>Mobile Directory Number. A subscriber’s phone number in mobile networks.</td>
+</tr>
+<tr>
+<td><strong>MEA</strong></td>
+<td>Media Extension Adaptor. Extender for telecom hardware cards/chassis.</td>
+</tr>
+<tr>
+<td><strong>MF</strong></td>
+<td>Multi-Frequency. Tone-based signaling (e.g., DTMF for dialing).</td>
+</tr>
+<tr>
+<td><strong>MIB</strong></td>
+<td>Management Information Base. Database of SNMP-manageable device parameters.</td>
+</tr>
+<tr>
+<td><strong>MIS</strong></td>
+<td>Management Information Systems. Corporate IT/telecom reporting tools.</td>
+</tr>
+<tr>
+<td><strong>MMDS</strong></td>
+<td>Multichannel Multipoint Distribution Service. Fixed wireless broadband (2.5 GHz band).</td>
+</tr>
+<tr>
+<td><strong>MML</strong></td>
+<td>Man-Machine Language. Text-based interface for telecom equipment configuration.</td>
+</tr>
+<tr>
+<td><strong>MMOF</strong></td>
+<td>Multi-Mode Optical Fiber. Fiber supporting multiple light paths (shorter reach than SMF).</td>
+</tr>
+<tr>
+<td><strong>MNIB</strong></td>
+<td>Management Network Information Base. SNMP MIB for network management systems.</td>
+</tr>
+<tr>
+<td><strong>MOA</strong></td>
+<td>Managed Object Agent. Software mediating between network devices and management systems.</td>
+</tr>
+<tr>
+<td><strong>MOR</strong></td>
+<td>Multi-Wavelength Optical Repeater. DWDM device amplifying multiple lambdas simultaneously.</td>
+</tr>
+<tr>
+<td><strong>MOS</strong></td>
+<td>Mean Opinion Score. Subjective voice quality rating (1-5 scale).</td>
+</tr>
+<tr>
+<td><strong>MP-MLQ</strong></td>
+<td>Multipulse Maximum Likelihood Quantization. ITU-T G.723.1 voice codec (6.3 kbps).</td>
+</tr>
+<tr>
+<td><strong>MPEG</strong></td>
+<td>Moving Picture Experts Group. Standards for video/audio compression (e.g., MP3, MP4).</td>
+</tr>
+<tr>
+<td><strong>MPEG-1</strong></td>
+<td>Original MPEG standard (e.g., VCD-quality video at 1.5 Mbps).</td>
+</tr>
+<tr>
+<td><strong>MPEG-2</strong></td>
+<td>Enhanced standard for DVD/DTV (e.g., 4-15 Mbps video).</td>
+</tr>
+<tr>
+<td><strong>MPLS</strong></td>
+<td>Multiprotocol Label Switching. WAN technology for traffic engineering and VPNs.</td>
+</tr>
+<tr>
+<td><strong>MS</strong></td>
+<td>Mobile Station. Mobile phone or cellular device.</td>
+</tr>
+<tr>
+<td><strong>MS</strong></td>
+<td>Multiplex Section. SDH/SONET segment between multiplexers.</td>
+</tr>
+<tr>
+<td><strong>MSC</strong></td>
+<td>Mobile Switching Centre. Core switch in GSM/UMTS networks.</td>
+</tr>
+<tr>
+<td><strong>MSFC</strong></td>
+<td>Multilayer Switch Feature Card. Cisco hardware for routing/switching in Catalyst switches.</td>
+</tr>
+<tr>
+<td><strong>MSO</strong></td>
+<td>Multiple System Operator. Cable TV provider serving multiple regions.</td>
+</tr>
+<tr>
+<td><strong>MSOH</strong></td>
+<td>Multiplex Section Overhead. SDH/SONET bytes for section-level management.</td>
+</tr>
+<tr>
+<td><strong>MSP</strong></td>
+<td>Multiplex Section Protection. SDH/SONET redundancy mechanism (e.g., 1+1 switching).</td>
+</tr>
+<tr>
+<td><strong>MSS</strong></td>
+<td>Multiple Subscription Services. Bundled telecom offerings (e.g., voice + data).</td>
+</tr>
+<tr>
+<td><strong>MS-SPRING</strong></td>
+<td>Multiplex Section Shared Protection Ring. SDH/SONET ring with shared backup capacity.</td>
+</tr>
+<tr>
+<td><strong>MST</strong></td>
+<td>Multiplex Section Termination. SDH/SONET function for section-layer processing.</td>
+</tr>
+<tr>
+<td><strong>MSU</strong></td>
+<td>Message Signal Unit. SS7 packet carrying call control or database queries.</td>
+</tr>
+<tr>
+<td><strong>MTP</strong></td>
+<td>Message Transfer Part. SS7 protocol for reliable signaling message delivery.</td>
+</tr>
+<tr>
+<td><strong>Multimedia Services</strong></td>
+<td>Integrated voice, video, and data applications (e.g., Zoom, Skype).</td>
+</tr>
+<tr>
+<td><strong>NAP</strong></td>
+<td>Network Access Point. Historic internet exchange points (e.g., for ISP peering).</td>
+</tr>
+<tr>
+<td><strong>NASA</strong></td>
+<td>National Aeronautics and Space Administration. U.S. agency using advanced telecom for space missions.</td>
+</tr>
+<tr>
+<td><strong>NAT</strong></td>
+<td>Network Address Translation. Maps private IPs to public IPs (e.g., for IPv4 conservation).</td>
+</tr>
+<tr>
+<td><strong>NDIS</strong></td>
+<td>Network Driver Interface Specification. Microsoft API for Windows network drivers.</td>
+</tr>
+<tr>
+<td><strong>NDSF</strong></td>
+<td>Non-Dispersion-Shifted Fiber. Standard single-mode fiber (1310 nm optimum).</td>
+</tr>
+<tr>
+<td><strong>NE</strong></td>
+<td>Network Element. Individual device in a telecom network (e.g., router, switch).</td>
+</tr>
+<tr>
+<td><strong>NEMS</strong></td>
+<td>Network Element Management System. Vendor-specific software for managing NEs.</td>
+</tr>
+<tr>
+<td><strong>NEXT</strong></td>
+<td>Near-End Crosstalk. Interference between adjacent copper pairs (e.g., in UTP).</td>
+</tr>
+<tr>
+<td><strong>NFS</strong></td>
+<td>Network File System. Protocol for remote file sharing (common in Unix).</td>
+</tr>
+<tr>
+<td><strong>NFV</strong></td>
+<td>Network Functions Virtualization. Running telecom functions as software on commodity servers.</td>
+</tr>
+<tr>
+<td><strong>NFVI</strong></td>
+<td>NFV Infrastructure. Hardware/software platform for hosting VNFs (e.g., servers, hypervisors).</td>
+</tr>
+<tr>
+<td><strong>NFVO</strong></td>
+<td>NFV Orchestrator. Software automating the lifecycle of VNFs (e.g., scaling, healing).</td>
+</tr>
+<tr>
+<td><strong>NIC</strong></td>
+<td>Network Interface Card. Hardware connecting devices to a network (e.g., Ethernet card).</td>
+</tr>
+<tr>
+<td><strong>NII</strong></td>
+<td>National Information Infrastructure. Government vision for nationwide broadband.</td>
+</tr>
+<tr>
+<td><strong>NIM</strong></td>
+<td>Network Interface Module. Hot-swappable telecom line card (e.g., for E1/T1).</td>
+</tr>
+<tr>
+<td><strong>NIST</strong></td>
+<td>National Institute of Standards and Technology. U.S. body for tech standards (e.g., cybersecurity).</td>
+</tr>
+<tr>
+<td><strong>NLD</strong></td>
+<td>National Long Distance. Domestic toll calls.</td>
+</tr>
+<tr>
+<td><strong>NLDO</strong></td>
+<td>National Long Distance Operator. Licensed provider of intercity/international calls.</td>
+</tr>
+<tr>
+<td><strong>NLDSC</strong></td>
+<td>National Long Distance Service Code. Prefix for dialing toll services (e.g., "0").</td>
+</tr>
+<tr>
+<td><strong>NLSR</strong></td>
+<td>Natural Language Speech Recognition. Voice interface for automated systems (e.g., IVR).</td>
+</tr>
+<tr>
+<td><strong>NMS</strong></td>
+<td>Network Management System. Centralized software for monitoring/controlling networks.</td>
+</tr>
+<tr>
+<td><strong>NNI</strong></td>
+<td>Network-to-Network Interface. Standardized interconnect between carrier networks.</td>
+</tr>
+<tr>
+<td><strong>NOC</strong></td>
+<td>Network Operations Centre. 24/7 facility for monitoring telecom infrastructure.</td>
+</tr>
+<tr>
+<td><strong>nrt-VBR</strong></td>
+<td>Non-Real-Time Variable Bit Rate. ATM QoS class for bursty, delay-tolerant traffic (e.g., email).</td>
+</tr>
+<tr>
+<td><strong>NRZ</strong></td>
+<td>Non-Return to Zero. Simple binary encoding scheme (1=high voltage, 0=low).</td>
+</tr>
+<tr>
+<td><strong>NSF</strong></td>
+<td>National Science Foundation. U.S. agency funding internet R&amp;D (e.g., NSFNET).</td>
+</tr>
+<tr>
+<td><strong>NSN</strong></td>
+<td>National Significant Number. Country-specific numbering plan (e.g., "0" for operator).</td>
+</tr>
+<tr>
+<td><strong>NTIA</strong></td>
+<td>National Telecommunications and Information Administration. U.S. agency advising on spectrum policy.</td>
+</tr>
+<tr>
+<td><strong>NTP</strong></td>
+<td>National Telecom Policy. Government framework for telecom sector regulation.</td>
+</tr>
+<tr>
+<td><strong>NTSC</strong></td>
+<td>National Television System Committee. Analog TV standard (North America/Japan).</td>
+</tr>
+<tr>
+<td><strong>NVoD</strong></td>
+<td>Near Video on Demand. Broadcast-like streaming with scheduled start times (e.g., hotel movies).</td>
+</tr>
+<tr>
+<td><strong>NZDSF</strong></td>
+<td>Non-Zero Dispersion-Shifted Fiber. Optimized for DWDM (balances dispersion at 1550 nm).</td>
+</tr>
+<tr>
+<td><strong>OA</strong></td>
+<td>Optical Amplifier. Boosts optical signals without O-E-O conversion (e.g., EDFA).</td>
+</tr>
+<tr>
+<td><strong>OADM</strong></td>
+<td>Optical Add-Drop Multiplexer. DWDM device inserting/removing specific wavelengths.</td>
+</tr>
+<tr>
+<td><strong>OAM</strong></td>
+<td>Operations, Administration, and Maintenance. Tools for network fault/performance management.</td>
+</tr>
+<tr>
+<td><strong>OC-12</strong></td>
+<td>Optical Carrier 12. SONET rate (622 Mbps).</td>
+</tr>
+<tr>
+<td><strong>OC-192</strong></td>
+<td>Optical Carrier 192. SONET rate (10 Gbps).</td>
+</tr>
+<tr>
+<td><strong>OC-3</strong></td>
+<td>Optical Carrier 3. SONET rate (155 Mbps).</td>
+</tr>
+<tr>
+<td><strong>OC-48</strong></td>
+<td>Optical Carrier 48. SONET rate (2.5 Gbps).</td>
+</tr>
+<tr>
+<td><strong>OCH</strong></td>
+<td>Optical Channel. End-to-end wavelength path in DWDM systems.</td>
+</tr>
+<tr>
+<td><strong>ODN</strong></td>
+<td>Open Data Network. Architecture for interoperable data services (1990s concept).</td>
+</tr>
+<tr>
+<td><strong>ODPR</strong></td>
+<td>Optical Dedicated Protection Ring. DWDM ring with dedicated backup fibers.</td>
+</tr>
+<tr>
+<td><strong>ODU</strong></td>
+<td>Outdoor Unit. LMDS/wireless transceiver mounted on rooftops.</td>
+</tr>
+<tr>
+<td><strong>OJT</strong></td>
+<td>On-the-Job Training. Hands-on learning for telecom technicians.</td>
+</tr>
+<tr>
+<td><strong>OLA</strong></td>
+<td>Optical Line Amplifier. Boosts signals between DWDM terminals (no add/drop).</td>
+</tr>
+<tr>
+<td><strong>OLTE</strong></td>
+<td>Optical Line Terminating Equipment. DWDM endpoint (transponder/muxponder).</td>
+</tr>
+<tr>
+<td><strong>OMAP</strong></td>
+<td>Operations, Maintenance, and Administration Part. SS7 protocol for network management.</td>
+</tr>
+<tr>
+<td><strong>OMC</strong></td>
+<td>Operations and Maintenance Centre. Centralized hub for network surveillance.</td>
+</tr>
+<tr>
+<td><strong>OMS</strong></td>
+<td>Optical Multiplex Section. DWDM segment between optical amplifiers.</td>
+</tr>
+<tr>
+<td><strong>OMSP</strong></td>
+<td>Optical Multiplex Section Protection. DWDM redundancy mechanism (e.g., fiber switching).</td>
+</tr>
+<tr>
+<td><strong>ONU</strong></td>
+<td>Optical Network Unit. FTTH device at customer premises (terminates fiber).</td>
+</tr>
+<tr>
+<td><strong>OPC</strong></td>
+<td>Originating Point Code. SS7 address identifying the source node in signaling.</td>
+</tr>
+<tr>
+<td><strong>OPS</strong></td>
+<td>Optical Protection Switching. Automatic failover to backup fiber paths.</td>
+</tr>
+<tr>
+<td><strong>OSC</strong></td>
+<td>Optical Supervisory Channel. Dedicated wavelength for DWDM management traffic.</td>
+</tr>
+<tr>
+<td><strong>OSI</strong></td>
+<td>Open Systems Interconnection. 7-layer reference model for network protocols (mostly theoretical).</td>
+</tr>
+<tr>
+<td><strong>OSP</strong></td>
+<td>Outside Plant. Telecom infrastructure in uncontrolled environments (e.g., poles, trenches).</td>
+</tr>
+<tr>
+<td><strong>OSS</strong></td>
+<td>Operational Support System. Software for network provisioning, fault management, etc.</td>
+</tr>
+<tr>
+<td><strong>OTA</strong></td>
+<td>Over-the-Air. Wireless provisioning/updates (e.g., for SIM cards or firmware).</td>
+</tr>
+<tr>
+<td><strong>OTAF</strong></td>
+<td>Over-the-Air Activation Function. System for remotely activating mobile devices.</td>
+</tr>
+<tr>
+<td><strong>OTASP</strong></td>
+<td>Over-the-Air Service Provisioning. Configuring mobile devices via wireless networks.</td>
+</tr>
+<tr>
+<td><strong>OTDR</strong></td>
+<td>Optical Time-Domain Reflectometer. Tool for diagnosing fiber breaks/losses.</td>
+</tr>
+<tr>
+<td><strong>OTR</strong></td>
+<td>Optical Transport Repeater. Regenerates DWDM signals over long distances.</td>
+</tr>
+<tr>
+<td><strong>OTT</strong></td>
+<td>Over-the-Top. Services delivered via the internet (e.g., Netflix, WhatsApp).</td>
+</tr>
+<tr>
+<td><strong>OXC</strong></td>
+<td>Optical Cross-Connect. High-capacity switch for DWDM wavelength routing.</td>
+</tr>
+<tr>
+<td><strong>PABX</strong></td>
+<td>Private Automatic Branch Exchange. On-premises phone system for businesses.</td>
+</tr>
+<tr>
+<td><strong>PAL</strong></td>
+<td>Phase Alternating Line. Analog TV standard (Europe/Asia).</td>
+</tr>
+<tr>
+<td><strong>PAP</strong></td>
+<td>Password Authentication Protocol. Simple (insecure) login method for PPP links.</td>
+</tr>
+<tr>
+<td><strong>PC</strong></td>
+<td>Personal Computer. General-purpose device for end-users or network management.</td>
+</tr>
+<tr>
+<td><strong>PCI</strong></td>
+<td>Peripheral Component Interconnect. Computer bus standard for add-on cards.</td>
+</tr>
+<tr>
+<td><strong>PCIA</strong></td>
+<td>Personal Communications Industry Association. U.S. trade group for wireless providers.</td>
+</tr>
+<tr>
+<td><strong>PCS</strong></td>
+<td>Personal Communications Service. U.S. term for 1900 MHz digital cellular (e.g., GSM1900).</td>
+</tr>
+<tr>
+<td><strong>PDA</strong></td>
+<td>Personal Digital Assistant. Handheld computer for contacts/calendar (pre-smartphone era).</td>
+</tr>
+<tr>
+<td><strong>PDH</strong></td>
+<td>Plesiochronous Digital Hierarchy. Legacy TDM standard (E1/T1, lacks synchronization).</td>
+</tr>
+<tr>
+<td><strong>PDSN</strong></td>
+<td>Packet Data Serving Node. Routes mobile data traffic in CDMA2000 networks.</td>
+</tr>
+<tr>
+<td><strong>PFC</strong></td>
+<td>Policy Feature Card. Cisco hardware for QoS/security policies in routers.</td>
+</tr>
+<tr>
+<td><strong>PHS</strong></td>
+<td>Personal Handyphone System. Japanese digital cordless standard (1900 MHz).</td>
+</tr>
+<tr>
+<td><strong>PLC</strong></td>
+<td>Programmable Logic Controller. Industrial computer for automation (e.g., in telecom power systems).</td>
+</tr>
+<tr>
+<td><strong>PMD</strong></td>
+<td>Polarization Mode Dispersion. Fiber impairment caused by asymmetric light propagation.</td>
+</tr>
+<tr>
+<td><strong>PNNI</strong></td>
+<td>Private Network-to-Network Interface. ATM routing protocol for dynamic VC establishment.</td>
+</tr>
+<tr>
+<td><strong>POH</strong></td>
+<td>Path Overhead. SDH/SONET bytes for end-to-end performance monitoring.</td>
+</tr>
+<tr>
+<td><strong>POI</strong></td>
+<td>Point of Interconnect. Physical junction between carrier networks (e.g., for peering).</td>
+</tr>
+<tr>
+<td><strong>POP</strong></td>
+<td>Point of Presence. Carrier’s local facility for customer connections.</td>
+</tr>
+<tr>
+<td><strong>POTS</strong></td>
+<td>Plain Old Telephone Service. Basic analog voice service (pre-ISDN).</td>
+</tr>
+<tr>
+<td><strong>PP</strong></td>
+<td>Path Protection. SDH/SONET redundancy at the virtual container level.</td>
+</tr>
+<tr>
+<td><strong>PPP</strong></td>
+<td>Point-to-Point Protocol. Data link protocol for dial-up/leased lines (e.g., DSL).</td>
+</tr>
+<tr>
+<td><strong>PPP</strong></td>
+<td>Purchasing Power Parity. Economic metric for comparing telecom costs across countries.</td>
+</tr>
+<tr>
+<td><strong>PPV</strong></td>
+<td>Pay-Per-View. On-demand video/event rental (e.g., boxing matches).</td>
+</tr>
+<tr>
+<td><strong>PRA</strong></td>
+<td>Primary Rate Access. ISDN service (30 B-channels + 1 D-channel in E1 regions).</td>
+</tr>
+<tr>
+<td><strong>PRS</strong></td>
+<td>Premium Rate Service. Toll numbers for value-added content (e.g., $1.99/min horoscopes).</td>
+</tr>
+<tr>
+<td><strong>PSTN</strong></td>
+<td>Public Switched Telephone Network. Global circuit-switched voice network (legacy).</td>
+</tr>
+<tr>
+<td><strong>PSU</strong></td>
+<td>Public Sector Undertaking. Government-owned telecom operator (e.g., BSNL in India).</td>
+</tr>
+<tr>
+<td><strong>PVC</strong></td>
+<td>Permanent Virtual Circuit. Preconfigured path in ATM/Frame Relay networks.</td>
+</tr>
+<tr>
+<td><strong>PVP</strong></td>
+<td>Permanent Virtual Path. ATM term for a bundle of PVCs with shared routing.</td>
+</tr>
+<tr>
+<td><strong>QAM</strong></td>
+<td>Quadrature Amplitude Modulation. Method for encoding data on radio/cable (e.g., 256-QAM).</td>
+</tr>
+<tr>
+<td><strong>QoS</strong></td>
+<td>Quality of Service. Mechanisms to prioritize traffic (e.g., VoIP over web browsing).</td>
+</tr>
+<tr>
+<td><strong>R&amp;D</strong></td>
+<td>Research and Development. Corporate or government-funded telecom innovation.</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>Random Access Memory. Volatile storage for active processes in network devices.</td>
+</tr>
+<tr>
+<td><strong>RAN</strong></td>
+<td>Radio Access Network. Cellular infrastructure (towers, base stations) connecting users.</td>
+</tr>
+<tr>
+<td><strong>RAS</strong></td>
+<td>Remote Access Server. Concentrates dial-up modem connections (legacy).</td>
+</tr>
+<tr>
+<td><strong>RAS</strong></td>
+<td>Remote Access Switch. Router/switch for aggregating remote site links (e.g., VPNs).</td>
+</tr>
+<tr>
+<td><strong>RBOC</strong></td>
+<td>Regional Bell Operating Company. U.S. local phone company post-AT&amp;T divestiture (e.g., Verizon).</td>
+</tr>
+<tr>
+<td><strong>RCL</strong></td>
+<td>Release Complete Message. SS7 signal confirming call termination.</td>
+</tr>
+<tr>
+<td><strong>RCS</strong></td>
+<td>Residential Cabling System. Structured wiring for homes (e.g., Cat 5e for data/TV).</td>
+</tr>
+<tr>
+<td><strong>RDBMS</strong></td>
+<td>Relational Database Management System. Software for storing network inventory/billing data.</td>
+</tr>
+<tr>
+<td><strong>RDN</strong></td>
+<td>Relative Distinguished Name. LDAP attribute for directory entries (e.g., "CN=John").</td>
+</tr>
+<tr>
+<td><strong>Reach</strong></td>
+<td>Maximum distance a signal can travel without degradation (e.g., 100 km for DWDM).</td>
+</tr>
+<tr>
+<td><strong>REL</strong></td>
+<td>Release Message. SS7 signal initiating call teardown.</td>
+</tr>
+<tr>
+<td><strong>RFI</strong></td>
+<td>Ready for Installation. Milestone indicating network hardware is deployable.</td>
+</tr>
+<tr>
+<td><strong>RIC</strong></td>
+<td>Reliance Infocom. Indian telecom operator (now Reliance Communications).</td>
+</tr>
+<tr>
+<td><strong>ROM</strong></td>
+<td>Read-Only Memory. Non-volatile storage for firmware in network devices.</td>
+</tr>
+<tr>
+<td><strong>RPC</strong></td>
+<td>Remote Procedure Call. Protocol for executing functions on remote servers.</td>
+</tr>
+<tr>
+<td><strong>RPE</strong></td>
+<td>Regular Pulse Excitation. Voice coding algorithm (e.g., in GSM codecs).</td>
+</tr>
+<tr>
+<td><strong>RRP</strong></td>
+<td>Recommended Retail Price. Carrier’s suggested pricing for devices/services.</td>
+</tr>
+<tr>
+<td><strong>RS</strong></td>
+<td>Regenerator Section. SDH/SONET segment between repeaters.</td>
+</tr>
+<tr>
+<td><strong>RSOH</strong></td>
+<td>Regenerator Section Overhead. SDH/SONET bytes for section-layer management.</td>
+</tr>
+<tr>
+<td><strong>RSP</strong></td>
+<td>Route Set Prohibited. SS7 test message blocking specific signaling paths.</td>
+</tr>
+<tr>
+<td><strong>RSR</strong></td>
+<td>Restricted. SS7 test message limiting signaling route usage.</td>
+</tr>
+<tr>
+<td><strong>RST</strong></td>
+<td>Regenerator Section Termination. SDH/SONET function for section-layer processing.</td>
+</tr>
+<tr>
+<td><strong>RSVP</strong></td>
+<td>Resource Reservation Protocol. Signaling protocol for QoS in IP networks (e.g., bandwidth guarantees).</td>
+</tr>
+<tr>
+<td><strong>RT</strong></td>
+<td>Remote Terminal. LMDS subscriber-side hardware (outdoor antenna + modem).</td>
+</tr>
+<tr>
+<td><strong>RTIF</strong></td>
+<td>Realizing the Information Future. 1994 U.S. report on national telecom infrastructure.</td>
+</tr>
+<tr>
+<td><strong>RTU</strong></td>
+<td>Remote Testing Unit. Device for diagnosing fiber/copper line faults from a central office.</td>
+</tr>
+<tr>
+<td><strong>RU</strong></td>
+<td>Rack Unit. Standard height measurement for telecom equipment (1RU = 1.75 inches).</td>
+</tr>
+<tr>
+<td><strong>RU</strong></td>
+<td>Remote Unit. LMDS customer-premises transceiver.</td>
+</tr>
+<tr>
+<td><strong>RX</strong></td>
+<td>Receiver. Component for receiving optical/electrical/RF signals.</td>
+</tr>
+<tr>
+<td><strong>SA</strong></td>
+<td>Section Adaptation. SDH/SONET function for mapping signals into transport frames.</td>
+</tr>
+<tr>
+<td><strong>SAN</strong></td>
+<td>Storage Area Network. Dedicated network for high-speed data storage (e.g., fiber channel).</td>
+</tr>
+<tr>
+<td><strong>SAR</strong></td>
+<td>Segmentation and Reassembly. ATM process for splitting/reconstructing data into cells.</td>
+</tr>
+<tr>
+<td><strong>SAX</strong></td>
+<td>Small Automatic Exchange. Compact telephone switch for rural/remote areas.</td>
+</tr>
+<tr>
+<td><strong>SBS</strong></td>
+<td>Stimulated Brillouin Scattering. Fiber nonlinearity causing signal distortion at high power.</td>
+</tr>
+<tr>
+<td><strong>SCCP</strong></td>
+<td>Signaling Connection Control Part. SS7 protocol for database queries (e.g., toll-free routing).</td>
+</tr>
+<tr>
+<td><strong>SCE</strong></td>
+<td>Service Creation Environment. Tools for designing telecom services (e.g., IVR menus).</td>
+</tr>
+<tr>
+<td><strong>SCP</strong></td>
+<td>Service Control Point. SS7 database node (e.g., for 800-number translation).</td>
+</tr>
+<tr>
+<td><strong>SDCA</strong></td>
+<td>Short Distance Charging Area. Local call zone (no toll charges).</td>
+</tr>
+<tr>
+<td><strong>SDDC</strong></td>
+<td>Software-Defined Data Centre. Virtualized infrastructure managed via software (compute/storage/network).</td>
+</tr>
+<tr>
+<td><strong>SDH</strong></td>
+<td>Synchronous Digital Hierarchy. International standard for optical transport (STM-1, STM-16, etc.).</td>
+</tr>
+<tr>
+<td><strong>SDM</strong></td>
+<td>Space Division Multiplexing. Fiber technology using multiple cores/parallel paths.</td>
+</tr>
+<tr>
+<td><strong>SDN</strong></td>
+<td>Software-Defined Networking. Centralized control of network behavior via programmable interfaces.</td>
+</tr>
+<tr>
+<td><strong>SDTV</strong></td>
+<td>Standard Definition Television. Legacy digital TV resolution (e.g., 480p).</td>
+</tr>
+<tr>
+<td><strong>SECAM</strong></td>
+<td>Sequential Color with Memory. Analog TV standard (France/Russia).</td>
+</tr>
+<tr>
+<td><strong>SED</strong></td>
+<td>Spatially Enabled Database. GIS-integrated system for mapping network assets.</td>
+</tr>
+<tr>
+<td><strong>SFVN</strong></td>
+<td>Secure Fast Virtual Networking. Proprietary protocol for encrypted WAN links.</td>
+</tr>
+<tr>
+<td><strong>SIM</strong></td>
+<td>Subscriber Identity Module. Smart card storing user credentials in GSM/UMTS devices.</td>
+</tr>
+<tr>
+<td><strong>SLA</strong></td>
+<td>Service Level Agreement. Contract defining performance metrics (e.g., uptime, latency).</td>
+</tr>
+<tr>
+<td><strong>SLS</strong></td>
+<td>Signaling Link Selection. SS7 field for load balancing across links.</td>
+</tr>
+<tr>
+<td><strong>SMA</strong></td>
+<td>Spectrum Management Agency. Government body allocating radio frequencies.</td>
+</tr>
+<tr>
+<td><strong>SMDS</strong></td>
+<td>Switched Multimegabit Data Service. Legacy MAN/WAN data service (pre-ATM).</td>
+</tr>
+<tr>
+<td><strong>SME</strong></td>
+<td>Small/Medium Enterprise. Business segment targeted by telecom services.</td>
+</tr>
+<tr>
+<td><strong>SME</strong></td>
+<td>Subject Matter Expert. Specialist in a specific telecom domain.</td>
+</tr>
+<tr>
+<td><strong>SMOF</strong></td>
+<td>Single-Mode Optical Fiber. Fiber optimized for long-haul, single-wavelength transmission.</td>
+</tr>
+<tr>
+<td><strong>SMP</strong></td>
+<td>Service Management Point. IN node for service provisioning.</td>
+</tr>
+<tr>
+<td><strong>SMS</strong></td>
+<td>Short Message Service. Text messaging in mobile networks (160 chars/message).</td>
+</tr>
+<tr>
+<td><strong>SMSC</strong></td>
+<td>Short Message Service Centre. Routes/store-and-forwards SMS messages.</td>
+</tr>
+<tr>
+<td><strong>SNCP</strong></td>
+<td>Subnetwork Connection Protection. SDH/SONET redundancy for individual paths.</td>
+</tr>
+<tr>
+<td><strong>SNMP</strong></td>
+<td>Simple Network Management Protocol. Standard for monitoring network devices.</td>
+</tr>
+<tr>
+<td><strong>SNR</strong></td>
+<td>Signal-to-Noise Ratio. Measure of signal quality (higher = better).</td>
+</tr>
+<tr>
+<td><strong>SOH</strong></td>
+<td>Section Overhead. SDH/SONET bytes for section-layer management.</td>
+</tr>
+<tr>
+<td><strong>SOHO</strong></td>
+<td>Small Office/Home Office. Market segment for consumer/small biz telecom products.</td>
+</tr>
+<tr>
+<td><strong>SONET</strong></td>
+<td>Synchronous Optical Network. U.S. standard for optical transport (OC-3, OC-12, etc.).</td>
+</tr>
+<tr>
+<td><strong>SPI</strong></td>
+<td>SDH Physical Interface. Hardware port for SDH/SONET connections.</td>
+</tr>
+<tr>
+<td><strong>SPM</strong></td>
+<td>Self-Phase Modulation. Fiber nonlinearity causing spectral broadening.</td>
+</tr>
+<tr>
+<td><strong>SPVP</strong></td>
+<td>Soft Permanent Virtual Path. ATM path dynamically provisioned by management systems.</td>
+</tr>
+<tr>
+<td><strong>SQL</strong></td>
+<td>Structured Query Language. Standard for database interactions (e.g., billing systems).</td>
+</tr>
+<tr>
+<td><strong>SRL</strong></td>
+<td>Structural Return Loss. Measure of impedance mismatches in copper cables.</td>
+</tr>
+<tr>
+<td><strong>SRS</strong></td>
+<td>Stimulated Raman Scattering. Fiber nonlinearity amplifying longer wavelengths.</td>
+</tr>
+<tr>
+<td><strong>SS7</strong></td>
+<td>Signaling System #7. Protocol for call control/database queries in PSTN.</td>
+</tr>
+<tr>
+<td><strong>SSP</strong></td>
+<td>Service Switching Point. SS7 node triggering IN services (e.g., prepaid calls).</td>
+</tr>
+<tr>
+<td><strong>SSU</strong></td>
+<td>Synchronization Supply Unit. Clock source for network timing (e.g., BITS).</td>
+</tr>
+<tr>
+<td><strong>STB</strong></td>
+<td>Set-Top Box. Decoder for TV/video services (e.g., cable, IPTV).</td>
+</tr>
+<tr>
+<td><strong>STD</strong></td>
+<td>Subscriber Trunk Dialing. Direct long-distance dialing without operator assistance.</td>
+</tr>
+<tr>
+<td><strong>STM</strong></td>
+<td>Synchronous Transport Module. SDH hierarchy level (e.g., STM-1 = 155 Mbps).</td>
+</tr>
+<tr>
+<td><strong>STM-1</strong></td>
+<td>SDH base rate (155.52 Mbps). Carries VC-4 or 3xVC-3.</td>
+</tr>
+<tr>
+<td><strong>STM-16</strong></td>
+<td>SDH rate (2.488 Gbps). 16xSTM-1.</td>
+</tr>
+<tr>
+<td><strong>STM-4</strong></td>
+<td>SDH rate (622.08 Mbps). 4xSTM-1.</td>
+</tr>
+<tr>
+<td><strong>STM-64</strong></td>
+<td>SDH rate (10 Gbps). 64xSTM-1.</td>
+</tr>
+<tr>
+<td><strong>STP</strong></td>
+<td>Signal Transfer Point. SS7 router for signaling messages.</td>
+</tr>
+<tr>
+<td><strong>STP</strong></td>
+<td>Shielded Twisted Pair. Copper cable with EMI shielding (e.g., Cat 6A).</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Set-Top Terminal. Advanced STB with interactive features.</td>
+</tr>
+<tr>
+<td><strong>STU</strong></td>
+<td>Set-Top Unit. Customer-premises decoder for cable/satellite services.</td>
+</tr>
+<tr>
+<td><strong>SU</strong></td>
+<td>Signal Unit. SS7 message packet (MSU, LSSU, or FISU).</td>
+</tr>
+<tr>
+<td><strong>T1</strong></td>
+<td>Digital Signal 1 (1.544 Mbps, 24 voice channels).</td>
+</tr>
+<tr>
+<td><strong>T3</strong></td>
+<td>Digital Signal 3 (44.736 Mbps, 672 voice channels).</td>
+</tr>
+<tr>
+<td><strong>TAPI</strong></td>
+<td>Telephony API. Microsoft standard for CTI applications.</td>
+</tr>
+<tr>
+<td><strong>Tbps</strong></td>
+<td>Terabits per second (1,000 Gbps).</td>
+</tr>
+<tr>
+<td><strong>TCAP</strong></td>
+<td>Transaction Capabilities Application Part. SS7 protocol for database transactions.</td>
+</tr>
+<tr>
+<td><strong>TCP</strong></td>
+<td>Transmission Control Protocol. Reliable, connection-oriented transport (RFC 793).</td>
+</tr>
+<tr>
+<td><strong>TCP/IP</strong></td>
+<td>Internet protocol suite (TCP + IP + UDP, etc.).</td>
+</tr>
+<tr>
+<td><strong>TDM</strong></td>
+<td>Time Division Multiplexing. Legacy tech for sharing links via fixed timeslots.</td>
+</tr>
+<tr>
+<td><strong>TDMA</strong></td>
+<td>Time Division Multiple Access. Channel access method (e.g., GSM, 2G).</td>
+</tr>
+<tr>
+<td><strong>Telecommunications Traffic</strong></td>
+<td>Data/voice/video transmitted over networks (measured in Erlangs/minutes/bits).</td>
+</tr>
+<tr>
+<td><strong>TFA</strong></td>
+<td>Transfer Allowed. SS7 message permitting signaling route usage.</td>
+</tr>
+<tr>
+<td><strong>TFP</strong></td>
+<td>Transfer Prohibited. SS7 message blocking signaling routes.</td>
+</tr>
+<tr>
+<td><strong>TFR</strong></td>
+<td>Transfer Restricted. SS7 message limiting signaling route capacity.</td>
+</tr>
+<tr>
+<td><strong>TGNO</strong></td>
+<td>Trunk Group Number. Identifier for PSTN trunk bundles.</td>
+</tr>
+<tr>
+<td><strong>TM4.0</strong></td>
+<td>Traffic Management 4.0. ATM Forum’s QoS specification.</td>
+</tr>
+<tr>
+<td><strong>TMN</strong></td>
+<td>Telecommunications Management Network. ITU-T framework for OSS integration.</td>
+</tr>
+<tr>
+<td><strong>ToIP</strong></td>
+<td>Telephony over IP. Voice services delivered via internet protocols.</td>
+</tr>
+<tr>
+<td><strong>TPWG</strong></td>
+<td>Technology Policy Working Group. Industry consortium for telecom standards.</td>
+</tr>
+<tr>
+<td><strong>TR</strong></td>
+<td>Trouble Report. Ticket for network faults.</td>
+</tr>
+<tr>
+<td><strong>TRA</strong></td>
+<td>Trouble Report Answer. Resolution response for TRs.</td>
+</tr>
+<tr>
+<td><strong>TS</strong></td>
+<td>Time Slot. Channel in TDM systems (e.g., TS1 = 64 kbps in E1).</td>
+</tr>
+<tr>
+<td><strong>TSAPI</strong></td>
+<td>Telephony Services API. Novell/Lucent CTI standard for PBX integration.</td>
+</tr>
+<tr>
+<td><strong>TSG</strong></td>
+<td>Time Slot Group. Logical bundle of TDM channels.</td>
+</tr>
+<tr>
+<td><strong>TTP</strong></td>
+<td>Trail Termination Point. SDH/SONET endpoint for performance monitoring.</td>
+</tr>
+<tr>
+<td><strong>TU</strong></td>
+<td>Tributary Unit. SDH container for lower-rate signals (e.g., TU-12 = 2.048 Mbps).</td>
+</tr>
+<tr>
+<td><strong>TUG</strong></td>
+<td>Tributary Unit Group. SDH structure for multiplexing TUs (e.g., TUG-2 = 3xTU-12).</td>
+</tr>
+<tr>
+<td><strong>TX</strong></td>
+<td>Transmitter. Component for sending optical/electrical/RF signals.</td>
+</tr>
+<tr>
+<td><strong>UBR</strong></td>
+<td>Unspecified Bit Rate. ATM QoS class for best-effort traffic (e.g., web browsing).</td>
+</tr>
+<tr>
+<td><strong>UDP</strong></td>
+<td>User Datagram Protocol. Connectionless transport (RFC 768).</td>
+</tr>
+<tr>
+<td><strong>Upstream</strong></td>
+<td>Data flow from subscriber to network (e.g., upload speeds).</td>
+</tr>
+<tr>
+<td><strong>UR</strong></td>
+<td>Unidirectional Ring. Network topology with one working path (no redundancy).</td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td>Uniform Resource Locator. Web address (e.g., <code>https://example.com</code>).</td>
+</tr>
+<tr>
+<td><strong>UTP</strong></td>
+<td>Unshielded Twisted Pair. Copper cable without EMI shielding (e.g., Cat 5e).</td>
+</tr>
+<tr>
+<td><strong>V.35/X.21/EIA-530/G.703</strong></td>
+<td>Legacy serial interfaces for WAN equipment.</td>
+</tr>
+<tr>
+<td><strong>V5</strong></td>
+<td>PSTN-to-AN interface standard (e.g., V5.2 supports 16 E1s).</td>
+</tr>
+<tr>
+<td><strong>VAN</strong></td>
+<td>Value-Added Network. Enhanced services atop carrier infrastructure (e.g., EDI).</td>
+</tr>
+<tr>
+<td><strong>VAS</strong></td>
+<td>Value-Added Services. Non-core offerings (e.g., caller tunes, cloud PBX).</td>
+</tr>
+<tr>
+<td><strong>VBI</strong></td>
+<td>Vertical Blanking Interval. Analog TV band for ancillary data (e.g., closed captions).</td>
+</tr>
+<tr>
+<td><strong>VBR</strong></td>
+<td>Variable Bit Rate. ATM QoS class for bursty traffic (e.g., compressed video).</td>
+</tr>
+<tr>
+<td><strong>VC</strong></td>
+<td>Virtual Container. SDH payload structure (e.g., VC-12 = 2.048 Mbps).</td>
+</tr>
+<tr>
+<td><strong>VC</strong></td>
+<td>Virtual Circuit. Logical path in packet-switched networks (e.g., ATM, Frame Relay).</td>
+</tr>
+<tr>
+<td><strong>VC11</strong></td>
+<td>Virtual Container 11. SDH structure for T1 (1.544 Mbps) transport.</td>
+</tr>
+<tr>
+<td><strong>VC12</strong></td>
+<td>Virtual Container 12. SDH structure for E1 (2.048 Mbps) transport.</td>
+</tr>
+<tr>
+<td><strong>VC3</strong></td>
+<td>Virtual Container 3. SDH structure for T3 (34 Mbps) or E3 (45 Mbps) transport.</td>
+</tr>
+<tr>
+<td><strong>VC4</strong></td>
+<td>Virtual Container 4. SDH structure for STM-1 (155 Mbps) payloads.</td>
+</tr>
+<tr>
+<td><strong>VC4-4C</strong></td>
+<td>Concatenated VC-4s for high-capacity services (e.g., 622 Mbps).</td>
+</tr>
+<tr>
+<td><strong>VCI</strong></td>
+<td>Virtual Circuit Identifier. ATM cell header field for routing.</td>
+</tr>
+<tr>
+<td><strong>VDSL</strong></td>
+<td>Very-high-bitrate DSL. Fiber-assisted copper broadband (e.g., 100 Mbps downstream).</td>
+</tr>
+<tr>
+<td><strong>Video Conference</strong></td>
+<td>Real-time multimedia collaboration over IP/TDM networks.</td>
+</tr>
+<tr>
+<td><strong>VIM</strong></td>
+<td>Virtualized Infrastructure Manager. NFV component for compute/storage orchestration.</td>
+</tr>
+<tr>
+<td><strong>VIP</strong></td>
+<td>Video Information Provider. Content source for VOD/IPTV services.</td>
+</tr>
+<tr>
+<td><strong>VLAN</strong></td>
+<td>Virtual LAN. Logical subnet within a physical network (IEEE 802.1Q).</td>
+</tr>
+<tr>
+<td><strong>VLR</strong></td>
+<td>Visitor Location Register. Temporary GSM/UMTS subscriber database.</td>
+</tr>
+<tr>
+<td><strong>VMS</strong></td>
+<td>Voice Mail Service. Automated call answering/message storage.</td>
+</tr>
+<tr>
+<td><strong>VNF</strong></td>
+<td>Virtual Network Function. Software-based telecom appliance (e.g., vRouter, vFirewall).</td>
+</tr>
+<tr>
+<td><strong>VNFM</strong></td>
+<td>VNF Manager. NFV component for lifecycle management of VNFs.</td>
+</tr>
+<tr>
+<td><strong>VoATM</strong></td>
+<td>Voice over ATM. Circuit-emulated voice services on ATM networks.</td>
+</tr>
+<tr>
+<td><strong>VoD</strong></td>
+<td>Video on Demand. User-controlled streaming (e.g., Netflix, IPTV).</td>
+</tr>
+<tr>
+<td><strong>VoFR</strong></td>
+<td>Voice over Frame Relay. Legacy voice transport over Frame Relay.</td>
+</tr>
+<tr>
+<td><strong>VoIP</strong></td>
+<td>Voice over IP. Packetized telephony (e.g., SIP, H.323).</td>
+</tr>
+<tr>
+<td><strong>VP</strong></td>
+<td>Virtual Path. ATM bundle of VCs with common routing.</td>
+</tr>
+<tr>
+<td><strong>VPI</strong></td>
+<td>Virtual Path Identifier. ATM cell header field for VP routing.</td>
+</tr>
+<tr>
+<td><strong>VPI/VCI</strong></td>
+<td>ATM address fields (like "network/port" in IP).</td>
+</tr>
+<tr>
+<td><strong>VPN</strong></td>
+<td>Virtual Private Network. Secure overlay network (e.g., MPLS VPN, IPsec).</td>
+</tr>
+<tr>
+<td><strong>VPRN</strong></td>
+<td>Virtual Private Routed Network. Layer 3 VPN service.</td>
+</tr>
+<tr>
+<td><strong>VSAT</strong></td>
+<td>Very Small Aperture Terminal. Satellite earth station for data/voice.</td>
+</tr>
+<tr>
+<td><strong>VSB</strong></td>
+<td>Vestigial Sideband. Analog modulation for TV signals.</td>
+</tr>
+<tr>
+<td><strong>VT</strong></td>
+<td>Virtual Tributary. SONET term for lower-rate containers (e.g., VT1.5 = T1).</td>
+</tr>
+<tr>
+<td><strong>WAN</strong></td>
+<td>Wide Area Network. Long-distance network (e.g., MPLS, leased lines).</td>
+</tr>
+<tr>
+<td><strong>WCS</strong></td>
+<td>Wireless Control System. Management platform for RF networks.</td>
+</tr>
+<tr>
+<td><strong>WDM</strong></td>
+<td>Wavelength Division Multiplexing. Fiber tech for multiple lambdas (CWDM/DWDM).</td>
+</tr>
+<tr>
+<td><strong>WDV</strong></td>
+<td>Written Down Value. Accounting method for asset depreciation.</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td>World Wide Web. Internet application layer (HTTP/HTML).</td>
+</tr>
+<tr>
+<td><strong>Web TV</strong></td>
+<td>Early internet-to-TV platforms (pre-smart TV era).</td>
+</tr>
+<tr>
+<td><strong>WIN</strong></td>
+<td>Wireless Intelligent Network. Framework for advanced mobile services.</td>
+</tr>
+<tr>
+<td><strong>WINF</strong></td>
+<td>Wireless Information Networks Forum. Advocacy group for wireless tech.</td>
+</tr>
+<tr>
+<td><strong>WIOZ</strong></td>
+<td>Terminal support application in XMATE systems.</td>
+</tr>
+<tr>
+<td><strong>WLL</strong></td>
+<td>Wireless Local Loop. Fixed wireless alternative to copper last-mile.</td>
+</tr>
+<tr>
+<td><strong>WWW</strong></td>
+<td>World Wide Web. Synonym for the web (HTTP/HTML ecosystem).</td>
+</tr>
+<tr>
+<td><strong>WYSIWYG</strong></td>
+<td>What You See Is What You Get. UI design principle (e.g., web editors).</td>
+</tr>
+<tr>
+<td><strong>X.25 PLP</strong></td>
+<td>X.25 Packet Layer Protocol. Legacy WAN protocol (ISO 8208).</td>
+</tr>
+<tr>
+<td><strong>X.29</strong></td>
+<td>ITU-T standard for X.25 DTE-DCE interactions.</td>
+</tr>
+<tr>
+<td><strong>xDSL</strong></td>
+<td>Family of DSL technologies (ADSL, VDSL, etc.).</td>
+</tr>
+<tr>
+<td><strong>XMATE</strong></td>
+<td>Exchange Management Terminal. Legacy OSS for telephone switches.</td>
+</tr>
+<tr>
+<td><strong>XPM</strong></td>
+<td>Cross-Phase Modulation. Fiber nonlinearity causing crosstalk between wavelengths.</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Miscellaneous Glossaries" class="md-footer__link md-footer__link--prev" href="../">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Miscellaneous Glossaries
+              </div>
+</div>
+</a>
+<a aria-label="Next: Glossary of Networking Terms" class="md-footer__link md-footer__link--next" href="../gloss_networking/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Glossary of Networking Terms
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../js/seamaiden.js"></script>
+<script src="../../js/diagram-zoom.js"></script>
+<script src="../../js/alphabet-auto.js"></script>
+<script src="../../js/svg-patcher.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+</body>
+</html>
