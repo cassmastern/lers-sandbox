@@ -1,6 +1,7 @@
 FROM python:3.11-slim
 
 WORKDIR /app
+ENV PYTHONPATH="/app"
 
 # Set environment variables early (these rarely change)
 ENV PIP_ROOT_USER_ACTION=ignore
