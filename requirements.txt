@@ -3,6 +3,7 @@ mkdocs==1.6.1
 mkdocs-material==9.5.39
 
 # Plugins
+mkdocs-mermaid2-plugin==1.2.1
 mkdocs-awesome-pages-plugin==2.8.0
 mkdocs_puml==2.3.0
 

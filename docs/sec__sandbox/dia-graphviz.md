@@ -1,8 +1,45 @@
 # Graphviz Diagrams
 
-## Some Guy's Diagram from StackExchange
+## Vendor's first examples for svg:
+
+### 1
+
+```dot
+digraph G {
+    rankdir=LR
+    Earth [peripheries=2]
+    Mars
+    Earth -> Mars
+}
+```
+### 2
+
+```graphviz dot attack_plan.svg
+digraph G {
+    rankdir=LR
+    Earth [peripheries=2]
+    Mars
+    Earth -> Mars
+}
+```
+
+## With `@startuml` (for whatever reason)
 
 ```graphviz
+@startuml
+digraph G {
+    bgcolor="transparent";
+    node [color="#64748b", fontcolor="#1e293b"];
+    edge [color="#64748b"];
+    
+    A -> B -> C;
+}
+@enduml
+```
+
+## Some Guy's Diagram from StackExchange
+
+```dot
 digraph ReferenceGraph {
   nodesep = 2;
   edge [color=gray50, fontname=Calibri, fontsize=11]
@@ -71,7 +108,7 @@ digraph ReferenceGraph {
 
 ### Same Diagram Improved by CockPilot
 
-```graphviz
+```dot
 digraph ReferenceGraph {
   nodesep = 2;
   rankdir = LR;
@@ -151,7 +188,7 @@ digraph ReferenceGraph {
 
 ### Second Try from CockPilot
 
-```graphviz
+```dot
 digraph ReferenceGraph {
   nodesep = 2;
   edge [color=gray50, fontname=Calibri, fontsize=11];
@@ -243,7 +280,7 @@ digraph ReferenceGraph {
 
 ## UML Class Diagram
 
-```graphviz
+```dot
 digraph UML_Class_diagram {
 	graph [
 		label="UML Class diagram demo"
@@ -364,7 +401,7 @@ digraph UML_Class_diagram {
 
 ## Cluster 1
 
-```graphviz
+```dot
 graph ClusterExample {
  // Clusters must be named with the "cluster_" prefix
  subgraph cluster_0 {
@@ -387,7 +424,7 @@ graph ClusterExample {
 ```
 ## Cluster 2 
 
-```graphviz
+```dot
 digraph G {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
@@ -422,7 +459,7 @@ digraph G {
 
 ## Git — Basic Concepts and Operations
 
-```graphviz
+```dot
 digraph git_basics {
 	graph [
 		label = "Basic git concepts and operations\n\n"
@@ -555,7 +592,7 @@ digraph git_basics {
 
 ## Data Structures
 
-```graphviz
+```dot
 digraph g {
 fontname="Helvetica,Arial,sans-serif"
 node [fontname="Helvetica,Arial,sans-serif"]
@@ -677,7 +714,7 @@ id = 16
 
 ## Family Tree
 
-```graphviz
+```dot
 /*
 Note: All images in the file is found at
 
@@ -774,7 +811,7 @@ I4 [shape=ellipse,color=red,style=bold,label="Janet Norton Lee\nb. 2.10.1877\nd.
 ```
 ## Finite Automation
 
-```graphviz
+```dot
 digraph finite_state_machine {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
@@ -801,7 +838,7 @@ digraph finite_state_machine {
 
 ## Linux Kernel
 
-```graphviz
+```dot
 digraph "Linux_kernel_diagram" {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
@@ -1436,7 +1473,7 @@ digraph "Linux_kernel_diagram" {
 
 ## Neural Network
 
-```graphviz
+```dot
 digraph G {
   fontname="Helvetica,Arial,sans-serif"
   node [fontname="Helvetica,Arial,sans-serif"]
