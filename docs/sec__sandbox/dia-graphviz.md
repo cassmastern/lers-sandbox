@@ -106,7 +106,7 @@ digraph ReferenceGraph {
 }
 ```
 
-### Same Diagram Improved by CockPilot
+### Same Diagram Improved 
 
 ```dot
 digraph ReferenceGraph {
@@ -186,7 +186,7 @@ digraph ReferenceGraph {
 }
 ```
 
-### Second Try from CockPilot
+### Second Try 
 
 ```dot
 digraph ReferenceGraph {

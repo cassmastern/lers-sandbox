@@ -1,0 +1,6 @@
+title: "Working with FHIR Resource APIs"
+arrange:
+- deepdive-fhir-search-parameters.md
+- deepdive-fhir-rest-common-ops.md
+- deepdive-error-handling.md
+- deepdive-fhir-validation.md

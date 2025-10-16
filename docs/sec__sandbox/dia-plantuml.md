@@ -44,7 +44,7 @@
     @enduml
 ```
 
-## Network (cockpilot)
+## Network 
 
 ```puml
     @startuml

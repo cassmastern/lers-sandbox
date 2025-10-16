@@ -20,6 +20,7 @@ gantt
 
 ## Changelog
 
+- 2025.10.16 a. Graphviz support (no accessibility metadata yet); b. new: a [deep dive into SMART-on-FHIR](../sec_ehealth/sec_deepdive/index.md).
 - 2025.10.08 New set of [eHealth-related topics](../sec_ehealth/index.md).
 - 2025.10.07 A mid-to-late 2010s [SAML/SSO admin guide](../sec_net-sec/saml-admin.md) for sentimental, aesthetic, and experimentation purposes. 
 - 2025.10.05 A [topic](../sec_freeform/identity.md) on digital identity and its ~30-year evolution from password chaos to token sprawl.
