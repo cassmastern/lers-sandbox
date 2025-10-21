@@ -1,7 +1,10 @@
 # Practical Example: Building a SMART App
 
-SMART-on-FHIR Sample Application
+> proc_appdev2::instr (TBD)
 
-> Embed or link to Interactive app (TBD)
+Sample Application
 
-![Screenshot of an interactive SMART-on-FHIR Explorer app](../../../img/smart-on-fhir-explorer.png)
+Here is a link to *FHIR Resource Explorer*, an interactive application that demonstrates querying a live FHIR R4 server (SMART Health IT Sandbox):
+
+[Launch FHIR Resource Explorer →](https://fhir-explorer.netlify.app/){ .md-button .md-button--primary }
+
