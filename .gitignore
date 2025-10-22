@@ -1,5 +1,5 @@
 # MkDocs output
-# /site/
+/site/
 # Python virtual environments
 .venv/
 env/
@@ -37,3 +37,4 @@ commit-message.txt
 _archive
 .archive
 .directory
+site/
