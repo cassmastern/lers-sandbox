@@ -1,0 +1,1430 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_gloss/gloss_networking/" rel="canonical"/>
+<link href="../gloss_oss/" rel="prev"/>
+<link href="../gloss_kuber/" rel="next"/>
+<link href="../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
+<title>Glossary of Networking Terms - Ler's Sandobx</title>
+<link href="../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/alphabet.css" rel="stylesheet"/>
+<link href="../../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../../css/cm-logo.css" rel="stylesheet"/>
+<link href="../../css/color-vars.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#glossary-of-networking-terms">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Ler's Sandobx
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Glossary of Networking Terms
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Ler's Sandobx">
+<img alt="logo" src="../../img/logo.svg"/>
+</a>
+    Ler's Sandobx
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_about/">
+<span class="md-ellipsis">
+    ABOUT THIS WEBSITE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            ABOUT THIS WEBSITE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/whatsinhere/">
+<span class="md-ellipsis">
+    What's in Here?
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-sitedev/">
+<span class="md-ellipsis">
+    How This Site Was Developed and Deployed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/about-wf-breakdown/">
+<span class="md-ellipsis">
+    Detailed Breakdown of My Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/roadmap/">
+<span class="md-ellipsis">
+    Roadmap &amp; Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_about/feedback/">
+<span class="md-ellipsis">
+    Feedback
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cloud/">
+<span class="md-ellipsis">
+    IN THE CLOUDS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            IN THE CLOUDS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure/">
+<span class="md-ellipsis">
+    Architectures of AWS, GCP, and Azure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cloud/jakarta-ee-azure/">
+<span class="md-ellipsis">
+    A Jakarta Enterprise Application on Azure
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_accss/">
+<span class="md-ellipsis">
+    ACCESSIBILITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            ACCESSIBILITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_/">
+<span class="md-ellipsis">
+    Accessibility Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/visuals-for-the-sightless/">
+<span class="md-ellipsis">
+    Visuals for the Sightless
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/accss_diagram-dilemma/">
+<span class="md-ellipsis">
+    The Diagramming Dilemma
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mermaid-beyond-reach/">
+<span class="md-ellipsis">
+    An Accessible Mermaid Beyond Reach
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mermaid-captured/">
+<span class="md-ellipsis">
+    Mermaid Captured
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<span class="md-ellipsis">
+    Diagram Accessibility: Current State/Path Forward
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_freeform/">
+<span class="md-ellipsis">
+    CONCEPTS, ESSAYS &amp; MORE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            CONCEPTS, ESSAYS &amp; MORE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/ibm-sanfran/">
+<span class="md-ellipsis">
+    IBM SanFrancisco
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/ai-accessibility/">
+<span class="md-ellipsis">
+    Accessibility with AI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/ai-accessibility_bus/">
+<span class="md-ellipsis">
+    Accessibility with AI (Concept Note)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/gen-ai-landscape-primer/">
+<span class="md-ellipsis">
+    GenAI Landscape in 2025
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_freeform/identity/">
+<span class="md-ellipsis">
+    The Long Arc of Digital Identity
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_net-sec/">
+<span class="md-ellipsis">
+    NETWORKS &amp; SECURITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            NETWORKS &amp; SECURITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center/">
+<span class="md-ellipsis">
+    A Hypothetical Data Centre Network
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_stride/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — STRIDE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/network_data_center_mitre/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — MITRE ATT&amp;CK
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_net-sec/saml-admin/">
+<span class="md-ellipsis">
+    Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/">
+<span class="md-ellipsis">
+    eHEALTH
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            eHEALTH
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/quick_ref/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration Quick Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/smart-fhir-visuals/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration — Visuals
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/gloss_ontario_halo/">
+<span class="md-ellipsis">
+    Ontario eHealth &amp; HALO Integration Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/">
+<span class="md-ellipsis">
+    Deep Dive into SMART-on-FHIR
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_5">
+<span class="md-nav__icon md-icon"></span>
+            Deep Dive into SMART-on-FHIR
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-01-foundations/">
+<span class="md-ellipsis">
+    Foundations
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_2" id="__nav_7_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Foundations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-01-foundations/deepdive-overview/">
+<span class="md-ellipsis">
+    Overview of SMART-on-FHIR
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-01-foundations/deepdive-overview-fhir-arch/">
+<span class="md-ellipsis">
+    SMART-on-FHIR Architecture Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-01-foundations/deepdive-overview-fhir-resources/">
+<span class="md-ellipsis">
+    Key FHIR Resources
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-02-fhir-data-fundamentals/">
+<span class="md-ellipsis">
+    FHIR Data Fundamentals
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_3" id="__nav_7_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_3">
+<span class="md-nav__icon md-icon"></span>
+            FHIR Data Fundamentals
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-02-fhir-data-fundamentals/deepdive-fhir-data-types/">
+<span class="md-ellipsis">
+    FHIR Data Types
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-02-fhir-data-fundamentals/deepdive-fhir-code-systems/">
+<span class="md-ellipsis">
+    Common FHIR Code Systems
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-02-fhir-data-fundamentals/deepdive-fhir-cardinality/">
+<span class="md-ellipsis">
+    FHIR Resource Cardinality
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-02-fhir-data-fundamentals/deepdive-complete-resource-example/">
+<span class="md-ellipsis">
+    Complete Example Resource
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-03-fhir-resource-relationships/">
+<span class="md-ellipsis">
+    FHIR Resource Relationships
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_4" id="__nav_7_5_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_4">
+<span class="md-nav__icon md-icon"></span>
+            FHIR Resource Relationships
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationship/">
+<span class="md-ellipsis">
+    Deepdive fhir resource relationship
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationships-comprehensive/">
+<span class="md-ellipsis">
+    FHIR Comprehensive Resource Relationships
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-bundles/">
+<span class="md-ellipsis">
+    FHIR Resource Bundles
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-04-working-with-fhir-apis/">
+<span class="md-ellipsis">
+    Working with FHIR Resource APIs
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_5" id="__nav_7_5_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_5">
+<span class="md-nav__icon md-icon"></span>
+            Working with FHIR Resource APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-04-working-with-fhir-apis/deepdive-fhir-search-parameters/">
+<span class="md-ellipsis">
+    FHIR Search Parameters
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-04-working-with-fhir-apis/deepdive-fhir-rest-common-ops/">
+<span class="md-ellipsis">
+    Common FHIR Operations (REST API)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-04-working-with-fhir-apis/deepdive-error-handling/">
+<span class="md-ellipsis">
+    Error Handling and OperationOutcome
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-04-working-with-fhir-apis/deepdive-fhir-validation/">
+<span class="md-ellipsis">
+    FHIR Validation
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-05-advanced-fhir-concepts/">
+<span class="md-ellipsis">
+    Advanced FHIR Concepts
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_6" id="__nav_7_5_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_6">
+<span class="md-nav__icon md-icon"></span>
+            Advanced FHIR Concepts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
+<span class="md-ellipsis">
+    FHIR Profiles and Extensions
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/">
+<span class="md-ellipsis">
+    SMART Authorization
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_7" id="__nav_7_5_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_7">
+<span class="md-nav__icon md-icon"></span>
+            SMART Authorization
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/deepdive-oauth-flow/">
+<span class="md-ellipsis">
+    OAuth 2.0 Flow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/deepdive-smart-launch-flow/">
+<span class="md-ellipsis">
+    SMART Launch Flow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/deepdive-smart-scopes-and-auth/">
+<span class="md-ellipsis">
+    SMART Scopes and Authorization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/deepdive-smart-config-discovery/">
+<span class="md-ellipsis">
+    SMART Configuration Discovery
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/deepdive-security-and-access-control/">
+<span class="md-ellipsis">
+    Security and Access Control
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/">
+<span class="md-ellipsis">
+    Hands-On Practice
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_8" id="__nav_7_5_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_8">
+<span class="md-nav__icon md-icon"></span>
+            Hands-On Practice
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-smart-health-it-sandbox/">
+<span class="md-ellipsis">
+    Using the SMART Health IT Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
+<span class="md-ellipsis">
+    Practical Example: Building a SMART App
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-smart_client_impl/">
+<span class="md-ellipsis">
+    SMART Client Implementation (Python)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-smart_client_impl-practical-code-examples/">
+<span class="md-ellipsis">
+    Practical Code Examples
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-testing-and-debugging/">
+<span class="md-ellipsis">
+    Testing and Debugging
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-08-wrap-up/">
+<span class="md-ellipsis">
+    Wrap-Up
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_9" id="__nav_7_5_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_9">
+<span class="md-nav__icon md-icon"></span>
+            Wrap-Up
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-08-wrap-up/deepdive-key-takeaways/">
+<span class="md-ellipsis">
+    Deepdive key takeaways
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-08-wrap-up/deepdive-summary/">
+<span class="md-ellipsis">
+    Summary
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sec_cheatsheets/">
+<span class="md-ellipsis">
+    VARIOUS CHEAT SHEETS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            VARIOUS CHEAT SHEETS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-docker/">
+<span class="md-ellipsis">
+    Docker Command Cheatsheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet-kubectl/">
+<span class="md-ellipsis">
+    Kubectl Command Cheat Sheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sec_cheatsheets/cheatsheet_compound-modifiers/">
+<span class="md-ellipsis">
+    Compound Modifiers Cheat Sheet
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    MISC GLOSSARIES
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            MISC GLOSSARIES
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gloss_oss/">
+<span class="md-ellipsis">
+    Glossary of OSS Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Glossary of Networking Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gloss_kuber/">
+<span class="md-ellipsis">
+    Glossary of Kubernetes Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gloss_cloud-native/">
+<span class="md-ellipsis">
+    Glossary of Cloud-Native Terms
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="glossary-of-networking-terms">Glossary of Networking Terms</h1>
+<p>This glossary covers computer networking terminology, from IP addressing and routing to transport protocols and topologies. Several terms here underpin OSS functionality, especially in service delivery and infrastructure monitoring.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Term</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ACL (Access Control List)</strong></td>
+<td>A set of rules used to control network traffic and restrict access to network resources. Example: Configuring an ACL on a router to block traffic from a specific IP.</td>
+</tr>
+<tr>
+<td><strong>API Gateway</strong></td>
+<td>A server that acts as an entry point for client requests to backend services, often handling authentication, routing, and rate limiting.</td>
+</tr>
+<tr>
+<td><strong>Anycast</strong></td>
+<td>A network addressing and routing method where the same IP address is assigned to multiple nodes, and traffic is routed to the nearest node.</td>
+</tr>
+<tr>
+<td><strong>ARP (Address Resolution Protocol)</strong></td>
+<td>Protocol used to map an IP address to a MAC address in a local network. Example: <code>arp -a</code> shows the ARP cache on many systems.</td>
+</tr>
+<tr>
+<td><strong>ASN (Autonomous System Number)</strong></td>
+<td>A unique identifier for a network or group of networks under a single administrative domain.</td>
+</tr>
+<tr>
+<td><strong>Autoscaling</strong></td>
+<td>Automatically adjusting the number of compute resources in response to load.</td>
+</tr>
+<tr>
+<td><strong>Bare Metal Server</strong></td>
+<td>A physical server dedicated to a single tenant, often used for high-performance or compliance-sensitive workloads.</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>The maximum rate of data transfer across a network path, usually measured in bits per second (bps).</td>
+</tr>
+<tr>
+<td><strong>BGP (Border Gateway Protocol)</strong></td>
+<td>The protocol used to exchange routing information between autonomous systems on the internet.</td>
+</tr>
+<tr>
+<td><strong>Bridge Networking (VMs)</strong></td>
+<td>A VM networking mode where the VM shares the host’s physical network, appearing as a separate device on the LAN.</td>
+</tr>
+<tr>
+<td><strong>CIDR (Classless Inter-Domain Routing)</strong></td>
+<td>Notation for IP addresses with a prefix length (e.g., <code>192.168.1.1/24</code>).</td>
+</tr>
+<tr>
+<td><strong>Cloud Interconnect</strong></td>
+<td>A dedicated, high-bandwidth connection between on-premises infrastructure and a cloud provider's network.</td>
+</tr>
+<tr>
+<td><strong>Cloud Load Balancer</strong></td>
+<td>A managed service that distributes incoming traffic across multiple virtual machines or containers in the cloud.</td>
+</tr>
+<tr>
+<td><strong>CNAME (Canonical Name Record)</strong></td>
+<td>A type of DNS record that aliases one domain name to another.</td>
+</tr>
+<tr>
+<td><strong>Container Networking</strong></td>
+<td>The set of technologies and configurations that allow containers to communicate with each other and external networks.</td>
+</tr>
+<tr>
+<td><strong>Control Plane</strong></td>
+<td>The part of a network that carries signaling traffic and manages the network, as opposed to the data plane.</td>
+</tr>
+<tr>
+<td><strong>CSMA/CD (Carrier Sense Multiple Access with Collision Detection)</strong></td>
+<td>A network protocol used in Ethernet to control access to the network.</td>
+</tr>
+<tr>
+<td><strong>Data Plane</strong></td>
+<td>The part of a network responsible for forwarding user data.</td>
+</tr>
+<tr>
+<td><strong>DHCP (Dynamic Host Configuration Protocol)</strong></td>
+<td>Protocol for automatically assigning IP addresses to devices.</td>
+</tr>
+<tr>
+<td><strong>Direct Connect / ExpressRoute</strong></td>
+<td>Private, dedicated network connections to cloud platforms such as AWS Direct Connect or Azure ExpressRoute.</td>
+</tr>
+<tr>
+<td><strong>DNS (Domain Name System)</strong></td>
+<td>System that translates human-readable domain names into IP addresses. Example: <code>example.com</code> → <code>93.184.216.34</code>.</td>
+</tr>
+<tr>
+<td><strong>DoS/DDoS (Denial of Service / Distributed Denial of Service)</strong></td>
+<td>Attacks aimed at making a network resource unavailable.</td>
+</tr>
+<tr>
+<td><strong>East-West Traffic</strong></td>
+<td>Network traffic between servers within the same data centre or cloud region.</td>
+</tr>
+<tr>
+<td><strong>Elastic IP</strong></td>
+<td>A static, public IPv4 address provided by cloud providers that can be remapped to different instances.</td>
+</tr>
+<tr>
+<td><strong>Encapsulation</strong></td>
+<td>The process of wrapping data with protocol information before transmission.</td>
+</tr>
+<tr>
+<td><strong>Ethernet</strong></td>
+<td>A widely used LAN technology defined by IEEE 802.3 standards.</td>
+</tr>
+<tr>
+<td><strong>Fabric Network</strong></td>
+<td>A network topology designed for high-speed, scalable data centre communication.</td>
+</tr>
+<tr>
+<td><strong>Firewall</strong></td>
+<td>A network security device that monitors and filters incoming and outgoing traffic.</td>
+</tr>
+<tr>
+<td><strong>Floating IP</strong></td>
+<td>An IP address that can be dynamically moved between devices or VMs for failover or load balancing.</td>
+</tr>
+<tr>
+<td><strong>FTP (File Transfer Protocol)</strong></td>
+<td>An application protocol for transferring files between computers over a network.</td>
+</tr>
+<tr>
+<td><strong>Gateway</strong></td>
+<td>A network node that connects two different networks, often with translation between protocols.</td>
+</tr>
+<tr>
+<td><strong>Gigabit Ethernet</strong></td>
+<td>Ethernet standard with speeds up to 1 Gbps.</td>
+</tr>
+<tr>
+<td><strong>Hub</strong></td>
+<td>A basic network device that broadcasts data to all ports.</td>
+</tr>
+<tr>
+<td><strong>HTTP/HTTPS (HyperText Transfer Protocol / Secure)</strong></td>
+<td>Protocols for transmitting hypertext over the web, HTTPS being encrypted via TLS.</td>
+</tr>
+<tr>
+<td><strong>Hypervisor Networking</strong></td>
+<td>The networking layer within virtualization platforms (e.g., VMware vSphere, KVM) that manages VM-to-VM and VM-to-host connectivity.</td>
+</tr>
+<tr>
+<td><strong>ICMP (Internet Control Message Protocol)</strong></td>
+<td>Used by network devices to send error messages and operational information. Example: <code>ping</code> uses ICMP Echo Request/Reply.</td>
+</tr>
+<tr>
+<td><strong>Ingress Controller</strong></td>
+<td>A Kubernetes resource that manages external access to services in a cluster.</td>
+</tr>
+<tr>
+<td><strong>Inter-VLAN Routing</strong></td>
+<td>Routing between VLANs, usually handled by a Layer 3 switch or router.</td>
+</tr>
+<tr>
+<td><strong>IP (Internet Protocol)</strong></td>
+<td>A set of rules for addressing and routing packets of data so they can travel across networks.</td>
+</tr>
+<tr>
+<td><strong>ISP (Internet Service Provider)</strong></td>
+<td>A company that provides internet connectivity.</td>
+</tr>
+<tr>
+<td><strong>Jitter</strong></td>
+<td>The variation in packet arrival times in a network.</td>
+</tr>
+<tr>
+<td><strong>Kerberos</strong></td>
+<td>A network authentication protocol using tickets for secure authentication.</td>
+</tr>
+<tr>
+<td><strong>Kubernetes Networking</strong></td>
+<td>The set of rules and services that define how pods and services communicate within a Kubernetes cluster.</td>
+</tr>
+<tr>
+<td><strong>LAN (Local Area Network)</strong></td>
+<td>A network covering a small geographic area, like a home or office.</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>The time it takes for a packet to travel from source to destination.</td>
+</tr>
+<tr>
+<td><strong>Latency-Based Routing</strong></td>
+<td>Routing decisions made based on the measured network latency between client and server.</td>
+</tr>
+<tr>
+<td><strong>Load Balancer</strong></td>
+<td>A device or software that distributes network traffic across multiple servers.</td>
+</tr>
+<tr>
+<td><strong>Load Balancing Algorithm</strong></td>
+<td>The method used to distribute network requests, such as round-robin, least connections, or IP hash.</td>
+</tr>
+<tr>
+<td><strong>MAC Address (Media Access Control Address)</strong></td>
+<td>A hardware identifier for a network interface card.</td>
+</tr>
+<tr>
+<td><strong>MPLS (Multiprotocol Label Switching)</strong></td>
+<td>A routing technique for high-performance telecommunications networks.</td>
+</tr>
+<tr>
+<td><strong>Multi-Cloud Networking</strong></td>
+<td>The practice of connecting and managing resources across multiple cloud providers.</td>
+</tr>
+<tr>
+<td><strong>NAT (Network Address Translation)</strong></td>
+<td>Translates private IP addresses into a public IP address. Example: Home routers perform NAT.</td>
+</tr>
+<tr>
+<td><strong>Network Function Virtualization (NFV)</strong></td>
+<td>A network architecture concept that uses virtualization to manage and deploy network services.</td>
+</tr>
+<tr>
+<td><strong>Network Overlay</strong></td>
+<td>A virtual network built on top of another network, often used in SDN and cloud environments.</td>
+</tr>
+<tr>
+<td><strong>Network Peering</strong></td>
+<td>Directly connecting two networks to exchange traffic without going through the public internet.</td>
+</tr>
+<tr>
+<td><strong>Network Security Group (NSG)</strong></td>
+<td>A set of security rules controlling inbound and outbound traffic to Azure resources.</td>
+</tr>
+<tr>
+<td><strong>NIC (Network Interface Card)</strong></td>
+<td>Hardware that connects a device to a network.</td>
+</tr>
+<tr>
+<td><strong>North-South Traffic</strong></td>
+<td>Network traffic between a data centre and external networks.</td>
+</tr>
+<tr>
+<td><strong>OSI Model (Open Systems Interconnection)</strong></td>
+<td>A conceptual model describing how data moves through a network in 7 layers.</td>
+</tr>
+<tr>
+<td><strong>Overlay Network (Containers)</strong></td>
+<td>A network that connects containers running on different hosts, typically implemented with VXLAN or GRE.</td>
+</tr>
+<tr>
+<td><strong>Overhead</strong></td>
+<td>Extra data and processing time required by networking protocols.</td>
+</tr>
+<tr>
+<td><strong>Packet</strong></td>
+<td>A formatted unit of data carried by a network.</td>
+</tr>
+<tr>
+<td><strong>Peering Connection (Cloud)</strong></td>
+<td>A private network link between two virtual networks in the cloud.</td>
+</tr>
+<tr>
+<td><strong>PoE (Power over Ethernet)</strong></td>
+<td>Technology that delivers power and data over the same Ethernet cable.</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>A logical endpoint for network communications, identified by a number.</td>
+</tr>
+<tr>
+<td><strong>Private Endpoint</strong></td>
+<td>A network interface that privately connects a service to a virtual network.</td>
+</tr>
+<tr>
+<td><strong>QoE (Quality of Experience)</strong></td>
+<td>A measure of user satisfaction with network services.</td>
+</tr>
+<tr>
+<td><strong>QoS (Quality of Service)</strong></td>
+<td>Techniques to manage network resources and prioritize certain types of traffic.</td>
+</tr>
+<tr>
+<td><strong>Routing</strong></td>
+<td>The process of selecting network paths for traffic.</td>
+</tr>
+<tr>
+<td><strong>RTP (Real-Time Transport Protocol)</strong></td>
+<td>A protocol for delivering audio and video over IP networks.</td>
+</tr>
+<tr>
+<td><strong>SDN (Software-Defined Networking)</strong></td>
+<td>An approach to networking that uses software-based controllers to direct traffic on the network.</td>
+</tr>
+<tr>
+<td><strong>SD-WAN (Software-Defined Wide Area Network)</strong></td>
+<td>A virtual WAN architecture that uses software to control the connectivity, management, and services between data centres, branches, and cloud.</td>
+</tr>
+<tr>
+<td><strong>Security Group</strong></td>
+<td>A virtual firewall that controls inbound and outbound traffic for resources in cloud environments.</td>
+</tr>
+<tr>
+<td><strong>Segment Routing (SR)</strong></td>
+<td>A method of source routing where the sender defines the path a packet should take.</td>
+</tr>
+<tr>
+<td><strong>Service Mesh</strong></td>
+<td>A dedicated infrastructure layer for controlling service-to-service communication in microservices architectures.</td>
+</tr>
+<tr>
+<td><strong>Site-to-Site VPN</strong></td>
+<td>A VPN that connects two or more networks in different physical locations.</td>
+</tr>
+<tr>
+<td><strong>SMTP (Simple Mail Transfer Protocol)</strong></td>
+<td>Protocol for sending emails.</td>
+</tr>
+<tr>
+<td><strong>SNMP (Simple Network Management Protocol)</strong></td>
+<td>Used to manage and monitor network devices.</td>
+</tr>
+<tr>
+<td><strong>Spine-Leaf Architecture</strong></td>
+<td>A two-tier data centre network topology for predictable latency and high bandwidth.</td>
+</tr>
+<tr>
+<td><strong>SSH (Secure Shell)</strong></td>
+<td>Protocol for secure remote login and command execution.</td>
+</tr>
+<tr>
+<td><strong>Subnet</strong></td>
+<td>A segmented portion of a network with a specific IP range.</td>
+</tr>
+<tr>
+<td><strong>TCP (Transmission Control Protocol)</strong></td>
+<td>Reliable, connection-oriented transport layer protocol.</td>
+</tr>
+<tr>
+<td><strong>Transit Gateway</strong></td>
+<td>A service that enables connecting multiple VPCs/VNets and on-premises networks via a central hub.</td>
+</tr>
+<tr>
+<td><strong>TTL (Time To Live)</strong></td>
+<td>A field in IP packets that limits the packet's lifespan.</td>
+</tr>
+<tr>
+<td><strong>Tunneling</strong></td>
+<td>Encapsulating one protocol inside another for secure transport.</td>
+</tr>
+<tr>
+<td><strong>UDP (User Datagram Protocol)</strong></td>
+<td>Connectionless, faster but less reliable than TCP.</td>
+</tr>
+<tr>
+<td><strong>Underlay Network</strong></td>
+<td>The physical network infrastructure that supports an overlay network.</td>
+</tr>
+<tr>
+<td><strong>URL (Uniform Resource Locator)</strong></td>
+<td>An address for accessing resources on the web.</td>
+</tr>
+<tr>
+<td><strong>VLAN (Virtual LAN)</strong></td>
+<td>A logical subdivision of a physical network that groups devices together, improving security and traffic management.</td>
+</tr>
+<tr>
+<td><strong>VM (Virtual Machine)</strong></td>
+<td>A software emulation of a physical computer that runs an operating system and applications independently.</td>
+</tr>
+<tr>
+<td><strong>VNet (Virtual Network)</strong></td>
+<td>A logically isolated network in cloud environments like Azure, used to securely connect resources.</td>
+</tr>
+<tr>
+<td><strong>VPN (Virtual Private Network)</strong></td>
+<td>A secure tunnel over the internet that encrypts traffic between endpoints, often used for remote access.</td>
+</tr>
+<tr>
+<td><strong>VRRP (Virtual Router Redundancy Protocol)</strong></td>
+<td>A protocol that increases availability by assigning a virtual IP to a group of routers.</td>
+</tr>
+<tr>
+<td><strong>VXLAN (Virtual Extensible LAN)</strong></td>
+<td>A network virtualization technology that enables scalable segmentation across data centres using overlay networks.</td>
+</tr>
+<tr>
+<td><strong>WAN (Wide Area Network)</strong></td>
+<td>A network that spans a large geographic area, connecting multiple LANs.</td>
+</tr>
+<tr>
+<td><strong>WebSocket</strong></td>
+<td>A protocol providing full-duplex communication channels over a single TCP connection, often used for real-time apps.</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>A wireless networking technology that allows devices to connect to a LAN using radio waves.</td>
+</tr>
+<tr>
+<td><strong>WireGuard</strong></td>
+<td>A modern, lightweight VPN protocol known for simplicity and high performance.</td>
+</tr>
+<tr>
+<td><strong>Zero Trust</strong></td>
+<td>A security model that assumes no implicit trust and requires continuous verification of identity and access.</td>
+</tr>
+<tr>
+<td><strong>ZTP (Zero Touch Provisioning)</strong></td>
+<td>A method for automatically configuring devices when they are first connected to the network.</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Glossary of OSS Terms" class="md-footer__link md-footer__link--prev" href="../gloss_oss/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Glossary of OSS Terms
+              </div>
+</div>
+</a>
+<a aria-label="Next: Glossary of Kubernetes Terms" class="md-footer__link md-footer__link--next" href="../gloss_kuber/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Glossary of Kubernetes Terms
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../js/seamaiden.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js"></script>
+<script src="../../js/diagram-zoom.js"></script>
+<script src="../../js/alphabet-auto.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+</body>
+</html>

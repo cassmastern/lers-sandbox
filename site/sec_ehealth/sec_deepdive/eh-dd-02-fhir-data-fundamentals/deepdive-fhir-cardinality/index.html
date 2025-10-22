@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_deepdive/eh-dd-02-fhir-data-fundamentals/deepdive-fhir-cardinality/" rel="canonical"/>
+<link href="../deepdive-fhir-code-systems/" rel="prev"/>
+<link href="../deepdive-complete-resource-example/" rel="next"/>
+<link href="../../../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
+<title>FHIR Resource Cardinality - Ler's Sandobx</title>
+<link href="../../../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../css/alphabet.css" rel="stylesheet"/>
+<link href="../../../../css/diagram-zoom.css" rel="stylesheet"/>
+<link href="../../../../css/cm-logo.css" rel="stylesheet"/>
+<link href="../../../../css/color-vars.css" rel="stylesheet"/>
+<link href="../../../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-GD2XWDMP2E"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-GD2XWDMP2E",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-GD2XWDMP2E",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#fhir-resource-cardinality">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Ler's Sandobx" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Ler's Sandobx">
+<img alt="logo" src="../../../../img/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Ler's Sandobx
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              FHIR Resource Cardinality
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ler's Sandobx" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Ler's Sandobx">
+<img alt="logo" src="../../../../img/logo.svg"/>
+</a>
+    Ler's Sandobx
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_about/">
+<span class="md-ellipsis">
+    ABOUT THIS WEBSITE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            ABOUT THIS WEBSITE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_about/whatsinhere/">
+<span class="md-ellipsis">
+    What's in Here?
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_about/about-sitedev/">
+<span class="md-ellipsis">
+    How This Site Was Developed and Deployed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_about/about-wf-breakdown/">
+<span class="md-ellipsis">
+    Detailed Breakdown of My Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_about/roadmap/">
+<span class="md-ellipsis">
+    Roadmap &amp; Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_about/feedback/">
+<span class="md-ellipsis">
+    Feedback
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_cloud/">
+<span class="md-ellipsis">
+    IN THE CLOUDS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            IN THE CLOUDS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cloud/aws-gcp-azure/">
+<span class="md-ellipsis">
+    Architectures of AWS, GCP, and Azure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cloud/aws-gcp-azure_glossary/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cloud/aws-gcp-azure_glossary_enhanced/">
+<span class="md-ellipsis">
+    Cross-Platform Cloud &amp; DevOps Glossary (AWS, GCP, Azure) — Enhanced
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cloud/jakarta-ee-azure/">
+<span class="md-ellipsis">
+    A Jakarta Enterprise Application on Azure
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_accss/">
+<span class="md-ellipsis">
+    ACCESSIBILITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            ACCESSIBILITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_accss/accss_/">
+<span class="md-ellipsis">
+    Accessibility Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_accss/visuals-for-the-sightless/">
+<span class="md-ellipsis">
+    Visuals for the Sightless
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_accss/accss_diagram-dilemma/">
+<span class="md-ellipsis">
+    The Diagramming Dilemma
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_accss/mermaid-beyond-reach/">
+<span class="md-ellipsis">
+    An Accessible Mermaid Beyond Reach
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_accss/mermaid-captured/">
+<span class="md-ellipsis">
+    Mermaid Captured
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_accss/mkdocs-mermaid-plantuml-graphviz/">
+<span class="md-ellipsis">
+    Diagram Accessibility: Current State/Path Forward
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_freeform/">
+<span class="md-ellipsis">
+    CONCEPTS, ESSAYS &amp; MORE
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            CONCEPTS, ESSAYS &amp; MORE
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_freeform/ibm-sanfran/">
+<span class="md-ellipsis">
+    IBM SanFrancisco
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_freeform/ai-accessibility/">
+<span class="md-ellipsis">
+    Accessibility with AI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_freeform/ai-accessibility_bus/">
+<span class="md-ellipsis">
+    Accessibility with AI (Concept Note)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_freeform/gen-ai-landscape-primer/">
+<span class="md-ellipsis">
+    GenAI Landscape in 2025
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_freeform/identity/">
+<span class="md-ellipsis">
+    The Long Arc of Digital Identity
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_net-sec/">
+<span class="md-ellipsis">
+    NETWORKS &amp; SECURITY
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            NETWORKS &amp; SECURITY
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_net-sec/network_data_center/">
+<span class="md-ellipsis">
+    A Hypothetical Data Centre Network
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_net-sec/network_data_center_stride/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — STRIDE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_net-sec/network_data_center_mitre/">
+<span class="md-ellipsis">
+    Network Security and Threat Modeling — MITRE ATT&amp;CK
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_net-sec/saml-admin/">
+<span class="md-ellipsis">
+    Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../">
+<span class="md-ellipsis">
+    eHEALTH
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            eHEALTH
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../quick_ref/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration Quick Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../smart-fhir-visuals/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration — Visuals
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../gloss_ontario_halo/">
+<span class="md-ellipsis">
+    Ontario eHealth &amp; HALO Integration Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Deep Dive into SMART-on-FHIR
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_5">
+<span class="md-nav__icon md-icon"></span>
+            Deep Dive into SMART-on-FHIR
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-01-foundations/">
+<span class="md-ellipsis">
+    Foundations
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_2" id="__nav_7_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Foundations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-01-foundations/deepdive-overview/">
+<span class="md-ellipsis">
+    Overview of SMART-on-FHIR
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-01-foundations/deepdive-overview-fhir-arch/">
+<span class="md-ellipsis">
+    SMART-on-FHIR Architecture Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-01-foundations/deepdive-overview-fhir-resources/">
+<span class="md-ellipsis">
+    Key FHIR Resources
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    FHIR Data Fundamentals
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_3" id="__nav_7_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_7_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_3">
+<span class="md-nav__icon md-icon"></span>
+            FHIR Data Fundamentals
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-fhir-data-types/">
+<span class="md-ellipsis">
+    FHIR Data Types
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-fhir-code-systems/">
+<span class="md-ellipsis">
+    Common FHIR Code Systems
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    FHIR Resource Cardinality
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    FHIR Resource Cardinality
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-element-cardinality-diagram">
+<span class="md-ellipsis">
+      Resource Element Cardinality (diagram)
+    </span>
+</a>
+<nav aria-label="Resource Element Cardinality (diagram)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version1-mermaid-graph-td">
+<span class="md-ellipsis">
+      Version1 (mermaid graph TD)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version2-puml-erd">
+<span class="md-ellipsis">
+      Version2 (puml ERD)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-complete-resource-example/">
+<span class="md-ellipsis">
+    Complete Example Resource
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-03-fhir-resource-relationships/">
+<span class="md-ellipsis">
+    FHIR Resource Relationships
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_4" id="__nav_7_5_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_4">
+<span class="md-nav__icon md-icon"></span>
+            FHIR Resource Relationships
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationship/">
+<span class="md-ellipsis">
+    Deepdive fhir resource relationship
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationships-comprehensive/">
+<span class="md-ellipsis">
+    FHIR Comprehensive Resource Relationships
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-bundles/">
+<span class="md-ellipsis">
+    FHIR Resource Bundles
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-04-working-with-fhir-apis/">
+<span class="md-ellipsis">
+    Working with FHIR Resource APIs
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_5" id="__nav_7_5_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_5">
+<span class="md-nav__icon md-icon"></span>
+            Working with FHIR Resource APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-04-working-with-fhir-apis/deepdive-fhir-search-parameters/">
+<span class="md-ellipsis">
+    FHIR Search Parameters
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-04-working-with-fhir-apis/deepdive-fhir-rest-common-ops/">
+<span class="md-ellipsis">
+    Common FHIR Operations (REST API)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-04-working-with-fhir-apis/deepdive-error-handling/">
+<span class="md-ellipsis">
+    Error Handling and OperationOutcome
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-04-working-with-fhir-apis/deepdive-fhir-validation/">
+<span class="md-ellipsis">
+    FHIR Validation
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/">
+<span class="md-ellipsis">
+    Advanced FHIR Concepts
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_6" id="__nav_7_5_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_6">
+<span class="md-nav__icon md-icon"></span>
+            Advanced FHIR Concepts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
+<span class="md-ellipsis">
+    FHIR Profiles and Extensions
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-06-smart-auth/">
+<span class="md-ellipsis">
+    SMART Authorization
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_7" id="__nav_7_5_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_7">
+<span class="md-nav__icon md-icon"></span>
+            SMART Authorization
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-06-smart-auth/deepdive-oauth-flow/">
+<span class="md-ellipsis">
+    OAuth 2.0 Flow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-06-smart-auth/deepdive-smart-launch-flow/">
+<span class="md-ellipsis">
+    SMART Launch Flow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-06-smart-auth/deepdive-smart-scopes-and-auth/">
+<span class="md-ellipsis">
+    SMART Scopes and Authorization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-06-smart-auth/deepdive-smart-config-discovery/">
+<span class="md-ellipsis">
+    SMART Configuration Discovery
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-06-smart-auth/deepdive-security-and-access-control/">
+<span class="md-ellipsis">
+    Security and Access Control
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/">
+<span class="md-ellipsis">
+    Hands-On Practice
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_8" id="__nav_7_5_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_8">
+<span class="md-nav__icon md-icon"></span>
+            Hands-On Practice
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart-health-it-sandbox/">
+<span class="md-ellipsis">
+    Using the SMART Health IT Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
+<span class="md-ellipsis">
+    Practical Example: Building a SMART App
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl/">
+<span class="md-ellipsis">
+    SMART Client Implementation (Python)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-practical-code-examples/">
+<span class="md-ellipsis">
+    Practical Code Examples
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-testing-and-debugging/">
+<span class="md-ellipsis">
+    Testing and Debugging
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../eh-dd-08-wrap-up/">
+<span class="md-ellipsis">
+    Wrap-Up
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_5_9" id="__nav_7_5_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_5_9">
+<span class="md-nav__icon md-icon"></span>
+            Wrap-Up
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-08-wrap-up/deepdive-key-takeaways/">
+<span class="md-ellipsis">
+    Deepdive key takeaways
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-08-wrap-up/deepdive-summary/">
+<span class="md-ellipsis">
+    Summary
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_cheatsheets/">
+<span class="md-ellipsis">
+    VARIOUS CHEAT SHEETS
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            VARIOUS CHEAT SHEETS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cheatsheets/cheatsheet-docker/">
+<span class="md-ellipsis">
+    Docker Command Cheatsheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cheatsheets/cheatsheet-kubectl/">
+<span class="md-ellipsis">
+    Kubectl Command Cheat Sheet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_cheatsheets/cheatsheet_compound-modifiers/">
+<span class="md-ellipsis">
+    Compound Modifiers Cheat Sheet
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../../sec_gloss/">
+<span class="md-ellipsis">
+    MISC GLOSSARIES
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            MISC GLOSSARIES
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_gloss/gloss_oss/">
+<span class="md-ellipsis">
+    Glossary of OSS Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_gloss/gloss_networking/">
+<span class="md-ellipsis">
+    Glossary of Networking Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_gloss/gloss_kuber/">
+<span class="md-ellipsis">
+    Glossary of Kubernetes Terms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../sec_gloss/gloss_cloud-native/">
+<span class="md-ellipsis">
+    Glossary of Cloud-Native Terms
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-element-cardinality-diagram">
+<span class="md-ellipsis">
+      Resource Element Cardinality (diagram)
+    </span>
+</a>
+<nav aria-label="Resource Element Cardinality (diagram)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version1-mermaid-graph-td">
+<span class="md-ellipsis">
+      Version1 (mermaid graph TD)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version2-puml-erd">
+<span class="md-ellipsis">
+      Version2 (puml ERD)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="fhir-resource-cardinality">FHIR Resource Cardinality</h1>
+<h2 id="resource-element-cardinality-diagram">Resource Element Cardinality (diagram)</h2>
+<blockquote>
+<p>See also <a href="../../eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationships-comprehensive/">Comprehensive FHIR Resource Relationships</a> for a focused cardinality diagram that covers some 20+ resources across domains.</p>
+</blockquote>
+<h3 id="version1-mermaid-graph-td">Version1 (mermaid graph TD)</h3>
+<div class="mermaid">graph TD
+    Patient[Patient Resource]
+
+    Patient --&gt; id[id 0..1]
+    Patient --&gt; meta[meta 0..1]
+    Patient --&gt; identifier[identifier 0..*]
+    Patient --&gt; active[active 0..1]
+    Patient --&gt; name[name 0..*]
+    Patient --&gt; telecom[telecom 0..*]
+    Patient --&gt; gender[gender 0..1]
+    Patient --&gt; birthDate[birthDate 0..1]
+    Patient --&gt; address[address 0..*]
+    Patient --&gt; maritalStatus[maritalStatus 0..1]
+    Patient --&gt; contact[contact 0..*]
+    Patient --&gt; communication[communication 0..*]
+    Patient --&gt; managingOrg[managingOrganization 0..1]
+
+    Observation[Observation Resource]
+
+    Observation --&gt; Oid[id 0..1]
+    Observation --&gt; Ometa[meta 0..1]
+    Observation --&gt; Ostatus[status 1..1 REQUIRED]
+    Observation --&gt; Ocategory[category 0..*]
+    Observation --&gt; Ocode[code 1..1 REQUIRED]
+    Observation --&gt; Osubject[subject 0..1]
+    Observation --&gt; Oencounter[encounter 0..1]
+    Observation --&gt; Oeffective[effective 0..1]
+    Observation --&gt; Oissued[issued 0..1]
+    Observation --&gt; Operformer[performer 0..*]
+    Observation --&gt; Ovalue[value 0..1]
+    Observation --&gt; Ointerpretation[interpretation 0..*]
+    Observation --&gt; Onote[note 0..*]
+    Observation --&gt; Ocomponent[component 0..*]
+
+    Condition[Condition Resource]
+
+    Condition --&gt; Cid[id 0..1]
+    Condition --&gt; Cmeta[meta 0..1]
+    Condition --&gt; CclinicalStatus[clinicalStatus 0..1]
+    Condition --&gt; CverificationStatus[verificationStatus 0..1]
+    Condition --&gt; Ccategory[category 0..*]
+    Condition --&gt; Cseverity[severity 0..1]
+    Condition --&gt; Ccode[code 0..1]
+    Condition --&gt; Csubject[subject 1..1 REQUIRED]
+    Condition --&gt; Cencounter[encounter 0..1]
+    Condition --&gt; Conset[onset 0..1]
+    Condition --&gt; Cabatement[abatement 0..1]
+    Condition --&gt; Crecorder[recorder 0..1]
+    Condition --&gt; Casserter[asserter 0..1]
+    Condition --&gt; Cevidence[evidence 0..*]
+    Condition --&gt; Cnote[note 0..*]
+</div>
+<h3 id="version2-puml-erd">Version2 (puml ERD)</h3>
+<div class="puml-container"><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="614px" preserveAspectRatio="xMidYMid meet" style="width:931px;height:614px;background:#FFFFFF;" version="1.1" viewBox="0 0 931 614" width="931px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="entity" data-entity="Patient" data-source-line="12" data-uid="ent0002" id="entity_Patient"><rect fill="#F1F1F1" height="254.1563" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="413.7686" x="288.24" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49.376" x="470.4363" y="24.9951">Patient</text><line style="stroke:#181818;stroke-width:0.5;" x1="289.24" x2="701.0086" y1="33.2969" y2="33.2969"/><ellipse cx="299.24" cy="46.9453" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5508" x="308.24" y="50.292">id : Identifier [0..1]</text><ellipse cx="299.24" cy="63.2422" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.7861" x="308.24" y="66.5889">meta : Meta [0..1]</text><ellipse cx="299.24" cy="79.5391" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179.6963" x="308.24" y="82.8857">identifier : Identifier [0..*]</text><ellipse cx="299.24" cy="95.8359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.2324" x="308.24" y="99.1826">active : boolean [0..1]</text><ellipse cx="299.24" cy="112.1328" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185.2949" x="308.24" y="115.4795">name : HumanName [0..*]</text><ellipse cx="299.24" cy="128.4297" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200.0332" x="308.24" y="131.7764">telecom : ContactPoint [0..*]</text><ellipse cx="299.24" cy="144.7266" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139.0977" x="308.24" y="148.0732">gender : code [0..1]</text><ellipse cx="299.24" cy="161.0234" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153.6309" x="308.24" y="164.3701">birthDate : date [0..1]</text><ellipse cx="299.24" cy="177.3203" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165.416" x="308.24" y="180.667">address : Address [0..*]</text><ellipse cx="299.24" cy="193.6172" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273.8477" x="308.24" y="196.9639">maritalStatus : CodeableConcept [0..1]</text><ellipse cx="299.24" cy="209.9141" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160.6582" x="308.24" y="213.2607">contact : Contact [0..*]</text><ellipse cx="299.24" cy="226.2109" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272.4121" x="308.24" y="229.5576">communication : Communication [0..*]</text><line style="stroke:#181818;stroke-width:0.5;" x1="289.24" x2="701.0086" y1="236.8594" y2="236.8594"/><ellipse cx="299.24" cy="250.5078" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="387.7686" x="308.24" y="253.8545">managingOrganization : Reference(Organization) [0..1]</text></g><g class="entity" data-entity="Observation" data-source-line="28" data-uid="ent0003" id="entity_Observation"><rect fill="#F1F1F1" height="270.4531" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="500.2432" x="7" y="329.31"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.251" x="214.4961" y="347.3051">Observation</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="506.2432" y1="355.6069" y2="355.6069"/><ellipse cx="18" cy="369.2553" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5508" x="27" y="372.602">id : Identifier [0..1]</text><ellipse cx="18" cy="385.5522" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.7861" x="27" y="388.8989">meta : Meta [0..1]</text><ellipse cx="18" cy="401.8491" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227.3906" x="27" y="405.1957">status : code [1..1] «REQUIRED»</text><ellipse cx="18" cy="418.1459" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239.3809" x="27" y="421.4926">category : CodeableConcept [0..*]</text><ellipse cx="18" cy="434.4428" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308.082" x="27" y="437.7895">code : CodeableConcept [1..1] «REQUIRED»</text><ellipse cx="18" cy="450.7397" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183.0254" x="27" y="454.0864">effective : dateTime [0..1]</text><ellipse cx="18" cy="467.0366" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149.0439" x="27" y="470.3832">issued : instant [0..1]</text><ellipse cx="18" cy="483.3334" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="474.2432" x="27" y="486.6801">value[x] : Quantity | CodeableConcept | string | boolean | etc. [0..1]</text><ellipse cx="18" cy="499.6303" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274.2715" x="27" y="502.977">interpretation : CodeableConcept [0..*]</text><ellipse cx="18" cy="515.9272" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162.1143" x="27" y="519.2739">note : Annotation [0..*]</text><ellipse cx="18" cy="532.2241" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303.9805" x="27" y="535.5707">component : Observation.Component [0..*]</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="506.2432" y1="542.8725" y2="542.8725"/><ellipse cx="18" cy="556.5209" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238.1846" x="27" y="559.8676">subject : Reference(Patient) [0..1]</text><ellipse cx="18" cy="572.8178" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="281.0049" x="27" y="576.1645">encounter : Reference(Encounter) [0..1]</text><ellipse cx="18" cy="589.1147" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="391.0771" x="27" y="592.4614">performer : Reference(Practitioner | Organization) [0..*]</text></g><g class="entity" data-entity="Condition" data-source-line="45" data-uid="ent0004" id="entity_Condition"><rect fill="#F1F1F1" height="286.75" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="382.2686" x="541.99" y="321.16"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66.8076" x="699.7205" y="339.1551">Condition</text><line style="stroke:#181818;stroke-width:0.5;" x1="542.99" x2="923.2586" y1="347.4569" y2="347.4569"/><ellipse cx="552.99" cy="361.1053" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5508" x="561.99" y="364.452">id : Identifier [0..1]</text><ellipse cx="552.99" cy="377.4022" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.7861" x="561.99" y="380.7489">meta : Meta [0..1]</text><ellipse cx="552.99" cy="393.6991" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272.4326" x="561.99" y="397.0457">clinicalStatus : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="409.9959" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302.4834" x="561.99" y="413.3426">verificationStatus : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="426.2928" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239.3809" x="561.99" y="429.6395">category : CodeableConcept [0..*]</text><ellipse cx="552.99" cy="442.5897" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="235.6416" x="561.99" y="445.9364">severity : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="458.8866" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213.1787" x="561.99" y="462.2332">code : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="475.1834" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="318.3428" x="561.99" y="478.5301">onset[x] : dateTime | Age | Period | etc. [0..1]</text><ellipse cx="552.99" cy="491.4803" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="356.2686" x="561.99" y="494.827">abatement[x] : dateTime | Age | Period | etc. [0..1]</text><ellipse cx="552.99" cy="507.7772" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252.2324" x="561.99" y="511.1239">evidence : Condition.Evidence [0..*]</text><ellipse cx="552.99" cy="524.0741" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162.1143" x="561.99" y="527.4207">note : Annotation [0..*]</text><line style="stroke:#181818;stroke-width:0.5;" x1="542.99" x2="923.2586" y1="534.7225" y2="534.7225"/><ellipse cx="552.99" cy="548.3709" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="333.0879" x="561.99" y="551.7176">subject : Reference(Patient) [1..1] «REQUIRED»</text><ellipse cx="552.99" cy="564.6678" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="281.0049" x="561.99" y="568.0145">encounter : Reference(Encounter) [0..1]</text><ellipse cx="552.99" cy="580.9647" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="278.749" x="561.99" y="584.3114">recorder : Reference(Practitioner) [0..1]</text><ellipse cx="552.99" cy="597.2616" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="339.4932" x="561.99" y="600.6082">asserter : Reference(Patient | Practitioner) [0..1]</text></g><g class="link" data-entity-1="Patient" data-entity-2="Observation" data-source-line="64" data-uid="lnk5" id="link_Patient_Observation"><path codeLine="64" d="M397.74,269.37 C397.74,291.46 397.74,288.51 397.74,310.81" fill="none" id="Patient-Observation" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="393.74" x2="401.74" y1="265.37" y2="265.37"/><line style="stroke:#181818;stroke-width:1;" x1="393.74" x2="401.74" y1="268.37" y2="268.37"/><line style="stroke:#181818;stroke-width:1;" x1="397.74" x2="397.74" y1="269.37" y2="261.37"/><line style="stroke:#181818;stroke-width:1;" x1="397.74" x2="403.74" y1="320.81" y2="328.81"/><line style="stroke:#181818;stroke-width:1;" x1="397.74" x2="391.74" y1="320.81" y2="328.81"/><line style="stroke:#181818;stroke-width:1;" x1="397.74" x2="397.74" y1="320.81" y2="328.81"/><ellipse cx="397.74" cy="314.81" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47.1187" x="349.74" y="291.1569">subject</text></g><g class="link" data-entity-1="Patient" data-entity-2="Condition" data-source-line="65" data-uid="lnk6" id="link_Patient_Condition"><path codeLine="65" d="M622,269.37 C622,288.83 622,283.02 622,302.8" fill="none" id="Patient-Condition" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="618" x2="626" y1="265.37" y2="265.37"/><line style="stroke:#181818;stroke-width:1;" x1="618" x2="626" y1="268.37" y2="268.37"/><line style="stroke:#181818;stroke-width:1;" x1="622" x2="622" y1="269.37" y2="261.37"/><line style="stroke:#181818;stroke-width:1;" x1="622" x2="628" y1="312.8" y2="320.8"/><line style="stroke:#181818;stroke-width:1;" x1="622" x2="616" y1="312.8" y2="320.8"/><line style="stroke:#181818;stroke-width:1;" x1="622" x2="622" y1="312.8" y2="320.8"/><ellipse cx="622" cy="306.8" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47.1187" x="574" y="287.1569">subject</text></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="614px" preserveAspectRatio="xMidYMid meet" style="width:931px;height:614px;background:#1B1B1B;" version="1.1" viewBox="0 0 931 614" width="931px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="#1B1B1B" height="614" style="stroke:none;stroke-width:1;" width="931" x="0" y="0"/><g class="entity" data-entity="Patient" data-source-line="12" data-uid="ent0002" id="entity_Patient"><rect fill="#313139" height="254.1563" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:0.5;" width="413.7686" x="288.24" y="7"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49.376" x="470.4363" y="24.9951">Patient</text><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="289.24" x2="701.0086" y1="33.2969" y2="33.2969"/><ellipse cx="299.24" cy="46.9453" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5508" x="308.24" y="50.292">id : Identifier [0..1]</text><ellipse cx="299.24" cy="63.2422" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.7861" x="308.24" y="66.5889">meta : Meta [0..1]</text><ellipse cx="299.24" cy="79.5391" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179.6963" x="308.24" y="82.8857">identifier : Identifier [0..*]</text><ellipse cx="299.24" cy="95.8359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.2324" x="308.24" y="99.1826">active : boolean [0..1]</text><ellipse cx="299.24" cy="112.1328" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185.2949" x="308.24" y="115.4795">name : HumanName [0..*]</text><ellipse cx="299.24" cy="128.4297" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200.0332" x="308.24" y="131.7764">telecom : ContactPoint [0..*]</text><ellipse cx="299.24" cy="144.7266" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139.0977" x="308.24" y="148.0732">gender : code [0..1]</text><ellipse cx="299.24" cy="161.0234" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153.6309" x="308.24" y="164.3701">birthDate : date [0..1]</text><ellipse cx="299.24" cy="177.3203" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165.416" x="308.24" y="180.667">address : Address [0..*]</text><ellipse cx="299.24" cy="193.6172" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273.8477" x="308.24" y="196.9639">maritalStatus : CodeableConcept [0..1]</text><ellipse cx="299.24" cy="209.9141" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160.6582" x="308.24" y="213.2607">contact : Contact [0..*]</text><ellipse cx="299.24" cy="226.2109" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272.4121" x="308.24" y="229.5576">communication : Communication [0..*]</text><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="289.24" x2="701.0086" y1="236.8594" y2="236.8594"/><ellipse cx="299.24" cy="250.5078" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="387.7686" x="308.24" y="253.8545">managingOrganization : Reference(Organization) [0..1]</text></g><g class="entity" data-entity="Observation" data-source-line="28" data-uid="ent0003" id="entity_Observation"><rect fill="#313139" height="270.4531" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:0.5;" width="500.2432" x="7" y="329.31"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.251" x="214.4961" y="347.3051">Observation</text><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="8" x2="506.2432" y1="355.6069" y2="355.6069"/><ellipse cx="18" cy="369.2553" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5508" x="27" y="372.602">id : Identifier [0..1]</text><ellipse cx="18" cy="385.5522" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.7861" x="27" y="388.8989">meta : Meta [0..1]</text><ellipse cx="18" cy="401.8491" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227.3906" x="27" y="405.1957">status : code [1..1] «REQUIRED»</text><ellipse cx="18" cy="418.1459" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239.3809" x="27" y="421.4926">category : CodeableConcept [0..*]</text><ellipse cx="18" cy="434.4428" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308.082" x="27" y="437.7895">code : CodeableConcept [1..1] «REQUIRED»</text><ellipse cx="18" cy="450.7397" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183.0254" x="27" y="454.0864">effective : dateTime [0..1]</text><ellipse cx="18" cy="467.0366" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149.0439" x="27" y="470.3832">issued : instant [0..1]</text><ellipse cx="18" cy="483.3334" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="474.2432" x="27" y="486.6801">value[x] : Quantity | CodeableConcept | string | boolean | etc. [0..1]</text><ellipse cx="18" cy="499.6303" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274.2715" x="27" y="502.977">interpretation : CodeableConcept [0..*]</text><ellipse cx="18" cy="515.9272" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162.1143" x="27" y="519.2739">note : Annotation [0..*]</text><ellipse cx="18" cy="532.2241" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303.9805" x="27" y="535.5707">component : Observation.Component [0..*]</text><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="8" x2="506.2432" y1="542.8725" y2="542.8725"/><ellipse cx="18" cy="556.5209" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238.1846" x="27" y="559.8676">subject : Reference(Patient) [0..1]</text><ellipse cx="18" cy="572.8178" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="281.0049" x="27" y="576.1645">encounter : Reference(Encounter) [0..1]</text><ellipse cx="18" cy="589.1147" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="391.0771" x="27" y="592.4614">performer : Reference(Practitioner | Organization) [0..*]</text></g><g class="entity" data-entity="Condition" data-source-line="45" data-uid="ent0004" id="entity_Condition"><rect fill="#313139" height="286.75" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:0.5;" width="382.2686" x="541.99" y="321.16"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66.8076" x="699.7205" y="339.1551">Condition</text><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="542.99" x2="923.2586" y1="347.4569" y2="347.4569"/><ellipse cx="552.99" cy="361.1053" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5508" x="561.99" y="364.452">id : Identifier [0..1]</text><ellipse cx="552.99" cy="377.4022" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.7861" x="561.99" y="380.7489">meta : Meta [0..1]</text><ellipse cx="552.99" cy="393.6991" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272.4326" x="561.99" y="397.0457">clinicalStatus : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="409.9959" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302.4834" x="561.99" y="413.3426">verificationStatus : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="426.2928" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239.3809" x="561.99" y="429.6395">category : CodeableConcept [0..*]</text><ellipse cx="552.99" cy="442.5897" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="235.6416" x="561.99" y="445.9364">severity : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="458.8866" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213.1787" x="561.99" y="462.2332">code : CodeableConcept [0..1]</text><ellipse cx="552.99" cy="475.1834" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="318.3428" x="561.99" y="478.5301">onset[x] : dateTime | Age | Period | etc. [0..1]</text><ellipse cx="552.99" cy="491.4803" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="356.2686" x="561.99" y="494.827">abatement[x] : dateTime | Age | Period | etc. [0..1]</text><ellipse cx="552.99" cy="507.7772" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252.2324" x="561.99" y="511.1239">evidence : Condition.Evidence [0..*]</text><ellipse cx="552.99" cy="524.0741" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162.1143" x="561.99" y="527.4207">note : Annotation [0..*]</text><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="542.99" x2="923.2586" y1="534.7225" y2="534.7225"/><ellipse cx="552.99" cy="548.3709" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="333.0879" x="561.99" y="551.7176">subject : Reference(Patient) [1..1] «REQUIRED»</text><ellipse cx="552.99" cy="564.6678" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="281.0049" x="561.99" y="568.0145">encounter : Reference(Encounter) [0..1]</text><ellipse cx="552.99" cy="580.9647" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="278.749" x="561.99" y="584.3114">recorder : Reference(Practitioner) [0..1]</text><ellipse cx="552.99" cy="597.2616" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="339.4932" x="561.99" y="600.6082">asserter : Reference(Patient | Practitioner) [0..1]</text></g><g class="link" data-entity-1="Patient" data-entity-2="Observation" data-source-line="64" data-uid="lnk5" id="link_Patient_Observation"><path codeLine="64" d="M397.74,269.37 C397.74,291.46 397.74,288.51 397.74,310.81" fill="none" id="Patient-Observation" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="393.74" x2="401.74" y1="265.37" y2="265.37"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="393.74" x2="401.74" y1="268.37" y2="268.37"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="397.74" x2="397.74" y1="269.37" y2="261.37"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="397.74" x2="403.74" y1="320.81" y2="328.81"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="397.74" x2="391.74" y1="320.81" y2="328.81"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="397.74" x2="397.74" y1="320.81" y2="328.81"/><ellipse cx="397.74" cy="314.81" fill="none" rx="4" ry="4" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47.1187" x="349.74" y="291.1569">subject</text></g><g class="link" data-entity-1="Patient" data-entity-2="Condition" data-source-line="65" data-uid="lnk6" id="link_Patient_Condition"><path codeLine="65" d="M622,269.37 C622,288.83 622,283.02 622,302.8" fill="none" id="Patient-Condition" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="618" x2="626" y1="265.37" y2="265.37"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="618" x2="626" y1="268.37" y2="268.37"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="622" x2="622" y1="269.37" y2="261.37"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="622" x2="628" y1="312.8" y2="320.8"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="622" x2="616" y1="312.8" y2="320.8"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="622" x2="622" y1="312.8" y2="320.8"/><ellipse cx="622" cy="306.8" fill="none" rx="4" ry="4" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47.1187" x="574" y="287.1569">subject</text></g></g></svg></div></div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Common FHIR Code Systems" class="md-footer__link md-footer__link--prev" href="../deepdive-fhir-code-systems/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Common FHIR Code Systems
+              </div>
+</div>
+</a>
+<a aria-label="Next: Complete Example Resource" class="md-footer__link md-footer__link--next" href="../deepdive-complete-resource-example/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Complete Example Resource
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../../../js/seamaiden.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js"></script>
+<script src="../../../../js/diagram-zoom.js"></script>
+<script src="../../../../js/alphabet-auto.js"></script>
+<script src="../../../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../../../assets/mkdocs_puml/interaction.js"></script>
+<script src="../../../../js/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>
