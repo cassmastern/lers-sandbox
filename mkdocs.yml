@@ -50,7 +50,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js
   - js/diagram-zoom.js
   - js/alphabet-auto.js
-  - js/svg-patcher.js
+  
 extra_css:
   # - css/topbar.css
   - css/alphabet.css

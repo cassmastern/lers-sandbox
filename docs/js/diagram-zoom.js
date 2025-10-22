@@ -1,24 +1,43 @@
 /**
- * Fixed and simplified diagram zoom functionality
- * Addresses multiple SVG binding issues and race conditions
- * Updated to handle Mermaid theme reinitialization
+ * Unified diagram zoom functionality
+ * Supports Mermaid, PlantUML, and Graphviz diagrams
+ * Handles theme switching and accessibility
  */
 (function () {
   'use strict';
 
   // Global state
   let lightbox, content, escHandler, currentSvg;
-  const boundSvgs = new WeakSet(); // Track bound SVGs to prevent double-binding
+  const boundSvgs = new WeakSet();
 
   // Configuration
   const CONFIG = {
     minScale: 0.25,
     maxScale: 4,
-    zoomStep: 0.15,
+    zoomStep: 0.10,  // Reduced from 0.15 for slower, more gradual zoom
     debugMode: false
   };
 
   const log = CONFIG.debugMode ? console.log.bind(console, '[zoom]') : () => {};
+
+  /**
+   * Detect if PlantUML light or dark theme is active
+   */
+  function getActivePlantUMLTheme(svg) {
+    const container = svg.closest('.puml-container');
+    if (!container) return null;
+    
+    const lightDiv = container.querySelector('.puml_light');
+    const darkDiv = container.querySelector('.puml_dark');
+    
+    if (lightDiv && lightDiv.offsetParent !== null) {
+      return 'light';
+    } else if (darkDiv && darkDiv.offsetParent !== null) {
+      return 'dark';
+    }
+    
+    return null;
+  }
 
   /**
    * Create lightbox overlay (singleton pattern)
@@ -69,20 +88,34 @@
       const clone = originalSvg.cloneNode(true);
       clone.classList.add("mz-lightbox__svg");
       
-      // Get dimensions safely
-      let width, height;
-      try {
-        const bbox = originalSvg.getBBox();
-        width = bbox.width || originalSvg.clientWidth || 400;
-        height = bbox.height || originalSvg.clientHeight || 300;
-      } catch (e) {
-        width = originalSvg.clientWidth || 400;
-        height = originalSvg.clientHeight || 300;
+      // Remove PlantUML native controls from clone (keep diagram only)
+      const controlDiv = clone.querySelector('.control');
+      if (controlDiv) {
+        controlDiv.remove();
+        log('Removed PlantUML native controls from clone');
       }
       
-      // Set initial dimensions
-      clone.style.width = width + "px";
-      clone.style.height = height + "px";
+      // Get dimensions from actual rendered size, not getBBox
+      const originalRect = originalSvg.getBoundingClientRect();
+      const width = originalRect.width || 400;
+      const height = originalRect.height || 300;
+      
+      // Reset any inline size constraints on clone
+      clone.style.width = 'auto';
+      clone.style.height = 'auto';
+      clone.style.maxWidth = '90vw';
+      clone.style.maxHeight = '90vh';
+      
+      // Preserve aspect ratio
+      if (originalSvg.hasAttribute('viewBox')) {
+        // SVG with viewBox will scale naturally
+        clone.setAttribute('width', width);
+        clone.setAttribute('height', height);
+      } else {
+        // SVG without viewBox needs explicit sizing
+        clone.style.width = width + 'px';
+        clone.style.height = height + 'px';
+      }
       
       content.appendChild(clone);
       
@@ -256,16 +289,27 @@
   }
 
   /**
-   * Bind zoom functionality to SVG elements
-   * Fixed to prevent double-binding and race conditions
+   * Bind zoom functionality to all diagram SVGs
    */
   function bindZoomToSvgs() {
-    const unboundSvgs = document.querySelectorAll('.mermaid svg');
+    // Select all three diagram types
+    const unboundSvgs = document.querySelectorAll(
+      '.mermaid svg, ' +           // Mermaid
+      '.puml-container svg, ' +     // PlantUML
+      'svg.graphviz'                // Graphviz
+    );
+    
     let boundCount = 0;
     
     unboundSvgs.forEach((svg) => {
-      // Skip if already bound (using WeakSet for reliable tracking)
+      // Skip if already bound
       if (boundSvgs.has(svg)) {
+        return;
+      }
+      
+      // Skip PlantUML control icons (only bind to diagram SVG)
+      if (svg.closest('.control')) {
+        log('Skipping PlantUML control icon');
         return;
       }
       
@@ -273,10 +317,19 @@
       boundSvgs.add(svg);
       svg.classList.add('mz-zoomable');
       
+      // Force zoom-in cursor (override inline styles)
+      svg.style.cursor = 'zoom-in';
+      
       // Add click handler
       const clickHandler = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+        // For PlantUML, prevent native pan from interfering
+        if (svg.closest('.puml-container')) {
+          e.preventDefault();
+          e.stopPropagation();
+        } else {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         openLightbox(svg);
       };
       
@@ -290,26 +343,24 @@
   }
 
   /**
-   * Clear WeakSet when Mermaid reinitializes
-   * This is necessary because the old SVGs are removed from DOM
+   * Clear bound SVGs tracking
    */
   function clearBoundSvgs() {
-    // WeakSet doesn't have a clear method, but since the old SVGs
-    // are garbage collected when removed from DOM, we can create a new WeakSet
-    // However, since we can't reassign the const, we'll rely on garbage collection
-    log('Mermaid reinitialized - old SVG references will be garbage collected');
+    log('Diagram reinitialized - old SVG references will be garbage collected');
   }
 
   /**
-   * Wait for Mermaid diagrams and bind zoom
+   * Wait for diagrams and bind zoom
    */
   function waitAndBindDiagrams() {
     const startTime = Date.now();
     const maxWait = 5000;
     
     function checkForSvgs() {
-      const svgs = document.querySelectorAll('.mermaid svg');
-      const unboundSvgs = Array.from(svgs).filter(svg => !boundSvgs.has(svg));
+      const allSvgs = document.querySelectorAll(
+        '.mermaid svg, .puml-container svg, svg.graphviz'
+      );
+      const unboundSvgs = Array.from(allSvgs).filter(svg => !boundSvgs.has(svg));
       const timeElapsed = Date.now() - startTime;
       
       if (unboundSvgs.length > 0) {
@@ -338,7 +389,6 @@
     log('Mermaid reinitialized, rebinding zoom functionality...');
     clearBoundSvgs();
     
-    // Wait a bit longer for Mermaid to fully render new SVGs
     setTimeout(() => {
       waitAndBindDiagrams();
     }, 200);
@@ -350,10 +400,8 @@
   function initZoom() {
     log('Initializing diagram zoom...');
     
-    // Ensure lightbox exists
     ensureLightbox();
     
-    // Initial binding after a short delay for Mermaid rendering
     setTimeout(waitAndBindDiagrams, 300);
     
     // Listen for Mermaid reinitialization (theme changes)
@@ -367,8 +415,15 @@
         mutation.addedNodes.forEach(node => {
           if (node.nodeType === 1) {
             if (node.classList?.contains('mermaid') || 
+                node.classList?.contains('puml-container') ||
                 node.querySelector?.('.mermaid') ||
-                (node.tagName === 'SVG' && node.closest?.('.mermaid'))) {
+                node.querySelector?.('.puml-container') ||
+                node.querySelector?.('svg.graphviz') ||
+                (node.tagName === 'SVG' && (
+                  node.closest?.('.mermaid') || 
+                  node.closest?.('.puml-container') ||
+                  node.classList?.contains('graphviz')
+                ))) {
               foundNewDiagrams = true;
             }
           }
@@ -411,7 +466,6 @@
       escHandler = null;
     }
     
-    // Remove event listeners
     document.removeEventListener('mermaidReinitialized', handleMermaidReinit);
   }
 
@@ -428,7 +482,7 @@
    * Main initialization
    */
   function initialize() {
-    cleanup(); // Clean up any existing state
+    cleanup();
     setTimeout(initZoom, 200);
     document.addEventListener('visibilitychange', handleVisibilityChange);
   }
@@ -439,7 +493,6 @@
       setTimeout(initialize, 100);
     });
   } else {
-    // Handle regular page loads
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initialize);
     } else {
@@ -458,8 +511,6 @@
     };
   }
 
-  // Handle page unload
   window.addEventListener('beforeunload', cleanup);
 
 })();
-
