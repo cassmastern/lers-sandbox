@@ -24,8 +24,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
-  exclude:
-    - archive/
 
 plugins:
   - awesome-pages
@@ -56,7 +54,6 @@ extra_javascript:
 extra_css:
   # - css/topbar.css
   - css/alphabet.css
-  - css/diagram-common.css
   - css/diagram-zoom.css
   - css/cm-logo.css
   - css/color-vars.css

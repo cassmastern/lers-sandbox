@@ -5,7 +5,6 @@
 ```bash
 docker run --rm -v "$(pwd)":/app mkdocs-site mkdocs build --verbose && touch site/.nojekyll
 ```
-
 ## Preview built site locally
 
 Use any local web server, e.g., Python:
@@ -21,6 +20,3 @@ python3 -m http.server 8000
 ```bash
 docker run --rm -p 8000:8000 -v "$(pwd)":/app mkdocs-site mkdocs serve --dev-addr=0.0.0.0:8000 --livereload
 ```
-
-
-
