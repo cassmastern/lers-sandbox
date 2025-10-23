@@ -2,8 +2,6 @@
 
 ## Basic Sequence
 
-basic
-
 ```puml
     @startuml
     Bob -> Alice : hello

@@ -1,5 +1,3 @@
-# MkDocs output
-# /site/
 # Python virtual environments
 .venv/
 env/
@@ -16,6 +14,10 @@ __pycache__/
 *~
 # Linux nohup redirects:
 nohup.out
+
+# Linux/Kate
+*.kate-swp
+
 # VSCode workspace settings
 .vscode/
 .vscode/settings.json
