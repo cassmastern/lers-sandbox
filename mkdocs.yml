@@ -46,6 +46,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
+
+          
   - mkdocs_graphviz:
       node_color: "777777"
       node_fontcolor: "777777"
@@ -54,13 +56,14 @@ markdown_extensions:
       bgcolor: "none"
 
 extra_javascript:
+#  - js/mermaid.min.js
+  - js/diagram-utils.js
   - js/seamaiden.js
   - js/diagram-theme-switcher.js
   - js/diagram-zoom.js
-  - js/alphabet-auto.js
-  
+
+
 extra_css:
-  # - css/topbar.css
   - css/alphabet.css
   - css/diagram-zoom.css
   - css/cm-logo.css

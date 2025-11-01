@@ -1,8 +1,10 @@
 # FHIR Comprehensive Resource Relationships
 
+This page explores how FHIR resources interconnect across clinical, administrative, and scheduling domains. You’ll see how `Encounter` anchors clinical events, how `PractitionerRole` mediates actor context, and how resources like `CarePlan`, `MedicationRequest`, and `Coverage` form a web of intent, execution, and reimbursement.
+
 ## Comprehensive Diagram of FHIR Resource Relationships
 
-### Diagram (version 1)  
+### Diagram (version 1)
 
 ```mermaid
 graph TD
@@ -121,7 +123,7 @@ graph TD
     Coverage -->|payor| Organization
 ```
 
-### Diagram (version 2)  
+### Diagram (version 2)
 
 ```puml
 @startuml FHIR_Resource_Relationships
@@ -262,7 +264,64 @@ Coverage --> Organization : payor
 @enduml
 ```
 
-#### Resource Cardinality Scaffold  
+!!! note "Diagram Overview"
+This graph shows the full set of FHIR resource relationships across domains. It’s dense by design—intended to surface every edge and anchor. Don’t try to memorize it. Instead, use it as a reference map as we walk through each domain below.
+
+## Domain Breakdown
+
+### Actors and Identity
+
+* `Patient`, `Practitioner`, `Organization`, and `Location` form the identity backbone.
+* `PractitionerRole` links these together, acting as a contextual wrapper for scheduling, authorship, and clinical participation.
+
+!!! tip "Why PractitionerRole Matters"
+`PractitionerRole` is often misunderstood. It’s not just a job title—it’s the glue that binds `Practitioner`, `Organization`, and `Location` to specific actions like `Appointment`, `Procedure`, and `MedicationRequest`.
+
+### Clinical Events
+
+* `Encounter` anchors most clinical resources: `Condition`, `Observation`, `Procedure`, `DiagnosticReport`.
+* These resources reference `Encounter` to maintain temporal and contextual integrity.
+
+> \<SubGraph::domain_clinical> TBD
+
+### Medication Flow
+
+* `MedicationRequest` initiates intent.
+* `MedicationDispense` and `MedicationAdministration` execute that intent.
+* `Medication` is referenced throughout, but never acts alone.
+
+> \<SubGraph::domain_medication> TBD
+
+### Care Planning
+
+* `CarePlan` outlines goals and activities.
+* `Goal` defines desired outcomes.
+* `ServiceRequest` triggers actual interventions.
+
+> \<SubGraph::domain_care-plan> TBD
+
+### Documentation
+
+* `DocumentReference` and `Composition` capture narrative and structured records.
+* Both link back to `Patient` and `Encounter`.
+
+### Scheduling
+
+* `Appointment` → `Slot` → `Schedule` forms the scheduling chain.
+* `Schedule.actor` can be a `PractitionerRole` or `Location`.
+
+### Financials
+
+* `Coverage` defines payor relationships.
+* `Claim` and `ExplanationOfBenefit` track reimbursement.
+
+## See Also
+
+* [FHIR Data Fundamentals](../eh-dd-02-fhir-data-fundamentals/index.md) — for resource types.
+* [FHIR REST Operations](../eh-dd-04-working-with-fhir-apis/index.md) — for how these resources are exchanged.
+* [SMART Auth](../eh-dd-06-smart-auth/index.md) — for access control over these resources.
+
+#### Resource Cardinality Scaffold
 
 > See also [FHIR Resource Cardinality](../eh-dd-02-fhir-data-fundamentals/deepdive-fhir-cardinality.md) for a focused cardinality diagram for three core resources: `Patient`, `Observation`, and `Condition`.
 
@@ -381,3 +440,7 @@ entity Coverage {
 
 @enduml
 ```
+
+## What’s Next
+
+Next, let’s explore how these resources are bundled and exchanged.

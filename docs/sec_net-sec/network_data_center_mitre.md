@@ -19,26 +19,26 @@ graph TB
     User[User Device]
     
     subgraph "Azure Cloud"
-        CDN[CDN<br/>T1584.006 Compromise CDN Infrastructure]
-        WA[Web App<br/>T1190 Exploit Public-Facing App]
+        CDN[CDN<br>T1584.006<br> Compromise CDN Infrastructure]
+        WA[Web App<br>T1190<br> Exploit Public-Facing App]
         
         subgraph "Network Layer"
-            FW[Firewall<br/>T1040 Network Sniffing]
-            VPN[VPN Gateway<br/>T1133 External Remote Services]
+            FW[Firewall<br>T1040<br> Network Sniffing]
+            VPN[VPN Gateway<br>T1133<br> External Remote Services]
         end
         
         subgraph "CI/CD & Monitoring"
-            CI[CI/CD Runner<br/>T1059 Command and Scripting Interpreter]
-            Logs[Log Aggregator<br/>T1005 Data from Local System]
-            Monitor[Monitoring<br/>T1082 System Information Discovery]
+            CI[CI/CD Runner<br>T1059<br> Command and Scripting Interpreter]
+            Logs[Log Aggregator<br>T1005<br> Data from Local System]
+            Monitor[Monitoring<br>T1082<br> System Information Discovery]
         end
     end
     
     subgraph "Internal Systems"
-        Dev[Dev Workstation<br/>T1078 Valid Accounts]
-        Repo[Git Repo<br/>T1505.003 Implant Internal Repository]
-        Secrets[Secrets Vault<br/>T1555 Credentials from Password Stores]
-        DB[Database<br/>T1071.001 Application Layer Protocol - Web]
+        Dev[Dev Workstation<br>T1078<br> Valid Accounts]
+        Repo[Git Repo<br>T1505.003<br> Implant Internal Repository]
+        Secrets[Secrets Vault<br>T1555<br> Credentials from Password Stores]
+        DB[Database<br>T1071.001<br> Application Layer Protocol - Web]
     end
 
     %% Main flow connections
