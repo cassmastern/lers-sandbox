@@ -1,46 +1,47 @@
 /**
- * Unified Diagram Theme Switcher
+ * Unified Diagram Theme Switcher (REFACTORED)
  * Handles theme switching for PlantUML and Graphviz diagrams
  * Works alongside seamaiden.js (which handles Mermaid)
+ * 
+ * Dependencies: diagram-utils.js
  */
 (function() {
   'use strict';
 
+  // Ensure dependencies are loaded
+  if (typeof DiagramUtils === 'undefined') {
+    console.error('[diagram-theme] DiagramUtils not loaded. Include diagram-utils.js first.');
+    return;
+  }
+
+  const { CONSTANTS, createLogger, getCurrentTheme, toggleThemeElements, 
+          dispatchCustomEvent, createThemeObserver, initWithMaterialSupport } = DiagramUtils;
+
+  // Configuration
   const CONFIG = {
     debugMode: true  // Enable debug logging
   };
 
-  const log = CONFIG.debugMode ? console.log.bind(console, '[diagram-theme]') : () => {};
+  const log = createLogger('diagram-theme', CONFIG.debugMode);
 
-  /**
-   * Get current Material theme
-   */
-  function getCurrentTheme() {
-    const scheme = document.body.getAttribute('data-md-color-scheme');
-    return scheme === 'slate' ? 'dark' : 'light';
-  }
+  // ============================================================================
+  // THEME APPLICATION
+  // ============================================================================
 
   /**
    * Apply theme to PlantUML diagrams
    * Structure: <div class="puml-container"><div class="puml_light">...<div class="puml_dark">...
    */
   function applyPlantUMLTheme(theme) {
-    const containers = document.querySelectorAll('.puml-container');
+    const containers = document.querySelectorAll(CONSTANTS.SELECTORS.PLANTUML_CONTAINER);
     
     containers.forEach(container => {
-      const lightDiv = container.querySelector('.puml_light');
-      const darkDiv = container.querySelector('.puml_dark');
+      const lightDiv = container.querySelector(CONSTANTS.SELECTORS.PLANTUML_LIGHT);
+      const darkDiv = container.querySelector(CONSTANTS.SELECTORS.PLANTUML_DARK);
       
       if (lightDiv && darkDiv) {
-        if (theme === 'light') {
-          lightDiv.style.display = 'block';
-          darkDiv.style.display = 'none';
-          log('PlantUML: Showing light theme');
-        } else {
-          lightDiv.style.display = 'none';
-          darkDiv.style.display = 'block';
-          log('PlantUML: Showing dark theme');
-        }
+        toggleThemeElements(lightDiv, darkDiv, theme);
+        log(`PlantUML: Showing ${theme} theme`);
       }
     });
   }
@@ -54,32 +55,26 @@
    */
   function applyGraphvizTheme(theme) {
     // Strategy 1: Look for container with separate light/dark divs
-    const containers = document.querySelectorAll('[class*="graphviz"]');
+    const containers = document.querySelectorAll(CONSTANTS.SELECTORS.GRAPHVIZ_CONTAINER);
     
     containers.forEach(container => {
       // Check for light/dark variants inside
-      const lightElements = container.querySelectorAll('.graphviz-light, [class*="graphviz-light"]');
-      const darkElements = container.querySelectorAll('.graphviz-dark, [class*="graphviz-dark"]');
+      const lightElements = container.querySelectorAll(CONSTANTS.SELECTORS.GRAPHVIZ_LIGHT);
+      const darkElements = container.querySelectorAll(CONSTANTS.SELECTORS.GRAPHVIZ_DARK);
       
       if (lightElements.length > 0 && darkElements.length > 0) {
-        if (theme === 'light') {
-          lightElements.forEach(el => el.style.display = 'block');
-          darkElements.forEach(el => el.style.display = 'none');
-          log('Graphviz: Showing light theme');
-        } else {
-          lightElements.forEach(el => el.style.display = 'none');
-          darkElements.forEach(el => el.style.display = 'block');
-          log('Graphviz: Showing dark theme');
-        }
+        lightElements.forEach(el => toggleThemeElements(el, null, theme));
+        darkElements.forEach(el => toggleThemeElements(null, el, theme));
+        log(`Graphviz: Showing ${theme} theme`);
       }
     });
 
     // Strategy 2: Direct siblings with graphviz-light/dark classes
     document.querySelectorAll('.graphviz-light').forEach(el => {
-      el.style.display = theme === 'light' ? 'block' : 'none';
+      el.style.display = theme === CONSTANTS.THEMES.LIGHT ? 'block' : 'none';
     });
     document.querySelectorAll('.graphviz-dark').forEach(el => {
-      el.style.display = theme === 'dark' ? 'block' : 'none';
+      el.style.display = theme === CONSTANTS.THEMES.DARK ? 'block' : 'none';
     });
   }
 
@@ -93,11 +88,13 @@
     applyPlantUMLTheme(theme);
     applyGraphvizTheme(theme);
     
-    // Dispatch event for other scripts to know theme changed
-    document.dispatchEvent(new CustomEvent('diagramThemeApplied', {
-      detail: { theme }
-    }));
+    // Dispatch event for other scripts
+    dispatchCustomEvent(CONSTANTS.EVENTS.DIAGRAM_THEME_APPLIED, { theme });
   }
+
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
 
   /**
    * Initialize theme observer
@@ -108,19 +105,10 @@
     // Apply theme immediately
     applyDiagramThemes();
 
-    // Watch for theme changes on body[data-md-color-scheme]
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'data-md-color-scheme') {
-          log('Theme changed, reapplying...');
-          setTimeout(applyDiagramThemes, 50);
-        }
-      });
-    });
-
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['data-md-color-scheme']
+    // Watch for theme changes
+    createThemeObserver(() => {
+      log('Theme changed, reapplying...');
+      setTimeout(applyDiagramThemes, CONSTANTS.TIMING.QUICK_DELAY);
     });
 
     log('Theme switcher initialized');
@@ -135,23 +123,16 @@
       initializeThemeObserver();
     } else {
       // Theme not set yet, wait and retry
-      setTimeout(initialize, 100);
+      setTimeout(initialize, CONSTANTS.TIMING.SHORT_DELAY);
     }
   }
 
-  // Handle Material's instant navigation (document$ observable)
-  if (typeof document$ !== 'undefined' && document$.subscribe) {
-    document$.subscribe(() => {
-      setTimeout(initialize, 100);
-    });
-  } else {
-    // Standard initialization
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initialize);
-    } else {
-      initialize();
-    }
-  }
+  // Initialize with Material navigation support
+  initWithMaterialSupport(initialize, CONSTANTS.TIMING.SHORT_DELAY);
+
+  // ============================================================================
+  // DEBUG EXPORTS
+  // ============================================================================
 
   // Expose for debugging
   if (CONFIG.debugMode) {

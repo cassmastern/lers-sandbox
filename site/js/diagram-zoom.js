@@ -1,79 +1,266 @@
 /**
- * Unified diagram zoom functionality
+ * Unified Diagram Zoom Functionality (REFACTORED)
  * Supports Mermaid, PlantUML, and Graphviz diagrams
  * Handles theme switching and accessibility
+ * 
+ * Dependencies: diagram-utils.js
  */
 (function () {
   'use strict';
 
-  // Global state
-  let lightbox, content, escHandler, currentSvg;
-  const boundSvgs = new WeakSet();
+  // Ensure dependencies are loaded
+  if (typeof DiagramUtils === 'undefined') {
+    console.error('[diagram-zoom] DiagramUtils not loaded. Include diagram-utils.js first.');
+    return;
+  }
 
-  // Configuration
+  const { CONSTANTS, createLogger, dispatchCustomEvent, safeAddEventListener,
+          initWithMaterialSupport, isMermaidSvg, isPlantUMLControl } = DiagramUtils;
+
+  // ============================================================================
+  // CONFIGURATION
+  // ============================================================================
+  
   const CONFIG = {
     minScale: 0.25,
     maxScale: 4,
-    zoomStep: 0.10,  // Reduced from 0.15 for slower, more gradual zoom
+    zoomStep: 0.10,
     debugMode: false
   };
 
-  const log = CONFIG.debugMode ? console.log.bind(console, '[zoom]') : () => {};
+  const log = createLogger('zoom', CONFIG.debugMode);
 
-  /**
-   * Detect if PlantUML light or dark theme is active
-   */
-  function getActivePlantUMLTheme(svg) {
-    const container = svg.closest('.puml-container');
-    if (!container) return null;
-    
-    const lightDiv = container.querySelector('.puml_light');
-    const darkDiv = container.querySelector('.puml_dark');
-    
-    if (lightDiv && lightDiv.offsetParent !== null) {
-      return 'light';
-    } else if (darkDiv && darkDiv.offsetParent !== null) {
-      return 'dark';
-    }
-    
-    return null;
-  }
+  // ============================================================================
+  // STATE MANAGEMENT
+  // ============================================================================
+  
+  const state = {
+    lightbox: null,
+    content: null,
+    escHandler: null,
+    currentSvg: null,
+    boundSvgs: new WeakSet()
+  };
+
+  // ============================================================================
+  // LIGHTBOX CREATION
+  // ============================================================================
 
   /**
    * Create lightbox overlay (singleton pattern)
    */
   function ensureLightbox() {
-    if (lightbox) return lightbox;
+    if (state.lightbox) return state.lightbox;
     
-    lightbox = document.createElement("div");
-    lightbox.className = "mz-lightbox";
-    lightbox.setAttribute("role", "dialog");
-    lightbox.setAttribute("aria-modal", "true");
-    lightbox.setAttribute("aria-label", "Diagram zoom view");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightbox.tabIndex = -1;
+    state.lightbox = document.createElement("div");
+    state.lightbox.className = "mz-lightbox";
+    state.lightbox.setAttribute("role", "dialog");
+    state.lightbox.setAttribute("aria-modal", "true");
+    state.lightbox.setAttribute("aria-label", "Diagram zoom view");
+    state.lightbox.setAttribute("aria-hidden", "true");
+    state.lightbox.tabIndex = -1;
 
-    content = document.createElement("div");
-    content.className = "mz-lightbox__content";
-    lightbox.appendChild(content);
+    state.content = document.createElement("div");
+    state.content.className = "mz-lightbox__content";
+    state.lightbox.appendChild(state.content);
 
     // Close on background click
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox || e.target === content) {
+    safeAddEventListener(state.lightbox, "click", (e) => {
+      if (e.target === state.lightbox || e.target === state.content) {
         closeLightbox();
       }
     });
 
     // Prevent wheel events from bubbling to page
-    lightbox.addEventListener("wheel", (e) => {
+    safeAddEventListener(state.lightbox, "wheel", (e) => {
       e.stopPropagation();
     }, { passive: false });
 
-    document.body.appendChild(lightbox);
+    document.body.appendChild(state.lightbox);
     log('Lightbox created');
     
-    return lightbox;
+    return state.lightbox;
   }
+
+  // ============================================================================
+  // SVG CLONING AND PREPARATION
+  // ============================================================================
+
+  /**
+   * Prepare SVG clone for lightbox display
+   * @param {SVGElement} originalSvg - Original SVG to clone
+   * @returns {SVGElement} Prepared clone
+   */
+  function prepareSvgClone(originalSvg) {
+    const clone = originalSvg.cloneNode(true);
+    clone.classList.add("mz-lightbox__svg");
+    
+    // Remove PlantUML native controls from clone
+    const controlDiv = clone.querySelector(CONSTANTS.SELECTORS.PLANTUML_CONTROL);
+    if (controlDiv) {
+      controlDiv.remove();
+      log('Removed PlantUML native controls from clone');
+    }
+    
+    // Get dimensions from actual rendered size
+    const originalRect = originalSvg.getBoundingClientRect();
+    const width = originalRect.width || 400;
+    const height = originalRect.height || 300;
+    
+    // Reset size constraints on clone
+    clone.style.width = 'auto';
+    clone.style.height = 'auto';
+    clone.style.maxWidth = '90vw';
+    clone.style.maxHeight = '90vh';
+    
+    // Preserve aspect ratio
+    if (originalSvg.hasAttribute('viewBox')) {
+      clone.setAttribute('width', width);
+      clone.setAttribute('height', height);
+    } else {
+      clone.style.width = width + 'px';
+      clone.style.height = height + 'px';
+    }
+    
+    return clone;
+  }
+
+  // ============================================================================
+  // ZOOM AND PAN CONTROLS
+  // ============================================================================
+
+  /**
+   * Create zoom and pan controller for an SVG
+   * @param {SVGElement} svgClone - SVG element to control
+   * @returns {Object} Controller object with methods
+   */
+  function createZoomController(svgClone) {
+    const controller = {
+      scale: 1,
+      currentX: 0,
+      currentY: 0,
+      isDragging: false,
+      dragStartX: 0,
+      dragStartY: 0,
+      initialTouchDistance: 0,
+      initialScale: 1
+    };
+
+    function updateTransform() {
+      svgClone.style.transform = 
+        `translate(${controller.currentX}px, ${controller.currentY}px) scale(${controller.scale})`;
+    }
+
+    function handleWheel(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const rect = svgClone.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      const mouseX = e.clientX - centerX;
+      const mouseY = e.clientY - centerY;
+      
+      const delta = e.deltaY > 0 ? -CONFIG.zoomStep : CONFIG.zoomStep;
+      const newScale = Math.min(Math.max(CONFIG.minScale, controller.scale + delta), CONFIG.maxScale);
+      
+      if (newScale !== controller.scale) {
+        const scaleDiff = newScale - controller.scale;
+        controller.currentX -= mouseX * scaleDiff;
+        controller.currentY -= mouseY * scaleDiff;
+        controller.scale = newScale;
+        updateTransform();
+      }
+    }
+
+    function handleMouseDown(e) {
+      e.preventDefault();
+      controller.isDragging = true;
+      controller.dragStartX = e.clientX - controller.currentX;
+      controller.dragStartY = e.clientY - controller.currentY;
+      svgClone.style.cursor = "grabbing";
+    }
+
+    function handleMouseMove(e) {
+      if (!controller.isDragging) return;
+      e.preventDefault();
+      controller.currentX = e.clientX - controller.dragStartX;
+      controller.currentY = e.clientY - controller.dragStartY;
+      updateTransform();
+    }
+
+    function handleMouseUp() {
+      if (!controller.isDragging) return;
+      controller.isDragging = false;
+      svgClone.style.cursor = "grab";
+    }
+
+    function handleDoubleClick(e) {
+      e.preventDefault();
+      controller.scale = 1;
+      controller.currentX = 0;
+      controller.currentY = 0;
+      updateTransform();
+    }
+
+    // Touch handlers
+    function handleTouchStart(e) {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const touch1 = e.touches[0];
+        const touch2 = e.touches[1];
+        const dx = touch1.clientX - touch2.clientX;
+        const dy = touch1.clientY - touch2.clientY;
+        controller.initialTouchDistance = Math.sqrt(dx * dx + dy * dy);
+        controller.initialScale = controller.scale;
+      }
+    }
+
+    function handleTouchMove(e) {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const touch1 = e.touches[0];
+        const touch2 = e.touches[1];
+        const dx = touch1.clientX - touch2.clientX;
+        const dy = touch1.clientY - touch2.clientY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (controller.initialTouchDistance > 0) {
+          const scaleChange = distance / controller.initialTouchDistance;
+          const newScale = Math.min(
+            Math.max(CONFIG.minScale, controller.initialScale * scaleChange),
+            CONFIG.maxScale
+          );
+          controller.scale = newScale;
+          updateTransform();
+        }
+      }
+    }
+
+    function handleTouchEnd(e) {
+      if (e.touches.length < 2) {
+        controller.initialTouchDistance = 0;
+        controller.initialScale = controller.scale;
+      }
+    }
+
+    // Attach event listeners
+    safeAddEventListener(svgClone, "wheel", handleWheel, { passive: false });
+    safeAddEventListener(svgClone, "mousedown", handleMouseDown);
+    safeAddEventListener(document, "mousemove", handleMouseMove);
+    safeAddEventListener(document, "mouseup", handleMouseUp);
+    safeAddEventListener(svgClone, "dblclick", handleDoubleClick);
+    safeAddEventListener(svgClone, "touchstart", handleTouchStart, { passive: false });
+    safeAddEventListener(svgClone, "touchmove", handleTouchMove, { passive: false });
+    safeAddEventListener(svgClone, "touchend", handleTouchEnd);
+
+    return controller;
+  }
+
+  // ============================================================================
+  // LIGHTBOX OPERATIONS
+  // ============================================================================
 
   /**
    * Open lightbox with SVG
@@ -81,50 +268,18 @@
   function openLightbox(originalSvg) {
     try {
       ensureLightbox();
-      content.innerHTML = "";
-      currentSvg = originalSvg;
+      state.content.innerHTML = "";
+      state.currentSvg = originalSvg;
 
-      // Clone the SVG
-      const clone = originalSvg.cloneNode(true);
-      clone.classList.add("mz-lightbox__svg");
-      
-      // Remove PlantUML native controls from clone (keep diagram only)
-      const controlDiv = clone.querySelector('.control');
-      if (controlDiv) {
-        controlDiv.remove();
-        log('Removed PlantUML native controls from clone');
-      }
-      
-      // Get dimensions from actual rendered size, not getBBox
-      const originalRect = originalSvg.getBoundingClientRect();
-      const width = originalRect.width || 400;
-      const height = originalRect.height || 300;
-      
-      // Reset any inline size constraints on clone
-      clone.style.width = 'auto';
-      clone.style.height = 'auto';
-      clone.style.maxWidth = '90vw';
-      clone.style.maxHeight = '90vh';
-      
-      // Preserve aspect ratio
-      if (originalSvg.hasAttribute('viewBox')) {
-        // SVG with viewBox will scale naturally
-        clone.setAttribute('width', width);
-        clone.setAttribute('height', height);
-      } else {
-        // SVG without viewBox needs explicit sizing
-        clone.style.width = width + 'px';
-        clone.style.height = height + 'px';
-      }
-      
-      content.appendChild(clone);
+      const clone = prepareSvgClone(originalSvg);
+      state.content.appendChild(clone);
       
       // Show lightbox
-      lightbox.setAttribute("aria-hidden", "false");
-      lightbox.focus();
+      state.lightbox.setAttribute("aria-hidden", "false");
+      state.lightbox.focus();
 
       // Initialize zoom controls
-      initializeZoomControls(clone);
+      createZoomController(clone);
 
       // Set up keyboard handler
       setupKeyboardHandler();
@@ -137,150 +292,37 @@
   }
 
   /**
-   * Initialize zoom and pan controls
-   */
-  function initializeZoomControls(svgClone) {
-    let scale = 1;
-    let currentX = 0;
-    let currentY = 0;
-    let isDragging = false;
-    let dragStartX = 0;
-    let dragStartY = 0;
-
-    function updateTransform() {
-      svgClone.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-    }
-
-    // Mouse wheel zoom
-    svgClone.addEventListener("wheel", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const rect = svgClone.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      
-      const mouseX = e.clientX - centerX;
-      const mouseY = e.clientY - centerY;
-      
-      const delta = e.deltaY > 0 ? -CONFIG.zoomStep : CONFIG.zoomStep;
-      const newScale = Math.min(Math.max(CONFIG.minScale, scale + delta), CONFIG.maxScale);
-      
-      if (newScale !== scale) {
-        const scaleDiff = newScale - scale;
-        currentX -= mouseX * scaleDiff;
-        currentY -= mouseY * scaleDiff;
-        scale = newScale;
-        updateTransform();
-      }
-    }, { passive: false });
-
-    // Mouse drag
-    svgClone.addEventListener("mousedown", (e) => {
-      e.preventDefault();
-      isDragging = true;
-      dragStartX = e.clientX - currentX;
-      dragStartY = e.clientY - currentY;
-      svgClone.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      currentX = e.clientX - dragStartX;
-      currentY = e.clientY - dragStartY;
-      updateTransform();
-    });
-
-    document.addEventListener("mouseup", () => {
-      if (!isDragging) return;
-      isDragging = false;
-      svgClone.style.cursor = "grab";
-    });
-
-    // Touch handling
-    let initialTouchDistance = 0;
-    let initialScale = 1;
-
-    svgClone.addEventListener("touchstart", (e) => {
-      if (e.touches.length === 2) {
-        e.preventDefault();
-        const touch1 = e.touches[0];
-        const touch2 = e.touches[1];
-        const dx = touch1.clientX - touch2.clientX;
-        const dy = touch1.clientY - touch2.clientY;
-        initialTouchDistance = Math.sqrt(dx * dx + dy * dy);
-        initialScale = scale;
-      }
-    }, { passive: false });
-
-    svgClone.addEventListener("touchmove", (e) => {
-      if (e.touches.length === 2) {
-        e.preventDefault();
-        const touch1 = e.touches[0];
-        const touch2 = e.touches[1];
-        const dx = touch1.clientX - touch2.clientX;
-        const dy = touch1.clientY - touch2.clientY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (initialTouchDistance > 0) {
-          const scaleChange = distance / initialTouchDistance;
-          const newScale = Math.min(Math.max(CONFIG.minScale, initialScale * scaleChange), CONFIG.maxScale);
-          scale = newScale;
-          updateTransform();
-        }
-      }
-    }, { passive: false });
-
-    svgClone.addEventListener("touchend", (e) => {
-      if (e.touches.length < 2) {
-        initialTouchDistance = 0;
-        initialScale = scale;
-      }
-    });
-
-    // Double-click to reset
-    svgClone.addEventListener("dblclick", (e) => {
-      e.preventDefault();
-      scale = 1;
-      currentX = 0;
-      currentY = 0;
-      updateTransform();
-    });
-  }
-
-  /**
    * Set up keyboard handler
    */
   function setupKeyboardHandler() {
-    escHandler = (e) => {
+    state.escHandler = (e) => {
       if (e.key === "Escape") {
         closeLightbox();
       }
     };
     
-    document.addEventListener("keydown", escHandler);
+    safeAddEventListener(document, "keydown", state.escHandler);
   }
 
   /**
    * Close lightbox
    */
   function closeLightbox() {
-    if (!lightbox) return;
+    if (!state.lightbox) return;
     
     try {
-      lightbox.setAttribute("aria-hidden", "true");
+      state.lightbox.setAttribute("aria-hidden", "true");
       
-      if (content) {
-        content.innerHTML = "";
+      if (state.content) {
+        state.content.innerHTML = "";
       }
       
-      if (escHandler) {
-        document.removeEventListener("keydown", escHandler);
-        escHandler = null;
+      if (state.escHandler) {
+        document.removeEventListener("keydown", state.escHandler);
+        state.escHandler = null;
       }
       
-      currentSvg = null;
+      state.currentSvg = null;
       log('Lightbox closed');
       
     } catch (error) {
@@ -288,56 +330,64 @@
     }
   }
 
+  // ============================================================================
+  // SVG BINDING
+  // ============================================================================
+
   /**
-   * Bind zoom functionality to all diagram SVGs
+   * Bind zoom functionality to an SVG element
+   * @param {SVGElement} svg - SVG to bind zoom to
+   * @returns {boolean} True if bound successfully
+   */
+  function bindZoomToSvg(svg) {
+    // Skip if already bound
+    if (state.boundSvgs.has(svg)) {
+      return false;
+    }
+    
+    // Skip PlantUML control icons
+    if (isPlantUMLControl(svg)) {
+      log('Skipping PlantUML control icon');
+      return false;
+    }
+    
+    // Mark as bound
+    state.boundSvgs.add(svg);
+    svg.classList.add('mz-zoomable');
+    
+    // Force zoom-in cursor
+    svg.style.cursor = 'zoom-in';
+    
+    // Add click handler
+    const clickHandler = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(svg);
+    };
+    
+    safeAddEventListener(svg, 'click', clickHandler);
+    
+    log('Bound zoom to SVG');
+    return true;
+  }
+
+  /**
+   * Bind zoom to all unbound diagram SVGs
    */
   function bindZoomToSvgs() {
-    // Select all three diagram types
-    const unboundSvgs = document.querySelectorAll(
-      '.mermaid svg, ' +           // Mermaid
-      '.puml-container svg, ' +     // PlantUML
-      'svg.graphviz'                // Graphviz
-    );
-    
+    const unboundSvgs = document.querySelectorAll(CONSTANTS.SELECTORS.ALL_DIAGRAMS);
     let boundCount = 0;
     
     unboundSvgs.forEach((svg) => {
-      // Skip if already bound
-      if (boundSvgs.has(svg)) {
-        return;
+      if (bindZoomToSvg(svg)) {
+        boundCount++;
       }
-      
-      // Skip PlantUML control icons (only bind to diagram SVG)
-      if (svg.closest('.control')) {
-        log('Skipping PlantUML control icon');
-        return;
-      }
-      
-      // Mark as bound immediately
-      boundSvgs.add(svg);
-      svg.classList.add('mz-zoomable');
-      
-      // Force zoom-in cursor (override inline styles)
-      svg.style.cursor = 'zoom-in';
-      
-      // Add click handler
-      const clickHandler = (e) => {
-        // For PlantUML, prevent native pan from interfering
-        if (svg.closest('.puml-container')) {
-          e.preventDefault();
-          e.stopPropagation();
-        } else {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-        openLightbox(svg);
-      };
-      
-      svg.addEventListener('click', clickHandler);
-      
-      boundCount++;
-      log(`Bound zoom to SVG ${boundCount}`);
     });
+    
+    if (boundCount > 0) {
+      log(`Bound zoom to ${boundCount} new diagrams`);
+      dispatchCustomEvent(CONSTANTS.EVENTS.DIAGRAM_ZOOM_BOUND, { count: boundCount });
+    }
     
     return boundCount;
   }
@@ -349,33 +399,28 @@
     log('Diagram reinitialized - old SVG references will be garbage collected');
   }
 
+  // ============================================================================
+  // DIAGRAM DETECTION AND BINDING
+  // ============================================================================
+
   /**
    * Wait for diagrams and bind zoom
    */
   function waitAndBindDiagrams() {
     const startTime = Date.now();
-    const maxWait = 5000;
     
     function checkForSvgs() {
-      const allSvgs = document.querySelectorAll(
-        '.mermaid svg, .puml-container svg, svg.graphviz'
-      );
-      const unboundSvgs = Array.from(allSvgs).filter(svg => !boundSvgs.has(svg));
+      const allSvgs = document.querySelectorAll(CONSTANTS.SELECTORS.ALL_DIAGRAMS);
+      const unboundSvgs = Array.from(allSvgs).filter(svg => !state.boundSvgs.has(svg));
       const timeElapsed = Date.now() - startTime;
       
       if (unboundSvgs.length > 0) {
-        const boundCount = bindZoomToSvgs();
-        log(`Bound zoom to ${boundCount} new diagrams`);
-        
-        // Dispatch event
-        document.dispatchEvent(new CustomEvent('diagramZoomBound', {
-          detail: { count: boundCount }
-        }));
+        bindZoomToSvgs();
       }
       
       // Continue checking if within time limit
-      if (timeElapsed < maxWait) {
-        setTimeout(checkForSvgs, 200);
+      if (timeElapsed < CONSTANTS.TIMING.MAX_WAIT) {
+        setTimeout(checkForSvgs, CONSTANTS.TIMING.MEDIUM_DELAY);
       }
     }
     
@@ -391,8 +436,53 @@
     
     setTimeout(() => {
       waitAndBindDiagrams();
-    }, 200);
+    }, CONSTANTS.TIMING.MEDIUM_DELAY);
   }
+
+  /**
+   * Create mutation observer for dynamic content
+   */
+  function createDiagramObserver() {
+    const observer = new MutationObserver((mutations) => {
+      let foundNewDiagrams = false;
+      
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === 1) {
+            const isDiagramNode = 
+              node.classList?.contains('mermaid') ||
+              node.classList?.contains('puml-container') ||
+              node.querySelector?.(CONSTANTS.SELECTORS.ALL_DIAGRAMS) ||
+              (node.tagName === 'SVG' && (
+                isMermaidSvg(node) ||
+                isPlantUMLControl(node) ||
+                node.classList?.contains('graphviz')
+              ));
+              
+            if (isDiagramNode) {
+              foundNewDiagrams = true;
+            }
+          }
+        });
+      });
+
+      if (foundNewDiagrams) {
+        log('New diagrams detected, binding zoom...');
+        setTimeout(bindZoomToSvgs, CONSTANTS.TIMING.LONG_DELAY);
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    return observer;
+  }
+
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
 
   /**
    * Initialize zoom functionality
@@ -402,49 +492,18 @@
     
     ensureLightbox();
     
-    setTimeout(waitAndBindDiagrams, 300);
+    setTimeout(waitAndBindDiagrams, CONSTANTS.TIMING.LONG_DELAY);
     
-    // Listen for Mermaid reinitialization (theme changes)
-    document.addEventListener('mermaidReinitialized', handleMermaidReinit);
+    // Listen for Mermaid reinitialization
+    safeAddEventListener(document, CONSTANTS.EVENTS.MERMAID_REINITIALIZED, handleMermaidReinit);
     
-    // Set up mutation observer for dynamic content
-    const observer = new MutationObserver((mutations) => {
-      let foundNewDiagrams = false;
-      
-      mutations.forEach(mutation => {
-        mutation.addedNodes.forEach(node => {
-          if (node.nodeType === 1) {
-            if (node.classList?.contains('mermaid') || 
-                node.classList?.contains('puml-container') ||
-                node.querySelector?.('.mermaid') ||
-                node.querySelector?.('.puml-container') ||
-                node.querySelector?.('svg.graphviz') ||
-                (node.tagName === 'SVG' && (
-                  node.closest?.('.mermaid') || 
-                  node.closest?.('.puml-container') ||
-                  node.classList?.contains('graphviz')
-                ))) {
-              foundNewDiagrams = true;
-            }
-          }
-        });
-      });
-
-      if (foundNewDiagrams) {
-        log('New diagrams detected, binding zoom...');
-        setTimeout(bindZoomToSvgs, 300);
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
+    // Set up mutation observer
+    createDiagramObserver();
+    
     // Listen for accessibility processing completion
-    document.addEventListener('diagramsAccessibilityProcessed', () => {
+    safeAddEventListener(document, CONSTANTS.EVENTS.DIAGRAMS_ACCESSIBILITY_PROCESSED, () => {
       log('Accessibility processing completed, checking for new diagrams');
-      setTimeout(bindZoomToSvgs, 100);
+      setTimeout(bindZoomToSvgs, CONSTANTS.TIMING.SHORT_DELAY);
     });
 
     log('Zoom initialization complete');
@@ -454,26 +513,27 @@
    * Cleanup function
    */
   function cleanup() {
-    if (lightbox && lightbox.parentNode) {
-      lightbox.parentNode.removeChild(lightbox);
+    if (state.lightbox && state.lightbox.parentNode) {
+      state.lightbox.parentNode.removeChild(state.lightbox);
     }
-    lightbox = null;
-    content = null;
-    currentSvg = null;
+    state.lightbox = null;
+    state.content = null;
+    state.currentSvg = null;
     
-    if (escHandler) {
-      document.removeEventListener('keydown', escHandler);
-      escHandler = null;
+    if (state.escHandler) {
+      document.removeEventListener('keydown', state.escHandler);
+      state.escHandler = null;
     }
     
-    document.removeEventListener('mermaidReinitialized', handleMermaidReinit);
+    document.removeEventListener(CONSTANTS.EVENTS.MERMAID_REINITIALIZED, handleMermaidReinit);
   }
 
   /**
    * Handle page visibility changes
    */
   function handleVisibilityChange() {
-    if (document.hidden && lightbox && lightbox.getAttribute('aria-hidden') === 'false') {
+    if (document.hidden && state.lightbox && 
+        state.lightbox.getAttribute('aria-hidden') === 'false') {
       closeLightbox();
     }
   }
@@ -483,22 +543,16 @@
    */
   function initialize() {
     cleanup();
-    setTimeout(initZoom, 200);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    setTimeout(initZoom, CONSTANTS.TIMING.MEDIUM_DELAY);
+    safeAddEventListener(document, 'visibilitychange', handleVisibilityChange);
   }
 
-  // Handle Material theme's instant navigation
-  if (typeof document$ !== 'undefined' && document$.subscribe) {
-    document$.subscribe(() => {
-      setTimeout(initialize, 100);
-    });
-  } else {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initialize);
-    } else {
-      initialize();
-    }
-  }
+  // Initialize with Material navigation support
+  initWithMaterialSupport(initialize, CONSTANTS.TIMING.SHORT_DELAY);
+
+  // ============================================================================
+  // DEBUG EXPORTS
+  // ============================================================================
 
   // Expose for debugging
   if (CONFIG.debugMode) {
@@ -511,6 +565,7 @@
     };
   }
 
-  window.addEventListener('beforeunload', cleanup);
+  // Cleanup on page unload
+  safeAddEventListener(window, 'beforeunload', cleanup);
 
 })();

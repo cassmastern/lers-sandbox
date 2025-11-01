@@ -655,9 +655,9 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationship/">
+<a class="md-nav__link" href="../../sec_ehealth/sec_deepdive/eh-dd-03-fhir-resource-relationships/deepdive-fhir-resource-relationships/">
 <span class="md-ellipsis">
-    Deepdive fhir resource relationship
+    Deepdive fhir resource relationships
   </span>
 </a>
 </li>
@@ -1104,26 +1104,26 @@
     User[User Device]
 
     subgraph "Azure Cloud"
-        CDN[CDN<br/>T1584.006 Compromise CDN Infrastructure]
-        WA[Web App<br/>T1190 Exploit Public-Facing App]
+        CDN[CDN<br/>T1584.006<br/> Compromise CDN Infrastructure]
+        WA[Web App<br/>T1190<br/> Exploit Public-Facing App]
 
         subgraph "Network Layer"
-            FW[Firewall<br/>T1040 Network Sniffing]
-            VPN[VPN Gateway<br/>T1133 External Remote Services]
+            FW[Firewall<br/>T1040<br/> Network Sniffing]
+            VPN[VPN Gateway<br/>T1133<br/> External Remote Services]
         end
 
         subgraph "CI/CD &amp; Monitoring"
-            CI[CI/CD Runner<br/>T1059 Command and Scripting Interpreter]
-            Logs[Log Aggregator<br/>T1005 Data from Local System]
-            Monitor[Monitoring<br/>T1082 System Information Discovery]
+            CI[CI/CD Runner<br/>T1059<br/> Command and Scripting Interpreter]
+            Logs[Log Aggregator<br/>T1005<br/> Data from Local System]
+            Monitor[Monitoring<br/>T1082<br/> System Information Discovery]
         end
     end
 
     subgraph "Internal Systems"
-        Dev[Dev Workstation<br/>T1078 Valid Accounts]
-        Repo[Git Repo<br/>T1505.003 Implant Internal Repository]
-        Secrets[Secrets Vault<br/>T1555 Credentials from Password Stores]
-        DB[Database<br/>T1071.001 Application Layer Protocol - Web]
+        Dev[Dev Workstation<br/>T1078<br/> Valid Accounts]
+        Repo[Git Repo<br/>T1505.003<br/> Implant Internal Repository]
+        Secrets[Secrets Vault<br/>T1555<br/> Credentials from Password Stores]
+        DB[Database<br/>T1071.001<br/> Application Layer Protocol - Web]
     end
 
     %% Main flow connections
@@ -1414,10 +1414,10 @@
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
 <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+<script src="../../js/diagram-utils.js"></script>
 <script src="../../js/seamaiden.js"></script>
 <script src="../../js/diagram-theme-switcher.js"></script>
 <script src="../../js/diagram-zoom.js"></script>
-<script src="../../js/alphabet-auto.js"></script>
 <script src="../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
 <script src="../../assets/mkdocs_puml/interaction.js"></script>
