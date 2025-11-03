@@ -1,0 +1,5 @@
+title: "Guides"
+arrange: 
+    - api-countries-guides-quickstart.md
+    - api-countries-guides-filtering.md
+    - api-countries-guides-integration.md

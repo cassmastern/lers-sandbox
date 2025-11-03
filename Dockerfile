@@ -12,8 +12,7 @@ RUN apt-get update && \
 # Copy requirements first for caching
 COPY requirements.txt /app/
 # Install Python dependencies including mkdocs-graphviz and beautifulsoup4
-RUN pip install --no-cache-dir -r requirements.txt \
-    && pip install --no-cache-dir mkdocs-graphviz beautifulsoup4
+RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the project (includes hooks/)
 COPY . /app
 # Copy Mermaid JS explicitly (ensure it's present)

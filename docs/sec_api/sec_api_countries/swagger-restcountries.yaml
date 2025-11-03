@@ -1,0 +1,627 @@
+openapi: 3.0.3
+info:
+  title: Countries REST API
+  description: |
+    Get information about countries via a RESTful API.
+    
+    This API provides comprehensive data about countries including:
+    - Basic country information (name, capital, population)
+    - Geographic data (area, borders, coordinates)
+    - Cultural information (languages, currencies, flags)
+    - Regional groupings and classifications
+    
+    All endpoints return data in JSON format.
+  version: 3.1.0
+  contact:
+    name: Countries REST API
+    url: https://restcountries.com
+  license:
+    name: Mozilla Public License MPL 2.0
+    url: https://www.mozilla.org/en-US/MPL/2.0/
+
+servers:
+  - url: https://restcountries.com/v3.1
+    description: Production server
+
+tags:
+  - name: Countries
+    description: Retrieve country information
+  - name: Search
+    description: Search and filter countries
+
+paths:
+  /all:
+    get:
+      tags:
+        - Countries
+      summary: Get all countries
+      description: Returns information about all countries
+      operationId: getAllCountries
+      parameters:
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /name/{name}:
+    get:
+      tags:
+        - Search
+      summary: Search by country name
+      description: Search for countries by their common or official name
+      operationId: getCountryByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          description: Country name (common or official)
+          schema:
+            type: string
+          example: germany
+        - name: fullText
+          in: query
+          description: Search for exact match only
+          schema:
+            type: boolean
+            default: false
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /alpha/{code}:
+    get:
+      tags:
+        - Search
+      summary: Search by country code
+      description: Search for a country by its ISO 3166-1 alpha-2, alpha-3, or numeric code
+      operationId: getCountryByCode
+      parameters:
+        - name: code
+          in: path
+          required: true
+          description: ISO 3166-1 alpha-2, alpha-3, or numeric code
+          schema:
+            type: string
+          examples:
+            alpha2:
+              value: de
+              summary: Alpha-2 code
+            alpha3:
+              value: deu
+              summary: Alpha-3 code
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /alpha:
+    get:
+      tags:
+        - Search
+      summary: Search by multiple country codes
+      description: Search for multiple countries by their ISO codes (comma-separated)
+      operationId: getCountriesByCodes
+      parameters:
+        - name: codes
+          in: query
+          required: true
+          description: Comma-separated list of ISO codes
+          schema:
+            type: string
+          example: col,pe,at
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /currency/{currency}:
+    get:
+      tags:
+        - Search
+      summary: Search by currency
+      description: Search for countries that use a specific currency
+      operationId: getCountriesByCurrency
+      parameters:
+        - name: currency
+          in: path
+          required: true
+          description: Currency code (ISO 4217)
+          schema:
+            type: string
+          example: eur
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /lang/{language}:
+    get:
+      tags:
+        - Search
+      summary: Search by language
+      description: Search for countries where a specific language is spoken
+      operationId: getCountriesByLanguage
+      parameters:
+        - name: language
+          in: path
+          required: true
+          description: Language code (ISO 639-1 or ISO 639-2)
+          schema:
+            type: string
+          example: es
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /capital/{capital}:
+    get:
+      tags:
+        - Search
+      summary: Search by capital city
+      description: Search for countries by their capital city name
+      operationId: getCountriesByCapital
+      parameters:
+        - name: capital
+          in: path
+          required: true
+          description: Capital city name
+          schema:
+            type: string
+          example: tallinn
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /region/{region}:
+    get:
+      tags:
+        - Search
+      summary: Search by region
+      description: Search for countries in a specific region
+      operationId: getCountriesByRegion
+      parameters:
+        - name: region
+          in: path
+          required: true
+          description: Region name
+          schema:
+            type: string
+            enum:
+              - africa
+              - americas
+              - asia
+              - europe
+              - oceania
+          example: europe
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /subregion/{subregion}:
+    get:
+      tags:
+        - Search
+      summary: Search by subregion
+      description: Search for countries in a specific subregion
+      operationId: getCountriesBySubregion
+      parameters:
+        - name: subregion
+          in: path
+          required: true
+          description: Subregion name
+          schema:
+            type: string
+          example: southern europe
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /translation/{translation}:
+    get:
+      tags:
+        - Search
+      summary: Search by country name translation
+      description: Search for countries by their name in different languages
+      operationId: getCountriesByTranslation
+      parameters:
+        - name: translation
+          in: path
+          required: true
+          description: Country name in any language
+          schema:
+            type: string
+          example: germany
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /demonym/{demonym}:
+    get:
+      tags:
+        - Search
+      summary: Search by demonym
+      description: Search for countries by their demonym (e.g., "French" for France)
+      operationId: getCountriesByDemonym
+      parameters:
+        - name: demonym
+          in: path
+          required: true
+          description: Demonym
+          schema:
+            type: string
+          example: french
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+  parameters:
+    fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to return (e.g., name,capital,population)
+      schema:
+        type: string
+      example: name,capital,population,flags
+
+  responses:
+    NotFound:
+      description: Country not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 404
+              message:
+                type: string
+                example: Not Found
+
+  schemas:
+    Country:
+      type: object
+      properties:
+        name:
+          type: object
+          properties:
+            common:
+              type: string
+              description: Common country name
+              example: Germany
+            official:
+              type: string
+              description: Official country name
+              example: Federal Republic of Germany
+            nativeName:
+              type: object
+              additionalProperties:
+                type: object
+                properties:
+                  official:
+                    type: string
+                  common:
+                    type: string
+        tld:
+          type: array
+          description: Top-level domains
+          items:
+            type: string
+          example: [".de"]
+        cca2:
+          type: string
+          description: ISO 3166-1 alpha-2 code
+          example: DE
+        ccn3:
+          type: string
+          description: ISO 3166-1 numeric code
+          example: "276"
+        cca3:
+          type: string
+          description: ISO 3166-1 alpha-3 code
+          example: DEU
+        cioc:
+          type: string
+          description: International Olympic Committee code
+          example: GER
+        independent:
+          type: boolean
+          description: Whether the country is independent
+          example: true
+        status:
+          type: string
+          description: Assignment status
+          example: officially-assigned
+        unMember:
+          type: boolean
+          description: Whether the country is a UN member
+          example: true
+        currencies:
+          type: object
+          description: Currencies used in the country
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              symbol:
+                type: string
+          example:
+            EUR:
+              name: Euro
+              symbol: €
+        idd:
+          type: object
+          description: International dialing information
+          properties:
+            root:
+              type: string
+              example: "+4"
+            suffixes:
+              type: array
+              items:
+                type: string
+              example: ["9"]
+        capital:
+          type: array
+          description: Capital city/cities
+          items:
+            type: string
+          example: ["Berlin"]
+        altSpellings:
+          type: array
+          description: Alternative country name spellings
+          items:
+            type: string
+          example: ["DE", "Federal Republic of Germany", "Bundesrepublik Deutschland"]
+        region:
+          type: string
+          description: Geographic region
+          example: Europe
+        subregion:
+          type: string
+          description: Geographic subregion
+          example: Western Europe
+        languages:
+          type: object
+          description: Official languages
+          additionalProperties:
+            type: string
+          example:
+            deu: German
+        translations:
+          type: object
+          description: Country name translations
+          additionalProperties:
+            type: object
+            properties:
+              official:
+                type: string
+              common:
+                type: string
+        latlng:
+          type: array
+          description: Latitude and longitude coordinates
+          items:
+            type: number
+          example: [51.0, 9.0]
+        landlocked:
+          type: boolean
+          description: Whether the country is landlocked
+          example: false
+        borders:
+          type: array
+          description: Bordering countries (ISO 3166-1 alpha-3 codes)
+          items:
+            type: string
+          example: ["AUT", "BEL", "CZE", "DNK", "FRA", "LUX", "NLD", "POL", "CHE"]
+        area:
+          type: number
+          description: Country area in km²
+          example: 357114.0
+        demonyms:
+          type: object
+          description: Demonyms in different languages
+          additionalProperties:
+            type: object
+            properties:
+              f:
+                type: string
+                description: Feminine form
+              m:
+                type: string
+                description: Masculine form
+          example:
+            eng:
+              f: German
+              m: German
+        flag:
+          type: string
+          description: Flag emoji
+          example: 🇩🇪
+        maps:
+          type: object
+          description: Map links
+          properties:
+            googleMaps:
+              type: string
+              format: uri
+            openStreetMaps:
+              type: string
+              format: uri
+        population:
+          type: integer
+          description: Country population
+          example: 83240525
+        gini:
+          type: object
+          description: Gini coefficient by year
+          additionalProperties:
+            type: number
+          example:
+            "2016": 31.9
+        fifa:
+          type: string
+          description: FIFA country code
+          example: GER
+        car:
+          type: object
+          description: Driving information
+          properties:
+            signs:
+              type: array
+              items:
+                type: string
+            side:
+              type: string
+              enum: [right, left]
+        timezones:
+          type: array
+          description: Timezones
+          items:
+            type: string
+          example: ["UTC+01:00"]
+        continents:
+          type: array
+          description: Continents
+          items:
+            type: string
+          example: ["Europe"]
+        flags:
+          type: object
+          description: Flag images
+          properties:
+            png:
+              type: string
+              format: uri
+            svg:
+              type: string
+              format: uri
+            alt:
+              type: string
+              description: Flag description
+        coatOfArms:
+          type: object
+          description: Coat of arms images
+          properties:
+            png:
+              type: string
+              format: uri
+            svg:
+              type: string
+              format: uri
+        startOfWeek:
+          type: string
+          description: First day of the week
+          enum: [monday, sunday, saturday]
+          example: monday
+        capitalInfo:
+          type: object
+          description: Capital city information
+          properties:
+            latlng:
+              type: array
+              items:
+                type: number
+        postalCode:
+          type: object
+          description: Postal code format
+          properties:
+            format:
+              type: string
+            regex:
+              type: string

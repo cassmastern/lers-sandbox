@@ -1,4 +1,4 @@
-# Concepts, Essays and more
+# Concepts, Essays and More
 
 This section contains speculative concepts, technical essays, 'technical memoirs', and other, somewhat free-form pieces of text.
 

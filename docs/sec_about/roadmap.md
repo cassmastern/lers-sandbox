@@ -20,6 +20,9 @@ gantt
 
 ## Changelog
 
+- 2025.11.02 New set of topics for exploring [API documentation](../sec_api/index.md) features.
+- 2025.11.01 Major refactoring of JS files (theme switcher, metadata injector) and SpotlightJS
+- 2025.10.28 Accessibility metadata injection now complete for all three supported diagram types (Mermaid, PlantUML, Graphviz)
 - 2025.10.16 a. Graphviz support (no accessibility metadata yet); b. new: a [deep dive into SMART-on-FHIR](../sec_ehealth/sec_deepdive/index.md).
 - 2025.10.08 New set of [eHealth-related topics](../sec_ehealth/index.md).
 - 2025.10.07 A mid-to-late 2010s [SAML/SSO admin guide](../sec_net-sec/saml-admin.md) for sentimental, aesthetic, and experimentation purposes. 

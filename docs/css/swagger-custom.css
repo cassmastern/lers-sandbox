@@ -1,0 +1,47 @@
+/* Remove bold from response descriptions */
+.swagger-ui .response-col_description__inner p,
+.swagger-ui .response-col_description__inner div {
+  font-weight: normal !important;
+}
+
+/* Remove bold from schema properties */
+.swagger-ui .model-box .prop-type,
+.swagger-ui .model-box .prop-format,
+.swagger-ui table.model tbody tr td:first-of-type {
+  font-weight: normal !important;
+}
+
+/* Remove bold from example values */
+.swagger-ui .parameter__name,
+.swagger-ui .parameter__type,
+.swagger-ui .response-col_status {
+  font-weight: 600 !important; /* Semi-bold for labels */
+}
+
+.swagger-ui .parameter__extension,
+.swagger-ui .parameter__in,
+.swagger-ui .response-col_description,
+.swagger-ui .model .property {
+  font-weight: normal !important;
+}
+
+/* Keep only headers bold */
+.swagger-ui .opblock-summary-method,
+.swagger-ui .opblock-summary-path,
+.swagger-ui .opblock-section-header h4,
+.swagger-ui .model-title {
+  font-weight: bold !important;
+}
+
+/* Code blocks should be normal weight */
+.swagger-ui pre,
+.swagger-ui code {
+  font-weight: normal !important;
+}
+
+/* Response/Request body content */
+.swagger-ui .microlight,
+.swagger-ui .highlight-code,
+.swagger-ui .body-param__text {
+  font-weight: normal !important;
+}

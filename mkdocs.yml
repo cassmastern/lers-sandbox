@@ -31,12 +31,15 @@ theme:
 plugins:
   - awesome-pages
   - search
+  - open-in-new-tab
   - mermaid2:
       javascript: js/mermaid.min.js
   - plantuml:
       puml_url: http://192.168.1.5:8080
       #puml_url: https://www.plantuml.com/plantuml/svg
-
+  - swagger-ui-tag:
+      extra_css:
+        - css/swagger-custom.css
 
 markdown_extensions:
   - admonition
@@ -56,7 +59,6 @@ markdown_extensions:
       bgcolor: "none"
 
 extra_javascript:
-#  - js/mermaid.min.js
   - js/diagram-utils.js
   - js/seamaiden.js
   - js/diagram-theme-switcher.js
