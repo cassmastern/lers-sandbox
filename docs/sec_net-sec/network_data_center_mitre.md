@@ -19,7 +19,7 @@ graph TB
     User[User Device]
     
     subgraph "Azure Cloud"
-        CDN[CDN<br>T1584.006<br> Compromise CDN Infrastructure]
+        CDN[CDN<br>T1584.006<br> Compromise CDN<br> Infrastructure]
         WA[Web App<br>T1190<br> Exploit Public-Facing App]
         
         subgraph "Network Layer"
@@ -28,17 +28,17 @@ graph TB
         end
         
         subgraph "CI/CD & Monitoring"
-            CI[CI/CD Runner<br>T1059<br> Command and Scripting Interpreter]
+            CI[CI/CD Runner<br>T1059<br> Command and Scripting<br> Interpreter]
             Logs[Log Aggregator<br>T1005<br> Data from Local System]
-            Monitor[Monitoring<br>T1082<br> System Information Discovery]
+            Monitor[Monitoring<br>T1082<br> System Information<br> Discovery]
         end
     end
     
     subgraph "Internal Systems"
         Dev[Dev Workstation<br>T1078<br> Valid Accounts]
-        Repo[Git Repo<br>T1505.003<br> Implant Internal Repository]
-        Secrets[Secrets Vault<br>T1555<br> Credentials from Password Stores]
-        DB[Database<br>T1071.001<br> Application Layer Protocol - Web]
+        Repo[Git Repo<br>T1505.003<br> Implant Internal<br> Repository]
+        Secrets[Secrets Vault<br>T1555<br> Credentials from<br> Password Stores]
+        DB[Database<br>T1071.001<br> Application Layer<br> Protocol - Web]
     end
 
     %% Main flow connections

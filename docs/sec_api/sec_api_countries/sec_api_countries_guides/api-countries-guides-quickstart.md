@@ -32,6 +32,10 @@ countries = response.json()
 print(countries)
 ```
 
+### Using the Embedded Swagger UI
+
+[Interactive OpenAPI (Swagger) Reference](../reference.md)
+
 ## Common Endpoints
 
 ### Get All Countries

@@ -58,18 +58,18 @@ flowchart TD
   
     subgraph DataLayer ["Data & Persistence"]
         C["Persistence Layer"]
-        D["DB: Azure SQL/MySQL/PostgreSQL"]
-        E["File/Obj Storage: Azure Blob Storage"]
+        D["DB:<br> Azure SQL /<br> MySQL /<br> PostgreSQL"]
+        E["File/Obj Storage:<br> Azure Blob Storage"]
     end
   
     subgraph MessagingCache ["Messaging & Caching"]
-        F["Msg/Event Handling: SvcBus/Event Grid"]
-        G["Caching: Azure Cache for Redis"]
+        F["Msg/Event Handling:<br> SvcBus/Event Grid"]
+        G["Caching:<br> Azure Cache for Redis"]
     end
   
     subgraph CrossCutting ["Security & Monitoring"]
-        H["Security/Secrets: Azure AD, Key Vault"]
-        I["Monitoring: Application Insights"]
+        H["Security/Secrets:<br> Azure AD, Key Vault"]
+        I["Monitoring:<br> Application Insights"]
     end
   
     A --> B
@@ -116,17 +116,17 @@ flowchart LR
     accTitle: Flowchart diagram showing an Azure Enterprise App's system architecture
     accDescr: Flowchart diagram showing an Azure Enterprise App's system architecture: user browser connecting via HTTPS to Azure Front Door WAF for security and routing, which connects to App Service or AKS Ingress, then to Java EE App containing business and API layers. The Java EE App connects to 6 Azure services: SQL/MySQL/PostgreSQL database, Blob Storage for files, Cache for Redis, Service Bus/Event Grid for messaging, Key Vault for secrets, and Application Insights for monitoring. Data flows from browser through security layer to app, then branches to all backend services.
   subgraph Client
-    Browser["User Browser / Mobile App"]
+    Browser["User Browser<br> / Mobile App"]
   end
 
   subgraph Azure_Cloud
-    FrontDoor["Azure Front Door / WAF (Security & Routing)"]
-    API["App Service / AKS Ingress"]
-    App["Java EE App (Business + API Layers)"]
-    DB["Azure SQL / MySQL / PostgreSQL"]
+    FrontDoor["Azure Front Door /<br> WAF (Security & Routing)"]
+    API["App Service /<br> AKS Ingress"]
+    App["Java EE App<br> (Business+API Layers)"]
+    DB["Azure SQL /<br> MySQL /<br> PostgreSQL"]
     Blob["Azure Blob Storage"]
     Cache["Azure Cache for Redis"]
-    Msg["Azure Service Bus / Event Grid"]
+    Msg["Azure Service Bus /<br> Event Grid"]
     KV["Azure Key Vault"]
     Insights["Application Insights"]
   end
