@@ -131,7 +131,7 @@
 - **Secrets**: Secrets Manager ⇄ Secret Manager ⇄ Key Vault
 - **CI/CD**: CodePipeline ⇄ Cloud Build ⇄ Azure DevOps
 
-## 🗂 Editorial Notes
+## Editorial Notes
 
 - GCP’s VPCs are global; AWS and Azure default to region-scoped.
 - Azure tightly integrates with Windows Server and Active Directory.

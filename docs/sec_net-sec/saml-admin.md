@@ -1,6 +1,6 @@
 # Single Sign-On (SSO) Admin Guide — SAML 2.0 Integration
 
-> First I had a template, then I put together a real-life spec (2017/2018), then I turned it back into an improved template with better diagrams and removed/masked real module/app/company names, URLs, etc. Why? First, I might end up using it (SAML is still around). Second, using it as a playground to play and experiment with PlantUML. 
+> First I had a template, then I put together a real-life spec (2017/2018), then I turned it back into an improved template with better diagrams and removed/masked real module/app/company names, URLs, etc. Why? First, I might end up using it (SAML is still around); second, using it as a playground to play and experiment with PlantUML; third — just because I could 🤭.  
 
 ## 1. Overview
 

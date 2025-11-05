@@ -12,7 +12,7 @@ A fully-configured, reproducible documentation system with:
 - **Accessibility-first** approach with automated ARIA metadata injection
 - **Theme-aware diagrams** that switch seamlessly between light/dark modes
 - **Interactive diagram zoom** with pan and scroll/pinch-to-zoom support
-- **OpenAPI documentation** support via Swagger UI support
+- **OpenAPI documentation** support via Swagger UI plug-in
 - **Analytics integration** with Google Analytics 4 and cookie consent
 - **Advanced navigation** with awesome-pages plugin for flexible page organization
 - **Enhanced search** with highlighting and suggestions
@@ -38,6 +38,7 @@ A fully-configured, reproducible documentation system with:
 │   │   ├── swagger-custom.css         # Swagger UI theming
 │   │   ├── alphabet.css               # Styles for glossary topics
 │   │   └── cm-logo.css                # Logo styling
+│   │   └── custom-theme-colors.css    # Styling for site's custom color scheme     
 │   └── img/                           # Images and branding
 │       ├── logo.svg                   # Site logo
 │       └── favicon.ico                # Site favicon
@@ -61,6 +62,8 @@ A fully-configured, reproducible documentation system with:
 │  3. Accessibility metadata injection (Python hook)          │
 │  4. Asset bundling (JavaScript/CSS)                         │
 │  5. Page organization (awesome-pages plugin)                │
+│     - fine-tune with `.page` and `index.md` files in        | 
+│       content directories/subdirectories                    │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌───────────────────────────────────────────────────────────────┐

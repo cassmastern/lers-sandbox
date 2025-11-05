@@ -20,10 +20,14 @@ theme:
     - content.code.select
   palette:
     - scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
     - scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
@@ -70,6 +74,7 @@ extra_css:
   - css/diagram-zoom.css
   - css/cm-logo.css
   - css/color-vars.css
+  - css/custom-theme-colors.css
   
 extra:
   generator: false
