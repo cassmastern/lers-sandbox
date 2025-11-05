@@ -1369,27 +1369,27 @@ hybrid capabilities, Azure is often the top pick.</p>
 
     %% GLOBAL INFRASTRUCTURE
     subgraph Global Infrastructure
-        AR1[Azure Regions]:::global --&gt; AR2[Availability Zones]:::global
+        AR1[Azure<br/> Regions]:::global --&gt; AR2[Availability<br/> Zones]:::global
     end
 
     %% NETWORKING
     subgraph Networking
         VNet[Virtual Network]:::net --&gt; Subnet1[Public Subnet]:::net
         VNet --&gt; Subnet2[Private Subnet]:::net
-        Subnet1 --&gt; NSG[Network Security Group]:::net
+        Subnet1 --&gt; NSG[Network<br/> Security Group]:::net
     end
 
     %% ENTRY FLOW
     User[Developer/User] --&gt; AzureDNS[Azure DNS]:::net
-    AzureDNS --&gt; FrontDoor[Azure Front Door / CDN]:::net
-    FrontDoor --&gt; ALB[Azure Load Balancer]:::net
+    AzureDNS --&gt; FrontDoor[Azure<br/> Front Door / CDN]:::net
+    FrontDoor --&gt; ALB[Azure<br/> Load Balancer]:::net
     FrontDoor --&gt; AppGW[Application Gateway]:::net
 
     %% COMPUTE
     subgraph Compute
-        VMs[Azure Virtual Machines]:::compute
-        AppService[Azure App Service]:::compute
-        AKS[Azure Kubernetes Service]:::compute
+        VMs[Azure<br/> Virtual Machines]:::compute
+        AppService[Azure<br/> App Service]:::compute
+        AKS[Azure<br/> Kubernetes Service]:::compute
     end
     ALB --&gt; VMs
     AppGW --&gt; AppService
@@ -1397,7 +1397,7 @@ hybrid capabilities, Azure is often the top pick.</p>
 
     %% DATABASE / STORAGE
     subgraph Data
-        AzureSQL[Azure SQL DB]:::data
+        AzureSQL[Azure<br/> SQL DB]:::data
         CosmosDB[Cosmos DB]:::data
         Blob[Blob Storage]:::data
     end
@@ -1407,22 +1407,22 @@ hybrid capabilities, Azure is often the top pick.</p>
 
     %% DEVOPS
     subgraph DevOps / CI-CD
-        Repos[Azure Repos]:::devops --&gt; Pipelines[Azure Pipelines - Build]:::devops
-        Pipelines --&gt; Release[Release Management]:::devops
+        Repos[Azure Repos]:::devops --&gt; Pipelines[Azure<br/> Pipelines - Build]:::devops
+        Pipelines --&gt; Release[Release<br/> Management]:::devops
         Release --&gt; AppGW
     end
 
     %% SECURITY
     subgraph Security
-        AAD[Azure Active Directory]:::sec
-        KeyVault[Azure Key Vault]:::sec
-        Defender[Microsoft Defender for Cloud]:::sec
+        AAD[Azure<br/> Active Directory]:::sec
+        KeyVault[Azure<br/> Key Vault]:::sec
+        Defender[Microsoft Defender<br/> for Cloud]:::sec
     end
 
     %% OBSERVABILITY
     subgraph Observability
         Monitor[Azure Monitor]:::obs
-        LogAnalytics[Log Analytics Workspace]:::obs
+        LogAnalytics[Log Analytics<br/> Workspace]:::obs
         SecurityCentre[Security Centre]:::obs
     end
 

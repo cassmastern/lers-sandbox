@@ -220,27 +220,27 @@ graph TD
 
     %% GLOBAL INFRASTRUCTURE
     subgraph Global Infrastructure
-        AR1[Azure Regions]:::global --> AR2[Availability Zones]:::global
+        AR1[Azure<br> Regions]:::global --> AR2[Availability<br> Zones]:::global
     end
 
     %% NETWORKING
     subgraph Networking
         VNet[Virtual Network]:::net --> Subnet1[Public Subnet]:::net
         VNet --> Subnet2[Private Subnet]:::net
-        Subnet1 --> NSG[Network Security Group]:::net
+        Subnet1 --> NSG[Network<br> Security Group]:::net
     end
 
     %% ENTRY FLOW
     User[Developer/User] --> AzureDNS[Azure DNS]:::net
-    AzureDNS --> FrontDoor[Azure Front Door / CDN]:::net
-    FrontDoor --> ALB[Azure Load Balancer]:::net
+    AzureDNS --> FrontDoor[Azure<br> Front Door / CDN]:::net
+    FrontDoor --> ALB[Azure<br> Load Balancer]:::net
     FrontDoor --> AppGW[Application Gateway]:::net
 
     %% COMPUTE
     subgraph Compute
-        VMs[Azure Virtual Machines]:::compute
-        AppService[Azure App Service]:::compute
-        AKS[Azure Kubernetes Service]:::compute
+        VMs[Azure<br> Virtual Machines]:::compute
+        AppService[Azure<br> App Service]:::compute
+        AKS[Azure<br> Kubernetes Service]:::compute
     end
     ALB --> VMs
     AppGW --> AppService
@@ -248,7 +248,7 @@ graph TD
 
     %% DATABASE / STORAGE
     subgraph Data
-        AzureSQL[Azure SQL DB]:::data
+        AzureSQL[Azure<br> SQL DB]:::data
         CosmosDB[Cosmos DB]:::data
         Blob[Blob Storage]:::data
     end
@@ -258,22 +258,22 @@ graph TD
 
     %% DEVOPS
     subgraph DevOps / CI-CD
-        Repos[Azure Repos]:::devops --> Pipelines[Azure Pipelines - Build]:::devops
-        Pipelines --> Release[Release Management]:::devops
+        Repos[Azure Repos]:::devops --> Pipelines[Azure<br> Pipelines - Build]:::devops
+        Pipelines --> Release[Release<br> Management]:::devops
         Release --> AppGW
     end
 
     %% SECURITY
     subgraph Security
-        AAD[Azure Active Directory]:::sec
-        KeyVault[Azure Key Vault]:::sec
-        Defender[Microsoft Defender for Cloud]:::sec
+        AAD[Azure<br> Active Directory]:::sec
+        KeyVault[Azure<br> Key Vault]:::sec
+        Defender[Microsoft Defender<br> for Cloud]:::sec
     end
 
     %% OBSERVABILITY
     subgraph Observability
         Monitor[Azure Monitor]:::obs
-        LogAnalytics[Log Analytics Workspace]:::obs
+        LogAnalytics[Log Analytics<br> Workspace]:::obs
         SecurityCentre[Security Centre]:::obs
     end
 

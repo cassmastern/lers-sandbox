@@ -4,7 +4,7 @@
 
 "Our great strides in techcomm automation" thus, while working on this site, started to attract quotation marks: figuring out how to make MkDocs content WCAG-compliant turned out to be more convoluted than expected. The basics are fine, but anything beyond static text (especially diagrams) quickly becomes a mess.
 
-Mermaid won't expose ALT text reliably (or it will and it's just me forgetting so say please), SVGs lack accessible markup, and plugins seem allergic to ARIA roles. I spend more time than I’d like chasing down rendering quirks and testing screen reader behavior, just to confirm what isn't working. Every fix introduces a new problem.
+Mermaid won't expose ALT text reliably (or it will and it's just me forgetting to say *please*), SVGs lack accessible markup, and plugins seem allergic to ARIA roles. I spend more time than I’d like chasing down rendering quirks and testing screen reader behavior, just to confirm what isn't working. Every fix introduces a new problem.
 
 So I'm thinking (or daydreaming), what if accessibility wasn’t a bolt-on? What if it were baked into the authoring flow, nudged along by AI that actually understands context — not just checking boxes, but helping us describe what a diagram means, not just what it looks like?
 
