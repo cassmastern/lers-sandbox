@@ -1,8 +1,9 @@
 # eHealth
 
-I'll just start accumulating some eHealth-related resources, references and cheat sheets here.
+I'll just hoard some eHealth-related resources, references and cheat sheets here.
 
-- [SMART-on-FHIR and Integration — Quick Reference](quick_ref.md)
-- [SMART-on-FHIR and Integration — UML Diagrams](smart-fhir-visuals.md)
-- [Ontario eHealth and HALO Integration Glossary](gloss_ontario_halo.md)
-- [Deep Dive / Workshop](sec_deepdive/index.md)
+- [A Deep Dive of SMART-on-FHIR](sec_deepdive/index.md)
+- [SMART-on-FHIR Integration Resources](sec_integration/index.md)
+
+![Image of a construction site showing an excavator and a dump truck, and a sign reading "UNDER HEAVY CONSTRUCTION](../img/under-heavy-construction.png)
+  

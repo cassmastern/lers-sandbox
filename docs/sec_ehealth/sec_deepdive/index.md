@@ -10,5 +10,3 @@ This section comprises a set of topics for a comprehensive exploration of SMART-
 - [SMART Auth](eh-dd-06-smart-auth/index.md)
 - [Hands-on Practice](eh-dd-07-hands-on-practice/index.md)
 - [Wrap-up](eh-dd-08-wrap-up/index.md)
-
-![Image of a construction site showing an excavator and a dump truck, and a sign reading "UNDER HEAVY CONSTRUCTION](../../img/under-heavy-construction.png)

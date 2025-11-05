@@ -4,6 +4,7 @@ This page explores how FHIR resources interconnect across clinical, administrati
 
 ## Comprehensive Diagram of FHIR Resource Relationships
 
+<!--
 ### Diagram (version 1)
 
 ```mermaid
@@ -122,8 +123,9 @@ graph TD
     ExplanationOfBenefit -->|claim| Claim
     Coverage -->|payor| Organization
 ```
+-->
 
-### Diagram (version 2)
+### Diagram
 
 ```puml
 @startuml FHIR_Resource_Relationships
