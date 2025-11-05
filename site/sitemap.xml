@@ -169,18 +169,6 @@
          <lastmod>2025-11-05</lastmod>
     </url>
     <url>
-         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/gloss_ontario_halo/</loc>
-         <lastmod>2025-11-05</lastmod>
-    </url>
-    <url>
-         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/quick_ref/</loc>
-         <lastmod>2025-11-05</lastmod>
-    </url>
-    <url>
-         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/smart-fhir-visuals/</loc>
-         <lastmod>2025-11-05</lastmod>
-    </url>
-    <url>
          <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_deepdive/</loc>
          <lastmod>2025-11-05</lastmod>
     </url>
@@ -322,6 +310,22 @@
     </url>
     <url>
          <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_deepdive/eh-dd-08-wrap-up/deepdive-summary/</loc>
+         <lastmod>2025-11-05</lastmod>
+    </url>
+    <url>
+         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_integration/</loc>
+         <lastmod>2025-11-05</lastmod>
+    </url>
+    <url>
+         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_integration/gloss_ontario_halo/</loc>
+         <lastmod>2025-11-05</lastmod>
+    </url>
+    <url>
+         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_integration/quick_ref/</loc>
+         <lastmod>2025-11-05</lastmod>
+    </url>
+    <url>
+         <loc>https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_integration/smart-fhir-visuals/</loc>
          <lastmod>2025-11-05</lastmod>
     </url>
     <url>

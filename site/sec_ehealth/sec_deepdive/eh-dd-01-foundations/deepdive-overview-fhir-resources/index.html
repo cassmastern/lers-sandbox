@@ -407,59 +407,38 @@
             eHEALTH
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../quick_ref/">
-<span class="md-ellipsis">
-    SMART-on-FHIR and Integration Quick Reference
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../smart-fhir-visuals/">
-<span class="md-ellipsis">
-    SMART-on-FHIR and Integration — Visuals
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../gloss_ontario_halo/">
-<span class="md-ellipsis">
-    Ontario eHealth &amp; HALO Integration Glossary
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Deep Dive into SMART-on-FHIR
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_5">
+<nav aria-expanded="true" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
             Deep Dive into SMART-on-FHIR
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_5_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_2_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../">
 <span class="md-ellipsis">
     Foundations
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_2" id="__nav_7_5_2_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_2" id="__nav_7_2_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_7_5_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_2">
+<nav aria-expanded="true" aria-labelledby="__nav_7_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_2">
 <span class="md-nav__icon md-icon"></span>
             Foundations
           </label>
@@ -498,6 +477,283 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-fhirs-resource-model">
+<span class="md-ellipsis">
+      Understanding FHIR's Resource Model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-core-resources-every-smart-app-uses">
+<span class="md-ellipsis">
+      The Core Resources Every SMART App Uses
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-patient-resource-the-identity-anchor">
+<span class="md-ellipsis">
+      1. Patient Resource: The Identity Anchor
+    </span>
+</a>
+<nav aria-label="1. Patient Resource: The Identity Anchor" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example">
+<span class="md-ellipsis">
+      Real-World Example
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-observation-resource-the-measurement-workhorse">
+<span class="md-ellipsis">
+      2. Observation Resource: The Measurement Workhorse
+    </span>
+</a>
+<nav aria-label="2. Observation Resource: The Measurement Workhorse" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_1">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-observation-lifecycle">
+<span class="md-ellipsis">
+      The Observation Lifecycle
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-blood-pressure">
+<span class="md-ellipsis">
+      Real-World Example: Blood Pressure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_1">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_1">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-condition-resource-diagnoses-and-problems">
+<span class="md-ellipsis">
+      3. Condition Resource: Diagnoses and Problems
+    </span>
+</a>
+<nav aria-label="3. Condition Resource: Diagnoses and Problems" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_2">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-diabetes">
+<span class="md-ellipsis">
+      Real-World Example: Diabetes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_2">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_2">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-medicationrequest-resource-prescriptions-and-orders">
+<span class="md-ellipsis">
+      4. MedicationRequest Resource: Prescriptions and Orders
+    </span>
+</a>
+<nav aria-label="4. MedicationRequest Resource: Prescriptions and Orders" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_3">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-metformin-prescription">
+<span class="md-ellipsis">
+      Real-World Example: Metformin Prescription
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_3">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_3">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-encounter-resource-the-context-container">
+<span class="md-ellipsis">
+      5. Encounter Resource: The Context Container
+    </span>
+</a>
+<nav aria-label="5. Encounter Resource: The Context Container" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_4">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-office-visit">
+<span class="md-ellipsis">
+      Real-World Example: Office Visit
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_4">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_4">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-allergyintolerance-resource-safety-alerts">
+<span class="md-ellipsis">
+      6. AllergyIntolerance Resource: Safety Alerts
+    </span>
+</a>
+<nav aria-label="6. AllergyIntolerance Resource: Safety Alerts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_5">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-penicillin-allergy">
+<span class="md-ellipsis">
+      Real-World Example: Penicillin Allergy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_5">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_5">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-these-resources-connect">
+<span class="md-ellipsis">
+      How These Resources Connect
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-relationships-visualized">
+<span class="md-ellipsis">
+      Resource Relationships Visualized
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reference-of-key-fhir-resources">
+<span class="md-ellipsis">
+      Reference of Key FHIR Resources
+    </span>
+</a>
+<nav aria-label="Reference of Key FHIR Resources" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#1-patient-resource">
 <span class="md-ellipsis">
       1. Patient Resource
@@ -535,23 +791,33 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_3" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-02-fhir-data-fundamentals/">
 <span class="md-ellipsis">
     FHIR Data Fundamentals
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_3" id="__nav_7_5_3_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_3" id="__nav_7_2_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_3">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_3">
 <span class="md-nav__icon md-icon"></span>
             FHIR Data Fundamentals
           </label>
@@ -588,19 +854,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-03-fhir-resource-relationships/">
 <span class="md-ellipsis">
     FHIR Resource Relationships
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_4" id="__nav_7_5_4_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_4" id="__nav_7_2_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_4">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_4">
 <span class="md-nav__icon md-icon"></span>
             FHIR Resource Relationships
           </label>
@@ -630,19 +896,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-04-working-with-fhir-apis/">
 <span class="md-ellipsis">
     Working with FHIR Resource APIs
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_5" id="__nav_7_5_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_5" id="__nav_7_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_5">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_5">
 <span class="md-nav__icon md-icon"></span>
             Working with FHIR Resource APIs
           </label>
@@ -679,19 +945,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/">
 <span class="md-ellipsis">
     Advanced FHIR Concepts
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_6" id="__nav_7_5_6_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_6" id="__nav_7_2_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_6">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_6">
 <span class="md-nav__icon md-icon"></span>
             Advanced FHIR Concepts
           </label>
@@ -707,19 +973,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_7" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-06-smart-auth/">
 <span class="md-ellipsis">
     SMART Authorization
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_7" id="__nav_7_5_7_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_7" id="__nav_7_2_7_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_7_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_7">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_7">
 <span class="md-nav__icon md-icon"></span>
             SMART Authorization
           </label>
@@ -763,19 +1029,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/">
 <span class="md-ellipsis">
     Hands-On Practice
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_8" id="__nav_7_5_8_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_8" id="__nav_7_2_8_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_8_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_8">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_8">
 <span class="md-nav__icon md-icon"></span>
             Hands-On Practice
           </label>
@@ -819,19 +1085,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_5_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2_9" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../eh-dd-08-wrap-up/">
 <span class="md-ellipsis">
     Wrap-Up
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7_5_9" id="__nav_7_5_9_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7_2_9" id="__nav_7_2_9_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_5_9_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_5_9">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_9">
 <span class="md-nav__icon md-icon"></span>
             Wrap-Up
           </label>
@@ -852,6 +1118,48 @@
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../sec_integration/">
+<span class="md-ellipsis">
+    SMART-on-FHIR Integration Resources
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+            SMART-on-FHIR Integration Resources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sec_integration/quick_ref/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration Quick Reference
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sec_integration/smart-fhir-visuals/">
+<span class="md-ellipsis">
+    SMART-on-FHIR and Integration — Visuals
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sec_integration/gloss_ontario_halo/">
+<span class="md-ellipsis">
+    Ontario eHealth &amp; HALO Integration Glossary
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -1130,6 +1438,283 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-fhirs-resource-model">
+<span class="md-ellipsis">
+      Understanding FHIR's Resource Model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-core-resources-every-smart-app-uses">
+<span class="md-ellipsis">
+      The Core Resources Every SMART App Uses
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-patient-resource-the-identity-anchor">
+<span class="md-ellipsis">
+      1. Patient Resource: The Identity Anchor
+    </span>
+</a>
+<nav aria-label="1. Patient Resource: The Identity Anchor" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example">
+<span class="md-ellipsis">
+      Real-World Example
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-observation-resource-the-measurement-workhorse">
+<span class="md-ellipsis">
+      2. Observation Resource: The Measurement Workhorse
+    </span>
+</a>
+<nav aria-label="2. Observation Resource: The Measurement Workhorse" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_1">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-observation-lifecycle">
+<span class="md-ellipsis">
+      The Observation Lifecycle
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-blood-pressure">
+<span class="md-ellipsis">
+      Real-World Example: Blood Pressure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_1">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_1">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-condition-resource-diagnoses-and-problems">
+<span class="md-ellipsis">
+      3. Condition Resource: Diagnoses and Problems
+    </span>
+</a>
+<nav aria-label="3. Condition Resource: Diagnoses and Problems" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_2">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-diabetes">
+<span class="md-ellipsis">
+      Real-World Example: Diabetes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_2">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_2">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-medicationrequest-resource-prescriptions-and-orders">
+<span class="md-ellipsis">
+      4. MedicationRequest Resource: Prescriptions and Orders
+    </span>
+</a>
+<nav aria-label="4. MedicationRequest Resource: Prescriptions and Orders" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_3">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-metformin-prescription">
+<span class="md-ellipsis">
+      Real-World Example: Metformin Prescription
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_3">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_3">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-encounter-resource-the-context-container">
+<span class="md-ellipsis">
+      5. Encounter Resource: The Context Container
+    </span>
+</a>
+<nav aria-label="5. Encounter Resource: The Context Container" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_4">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-office-visit">
+<span class="md-ellipsis">
+      Real-World Example: Office Visit
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_4">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_4">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-allergyintolerance-resource-safety-alerts">
+<span class="md-ellipsis">
+      6. AllergyIntolerance Resource: Safety Alerts
+    </span>
+</a>
+<nav aria-label="6. AllergyIntolerance Resource: Safety Alerts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-represents_5">
+<span class="md-ellipsis">
+      What It Represents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-example-penicillin-allergy">
+<span class="md-ellipsis">
+      Real-World Example: Penicillin Allergy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-elements-to-understand_5">
+<span class="md-ellipsis">
+      Key Elements to Understand
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-app-use-cases_5">
+<span class="md-ellipsis">
+      Common App Use Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-these-resources-connect">
+<span class="md-ellipsis">
+      How These Resources Connect
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-relationships-visualized">
+<span class="md-ellipsis">
+      Resource Relationships Visualized
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reference-of-key-fhir-resources">
+<span class="md-ellipsis">
+      Reference of Key FHIR Resources
+    </span>
+</a>
+<nav aria-label="Reference of Key FHIR Resources" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#1-patient-resource">
 <span class="md-ellipsis">
       1. Patient Resource
@@ -1166,13 +1751,818 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="key-fhir-resources">Key FHIR Resources</h1>
-<h2 id="1-patient-resource">1. Patient Resource</h2>
+<h2 id="understanding-fhirs-resource-model">Understanding FHIR's Resource Model</h2>
+<p>Before diving into specific resources, let's establish a mental model. FHIR resources are like building blocks—atomic units of healthcare data that combine to tell a patient's story. Each resource has:</p>
+<ol>
+<li><strong>A defined structure</strong>: Required and optional fields (cardinality rules)</li>
+<li><strong>Semantic meaning</strong>: Standard codes and terminologies (LOINC, SNOMED CT)</li>
+<li><strong>Relationships</strong>: References to other resources (e.g., Observation → Patient)</li>
+<li><strong>Metadata</strong>: Creation time, last update, version, profile conformance</li>
+</ol>
+<p>Think of resources as JSON objects with healthcare-specific constraints. Unlike arbitrary API responses, FHIR resources must validate against official schemas.</p>
+<h2 id="the-core-resources-every-smart-app-uses">The Core Resources Every SMART App Uses</h2>
+<p>We'll focus on the six resources that appear in nearly every clinical app. Later sections will cover scheduling, documentation, and financial resources, but master these first:</p>
+<hr/>
+<h2 id="1-patient-resource-the-identity-anchor">1. Patient Resource: The Identity Anchor</h2>
+<p><strong>Why it matters</strong>: Every clinical resource references a patient. Understanding Patient is foundational.</p>
+<h3 id="what-it-represents">What It Represents</h3>
+<p>A Patient resource captures:
+- <strong>Demographics</strong>: Name, gender, birth date, death date
+- <strong>Identifiers</strong>: Medical record numbers (MRNs), SSNs, passport numbers
+- <strong>Contact info</strong>: Phone, email, addresses
+- <strong>Relationships</strong>: Emergency contacts, caregivers, related persons
+- <strong>Communication preferences</strong>: Preferred language, interpreter needs
+- <strong>Organization linkage</strong>: Which hospital/clinic manages this record</p>
+<h3 id="real-world-example">Real-World Example</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-10-15T14:22:00Z"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usual"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v2-0203"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medical Record Number"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hospital.example.org"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRN-123456"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"official"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"given"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Amy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"V"</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"telecom"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-555-5555"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amy.shaw@example.com"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"female"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-02-20"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"line"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Apt 4B"</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boston"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MA"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"postalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02101"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Married"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"relationship"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v2-0131"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Contact"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">}],</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"given"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Robert"</span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"telecom"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-555-6666"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobile"</span>
+<span class="w">      </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"communication"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:bcp:47"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"English (United States)"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"preferred"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization/smart-org-123"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Hospital"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-elements-to-understand">Key Elements to Understand</h3>
+<p><strong><code>identifier</code></strong>: Business identifiers are crucial for matching patients across systems. A patient might have:
+- An MRN from each hospital they've visited
+- A national ID (SSN in US, NHS number in UK)
+- Insurance member IDs</p>
+<p>The <code>system</code> URI disambiguates: <code>http://hospital.example.org|MRN-123456</code> vs. <code>http://another-hospital.org|MRN-123456</code> are different people.</p>
+<p><strong><code>name</code></strong>: Can have multiple names with different <code>use</code> values:
+- <code>official</code>: Legal name
+- <code>usual</code>: Preferred name
+- <code>nickname</code>: "Bob" vs. "Robert"
+- <code>maiden</code>: Pre-marriage surname</p>
+<p><strong><code>active</code></strong>: If <code>false</code>, the record is obsolete (perhaps merged with another patient). Apps should warn users.</p>
+<p><strong><code>deceased[x]</code></strong>: Either <code>deceasedBoolean: true</code> or <code>deceasedDateTime: "2023-05-10"</code>. Critical for care pathways and billing.</p>
+<h3 id="common-app-use-cases">Common App Use Cases</h3>
+<ul>
+<li><strong>Demographics display</strong>: Show name, DOB, gender in header</li>
+<li><strong>Contact tracing</strong>: Get phone/email for appointment reminders</li>
+<li><strong>Identity verification</strong>: Match MRN from external system</li>
+<li><strong>Population health</strong>: Filter by age, gender, location for cohort studies</li>
+</ul>
+<hr/>
+<h2 id="2-observation-resource-the-measurement-workhorse">2. Observation Resource: The Measurement Workhorse</h2>
+<p><strong>Why it matters</strong>: Observations represent 80%+ of clinical data: vitals, labs, imaging findings, social history, and more.</p>
+<h3 id="what-it-represents_1">What It Represents</h3>
+<p>An Observation is any measurement or assessment, including:
+- <strong>Vital signs</strong>: Blood pressure, heart rate, temperature, oxygen saturation
+- <strong>Laboratory results</strong>: Glucose, hemoglobin, cholesterol panels
+- <strong>Imaging findings</strong>: "Mass in left lung lobe" from radiology report
+- <strong>Social history</strong>: Smoking status, alcohol use, occupation
+- <strong>Physical findings</strong>: "Murmur heard on auscultation"
+- <strong>Device measurements</strong>: Continuous glucose monitor readings, step counts</p>
+<h3 id="the-observation-lifecycle">The Observation Lifecycle</h3>
+<div class="highlight"><pre><span></span><code>registered → preliminary → final → amended → corrected → entered-in-error
+</code></pre></div>
+<ul>
+<li><strong>registered</strong>: Observation ordered but not yet performed</li>
+<li><strong>preliminary</strong>: Initial result, subject to change (e.g., "pending confirmation")</li>
+<li><strong>final</strong>: Verified result, clinically actionable</li>
+<li><strong>amended</strong>: Final result was changed (with reason)</li>
+<li><strong>entered-in-error</strong>: Observation should be ignored (not deleted, for audit trail)</li>
+</ul>
+<h3 id="real-world-example-blood-pressure">Real-World Example: Blood Pressure</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observation"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bp-20241101"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"final"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/observation-category"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vital-signs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vital Signs"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://loinc.org"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85354-9"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blood pressure panel with all children optional"</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blood Pressure"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/smart-1288992"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amy V. Shaw"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"encounter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter/smart-enc-456"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"effectiveDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-01T10:30:00-05:00"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-01T10:35:00-05:00"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"performer"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/smart-pract-789"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. Sarah Johnson"</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"component"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://loinc.org"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8480-6"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Systolic blood pressure"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"valueQuantity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mmHg"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://unitsofmeasure.org"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mm[Hg]"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://loinc.org"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8462-4"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diastolic blood pressure"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"valueQuantity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">82</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mmHg"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://unitsofmeasure.org"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mm[Hg]"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"interpretation"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Normal"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-elements-to-understand_1">Key Elements to Understand</h3>
+<p><strong><code>category</code></strong>: Classifies observations broadly. Common categories:
+- <code>vital-signs</code>: Temp, BP, pulse, resp rate, SpO2, height, weight
+- <code>laboratory</code>: All lab tests
+- <code>imaging</code>: Radiology reports
+- <code>social-history</code>: Smoking, alcohol, sexual history
+- <code>procedure</code>: Findings from procedures
+- <code>exam</code>: Physical exam findings
+- <code>therapy</code>: Therapeutic interventions</p>
+<p>Apps often filter by category to avoid mixing labs with vitals.</p>
+<p><strong><code>code</code></strong>: What was measured. Uses LOINC codes (gold standard for observations):
+- <code>8867-4</code>: Heart rate
+- <code>29463-7</code>: Body weight
+- <code>2093-3</code>: Total cholesterol
+- <code>72166-2</code>: Tobacco smoking status</p>
+<p><strong><code>value[x]</code></strong>: Polymorphic—can be:
+- <code>valueQuantity</code>: Numeric with unit (e.g., <code>{"value": 98.6, "unit": "°F"}</code>)
+- <code>valueCodeableConcept</code>: Coded answer (e.g., smoking status = "Former smoker")
+- <code>valueString</code>: Free text (e.g., radiology impression)
+- <code>valueBoolean</code>: Yes/no (e.g., "Fever present?")
+- <code>valueRange</code>: Min-max (e.g., blood pressure range over 24 hours)</p>
+<p><strong><code>component</code></strong>: For observations with multiple parts (like blood pressure having systolic and diastolic). Each component has its own <code>code</code> and <code>value</code>.</p>
+<p><strong><code>referenceRange</code></strong>: Normal ranges help interpret results:
+<div class="highlight"><pre><span></span><code><span class="nt">"referenceRange"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">  </span><span class="nt">"low"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mmHg"</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"high"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mmHg"</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Normal range for diastolic BP"</span>
+<span class="p">}]</span>
+</code></pre></div></p>
+<p><strong><code>effectiveDateTime</code> vs. <code>issued</code></strong>:
+- <code>effectiveDateTime</code>: When the observation was made (e.g., blood drawn at 8am)
+- <code>issued</code>: When the result became available (e.g., lab reported at 2pm)</p>
+<p>For vitals, these are usually close. For labs, they can differ by hours or days.</p>
+<h3 id="common-app-use-cases_1">Common App Use Cases</h3>
+<ul>
+<li><strong>Vital signs trends</strong>: Chart BP over time to detect hypertension</li>
+<li><strong>Lab result dashboards</strong>: Show latest glucose, HbA1c, lipid panel</li>
+<li><strong>Alerts</strong>: Flag abnormal results (e.g., potassium &lt;3.5 mEq/L)</li>
+<li><strong>Risk calculators</strong>: Input observations into clinical decision support algorithms</li>
+<li><strong>Research cohorts</strong>: Find patients with specific lab values</li>
+</ul>
+<hr/>
+<h2 id="3-condition-resource-diagnoses-and-problems">3. Condition Resource: Diagnoses and Problems</h2>
+<p><strong>Why it matters</strong>: Conditions drive treatment decisions, billing, and care coordination.</p>
+<h3 id="what-it-represents_2">What It Represents</h3>
+<p>A Condition can be:
+- <strong>Diagnosis</strong>: Confirmed disease (e.g., "Type 2 Diabetes")
+- <strong>Problem list item</strong>: Active issue tracked long-term
+- <strong>Encounter diagnosis</strong>: Reason for a specific visit
+- <strong>Symptom</strong>: Patient-reported complaint not yet diagnosed</p>
+<h3 id="real-world-example-diabetes">Real-World Example: Diabetes</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"condition-diabetes"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"clinicalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/condition-clinical"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"verificationStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/condition-ver-status"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirmed"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/condition-category"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"problem-list-item"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Problem List Item"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255604002"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mild"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44054006"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type 2 diabetes mellitus"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/sid/icd-10-cm"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E11.9"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type 2 diabetes mellitus without complications"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type 2 Diabetes"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/smart-1288992"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"encounter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter/smart-enc-initial-diagnosis"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"onsetDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-15"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"recordedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-15T14:30:00Z"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"recorder"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/smart-pract-789"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"asserter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/smart-pract-789"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient reports family history of diabetes. Confirmed with HbA1c of 7.2%. Started on metformin."</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observation/hba1c-20190315"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HbA1c 7.2%"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-elements-to-understand_2">Key Elements to Understand</h3>
+<p><strong><code>clinicalStatus</code> vs. <code>verificationStatus</code></strong>: Two separate dimensions:</p>
+<p><em>Clinical Status</em> (what's happening to the condition):
+- <code>active</code>: Condition is ongoing
+- <code>recurrence</code>: Condition returned after remission
+- <code>relapse</code>: Condition worsened after improvement
+- <code>inactive</code>: No longer active but part of history
+- <code>remission</code>: Symptoms absent but condition may return
+- <code>resolved</code>: Definitively gone</p>
+<p><em>Verification Status</em> (how certain are we):
+- <code>unconfirmed</code>: Suspected but not verified
+- <code>provisional</code>: Working diagnosis, pending confirmation
+- <code>differential</code>: One of several possibilities being considered
+- <code>confirmed</code>: Definitive diagnosis
+- <code>refuted</code>: Initially suspected but ruled out
+- <code>entered-in-error</code>: Should not have been recorded</p>
+<p><strong><code>category</code></strong>: How the condition is used:
+- <code>problem-list-item</code>: Long-term tracked issues (diabetes, hypertension)
+- <code>encounter-diagnosis</code>: Reason for this specific visit (acute bronchitis)
+- <code>health-concern</code>: Broader concerns beyond diagnoses (e.g., social isolation)</p>
+<p><strong><code>severity</code></strong>: Subjective clinical impression:
+- SNOMED codes: Mild (255604002), Moderate (6736007), Severe (24484000)</p>
+<p><strong><code>code</code></strong>: Uses SNOMED CT or ICD-10-CM:
+- SNOMED: Clinical terms, more granular (e.g., "Type 2 diabetes with neuropathy")
+- ICD-10-CM: Billing codes, required in US for claims</p>
+<p>Apps often receive both and should display SNOMED (more readable).</p>
+<p><strong><code>onset[x]</code> and <code>abatement[x]</code></strong>: When did it start and end?
+- Can be <code>DateTime</code>, <code>Age</code>, <code>Period</code>, or <code>Range</code>
+- Example: <code>onsetAge: {"value": 45, "unit": "years"}</code></p>
+<p><strong><code>evidence</code></strong>: Links to supporting observations (labs, imaging). Critical for:
+- Clinical decision support (verify diagnosis before triggering alerts)
+- Quality measures (diabetes diagnosis requires HbA1c ≥6.5%)
+- Legal documentation (malpractice defense)</p>
+<h3 id="common-app-use-cases_2">Common App Use Cases</h3>
+<ul>
+<li><strong>Problem list display</strong>: Show active chronic conditions</li>
+<li><strong>Care gap analysis</strong>: Identify patients with diabetes who haven't had eye exams</li>
+<li><strong>CDS triggers</strong>: Alert if aspirin not prescribed for heart disease</li>
+<li><strong>Comorbidity scores</strong>: Calculate Charlson index for risk adjustment</li>
+<li><strong>Condition-specific workflows</strong>: Diabetes patients see glucose trends widget</li>
+</ul>
+<hr/>
+<h2 id="4-medicationrequest-resource-prescriptions-and-orders">4. MedicationRequest Resource: Prescriptions and Orders</h2>
+<p><strong>Why it matters</strong>: Medication orders drive pharmacy workflows, adherence tracking, and drug interaction checking.</p>
+<h3 id="what-it-represents_3">What It Represents</h3>
+<p>A MedicationRequest is an order for medication, covering:
+- <strong>Prescriptions</strong>: Outpatient meds picked up at pharmacy
+- <strong>Inpatient orders</strong>: Meds administered in hospital
+- <strong>Proposals</strong>: Suggested meds not yet ordered (e.g., from CDS)</p>
+<h3 id="real-world-example-metformin-prescription">Real-World Example: Metformin Prescription</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MedicationRequest"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medrx-metformin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"intent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/medicationrequest-category"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outpatient"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outpatient"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"medicationCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.nlm.nih.gov/research/umls/rxnorm"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"860975"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metformin hydrochloride 500 MG Oral Tablet"</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Metformin 500mg tablets"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/smart-1288992"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"encounter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter/smart-enc-456"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"authoredOn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-01T10:45:00-05:00"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"requester"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/smart-pract-789"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. Sarah Johnson"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"reasonReference"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition/condition-diabetes"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type 2 Diabetes"</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"dosageInstruction"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Take 1 tablet by mouth twice daily with meals"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"periodUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"when"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"CM"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CV"</span><span class="p">]</span><span class="w">  </span><span class="c1">// with meals</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"route"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26643006"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oral route"</span>
+<span class="w">      </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"doseAndRate"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/dose-rate-type"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ordered"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ordered"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"doseQuantity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tablet"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAB"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"dispenseRequest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"numberOfRepeatsAllowed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tablet"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAB"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"expectedSupplyDuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"days"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://unitsofmeasure.org"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-elements-to-understand_3">Key Elements to Understand</h3>
+<p><strong><code>status</code></strong>: Prescription lifecycle:
+- <code>active</code>: Currently valid, can be filled
+- <code>on-hold</code>: Temporarily suspended (e.g., pending lab results)
+- <code>cancelled</code>: Voided before being filled
+- <code>completed</code>: Course finished
+- <code>stopped</code>: Discontinued early
+- <code>draft</code>: Being prepared, not yet ordered</p>
+<p><strong><code>intent</code></strong>: Why this resource exists:
+- <code>proposal</code>: CDS suggestion ("Consider starting statin")
+- <code>plan</code>: Intended but not yet ordered ("Plan to start antibiotic if culture positive")
+- <code>order</code>: Actual prescription or hospital order
+- <code>instance-order</code>: Specific administration (e.g., "Give dose now")</p>
+<p><strong><code>medication[x]</code></strong>: Can reference a Medication resource or use a CodeableConcept with RxNorm code:
+- RxNorm: US standard for clinical drugs (<code>860975</code> = metformin 500mg tablet)
+- Apps should display both generic and brand names</p>
+<p><strong><code>dosageInstruction</code></strong>: Structured "sig" (dosing instructions):
+- <strong><code>timing</code></strong>: When/how often (e.g., twice daily, every 6 hours, once weekly)
+- <strong><code>route</code></strong>: How given (oral, IV, topical, inhaled)
+- <strong><code>doseQuantity</code></strong>: Amount per dose
+- <strong><code>maxDosePerPeriod</code></strong>: Safety limit (e.g., max 4g acetaminophen per day)</p>
+<p>The <code>text</code> field contains human-readable sig: "Take 1 tablet by mouth twice daily with meals."</p>
+<p><strong><code>dispenseRequest</code></strong>: Pharmacy instructions:
+- <code>numberOfRepeatsAllowed</code>: How many refills
+- <code>quantity</code>: Total tablets/pills to dispense
+- <code>expectedSupplyDuration</code>: How long supply should last (used to detect early refills)</p>
+<p><strong><code>reasonReference</code></strong>: Links to Condition or Observation justifying the med. Crucial for:
+- Prior authorization (insurance requires diagnosis code)
+- Drug utilization review (is this appropriate for the condition?)
+- Audit trail (why was opioid prescribed?)</p>
+<h3 id="common-app-use-cases_3">Common App Use Cases</h3>
+<ul>
+<li><strong>Medication list</strong>: Display active meds with dosing</li>
+<li><strong>Refill reminders</strong>: Alert when supply duration expires</li>
+<li><strong>Drug interaction checking</strong>: Cross-check new order against active meds</li>
+<li><strong>Adherence tracking</strong>: Compare dispense dates to expected usage</li>
+<li><strong>Deprescribing tools</strong>: Identify potentially inappropriate meds in elderly</li>
+</ul>
+<hr/>
+<h2 id="5-encounter-resource-the-context-container">5. Encounter Resource: The Context Container</h2>
+<p><strong>Why it matters</strong>: Encounters anchor clinical events to specific visits, admissions, or telehealth sessions.</p>
+<h3 id="what-it-represents_4">What It Represents</h3>
+<p>An Encounter is any interaction between patient and provider:
+- <strong>Outpatient visit</strong>: Office appointment, urgent care
+- <strong>Inpatient admission</strong>: Hospital stay
+- <strong>Emergency department</strong>: ER visit
+- <strong>Telehealth session</strong>: Video visit
+- <strong>Home health</strong>: In-home nursing visit
+- <strong>Virtual</strong>: Phone call, secure message</p>
+<h3 id="real-world-example-office-visit">Real-World Example: Office Visit</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-enc-456"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"finished"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"class"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-ActCode"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMB"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ambulatory"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185345009"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Follow-up visit"</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diabetes follow-up"</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-ActPriority"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Routine"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/smart-1288992"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-ParticipationType"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PPRF"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Primary Performer"</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">      </span><span class="p">}],</span>
+<span class="w">      </span><span class="nt">"individual"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/smart-pract-789"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. Sarah Johnson"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-01T10:00:00-05:00"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-01T11:15:00-05:00"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44054006"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type 2 diabetes mellitus"</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diabetes management"</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"diagnosis"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition/condition-diabetes"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/diagnosis-role"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admission diagnosis"</span>
+<span class="w">      </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Location/smart-location-clinic"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main Street Clinic, Room 3"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"serviceProvider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization/smart-org-123"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Hospital"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-elements-to-understand_4">Key Elements to Understand</h3>
+<p><strong><code>status</code></strong>: Encounter state machine:
+- <code>planned</code>: Scheduled but not started
+- <code>arrived</code>: Patient checked in
+- <code>in-progress</code>: Visit ongoing
+- <code>finished</code>: Completed normally
+- <code>cancelled</code>: Didn't happen
+- <code>entered-in-error</code>: Should be ignored</p>
+<p><strong><code>class</code></strong>: Setting of care:
+- <code>AMB</code> (ambulatory): Outpatient
+- <code>EMER</code> (emergency): ER
+- <code>IMP</code> (inpatient): Hospital admission
+- <code>HH</code> (home health): Home visit
+- <code>VR</code> (virtual): Telehealth</p>
+<p><strong><code>type</code></strong>: Specific visit type (more granular than class):
+- Follow-up, initial consult, pre-op, post-op, etc.
+- Uses SNOMED or local codes</p>
+<p><strong><code>period</code></strong>: Start and end times. For inpatient encounters, this spans days. For outpatient, usually 15-60 minutes.</p>
+<p><strong><code>reasonCode</code> vs. <code>diagnosis</code></strong>:
+- <code>reasonCode</code>: Why the visit was scheduled (chief complaint)
+- <code>diagnosis</code>: What was found/addressed (can be multiple)</p>
+<p><strong><code>participant</code></strong>: Who was involved:
+- Primary performer (main clinician)
+- Consultants
+- Residents/students
+- Interpreters</p>
+<p><strong><code>location</code></strong>: Physical or virtual location. Can change during encounter (e.g., ER → ICU).</p>
+<h3 id="common-app-use-cases_4">Common App Use Cases</h3>
+<ul>
+<li><strong>Context-aware dashboards</strong>: Show observations from current encounter only</li>
+<li><strong>Visit summaries</strong>: Generate after-visit summary document</li>
+<li><strong>Billing compliance</strong>: Ensure all procedures link to valid encounter</li>
+<li><strong>Care coordination</strong>: Alert primary care when specialist encounter occurs</li>
+<li><strong>Schedule integration</strong>: Show upcoming/past appointments</li>
+</ul>
+<hr/>
+<h2 id="6-allergyintolerance-resource-safety-alerts">6. AllergyIntolerance Resource: Safety Alerts</h2>
+<p><strong>Why it matters</strong>: Allergy information prevents adverse drug events—the #1 preventable patient harm.</p>
+<h3 id="what-it-represents_5">What It Represents</h3>
+<p>Documents allergies and intolerances to:
+- <strong>Medications</strong>: Penicillin, aspirin, opioids
+- <strong>Foods</strong>: Peanuts, shellfish, dairy
+- <strong>Environmental</strong>: Latex, pollen, pet dander
+- <strong>Biologicals</strong>: Vaccines, blood products</p>
+<h3 id="real-world-example-penicillin-allergy">Real-World Example: Penicillin Allergy</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AllergyIntolerance"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allergy-pcn"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"clinicalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"verificationStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirmed"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allergy"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"medication"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"criticality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"high"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.nlm.nih.gov/research/umls/rxnorm"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7980"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Penicillin"</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Penicillin"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/smart-1288992"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"onsetDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1995-06-12"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"recordedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-15T14:30:00Z"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"recorder"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/smart-pract-789"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"reaction"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"substance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.nlm.nih.gov/research/umls/rxnorm"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7980"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Penicillin"</span>
+<span class="w">      </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"manifestation"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"271807003"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skin rash"</span>
+<span class="w">      </span><span class="p">}],</span>
+<span class="w">      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hives and rash"</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"severe"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"exposureRoute"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26643006"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oral route"</span>
+<span class="w">      </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient developed hives within 30 minutes of taking oral penicillin. Required antihistamine treatment."</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-elements-to-understand_5">Key Elements to Understand</h3>
+<p><strong><code>type</code></strong>: Nature of the reaction:
+- <code>allergy</code>: Immune-mediated (IgE, T-cell)
+- <code>intolerance</code>: Non-immune (side effect, toxicity)</p>
+<p><strong><code>category</code></strong>: What class of substance:
+- <code>medication</code>, <code>food</code>, <code>environment</code>, <code>biologic</code></p>
+<p><strong><code>criticality</code></strong>: Risk severity:
+- <code>low</code>: Annoyance (mild nausea)
+- <code>high</code>: Life-threatening (anaphylaxis)
+- <code>unable-to-assess</code>: Unknown risk</p>
+<p><strong><code>reaction</code></strong>: Detailed reaction history:
+- <strong><code>manifestation</code></strong>: Symptoms (rash, swelling, anaphylaxis)
+- <strong><code>severity</code></strong>: mild, moderate, severe
+- <strong><code>exposureRoute</code></strong>: How substance entered body</p>
+<h3 id="common-app-use-cases_5">Common App Use Cases</h3>
+<ul>
+<li><strong>CPOE alerts</strong>: Block orders for contraindicated drugs</li>
+<li><strong>Patient safety summaries</strong>: Display prominently in header</li>
+<li><strong>Drug interaction checking</strong>: Cross-reference with MedicationRequest</li>
+<li><strong>Allergy verification</strong>: Prompt clinicians to confirm on each visit</li>
+</ul>
+<hr/>
+<h2 id="how-these-resources-connect">How These Resources Connect</h2>
+<p>Imagine our patient Amy Shaw's visit:</p>
+<ol>
+<li><strong>Patient</strong> (<code>smart-1288992</code>): Amy's demographics</li>
+<li><strong>Encounter</strong> (<code>smart-enc-456</code>): Her diabetes follow-up visit on Nov 1</li>
+<li><strong>Condition</strong> (<code>condition-diabetes</code>): Type 2 diabetes diagnosis → references Patient</li>
+<li><strong>Observation</strong> (<code>bp-20241101</code>): Blood pressure taken during encounter → references both Patient and Encounter</li>
+<li><strong>MedicationRequest</strong> (<code>medrx-metformin</code>): Metformin prescription → references Patient, Encounter, and Condition (as reason)</li>
+<li><strong>AllergyIntolerance</strong> (<code>allergy-pcn</code>): Penicillin allergy → references Patient</li>
+</ol>
+<p>These resources form a web of references that tell Amy's clinical story. Apps navigate these references to build comprehensive views.</p>
+<h2 id="resource-relationships-visualized">Resource Relationships Visualized</h2>
+<div class="mermaid">graph TD
+    Patient[Patient: Amy Shaw]
+    Encounter[Encounter: Nov 1 Visit]
+    Condition[Condition: Type 2 Diabetes]
+    Observation[Observation: BP 128/82]
+    MedRequest[MedicationRequest: Metformin]
+    Allergy[AllergyIntolerance: Penicillin]
+    Practitioner[Practitioner: Dr. Johnson]
+
+    Encounter --&gt;|subject| Patient
+    Condition --&gt;|subject| Patient
+    Observation --&gt;|subject| Patient
+    MedRequest --&gt;|subject| Patient
+    Allergy --&gt;|patient| Patient
+
+    Observation --&gt;|encounter| Encounter
+    MedRequest --&gt;|encounter| Encounter
+    Condition --&gt;|encounter| Encounter
+
+    MedRequest --&gt;|reasonReference| Condition
+    Condition --&gt;|evidence| Observation
+
+    Encounter --&gt;|participant| Practitioner
+    Observation --&gt;|performer| Practitioner
+    MedRequest --&gt;|requester| Practitioner
+</div>
+<h2 id="reference-of-key-fhir-resources">Reference of Key FHIR Resources</h2>
+<h3 id="1-patient-resource">1. Patient Resource</h3>
 <p>The Patient resource is the cornerstone of FHIR, representing demographics and administrative information.</p>
 <p><strong>Key Elements:</strong></p>
 <ul>
@@ -1185,7 +2575,7 @@
 <li><code>contact</code>: Emergency contacts</li>
 <li><code>communication</code>: Languages</li>
 </ul>
-<h2 id="2-observation-resource">2. Observation Resource</h2>
+<h3 id="2-observation-resource">2. Observation Resource</h3>
 <p>Observations represent measurements, assessments, and findings.</p>
 <p><strong>Categories:</strong></p>
 <ul>
@@ -1236,7 +2626,7 @@
     Reference --&gt; RefLow[low]
     Reference --&gt; RefHigh[high]
 </div>
-<h2 id="3-condition-resource">3. Condition Resource</h2>
+<h3 id="3-condition-resource">3. Condition Resource</h3>
 <p>Conditions represent diagnoses, problems, or clinical conditions.</p>
 <p><strong>Key Elements:</strong></p>
 <ul>
@@ -1250,7 +2640,7 @@
 <li><code>onset[x]</code>: When condition began</li>
 <li><code>abatement[x]</code>: When condition resolved</li>
 </ul>
-<h2 id="4-medicationrequest-resource">4. MedicationRequest Resource</h2>
+<h3 id="4-medicationrequest-resource">4. MedicationRequest Resource</h3>
 <p>Represents an order or request for medication.</p>
 <p><strong>Key Elements:</strong></p>
 <ul>
@@ -1287,7 +2677,7 @@
     Practitioner -.-&gt;|performer| MD
     Practitioner -.-&gt;|performer| MA
 </div>
-<h2 id="5-encounter-resource">5. Encounter Resource</h2>
+<h3 id="5-encounter-resource">5. Encounter Resource</h3>
 <p>Represents interactions between patient and healthcare provider.</p>
 <p><strong>Types:</strong></p>
 <ul>
@@ -1309,6 +2699,8 @@
 <li><code>diagnosis</code>: Diagnoses relevant to encounter</li>
 <li><code>hospitalization</code>: Details if admitted</li>
 </ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that you understand the core resources, let's explore how they use standardized data types and coding systems to ensure semantic interoperability.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
