@@ -12,7 +12,6 @@ graph TD
     D --> B;
 ```
 
-
 ## PlantUML
 
 <!-- diagram-a11y: title="puml (PlantUML) diagram title" desc="puml (PlantUML) diagram description inected by accessibility-injector.py; courtesy of Ler/GenAI swarm." -->

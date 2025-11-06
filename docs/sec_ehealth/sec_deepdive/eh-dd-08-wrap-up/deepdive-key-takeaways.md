@@ -43,9 +43,9 @@ The interactive React application demonstrates:
 
 ### Resources for Further Learning
 
-* SMART App Launch:[http://hl7.org/fhir/smart-app-launch/](http://hl7.org/fhir/smart-app-launch/)
-* FHIR R4 Specification:[http://hl7.org/fhir/R4/](http://hl7.org/fhir/R4/)
-* US Core Implementation Guide:[http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/)
-* SMART Health IT Sandbox:[https://launch.smarthealthit.org](https://launch.smarthealthit.org)
-
-Code examples (JavaScript and Python) and the interactive application should serve as a foundation to start building SMART-on-FHIR applications that integrate with healthcare systems.
+* SMART App Launch Framework (Official HL7 specification): <br>[http://hl7.org/fhir/smart-app-launch/](http://hl7.org/fhir/smart-app-launch/)
+* FHIR R4 Specification: <br>[http://hl7.org/fhir/R4/](http://hl7.org/fhir/R4/)
+* US Core Implementation Guide: <br>[http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/)
+* Mobile app security guidance (OAuth 2.0 for Native Apps (RFC 8252): <br>[https://tools.ietf.org/html/rfc8252](https://tools.ietf.org/html/rfc8252)
+* SMART Health IT Sandbox: <br>[https://launch.smarthealthit.org](https://launch.smarthealthit.org)
+* Threat models and mitigations (FHIR Security Documentation): <br>[https://www.hl7.org/fhir/security.html](https://www.hl7.org/fhir/security.html)

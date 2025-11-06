@@ -22,7 +22,9 @@ We'll focus on the six resources that appear in nearly every clinical app. Later
 **Why it matters**: Every clinical resource references a patient. Understanding Patient is foundational.
 
 ### What It Represents
+
 A Patient resource captures:
+
 - **Demographics**: Name, gender, birth date, death date
 - **Identifiers**: Medical record numbers (MRNs), SSNs, passport numbers
 - **Contact info**: Phone, email, addresses
@@ -31,6 +33,7 @@ A Patient resource captures:
 - **Organization linkage**: Which hospital/clinic manages this record
 
 ### Real-World Example
+
 ```json
 {
   "resourceType": "Patient",
@@ -134,6 +137,7 @@ A Patient resource captures:
 ### Key Elements to Understand
 
 **`identifier`**: Business identifiers are crucial for matching patients across systems. A patient might have:
+
 - An MRN from each hospital they've visited
 - A national ID (SSN in US, NHS number in UK)
 - Insurance member IDs
@@ -141,6 +145,7 @@ A Patient resource captures:
 The `system` URI disambiguates: `http://hospital.example.org|MRN-123456` vs. `http://another-hospital.org|MRN-123456` are different people.
 
 **`name`**: Can have multiple names with different `use` values:
+
 - `official`: Legal name
 - `usual`: Preferred name
 - `nickname`: "Bob" vs. "Robert"
@@ -151,6 +156,7 @@ The `system` URI disambiguates: `http://hospital.example.org|MRN-123456` vs. `ht
 **`deceased[x]`**: Either `deceasedBoolean: true` or `deceasedDateTime: "2023-05-10"`. Critical for care pathways and billing.
 
 ### Common App Use Cases
+
 - **Demographics display**: Show name, DOB, gender in header
 - **Contact tracing**: Get phone/email for appointment reminders
 - **Identity verification**: Match MRN from external system
@@ -163,7 +169,9 @@ The `system` URI disambiguates: `http://hospital.example.org|MRN-123456` vs. `ht
 **Why it matters**: Observations represent 80%+ of clinical data: vitals, labs, imaging findings, social history, and more.
 
 ### What It Represents
+
 An Observation is any measurement or assessment, including:
+
 - **Vital signs**: Blood pressure, heart rate, temperature, oxygen saturation
 - **Laboratory results**: Glucose, hemoglobin, cholesterol panels
 - **Imaging findings**: "Mass in left lung lobe" from radiology report
@@ -184,6 +192,7 @@ registered → preliminary → final → amended → corrected → entered-in-er
 - **entered-in-error**: Observation should be ignored (not deleted, for audit trail)
 
 ### Real-World Example: Blood Pressure
+
 ```json
 {
   "resourceType": "Observation",
@@ -262,6 +271,7 @@ registered → preliminary → final → amended → corrected → entered-in-er
 ### Key Elements to Understand
 
 **`category`**: Classifies observations broadly. Common categories:
+
 - `vital-signs`: Temp, BP, pulse, resp rate, SpO2, height, weight
 - `laboratory`: All lab tests
 - `imaging`: Radiology reports
@@ -273,12 +283,14 @@ registered → preliminary → final → amended → corrected → entered-in-er
 Apps often filter by category to avoid mixing labs with vitals.
 
 **`code`**: What was measured. Uses LOINC codes (gold standard for observations):
+
 - `8867-4`: Heart rate
 - `29463-7`: Body weight
 - `2093-3`: Total cholesterol
 - `72166-2`: Tobacco smoking status
 
 **`value[x]`**: Polymorphic—can be:
+
 - `valueQuantity`: Numeric with unit (e.g., `{"value": 98.6, "unit": "°F"}`)
 - `valueCodeableConcept`: Coded answer (e.g., smoking status = "Former smoker")
 - `valueString`: Free text (e.g., radiology impression)
@@ -288,6 +300,7 @@ Apps often filter by category to avoid mixing labs with vitals.
 **`component`**: For observations with multiple parts (like blood pressure having systolic and diastolic). Each component has its own `code` and `value`.
 
 **`referenceRange`**: Normal ranges help interpret results:
+
 ```json
 "referenceRange": [{
   "low": {"value": 60, "unit": "mmHg"},
@@ -297,12 +310,14 @@ Apps often filter by category to avoid mixing labs with vitals.
 ```
 
 **`effectiveDateTime` vs. `issued`**:
+
 - `effectiveDateTime`: When the observation was made (e.g., blood drawn at 8am)
 - `issued`: When the result became available (e.g., lab reported at 2pm)
 
 For vitals, these are usually close. For labs, they can differ by hours or days.
 
 ### Common App Use Cases
+
 - **Vital signs trends**: Chart BP over time to detect hypertension
 - **Lab result dashboards**: Show latest glucose, HbA1c, lipid panel
 - **Alerts**: Flag abnormal results (e.g., potassium <3.5 mEq/L)
@@ -316,13 +331,16 @@ For vitals, these are usually close. For labs, they can differ by hours or days.
 **Why it matters**: Conditions drive treatment decisions, billing, and care coordination.
 
 ### What It Represents
+
 A Condition can be:
+
 - **Diagnosis**: Confirmed disease (e.g., "Type 2 Diabetes")
 - **Problem list item**: Active issue tracked long-term
 - **Encounter diagnosis**: Reason for a specific visit
 - **Symptom**: Patient-reported complaint not yet diagnosed
 
 ### Real-World Example: Diabetes
+
 ```json
 {
   "resourceType": "Condition",
@@ -401,6 +419,7 @@ A Condition can be:
 **`clinicalStatus` vs. `verificationStatus`**: Two separate dimensions:
 
 *Clinical Status* (what's happening to the condition):
+
 - `active`: Condition is ongoing
 - `recurrence`: Condition returned after remission
 - `relapse`: Condition worsened after improvement
@@ -409,6 +428,7 @@ A Condition can be:
 - `resolved`: Definitively gone
 
 *Verification Status* (how certain are we):
+
 - `unconfirmed`: Suspected but not verified
 - `provisional`: Working diagnosis, pending confirmation
 - `differential`: One of several possibilities being considered
@@ -417,29 +437,35 @@ A Condition can be:
 - `entered-in-error`: Should not have been recorded
 
 **`category`**: How the condition is used:
+
 - `problem-list-item`: Long-term tracked issues (diabetes, hypertension)
 - `encounter-diagnosis`: Reason for this specific visit (acute bronchitis)
 - `health-concern`: Broader concerns beyond diagnoses (e.g., social isolation)
 
 **`severity`**: Subjective clinical impression:
+
 - SNOMED codes: Mild (255604002), Moderate (6736007), Severe (24484000)
 
 **`code`**: Uses SNOMED CT or ICD-10-CM:
+
 - SNOMED: Clinical terms, more granular (e.g., "Type 2 diabetes with neuropathy")
 - ICD-10-CM: Billing codes, required in US for claims
 
 Apps often receive both and should display SNOMED (more readable).
 
 **`onset[x]` and `abatement[x]`**: When did it start and end?
+
 - Can be `DateTime`, `Age`, `Period`, or `Range`
 - Example: `onsetAge: {"value": 45, "unit": "years"}`
 
 **`evidence`**: Links to supporting observations (labs, imaging). Critical for:
+
 - Clinical decision support (verify diagnosis before triggering alerts)
 - Quality measures (diabetes diagnosis requires HbA1c ≥6.5%)
 - Legal documentation (malpractice defense)
 
 ### Common App Use Cases
+
 - **Problem list display**: Show active chronic conditions
 - **Care gap analysis**: Identify patients with diabetes who haven't had eye exams
 - **CDS triggers**: Alert if aspirin not prescribed for heart disease
@@ -453,12 +479,15 @@ Apps often receive both and should display SNOMED (more readable).
 **Why it matters**: Medication orders drive pharmacy workflows, adherence tracking, and drug interaction checking.
 
 ### What It Represents
+
 A MedicationRequest is an order for medication, covering:
+
 - **Prescriptions**: Outpatient meds picked up at pharmacy
 - **Inpatient orders**: Meds administered in hospital
 - **Proposals**: Suggested meds not yet ordered (e.g., from CDS)
 
 ### Real-World Example: Metformin Prescription
+
 ```json
 {
   "resourceType": "MedicationRequest",
@@ -550,6 +579,7 @@ A MedicationRequest is an order for medication, covering:
 ### Key Elements to Understand
 
 **`status`**: Prescription lifecycle:
+
 - `active`: Currently valid, can be filled
 - `on-hold`: Temporarily suspended (e.g., pending lab results)
 - `cancelled`: Voided before being filled
@@ -558,16 +588,19 @@ A MedicationRequest is an order for medication, covering:
 - `draft`: Being prepared, not yet ordered
 
 **`intent`**: Why this resource exists:
+
 - `proposal`: CDS suggestion ("Consider starting statin")
 - `plan`: Intended but not yet ordered ("Plan to start antibiotic if culture positive")
 - `order`: Actual prescription or hospital order
 - `instance-order`: Specific administration (e.g., "Give dose now")
 
 **`medication[x]`**: Can reference a Medication resource or use a CodeableConcept with RxNorm code:
+
 - RxNorm: US standard for clinical drugs (`860975` = metformin 500mg tablet)
 - Apps should display both generic and brand names
 
 **`dosageInstruction`**: Structured "sig" (dosing instructions):
+
 - **`timing`**: When/how often (e.g., twice daily, every 6 hours, once weekly)
 - **`route`**: How given (oral, IV, topical, inhaled)
 - **`doseQuantity`**: Amount per dose
@@ -576,16 +609,19 @@ A MedicationRequest is an order for medication, covering:
 The `text` field contains human-readable sig: "Take 1 tablet by mouth twice daily with meals."
 
 **`dispenseRequest`**: Pharmacy instructions:
+
 - `numberOfRepeatsAllowed`: How many refills
 - `quantity`: Total tablets/pills to dispense
 - `expectedSupplyDuration`: How long supply should last (used to detect early refills)
 
 **`reasonReference`**: Links to Condition or Observation justifying the med. Crucial for:
+
 - Prior authorization (insurance requires diagnosis code)
 - Drug utilization review (is this appropriate for the condition?)
 - Audit trail (why was opioid prescribed?)
 
 ### Common App Use Cases
+
 - **Medication list**: Display active meds with dosing
 - **Refill reminders**: Alert when supply duration expires
 - **Drug interaction checking**: Cross-check new order against active meds
@@ -599,7 +635,9 @@ The `text` field contains human-readable sig: "Take 1 tablet by mouth twice dail
 **Why it matters**: Encounters anchor clinical events to specific visits, admissions, or telehealth sessions.
 
 ### What It Represents
+
 An Encounter is any interaction between patient and provider:
+
 - **Outpatient visit**: Office appointment, urgent care
 - **Inpatient admission**: Hospital stay
 - **Emergency department**: ER visit
@@ -608,6 +646,7 @@ An Encounter is any interaction between patient and provider:
 - **Virtual**: Phone call, secure message
 
 ### Real-World Example: Office Visit
+
 ```json
 {
   "resourceType": "Encounter",
@@ -692,6 +731,7 @@ An Encounter is any interaction between patient and provider:
 ### Key Elements to Understand
 
 **`status`**: Encounter state machine:
+
 - `planned`: Scheduled but not started
 - `arrived`: Patient checked in
 - `in-progress`: Visit ongoing
@@ -700,6 +740,7 @@ An Encounter is any interaction between patient and provider:
 - `entered-in-error`: Should be ignored
 
 **`class`**: Setting of care:
+
 - `AMB` (ambulatory): Outpatient
 - `EMER` (emergency): ER
 - `IMP` (inpatient): Hospital admission
@@ -707,16 +748,19 @@ An Encounter is any interaction between patient and provider:
 - `VR` (virtual): Telehealth
 
 **`type`**: Specific visit type (more granular than class):
+
 - Follow-up, initial consult, pre-op, post-op, etc.
 - Uses SNOMED or local codes
 
 **`period`**: Start and end times. For inpatient encounters, this spans days. For outpatient, usually 15-60 minutes.
 
 **`reasonCode` vs. `diagnosis`**:
+
 - `reasonCode`: Why the visit was scheduled (chief complaint)
 - `diagnosis`: What was found/addressed (can be multiple)
 
 **`participant`**: Who was involved:
+
 - Primary performer (main clinician)
 - Consultants
 - Residents/students
@@ -725,6 +769,7 @@ An Encounter is any interaction between patient and provider:
 **`location`**: Physical or virtual location. Can change during encounter (e.g., ER → ICU).
 
 ### Common App Use Cases
+
 - **Context-aware dashboards**: Show observations from current encounter only
 - **Visit summaries**: Generate after-visit summary document
 - **Billing compliance**: Ensure all procedures link to valid encounter
@@ -738,13 +783,16 @@ An Encounter is any interaction between patient and provider:
 **Why it matters**: Allergy information prevents adverse drug events—the #1 preventable patient harm.
 
 ### What It Represents
+
 Documents allergies and intolerances to:
+
 - **Medications**: Penicillin, aspirin, opioids
 - **Foods**: Peanuts, shellfish, dairy
 - **Environmental**: Latex, pollen, pet dander
 - **Biologicals**: Vaccines, blood products
 
 ### Real-World Example: Penicillin Allergy
+
 ```json
 {
   "resourceType": "AllergyIntolerance",
@@ -816,23 +864,28 @@ Documents allergies and intolerances to:
 ### Key Elements to Understand
 
 **`type`**: Nature of the reaction:
+
 - `allergy`: Immune-mediated (IgE, T-cell)
 - `intolerance`: Non-immune (side effect, toxicity)
 
 **`category`**: What class of substance:
+
 - `medication`, `food`, `environment`, `biologic`
 
 **`criticality`**: Risk severity:
+
 - `low`: Annoyance (mild nausea)
 - `high`: Life-threatening (anaphylaxis)
 - `unable-to-assess`: Unknown risk
 
 **`reaction`**: Detailed reaction history:
+
 - **`manifestation`**: Symptoms (rash, swelling, anaphylaxis)
 - **`severity`**: mild, moderate, severe
 - **`exposureRoute`**: How substance entered body
 
 ### Common App Use Cases
+
 - **CPOE alerts**: Block orders for contraindicated drugs
 - **Patient safety summaries**: Display prominently in header
 - **Drug interaction checking**: Cross-reference with MedicationRequest
@@ -1039,4 +1092,10 @@ Represents interactions between patient and healthcare provider.
 
 ## Next Steps
 
-Now that you understand the core resources, let's explore how they use standardized data types and coding systems to ensure semantic interoperability.
+This completes the Foundations section. We covered:
+
+- ✅ what *SMART*, *FHIR*, and *SMART-on-FHIR* are
+- ✅ the framework's architecture
+- ✅ what FHIR *resources* are
+
+Now, let's explore how FHIR resources use standardized data types and *coding systems* to ensure semantic interoperability.

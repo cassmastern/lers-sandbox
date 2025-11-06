@@ -1,6 +1,6 @@
 # GenAI Landscape in 2025
 
->Primer/presentation material.
+> Primer/presentation material.
 
 The Generative Artificial Intelligence (GenAI) landscape has evolved into a complex ecosystem of foundation models, specialized architectures, infrastructure components, and deployment patterns. This primer provides a comprehensive view of the current state, key technologies, and architectural patterns that define the modern GenAI stack.
 
@@ -9,20 +9,20 @@ The Generative Artificial Intelligence (GenAI) landscape has evolved into a comp
 ```mermaid
 flowchart TB
   subgraph Foundation_Models["Foundation Models"]
-    LLM["Large Language Models"]
-    MM["Multimodal Models"]
-    CGM["Code Generation Models"]
-    IGM["Image Generation Models"]
-    ASM["Audio/Speech Models"]
-    VGM["Video Generation Models"]
+    LLM["LLMs"]
+    MM["Multimodal<br> Models"]
+    CGM["Code Generation<br> Models"]
+    IGM["Image Generation<br> Models"]
+    ASM["Audio/Speech<br> Models"]
+    VGM["Video Generation<br> Models"]
   end
 
   subgraph Model_Architectures["Model Architectures"]
     TRANS["Transformer"]
-    DIFF["Diffusion Models"]
-    VAE["VAE/GAN Hybrids"]
-    SSM["State Space Models"]
-    MOE["Mixture of Experts"]
+    DIFF["Diffusion<br> Models"]
+    VAE["VAE/GAN<br> Hybrids"]
+    SSM["State Space<br> Models"]
+    MOE["Mixture of<br> Experts"]
   end
 
   subgraph Training_Approaches["Training Approaches"]
@@ -30,7 +30,7 @@ flowchart TB
     FT["Fine-tuning"]
     RLHF["RLHF"]
     CAI["Constitutional AI"]
-    ICL["In-Context Learning"]
+    ICL["In-Context<br> Learning"]
   end
 
   LLM --> TRANS
@@ -64,14 +64,14 @@ flowchart TB
     GPU["GPU Clusters"]
     TPU["TPU Pods"]
     ACCEL["AI Accelerators"]
-    HSI["High-Speed Interconnects"]
+    HSI["High-Speed<br> Interconnects"]
   end
 
-  subgraph System_Software["System Software"]
+  subgraph System_Software["System<br> Software"]
     CUDA["CUDA/ROCm"]
     DIST["Distributed Training"]
-    MP["Model Parallelism"]
-    MEM["Memory Management"]
+    MP["Model<br> Parallelism"]
+    MEM["Memory<br> Management"]
   end
 
   subgraph ML_Frameworks["ML Frameworks"]
@@ -88,10 +88,10 @@ flowchart TB
     WB["Weights & Biases"]
   end
 
-  subgraph Inference_Serving["Inference Serving"]
+  subgraph Inference_Serving["Inference<br> Serving"]
     VLLM["vLLM"]
     TRT["TensorRT-LLM"]
-    TGI["Text Generation Inference"]
+    TGI["Text Generation<br> Inference"]
     TRITON["Triton"]
   end
 
@@ -117,7 +117,7 @@ flowchart TB
 **Distributed Training** frameworks like DeepSpeed, FairScale, and PyTorch FSDP enable model training across clusters. Key techniques include:
 
 - **Pipeline Parallelism**: Splitting models across devices by layers
-- **Tensor Parallelism**: Distributing individual operations across devices  
+- **Tensor Parallelism**: Distributing individual operations across devices
 - **Data Parallelism**: Replicating models with different data batches
 - **ZeRO (Zero Redundancy Optimizer)**: Memory-efficient parameter sharding
 
@@ -136,23 +136,23 @@ flowchart TB
 
   subgraph Inference_Optimization["Inference Optimization"]
     KV["KV Caching"]
-    SPEC["Speculative Decoding"]
-    CB["Continuous Batching"]
+    SPEC["Speculative<br> Decoding"]
+    CB["Continuous<br> Batching"]
     PA["PagedAttention"]
   end
 
   subgraph Deployment_Patterns["Deployment Patterns"]
-    API["Model Serving APIs"]
-    EDGE["Edge Deployment"]
-    FED["Federated Inference"]
-    HYBRID["Hybrid Cloud"]
+    API["Model Serving<br> APIs"]
+    EDGE["Edge<br> Deployment"]
+    FED["Federated<br> Inference"]
+    HYBRID["Hybrid<br> Cloud"]
   end
 
   subgraph Performance_Monitoring["Performance Monitoring"]
-    LAT["Latency Tracking"]
-    THRU["Throughput Metrics"]
-    COST["Cost Optimization"]
-    QUAL["Quality Monitoring"]
+    LAT["Latency<br> Tracking"]
+    THRU["Throughput<br> Metrics"]
+    COST["Cost<br> Optimization"]
+    QUAL["Quality<br> Monitoring"]
   end
 
   QUANT --> KV
@@ -182,120 +182,182 @@ flowchart TB
 
 ## Application Architecture Patterns
 
+Modern AI systems often combine multiple architectural patterns to achieve robust, scalable, and intelligent behavior.
+
+The diagram below organizes these into **four main domains** — *Retrieval-Augmented Generation (RAG)*, *Agent Frameworks*, *Fine-Tuning Pipelines*, and *Production Systems* — each representing a complementary layer in the lifecycle of intelligent applications.
+
 ```mermaid
-flowchart TB
-  subgraph RAG["Retrieval Augmented Generation"]
-    VDB["Vector Databases"]
-    EMB["Embedding Models"]
-    RET["Retrieval Pipeline"]
-    FUSION["Context Fusion"]
+flowchart LR
+  subgraph RAG["Retrieval-Augmented Generation (RAG)"]
+    EMB["Embedding<br>Models"]
+    VDB["Vector<br>Databases"]
+    RET["Retrieval<br>Pipeline"]
+    FUSION["Context<br>Fusion Layer"]
+    EMB --> VDB --> RET --> FUSION
   end
 
   subgraph Agents["Agent Frameworks"]
-    PLAN["Planning"]
-    TOOLS["Tool Use"]
-    MEMSYS["Memory Systems"]
-    MAC["Multi-Agent Coordination"]
+    PLAN["Planning &<br>Reasoning"]
+    TOOLS["Tool Use<br>(APIs, Functions)"]
+    MEMSYS["Memory<br>Subsystems"]
+    MAC["Multi-Agent<br>Coordination"]
+    PLAN --> TOOLS --> MEMSYS --> MAC
   end
 
-  subgraph Fine_Tuning["Fine-tuning Pipelines"]
-    DATA["Dataset Preparation"]
-    TRAIN["Training Infrastructure"]
-    EVAL["Evaluation Frameworks"]
-    REG["Model Registry"]
+  subgraph Fine_Tuning["Fine-Tuning Pipelines"]
+    DATA["Dataset<br>Preparation"]
+    TRAIN["Training<br>Infrastructure"]
+    EVAL["Evaluation<br>Frameworks"]
+    REG["Model<br>Registry & Versioning"]
+    DATA --> TRAIN --> EVAL --> REG
   end
 
   subgraph Production["Production Systems"]
-    GATE["API Gateways"]
-    LB["Load Balancing"]
-    CACHE["Caching Layers"]
-    MON["Monitoring/Logging"]
+    GATE["API<br>Gateways"]
+    LB["Load<br>Balancers"]
+    CACHE["Caching<br>Layers"]
+    MON["Monitoring &<br>Logging"]
+    GATE --> LB --> CACHE --> MON
   end
 
-  EMB --> VDB
-  VDB --> RET
-  RET --> FUSION
-  PLAN --> TOOLS
-  TOOLS --> MEMSYS
-  DATA --> TRAIN
-  TRAIN --> EVAL
-  EVAL --> REG
-  GATE --> LB
-  LB --> CACHE
+  RAG --> Agents
+  Fine_Tuning --> Production
+
+  REG -. fine-tuned models .-> EMB
+  REG -. fine-tuned models .-> PLAN
+  FUSION --> PLAN
+  PLAN --> GATE
+  MAC --> GATE
 ```
 
-### Retrieval-Augmented Generation (RAG)
+**Fine-Tuning Pipelines**
+
+- Prepare, train, and validate custom models for your domain.
+- Store them in a Model Registry, ready for integration.
+
+**RAG Systems**
 
 RAG architectures address knowledge limitations by incorporating external information retrieval. Key components include:
 
-**Vector Databases** (Pinecone, Weaviate, Chroma) store document embeddings for semantic search. **Embedding Models** (text-embedding-ada-002, sentence-transformers) convert text to dense vectors for similarity matching.
+- **Vector Databases** (Pinecone, Weaviate, Chroma) store document embeddings for semantic search.
+- Embedding Models** (text-embedding-ada-002, sentence-transformers) convert text to dense vectors for similarity matching.
+- Hybrid Search** combines semantic similarity with keyword matching (BM25) for improved retrieval accuracy. **Reranking** models refine initial retrieval results.
 
-**Hybrid Search** combines semantic similarity with keyword matching (BM25) for improved retrieval accuracy. **Reranking** models refine initial retrieval results.
+In the above diagram, RAG Systems are shown to:
 
-### Agentic Systems
+- Use fine-tuned models to encode and retrieve context from knowledge bases.
+- The Context Fusion layer feeds real-world information into generation.
+
+**Agent Frameworks**
 
 **AI Agents** represent autonomous systems that plan, execute, and reflect on multi-step tasks. Core capabilities include:
 
-- **Tool Use**: Integration with external APIs, databases, and computational systems
-- **Planning**: Decomposing complex tasks into executable steps
-- **Memory**: Maintaining context across extended interactions
-- **Reflection**: Self-evaluation and error correction
+* **Tool Use** : Integration with external APIs, databases, and computational systems
+* **Planning** : Decomposing complex tasks into executable steps
+* **Memory** : Maintaining context across extended interactions
+* **Reflection** : Self-evaluation and error correction
 
 Frameworks like LangChain, CrewAI, and AutoGen enable multi-agent coordination for complex workflows.
 
+**Production Systems**
+
+These deliver the final intelligence through robust, observable, and scalable services. Production systems include:
+
+- API gateways
+- load balancing
+- caching
+- monitoring
+
+**Lifecycle Flow**
+
+- Models emerge from Fine-Tuning, power RAG and Agents, and are finally deployed in Production.
+- Feedback loops from production logs and evaluation metrics can continuously improve the pipeline.
+
 ## Evaluation and Safety
 
+Evaluation and safety form the **quality and trust backbone** of modern AI systems.
+
+While performance benchmarks measure *what* a model can do, safety frameworks and governance systems ensure *how* it does it — ethically, reliably, and in compliance with real-world standards.
+
 ```mermaid
-flowchart TB
+flowchart LR
   subgraph Capability_Eval["Capability Evaluation"]
-    BENCH["Benchmarks"]
-    HUMAN["Human Evaluation"]
-    AUTO["Automated Scoring"]
-    DOMAIN["Domain-Specific Tests"]
+    BENCH["Standard<br>Benchmarks"]
+    HUMAN["Human<br>Evaluation"]
+    AUTO["Automated<br>Scoring"]
+    DOMAIN["Domain-Specific<br>Tests"]
+    BENCH --> AUTO --> DOMAIN
+    HUMAN --> DOMAIN
   end
 
-  subgraph Safety_Measures["Safety Measures"]
-    ALIGN["Alignment Training"]
-    CONST["Constitutional AI"]
-    RED["Red Teaming"]
-    INTERP["Interpretability"]
+  subgraph Safety_Measures["Safety & Alignment"]
+    ALIGN["RLHF /<br>Alignment Training"]
+    CONST["Constitutional<br>AI"]
+    RED["Red<br>Teaming"]
+    INTERP["Interpretability &<br>Explainability"]
+    ALIGN --> CONST --> RED --> INTERP
   end
 
-  subgraph Monitoring["Monitoring Systems"]
-    DRIFT["Drift Detection"]
-    BIAS["Bias Monitoring"]
-    PERF["Performance Tracking"]
-    GUARD["Safety Guardrails"]
+  subgraph Monitoring["Continuous Monitoring"]
+    DRIFT["Drift<br>Detection"]
+    BIAS["Bias & Fairness<br>Monitoring"]
+    PERF["Performance<br>Tracking"]
+    GUARD["Runtime<br>Guardrails"]
+    DRIFT --> BIAS --> PERF --> GUARD
   end
 
-  subgraph Governance["Governance"]
-    CARDS["Model Cards"]
-    AUDIT["Audit Trails"]
-    COMP["Compliance Tracking"]
-    RISK["Risk Assessment"]
+  subgraph Governance["Governance & Accountability"]
+    CARDS["Model<br>Cards"]
+    AUDIT["Audit<br>Logs & Trails"]
+    COMP["Compliance<br>Tracking"]
+    RISK["Risk<br>Assessment"]
+    CARDS --> AUDIT --> COMP --> RISK
   end
 
-  BENCH --> AUTO
-  HUMAN --> DOMAIN
-  ALIGN --> CONST
-  CONST --> RED
-  DRIFT --> BIAS
-  BIAS --> GUARD
-  CARDS --> AUDIT
-  AUDIT --> RISK
+  Capability_Eval --> Safety_Measures
+  Monitoring --> Governance
+
+  DOMAIN --> ALIGN
+  INTERP --> DRIFT
+  GUARD --> AUDIT
+  RISK --> BENCH
 ```
 
 ### Evaluation Frameworks
 
-**Capability Benchmarks** include MMLU (massive multitask language understanding), HumanEval (code generation), and HellaSwag (commonsense reasoning). **Domain-specific evaluations** assess performance in specialized areas like medicine (MedQA), law (LegalBench), and mathematics (MATH).
+**Capability Evaluation** measures a model’s performance across general and specialized tasks.
 
-**Human Evaluation** remains critical for assessing subjective qualities like helpfulness, harmlessness, and honesty. Platforms like Scale AI and Surge AI provide human feedback infrastructure.
+* **Standard Benchmarks** like *MMLU* , *HumanEval* , and *HellaSwag* assess broad reasoning, code generation, and commonsense understanding.
+* **Domain-Specific Tests** (e.g., *MedQA* for medicine, *LegalBench* for law, *MATH* for quantitative reasoning) ensure reliability in critical fields.
+* **Human Evaluation** captures qualities that metrics miss — *helpfulness* , *harmlessness* , *honesty* , and *factuality* — using platforms like **Scale AI** or **Surge AI** .
+* **Automated Scoring** systems (e.g., BLEU, ROUGE, BERTScore) enable scalable and repeatable comparisons.
 
 ### Safety and Alignment
 
-**Constitutional AI** trains models to follow a set of principles through self-critique and revision. **RLHF (Reinforcement Learning from Human Feedback)** optimizes model outputs based on human preferences.
+Safety mechanisms ensure models not only perform well but also behave responsibly.
 
-**Red Teaming** involves adversarial testing to identify harmful outputs, bias, or capability limitations. **Interpretability** research aims to understand model decision-making through techniques like activation patching and mechanistic interpretability.
+* **RLHF (Reinforcement Learning from Human Feedback)** aligns models with human preferences.
+* **Constitutional AI** trains models to self-revise against explicit principles.
+* **Red Teaming** stress-tests systems through adversarial prompts and scenario exploration.
+* **Interpretability** techniques (e.g., *activation patching* , *mechanistic interpretability* ) aim to make model reasoning transparent.
+
+### Continuous Monitoring
+
+Once deployed, models must be monitored for drift, bias, and performance degradation.
+
+* **Drift Detection** identifies changes in input distributions or behavior over time.
+* **Bias Monitoring** surfaces demographic or systemic unfairness.
+* **Performance Tracking** ensures quality across model updates.
+* **Runtime Guardrails** (e.g., prompt filters, safety layers) enforce policy compliance in production.
+
+### Governance and Accountability
+
+Governance frameworks formalize the oversight needed for responsible AI operation.
+
+* **Model Cards** summarize intended use, limitations, and metrics.
+* **Audit Trails** log decisions and interventions for traceability.
+* **Compliance Tracking** ensures adherence to standards (e.g., ISO, GDPR, AI Act).
+* **Risk Assessment** integrates findings from all domains to guide mitigation and escalation policies.
 
 ## Economic and Scaling Dynamics
 

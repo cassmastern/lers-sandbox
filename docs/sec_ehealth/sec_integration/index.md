@@ -1,4 +1,4 @@
-# SMART-on-FHIR Integration Resources
+# SMART-on-FHIR Integration
 
 This section contains topics that should be handy in SMART-on-FHIR integration projects.
 

@@ -1,6 +1,6 @@
 # Accessibility with AI (Concept Note)
 
->An attempt to turn a [technical daydream](ai-accessibility.md) into a *concept note* ("who knows" kind of thing).
+> A follow-on to a [technical daydream](ai-accessibility.md); a *concept note*.
 
 ## 1. Problem Statement
 

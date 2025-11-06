@@ -23,6 +23,7 @@ nohup.out
 .vscode/settings.json
 *code-workspace
 _build
+_msnippets
 # Node / npm (if used)
 node_modules/
 # Logs

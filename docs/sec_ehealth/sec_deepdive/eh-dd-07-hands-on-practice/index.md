@@ -1,4 +1,4 @@
-# Hands-On Practice
+# Hands-On
 
 This set of topics comprises a workshop for developinging a client app and using a publicly available sandbox to test it with.
 

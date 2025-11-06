@@ -1,5 +1,4 @@
-hide: true
-title: Sandbox — for Local Development
+hide: false
 arrange:
   - index.md
   - dia-graphviz.md

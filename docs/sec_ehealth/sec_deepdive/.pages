@@ -1,1 +1,10 @@
-title: "Deep Dive into SMART-on-FHIR"
+title: "SMART-on-FHIR Deep Dive"
+arrange:
+- eh-dd-01-foundations
+- eh-dd-02-fhir-data-fundamentals
+- eh-dd-03-fhir-resource-relationships
+- eh-dd-04-working-with-fhir-apis
+- eh-dd-05-advanced-fhir-concepts
+- eh-dd-06-smart-auth
+- eh-dd-07-hands-on-practice
+- eh-dd-08-wrap-up
