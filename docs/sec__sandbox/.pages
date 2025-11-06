@@ -1,4 +1,4 @@
-hide: false
+hide: true
 arrange:
   - index.md
   - dia-graphviz.md

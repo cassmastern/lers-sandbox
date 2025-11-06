@@ -5,7 +5,7 @@ Welcome to Ler's Sandbox!
 The site's purpose is multifold:
 
 - to build up a feature-rich technical documentation system and infrastructure for my own use and for demo purposes ([see repo's readme](https://github.com/cassmastern/lers-sandbox/blob/main/readme.md))
-- to use that very infrastructure, populating it with content that will hopefully brush up and deepen my knowledge of GitHub, MkDocs, major cloud platforms, Markdown, content architecture, networking, and more
+- to use that very infrastructure, populating it with content that will hopefully brush up and deepen my knowledge of GitHub, MkDocs, major cloud platforms, Markdown, AI, content architecture, networking, and more
 - to play with some of the features supporting accessibility and eventually implement full WCAG compliance
 - to discover new *'domain curiosities'*
 
