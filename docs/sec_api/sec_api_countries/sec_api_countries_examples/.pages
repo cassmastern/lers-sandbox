@@ -1,5 +1,6 @@
 title: "Examples"
-arrange:
+nav:
+  - index.md
   - api-countries-examples-javascript.md
   - api-countries-examples-python.md
   - api-countries-examples-usecases.md

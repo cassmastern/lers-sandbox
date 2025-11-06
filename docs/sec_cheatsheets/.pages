@@ -1,5 +1,5 @@
 title: "CHEAT SHEETS"
-arrange:
+nav:
   - index.md
   - cheatsheet-docker.md
   - cheatsheet-kubectl.md

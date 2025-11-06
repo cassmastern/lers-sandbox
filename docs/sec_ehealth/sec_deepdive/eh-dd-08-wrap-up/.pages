@@ -1,4 +1,5 @@
 title: "Wrap-Up"
-arrange:
+nav:
+- index.md
 - deepdive-key-takeaways.md
 - deepdive-summary.md

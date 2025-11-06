@@ -1,5 +1,5 @@
 title: "NETWORKS & SECURITY"
-arrange:
+nav:
   - index.md
   - network_data_center.md
   - network_data_center_stride.md

@@ -1,4 +1,5 @@
 title: "API DOCUMENTATION"
-arrange:
+nav:
+- index.md
 - sec_api_countries
 - sec_api_stripe

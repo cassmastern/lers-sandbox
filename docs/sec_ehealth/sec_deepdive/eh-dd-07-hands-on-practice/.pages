@@ -1,5 +1,6 @@
 title: "Hands-On"
-arrange:
+nav:
+- index.md
 - deepdive-smart-health-it-sandbox.md
 - deepdive-smart_client_impl-sample-app.md
 - deepdive-smart_client_impl.md

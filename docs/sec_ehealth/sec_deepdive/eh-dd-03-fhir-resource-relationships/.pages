@@ -1,5 +1,6 @@
 title: "FHIR Resource Relationships"
-arrange:
+nav:
+- index.md
 - deepdive-fhir-resource-relationships.md
 - deepdive-fhir-resource-relationships-comprehensive.md
 - deepdive-fhir-resource-bundles.md

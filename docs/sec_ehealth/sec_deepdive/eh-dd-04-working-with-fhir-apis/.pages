@@ -1,5 +1,6 @@
 title: "FHIR Resource APIs"
-arrange:
+nav:
+- index.md
 - deepdive-fhir-rest-common-ops.md
 - deepdive-fhir-search-parameters.md
 - deepdive-error-handling.md

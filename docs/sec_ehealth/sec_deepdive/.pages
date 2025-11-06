@@ -1,5 +1,6 @@
 title: "SMART-on-FHIR Deep Dive"
-arrange:
+nav:
+- index.md
 - eh-dd-01-foundations
 - eh-dd-02-fhir-data-fundamentals
 - eh-dd-03-fhir-resource-relationships

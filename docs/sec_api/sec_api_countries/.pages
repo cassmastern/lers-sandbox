@@ -1,5 +1,6 @@
 title: "COUNTRIES REST API"
-arrange:
+nav:
+  - index.md
   - api-countries-overview.md
   - sec_api_countries_guides
   - sec_api_countries_examples

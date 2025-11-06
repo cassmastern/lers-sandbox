@@ -1,5 +1,6 @@
 title: "eHEALTH"
-arrange:
+nav:
+- index.md
 - sec_deepdive
 - sec_integration
   

@@ -1,5 +1,5 @@
 title: "IN THE CLOUDS"
-arrange:
+nav:
   - index.md
   - aws-gcp-azure.md
   - aws-gcp-azure_glossary.md

@@ -1,10 +1,10 @@
 # docs/.pages
-arrange:
+nav:
   - index.md
   - sec_about
   - sec_cloud
   - sec_accss
-  - sec_freeform 
+  - sec_freeform
   - sec_net-sec
   - sec_ehealth
   - sec_api

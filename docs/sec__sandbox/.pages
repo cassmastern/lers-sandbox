@@ -1,5 +1,5 @@
 hide: true
-arrange:
+nav:
   - index.md
   - dia-graphviz.md
   - dia-mermaid.md

@@ -1,5 +1,6 @@
 title: "FHIR Data Fundamentals"
-arrange:
+nav:
+- index.md
 - deepdive-fhir-data-types.md
 - deepdive-fhir-code-systems.md
 - deepdive-fhir-cardinality.md

@@ -1,5 +1,6 @@
 title: "SMART Authorization"
-arrange:
+nav:
+- index.md
 - deepdive-oauth-flow.md
 - deepdive-smart-launch-flow.md
 - deepdive-smart-scopes-and-auth.md

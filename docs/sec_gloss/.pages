@@ -1,5 +1,5 @@
 title: "GLOSSARIES"
-arrange:
+nav:
   - index.md
   - gloss_oss.md
   - gloss_networking.md
