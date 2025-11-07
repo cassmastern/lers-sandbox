@@ -626,6 +626,13 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/eh-dd-05-advanced-intro/">
+<span class="md-ellipsis">
+    Handling Variation — Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
 <span class="md-ellipsis">
     FHIR Profiles and Extensions
@@ -653,6 +660,13 @@
             SMART Authorization
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-oauth-overview/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../deepdive-oauth-flow/">
 <span class="md-ellipsis">
@@ -687,17 +701,38 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#smart-scope-patterns">
+<a class="md-nav__link" href="#granular-permissions-for-healthcare-data">
 <span class="md-ellipsis">
-      SMART Scope Patterns
+      Granular Permissions for Healthcare Data
     </span>
 </a>
-<nav aria-label="SMART Scope Patterns" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scope-syntax-the-building-blocks">
+<span class="md-ellipsis">
+      Scope Syntax: The Building Blocks
+    </span>
+</a>
+<nav aria-label="Scope Syntax: The Building Blocks" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#scope-syntax">
+<a class="md-nav__link" href="#context-whos-data">
 <span class="md-ellipsis">
-      Scope Syntax
+      Context (Who's data?)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-what-data">
+<span class="md-ellipsis">
+      Resource (What data?)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission-what-actions">
+<span class="md-ellipsis">
+      Permission (What actions?)
     </span>
 </a>
 </li>
@@ -705,59 +740,38 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#common-scope-examples">
+<a class="md-nav__link" href="#common-scope-examples-from-your-scaffold">
 <span class="md-ellipsis">
-      Common Scope Examples
+      Common Scope Examples (From Your Scaffold)
     </span>
 </a>
-<nav aria-label="Common Scope Examples" class="md-nav">
+<nav aria-label="Common Scope Examples (From Your Scaffold)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#patient-specific-scopes">
+<a class="md-nav__link" href="#patient-specific-scopes-most-common">
 <span class="md-ellipsis">
-      Patient-specific scopes
+      Patient-Specific Scopes (Most Common)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#user-level-scopes-broader-access">
+<a class="md-nav__link" href="#user-level-scopes-provider-access">
 <span class="md-ellipsis">
-      User-level scopes (broader access)
+      User-Level Scopes (Provider Access)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#write-permissions">
+<a class="md-nav__link" href="#write-permissions-createupdate">
 <span class="md-ellipsis">
-      Write permissions
+      Write Permissions (Create/Update)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#wildcard-scopes">
+<a class="md-nav__link" href="#wildcard-scopes-broad-access">
 <span class="md-ellipsis">
-      Wildcard scopes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#openid-connect-scopes">
-<span class="md-ellipsis">
-      OpenID Connect scopes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#launch-context-scopes">
-<span class="md-ellipsis">
-      Launch context scopes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#offline-access">
-<span class="md-ellipsis">
-      Offline access
+      Wildcard Scopes (Broad Access)
     </span>
 </a>
 </li>
@@ -765,45 +779,134 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#typical-scope-combinations">
+<a class="md-nav__link" href="#openid-connect-scopes-identity">
 <span class="md-ellipsis">
-      Typical Scope Combinations
+      OpenID Connect Scopes (Identity)
     </span>
 </a>
-<nav aria-label="Typical Scope Combinations" class="md-nav">
+<nav aria-label="OpenID Connect Scopes (Identity)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#basic-read-only-app">
+<a class="md-nav__link" href="#openid-enable-oidc-authentication">
 <span class="md-ellipsis">
-      Basic read-only app
+      openid - Enable OIDC authentication
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#comprehensive-read-access">
+<a class="md-nav__link" href="#profile-user-profile-information">
 <span class="md-ellipsis">
-      Comprehensive read access
+      profile - User profile information
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#clinical-documentation-app">
+<a class="md-nav__link" href="#email-email-address">
 <span class="md-ellipsis">
-      Clinical documentation app
+      email - Email address
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#provider-facing-dashboard">
+<a class="md-nav__link" href="#fhiruser-fhir-resource-url-for-user">
 <span class="md-ellipsis">
-      Provider-facing dashboard
+      fhirUser - FHIR resource URL for user
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-context-scopes-ehr-integration">
+<span class="md-ellipsis">
+      Launch Context Scopes (EHR Integration)
+    </span>
+</a>
+<nav aria-label="Launch Context Scopes (EHR Integration)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-enable-ehr-launch">
+<span class="md-ellipsis">
+      launch - Enable EHR launch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launchpatient-request-patient-context">
+<span class="md-ellipsis">
+      launch/patient - Request patient context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launchencounter-request-encounter-context">
+<span class="md-ellipsis">
+      launch/encounter - Request encounter context
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#offline-access-long-term-tokens">
+<span class="md-ellipsis">
+      Offline Access (Long-Term Tokens)
+    </span>
+</a>
+<nav aria-label="Offline Access (Long-Term Tokens)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#offline_access-request-refresh-token">
+<span class="md-ellipsis">
+      offline_access - Request refresh token
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#typical-scope-combinations-from-your-scaffold">
+<span class="md-ellipsis">
+      Typical Scope Combinations (From Your Scaffold)
+    </span>
+</a>
+<nav aria-label="Typical Scope Combinations (From Your Scaffold)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-read-only-app-patient-portal">
+<span class="md-ellipsis">
+      Basic Read-Only App (Patient Portal)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comprehensive-read-access-health-summary">
+<span class="md-ellipsis">
+      Comprehensive Read Access (Health Summary)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clinical-documentation-app-provider-tool">
+<span class="md-ellipsis">
+      Clinical Documentation App (Provider Tool)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#provider-dashboard-population-health">
+<span class="md-ellipsis">
+      Provider Dashboard (Population Health)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#backend-service-no-user">
 <span class="md-ellipsis">
-      Backend service (no user)
+      Backend Service (No User)
     </span>
 </a>
 </li>
@@ -811,9 +914,80 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#scope-negotiation">
+<a class="md-nav__link" href="#scope-negotiation-requested-vs-granted">
 <span class="md-ellipsis">
-      Scope Negotiation
+      Scope Negotiation: Requested vs. Granted
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scope-best-practices">
+<span class="md-ellipsis">
+      Scope Best Practices
+    </span>
+</a>
+<nav aria-label="Scope Best Practices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-request-minimum-necessary-scopes">
+<span class="md-ellipsis">
+      1. Request Minimum Necessary Scopes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-explain-scopes-to-users">
+<span class="md-ellipsis">
+      2. Explain Scopes to Users
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-handle-partial-grants-gracefully">
+<span class="md-ellipsis">
+      3. Handle Partial Grants Gracefully
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-use-write-carefully">
+<span class="md-ellipsis">
+      4. Use .write Carefully
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-scope-errors">
+<span class="md-ellipsis">
+      Common Scope Errors
+    </span>
+</a>
+<nav aria-label="Common Scope Errors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-insufficient_scope">
+<span class="md-ellipsis">
+      Error: insufficient_scope
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-invalid_scope">
+<span class="md-ellipsis">
+      Error: invalid_scope
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -865,7 +1039,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
 <span class="md-ellipsis">
-    Practical Example: Building a SMART App
+    Practical Example — a Sample SMART App
   </span>
 </a>
 </li>
@@ -1243,17 +1417,38 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#smart-scope-patterns">
+<a class="md-nav__link" href="#granular-permissions-for-healthcare-data">
 <span class="md-ellipsis">
-      SMART Scope Patterns
+      Granular Permissions for Healthcare Data
     </span>
 </a>
-<nav aria-label="SMART Scope Patterns" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scope-syntax-the-building-blocks">
+<span class="md-ellipsis">
+      Scope Syntax: The Building Blocks
+    </span>
+</a>
+<nav aria-label="Scope Syntax: The Building Blocks" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#scope-syntax">
+<a class="md-nav__link" href="#context-whos-data">
 <span class="md-ellipsis">
-      Scope Syntax
+      Context (Who's data?)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-what-data">
+<span class="md-ellipsis">
+      Resource (What data?)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission-what-actions">
+<span class="md-ellipsis">
+      Permission (What actions?)
     </span>
 </a>
 </li>
@@ -1261,59 +1456,38 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#common-scope-examples">
+<a class="md-nav__link" href="#common-scope-examples-from-your-scaffold">
 <span class="md-ellipsis">
-      Common Scope Examples
+      Common Scope Examples (From Your Scaffold)
     </span>
 </a>
-<nav aria-label="Common Scope Examples" class="md-nav">
+<nav aria-label="Common Scope Examples (From Your Scaffold)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#patient-specific-scopes">
+<a class="md-nav__link" href="#patient-specific-scopes-most-common">
 <span class="md-ellipsis">
-      Patient-specific scopes
+      Patient-Specific Scopes (Most Common)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#user-level-scopes-broader-access">
+<a class="md-nav__link" href="#user-level-scopes-provider-access">
 <span class="md-ellipsis">
-      User-level scopes (broader access)
+      User-Level Scopes (Provider Access)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#write-permissions">
+<a class="md-nav__link" href="#write-permissions-createupdate">
 <span class="md-ellipsis">
-      Write permissions
+      Write Permissions (Create/Update)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#wildcard-scopes">
+<a class="md-nav__link" href="#wildcard-scopes-broad-access">
 <span class="md-ellipsis">
-      Wildcard scopes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#openid-connect-scopes">
-<span class="md-ellipsis">
-      OpenID Connect scopes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#launch-context-scopes">
-<span class="md-ellipsis">
-      Launch context scopes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#offline-access">
-<span class="md-ellipsis">
-      Offline access
+      Wildcard Scopes (Broad Access)
     </span>
 </a>
 </li>
@@ -1321,45 +1495,134 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#typical-scope-combinations">
+<a class="md-nav__link" href="#openid-connect-scopes-identity">
 <span class="md-ellipsis">
-      Typical Scope Combinations
+      OpenID Connect Scopes (Identity)
     </span>
 </a>
-<nav aria-label="Typical Scope Combinations" class="md-nav">
+<nav aria-label="OpenID Connect Scopes (Identity)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#basic-read-only-app">
+<a class="md-nav__link" href="#openid-enable-oidc-authentication">
 <span class="md-ellipsis">
-      Basic read-only app
+      openid - Enable OIDC authentication
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#comprehensive-read-access">
+<a class="md-nav__link" href="#profile-user-profile-information">
 <span class="md-ellipsis">
-      Comprehensive read access
+      profile - User profile information
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#clinical-documentation-app">
+<a class="md-nav__link" href="#email-email-address">
 <span class="md-ellipsis">
-      Clinical documentation app
+      email - Email address
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#provider-facing-dashboard">
+<a class="md-nav__link" href="#fhiruser-fhir-resource-url-for-user">
 <span class="md-ellipsis">
-      Provider-facing dashboard
+      fhirUser - FHIR resource URL for user
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-context-scopes-ehr-integration">
+<span class="md-ellipsis">
+      Launch Context Scopes (EHR Integration)
+    </span>
+</a>
+<nav aria-label="Launch Context Scopes (EHR Integration)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-enable-ehr-launch">
+<span class="md-ellipsis">
+      launch - Enable EHR launch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launchpatient-request-patient-context">
+<span class="md-ellipsis">
+      launch/patient - Request patient context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launchencounter-request-encounter-context">
+<span class="md-ellipsis">
+      launch/encounter - Request encounter context
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#offline-access-long-term-tokens">
+<span class="md-ellipsis">
+      Offline Access (Long-Term Tokens)
+    </span>
+</a>
+<nav aria-label="Offline Access (Long-Term Tokens)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#offline_access-request-refresh-token">
+<span class="md-ellipsis">
+      offline_access - Request refresh token
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#typical-scope-combinations-from-your-scaffold">
+<span class="md-ellipsis">
+      Typical Scope Combinations (From Your Scaffold)
+    </span>
+</a>
+<nav aria-label="Typical Scope Combinations (From Your Scaffold)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-read-only-app-patient-portal">
+<span class="md-ellipsis">
+      Basic Read-Only App (Patient Portal)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comprehensive-read-access-health-summary">
+<span class="md-ellipsis">
+      Comprehensive Read Access (Health Summary)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clinical-documentation-app-provider-tool">
+<span class="md-ellipsis">
+      Clinical Documentation App (Provider Tool)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#provider-dashboard-population-health">
+<span class="md-ellipsis">
+      Provider Dashboard (Population Health)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#backend-service-no-user">
 <span class="md-ellipsis">
-      Backend service (no user)
+      Backend Service (No User)
     </span>
 </a>
 </li>
@@ -1367,9 +1630,80 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#scope-negotiation">
+<a class="md-nav__link" href="#scope-negotiation-requested-vs-granted">
 <span class="md-ellipsis">
-      Scope Negotiation
+      Scope Negotiation: Requested vs. Granted
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scope-best-practices">
+<span class="md-ellipsis">
+      Scope Best Practices
+    </span>
+</a>
+<nav aria-label="Scope Best Practices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-request-minimum-necessary-scopes">
+<span class="md-ellipsis">
+      1. Request Minimum Necessary Scopes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-explain-scopes-to-users">
+<span class="md-ellipsis">
+      2. Explain Scopes to Users
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-handle-partial-grants-gracefully">
+<span class="md-ellipsis">
+      3. Handle Partial Grants Gracefully
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-use-write-carefully">
+<span class="md-ellipsis">
+      4. Use .write Carefully
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-scope-errors">
+<span class="md-ellipsis">
+      Common Scope Errors
+    </span>
+</a>
+<nav aria-label="Common Scope Errors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-insufficient_scope">
+<span class="md-ellipsis">
+      Error: insufficient_scope
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-invalid_scope">
+<span class="md-ellipsis">
+      Error: invalid_scope
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -1381,102 +1715,431 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="smart-scopes-and-authorization">SMART Scopes and Authorization</h1>
-<h2 id="smart-scope-patterns">SMART Scope Patterns</h2>
-<p>Scope patterns in SMART-on-FHIR define the specific permissions an application can request to access a user's health data, using a predefined structure of <code>context/resource.actions</code>. </p>
-<h3 id="scope-syntax">Scope Syntax</h3>
-<p>Pattern: <code>[context]/[resource].[permission]</code> </p>
-<p>Contexts:  </p>
+<h2 id="granular-permissions-for-healthcare-data">Granular Permissions for Healthcare Data</h2>
+<p>Scopes are the heart of OAuth authorization—they define <strong>what</strong> an app can do with <strong>which</strong> data. SMART-on-FHIR extends standard OAuth scopes with healthcare-specific patterns that enable fine-grained access control.</p>
+<p>Think of scopes as access badges:
+- 🔴 <strong>Red badge</strong>: Read-only access to patient vitals
+- 🟡 <strong>Yellow badge</strong>: Read/write access to observations
+- 🟢 <strong>Green badge</strong>: Full access to all patient resources</p>
+<p>Without scopes, authorization would be all-or-nothing. Scopes let patients and providers grant precisely the access needed—nothing more.</p>
+<hr/>
+<h2 id="scope-syntax-the-building-blocks">Scope Syntax: The Building Blocks</h2>
+<p>Scope syntax follows this basic pattern:</p>
+<p><code>[context]/[resource].[permission]</code></p>
+<p>Let's break down each component:</p>
+<h3 id="context-whos-data">Context (Who's data?)</h3>
+<p><strong><code>patient/</code></strong> - Data for the current patient in context</p>
 <ul>
-<li><code>patient/</code> - Access limited to current patient context  </li>
-<li><code>user/</code> - Access to resources user can access  </li>
-<li><code>system/</code> - Backend system access (no user)  </li>
+<li>EHR launch: Patient from launch context</li>
+<li>Standalone launch: Authenticated patient</li>
+<li><strong>Use when</strong>: App works with single patient at a time</li>
 </ul>
-<p>Permissions:  </p>
+<p><strong><code>user/</code></strong> - Data the authenticated user can access</p>
 <ul>
-<li><code>read</code> - Read-only access  </li>
-<li><code>write</code> - Create/update access (implies read)  </li>
-<li><code>*</code> - Full access (read/write)  </li>
+<li>Clinician can access multiple patients</li>
+<li>Respects existing EHR access controls</li>
+<li><strong>Use when</strong>: Provider-facing dashboards, population health tools</li>
 </ul>
-<h2 id="common-scope-examples">Common Scope Examples</h2>
-<h3 id="patient-specific-scopes">Patient-specific scopes</h3>
+<p><strong><code>system/</code></strong> - Backend service access (no human user)</p>
 <ul>
-<li><code>patient/Patient.read</code> - Read current patient demographics  </li>
-<li><code>patient/Observation.read</code> - Read observations for current patient</li>
-<li><code>patient/Condition.read</code> - Read conditions for current patient</li>
-<li><code>patient/MedicationRequest.read</code> - Read medication requests</li>
-<li><code>patient/AllergyIntolerance.read</code> - Read allergies</li>
-<li><code>patient/Immunization.read</code> - Read immunizations</li>
-<li><code>patient/Procedure.read</code> - Read procedures</li>
-<li><code>patient/DiagnosticReport.read</code> - Read diagnostic reports</li>
-<li><code>patient/Encounter.read</code> - Read encounters</li>
-<li><code>patient/DocumentReference.read</code> - Read documents</li>
+<li>Used for B2B integrations</li>
+<li>Bulk data export, analytics pipelines</li>
+<li><strong>Use when</strong>: Automated workflows, scheduled jobs</li>
 </ul>
-<h3 id="user-level-scopes-broader-access">User-level scopes (broader access)</h3>
+<hr/>
+<h3 id="resource-what-data">Resource (What data?)</h3>
+<p><strong>Specific resource type</strong>: <code>Patient</code>, <code>Observation</code>, <code>Condition</code>, etc.</p>
+<div class="highlight"><pre><span></span><code>patient/Observation.read
+</code></pre></div>
+<p>Access only Observation resources.</p>
+<p><strong>Wildcard</strong>: <code>*</code> for all resource types</p>
+<div class="highlight"><pre><span></span><code>patient/*.read
+</code></pre></div>
+<p>Access all resources for patient (Observations, Conditions, Medications, etc.).</p>
+<hr/>
+<h3 id="permission-what-actions">Permission (What actions?)</h3>
+<p><strong><code>.read</code></strong> - Read-only access</p>
 <ul>
-<li><code>user/Patient.read</code> - Read any patient the user can access  </li>
-<li><code>user/Observation.read</code> - Read observations across patients  </li>
-<li><code>user/Practitioner.read</code> - Read practitioner information  </li>
-<li><code>user/Organization.read</code> - Read organization data  </li>
+<li>GET operations</li>
+<li>Search operations</li>
+<li>Most common permission</li>
 </ul>
-<h3 id="write-permissions">Write permissions</h3>
+<p><strong><code>.write</code></strong> - Create and update</p>
 <ul>
-<li><code>patient/Observation.write</code> - Create/update observations  </li>
-<li><code>patient/Condition.write</code> - Create/update conditions  </li>
-<li><code>user/Patient.write</code> - Create/update patient records  </li>
+<li>POST (create)</li>
+<li>PUT (update)</li>
+<li>Implies <code>.read</code> (need to read to update)</li>
 </ul>
-<h3 id="wildcard-scopes">Wildcard scopes</h3>
+<p><strong><code>.*</code></strong> - Full access</p>
 <ul>
-<li><code>patient/*.read</code> - Read all resources for patient</li>
-<li><code>user/*.read</code> - Read all resources for user</li>
-<li><code>patient/*.write</code> - Full write access for patient</li>
+<li>All CRUD operations</li>
+<li>Includes delete</li>
+<li>Rarely granted</li>
 </ul>
-<h3 id="openid-connect-scopes">OpenID Connect scopes</h3>
+<hr/>
+<h2 id="common-scope-examples-from-your-scaffold">Common Scope Examples (From Your Scaffold)</h2>
+<h3 id="patient-specific-scopes-most-common">Patient-Specific Scopes (Most Common)</h3>
+<div class="highlight"><pre><span></span><code>patient/Patient.read          # Demographics
+patient/Observation.read      # Labs, vitals
+patient/Condition.read        # Diagnoses
+patient/MedicationRequest.read # Prescriptions
+patient/AllergyIntolerance.read # Allergies
+patient/Immunization.read     # Vaccines
+patient/Procedure.read        # Procedures
+patient/DiagnosticReport.read # Reports
+patient/Encounter.read        # Visits
+patient/DocumentReference.read # Documents
+</code></pre></div>
+<p><strong>Use case</strong>: Patient-facing app showing own health data.</p>
+<p><strong>Token response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patient/Observation.read patient/Condition.read"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>API calls allowed</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">✅ GET /Observation?patient=smart-1288992</span>
+<span class="err">✅ GET /Condition?patient=smart-1288992</span>
+<span class="err">❌ GET /Observation?patient=different-patient  (403 Forbidden)</span>
+<span class="err">❌ POST /Observation  (403 Insufficient scope - need .write)</span>
+</code></pre></div>
+<hr/>
+<h3 id="user-level-scopes-provider-access">User-Level Scopes (Provider Access)</h3>
+<div class="highlight"><pre><span></span><code>user/Patient.read          # Any patient user can access
+user/Observation.read      # Cross-patient observations
+user/Practitioner.read     # Colleague information
+user/Organization.read     # Facility data
+</code></pre></div>
+<p><strong>Use case</strong>: Provider dashboard showing panel of patients.</p>
+<p><strong>Token response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user/Patient.read user/Observation.read"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"fhirUser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.example.org/Practitioner/dr-johnson"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>API calls allowed</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">✅ GET /Patient?name=Smith  (returns all Smiths user can access)</span>
+<span class="err">✅ GET /Observation?patient=any-patient-id  (if user has access)</span>
+<span class="err">❌ GET /Patient (no filter)  (Some servers restrict this)</span>
+</code></pre></div>
+<p><strong>Security note</strong>: EHR enforces existing access controls. If Dr. Johnson can't access cardiology patients in EHR, <code>user/</code> scopes won't grant that access.</p>
+<hr/>
+<h3 id="write-permissions-createupdate">Write Permissions (Create/Update)</h3>
+<div class="highlight"><pre><span></span><code>patient/Observation.write      # Create/update observations
+patient/Condition.write        # Create/update conditions
+user/Patient.write             # Create/update any patient
+</code></pre></div>
+<p><strong>Use case</strong>: Clinical documentation app, patient-reported outcomes.</p>
+<p><strong>Implications</strong>:
+- <code>.write</code> includes <code>.read</code> (can't update without reading)
+- Creates audit trail entries
+- Higher scrutiny during authorization
+- May require additional user confirmation</p>
+<p><strong>API calls allowed</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">✅ POST /Observation  (create new)</span>
+<span class="err">✅ PUT /Observation/obs-123  (update existing)</span>
+<span class="err">✅ GET /Observation/obs-123  (read - implied)</span>
+</code></pre></div>
+<hr/>
+<h3 id="wildcard-scopes-broad-access">Wildcard Scopes (Broad Access)</h3>
+<div class="highlight"><pre><span></span><code>patient/*.read    # Read all resources for patient
+user/*.read       # Read all resources user can access
+patient/*.write   # Full write access for patient
+user/*.*          # Full access to all user resources
+</code></pre></div>
+<p><strong>Use case</strong>: Comprehensive health apps, EHR integrations.</p>
+<p><strong>Security consideration</strong>: Request wildcards only when truly needed. Narrower scopes build user trust.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s1">'launch'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'launch/patient'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'patient/*.read'</span><span class="p">,</span><span class="w">  </span><span class="c1">// All patient resources</span>
+<span class="w">  </span><span class="s1">'openid'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'fhirUser'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'offline_access'</span>
+<span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h2 id="openid-connect-scopes-identity">OpenID Connect Scopes (Identity)</h2>
+<h3 id="openid-enable-oidc-authentication"><code>openid</code> - Enable OIDC authentication</h3>
+<p><strong>Required for</strong>: Getting ID token with user identity claims.</p>
+<p><strong>Returns</strong>: <code>id_token</code> in token response (JWT with user info).</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIs..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIs..."</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>ID token claims</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dr-johnson-123"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. Sarah Johnson"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sarah.johnson@hospital.org"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"fhirUser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.example.org/Practitioner/dr-johnson"</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="profile-user-profile-information"><code>profile</code> - User profile information</h3>
+<p><strong>Returns</strong>: Name, family name, given name, middle name, nickname, preferred username, profile URL, picture URL, website, gender, birthdate, zoneinfo, locale.</p>
+<hr/>
+<h3 id="email-email-address"><code>email</code> - Email address</h3>
+<p><strong>Returns</strong>: <code>email</code> and <code>email_verified</code> claims.</p>
+<hr/>
+<h3 id="fhiruser-fhir-resource-url-for-user"><code>fhirUser</code> - FHIR resource URL for user</h3>
+<p><strong>Returns</strong>: <code>fhirUser</code> claim in token response.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"fhirUser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.example.org/Practitioner/dr-johnson"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Use case</strong>: Fetch authenticated user's FHIR resource to display profile, specialty, organization.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// After authorization</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fhirUserUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">fhirUser</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">practitioner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">fhirUserUrl</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">access_token</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Logged in as: </span><span class="si">${</span><span class="nx">practitioner</span><span class="p">.</span><span class="nx">name</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">text</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Specialty: </span><span class="si">${</span><span class="nx">practitioner</span><span class="p">.</span><span class="nx">qualification</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">code</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h2 id="launch-context-scopes-ehr-integration">Launch Context Scopes (EHR Integration)</h2>
+<h3 id="launch-enable-ehr-launch"><code>launch</code> - Enable EHR launch</h3>
+<p><strong>Required for</strong>: EHR-initiated launch flow.</p>
+<p><strong>Must include</strong>: <code>launch</code> parameter in authorization request.</p>
+<p><strong>Without this scope</strong>: Authorization server rejects launch token.</p>
+<hr/>
+<h3 id="launchpatient-request-patient-context"><code>launch/patient</code> - Request patient context</h3>
+<p><strong>Returns</strong>: <code>patient</code> claim in token response.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Use case</strong>: App needs to know which patient is in context.</p>
+<p><strong>If not requested</strong>: Token response won't include patient ID (app must prompt user or fail).</p>
+<hr/>
+<h3 id="launchencounter-request-encounter-context"><code>launch/encounter</code> - Request encounter context</h3>
+<p><strong>Returns</strong>: <code>encounter</code> claim in token response.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"encounter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-enc-456"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Use case</strong>: Clinical documentation apps that need encounter context for billing, note-taking.</p>
+<p><strong>Common pattern</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s1">'launch'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'launch/patient'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'launch/encounter'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'patient/*.read'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'openid'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'fhirUser'</span>
+<span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h2 id="offline-access-long-term-tokens">Offline Access (Long-Term Tokens)</h2>
+<h3 id="offline_access-request-refresh-token"><code>offline_access</code> - Request refresh token</h3>
+<p><strong>Returns</strong>: <code>refresh_token</code> in token response.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIs..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_abc123"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Use case</strong>: Apps that need access when user is not actively logged in.</p>
+<p><strong>Examples</strong>:
+- Fitness tracker syncing daily
+- Medication reminder app
+- Research study data collection</p>
+<p><strong>User experience</strong>: Consent screen shows "Keep access after you log out" or similar language.</p>
+<p><strong>Security</strong>: Refresh tokens should be stored securely (encrypted storage, server-side only).</p>
+<hr/>
+<h2 id="typical-scope-combinations-from-your-scaffold">Typical Scope Combinations (From Your Scaffold)</h2>
+<h3 id="basic-read-only-app-patient-portal">Basic Read-Only App (Patient Portal)</h3>
+<div class="highlight"><pre><span></span><code>openid fhirUser launch launch/patient
+patient/Patient.read
+patient/Observation.read
+patient/Condition.read
+</code></pre></div>
+<p><strong>What it enables</strong>:
+- User identity (openid, fhirUser)
+- EHR launch support (launch, launch/patient)
+- Read patient demographics
+- Read observations and conditions</p>
+<hr/>
+<h3 id="comprehensive-read-access-health-summary">Comprehensive Read Access (Health Summary)</h3>
+<div class="highlight"><pre><span></span><code>openid fhirUser launch launch/patient offline_access
+patient/*.read
+</code></pre></div>
+<p><strong>What it enables</strong>:
+- Everything in basic scope
+- All patient resources (wildcard)
+- Long-term access (offline_access)</p>
+<p><strong>User sees</strong>: "This app will access your complete health record and keep access after you log out."</p>
+<hr/>
+<h3 id="clinical-documentation-app-provider-tool">Clinical Documentation App (Provider Tool)</h3>
+<div class="highlight"><pre><span></span><code>openid profile fhirUser launch launch/patient launch/encounter
+patient/Patient.read
+patient/Observation.write
+patient/Condition.write
+</code></pre></div>
+<p><strong>What it enables</strong>:
+- Provider identity with profile
+- EHR launch with encounter context
+- Read patient demographics
+- Create/update observations and conditions</p>
+<p><strong>Use case</strong>: SOAP note documentation, clinical data entry.</p>
+<hr/>
+<h3 id="provider-dashboard-population-health">Provider Dashboard (Population Health)</h3>
+<div class="highlight"><pre><span></span><code>openid profile fhirUser launch
+user/Patient.read
+user/Observation.read
+user/Condition.read
+user/Encounter.read
+</code></pre></div>
+<p><strong>What it enables</strong>:
+- Provider identity
+- EHR launch (no specific patient)
+- Read across patient panel
+- View observations, conditions, encounters for multiple patients</p>
+<p><strong>Use case</strong>: Quality measure dashboard, care gap analysis.</p>
+<hr/>
+<h3 id="backend-service-no-user">Backend Service (No User)</h3>
+<div class="highlight"><pre><span></span><code>system/Patient.read
+system/Observation.read
+</code></pre></div>
+<p><strong>Authentication</strong>: Client credentials grant (not authorization code).</p>
+<p><strong>No user interaction</strong>: Automated workflow.</p>
+<p><strong>Use case</strong>: Bulk data export, analytics pipeline, report generation.</p>
+<p><strong>Example token request</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST /token</span>
+<span class="err">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="err">grant_type=client_credentials&amp;</span>
+<span class="err">scope=system/Patient.read system/Observation.read&amp;</span>
+<span class="err">client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&amp;</span>
+<span class="err">client_assertion=eyJhbGciOiJSUzI1NiIs...</span>
+</code></pre></div>
+<hr/>
+<h2 id="scope-negotiation-requested-vs-granted">Scope Negotiation: Requested vs. Granted</h2>
+<p><strong>Important</strong>: Authorization server may grant <strong>subset</strong> of requested scopes.</p>
+<p><strong>Scenario</strong>: App requests:</p>
+<div class="highlight"><pre><span></span><code>patient/*.read patient/*.write offline_access
+</code></pre></div>
+<p><strong>User denies write access and offline access</strong>. Token response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patient/*.read"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Your app must check</strong> granted scopes before attempting operations:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">checkScope</span><span class="p">(</span><span class="nx">grantedScopes</span><span class="p">,</span><span class="w"> </span><span class="nx">requiredScope</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">grantedScopes</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Exact match</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">scopes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">requiredScope</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Wildcard match</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">resource</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">requiredScope</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">wildcardWrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">context</span><span class="si">}</span><span class="sb">/*.write`</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">wildcardAll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">context</span><span class="si">}</span><span class="sb">/*.*`</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">scopes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">wildcardWrite</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">scopes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">wildcardAll</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// .write implies .read</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">requiredScope</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">'.read'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">writeScope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">requiredScope</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'.read'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.write'</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">scopes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">writeScope</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">granted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">scope</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">checkScope</span><span class="p">(</span><span class="nx">granted</span><span class="p">,</span><span class="w"> </span><span class="s1">'patient/Observation.write'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Show "Record Blood Pressure" button</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Hide button or show "Read-only access" message</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">checkScope</span><span class="p">(</span><span class="nx">granted</span><span class="p">,</span><span class="w"> </span><span class="s1">'offline_access'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">'No offline access - user will need to re-authorize periodically'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="scope-best-practices">Scope Best Practices</h2>
+<h3 id="1-request-minimum-necessary-scopes">1. Request Minimum Necessary Scopes</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// BAD: Over-requesting</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'launch launch/patient patient/*.* offline_access'</span><span class="p">;</span>
+
+<span class="c1">// GOOD: Request only what you need</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'launch launch/patient patient/Observation.read patient/Condition.read'</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Why</strong>: Users trust apps that request minimal access. Reduces security risk.</p>
+<hr/>
+<h3 id="2-explain-scopes-to-users">2. Explain Scopes to Users</h3>
+<p><strong>In-app explanation before authorization</strong>:</p>
+<div class="highlight"><pre><span></span><code>This app will request access to:
+• Your vital signs (blood pressure, heart rate)
+• Your condition history (diagnoses)
+
+This app will NOT access:
+• Your medication list
+• Your billing information
+• Other patients' data
+</code></pre></div>
+<hr/>
+<h3 id="3-handle-partial-grants-gracefully">3. Handle Partial Grants Gracefully</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Check granted scopes and adapt UI</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">grantedScopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">scope</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">grantedScopes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'patient/Observation.write'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showRecordDataButton</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showReadOnlyMessage</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">grantedScopes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'offline_access'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showPeriodicReauthorizationWarning</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="4-use-write-carefully">4. Use <code>.write</code> Carefully</h3>
 <ul>
-<li><code>openid</code> - Required for OIDC authentication  </li>
-<li><code>profile</code> - Access to user profile  </li>
-<li><code>email</code> - Access to user email  </li>
-<li><code>fhirUser</code> - Get FHIR resource URL for user  </li>
+<li>Require user confirmation before writing data</li>
+<li>Implement undo functionality</li>
+<li>Log all modifications for audit</li>
+<li>Validate data thoroughly before submission</li>
 </ul>
-<h3 id="launch-context-scopes">Launch context scopes</h3>
-<ul>
-<li><code>launch</code> - Required for EHR launch</li>
-<li><code>launch/patient</code> - Get patient in context</li>
-<li><code>launch/encounter</code> - Get encounter in context</li>
-</ul>
-<h3 id="offline-access">Offline access</h3>
-<ul>
-<li><code>offline_access</code> - Request refresh token for long-term access  </li>
-</ul>
-<h2 id="typical-scope-combinations">Typical Scope Combinations</h2>
-<h3 id="basic-read-only-app">Basic read-only app</h3>
-<ul>
-<li><code>openid fhirUser launch launch/patient</code> </li>
-<li><code>patient/Patient.read</code> <code>patient/Observation.read</code> <code>patient/Condition.read</code> </li>
-</ul>
-<h3 id="comprehensive-read-access">Comprehensive read access</h3>
-<ul>
-<li><code>openid fhirUser launch launch/patient offline_access</code> </li>
-<li><code>patient/*.read</code> </li>
-</ul>
-<h3 id="clinical-documentation-app">Clinical documentation app</h3>
-<ul>
-<li><code>openid fhirUser launch launch/patient launch/encounter</code> </li>
-<li><code>patient/Patient.read patient/Observation.write patient/Condition.write</code> </li>
-</ul>
-<h3 id="provider-facing-dashboard">Provider-facing dashboard</h3>
-<ul>
-<li><code>openid profile fhirUser launch</code> </li>
-<li><code>user/Patient.read user/Observation.read user/Condition.read user/Encounter.read</code> </li>
-</ul>
-<h3 id="backend-service-no-user">Backend service (no user)</h3>
-<p><code>system/Patient.read system/Observation.read</code></p>
-<h2 id="scope-negotiation">Scope Negotiation</h2>
-<ul>
-<li>App requests scopes during authorization  </li>
-<li>Authorization server may grant subset of requested scopes  </li>
-<li>Granted scopes returned in token response  </li>
-<li>App must check granted scopes before attempting operations  </li>
-</ul>
+<hr/>
+<h2 id="common-scope-errors">Common Scope Errors</h2>
+<h3 id="error-insufficient_scope">Error: insufficient_scope</h3>
+<p><strong>Cause</strong>: Token doesn't have required scope for operation.</p>
+<p><strong>Example</strong>: Trying to create Observation with only <code>.read</code> scope.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"forbidden"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insufficient scope. Required: patient/Observation.write, Have: patient/Observation.read"</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Request appropriate scope or disable unavailable features.</p>
+<hr/>
+<h3 id="error-invalid_scope">Error: invalid_scope</h3>
+<p><strong>Cause</strong>: Requested scope not supported by server.</p>
+<p><strong>Example</strong>: Server doesn't support <code>patient/*.write</code>.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_scope"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scope not supported: patient/*.write"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Check CapabilityStatement for supported scopes. Request alternative scopes.</p>
+<hr/>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now, armed with understanding about how to request and use scopes, let's explore how apps discover server capabilities.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -1559,6 +2222,7 @@
 <script src="../../../../js/seamaiden.js"></script>
 <script src="../../../../js/diagram-theme-switcher.js"></script>
 <script src="../../../../js/diagram-zoom.js"></script>
+<script src="../../../../js/alphabet-auto.js"></script>
 <script src="../../../../js/open_in_new_tab.js"></script>
 <script src="../../../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>

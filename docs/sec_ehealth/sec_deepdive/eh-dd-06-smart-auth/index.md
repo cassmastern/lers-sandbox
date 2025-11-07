@@ -2,6 +2,7 @@
 
 This set of topics provides information on SMART Authorization and its flow.
 
+- [Overview](deepdive-oauth-overview.md)
 - [OAuth 2.0 Flow](deepdive-oauth-flow.md)
 - [SMART Launch Flow](deepdive-smart-launch-flow.md)
 - [SMART Scopes and Authorization](deepdive-smart-scopes-and-auth.md)

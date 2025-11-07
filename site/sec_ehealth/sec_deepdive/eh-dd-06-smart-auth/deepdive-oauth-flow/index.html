@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://cassmastern.github.io/cass-sandbox/sec_ehealth/sec_deepdive/eh-dd-06-smart-auth/deepdive-oauth-flow/" rel="canonical"/>
-<link href="../" rel="prev"/>
+<link href="../deepdive-oauth-overview/" rel="prev"/>
 <link href="../deepdive-smart-launch-flow/" rel="next"/>
 <link href="../../../../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.39" name="generator"/>
@@ -626,6 +626,13 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/eh-dd-05-advanced-intro/">
+<span class="md-ellipsis">
+    Handling Variation — Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
 <span class="md-ellipsis">
     FHIR Profiles and Extensions
@@ -653,6 +660,13 @@
             SMART Authorization
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-oauth-overview/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -673,9 +687,299 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#oauth-20-flow-details-diagram">
+<a class="md-nav__link" href="#understanding-oauth-20-the-authorization-framework">
 <span class="md-ellipsis">
-      OAuth 2.0 Flow Details (diagram)
+      Understanding OAuth 2.0: The Authorization Framework
+    </span>
+</a>
+<nav aria-label="Understanding OAuth 2.0: The Authorization Framework" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-pre-oauth-world">
+<span class="md-ellipsis">
+      The Pre-OAuth World
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-oauth-solution">
+<span class="md-ellipsis">
+      The OAuth Solution
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-oauth-20-actors">
+<span class="md-ellipsis">
+      The OAuth 2.0 Actors
+    </span>
+</a>
+<nav aria-label="The OAuth 2.0 Actors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-resource-owner-you">
+<span class="md-ellipsis">
+      1. Resource Owner (You)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-client-the-app">
+<span class="md-ellipsis">
+      2. Client (The App)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-authorization-server">
+<span class="md-ellipsis">
+      3. Authorization Server
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-resource-server-fhir-server">
+<span class="md-ellipsis">
+      4. Resource Server (FHIR Server)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-complete-authorization-code-flow">
+<span class="md-ellipsis">
+      The Complete Authorization Code Flow
+    </span>
+</a>
+<nav aria-label="The Complete Authorization Code Flow" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-launch-with-iss-and-launch-parameters">
+<span class="md-ellipsis">
+      Step 1: Launch with ISS and Launch Parameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-discover-authorization-endpoints">
+<span class="md-ellipsis">
+      Step 2: Discover Authorization Endpoints
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-authorization-request">
+<span class="md-ellipsis">
+      Step 3: Authorization Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-display-login-screen">
+<span class="md-ellipsis">
+      Step 4: Display Login Screen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-user-provides-credentials">
+<span class="md-ellipsis">
+      Step 5: User Provides Credentials
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-6-display-consent-screen">
+<span class="md-ellipsis">
+      Step 6: Display Consent Screen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-7-user-approves-access">
+<span class="md-ellipsis">
+      Step 7: User Approves Access
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-8-redirect-with-authorization-code">
+<span class="md-ellipsis">
+      Step 8: Redirect with Authorization Code
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-9-token-request">
+<span class="md-ellipsis">
+      Step 9: Token Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-10-validate-and-create-context">
+<span class="md-ellipsis">
+      Step 10: Validate and Create Context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-11-access-token-response">
+<span class="md-ellipsis">
+      Step 11: Access Token Response
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-12-api-request-with-token">
+<span class="md-ellipsis">
+      Step 12: API Request with Token
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-13-validate-token-and-scope">
+<span class="md-ellipsis">
+      Step 13: Validate Token and Scope
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-14-return-resource">
+<span class="md-ellipsis">
+      Step 14: Return Resource
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-refresh-flow-step-15-16">
+<span class="md-ellipsis">
+      Token Refresh Flow (Step 15-16)
+    </span>
+</a>
+<nav aria-label="Token Refresh Flow (Step 15-16)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-15-refresh-token-request">
+<span class="md-ellipsis">
+      Step 15: Refresh Token Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-16-new-access-token">
+<span class="md-ellipsis">
+      Step 16: New Access Token
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oauth-20-flow-diagram">
+<span class="md-ellipsis">
+      OAuth 2.0 Flow Diagram
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-considerations">
+<span class="md-ellipsis">
+      Security Considerations
+    </span>
+</a>
+<nav aria-label="Security Considerations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pkce-proof-key-for-code-exchange">
+<span class="md-ellipsis">
+      PKCE (Proof Key for Code Exchange)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#state-parameter-csrf-protection">
+<span class="md-ellipsis">
+      State Parameter (CSRF Protection)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-storage">
+<span class="md-ellipsis">
+      Token Storage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-expiration">
+<span class="md-ellipsis">
+      Token Expiration
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-oauth-errors">
+<span class="md-ellipsis">
+      Common OAuth Errors
+    </span>
+</a>
+<nav aria-label="Common OAuth Errors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalid_request">
+<span class="md-ellipsis">
+      invalid_request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalid_client">
+<span class="md-ellipsis">
+      invalid_client
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalid_grant">
+<span class="md-ellipsis">
+      invalid_grant
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unauthorized_client">
+<span class="md-ellipsis">
+      unauthorized_client
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#access_denied">
+<span class="md-ellipsis">
+      access_denied
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -741,7 +1045,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
 <span class="md-ellipsis">
-    Practical Example: Building a SMART App
+    Practical Example — a Sample SMART App
   </span>
 </a>
 </li>
@@ -1119,9 +1423,299 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#oauth-20-flow-details-diagram">
+<a class="md-nav__link" href="#understanding-oauth-20-the-authorization-framework">
 <span class="md-ellipsis">
-      OAuth 2.0 Flow Details (diagram)
+      Understanding OAuth 2.0: The Authorization Framework
+    </span>
+</a>
+<nav aria-label="Understanding OAuth 2.0: The Authorization Framework" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-pre-oauth-world">
+<span class="md-ellipsis">
+      The Pre-OAuth World
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-oauth-solution">
+<span class="md-ellipsis">
+      The OAuth Solution
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-oauth-20-actors">
+<span class="md-ellipsis">
+      The OAuth 2.0 Actors
+    </span>
+</a>
+<nav aria-label="The OAuth 2.0 Actors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-resource-owner-you">
+<span class="md-ellipsis">
+      1. Resource Owner (You)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-client-the-app">
+<span class="md-ellipsis">
+      2. Client (The App)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-authorization-server">
+<span class="md-ellipsis">
+      3. Authorization Server
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-resource-server-fhir-server">
+<span class="md-ellipsis">
+      4. Resource Server (FHIR Server)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-complete-authorization-code-flow">
+<span class="md-ellipsis">
+      The Complete Authorization Code Flow
+    </span>
+</a>
+<nav aria-label="The Complete Authorization Code Flow" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-launch-with-iss-and-launch-parameters">
+<span class="md-ellipsis">
+      Step 1: Launch with ISS and Launch Parameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-discover-authorization-endpoints">
+<span class="md-ellipsis">
+      Step 2: Discover Authorization Endpoints
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-authorization-request">
+<span class="md-ellipsis">
+      Step 3: Authorization Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-display-login-screen">
+<span class="md-ellipsis">
+      Step 4: Display Login Screen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-user-provides-credentials">
+<span class="md-ellipsis">
+      Step 5: User Provides Credentials
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-6-display-consent-screen">
+<span class="md-ellipsis">
+      Step 6: Display Consent Screen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-7-user-approves-access">
+<span class="md-ellipsis">
+      Step 7: User Approves Access
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-8-redirect-with-authorization-code">
+<span class="md-ellipsis">
+      Step 8: Redirect with Authorization Code
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-9-token-request">
+<span class="md-ellipsis">
+      Step 9: Token Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-10-validate-and-create-context">
+<span class="md-ellipsis">
+      Step 10: Validate and Create Context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-11-access-token-response">
+<span class="md-ellipsis">
+      Step 11: Access Token Response
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-12-api-request-with-token">
+<span class="md-ellipsis">
+      Step 12: API Request with Token
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-13-validate-token-and-scope">
+<span class="md-ellipsis">
+      Step 13: Validate Token and Scope
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-14-return-resource">
+<span class="md-ellipsis">
+      Step 14: Return Resource
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-refresh-flow-step-15-16">
+<span class="md-ellipsis">
+      Token Refresh Flow (Step 15-16)
+    </span>
+</a>
+<nav aria-label="Token Refresh Flow (Step 15-16)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-15-refresh-token-request">
+<span class="md-ellipsis">
+      Step 15: Refresh Token Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-16-new-access-token">
+<span class="md-ellipsis">
+      Step 16: New Access Token
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oauth-20-flow-diagram">
+<span class="md-ellipsis">
+      OAuth 2.0 Flow Diagram
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-considerations">
+<span class="md-ellipsis">
+      Security Considerations
+    </span>
+</a>
+<nav aria-label="Security Considerations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pkce-proof-key-for-code-exchange">
+<span class="md-ellipsis">
+      PKCE (Proof Key for Code Exchange)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#state-parameter-csrf-protection">
+<span class="md-ellipsis">
+      State Parameter (CSRF Protection)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-storage">
+<span class="md-ellipsis">
+      Token Storage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-expiration">
+<span class="md-ellipsis">
+      Token Expiration
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-oauth-errors">
+<span class="md-ellipsis">
+      Common OAuth Errors
+    </span>
+</a>
+<nav aria-label="Common OAuth Errors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalid_request">
+<span class="md-ellipsis">
+      invalid_request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalid_client">
+<span class="md-ellipsis">
+      invalid_client
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalid_grant">
+<span class="md-ellipsis">
+      invalid_grant
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unauthorized_client">
+<span class="md-ellipsis">
+      unauthorized_client
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#access_denied">
+<span class="md-ellipsis">
+      access_denied
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -1133,7 +1727,62 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="oauth-20-flow">OAuth 2.0 Flow</h1>
-<h2 id="oauth-20-flow-details-diagram">OAuth 2.0 Flow Details (diagram)</h2>
+<h2 id="understanding-oauth-20-the-authorization-framework">Understanding OAuth 2.0: The Authorization Framework</h2>
+<p>OAuth 2.0 is the industry-standard protocol for authorization. It solves a fundamental problem: <strong>How do you give an app access to your data without giving it your password?</strong></p>
+<h3 id="the-pre-oauth-world">The Pre-OAuth World</h3>
+<p>Imagine a blood pressure tracking app that needs to read your EHR data. Without OAuth:</p>
+<p>❌ <strong>Option 1</strong>: You give the app your EHR username and password<br/>
+→ Problem: The app can do anything you can do, forever. If the app is compromised, your password is exposed.</p>
+<p>❌ <strong>Option 2</strong>: EHR creates a special API key just for you<br/>
+→ Problem: Managing thousands of API keys is a nightmare. Revoking access is difficult.</p>
+<h3 id="the-oauth-solution">The OAuth Solution</h3>
+<p>✅ <strong>OAuth flow</strong>: App asks permission, you approve, app gets a temporary token with limited permissions.</p>
+<p>→ Benefits:
+- No password sharing (app never sees your credentials)
+- Limited scope (app can only read vitals, not prescribe medications)
+- Revocable (you can revoke access anytime)
+- Time-limited (tokens expire, requiring periodic re-authorization)</p>
+<hr/>
+<h2 id="the-oauth-20-actors">The OAuth 2.0 Actors</h2>
+<p>Every OAuth flow involves four parties:</p>
+<h3 id="1-resource-owner-you">1. Resource Owner (You)</h3>
+<p>The person who owns the data and can grant access to it.</p>
+<p><strong>Examples</strong>:
+- Patient accessing their own record
+- Clinician with rights to view patient charts
+- Administrator with system-wide access</p>
+<h3 id="2-client-the-app">2. Client (The App)</h3>
+<p>The application requesting access to protected resources.</p>
+<p><strong>Examples</strong>:
+- Blood pressure tracking mobile app
+- Clinical decision support tool
+- Research data collection system</p>
+<p><strong>Client types</strong>:
+- <strong>Public client</strong>: Can't keep secrets (mobile apps, single-page apps). Uses PKCE.
+- <strong>Confidential client</strong>: Can keep secrets (server-side apps). Uses client_secret.</p>
+<h3 id="3-authorization-server">3. Authorization Server</h3>
+<p>Authenticates the resource owner and issues access tokens to the client.</p>
+<p><strong>Responsibilities</strong>:
+- Display login screen
+- Verify user credentials
+- Show consent screen ("Allow app to read your vitals?")
+- Issue access tokens and refresh tokens
+- Validate tokens on subsequent requests</p>
+<p><strong>Examples</strong>:
+- Epic's OAuth server
+- Cerner's authorization endpoint
+- SMART Health IT sandbox auth server</p>
+<h3 id="4-resource-server-fhir-server">4. Resource Server (FHIR Server)</h3>
+<p>Hosts the protected resources and validates access tokens.</p>
+<p><strong>Responsibilities</strong>:
+- Accept API requests with Bearer tokens
+- Validate token signature and expiration
+- Check scopes and context
+- Return requested FHIR resources
+- Enforce access control policies</p>
+<hr/>
+<h2 id="the-complete-authorization-code-flow">The Complete Authorization Code Flow</h2>
+<p>Here is a diagram showing the flow in detail:</p>
 <div class="mermaid">sequenceDiagram
     participant Browser
     participant App as SMART App
@@ -1185,6 +1834,424 @@
     Auth--&gt;&gt;App: 16. New access token
     Note left of Auth: access_token<br/>expires_in<br/>refresh_token
 </div>
+<p>Let's examine the flow step by step.</p>
+<h3 id="step-1-launch-with-iss-and-launch-parameters">Step 1: Launch with ISS and Launch Parameters</h3>
+<p><strong>EHR launch scenario</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://your-app.com/launch?iss=https://fhir.example.org&amp;launch=eyJhbGciOiJIUz...</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:
+- <strong><code>iss</code></strong> (issuer): FHIR server base URL
+- <strong><code>launch</code></strong>: Opaque token containing context (patient ID, encounter ID)</p>
+<p><strong>Your app stores</strong>: <code>iss</code> and <code>launch</code> for use in step 3.</p>
+<p><strong>Standalone launch scenario</strong>:</p>
+<p>Your app knows the FHIR server URL already (user selected EHR). No <code>launch</code> token—context will come from user authentication.</p>
+<hr/>
+<h3 id="step-2-discover-authorization-endpoints">Step 2: Discover Authorization Endpoints</h3>
+<p><strong>Request</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://fhir.example.org/.well-known/smart-configuration</span>
+<span class="err">Accept: application/json</span>
+</code></pre></div>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"authorization_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://auth.example.org/authorize"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"token_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://auth.example.org/token"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scopes_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"openid"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"fhirUser"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"launch"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"launch/patient"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"patient/*.read"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"user/*.read"</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"launch-ehr"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"client-public"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"context-ehr-patient"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"permission-offline"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Why discovery?</strong>: Different EHR vendors use different OAuth endpoints. Discovery lets your app work universally.</p>
+<p><strong>Your app caches</strong>: Authorization and token endpoints for the rest of the flow.</p>
+<hr/>
+<h3 id="step-3-authorization-request">Step 3: Authorization Request</h3>
+<p><strong>Your app redirects the browser</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://auth.example.org/authorize?</span>
+<span class="err">  response_type=code&amp;</span>
+<span class="err">  client_id=your_app_id&amp;</span>
+<span class="err">  redirect_uri=https://your-app.com/callback&amp;</span>
+<span class="err">  scope=launch%20launch/patient%20patient/*.read%20offline_access%20openid%20fhirUser&amp;</span>
+<span class="err">  state=random_string_abc123&amp;</span>
+<span class="err">  aud=https://fhir.example.org&amp;</span>
+<span class="err">  launch=eyJhbGciOiJIUz...</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><strong><code>response_type=code</code></strong>: Using authorization code flow (most secure)</li>
+<li><strong><code>client_id</code></strong>: Your app's identifier (registered with EHR)</li>
+<li><strong><code>redirect_uri</code></strong>: Where to send user after authorization (must match registration)</li>
+<li><strong><code>scope</code></strong>: Permissions requested (space-separated list)</li>
+<li><code>launch</code>: Required for EHR-initiated launches</li>
+<li><code>launch/patient</code>: Request patient context</li>
+<li><code>patient/*.read</code>: Read all resources for patient</li>
+<li><code>offline_access</code>: Request refresh token</li>
+<li><code>openid</code>: OIDC authentication</li>
+<li><code>fhirUser</code>: Get FHIR User resource URL</li>
+<li><strong><code>state</code></strong>: Random string to prevent CSRF attacks</li>
+<li><strong><code>aud</code></strong> (audience): FHIR server URL (proves intent)</li>
+<li><strong><code>launch</code></strong>: Context token from step 1 (EHR launch only)</li>
+</ul>
+<p><strong>Security notes</strong>:
+- <code>state</code> parameter prevents cross-site request forgery
+- <code>redirect_uri</code> must exactly match registered value
+- <code>aud</code> parameter prevents token substitution attacks</p>
+<hr/>
+<h3 id="step-4-display-login-screen">Step 4: Display Login Screen</h3>
+<p><strong>Authorization server shows login form</strong>:</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────┐
+│  Example Hospital Login             │
+├─────────────────────────────────────┤
+│                                     │
+│  Username: [__________________]     │
+│  Password: [__________________]     │
+│                                     │
+│  [ Login ]                          │
+│                                     │
+│  Forgot password?                   │
+└─────────────────────────────────────┘
+</code></pre></div>
+<p><strong>What happens</strong>:
+- User enters EHR credentials (NOT given to your app)
+- Authorization server validates credentials
+- Server may require MFA (multi-factor authentication)
+- Server establishes session</p>
+<p><strong>Security</strong>: Your app NEVER sees the password. Authorization server handles all authentication.</p>
+<hr/>
+<h3 id="step-5-user-provides-credentials">Step 5: User Provides Credentials</h3>
+<p><strong>Behind the scenes</strong>:
+- Authorization server validates username/password
+- May check against Active Directory, LDAP, or database
+- Creates authenticated session
+- Associates session with pending authorization request</p>
+<hr/>
+<h3 id="step-6-display-consent-screen">Step 6: Display Consent Screen</h3>
+<p><strong>Authorization server shows permissions request</strong>:</p>
+<div class="highlight"><pre><span></span><code>┌────────────────────────────────────────┐
+│  Blood Pressure Tracker                │
+│  is requesting access to:              │
+├────────────────────────────────────────┤
+│                                        │
+│  ☐ Your basic profile information      │
+│  ☐ Your vital signs                    │
+│  ☐ Your observation history            │
+│                                        │
+│  This app will be able to:             │
+│  • View your blood pressure readings   │
+│  • View your heart rate                │
+│  • View measurement history            │
+│                                        │
+│  [ Deny ]         [ Allow ]            │
+│                                        │
+└────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Consent details</strong>:
+- Human-readable description of requested scopes
+- Duration of access (one-time vs. ongoing if <code>offline_access</code>)
+- Link to app's privacy policy
+- Options to reduce scope (some servers allow partial approval)</p>
+<p><strong>User actions</strong>:
+- <strong>Allow</strong>: Proceeds to step 7
+- <strong>Deny</strong>: Returns error to app's redirect_uri</p>
+<hr/>
+<h3 id="step-7-user-approves-access">Step 7: User Approves Access</h3>
+<p><strong>What happens</strong>:
+- Authorization server records consent
+- Generates authorization code (short-lived, typically 5 minutes)
+- Associates code with:
+  - Client ID
+  - Redirect URI
+  - Approved scopes
+  - User identity
+  - Patient context (for EHR launches)</p>
+<hr/>
+<h3 id="step-8-redirect-with-authorization-code">Step 8: Redirect with Authorization Code</h3>
+<p><strong>Authorization server redirects back to your app</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">302</span> <span class="ne">Found</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://your-app.com/callback?</span>
+  <span class="l">code=auth_code_xyz789&amp;</span>
+  <span class="l">state=random_string_abc123</span>
+</code></pre></div>
+<p><strong>Your app validates</strong>:
+1. Check <code>state</code> matches value from step 3 (prevents CSRF)
+2. Extract <code>code</code> parameter
+3. Prepare for token exchange</p>
+<p><strong>Security</strong>: Authorization code is single-use and expires quickly. Even if intercepted, it's useless without client credentials.</p>
+<hr/>
+<h3 id="step-9-token-request">Step 9: Token Request</h3>
+<p><strong>Your app makes a server-side request</strong> (NOT in browser):</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST https://auth.example.org/token</span>
+<span class="err">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="err">grant_type=authorization_code&amp;</span>
+<span class="err">code=auth_code_xyz789&amp;</span>
+<span class="err">redirect_uri=https://your-app.com/callback&amp;</span>
+<span class="err">client_id=your_app_id&amp;</span>
+<span class="err">client_secret=your_app_secret</span>
+</code></pre></div>
+<p><strong>For public clients</strong> (can't keep secrets), use PKCE instead of client_secret:</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST https://auth.example.org/token</span>
+<span class="err">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="err">grant_type=authorization_code&amp;</span>
+<span class="err">code=auth_code_xyz789&amp;</span>
+<span class="err">redirect_uri=https://your-app.com/callback&amp;</span>
+<span class="err">client_id=your_app_id&amp;</span>
+<span class="err">code_verifier=random_verifier_from_pkce</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:
+- <strong><code>grant_type</code></strong>: <code>authorization_code</code> (trading code for token)
+- <strong><code>code</code></strong>: Authorization code from step 8
+- <strong><code>redirect_uri</code></strong>: Must match exactly from step 3
+- <strong><code>client_id</code></strong>: Your app identifier
+- <strong><code>client_secret</code></strong>: Your app secret (confidential clients only)
+- <strong><code>code_verifier</code></strong>: PKCE verifier (public clients only)</p>
+<hr/>
+<h3 id="step-10-validate-and-create-context">Step 10: Validate and Create Context</h3>
+<p><strong>Authorization server</strong>:
+1. Validates authorization code (not expired, not already used)
+2. Verifies client credentials (client_secret or PKCE)
+3. Confirms redirect_uri matches
+4. Retrieves associated patient context
+5. Generates access token (JWT)
+6. Generates refresh token (if <code>offline_access</code> was approved)</p>
+<p><strong>Access token contains</strong>:
+- User identity (sub claim)
+- Approved scopes (scope claim)
+- Token expiration (exp claim)
+- Patient context (patient claim) - SMART extension
+- Encounter context (encounter claim) - SMART extension
+- FHIR user URL (fhirUser claim) - SMART extension</p>
+<hr/>
+<h3 id="step-11-access-token-response">Step 11: Access Token Response</h3>
+<p><strong>Authorization server returns tokens</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch/patient patient/*.read offline_access openid fhirUser"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"encounter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-enc-456"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"fhirUser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.example.org/Practitioner/dr-johnson"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_token_abc123"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Token details</strong>:</p>
+<ul>
+<li><strong><code>access_token</code></strong>: JWT for API requests (typically expires in 1 hour)</li>
+<li><strong><code>token_type</code></strong>: Always "Bearer" for OAuth 2.0</li>
+<li><strong><code>expires_in</code></strong>: Seconds until token expires (3600 = 1 hour)</li>
+<li><strong><code>scope</code></strong>: Actually granted scopes (may be subset of requested)</li>
+<li><strong><code>patient</code></strong>: Patient ID in context (SMART extension)</li>
+<li><strong><code>encounter</code></strong>: Encounter ID if available (SMART extension)</li>
+<li><strong><code>fhirUser</code></strong>: FHIR resource URL for authenticated user (SMART extension)</li>
+<li><strong><code>refresh_token</code></strong>: Long-lived token to get new access tokens</li>
+<li><strong><code>id_token</code></strong>: OpenID Connect identity token (if <code>openid</code> scope granted)</li>
+</ul>
+<p><strong>Your app stores</strong>: Access token (in memory), refresh token (securely), patient ID, expiration time.</p>
+<hr/>
+<h3 id="step-12-api-request-with-token">Step 12: API Request with Token</h3>
+<p><strong>Your app makes FHIR API calls</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://fhir.example.org/Patient/smart-1288992</span>
+<span class="err">Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...</span>
+<span class="err">Accept: application/fhir+json</span>
+</code></pre></div>
+<p><strong>Header format</strong>: <code>Authorization: Bearer {access_token}</code></p>
+<hr/>
+<h3 id="step-13-validate-token-and-scope">Step 13: Validate Token and Scope</h3>
+<p><strong>FHIR server</strong>:
+1. Extracts Bearer token from Authorization header
+2. Validates JWT signature (using public key from authorization server)
+3. Checks expiration (exp claim)
+4. Verifies audience (aud claim matches FHIR server URL)
+5. Checks scope includes <code>patient/Patient.read</code> or <code>patient/*.read</code>
+6. Verifies patient ID in URL matches patient claim in token</p>
+<p><strong>If any validation fails</strong>: Returns 401 Unauthorized or 403 Forbidden with OperationOutcome.</p>
+<hr/>
+<h3 id="step-14-return-resource">Step 14: Return Resource</h3>
+<p><strong>FHIR server returns requested data</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"given"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Amy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Victoria"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"female"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-02-20"</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="token-refresh-flow-step-15-16">Token Refresh Flow (Step 15-16)</h2>
+<h3 id="step-15-refresh-token-request">Step 15: Refresh Token Request</h3>
+<p><strong>When access token expires</strong>, your app requests a new one:</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST https://auth.example.org/token</span>
+<span class="err">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="err">grant_type=refresh_token&amp;</span>
+<span class="err">refresh_token=refresh_token_abc123&amp;</span>
+<span class="err">client_id=your_app_id&amp;</span>
+<span class="err">client_secret=your_app_secret</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:
+- <strong><code>grant_type</code></strong>: <code>refresh_token</code>
+- <strong><code>refresh_token</code></strong>: From step 11 response
+- <strong><code>client_id</code></strong>: Your app identifier
+- <strong><code>client_secret</code></strong>: Your app secret (if confidential client)</p>
+<hr/>
+<h3 id="step-16-new-access-token">Step 16: New Access Token</h3>
+<p><strong>Authorization server returns new tokens</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch/patient patient/*.read offline_access openid fhirUser"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_refresh_token_def456"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Important notes</strong>:
+- New access token with fresh expiration
+- May include new refresh token (some servers rotate them)
+- Patient context remains the same
+- No user interaction required</p>
+<hr/>
+<h2 id="oauth-20-flow-diagram">OAuth 2.0 Flow Diagram</h2>
+<p><strong>Keep your existing Mermaid diagram</strong> (<code>deepdive-oauth-flow.md</code>). It provides excellent visual reference. The narrative above explains WHY each step exists and HOW to implement it.</p>
+<hr/>
+<h2 id="security-considerations">Security Considerations</h2>
+<h3 id="pkce-proof-key-for-code-exchange">PKCE (Proof Key for Code Exchange)</h3>
+<p><strong>Problem</strong>: Public clients (mobile apps, SPAs) can't keep client_secret.</p>
+<p><strong>Solution</strong>: PKCE adds cryptographic proof to prevent code interception.</p>
+<p><strong>How it works</strong>:</p>
+<p><strong>Step 3 (Authorization Request)</strong> - Generate random values:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">codeVerifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateRandomString</span><span class="p">(</span><span class="mf">128</span><span class="p">);</span><span class="w"> </span><span class="c1">// Store securely</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">codeChallenge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">base64url</span><span class="p">(</span><span class="nx">sha256</span><span class="p">(</span><span class="nx">codeVerifier</span><span class="p">));</span>
+
+<span class="c1">// Add to authorization URL</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">authUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">authEndpoint</span><span class="si">}</span><span class="sb">?`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`response_type=code&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`client_id=</span><span class="si">${</span><span class="nx">clientId</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`redirect_uri=</span><span class="si">${</span><span class="nx">redirectUri</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`code_challenge=</span><span class="si">${</span><span class="nx">codeChallenge</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`code_challenge_method=S256&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`state=</span><span class="si">${</span><span class="nx">state</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Step 9 (Token Request)</strong> - Send verifier:</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST /token</span>
+<span class="err">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="err">grant_type=authorization_code&amp;</span>
+<span class="err">code=auth_code_xyz&amp;</span>
+<span class="err">redirect_uri=https://your-app.com/callback&amp;</span>
+<span class="err">client_id=your_app_id&amp;</span>
+<span class="err">code_verifier=random_verifier_from_pkce</span>
+</code></pre></div>
+<p><strong>Authorization server validates</strong>: <code>sha256(code_verifier) == code_challenge</code></p>
+<p><strong>Why it works</strong>: Even if attacker intercepts authorization code, they can't use it without the verifier.</p>
+<hr/>
+<h3 id="state-parameter-csrf-protection">State Parameter (CSRF Protection)</h3>
+<p><strong>Attack scenario</strong>: Malicious site tricks user into authorizing attacker's session.</p>
+<p><strong>Prevention</strong>: <code>state</code> parameter ties authorization request to your app's session.</p>
+<p><strong>Implementation</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Step 3: Generate and store state</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateRandomString</span><span class="p">(</span><span class="mf">32</span><span class="p">);</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'oauth_state'</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">);</span>
+
+<span class="c1">// Step 8: Validate state in callback</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">receivedState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s1">'state'</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">storedState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'oauth_state'</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">receivedState</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">storedState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'CSRF attack detected!'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="token-storage">Token Storage</h3>
+<p><strong>Never store tokens in</strong>:
+- LocalStorage (vulnerable to XSS attacks)
+- URL parameters (visible in browser history)
+- Cookies without httpOnly flag (XSS risk)</p>
+<p><strong>Best practices</strong>:
+- <strong>Access tokens</strong>: Store in memory (JavaScript variable)
+- <strong>Refresh tokens</strong>: Store in httpOnly, secure cookies (server-side) or encrypted storage (mobile)
+- <strong>Clear tokens on logout</strong>: Invalidate session completely</p>
+<hr/>
+<h3 id="token-expiration">Token Expiration</h3>
+<p><strong>Access tokens should expire quickly</strong> (1 hour typical).</p>
+<p><strong>Why</strong>:
+- Limits damage if token is stolen
+- Forces periodic re-validation
+- Allows policy changes to take effect</p>
+<p><strong>Refresh tokens can be long-lived</strong> (days to months).</p>
+<p><strong>Why</strong>:
+- Avoids frequent user re-authentication
+- Enables offline access
+- Can be revoked when needed</p>
+<hr/>
+<h2 id="common-oauth-errors">Common OAuth Errors</h2>
+<h3 id="invalid_request">invalid_request</h3>
+<p><strong>Cause</strong>: Malformed request (missing parameter, wrong format)</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_request"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing required parameter: client_id"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Double-check all required parameters.</p>
+<hr/>
+<h3 id="invalid_client">invalid_client</h3>
+<p><strong>Cause</strong>: Invalid client credentials</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_client"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client authentication failed"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Verify client_id and client_secret are correct.</p>
+<hr/>
+<h3 id="invalid_grant">invalid_grant</h3>
+<p><strong>Cause</strong>: Authorization code expired or already used</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authorization code has expired"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Authorization codes expire quickly (5 minutes). Don't delay token exchange.</p>
+<hr/>
+<h3 id="unauthorized_client">unauthorized_client</h3>
+<p><strong>Cause</strong>: Client not authorized for this grant type</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unauthorized_client"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client not authorized for refresh_token grant"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Request <code>offline_access</code> scope for refresh tokens.</p>
+<hr/>
+<h3 id="access_denied">access_denied</h3>
+<p><strong>Cause</strong>: User denied consent</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_denied"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User denied authorization"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: This is normal—user chose not to authorize. Handle gracefully in UI.</p>
+<hr/>
+<h2 id="next-steps">Next Steps</h2>
+<p>Next, let's explore SMART's healthcare-specific launch patterns.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -1196,7 +2263,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: SMART Authorization" class="md-footer__link md-footer__link--prev" href="../">
+<a aria-label="Previous: Overview" class="md-footer__link md-footer__link--prev" href="../deepdive-oauth-overview/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -1205,7 +2272,7 @@
                 Previous
               </span>
 <div class="md-ellipsis">
-                SMART Authorization
+                Overview
               </div>
 </div>
 </a>
@@ -1267,6 +2334,7 @@
 <script src="../../../../js/seamaiden.js"></script>
 <script src="../../../../js/diagram-theme-switcher.js"></script>
 <script src="../../../../js/diagram-zoom.js"></script>
+<script src="../../../../js/alphabet-auto.js"></script>
 <script src="../../../../js/open_in_new_tab.js"></script>
 <script src="../../../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>

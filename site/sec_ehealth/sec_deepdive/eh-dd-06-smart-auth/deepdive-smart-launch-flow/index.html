@@ -626,6 +626,13 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/eh-dd-05-advanced-intro/">
+<span class="md-ellipsis">
+    Handling Variation — Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
 <span class="md-ellipsis">
     FHIR Profiles and Extensions
@@ -654,6 +661,13 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-oauth-overview/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../deepdive-oauth-flow/">
 <span class="md-ellipsis">
     OAuth 2.0 Flow
@@ -662,11 +676,223 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    SMART Launch Flow
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     SMART Launch Flow
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#two-launch-patterns-for-different-contexts">
+<span class="md-ellipsis">
+      Two Launch Patterns for Different Contexts
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ehr-launch-provider-initiated">
+<span class="md-ellipsis">
+      EHR Launch (Provider-Initiated)
+    </span>
+</a>
+<nav aria-label="EHR Launch (Provider-Initiated)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-clinical-workflow">
+<span class="md-ellipsis">
+      The Clinical Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-url-parameters">
+<span class="md-ellipsis">
+      Launch URL Parameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authorization-request-ehr-launch">
+<span class="md-ellipsis">
+      Authorization Request (EHR Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-response-ehr-launch">
+<span class="md-ellipsis">
+      Token Response (EHR Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-implementation-javascript">
+<span class="md-ellipsis">
+      Example Implementation (JavaScript)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standalone-launch-patient-initiated">
+<span class="md-ellipsis">
+      Standalone Launch (Patient-Initiated)
+    </span>
+</a>
+<nav aria-label="Standalone Launch (Patient-Initiated)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-consumer-workflow">
+<span class="md-ellipsis">
+      The Consumer Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+<span class="md-ellipsis">
+      Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authorization-request-standalone-launch">
+<span class="md-ellipsis">
+      Authorization Request (Standalone Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-and-consent">
+<span class="md-ellipsis">
+      Authentication and Consent
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-response-standalone-launch">
+<span class="md-ellipsis">
+      Token Response (Standalone Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-implementation-javascript_1">
+<span class="md-ellipsis">
+      Example Implementation (JavaScript)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparison-ehr-launch-vs-standalone-launch">
+<span class="md-ellipsis">
+      Comparison: EHR Launch vs. Standalone Launch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#smart-launch-sequence-diagram">
+<span class="md-ellipsis">
+      SMART Launch Sequence Diagram
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#handling-both-launch-types">
+<span class="md-ellipsis">
+      Handling Both Launch Types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-launch-errors">
+<span class="md-ellipsis">
+      Common Launch Errors
+    </span>
+</a>
+<nav aria-label="Common Launch Errors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-invalid_request-missing-launch-parameter">
+<span class="md-ellipsis">
+      Error: invalid_request (missing launch parameter)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-patient-context-not-available">
+<span class="md-ellipsis">
+      Error: Patient context not available
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-scope-not-supported">
+<span class="md-ellipsis">
+      Error: Scope not supported
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#best-practices">
+<span class="md-ellipsis">
+      Best Practices
+    </span>
+</a>
+<nav aria-label="Best Practices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-declare-launch-types-in-client-registration">
+<span class="md-ellipsis">
+      1. Declare Launch Types in Client Registration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-validate-context-after-token-exchange">
+<span class="md-ellipsis">
+      2. Validate Context After Token Exchange
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-handle-missing-context-gracefully">
+<span class="md-ellipsis">
+      3. Handle Missing Context Gracefully
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../deepdive-smart-scopes-and-auth/">
@@ -720,7 +946,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
 <span class="md-ellipsis">
-    Practical Example: Building a SMART App
+    Practical Example — a Sample SMART App
   </span>
 </a>
 </li>
@@ -1092,6 +1318,210 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#two-launch-patterns-for-different-contexts">
+<span class="md-ellipsis">
+      Two Launch Patterns for Different Contexts
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ehr-launch-provider-initiated">
+<span class="md-ellipsis">
+      EHR Launch (Provider-Initiated)
+    </span>
+</a>
+<nav aria-label="EHR Launch (Provider-Initiated)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-clinical-workflow">
+<span class="md-ellipsis">
+      The Clinical Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-url-parameters">
+<span class="md-ellipsis">
+      Launch URL Parameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authorization-request-ehr-launch">
+<span class="md-ellipsis">
+      Authorization Request (EHR Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-response-ehr-launch">
+<span class="md-ellipsis">
+      Token Response (EHR Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-implementation-javascript">
+<span class="md-ellipsis">
+      Example Implementation (JavaScript)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standalone-launch-patient-initiated">
+<span class="md-ellipsis">
+      Standalone Launch (Patient-Initiated)
+    </span>
+</a>
+<nav aria-label="Standalone Launch (Patient-Initiated)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-consumer-workflow">
+<span class="md-ellipsis">
+      The Consumer Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+<span class="md-ellipsis">
+      Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authorization-request-standalone-launch">
+<span class="md-ellipsis">
+      Authorization Request (Standalone Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-and-consent">
+<span class="md-ellipsis">
+      Authentication and Consent
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#token-response-standalone-launch">
+<span class="md-ellipsis">
+      Token Response (Standalone Launch)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-implementation-javascript_1">
+<span class="md-ellipsis">
+      Example Implementation (JavaScript)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparison-ehr-launch-vs-standalone-launch">
+<span class="md-ellipsis">
+      Comparison: EHR Launch vs. Standalone Launch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#smart-launch-sequence-diagram">
+<span class="md-ellipsis">
+      SMART Launch Sequence Diagram
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#handling-both-launch-types">
+<span class="md-ellipsis">
+      Handling Both Launch Types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-launch-errors">
+<span class="md-ellipsis">
+      Common Launch Errors
+    </span>
+</a>
+<nav aria-label="Common Launch Errors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-invalid_request-missing-launch-parameter">
+<span class="md-ellipsis">
+      Error: invalid_request (missing launch parameter)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-patient-context-not-available">
+<span class="md-ellipsis">
+      Error: Patient context not available
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-scope-not-supported">
+<span class="md-ellipsis">
+      Error: Scope not supported
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#best-practices">
+<span class="md-ellipsis">
+      Best Practices
+    </span>
+</a>
+<nav aria-label="Best Practices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-declare-launch-types-in-client-registration">
+<span class="md-ellipsis">
+      1. Declare Launch Types in Client Registration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-validate-context-after-token-exchange">
+<span class="md-ellipsis">
+      2. Validate Context After Token Exchange
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-handle-missing-context-gracefully">
+<span class="md-ellipsis">
+      3. Handle Missing Context Gracefully
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -1099,7 +1529,294 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="smart-launch-flow">SMART Launch Flow</h1>
-<p>SMART Launch Sequence Diagram</p>
+<h2 id="two-launch-patterns-for-different-contexts">Two Launch Patterns for Different Contexts</h2>
+<p>SMART-on-FHIR supports two fundamentally different ways to start an app, each optimized for specific use cases. Understanding when to use each pattern is crucial for building the right user experience.</p>
+<hr/>
+<h2 id="ehr-launch-provider-initiated">EHR Launch (Provider-Initiated)</h2>
+<h3 id="the-clinical-workflow">The Clinical Workflow</h3>
+<p><strong>Scenario</strong>: Dr. Johnson is reviewing Amy Shaw's chart in the EHR. She clicks the "Cardiac Risk Calculator" app button.</p>
+<p><strong>What happens</strong>:</p>
+<ol>
+<li>EHR redirects to app with context: <code>launch?iss=...&amp;launch=...</code></li>
+<li>App discovers OAuth endpoints via <code>iss</code> (FHIR server URL)</li>
+<li>App redirects to authorization endpoint <strong>with launch token</strong></li>
+<li>Authorization server validates launch token (contains patient ID, encounter ID)</li>
+<li>User approves (or approval is pre-configured for integrated apps)</li>
+<li>App receives access token <strong>with patient/encounter context already populated</strong></li>
+<li>App immediately displays Amy Shaw's data—no manual patient selection</li>
+</ol>
+<p><strong>Key advantage</strong>: Zero additional clicks. The app automatically knows which patient to show.</p>
+<h3 id="launch-url-parameters">Launch URL Parameters</h3>
+<p><strong>EHR initiates</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://your-app.com/launch?</span>
+<span class="err">  iss=https://fhir.example.org&amp;</span>
+<span class="err">  launch=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50IjoiMTIzIiwiZW5jb3VudGVyIjoiNDU2In0</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><strong><code>iss</code></strong>: Issuer (FHIR server base URL). Used to discover OAuth endpoints.</li>
+<li><strong><code>launch</code></strong>: Opaque JWT containing context. Don't try to decode it—just pass it through.</li>
+</ul>
+<p><strong>Your app stores these</strong> for use in authorization request.</p>
+<h3 id="authorization-request-ehr-launch">Authorization Request (EHR Launch)</h3>
+<p><strong>Your app redirects to authorization endpoint</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://auth.example.org/authorize?</span>
+<span class="err">  response_type=code&amp;</span>
+<span class="err">  client_id=your_app_id&amp;</span>
+<span class="err">  redirect_uri=https://your-app.com/callback&amp;</span>
+<span class="err">  scope=launch launch/patient launch/encounter patient/*.read user/Practitioner.read openid fhirUser&amp;</span>
+<span class="err">  state=abc123&amp;</span>
+<span class="err">  aud=https://fhir.example.org&amp;</span>
+<span class="err">  launch=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</span>
+</code></pre></div>
+<p><strong>Critical parameters for EHR launch</strong>:</p>
+<ul>
+<li><strong><code>scope=launch</code></strong>: Required to indicate EHR-initiated launch</li>
+<li><strong><code>scope=launch/patient</code></strong>: Request patient context</li>
+<li><strong><code>scope=launch/encounter</code></strong>: Request encounter context</li>
+<li><strong><code>launch=...</code></strong>: The token from EHR (authorization server validates this)</li>
+<li><strong><code>aud=...</code></strong>: Must match FHIR server URL</li>
+</ul>
+<h3 id="token-response-ehr-launch">Token Response (EHR Launch)</h3>
+<p><strong>Authorization server returns context in token response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIs..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch launch/patient launch/encounter patient/*.read user/Practitioner.read openid fhirUser"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"encounter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-enc-456"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"fhirUser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.example.org/Practitioner/dr-johnson"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Context claims</strong>:</p>
+<ul>
+<li><strong><code>patient</code></strong>: Patient ID from EHR context (Amy Shaw)</li>
+<li><strong><code>encounter</code></strong>: Current encounter ID (Nov 1 office visit)</li>
+<li><strong><code>fhirUser</code></strong>: FHIR resource URL for authenticated user (Dr. Johnson)</li>
+</ul>
+<p><strong>Your app immediately fetches</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET /Patient/smart-1288992</span>
+<span class="err">Authorization: Bearer eyJhbGciOiJSUzI1NiIs...</span>
+</code></pre></div>
+<p>No patient search needed—context is provided automatically.</p>
+<h3 id="example-implementation-javascript">Example Implementation (JavaScript)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// launch.html - Entry point from EHR</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleEHRLaunch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">iss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'iss'</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">launch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'launch'</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">iss</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">launch</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'Missing iss or launch parameter'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Store for later use</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'iss'</span><span class="p">,</span><span class="w"> </span><span class="nx">iss</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'launch'</span><span class="p">,</span><span class="w"> </span><span class="nx">launch</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Discover OAuth endpoints</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">iss</span><span class="si">}</span><span class="sb">/.well-known/smart-configuration`</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="w">  </span><span class="c1">// Build authorization URL</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateRandomString</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'state'</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">authUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">authorization_endpoint</span><span class="si">}</span><span class="sb">?`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`response_type=code&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`client_id=</span><span class="si">${</span><span class="nx">CLIENT_ID</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`redirect_uri=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">REDIRECT_URI</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`scope=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="s1">'launch launch/patient launch/encounter patient/*.read openid fhirUser'</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`state=</span><span class="si">${</span><span class="nx">state</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`aud=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">iss</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`launch=</span><span class="si">${</span><span class="nx">launch</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">authUrl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">handleEHRLaunch</span><span class="p">();</span>
+</code></pre></div>
+<hr/>
+<h2 id="standalone-launch-patient-initiated">Standalone Launch (Patient-Initiated)</h2>
+<h3 id="the-consumer-workflow">The Consumer Workflow</h3>
+<p><strong>Scenario</strong>: Amy Shaw opens her blood pressure tracking app on her phone. She wants to import data from her EHR.</p>
+<p><strong>What happens</strong>:</p>
+<ol>
+<li>App asks: "Which health system do you use?" (or user enters FHIR URL)</li>
+<li>App discovers OAuth endpoints</li>
+<li>App redirects to authorization <strong>without launch token</strong></li>
+<li>User authenticates with EHR credentials</li>
+<li>User explicitly authorizes data sharing</li>
+<li>App receives access token with patient ID (Amy's own ID)</li>
+<li>App fetches Amy's data</li>
+</ol>
+<p><strong>Key advantage</strong>: Works outside EHR context. Patient controls data sharing.</p>
+<h3 id="configuration">Configuration</h3>
+<p><strong>Your app has pre-configured FHIR server URLs</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fhirServers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Epic Production"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Cerner Sandbox"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://fhir-myrecord.cerner.com/r4"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"SMART Health IT Sandbox"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/fhir"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>Or user enters custom URL.</p>
+<h3 id="authorization-request-standalone-launch">Authorization Request (Standalone Launch)</h3>
+<p><strong>Your app redirects to authorization endpoint</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET https://auth.example.org/authorize?</span>
+<span class="err">  response_type=code&amp;</span>
+<span class="err">  client_id=your_app_id&amp;</span>
+<span class="err">  redirect_uri=https://your-app.com/callback&amp;</span>
+<span class="err">  scope=patient/*.read offline_access openid fhirUser&amp;</span>
+<span class="err">  state=def456&amp;</span>
+<span class="err">  aud=https://fhir.example.org</span>
+</code></pre></div>
+<p><strong>Differences from EHR launch</strong>:
+- ❌ No <code>launch</code> parameter (no context token)
+- ❌ No <code>launch</code> scope
+- ❌ No <code>launch/patient</code> or <code>launch/encounter</code> scopes
+- ✅ Use <code>patient/*.read</code> (scoped to authenticated patient)
+- ✅ Request <code>offline_access</code> for long-term access</p>
+<h3 id="authentication-and-consent">Authentication and Consent</h3>
+<p><strong>User sees</strong>:</p>
+<div class="highlight"><pre><span></span><code>┌────────────────────────────────────┐
+│  Example Hospital Portal           │
+├────────────────────────────────────┤
+│  Username: amy.shaw@example.com    │
+│  Password: ••••••••                │
+│                                    │
+│  [ Log In ]                        │
+└────────────────────────────────────┘
+
+    ↓ (After login)
+
+┌────────────────────────────────────┐
+│  Blood Pressure Tracker            │
+│  is requesting access to:          │
+├────────────────────────────────────┤
+│  ☑ Your demographics               │
+│  ☑ Your vital signs                │
+│  ☑ Your conditions                 │
+│  ☑ Keep access after you log out  │
+│                                    │
+│  [ Deny ]         [ Allow ]        │
+└────────────────────────────────────┘
+</code></pre></div>
+<p><strong>User authenticates as patient</strong> (not as provider). Authorization server knows this is Amy Shaw.</p>
+<h3 id="token-response-standalone-launch">Token Response (Standalone Launch)</h3>
+<p><strong>Authorization server returns patient context</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIs..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patient/*.read offline_access openid fhirUser"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"fhirUser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.example.org/Patient/smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_abc123"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Key differences</strong>:</p>
+<ul>
+<li><strong><code>patient</code></strong>: Authenticated patient's ID (Amy's own ID)</li>
+<li><strong><code>fhirUser</code></strong>: Points to Patient resource (not Practitioner)</li>
+<li><strong><code>refresh_token</code></strong>: Present if <code>offline_access</code> granted (long-term access)</li>
+<li>❌ No <code>encounter</code> (not launched from EHR context)</li>
+</ul>
+<h3 id="example-implementation-javascript_1">Example Implementation (JavaScript)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Configuration</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">FHIR_SERVER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://launch.smarthealthit.org/v/r4/fhir'</span><span class="p">;</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleStandaloneLaunch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Discover OAuth endpoints</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">FHIR_SERVER</span><span class="si">}</span><span class="sb">/.well-known/smart-configuration`</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="w">  </span><span class="c1">// Build authorization URL</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateRandomString</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'state'</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'iss'</span><span class="p">,</span><span class="w"> </span><span class="nx">FHIR_SERVER</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">authUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">authorization_endpoint</span><span class="si">}</span><span class="sb">?`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`response_type=code&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`client_id=</span><span class="si">${</span><span class="nx">CLIENT_ID</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`redirect_uri=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">REDIRECT_URI</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`scope=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="s1">'patient/*.read offline_access openid fhirUser'</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`state=</span><span class="si">${</span><span class="nx">state</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="sb">`aud=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">FHIR_SERVER</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">authUrl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">handleStandaloneLaunch</span><span class="p">();</span>
+</code></pre></div>
+<hr/>
+<h2 id="comparison-ehr-launch-vs-standalone-launch">Comparison: EHR Launch vs. Standalone Launch</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>EHR Launch</th>
+<th>Standalone Launch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Initiated by</strong></td>
+<td>EHR (provider clicks button)</td>
+<td>Patient (opens app directly)</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Automatic (patient + encounter)</td>
+<td>User-determined (their own data)</td>
+</tr>
+<tr>
+<td><strong><code>launch</code> parameter</strong></td>
+<td>Required</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td><strong><code>launch</code> scope</strong></td>
+<td>Required</td>
+<td>Not included</td>
+</tr>
+<tr>
+<td><strong><code>launch/patient</code> scope</strong></td>
+<td>Request if needed</td>
+<td>Not included</td>
+</tr>
+<tr>
+<td><strong>Patient selection</strong></td>
+<td>Automatic</td>
+<td>Authenticated user</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>Clinical decision support, order entry</td>
+<td>Patient portals, fitness apps</td>
+</tr>
+<tr>
+<td><strong>Typical scopes</strong></td>
+<td><code>user/*.read</code> (provider access)</td>
+<td><code>patient/*.read</code> (own data)</td>
+</tr>
+<tr>
+<td><strong>refresh_token</strong></td>
+<td>Optional (provider might log out)</td>
+<td>Common (ongoing access)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="smart-launch-sequence-diagram">SMART Launch Sequence Diagram</h2>
+<p>Here is a visual overview of the launch flow for reference:</p>
 <div class="mermaid">sequenceDiagram
     participant User
     participant EHR
@@ -1120,6 +1837,97 @@
     FHIR-&gt;&gt;App: Return FHIR resources
     App-&gt;&gt;User: Display patient data
 </div>
+<hr/>
+<h2 id="handling-both-launch-types">Handling Both Launch Types</h2>
+<p><strong>Smart apps often support both patterns</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Detect launch type</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">detectLaunchType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">'iss'</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">'launch'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'ehr-launch'</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'/standalone-launch'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'standalone-launch'</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'unknown'</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Route accordingly</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">launchType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">detectLaunchType</span><span class="p">();</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">launchType</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'ehr-launch'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">handleEHRLaunch</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">launchType</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'standalone-launch'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">handleStandaloneLaunch</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showLaunchSelector</span><span class="p">();</span><span class="w"> </span><span class="c1">// Let user choose</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="common-launch-errors">Common Launch Errors</h2>
+<h3 id="error-invalid_request-missing-launch-parameter">Error: invalid_request (missing launch parameter)</h3>
+<p><strong>Cause</strong>: EHR launch without <code>launch</code> parameter in authorization request</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_request"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing required parameter: launch"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Include <code>launch</code> parameter from EHR redirect, and <code>launch</code> scope.</p>
+<hr/>
+<h3 id="error-patient-context-not-available">Error: Patient context not available</h3>
+<p><strong>Cause</strong>: Requested <code>launch/patient</code> but EHR didn't provide patient context</p>
+<p><strong>Fix</strong>: Check if patient is actually selected in EHR before launching app.</p>
+<hr/>
+<h3 id="error-scope-not-supported">Error: Scope not supported</h3>
+<p><strong>Cause</strong>: EHR doesn't support requested scope (e.g., <code>launch/encounter</code>)</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_scope"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scope not supported: launch/encounter"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix</strong>: Check CapabilityStatement for supported scopes. Make optional scopes gracefully degrade.</p>
+<hr/>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-declare-launch-types-in-client-registration">1. Declare Launch Types in Client Registration</h3>
+<p>Tell EHR which launch patterns you support:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your_app_id"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"launch_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your-app.com/launch"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"redirect_uris"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://your-app.com/callback"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"grant_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"authorization_code"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch launch/patient patient/*.read"</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="2-validate-context-after-token-exchange">2. Validate Context After Token Exchange</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// EHR launch - verify patient context</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">patient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Launched for patient: </span><span class="si">${</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">patient</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Expected patient context but none provided'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Standalone launch - verify authenticated as patient</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">fhirUser</span><span class="o">?</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'/Patient/'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Authenticated as patient'</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">'Unexpected user type'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="3-handle-missing-context-gracefully">3. Handle Missing Context Gracefully</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// If encounter context not provided, prompt user</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">encounter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Show encounter selector UI</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">encounters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchEncounters</span><span class="p">(</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">patient</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">promptUserToSelectEncounter</span><span class="p">(</span><span class="nx">encounters</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Continue with selected encounter</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="next-steps">Next Steps</h2>
+<p>We saw how apps are launched. Next, let's explore the granular permissions controlled by SMART scopes.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -1202,6 +2010,7 @@
 <script src="../../../../js/seamaiden.js"></script>
 <script src="../../../../js/diagram-theme-switcher.js"></script>
 <script src="../../../../js/diagram-zoom.js"></script>
+<script src="../../../../js/alphabet-auto.js"></script>
 <script src="../../../../js/open_in_new_tab.js"></script>
 <script src="../../../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>

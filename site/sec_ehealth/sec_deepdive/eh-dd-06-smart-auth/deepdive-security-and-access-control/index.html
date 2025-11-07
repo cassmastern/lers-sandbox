@@ -626,6 +626,13 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/eh-dd-05-advanced-intro/">
+<span class="md-ellipsis">
+    Handling Variation — Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
 <span class="md-ellipsis">
     FHIR Profiles and Extensions
@@ -653,6 +660,13 @@
             SMART Authorization
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-oauth-overview/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../deepdive-oauth-flow/">
 <span class="md-ellipsis">
@@ -701,9 +715,189 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#smart-security-layers-diagram">
+<a class="md-nav__link" href="#defense-in-depth-multiple-layers-of-protection">
 <span class="md-ellipsis">
-      SMART Security Layers (diagram)
+      Defense in Depth: Multiple Layers of Protection
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-security-layers">
+<span class="md-ellipsis">
+      The Security Layers
+    </span>
+</a>
+<nav aria-label="The Security Layers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-1-transport-security-tls">
+<span class="md-ellipsis">
+      Layer 1: Transport Security (TLS)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-2-user-authentication">
+<span class="md-ellipsis">
+      Layer 2: User Authentication
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-3-token-validation">
+<span class="md-ellipsis">
+      Layer 3: Token Validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-4-scope-authorization">
+<span class="md-ellipsis">
+      Layer 4: Scope Authorization
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-5-context-verification">
+<span class="md-ellipsis">
+      Layer 5: Context Verification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-6-resource-access-control">
+<span class="md-ellipsis">
+      Layer 6: Resource Access Control
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-7-consent-checking">
+<span class="md-ellipsis">
+      Layer 7: Consent Checking
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-8-audit-logging">
+<span class="md-ellipsis">
+      Layer 8: Audit Logging
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-attack-vectors-and-mitigations">
+<span class="md-ellipsis">
+      Common Attack Vectors and Mitigations
+    </span>
+</a>
+<nav aria-label="Common Attack Vectors and Mitigations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-token-theft">
+<span class="md-ellipsis">
+      Attack: Token Theft
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-csrf-cross-site-request-forgery">
+<span class="md-ellipsis">
+      Attack: CSRF (Cross-Site Request Forgery)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-authorization-code-interception">
+<span class="md-ellipsis">
+      Attack: Authorization Code Interception
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-phishing">
+<span class="md-ellipsis">
+      Attack: Phishing
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-scope-creep">
+<span class="md-ellipsis">
+      Attack: Scope Creep
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-best-practices-for-apps">
+<span class="md-ellipsis">
+      Security Best Practices for Apps
+    </span>
+</a>
+<nav aria-label="Security Best Practices for Apps" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-never-store-tokens-in-localstorage">
+<span class="md-ellipsis">
+      1. Never Store Tokens in LocalStorage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-implement-token-refresh-before-expiration">
+<span class="md-ellipsis">
+      2. Implement Token Refresh Before Expiration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-validate-all-server-responses">
+<span class="md-ellipsis">
+      3. Validate All Server Responses
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-use-pkce-for-public-clients">
+<span class="md-ellipsis">
+      4. Use PKCE for Public Clients
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-clear-tokens-on-logout">
+<span class="md-ellipsis">
+      5. Clear Tokens on Logout
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-checklist">
+<span class="md-ellipsis">
+      Security Checklist
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+<span class="md-ellipsis">
+      Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -741,7 +935,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
 <span class="md-ellipsis">
-    Practical Example: Building a SMART App
+    Practical Example — a Sample SMART App
   </span>
 </a>
 </li>
@@ -1119,9 +1313,189 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#smart-security-layers-diagram">
+<a class="md-nav__link" href="#defense-in-depth-multiple-layers-of-protection">
 <span class="md-ellipsis">
-      SMART Security Layers (diagram)
+      Defense in Depth: Multiple Layers of Protection
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-security-layers">
+<span class="md-ellipsis">
+      The Security Layers
+    </span>
+</a>
+<nav aria-label="The Security Layers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-1-transport-security-tls">
+<span class="md-ellipsis">
+      Layer 1: Transport Security (TLS)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-2-user-authentication">
+<span class="md-ellipsis">
+      Layer 2: User Authentication
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-3-token-validation">
+<span class="md-ellipsis">
+      Layer 3: Token Validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-4-scope-authorization">
+<span class="md-ellipsis">
+      Layer 4: Scope Authorization
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-5-context-verification">
+<span class="md-ellipsis">
+      Layer 5: Context Verification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-6-resource-access-control">
+<span class="md-ellipsis">
+      Layer 6: Resource Access Control
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-7-consent-checking">
+<span class="md-ellipsis">
+      Layer 7: Consent Checking
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layer-8-audit-logging">
+<span class="md-ellipsis">
+      Layer 8: Audit Logging
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-attack-vectors-and-mitigations">
+<span class="md-ellipsis">
+      Common Attack Vectors and Mitigations
+    </span>
+</a>
+<nav aria-label="Common Attack Vectors and Mitigations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-token-theft">
+<span class="md-ellipsis">
+      Attack: Token Theft
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-csrf-cross-site-request-forgery">
+<span class="md-ellipsis">
+      Attack: CSRF (Cross-Site Request Forgery)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-authorization-code-interception">
+<span class="md-ellipsis">
+      Attack: Authorization Code Interception
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-phishing">
+<span class="md-ellipsis">
+      Attack: Phishing
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attack-scope-creep">
+<span class="md-ellipsis">
+      Attack: Scope Creep
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-best-practices-for-apps">
+<span class="md-ellipsis">
+      Security Best Practices for Apps
+    </span>
+</a>
+<nav aria-label="Security Best Practices for Apps" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-never-store-tokens-in-localstorage">
+<span class="md-ellipsis">
+      1. Never Store Tokens in LocalStorage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-implement-token-refresh-before-expiration">
+<span class="md-ellipsis">
+      2. Implement Token Refresh Before Expiration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-validate-all-server-responses">
+<span class="md-ellipsis">
+      3. Validate All Server Responses
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-use-pkce-for-public-clients">
+<span class="md-ellipsis">
+      4. Use PKCE for Public Clients
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-clear-tokens-on-logout">
+<span class="md-ellipsis">
+      5. Clear Tokens on Logout
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-checklist">
+<span class="md-ellipsis">
+      Security Checklist
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+<span class="md-ellipsis">
+      Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -1133,7 +1507,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="security-and-access-control">Security and Access Control</h1>
-<h2 id="smart-security-layers-diagram">SMART Security Layers (diagram)</h2>
+<h2 id="defense-in-depth-multiple-layers-of-protection">Defense in Depth: Multiple Layers of Protection</h2>
+<p>Healthcare data is the most sensitive personal information. SMART-on-FHIR implements <strong>defense in depth</strong>—multiple independent security layers that protect data even if one layer fails.</p>
+<p>Think of it like securing a bank vault:
+- 🔒 Outer door (TLS encryption)
+- 🔑 Authentication (proving who you are)
+- 🎫 Authorization tokens (permission tickets)
+- 🚧 Scope checking (what you can do)
+- 🏥 Resource access control (additional restrictions)
+- 📝 Audit logging (recording all access)</p>
+<p>Each layer adds protection. An attacker must defeat ALL layers to access data.</p>
+<hr/>
+<h2 id="the-security-layers">The Security Layers</h2>
+<p>Let's dive right into the deep end by taking a look at the complete security flow:</p>
 <div class="mermaid">graph TD
     Request[API Request]
 
@@ -1176,6 +1562,425 @@
     ConsentCheck --&gt;|No| Reject8[403 Consent Denied]
     ConsentCheck --&gt;|Yes| AuditCont[Continue]
 </div>
+<p>Let's examine each layer:</p>
+<h3 id="layer-1-transport-security-tls">Layer 1: Transport Security (TLS)</h3>
+<p><strong>What it does</strong>: Encrypts all data in transit.</p>
+<p><strong>Requirement</strong>: All FHIR servers MUST use HTTPS (TLS 1.2 or higher).</p>
+<p><strong>Protection</strong>:
+- Prevents eavesdropping on network traffic
+- Ensures data integrity (can't be modified in transit)
+- Authenticates server identity (prevents impersonation)</p>
+<p><strong>Failure mode</strong>: Without TLS, attacker could intercept tokens and patient data.</p>
+<p><strong>Check</strong>: Is URL <code>https://</code>?</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">fhirUrl</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'https://'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'FHIR server must use HTTPS'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="layer-2-user-authentication">Layer 2: User Authentication</h3>
+<p><strong>What it does</strong>: Verifies user identity before granting access.</p>
+<p><strong>Methods</strong>:
+- Username/password
+- Multi-factor authentication (MFA)
+- Smart cards, biometrics
+- Single sign-on (SSO) via SAML, OpenID Connect</p>
+<p><strong>Protection</strong>: Ensures only authorized users can initiate sessions.</p>
+<p><strong>Failure mode</strong>: Without authentication, anyone could access the system.</p>
+<p><strong>Response codes</strong>:
+- <code>401 Unauthorized</code>: No credentials provided or invalid credentials</p>
+<hr/>
+<h3 id="layer-3-token-validation">Layer 3: Token Validation</h3>
+<p><strong>What it does</strong>: Validates OAuth access token on every API request.</p>
+<p><strong>Checks</strong>:</p>
+<ol>
+<li><strong>Token exists</strong>: Authorization header present</li>
+<li><strong>Signature valid</strong>: JWT signature verifiable using server's public key</li>
+<li><strong>Not expired</strong>: Current time &lt; token <code>exp</code> claim</li>
+<li><strong>Correct audience</strong>: Token <code>aud</code> claim matches FHIR server URL</li>
+<li><strong>Not revoked</strong>: Token not in revocation list</li>
+</ol>
+<p><strong>Protection</strong>: Stolen or forged tokens are rejected.</p>
+<p><strong>Failure modes</strong>:
+- <code>401 Unauthorized</code>: Missing, invalid, or expired token
+- <code>401 Token Expired</code>: Token expired (client should refresh)</p>
+<p><strong>Example validation</strong> (server-side):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">jwt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_token</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">public_key</span><span class="p">,</span> <span class="n">audience</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Decode and verify JWT</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+            <span class="n">token</span><span class="p">,</span>
+            <span class="n">public_key</span><span class="p">,</span>
+            <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s1">'RS256'</span><span class="p">],</span>
+            <span class="n">audience</span><span class="o">=</span><span class="n">audience</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Check expiration</span>
+        <span class="n">exp</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'exp'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">exp</span> <span class="ow">and</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">exp</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'Token expired'</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">payload</span>
+    <span class="k">except</span> <span class="n">jwt</span><span class="o">.</span><span class="n">InvalidTokenError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Invalid token: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<hr/>
+<h3 id="layer-4-scope-authorization">Layer 4: Scope Authorization</h3>
+<p><strong>What it does</strong>: Verifies token has required scope for operation.</p>
+<p><strong>Logic</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_scope</span><span class="p">(</span><span class="n">token_scopes</span><span class="p">,</span> <span class="n">required_scope</span><span class="p">):</span>
+    <span class="n">scopes</span> <span class="o">=</span> <span class="n">token_scopes</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+
+    <span class="c1"># Exact match</span>
+    <span class="k">if</span> <span class="n">required_scope</span> <span class="ow">in</span> <span class="n">scopes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># Wildcard match (patient/*.read includes patient/Observation.read)</span>
+    <span class="n">context</span><span class="p">,</span> <span class="n">resource_action</span> <span class="o">=</span> <span class="n">required_scope</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+    <span class="n">resource</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">resource_action</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2">/*.</span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">scopes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2">/*.*"</span> <span class="ow">in</span> <span class="n">scopes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># .write implies .read</span>
+    <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">'read'</span><span class="p">:</span>
+        <span class="n">write_scope</span> <span class="o">=</span> <span class="n">required_scope</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.read'</span><span class="p">,</span> <span class="s1">'.write'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">write_scope</span> <span class="ow">in</span> <span class="n">scopes</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<p><strong>Protection</strong>: Prevents apps from accessing data beyond granted permissions.</p>
+<p><strong>Failure mode</strong>:
+- <code>403 Forbidden</code>: Insufficient scope</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code>Token scope: "patient/Observation.read"
+Request: GET /MedicationRequest/123
+Result: 403 Forbidden (need patient/MedicationRequest.read)
+</code></pre></div>
+<hr/>
+<h3 id="layer-5-context-verification">Layer 5: Context Verification</h3>
+<p><strong>What it does</strong>: Ensures requested resource matches token's patient context.</p>
+<p><strong>Check</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">verify_patient_context</span><span class="p">(</span><span class="n">token_patient_id</span><span class="p">,</span> <span class="n">requested_patient_id</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">token_patient_id</span> <span class="o">!=</span> <span class="n">requested_patient_id</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ForbiddenError</span><span class="p">(</span><span class="s1">'Patient context mismatch'</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Protection</strong>: Prevents apps from accessing wrong patient's data.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code>Token patient: "smart-1288992"
+Request: GET /Observation?patient=smart-1032702
+Result: 403 Forbidden (token scoped to different patient)
+</code></pre></div>
+<p><strong>Special case: <code>user/</code> scopes</strong>: Context check uses EHR's access control list instead of token patient claim.</p>
+<hr/>
+<h3 id="layer-6-resource-access-control">Layer 6: Resource Access Control</h3>
+<p><strong>What it does</strong>: Applies EHR's existing access control policies.</p>
+<p><strong>Checks</strong>:
+- Does user have permission in EHR to view this patient?
+- Is data flagged as sensitive (e.g., mental health, HIV status)?
+- Are there break-the-glass requirements?
+- Do organizational policies restrict access?</p>
+<p><strong>Protection</strong>: OAuth tokens don't bypass EHR security—they layer on top.</p>
+<p><strong>Failure mode</strong>:
+- <code>403 Forbidden</code>: Resource not allowed for user</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code>User: Dr. Smith (cardiologist)
+Request: GET /Observation/psych-eval-123 (mental health observation)
+Result: 403 Forbidden (not Dr. Smith's department)
+</code></pre></div>
+<hr/>
+<h3 id="layer-7-consent-checking">Layer 7: Consent Checking</h3>
+<p><strong>What it does</strong>: Respects patient consent directives.</p>
+<p><strong>Scenarios</strong>:
+- Patient opted out of data sharing with research apps
+- Patient restricted access to specific encounters
+- Patient granted access only to certain resource types
+- Minor patient's guardian consent required</p>
+<p><strong>Protection</strong>: Enforces patient privacy preferences.</p>
+<p><strong>Failure mode</strong>:
+- <code>403 Forbidden</code>: Consent denied</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code>Patient opt-out: No sharing with third-party apps
+Request: Third-party app tries to access data
+Result: 403 Forbidden (consent not granted)
+</code></pre></div>
+<hr/>
+<h3 id="layer-8-audit-logging">Layer 8: Audit Logging</h3>
+<p><strong>What it does</strong>: Records all access for accountability.</p>
+<p><strong>Logged information</strong>:
+- Who accessed (user ID, app ID)
+- What was accessed (resource type, ID)
+- When (timestamp)
+- From where (IP address)
+- Result (success/failure)
+- Purpose of use (if provided)</p>
+<p><strong>Protection</strong>: Detects unauthorized access after the fact. Enables investigation.</p>
+<p><strong>Example log entry</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-06T15:30:00Z"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/dr-johnson"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cardiac-risk-calculator"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/smart-1288992"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.1.100"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"patient/Patient.read"</span><span class="p">,</span><span class="w"> </span><span class="s2">"patient/Observation.read"</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Compliance</strong>: Required by HIPAA, GDPR, and other regulations.</p>
+<hr/>
+<h2 id="common-attack-vectors-and-mitigations">Common Attack Vectors and Mitigations</h2>
+<h3 id="attack-token-theft">Attack: Token Theft</h3>
+<p><strong>Scenario</strong>: Attacker intercepts access token (e.g., from browser localStorage via XSS).</p>
+<p><strong>Mitigations</strong>:
+1. <strong>Short token lifetime</strong> (1 hour typical) - Limits damage window
+2. <strong>Refresh tokens</strong> - Stored more securely than access tokens
+3. <strong>Token rotation</strong> - New tokens on each refresh
+4. <strong>Revocation</strong> - Ability to invalidate compromised tokens</p>
+<hr/>
+<h3 id="attack-csrf-cross-site-request-forgery">Attack: CSRF (Cross-Site Request Forgery)</h3>
+<p><strong>Scenario</strong>: Malicious site tricks user into authorizing attacker's app session.</p>
+<p><strong>Mitigation</strong>: <code>state</code> parameter</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// App generates random state</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateRandomString</span><span class="p">();</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'oauth_state'</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">);</span>
+
+<span class="c1">// Include in authorization request</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">authEndpoint</span><span class="si">}</span><span class="sb">?...&amp;state=</span><span class="si">${</span><span class="nx">state</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="c1">// Validate on callback</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">returnedState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s1">'state'</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">returnedState</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'oauth_state'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'CSRF detected'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="attack-authorization-code-interception">Attack: Authorization Code Interception</h3>
+<p><strong>Scenario</strong>: Attacker intercepts authorization code from redirect URI.</p>
+<p><strong>Mitigation</strong>: PKCE (Proof Key for Code Exchange)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Generate verifier</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">verifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateRandomString</span><span class="p">(</span><span class="mf">128</span><span class="p">);</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'code_verifier'</span><span class="p">,</span><span class="w"> </span><span class="nx">verifier</span><span class="p">);</span>
+
+<span class="c1">// Generate challenge</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">challenge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">base64url</span><span class="p">(</span><span class="nx">sha256</span><span class="p">(</span><span class="nx">verifier</span><span class="p">));</span>
+
+<span class="c1">// Include in authorization request</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">authUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">authEndpoint</span><span class="si">}</span><span class="sb">?...&amp;code_challenge=</span><span class="si">${</span><span class="nx">challenge</span><span class="si">}</span><span class="sb">&amp;code_challenge_method=S256`</span><span class="p">;</span>
+
+<span class="c1">// Send verifier in token request</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">tokenEndpoint</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">'POST'</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">grant_type</span><span class="o">:</span><span class="w"> </span><span class="s1">'authorization_code'</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="nx">authCode</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">code_verifier</span><span class="o">:</span><span class="w"> </span><span class="nx">verifier</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">});</span>
+</code></pre></div>
+<hr/>
+<h3 id="attack-phishing">Attack: Phishing</h3>
+<p><strong>Scenario</strong>: Fake authorization server tricks user into entering credentials.</p>
+<p><strong>Mitigations</strong>:
+1. <strong>User education</strong>: Verify authorization server URL
+2. <strong>Branded consent screens</strong>: Recognizable design
+3. <strong>Domain validation</strong>: Check authorization endpoint domain
+4. <strong>Certificate pinning</strong> (mobile apps): Validate server certificate</p>
+<hr/>
+<h3 id="attack-scope-creep">Attack: Scope Creep</h3>
+<p><strong>Scenario</strong>: App requests excessive permissions, hoping user won't notice.</p>
+<p><strong>Mitigations</strong>:
+1. <strong>Explicit consent</strong>: Show requested scopes in plain language
+2. <strong>Granular approval</strong>: Let users approve subset of scopes
+3. <strong>Audit requests</strong>: Log scope requests for review
+4. <strong>Principle of least privilege</strong>: Apps should request minimum needed</p>
+<hr/>
+<h2 id="security-best-practices-for-apps">Security Best Practices for Apps</h2>
+<h3 id="1-never-store-tokens-in-localstorage">1. Never Store Tokens in LocalStorage</h3>
+<p><strong>Vulnerable to XSS attacks</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// BAD</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'access_token'</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">);</span>
+
+<span class="c1">// GOOD (access tokens)</span>
+<span class="c1">// Store in memory only</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
+
+<span class="c1">// GOOD (refresh tokens - server-side app)</span>
+<span class="c1">// Store in httpOnly cookie</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="s1">'refresh_token'</span><span class="p">,</span><span class="w"> </span><span class="nx">refreshToken</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">httpOnly</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">secure</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">sameSite</span><span class="o">:</span><span class="w"> </span><span class="s1">'strict'</span>
+<span class="p">});</span>
+</code></pre></div>
+<hr/>
+<h3 id="2-implement-token-refresh-before-expiration">2. Implement Token Refresh Before Expiration</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">TokenManager</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">expiresAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">refreshToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">setTokens</span><span class="p">(</span><span class="nx">tokenResponse</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">refreshToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">refresh_token</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">expiresAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">tokenResponse</span><span class="p">.</span><span class="nx">expires_in</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Schedule refresh 5 minutes before expiration</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">scheduleRefresh</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">scheduleRefresh</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">refreshAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">expiresAt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mf">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 min before</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">delay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">refreshAt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">delay</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">(),</span><span class="w"> </span><span class="nx">delay</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">refresh</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">tokenEndpoint</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">'POST'</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">grant_type</span><span class="o">:</span><span class="w"> </span><span class="s1">'refresh_token'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">refresh_token</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">refreshToken</span>
+<span class="w">      </span><span class="p">})</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">tokenResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">setTokens</span><span class="p">(</span><span class="nx">tokenResponse</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">getValidToken</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">expiresAt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">accessToken</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="3-validate-all-server-responses">3. Validate All Server Responses</h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">secureFetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">tokenManager</span><span class="p">.</span><span class="nx">getValidToken</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span><span class="nx">options</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">...</span><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">'Authorization'</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">401</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Token invalid/expired</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">handleReauthorization</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// Redirect to login</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">403</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">outcome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Access denied:'</span><span class="p">,</span><span class="w"> </span><span class="nx">outcome</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">showError</span><span class="p">(</span><span class="s1">'You don'</span><span class="nx">t</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">permission</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">access</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="nx">resource</span><span class="err">'</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">outcome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="nx">outcome</span><span class="p">.</span><span class="nx">issue</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">diagnostics</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="4-use-pkce-for-public-clients">4. Use PKCE for Public Clients</h3>
+<p><strong>Always use PKCE</strong> for mobile apps and single-page apps:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Required for public clients</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">usePKCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">usePKCE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">verifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generateCodeVerifier</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">challenge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">generateCodeChallenge</span><span class="p">(</span><span class="nx">verifier</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'pkce_verifier'</span><span class="p">,</span><span class="w"> </span><span class="nx">verifier</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">authUrl</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&amp;code_challenge=</span><span class="si">${</span><span class="nx">challenge</span><span class="si">}</span><span class="sb">&amp;code_challenge_method=S256`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="5-clear-tokens-on-logout">5. Clear Tokens on Logout</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">logout</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Clear tokens</span>
+<span class="w">  </span><span class="nx">tokenManager</span><span class="p">.</span><span class="nx">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">tokenManager</span><span class="p">.</span><span class="nx">refreshToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Clear session storage</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Revoke tokens on server (if revocation endpoint available)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">revocation_endpoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">revocation_endpoint</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">'POST'</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">tokenManager</span><span class="p">.</span><span class="nx">refreshToken</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">token_type_hint</span><span class="o">:</span><span class="w"> </span><span class="s1">'refresh_token'</span>
+<span class="w">      </span><span class="p">})</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Redirect to logout page</span>
+<span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'/logout'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="security-checklist">Security Checklist</h2>
+<p><strong>Before deploying your SMART app</strong>:</p>
+<ul>
+<li>[ ] All requests use HTTPS (never HTTP)</li>
+<li>[ ] Access tokens stored in memory only</li>
+<li>[ ] Refresh tokens stored securely (httpOnly cookies or encrypted storage)</li>
+<li>[ ] PKCE implemented for public clients</li>
+<li>[ ] State parameter used for CSRF protection</li>
+<li>[ ] Token expiration handled gracefully</li>
+<li>[ ] 401/403 errors trigger appropriate user messaging</li>
+<li>[ ] Tokens revoked on logout</li>
+<li>[ ] Audit logging implemented (if applicable)</li>
+<li>[ ] Security review completed</li>
+<li>[ ] Penetration testing performed (for production apps)</li>
+</ul>
+<hr/>
+<h2 id="summary">Summary</h2>
+<p>SMART-on-FHIR security is <strong>defense in depth</strong>. Your diagram shows all layers work together:</p>
+<ol>
+<li>TLS encrypts transit</li>
+<li>Authentication proves identity</li>
+<li>Tokens provide delegated access</li>
+<li>Scopes limit permissions</li>
+<li>Context ensures correct patient</li>
+<li>ACLs enforce organizational policies</li>
+<li>Consent respects patient wishes</li>
+<li>Audit logs track all access</li>
+</ol>
+<p><strong>No single layer is perfect</strong>, but together they provide robust protection for healthcare data.</p>
+<hr/>
+<h2 id="next-steps">Next Steps</h2>
+<p>This completes the SMART Authorization section. We covered:</p>
+<ul>
+<li>✅ OAuth 2.0 authorization flow</li>
+<li>✅ EHR and standalone launch patterns</li>
+<li>✅ SMART scopes and permissions</li>
+<li>✅ Configuration discovery</li>
+<li>✅ Multi-layer security architecture</li>
+</ul>
+<p>Next, let's put this into practice with hands-on examples.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -1258,6 +2063,7 @@
 <script src="../../../../js/seamaiden.js"></script>
 <script src="../../../../js/diagram-theme-switcher.js"></script>
 <script src="../../../../js/diagram-zoom.js"></script>
+<script src="../../../../js/alphabet-auto.js"></script>
 <script src="../../../../js/open_in_new_tab.js"></script>
 <script src="../../../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>

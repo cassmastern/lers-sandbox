@@ -1,4 +1,4 @@
-# Practical Example: Building a SMART App
+# Practical Example — a Sample SMART App
 
 > proc_appdev2::instr (TBD)
 

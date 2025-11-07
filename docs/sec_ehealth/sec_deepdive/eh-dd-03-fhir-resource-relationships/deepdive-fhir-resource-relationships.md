@@ -1322,6 +1322,4 @@ async function fetchResourceTree(resourceType, id, visited = new Set()) {
 
 ## Next Steps
 
-Now that you understand how resources connect, let's see how they're grouped and transmitted together.
-
-→ [FHIR Resource Bundles](deepdive-fhir-resource-bundles.md)
+We covered how resources connect; let's see how they're grouped and transmitted together.

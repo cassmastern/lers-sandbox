@@ -152,7 +152,7 @@ SMART apps can start in two fundamentally different ways, each with distinct sec
 
 ## Actors and Flows — Sequence
 
-Now that you understand the actors and flows, here's how they connect:
+Now that we saw the actors and flows, here's how they connect:
 
 ```mermaid
 sequenceDiagram

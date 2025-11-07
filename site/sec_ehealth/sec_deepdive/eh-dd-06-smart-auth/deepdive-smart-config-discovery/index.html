@@ -626,6 +626,13 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/eh-dd-05-advanced-intro/">
+<span class="md-ellipsis">
+    Handling Variation — Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-05-advanced-fhir-concepts/deepdive-fhir-profiles-and-extensions/">
 <span class="md-ellipsis">
     FHIR Profiles and Extensions
@@ -653,6 +660,13 @@
             SMART Authorization
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deepdive-oauth-overview/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../deepdive-oauth-flow/">
 <span class="md-ellipsis">
@@ -694,9 +708,161 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#smart-configuration-example">
+<a class="md-nav__link" href="#dynamic-capability-discovery">
 <span class="md-ellipsis">
-      SMART Configuration Example
+      Dynamic Capability Discovery
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-discovery-endpoint">
+<span class="md-ellipsis">
+      The Discovery Endpoint
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-configuration">
+<span class="md-ellipsis">
+      Example Configuration
+    </span>
+</a>
+<nav aria-label="Example Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oauth-endpoints">
+<span class="md-ellipsis">
+      OAuth Endpoints
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supported-scopes">
+<span class="md-ellipsis">
+      Supported Scopes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-capabilities">
+<span class="md-ellipsis">
+      Server Capabilities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-methods">
+<span class="md-ellipsis">
+      Authentication Methods
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pkce-support">
+<span class="md-ellipsis">
+      PKCE Support
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grant-types">
+<span class="md-ellipsis">
+      Grant Types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optional-endpoints">
+<span class="md-ellipsis">
+      Optional Endpoints
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-configuration-in-your-app">
+<span class="md-ellipsis">
+      Using Configuration in Your App
+    </span>
+</a>
+<nav aria-label="Using Configuration in Your App" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-fetch-configuration">
+<span class="md-ellipsis">
+      Step 1: Fetch Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-cache-configuration">
+<span class="md-ellipsis">
+      Step 2: Cache Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-validate-capabilities">
+<span class="md-ellipsis">
+      Step 3: Validate Capabilities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fallback-to-capabilitystatement">
+<span class="md-ellipsis">
+      Fallback to CapabilityStatement
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#best-practices">
+<span class="md-ellipsis">
+      Best Practices
+    </span>
+</a>
+<nav aria-label="Best Practices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-always-discover-never-hardcode">
+<span class="md-ellipsis">
+      1. Always Discover, Never Hardcode
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-cache-configuration-per-session">
+<span class="md-ellipsis">
+      2. Cache Configuration Per Session
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-handle-discovery-failures-gracefully">
+<span class="md-ellipsis">
+      3. Handle Discovery Failures Gracefully
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-validate-before-requesting-unsupported-features">
+<span class="md-ellipsis">
+      4. Validate Before Requesting Unsupported Features
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -741,7 +907,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
 <span class="md-ellipsis">
-    Practical Example: Building a SMART App
+    Practical Example — a Sample SMART App
   </span>
 </a>
 </li>
@@ -1119,9 +1285,161 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#smart-configuration-example">
+<a class="md-nav__link" href="#dynamic-capability-discovery">
 <span class="md-ellipsis">
-      SMART Configuration Example
+      Dynamic Capability Discovery
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-discovery-endpoint">
+<span class="md-ellipsis">
+      The Discovery Endpoint
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-configuration">
+<span class="md-ellipsis">
+      Example Configuration
+    </span>
+</a>
+<nav aria-label="Example Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oauth-endpoints">
+<span class="md-ellipsis">
+      OAuth Endpoints
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supported-scopes">
+<span class="md-ellipsis">
+      Supported Scopes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-capabilities">
+<span class="md-ellipsis">
+      Server Capabilities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-methods">
+<span class="md-ellipsis">
+      Authentication Methods
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pkce-support">
+<span class="md-ellipsis">
+      PKCE Support
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grant-types">
+<span class="md-ellipsis">
+      Grant Types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optional-endpoints">
+<span class="md-ellipsis">
+      Optional Endpoints
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-configuration-in-your-app">
+<span class="md-ellipsis">
+      Using Configuration in Your App
+    </span>
+</a>
+<nav aria-label="Using Configuration in Your App" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-fetch-configuration">
+<span class="md-ellipsis">
+      Step 1: Fetch Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-cache-configuration">
+<span class="md-ellipsis">
+      Step 2: Cache Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-validate-capabilities">
+<span class="md-ellipsis">
+      Step 3: Validate Capabilities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fallback-to-capabilitystatement">
+<span class="md-ellipsis">
+      Fallback to CapabilityStatement
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#best-practices">
+<span class="md-ellipsis">
+      Best Practices
+    </span>
+</a>
+<nav aria-label="Best Practices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-always-discover-never-hardcode">
+<span class="md-ellipsis">
+      1. Always Discover, Never Hardcode
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-cache-configuration-per-session">
+<span class="md-ellipsis">
+      2. Cache Configuration Per Session
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-handle-discovery-failures-gracefully">
+<span class="md-ellipsis">
+      3. Handle Discovery Failures Gracefully
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-validate-before-requesting-unsupported-features">
+<span class="md-ellipsis">
+      4. Validate Before Requesting Unsupported Features
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-steps">
+<span class="md-ellipsis">
+      Next Steps
     </span>
 </a>
 </li>
@@ -1133,7 +1451,26 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="smart-configuration-discovery">SMART Configuration Discovery</h1>
-<h3 id="smart-configuration-example">SMART Configuration Example</h3>
+<h2 id="dynamic-capability-discovery">Dynamic Capability Discovery</h2>
+<p>Different FHIR servers use different OAuth endpoints, support different scopes, and implement different features. Your app can't hardcode these details—you need <strong>dynamic discovery</strong>.</p>
+<p>SMART defines a standard endpoint where servers publish their capabilities: <code>.well-known/smart-configuration</code></p>
+<p>Think of it as the server's "capabilities business card" that tells your app everything it needs to know to integrate.</p>
+<hr/>
+<h2 id="the-discovery-endpoint">The Discovery Endpoint</h2>
+<p><strong>Format</strong>: <code>{FHIR_BASE_URL}/.well-known/smart-configuration</code></p>
+<p><strong>Examples</strong>:</p>
+<div class="highlight"><pre><span></span><code>https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/.well-known/smart-configuration
+https://launch.smarthealthit.org/v/r4/fhir/.well-known/smart-configuration
+https://fhir-myrecord.cerner.com/r4/.well-known/smart-configuration
+</code></pre></div>
+<p><strong>Request</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET /.well-known/smart-configuration</span>
+<span class="err">Accept: application/json</span>
+</code></pre></div>
+<p><strong>No authentication required</strong>: Discovery is public information.</p>
+<hr/>
+<h2 id="example-configuration">Example Configuration</h2>
+<p>Here is a SMART configuration example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"authorization_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/authorize"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"token_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/token"</span><span class="p">,</span>
@@ -1205,6 +1542,313 @@
 <span class="w">  </span><span class="nt">"management_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/manage"</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>Let's break down each section:</p>
+<h3 id="oauth-endpoints">OAuth Endpoints</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"authorization_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/authorize"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"token_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/token"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Critical fields</strong>:
+- <strong><code>authorization_endpoint</code></strong>: Where to redirect user for login/consent
+- <strong><code>token_endpoint</code></strong>: Where to exchange authorization code for token</p>
+<p><strong>Your app uses these</strong> instead of hardcoding URLs.</p>
+<hr/>
+<h3 id="supported-scopes">Supported Scopes</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"scopes_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"openid"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"fhirUser"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"launch"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"launch/patient"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"launch/encounter"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"offline_access"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"patient/*.read"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"patient/*.write"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"patient/Patient.read"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"patient/Observation.read"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"user/*.read"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"user/Patient.read"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>What this tells you</strong>:
+- Server supports EHR launch (<code>launch</code>, <code>launch/patient</code>)
+- Supports wildcards (<code>patient/*.read</code>)
+- Supports granular scopes (<code>patient/Observation.read</code>)
+- Offers offline access (<code>offline_access</code>)</p>
+<p><strong>Your app checks</strong>: Before requesting a scope, verify it's in <code>scopes_supported</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isScopeSupported</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">scope</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">scopes_supported</span><span class="o">?</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">scope</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isScopeSupported</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="s1">'offline_access'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">scopes</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'offline_access'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="server-capabilities">Server Capabilities</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"launch-ehr"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"launch-standalone"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"client-public"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"client-confidential-symmetric"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"context-ehr-patient"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"context-ehr-encounter"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"context-standalone-patient"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"permission-offline"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"permission-patient"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"permission-user"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"sso-openid-connect"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Key capabilities</strong>:</p>
+<ul>
+<li><strong><code>launch-ehr</code></strong>: Supports EHR-initiated launch</li>
+<li><strong><code>launch-standalone</code></strong>: Supports standalone (patient-initiated) launch</li>
+<li><strong><code>client-public</code></strong>: Supports public clients (mobile apps, SPAs) with PKCE</li>
+<li><strong><code>client-confidential-symmetric</code></strong>: Supports confidential clients with client_secret</li>
+<li><strong><code>context-ehr-patient</code></strong>: Provides patient context in EHR launch</li>
+<li><strong><code>context-ehr-encounter</code></strong>: Provides encounter context in EHR launch</li>
+<li><strong><code>permission-offline</code></strong>: Supports refresh tokens</li>
+<li><strong><code>permission-patient</code></strong>: Supports patient-scoped access</li>
+<li><strong><code>permission-user</code></strong>: Supports user-scoped access</li>
+<li><strong><code>sso-openid-connect</code></strong>: Supports OpenID Connect SSO</li>
+</ul>
+<p><strong>Your app adapts</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">capabilities</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'launch-ehr'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showEHRLaunchInstructions</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">config</span><span class="p">.</span><span class="nx">capabilities</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'permission-offline'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">warnUserAboutPeriodicReauth</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="authentication-methods">Authentication Methods</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"token_endpoint_auth_methods_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"client_secret_basic"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"client_secret_post"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Methods</strong>:
+- <strong><code>client_secret_basic</code></strong>: HTTP Basic authentication (client_id:client_secret in Authorization header)
+- <strong><code>client_secret_post</code></strong>: Credentials in POST body
+- <strong><code>private_key_jwt</code></strong>: Asymmetric JWT authentication (for backend services)</p>
+<p><strong>Your app uses</strong>: Appropriate method based on server support and client type.</p>
+<hr/>
+<h3 id="pkce-support">PKCE Support</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"code_challenge_methods_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"S256"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><code>S256</code></strong>: SHA-256 hash for PKCE (most secure).</p>
+<p><strong>Your public client must use PKCE</strong> if server supports it.</p>
+<hr/>
+<h3 id="grant-types">Grant Types</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"grant_types_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"authorization_code"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"refresh_token"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Common types</strong>:
+- <strong><code>authorization_code</code></strong>: Standard OAuth flow
+- <strong><code>refresh_token</code></strong>: Token refresh capability
+- <strong><code>client_credentials</code></strong>: Backend service authentication</p>
+<hr/>
+<h3 id="optional-endpoints">Optional Endpoints</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"registration_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/register"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"introspection_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/introspect"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"revocation_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/revoke"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"management_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://launch.smarthealthit.org/v/r4/auth/manage"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Endpoints</strong>:
+- <strong><code>registration_endpoint</code></strong>: Dynamic client registration
+- <strong><code>introspection_endpoint</code></strong>: Token validation
+- <strong><code>revocation_endpoint</code></strong>: Revoke tokens
+- <strong><code>management_endpoint</code></strong>: Manage authorizations</p>
+<hr/>
+<h2 id="using-configuration-in-your-app">Using Configuration in Your App</h2>
+<h3 id="step-1-fetch-configuration">Step 1: Fetch Configuration</h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="nx">issuer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">configUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">issuer</span><span class="si">}</span><span class="sb">/.well-known/smart-configuration`</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">configUrl</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Configuration discovery failed: </span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Discovery failed:'</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="s1">'https://fhir.example.org'</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h3 id="step-2-cache-configuration">Step 2: Cache Configuration</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">SMARTClient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">issuer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">issuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">issuer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">getConfig</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">issuer</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">authorize</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getConfig</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Build authorization URL using discovered endpoints</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">authUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">authorization_endpoint</span><span class="si">}</span><span class="sb">?`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">      </span><span class="sb">`response_type=code&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">      </span><span class="sb">`client_id=</span><span class="si">${</span><span class="nx">options</span><span class="p">.</span><span class="nx">clientId</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">      </span><span class="sb">`redirect_uri=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">redirectUri</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">      </span><span class="sb">`scope=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">scope</span><span class="p">)</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">      </span><span class="sb">`state=</span><span class="si">${</span><span class="nx">options</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="sb">&amp;`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">      </span><span class="sb">`aud=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">issuer</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">authUrl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SMARTClient</span><span class="p">(</span><span class="s1">'https://fhir.example.org'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">authorize</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">'your_app_id'</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">redirectUri</span><span class="o">:</span><span class="w"> </span><span class="s1">'https://your-app.com/callback'</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">scope</span><span class="o">:</span><span class="w"> </span><span class="s1">'launch launch/patient patient/*.read'</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="s1">'random_string'</span>
+<span class="p">});</span>
+</code></pre></div>
+<hr/>
+<h3 id="step-3-validate-capabilities">Step 3: Validate Capabilities</h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">validateServerCapabilities</span><span class="p">(</span><span class="nx">issuer</span><span class="p">,</span><span class="w"> </span><span class="nx">requiredCapabilities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="nx">issuer</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">cap</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">requiredCapabilities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">config</span><span class="p">.</span><span class="nx">capabilities</span><span class="o">?</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">cap</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">missing</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cap</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">missing</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="sb">`Server missing capabilities: </span><span class="si">${</span><span class="nx">missing</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'launch-ehr'</span><span class="p">,</span><span class="w"> </span><span class="s1">'context-ehr-patient'</span><span class="p">,</span><span class="w"> </span><span class="s1">'permission-patient'</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">supported</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">validateServerCapabilities</span><span class="p">(</span><span class="s1">'https://fhir.example.org'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">supported</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">'This FHIR server does not support required features'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="fallback-to-capabilitystatement">Fallback to CapabilityStatement</h2>
+<p><strong>If <code>.well-known/smart-configuration</code> fails</strong>, try FHIR CapabilityStatement:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">discoverOAuthEndpoints</span><span class="p">(</span><span class="nx">issuer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Try SMART configuration first</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="nx">issuer</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">'SMART configuration not found, trying CapabilityStatement'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Fallback to CapabilityStatement</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">issuer</span><span class="si">}</span><span class="sb">/metadata`</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">capability</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Extract OAuth URLs from security extension</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">capability</span><span class="p">.</span><span class="nx">rest</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">security</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">oauthExt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">security</span><span class="o">?</span><span class="p">.</span><span class="nx">extension</span><span class="o">?</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
+<span class="w">      </span><span class="nx">ext</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ext</span><span class="p">.</span><span class="nx">url</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris'</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">oauthExt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">authEndpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oauthExt</span><span class="p">.</span><span class="nx">extension</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">url</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'authorize'</span><span class="p">)</span><span class="o">?</span><span class="p">.</span><span class="nx">valueUri</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">tokenEndpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oauthExt</span><span class="p">.</span><span class="nx">extension</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">url</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'token'</span><span class="p">)</span><span class="o">?</span><span class="p">.</span><span class="nx">valueUri</span><span class="p">;</span>
+
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">authorization_endpoint</span><span class="o">:</span><span class="w"> </span><span class="nx">authEndpoint</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">token_endpoint</span><span class="o">:</span><span class="w"> </span><span class="nx">tokenEndpoint</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'CapabilityStatement fallback failed:'</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'Could not discover OAuth endpoints'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-always-discover-never-hardcode">1. Always Discover, Never Hardcode</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// BAD</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">AUTH_ENDPOINT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://fhir.example.org/authorize'</span><span class="p">;</span>
+
+<span class="c1">// GOOD</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="nx">issuer</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">authEndpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">authorization_endpoint</span><span class="p">;</span>
+</code></pre></div>
+<hr/>
+<h3 id="2-cache-configuration-per-session">2. Cache Configuration Per Session</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Store in sessionStorage to avoid repeated requests</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cacheKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`smart-config-</span><span class="si">${</span><span class="nx">issuer</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">cacheKey</span><span class="p">));</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="nx">issuer</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">cacheKey</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">config</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="3-handle-discovery-failures-gracefully">3. Handle Discovery Failures Gracefully</h3>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">discoverSMARTConfig</span><span class="p">(</span><span class="nx">issuer</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showErrorMessage</span><span class="p">(</span>
+<span class="w">    </span><span class="s1">'Unable to connect to FHIR server. Please check the URL and try again.'</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h3 id="4-validate-before-requesting-unsupported-features">4. Validate Before Requesting Unsupported Features</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'launch'</span><span class="p">,</span><span class="w"> </span><span class="s1">'launch/patient'</span><span class="p">,</span><span class="w"> </span><span class="s1">'patient/*.read'</span><span class="p">];</span>
+
+<span class="c1">// Only request offline_access if supported</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">scopes_supported</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'offline_access'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">scopes</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'offline_access'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h2 id="next-steps">Next Steps</h2>
+<p>Next, let's explore the multiple layers of security protecting patient data.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -1287,6 +1931,7 @@
 <script src="../../../../js/seamaiden.js"></script>
 <script src="../../../../js/diagram-theme-switcher.js"></script>
 <script src="../../../../js/diagram-zoom.js"></script>
+<script src="../../../../js/alphabet-auto.js"></script>
 <script src="../../../../js/open_in_new_tab.js"></script>
 <script src="../../../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
