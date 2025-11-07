@@ -1,6 +1,6 @@
 # What's in Here?
 
-This site contains topics, writing samples, glossaries, cheat sheets, concepets and ideas — designed to remain relevant and useful for my own use and future endeavors, and cover fields I'm interested in, including cloud platforms, CI/CD, accessibility (AODA/WCAG), eHealth, AI, APIs, and computer networking. 
+This site covers, in a variety of formats, fields I'm interested in, including accessibility (AODA/WCAG), AI, APIs, CI/CD, business analysis, cloud platforms, networking and security, content/knowledge/information architecture, eHealth, Git, and markdown.
 
 Topics on this website are grouped into these sections:
 

@@ -1,6 +1,6 @@
 # SMART-on-FHIR Integration
 
-This section contains topics that should be handy in SMART-on-FHIR integration projects.
+This section gathers topics that can be especially handy for SMART-on-FHIR integration work in Canada, with a focus on Ontario.
 
 - [SMART-on-FHIR and Integration — Quick Reference](quick_ref.md)
 - [SMART-on-FHIR and Integration — UML Diagrams](smart-fhir-visuals.md)

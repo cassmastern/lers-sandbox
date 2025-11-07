@@ -1,4 +1,5 @@
 title: "Advanced FHIR Concepts"
 nav:
 - index.md
+- eh-dd-05-advanced-intro.md
 - deepdive-fhir-profiles-and-extensions.md

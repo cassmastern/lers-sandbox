@@ -1,4 +1,6 @@
-# Summary 
+# Summary
+
+> TBD; recap; placement
 
 ## SMART-on-FHIR Complete Architecture (diagram)
 

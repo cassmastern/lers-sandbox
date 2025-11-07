@@ -67,6 +67,7 @@ extra_javascript:
   - js/seamaiden.js
   - js/diagram-theme-switcher.js
   - js/diagram-zoom.js
+  - js/alphabet-auto.js
 
 
 extra_css:
