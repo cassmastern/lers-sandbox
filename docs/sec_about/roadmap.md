@@ -16,7 +16,7 @@ gantt
     WCAG*                :08-20, 62d
 ```
 
-*within the 'WCAG' timeframe: semantic headings, skip links, color contrast check, screen-reader test, alt text, ARIA landmarks
+*within the 'WCAG' timeframe: alt text and ARIA landmarks for all three diagram types supported: PlantUML, Graphviz, and Mermaid.
 
 ## Changelog
 

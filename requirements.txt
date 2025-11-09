@@ -6,7 +6,7 @@ mkdocs-mermaid2-plugin==1.2.1
 mkdocs-awesome-pages-plugin==2.8.0
 mkdocs_puml==2.3.0
 mkdocs-graphviz==1.5.3
-mkdocs-swagger-ui-tag==0.6.10
+mkdocs-swagger-ui-tag==0.7.2
 mkdocs-open-in-new-tab==1.0.3
 # Extensions
 pymdown-extensions==10.8.1

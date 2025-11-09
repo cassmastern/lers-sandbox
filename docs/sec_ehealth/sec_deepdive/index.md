@@ -1,6 +1,6 @@
 # SMART-on-FHIR Deep Dive
 
-This section comprises a set of topics for a comprehensive exploration of SMART-on-FHIR using a sample client app and a public sandbox, focusing on FHIR resources and their relationships.
+This section comprises a set of topics for a comprehensive exploration of SMART-on-FHIR, including developing a sample client and testing it with a public sandbox, focusing on FHIR resources and their relationships.
 
 - [An Introduction to FHIR](eh-dd-01-foundations/index.md)
 - [FHIR Data Fundamentals](eh-dd-02-fhir-data-fundamentals/index.md)

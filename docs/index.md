@@ -5,7 +5,7 @@ Welcome to Ler's Sandbox!
 The site's purpose is multifold:
 
 - to build up a feature-rich technical documentation system and infrastructure for my own use and for demo purposes ([see repo's readme](https://github.com/cassmastern/lers-sandbox/blob/main/readme.md))
-- to make use of that very system and infrastructure — populate it with content, covering my domain curiosities, that will hopefully remain relevant and useful for my own use
+- to make use of that very system and infrastructure: to populate it with content, covering my domain curiosities, that will hopefully remain relevant and useful for my own use
 - to discover new domain curiosities
 
 !!! note "Note"

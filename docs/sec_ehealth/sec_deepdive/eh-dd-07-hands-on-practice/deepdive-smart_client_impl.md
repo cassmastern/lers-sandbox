@@ -1,4 +1,4 @@
-# SMART Client Implementation (Python)
+# SMART Client Example (Python)
 
 ## Python Example
 

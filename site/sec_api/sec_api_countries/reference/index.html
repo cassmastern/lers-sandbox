@@ -733,14 +733,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-smart_client_impl-sample-app/">
 <span class="md-ellipsis">
-    Practical Example — a Sample SMART App
+    Building a SMART App: Complete Tutorial
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../sec_ehealth/sec_deepdive/eh-dd-07-hands-on-practice/deepdive-smart_client_impl/">
 <span class="md-ellipsis">
-    SMART Client Implementation (Python)
+    SMART Client Example (Python)
   </span>
 </a>
 </li>
@@ -1148,7 +1148,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="interactive-openapi-swagger-reference">Interactive OpenAPI (Swagger) Reference</h1>
 <p>Interactive documentation for all Countries REST API endpoints. Try requests directly from this page.</p>
-<p><iframe class="swagger-ui-iframe" frameborder="0" id="cc94b479" src="swagger-cc94b479.html" style="overflow:hidden;width:100%;" width="100%"></iframe></p>
+<p><iframe class="swagger-ui-iframe" frameborder="0" id="d8b3daaa" onload="this.style.display = 'block'; this.style.overflow = 'hidden'; this.style.width = '100%';" src="swagger-d8b3daaa.html" style="display:none;" width="100%"></iframe></p>
 <h2 id="quick-links">Quick Links</h2>
 <ul>
 <li><a href="../sec_api_countries_guides/api-countries-guides-quickstart/">Quick Start Guide</a></li>
@@ -1258,9 +1258,7 @@
             for (var i = 0; i < iframes.length; i++) { 
                 iframe_id_list.push(iframes[i].getAttribute("id"))
             }
-        
             let ticking = false;
-            
             document.addEventListener('scroll', function(e) {
                 if (!ticking) {
                     window.requestAnimationFrame(()=> {
@@ -1283,7 +1281,15 @@
         
             const dark_scheme_name = "slate"
             
-            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const schemeAttr = document.body.getAttribute("data-md-color-scheme");
+            const isMediaPrefersScheme = document.body.getAttribute("data-md-color-media") === "(prefers-color-scheme: dark)";
+
+            if (!isMediaPrefersScheme) {
+                window.__init_is_dark_mode = (schemeAttr === dark_scheme_name);
+            } else {
+                const computedScheme = window.getComputedStyle(document.body).getPropertyValue('color-scheme');
+                window.__init_is_dark_mode = computedScheme === "dark";
+            }
             const options = {
                 attributeFilter: ['data-md-color-scheme'],
             };
