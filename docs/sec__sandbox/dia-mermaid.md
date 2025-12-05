@@ -33,6 +33,8 @@ accDescr: Sequence diagram showing client-server commumnication: Client sends a 
 
 ```mermaid
 graph TD
+    accTitle: GitHub Actions diagram
+    accDescr: GitHub Actions diagram showing trigger to deploy, including custom actions for ler-sandbox project/site.
     trigger["GitHub Actions Trigger"]
     checkout["Checkout Repository"]
     buildx["Setup Docker Buildx"]
