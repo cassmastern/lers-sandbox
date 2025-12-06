@@ -1,4 +1,4 @@
-# GenAI-Landschaft 2025
+# Die GenAI-Landschaft im Dezember 2025
 
 > Einführungs-/Präsentationsdokument.
 
@@ -93,26 +93,26 @@ Die Datenpipeline ist 2025 durch **Datenknappheit** und die Integration von **RA
 flowchart LR
   subgraph Datenbeschaffung["Datenbeschaffung"]
     WEB["Web-Crawling<br>(Common Crawl)"]
-    CUR["Kuratierte Datensätze<br>(The Pile, RefinedWeb)"]
+    CUR["Kuratierte Datensätze<br>(The Pile,<br>RefinedWeb)"]
     PROP["Proprietäre<br>Quellen"]
     SYNTH["Synthetische<br>Daten"]
   end
 
   subgraph Datenaufbereitung["Datenaufbereitung"]
-    FILT["Filterung<br>(Deduplizierung, Toxizitätsfilter)"]
-    NORM["Normalisierung<br>(Tokenisierung, Formatierung)"]
-    ENRICH["Anreicherung<br>(Metadaten, Qualitätsbewertungen)"]
-    RAG_PREP["RAG-Indexierung"]
+    FILT["Filterung<br>(Deduplizierung,<br>Toxizitätsfilter)"]
+    NORM["Normalisierung<br>(Tokenisierung,<br>Formatierung)"]
+    ENRICH["Anreicherung<br>(Metadaten,<br>Qualitätsbewertungen)"]
+    RAG_PREP["RAG-<br>Indexierung"]
   end
 
   subgraph Datenspeicher["Datenspeicher"]
     DIST["Verteilte<br>Dateisysteme<br>(HDFS, S3)"]
-    FORMAT["Spezialisierte Formate<br>(Parquet, TFRecord)"]
+    FORMAT["Spezialisierte Formate<br>(Parquet,<br>TFRecord)"]
     VERSION["Datenversionierung<br>(DVC, LakeFS)"]
   end
 
   subgraph Datenlader["Datenlader"]
-    STREAM["Streaming<br>(Petastorm, WebDataset)"]
+    STREAM["Streaming<br>(Petastorm,<br>WebDataset)"]
   end
 
   WEB -->|"Rohdaten"| FILT

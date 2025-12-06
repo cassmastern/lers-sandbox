@@ -25,11 +25,9 @@ docker run --rm -p 8000:8000 -v "$(pwd)":/app mkdocs-site mkdocs serve --dev-add
 ## Aliases
 ```zsh
 alias cassbuild='docker build -t mkdocs-site .'
-
+alias casssite='docker run --rm -v "$(pwd)":/app mkdocs-site mkdocs build --verbose && touch site/.nojekyll'
 alias cassserve='docker run --rm -p 8000:8000 -v "$(pwd)":/app mkdocs-site mkdocs serve --dev-addr=0.0.0.0:8000 --livereload'
-
 alias pumlpull='docker pull plantuml/plantuml-server'
-
 alias pumlrun='docker run -d -p 8080:8080 plantuml/plantuml-server'
 ```
 
