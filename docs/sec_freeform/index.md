@@ -5,6 +5,6 @@ This section contains speculative concepts, technical essays, 'technical memoirs
 - [IBM-SanFrancisco](ibm-sanfran.md)
 - [Accessibility with AI](ai-accessibility.md)
 - [Accessibility with AI (Concept Note)](ai-accessibility_bus.md)
-- [GenAI Landscape in 2025](gen-ai-landscape-primer.md)
+- [GenAI Landscape in August, 2025](gen-ai-landscape-primer.md)
 - [The Long Arc of Digital Identity](identity.md)
 
