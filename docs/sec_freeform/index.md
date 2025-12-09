@@ -6,5 +6,5 @@ This section contains speculative concepts, technical essays, 'technical memoirs
 - [Accessibility with AI](ai-accessibility.md)
 - [Accessibility with AI (Concept Note)](ai-accessibility_bus.md)
 - [GenAI Landscape in August, 2025](gen-ai-landscape-primer.md)
-- [Die GenAI-Landschaft im Dezember 2025](gen-ai-landschaft-dec-2025.md)
 - [The Long Arc of Digital Identity](identity.md)
+- [Translations](sec_transl/index.md)

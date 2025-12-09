@@ -20,6 +20,7 @@ gantt
 
 ## Changelog
 
+- 2025.12.09 New section with a couple of article translations to explore automation with DeepL API and Vertex AI for 'naturalness check': [Translations](../sec_freeform/sec_transl/index.md) 
 - 2025.11.02 New set of topics for exploring [API documentation](../sec_api/index.md) features.
 - 2025.11.01 Major refactoring of JS files (theme switcher, metadata injector) and SpotlightJS
 - 2025.10.28 Accessibility metadata injection now complete for all three supported diagram types (Mermaid, PlantUML, Graphviz)

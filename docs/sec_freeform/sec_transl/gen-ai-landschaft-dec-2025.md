@@ -241,4 +241,7 @@ flowchart TD
 
 Die GenAI-Landschaft entwickelt sich rasant weiter, wobei regelmäßig neue Architekturen, Optimierungstechniken und Anwendungsmuster entstehen. Erfolg erfordert das Verständnis sowohl der aktuellen Fähigkeiten als auch der zugrunde liegenden technologischen Trends, die die zukünftige Entwicklung vorantreiben.
 
-Stand: 06.12.2025
+> Stand: 06.12.2025  
+>
+> Übersetzt aus dem Englischen und aktualisiert, um die neuesten Entwicklungen seit August widerzuspiegeln.  
+> Quelle: [https://cassmastern.github.io/lers-sandbox/sec_freeform/gen-ai-landscape-primer/](https://cassmastern.github.io/lers-sandbox/sec_freeform/gen-ai-landscape-primer/)
